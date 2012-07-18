@@ -80,20 +80,20 @@ alias 'as=apt-cache search'
 alias 'aw=apt-cache show'
 alias 'ad=sudo apt-get dist-upgrade'
 
-#Sublime Text 2
-alias 'st=sublime-text-2'
-alias 'stsi=st /var/workspace/app.siteignite'
-alias 'stxmod=st /var/workspace/app.siteignite_modules'
-
-#XMod
-alias 'xgpull=xmod-git run pull'
-
-#Dir
-alias 'cdw=cd /var/workspace'
-alias 'cdm=cd /var/workspace/app.siteignite_modules'
-
 function apt-list-packages {
   dpkg-query -W --showformat='${Installed-Size} ${Package} ${Status}\n' | grep -v deinstall | sort -n | awk '{print $1" "$2}'
 }
 
-/etc/motd.tcl
+# TMUX
+if [[ $TERM == "screen" ]]; then
+    # If inside tmux session then print MOTD
+    /etc/motd.tcl
+else
+    # Attempt to discover a detached session and attach it, else create a new session
+    CURRENT_USER=$(whoami)
+    if tmux has-session -t $CURRENT_USER 2>/dev/null; then
+        tmux attach-session -t $CURRENT_USER
+    else
+        tmux new-session -s $CURRENT_USER
+    fi
+fi
