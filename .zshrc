@@ -43,6 +43,8 @@ export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/u
 autoload -U compinit
 compinit
 
+autoload -U zmv
+
 for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
 setopt completeinword
