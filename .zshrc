@@ -59,7 +59,7 @@ alias la='ls -a'
 
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=15000
-setopt incappendhistory 
+setopt incappendhistory
 setopt sharehistory
 setopt extendedhistory
 
@@ -87,7 +87,10 @@ function apt-list-packages {
 # TMUX
 if [[ $TERM == "screen" ]]; then
     # If inside tmux session then print MOTD
-    /etc/motd.tcl
+    MOTD=/etc/motd.tcl
+    if [ -f $MOTD ]; then
+        $MOTD
+    fi
 else
     # Attempt to discover a detached session and attach it, else create a new session
     CURRENT_USER=$(whoami)
