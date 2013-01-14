@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -65,14 +61,18 @@ setopt interactivecomments # pound sign in interactive prompt
 
 setopt auto_cd
 
-alias 'a=sudo aptitude'
-alias 'ai=sudo aptitude install'
-alias 'ar=sudo aptitude remove'
-alias 'au=sudo aptitude update'
-alias 'ag=sudo aptitude safe-upgrade'
-alias 'as=apt-cache search'
-alias 'aw=apt-cache show'
-alias 'ad=sudo apt-get dist-upgrade'
+if [[ $('uname') == 'Linux' ]]; then
+    alias 'a=sudo aptitude'
+    alias 'ai=sudo aptitude install'
+    alias 'ar=sudo aptitude remove'
+    alias 'au=sudo aptitude update'
+    alias 'ag=sudo aptitude safe-upgrade'
+    alias 'as=apt-cache search'
+    alias 'aw=apt-cache show'
+    alias 'ad=sudo apt-get dist-upgrade'
+elif  [[ $('uname') == 'Darwin' ]]; then
+    # Mac OS X related aliases here
+fi
 
 function apt-list-packages {
   dpkg-query -W --showformat='${Installed-Size} ${Package} ${Status}\n' | grep -v deinstall | sort -n | awk '{print $1" "$2}'
