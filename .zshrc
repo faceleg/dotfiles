@@ -29,21 +29,19 @@ ZSH_THEME="bira"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git rails ruby rbenv)
+
+# Ruby
+eval "$(rbenv init -)";
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/real/RealPlayer
-
-# From http://monangik.wordpress.com/2011/04/21/install-zsh-shell-on-ubuntu/
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
 autoload -U compinit
 compinit
-
-autoload -U zmv
 
 for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
