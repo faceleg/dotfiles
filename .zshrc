@@ -19,10 +19,22 @@ ZSH_THEME="bira"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+is_linux () {
+    [[ $('uname') == 'Linux' ]];
+}
+
+is_osx () {
+    [[ $('uname') == 'Darwin' ]]
+}
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git sublime composer phing)
+if is_linux; then
+    plugins=(git sublime composer phing)
+elif  is_osx; then
+    plugins=(git sublime composer phing brew)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,7 +73,7 @@ setopt interactivecomments # pound sign in interactive prompt
 
 setopt auto_cd
 
-if [[ $('uname') == 'Linux' ]]; then
+if is_linux; then
     alias 'a=sudo apt-get'
     alias 'ai=sudo apt-get install'
     alias 'ar=sudo apt-get remove'
@@ -70,7 +82,7 @@ if [[ $('uname') == 'Linux' ]]; then
     alias 'as=apt-cache search'
     alias 'aw=apt-cache show'
     alias 'ad=sudo apt-get dist-upgrade'
-elif  [[ $('uname') == 'Darwin' ]]; then
+elif  is_osx; then
     # Mac OS X related aliases here
 fi
 
@@ -79,7 +91,7 @@ function apt-list-packages {
 }
 
 command_exists () {
-    type "$1" &> /dev/null ;
+    type "$1" &> /dev/null;
 }
 
 if command_exists rbenv; then
