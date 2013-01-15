@@ -62,11 +62,11 @@ setopt interactivecomments # pound sign in interactive prompt
 setopt auto_cd
 
 if [[ $('uname') == 'Linux' ]]; then
-    alias 'a=sudo aptitude'
-    alias 'ai=sudo aptitude install'
-    alias 'ar=sudo aptitude remove'
-    alias 'au=sudo aptitude update'
-    alias 'ag=sudo aptitude safe-upgrade'
+    alias 'a=sudo apt-get'
+    alias 'ai=sudo apt-get install'
+    alias 'ar=sudo apt-get remove'
+    alias 'au=sudo apt-get update'
+    alias 'ag=sudo apt-get safe-upgrade'
     alias 'as=apt-cache search'
     alias 'aw=apt-cache show'
     alias 'ad=sudo apt-get dist-upgrade'
@@ -78,9 +78,15 @@ function apt-list-packages {
   dpkg-query -W --showformat='${Installed-Size} ${Package} ${Status}\n' | grep -v deinstall | sort -n | awk '{print $1" "$2}'
 }
 
-# ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
+if command_exists rbenv; then
+    # ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # TMUX
 if [[ $TERM == "screen" ]]; then
