@@ -105,18 +105,18 @@ if command_exists rbenv; then
 fi
 
 # TMUX
-if [[ $TERM == "screen" ]]; then
-    # If inside tmux session then print MOTD
-    MOTD=/etc/motd.tcl
-    if [ -f $MOTD ]; then
-        $MOTD
-    fi
-else
+if [[ -z $TMUX ]]; then
     # Attempt to discover a detached session and attach it, else create a new session
     CURRENT_USER=$(whoami)
     if tmux has-session -t $CURRENT_USER 2>/dev/null; then
         tmux attach-session -t $CURRENT_USER
     else
         tmux new-session -s $CURRENT_USER
+    fi
+else
+    # If inside tmux session then print MOTD
+    MOTD=/etc/motd.tcl
+    if [ -f $MOTD ]; then
+        $MOTD
     fi
 fi
