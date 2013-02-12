@@ -8,11 +8,13 @@ for FILE in .zshrc .tmux.conf .vimrc; do
 done;
 
 # Create tmuxified directory structure & copy files
-mkdir -vp ~/.tmuxified/themes
+mkdir -v ~/.tmuxified
 
-$CP "$DIR/.tmuxified/themes" ~/
+$CP "$DIR/.tmuxified/themes" ~/.tmuxified/
 $CP "$DIR/.tmuxified/scripts/basic-cpu-and-memory.tmux" \
          /usr/local/bin/basic-cpu-and-memory.tmux
+
+chmod -R 644 ~/tmuxified/themes
 
 echo -e "\033[31m
     The Python library 'psutils' is required for tmuxified's 'basic-cpu-and-memory plugin'.
