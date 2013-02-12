@@ -71,6 +71,7 @@ setopt extendedhistory
 # superglobs
 setopt extendedglob
 unsetopt caseglob
+unsetopt nomatch 2>/dev/null
 
 setopt interactivecomments # pound sign in interactive prompt
 
