@@ -18,6 +18,9 @@ chmod 755 ~/.tmuxified
 find ~/.tmuxified -type d -exec chmod 755 {} \;
 find ~/.tmuxified -type f -exec chmod 644 {} \;
 
+git config --global user.name "Michael Robinson"
+git config --global user.email mike@pagesofinterest.net
+
 echo -e "\033[31m
     The Python library 'psutils' is required for tmuxified's 'basic-cpu-and-memory plugin'.
 
