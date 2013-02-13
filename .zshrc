@@ -105,7 +105,7 @@ if command_exists rbenv; then
 fi
 
 # TMUX
-if [[ "$TERM" == "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
+if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
 #if [[ -z $TMUX ]]; then
     # Attempt to discover a detached session and attach it, else create a new session
     CURRENT_USER=$(whoami)
