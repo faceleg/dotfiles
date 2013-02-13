@@ -14,7 +14,9 @@ $CP "$DIR/.tmuxified/themes" ~/.tmuxified/
 $CP "$DIR/.tmuxified/scripts/basic-cpu-and-memory.tmux" \
          /usr/local/bin/basic-cpu-and-memory.tmux
 
-chmod -R 644 ~/tmuxified/themes
+chmod 755 ~/.tmuxified
+find ~/.tmuxified -type d -exec chmod 755 {} \;
+find ~/.tmuxified -type f -exec chmod 644 {} \;
 
 echo -e "\033[31m
     The Python library 'psutils' is required for tmuxified's 'basic-cpu-and-memory plugin'.
