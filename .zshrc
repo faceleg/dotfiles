@@ -110,14 +110,14 @@ if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
     # Attempt to discover a detached session and attach it, else create a new session
     CURRENT_USER=$(whoami)
     if tmux has-session -t $CURRENT_USER 2>/dev/null; then
-        tmux attach-session -t $CURRENT_USER
+        tmux -2 attach-session -t $CURRENT_USER
     else
-        tmux new-session -s $CURRENT_USER
+        tmux -2 new-session -s $CURRENT_USER
     fi
 else
     # If inside tmux session then print MOTD
-    MOTD=/etc/motd.tcl
-    if [ -f $MOTD ]; then
-        $MOTD
-    fi
+    # MOTD=/etc/motd.tcl
+    # if [ -f $MOTD ]; then
+    #     $MOTD
+    # fi
 fi

@@ -1,7 +1,9 @@
 #!/bin/bash
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
-rm -rf ~/.tmux-theme ~/.tmux.conf
+
+# Remove old tmux config
+rm -rf ~/.tmux-themes ~/.tmux.conf
 
 # Copy basic config files
 for FILE in .zshrc .tmux.conf .vimrc; do
@@ -9,10 +11,7 @@ for FILE in .zshrc .tmux.conf .vimrc; do
 done;
 
 # Create tmux-themes directory structure & copy files
-mkdir -v ~/.tmux-themes
-
-$CP "$DIR/tmux/themes/" ~/.tmux-themes/
-echo "$CP $DIR/tmux/themes/ ~/.tmux-themes/"
+$CP "$DIR/tmux/themes/" ~/.tmux-themes
 
 chmod 755 ~/.tmux-themes
 find ~/.tmux-themes -type d -exec chmod 755 {} \;
