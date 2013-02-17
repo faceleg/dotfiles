@@ -8,11 +8,6 @@ for FILE in .zshrc .tmux.conf .vimrc; do
     $CP "$DIR/$FILE" ~/
 done;
 
-
-rm -rf /usr/local/bin/basic-cpu-and-memory.tmux
-$CP "$DIR/tmux/scripts/basic-cpu-and-memory.tmux" \
-         /usr/local/bin/basic-cpu-and-memory.tmux
-
 # Create tmux-themes directory structure & copy files
 mkdir -v ~/.tmux-themes
 
@@ -26,14 +21,6 @@ find ~/.tmux-themes -type f -exec chmod 644 {} \;
 # Git config
 git config --global user.name "Michael Robinson"
 git config --global user.email mike@pagesofinterest.net
-
-echo -e "\033[31m
-    The Python library 'psutils' is required for tmuxified's 'basic-cpu-and-memory plugin'.
-
-    \033[00mGet it here: \033[36mhttp://code.google.com/p/psutil/" >&2;
-echo -n ""
-
-# Enable git colours
 git config --global --add color.ui true
 
 exec $SHELL -l
