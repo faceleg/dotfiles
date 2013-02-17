@@ -1,23 +1,29 @@
 #!/bin/bash
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
+rm -rf ~/.tmux-theme ~/.tmux.conf
 
 # Copy basic config files
 for FILE in .zshrc .tmux.conf .vimrc; do
     $CP "$DIR/$FILE" ~/
 done;
 
-# Create tmuxified directory structure & copy files
-mkdir -v ~/.tmuxified
 
-$CP "$DIR/.tmuxified/themes" ~/.tmuxified/
-$CP "$DIR/.tmuxified/scripts/basic-cpu-and-memory.tmux" \
+rm -rf /usr/local/bin/basic-cpu-and-memory.tmux
+$CP "$DIR/tmux/scripts/basic-cpu-and-memory.tmux" \
          /usr/local/bin/basic-cpu-and-memory.tmux
 
-chmod 755 ~/.tmuxified
-find ~/.tmuxified -type d -exec chmod 755 {} \;
-find ~/.tmuxified -type f -exec chmod 644 {} \;
+# Create tmux-themes directory structure & copy files
+mkdir -v ~/.tmux-themes
 
+$CP "$DIR/tmux/themes/" ~/.tmux-themes/
+echo "$CP $DIR/tmux/themes/ ~/.tmux-themes/"
+
+chmod 755 ~/.tmux-themes
+find ~/.tmux-themes -type d -exec chmod 755 {} \;
+find ~/.tmux-themes -type f -exec chmod 644 {} \;
+
+# Git config
 git config --global user.name "Michael Robinson"
 git config --global user.email mike@pagesofinterest.net
 
@@ -31,3 +37,5 @@ echo -n ""
 git config --global --add color.ui true
 
 exec $SHELL -l
+
+tmux source-file ~/.tmux.conf
