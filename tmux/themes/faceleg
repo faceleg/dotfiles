@@ -1,0 +1,23 @@
+# faceleg theme
+set-option -g status-fg white
+set-option -g status-bg default
+set-option -g status-justify centre
+
+# setw -g window-status-current-fg black
+# setw -g window-status-current-bg red
+setw -g window-status-current-attr bright
+# setw -g window-status-current-attr underscore
+
+set-option -g status-left-length 45
+set-option -g status-left '#[fg=white,nobright][ #[fg=red,nobright,bg=default]#S #[fg=white,nobright]# @ #[fg=blue,nobright]#h #[fg=white,nobright]]#[default]'
+
+set-window-option -g window-status-current-format '#[fg=red,bg=default]{ #[fg=white,bright,bg=default]#I:#W#[fg=red,nobright,bg=default] }#[fg=default]'
+
+set-option -g status-right-length 45
+set-option -g status-right '#[fg=white,nobright][ #[fg=black,bright]%H:%M #[fg=white,nobright]]#[fg=white,bright,bg=default] 为家服务 #[fg=white,nobright][#[fg=black,bright]#(uptime | cut -d":" -f4- | sed s/,//g )#[fg=white,nobright] ]#'
+
+set-window-option -g window-status-bell-attr bold
+set-window-option -g window-status-bell-fg yellow
+set-window-option -g window-status-bell-bg default
+
+set-option -g pane-active-border-fg cyan
