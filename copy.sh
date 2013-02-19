@@ -7,6 +7,7 @@ rm -rf ~/.tmux-themes ~/.tmux.conf
 
 # Copy basic config files
 for FILE in .zshrc .tmux.conf .vimrc; do
+    rm "~/$FILE"
     $CP "$DIR/$FILE" ~/
 done;
 

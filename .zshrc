@@ -30,19 +30,51 @@ is_osx () {
     [[ $('uname') == 'Darwin' ]]
 }
 
+command_exists () {
+    type "$1" &> /dev/null;
+}
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-if is_linux; then
-    plugins=(git sublime composer phing)
-elif  is_osx; then
-    plugins=(git sublime composer phing brew)
+USER_PLUGINS=(git sublime rsync themes urltools)
+
+if  is_osx; then
+    if command_exists brew; then
+        USER_PLUGINS+=(brew)
+    fi
+    if command_exists node; then
+        USER_PLUGINS+=(node npm)
+    fi
+else
+    USER_PLUGINS+=(command-not-found)
 fi
 
-source $ZSH/oh-my-zsh.sh
+if command_exists phing; then
+    USER_PLUGINS+=(phing)
+fi
+
+if command_exists composer; then
+    USER_PLUGINS+=(composer)
+fi
+
+if command_exists git-extras; then
+    USER_PLUGINS+=(git-extras)
+fi
+
+if command_exists rbenv; then
+    # ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
+    # export PATH="$HOME/.rbenv/bin:$PATH"
+    # eval "$(rbenv init -)"
+    USER_PLUGINS+=(rbenv)
+fi
+
+plugins=($USER_PLUGINS)
 
 # Customize to your needs...
 export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+source $ZSH/oh-my-zsh.sh
+
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
 autoload -U compinit
@@ -94,16 +126,6 @@ function apt-list-packages {
   dpkg-query -W --showformat='${Installed-Size} ${Package} ${Status}\n' | grep -v deinstall | sort -n | awk '{print $1" "$2}'
 }
 
-command_exists () {
-    type "$1" &> /dev/null;
-}
-
-if command_exists rbenv; then
-    # ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
-
 # TMUX
 if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
 #if [[ -z $TMUX ]]; then
@@ -116,8 +138,8 @@ if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
     fi
 else
     # If inside tmux session then print MOTD
-    MOTD=/etc/motd.tcl
-    if [ -f $MOTD ]; then
-        $MOTD
-    fi
+    # MOTD=/etc/motd.tcl
+    # if [ -f $MOTD ]; then
+    #     $MOTD
+    # fi
 fi
