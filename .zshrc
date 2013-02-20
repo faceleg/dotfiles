@@ -58,6 +58,10 @@ if command_exists composer; then
     USER_PLUGINS+=(composer)
 fi
 
+if command_exists pip; then
+    USER_PLUGINS+=(pip)
+fi
+
 if command_exists git-extras; then
     USER_PLUGINS+=(git-extras)
 fi
