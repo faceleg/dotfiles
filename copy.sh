@@ -1,15 +1,16 @@
 #!/bin/bash
+
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-# Remove old tmux config
-rm -rf ~/.tmux-themes ~/.tmux.conf
-
 # Copy basic config files
 for FILE in .zshrc .tmux.conf .vimrc; do
-    rm "~/$FILE"
+    rm -v "`eval echo ~/${FILE//>}`"
     $CP "$DIR/$FILE" ~/
 done;
+
+# Remove old tmux config
+rm -rf ~/.tmux-themes
 
 # Create tmux-themes directory structure & copy files
 $CP "$DIR/tmux/themes/" ~/.tmux-themes
@@ -22,6 +23,12 @@ find ~/.tmux-themes -type f -exec chmod 644 {} \;
 git config --global user.name "Michael Robinson"
 git config --global user.email mike@pagesofinterest.net
 git config --global --add color.ui true
+
+# Install vim plugins
+vim/install-pathogen.sh
+vim/install-gitgutter.sh
+vim/install-fugitive.sh
+vim/install-neocomplcache.sh
 
 exec $SHELL -l
 
