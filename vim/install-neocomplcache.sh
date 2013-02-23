@@ -3,5 +3,5 @@ DIRECTORY="~/.vim/bundle/neocomplcache"
 
 if [ ! -d "`eval echo ${DIRECTORY//>}`" ]; then
     cd ~/.vim/bundle
-    https://github.com/Shougo/neocomplcache.git
+    git clone https://github.com/Shougo/neocomplcache.git
 fi
