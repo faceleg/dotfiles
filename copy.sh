@@ -19,16 +19,8 @@ chmod 755 ~/.tmux-themes
 find ~/.tmux-themes -type d -exec chmod 755 {} \;
 find ~/.tmux-themes -type f -exec chmod 644 {} \;
 
-# Git config
-git config --global user.name "Michael Robinson"
-git config --global user.email mike@pagesofinterest.net
-git config --global --add color.ui true
-
-# Install vim plugins
-vim/install-pathogen.sh
-vim/install-gitgutter.sh
-vim/install-fugitive.sh
-vim/install-neocomplcache.sh
+./configure-git.sh
+./install-vim.sh
 
 exec $SHELL -l
 

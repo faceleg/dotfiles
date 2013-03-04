@@ -1,6 +1,8 @@
 #!/bin/bash
 DIRECTORY="~/.vim/bundle/neocomplcache"
 
+echo "Installing neocomplcache"
+
 if [ ! -d "`eval echo ${DIRECTORY//>}`" ]; then
     cd ~/.vim/bundle
     git clone https://github.com/Shougo/neocomplcache.git
