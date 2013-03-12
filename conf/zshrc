@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
-autoload -U compinit
+#autoload -U compinit
 compinit
 
 for func in $^fpath.zwc(N-.r:); autoload -U -w $func
