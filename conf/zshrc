@@ -142,8 +142,8 @@ if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
     fi
 else
     # If inside tmux session then print MOTD
-    # MOTD=/etc/motd.tcl
-    # if [ -f $MOTD ]; then
-    #     $MOTD
-    # fi
+    MOTD=/etc/motd.tcl
+    if [ -f $MOTD ]; then
+        $MOTD
+    fi
 fi
