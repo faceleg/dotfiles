@@ -9,3 +9,4 @@ vim/install-fugitive.sh
 vim/install-neocomplcache.sh
 vim/install-minibuffexplorer.sh
 vim/install-ctrlp.sh
+vim/install-syntastic.sh
