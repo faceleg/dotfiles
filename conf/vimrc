@@ -4,9 +4,13 @@ filetype plugin indent on
 highlight clear SignColumn
 set number
 set smartindent
+
+" Tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set nowrap
 syntax on
 
 " disable arrow keys
@@ -18,7 +22,20 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-                           
+
+" Highlight whitespace
+set hlsearch
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Pasting
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
@@ -116,4 +133,8 @@ map <C-h> <C-w><Left>
 " http://stackoverflow.com/a/329935/187954
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
+
+" NERDtree
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
