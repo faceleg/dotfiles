@@ -13,6 +13,19 @@ set expandtab
 set nowrap
 syntax on
 
+
+" Prevent minibufexpl (or anything else) from opening files in the NERDTree
+" window.
+" http://www.beervsman.com/2010/10/19/vim-minibufexpl-nerdtree-and-the-quickfix-window/#comment-484052199
+ let g:miniBufExplModSelTarget = 1
+
+hi MBEVisibleActive guifg=#A6DB29 guibg=fg
+hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
+hi MBEVisibleChanged guifg=#F1266F guibg=fg
+hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
+hi MBEChanged guifg=#CD5907 guibg=fg
+hi MBENormal guifg=#808080 guibg=fg
+
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -138,3 +151,6 @@ map <C-S-Tab> :bprevious<cr>
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" NERDTree Tabs
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_smart_startup_focus=2
