@@ -9,7 +9,7 @@ INSTALL_CONFIG=true
 INSTALL_TMUX=true
 INSTALL_ZSH_PLUGINS=true
 
-if ! OPTIONS=$(getopt -o cgvt -l no-config,no-git,no-vim,no-tmux -- "$@")
+if ! OPTIONS=$(getopt -o cgvtz -l no-config,no-git,no-vim,no-tmux,no-zsh -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
