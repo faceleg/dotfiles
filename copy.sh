@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
@@ -7,6 +7,7 @@ INSTALL_GIT=true
 INSTALL_VIM=true
 INSTALL_CONFIG=true
 INSTALL_TMUX=true
+INSTALL_ZSH_PLUGINS=true
 
 if ! OPTIONS=$(getopt -o cgvt -l no-config,no-git,no-vim,no-tmux -- "$@")
 then
@@ -22,6 +23,7 @@ while [ $# -gt 0 ]; do
         "-g" | "--no-git") INSTALL_GIT=false ;;
         "-v" | "--no-vim") INSTALL_VIM=false ;;
         "-t" | "--no-tmux") INSTALL_TMUX=false ;;
+        "-z" | "--no-zsh") INSTALL_ZSH_PLUGINS=false ;;
         (--) shift; break;;
         (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
         (*) break;;
@@ -33,20 +35,20 @@ if $INSTALL_TMUX; then
     echo 'Configuring tmux'
     # Remove old tmux config
     rm -rf ~/.tmux-themes
-    
+
     # Create tmux-themes directory structure & copy files
     $CP "$DIR/tmux/themes/" ~/.tmux-themes
-    
+
     chmod 755 ~/.tmux-themes
     find ~/.tmux-themes -type d -exec chmod 755 {} \;
     find ~/.tmux-themes -type f -exec chmod 644 {} \;
-    
+
     tmux source-file ~/.tmux.conf
-fi 
+fi
 
 if $INSTALL_CONFIG ; then
     echo 'General configuration'
-    
+
     # Copy basic config files
     cd conf
     for FILE in *; do
@@ -65,6 +67,11 @@ fi
 if $INSTALL_VIM; then
     echo 'Vim plugins & configuration'
     ./install-vim.sh
+fi
+
+if $INSTALL_ZSH_PLUGINS; then
+    echo 'ZSH plugins'
+    ./install-zsh-plugins.sh
 fi
 
 echo "
