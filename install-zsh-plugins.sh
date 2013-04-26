@@ -1,14 +1,13 @@
 #!/bin/bash
-DIRECTORY="~/.oh-my-zsh/custom/plugins"
-echo $DIRECTORY
+DIRECTORY="`eval echo ~/.oh-my-zsh/custom/plugins`"
 
-if [ ! -d "`eval echo ${DIRECTORY//>}`" ]; then
+echo "Installing zsh-syntax-highlighting"
+
+if [ ! -d $DIRECTORY ]; then
     mkdir -p $DIRECTORY
 fi
 
 ZSH_SYNTAX="$DIRECTORY/zsh-syntax-highlighting"
-
-echo "Installing zsh-syntax-highlighting"
 
 if [ ! -d "`eval echo ${ZSH_SYNTAX//>}`" ]; then
     cd ~/.oh-my-zsh/custom/plugins
