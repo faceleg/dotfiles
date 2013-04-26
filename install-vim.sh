@@ -14,5 +14,6 @@ $INSTALLER scrooloose syntastic
 $INSTALLER scrooloose nerdtree
 $INSTALLER terryma vim-multiple-cursors
 $INSTALLER majutsushi tagbar
+# requres https://github.com/techlivezheng/phpctags
 #$INSTALLER techlivezheng tagbar-phpctags 
 $INSTALLER xolox vim-easytags
