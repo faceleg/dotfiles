@@ -5,6 +5,16 @@ highlight clear SignColumn
 set number
 set smartindent
 
+" Ctags
+nmap <F8> :TagbarToggle<CR>
+"let g:tagbar_phpctags_bin='~/.vim/bundle/phpctags/phpctags'
+"function CreateTags()
+"    let curNodePath = g:NERDTreeFileNode.GetSelected().path.str()
+"    exec ':!ctags -R --languages=php -f ' . curNodePath . '/tags ' . curNodePath
+"endfunction
+"nmap <silent> <F4> :call CreateTags()<CR>
+"set cscopetag
+
 " Tabs
 set tabstop=4
 set shiftwidth=4
@@ -13,6 +23,9 @@ set expandtab
 set nowrap
 syntax on
 
+" This unsets the "last search pattern" register by hitting return
+" http://stackoverflow.com/a/662914
+nnoremap <CR> :noh<CR><CR>
 
 " Prevent minibufexpl (or anything else) from opening files in the NERDTree
 " window.
