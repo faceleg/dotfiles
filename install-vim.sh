@@ -2,12 +2,14 @@
 
 echo "Installing vim plugins"
 
-# Install vim plugins
 vim/install-pathogen.sh
-vim/install-gitgutter.sh
-vim/install-fugitive.sh
-vim/install-neocomplcache.sh
-vim/install-minibuffexplorer.sh
-vim/install-ctrlp.sh
-vim/install-syntastic.sh
-vim/install-nerd-tree.sh
+
+INSTALLER=./vim/installer.sh
+$INSTALLER airblade vim-gitgutter
+$INSTALLER tpope vim-fugitive
+$INSTALLER Shougo neocomplcache
+$INSTALLER fholgado minibufexpl.vim
+$INSTALLER kien ctrlp.vim
+$INSTALLER scrooloose syntastic
+$INSTALLER scrooloose nerdtree
+$INSTALLER terryma vim-multiple-cursors
