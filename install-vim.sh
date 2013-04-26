@@ -13,3 +13,6 @@ $INSTALLER kien ctrlp.vim
 $INSTALLER scrooloose syntastic
 $INSTALLER scrooloose nerdtree
 $INSTALLER terryma vim-multiple-cursors
+$INSTALLER majutsushi tagbar
+#$INSTALLER techlivezheng tagbar-phpctags 
+$INSTALLER xolox vim-easytags
