@@ -24,7 +24,9 @@ set nowrap
 syntax on
 
 " Vim powerline
+" set rtp+=~/.vim/bundle/powerline/bindings/vim
 let g:Powerline_symbols = "fancy"
+set laststatus=2
 
 " Required for nerdcommenter
 filetype plugin on
