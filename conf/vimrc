@@ -23,6 +23,15 @@ set expandtab
 set nowrap
 syntax on
 
+" Vim powerline
+let g:Powerline_symbols = "fancy"
+
+" Required for nerdcommenter
+filetype plugin on
+
+" Vim sparkup
+let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
+
 " This unsets the "last search pattern" register by hitting return
 " http://stackoverflow.com/a/662914
 nnoremap <CR> :noh<CR><CR>
@@ -38,6 +47,9 @@ hi MBEVisibleChanged guifg=#F1266F guibg=fg
 hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
 hi MBEChanged guifg=#CD5907 guibg=fg
 hi MBENormal guifg=#808080 guibg=fg
+
+" vim-css-color - https://github.com/skammer/vim-css-color
+let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 " disable arrow keys
 map <up> <nop>
