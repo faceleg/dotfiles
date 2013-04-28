@@ -1,5 +1,6 @@
 execute pathogen#infect()
 filetype plugin indent on
+filetype plugin on
 
 highlight clear SignColumn
 set number
@@ -22,10 +23,14 @@ set expandtab
 
 set nowrap
 syntax on
+colorscheme Sunburst
 
+" https://github.com/vim-scripts/vim-javascript
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
 
-" Required for nerdcommenter
-filetype plugin on
+au FileType javascript call JavaScriptFold()
 
 " Vim sparkup
 let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
@@ -34,8 +39,7 @@ let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
 " http://stackoverflow.com/a/662914
 nnoremap <CR> :noh<CR><CR>
 
-" Prevent minibufexpl (or anything else) from opening files in the NERDTree
-" window.
+" Prevent minibufexpl (or anything else) from opening files in the NERDTree window.
 " http://www.beervsman.com/2010/10/19/vim-minibufexpl-nerdtree-and-the-quickfix-window/#comment-484052199
 let g:miniBufExplModSelTarget = 1
 let g:miniBufExplForceSyntaxEnable = 0
@@ -184,4 +188,3 @@ let g:nerdtree_tabs_smart_startup_focus=2
 " set rtp+=~/.vim/bundle/powerline/bindings/vim
 let g:Powerline_symbols = "fancy"
 set laststatus=2
-
