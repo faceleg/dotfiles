@@ -2,7 +2,6 @@ execute pathogen#infect()
 filetype plugin indent on
 filetype plugin on
 
-highlight clear SignColumn
 set number
 set smartindent
 
@@ -54,6 +53,12 @@ hi MBENormal guifg=#808080 guibg=fg
 
 " vim-css-color - https://github.com/skammer/vim-css-color
 let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+" GitGutter
+highlight GitGutterAdd ctermfg=Green ctermbg=DarkGray
+highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
+highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
+highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
 
 " disable arrow keys
 map <up> <nop>
