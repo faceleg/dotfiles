@@ -37,5 +37,3 @@ mkdir -p ~/.vim/ftdetect
 curl -0 https://raw.github.com/jelera/vim-javascript-syntax/master/ftdetect/javascript.vim > ~/.vim/ftdetect/javascript.vim
 echo ""
 
-# cp vim/sytnax/javascript.vim ~/.vim/syntax/javascript.vim
-
