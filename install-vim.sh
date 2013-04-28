@@ -24,3 +24,5 @@ $INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER tristen vim-sparkup
 $INSTALLER Townk vim-autoclose
 $INSTALLER Lokaltog vim-powerline
+$INSTALLER tobyS pdv
+
