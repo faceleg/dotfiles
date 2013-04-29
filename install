@@ -1,6 +1,7 @@
 #!/bin/bash
 USAGE="$(basename "$0") [-h --help] [-c --config] [-g --git] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
 
+
 OPTIONS
         -h, --help
             Print this message
