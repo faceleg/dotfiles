@@ -190,13 +190,14 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " drop down colours
 highlight Pmenu ctermbg=black ctermfg=white
 
-" CtrlP.vim
+" CtrlP.vim see https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
+" for more information
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
 let g:ctrlp_jump_to_buffer = 'Et' " Jump to tab AND buffer if already open
 "let g:ctrlp_split_window = 1 " <CR> = New Tab
 let g:ctrlp_open_new_file = 'v' " Open newly created files in a new tab
-let g:ctrlp_open_multiple_files = 'v' " Open multiple files in new tabs
+let g:ctrlp_open_multiple_files = '2vjr' " Open multiple files in new tabs
 
 " NERDtree
 autocmd vimenter * NERDTree
