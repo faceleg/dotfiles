@@ -46,10 +46,6 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 " Vim sparkup
 let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
 
-" This unsets the "last search pattern" register by hitting return
-" http://stackoverflow.com/a/662914
-nnoremap <CR> :noh<CR><CR>
-
 " MatchTagAlways https://github.com/valloric/MatchTagAlways
 let g:mta_filetypes = {
     \ 'html' : 1,
@@ -91,12 +87,20 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" Highlight whitespace
+" Searching
 set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+" This unsets the "last search pattern" register by hitting return
+" http://stackoverflow.com/a/662914
+nnoremap <CR> :noh<CR><CR>
+
+" Highlight whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeaveEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
