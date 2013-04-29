@@ -2,7 +2,7 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 printf "\nInstalling vim plugins\n"
-
+#
 "$DIR/vim/pathogen.sh"
 
 INSTALLER="$DIR/vim/bundle.sh"
@@ -35,6 +35,7 @@ $INSTALLER hlissner vim-multiedit
 $INSTALLER Valloric MatchTagAlways
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER flazz vim-colorschemes
+$INSTALLER sjl gundo.vim
 
 # https://github.com/jelera/vim-javascript-syntax
 echo "Installing javascript syntax"
