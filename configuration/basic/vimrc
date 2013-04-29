@@ -7,9 +7,9 @@ set smartindent
 
 set nowrap
 syntax on
-colorscheme Sunburst
+colorscheme sunburst
 
-" Disable arrow keys
+" disable arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -19,43 +19,51 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" Pasting
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
+" pasting
+nnoremap <f2> :set invpaste paste?<cr>
+set pastetoggle=<f2>
 set showmode
 
-" Fix delete fail on OS X http://vim.wikia.com/wiki/Backspace_and_delete_problems
+" fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
 set backspace=indent,eol,start
 
-" Searching
+" searching
 set hlsearch
 set incsearch
 set smartcase
 set ignorecase
-" This unsets the "last search pattern" register by hitting return
+" this unsets the "last search pattern" register by hitting return
 " http://stackoverflow.com/a/662914
-nnoremap <CR> :noh<CR><CR>
+nnoremap <cr> :noh<cr><cr>
 
-" Map ctrl-movement keys to window switching
+" map ctrl-movement keys to window switching
 " http://stackoverflow.com/a/329935/187954
-map <C-k> <C-w><Up>
-map <C-j> <C-w><Down>
-map <C-l> <C-w><Right>
-map <C-h> <C-w><Left>
+map <c-k> <c-w><up>
+map <c-j> <c-w><down>
+map <c-l> <c-w><right>
+map <c-h> <c-w><left>
 
-" Tabs
+" tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Switch buffers
-map <F4> :ls<CR>:buffer<space>
+" switch buffers
+map <f4> :ls<cr>:buffer<space>
 
-" Unfold all blocks on file open
-au BufRead * normal zR
+" unfold all blocks on file open
+au bufread * normal zr
 
-" TagBar https://github.com/majutsushi/tagbar
-nmap <F8> :TagbarToggle<CR>
+" tagbar https://github.com/majutsushi/tagbar
+nmap <f8> :tagbartoggle<cr>
+
+" gundo http://sjl.bitbucket.org/gundo.vim/#installation
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_width = 60
+let g:gundo_preview_height = 20
+let g:gundo_right = 1
+let g:gundo_preview_bottom = 1
+let g:gundo_close_on_revert = 1
 
 " Vim JavaScript HTML indenting https://github.com/vim-scripts/vim-javascript
 let g:html_indent_inctags = "html,body,head,tbody"
@@ -183,11 +191,12 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 highlight Pmenu ctermbg=black ctermfg=white
 
 " CtrlP.vim
+let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
 let g:ctrlp_jump_to_buffer = 'Et' " Jump to tab AND buffer if already open
-let g:ctrlp_split_window = 1 " <CR> = New Tab
-let g:ctrlp_open_new_file = 't' " Open newly created files in a new tab
-let g:ctrlp_open_multiple_files = 't' " Open multiple files in new tabs
+"let g:ctrlp_split_window = 1 " <CR> = New Tab
+let g:ctrlp_open_new_file = 'v' " Open newly created files in a new tab
+let g:ctrlp_open_multiple_files = 'v' " Open multiple files in new tabs
 
 " NERDtree
 autocmd vimenter * NERDTree
