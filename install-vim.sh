@@ -31,6 +31,7 @@ $INSTALLER sickill vim-sunburst
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER hlissner vim-multiedit
 $INSTALLER Valloric MatchTagAlways
+$INSTALLER Lokaltog vim-easymotion
 
 # https://github.com/jelera/vim-javascript-syntax
 echo "Installing javascript syntax"
