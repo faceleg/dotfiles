@@ -9,8 +9,9 @@ INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER airblade vim-gitgutter
 $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-surround
+$INSTALLER tpope vim-unimpaired
 $INSTALLER Shougo neocomplcache
-$INSTALLER fholgado minibufexpl.vim
+#$INSTALLER fholgado minibufexpl.vim
 $INSTALLER kien ctrlp.vim
 $INSTALLER scrooloose syntastic
 $INSTALLER scrooloose nerdtree
@@ -28,7 +29,7 @@ $INSTALLER Townk vim-autoclose
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER tobyS pdv
 $INSTALLER pangloss vim-javascript
-#$INSTALLER sickill vim-sunburst
+$INSTALLER sickill vim-sunburst
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER hlissner vim-multiedit
 $INSTALLER Valloric MatchTagAlways
