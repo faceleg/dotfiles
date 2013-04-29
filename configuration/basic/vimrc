@@ -8,6 +8,16 @@ set smartindent
 set nowrap
 syntax on
 colorscheme Sunburst
+set showmode            " show which mode we are currently in
+set cc=80               " colorcolumn 80
+set history=1000        " remember more commands and search history
+set undolevels=1000     " remember more undo levels
+
+" tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=4
 
 " disable arrow keys
 map <up> <nop>
@@ -22,10 +32,6 @@ imap <right> <nop>
 " pasting
 nnoremap <f2> :set invpaste paste?<cr>
 set pastetoggle=<f2>    " toggle paste mode
-set showmode            " show which mode we are currently in
-set cc=80               " colorcolumn 80
-set history=1000        " remember more commands and search history
-set undolevels=1000     " remember more undo levels
 
 " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
 set backspace=indent,eol,start
@@ -46,10 +52,11 @@ map <c-j> <c-w><down>
 map <c-l> <c-w><right>
 map <c-h> <c-w><left>
 
-" tabs
-set tabstop=4
-set shiftwidth=4
-set expandtab
+" Show special characters http://vimcasts.org/episodes/show-invisibles/
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 
 " switch buffers
 map <f4> :ls<cr>:buffer<space>
