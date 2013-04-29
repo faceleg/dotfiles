@@ -48,6 +48,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Switch buffers
+map <F4> :ls<CR>:buffer<space>
+
 " Unfold all blocks on file open
 au BufRead * normal zR
 
@@ -82,17 +85,17 @@ let g:mta_filetypes = {
 
 " Prevent minibufexpl (or anything else) from opening files in the NERDTree window.
 " http://www.beervsman.com/2010/10/19/vim-minibufexpl-nerdtree-and-the-quickfix-window/#comment-484052199
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplForceSyntaxEnable = 0
-let g:miniBufExplMapCTabSwitchBufs = 1
-
-" Minibufexpl highlighting
-hi MBEVisibleActive guifg=#A6DB29 guibg=fg
-hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
-hi MBEVisibleChanged guifg=#F1266F guibg=fg
-hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
-hi MBEChanged guifg=#CD5907 guibg=fg
-hi MBENormal guifg=#808080 guibg=fg
+"let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplForceSyntaxEnable = 0
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"
+"" Minibufexpl highlighting
+"hi MBEVisibleActive guifg=#A6DB29 guibg=fg
+"hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
+"hi MBEVisibleChanged guifg=#F1266F guibg=fg
+"hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
+"hi MBEChanged guifg=#CD5907 guibg=fg
+"hi MBENormal guifg=#808080 guibg=fg
 
 " Vim CSS Color - https://github.com/skammer/vim-css-color
 let g:cssColorVimDoNotMessMyUpdatetime = 1
