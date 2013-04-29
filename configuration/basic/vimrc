@@ -7,7 +7,7 @@ set smartindent
 
 set nowrap
 syntax on
-colorscheme sunburst
+colorscheme Sunburst
 
 " disable arrow keys
 map <up> <nop>
@@ -21,8 +21,11 @@ imap <right> <nop>
 
 " pasting
 nnoremap <f2> :set invpaste paste?<cr>
-set pastetoggle=<f2>
-set showmode
+set pastetoggle=<f2>    " toggle paste mode
+set showmode            " show which mode we are currently in
+set cc=80               " colorcolumn 80
+set history=1000        " remember more commands and search history
+set undolevels=1000     " remember more undo levels
 
 " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
 set backspace=indent,eol,start
@@ -83,13 +86,9 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
 
 " MatchTagAlways https://github.com/valloric/MatchTagAlways
-let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xhtml' : 1,
-    \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \ 'ant': 1,
-    \}
+let g:mta_use_matchparen_group = 0
+highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
 
 " Prevent minibufexpl (or anything else) from opening files in the NERDTree window.
 " http://www.beervsman.com/2010/10/19/vim-minibufexpl-nerdtree-and-the-quickfix-window/#comment-484052199
