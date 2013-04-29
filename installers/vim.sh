@@ -2,7 +2,8 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 printf "\nInstalling vim plugins\n"
-#
+# Remove existing vim bundles
+rm -rf ~/.vim
 "$DIR/vim/pathogen.sh"
 
 INSTALLER="$DIR/vim/bundle.sh"
@@ -21,7 +22,7 @@ $INSTALLER majutsushi tagbar
 # requres https://github.com/techlivezheng/phpctags
 #$INSTALLER techlivezheng tagbar-phpctags
 $INSTALLER xolox vim-easytags
-$INSTALLER skammer vim-css-color
+$INSTALLER ap vim-css-color
 $INSTALLER SirVer ultisnips
 $INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER tristen vim-sparkup
@@ -32,6 +33,7 @@ $INSTALLER pangloss vim-javascript
 $INSTALLER sickill vim-sunburst
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER hlissner vim-multiedit
+$INSTALLER Valloric vim-indent-guides
 $INSTALLER Valloric MatchTagAlways
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER flazz vim-colorschemes
