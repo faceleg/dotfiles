@@ -1,4 +1,6 @@
 #!/bin/bash
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 DIRECTORY="`eval echo ~/.oh-my-zsh/custom/plugins`"
 
 echo "Installing zsh-syntax-highlighting"

@@ -1,0 +1,80 @@
+#!/bin/bash
+USAGE="$(basename "$0") [-h --help] [-c --config] [-g --git] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
+
+OPTIONS
+        -h, --help
+            Print this message
+
+        -c, --config
+            Perform basic configuration - zshrc, vimrc, tmux.conf, ctags
+
+        -g, --git
+            Perform basc git setup
+
+        -v, --vim
+            Install VIM plugins & syntax
+
+        -t, --tmux
+            Install tmux addons
+
+        -z, --zsh
+            Install ZSH plugins\n"
+
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CP="/bin/cp -vfr"
+
+INSTALL_GIT=false
+INSTALL_VIM=false
+INSTALL_CONFIG=false
+INSTALL_TMUX=false
+INSTALL_ZSH_PLUGINS=false
+
+if ! OPTIONS=$(getopt -o hcgvtza -l help,config,git,vim,tmux,zsh,all -- "$@")
+then
+    # something went wrong, getopt will put out an error message for us
+    exit 1
+fi
+
+while [ $# -gt 0 ]; do
+    case $1 in
+        "-h" | "--help") printf "$USAGE"; exit 0 ;;
+        "-c" | "--config") INSTALL_CONFIG=true ;;
+        "-g" | "--git") INSTALL_GIT=true ;;
+        "-v" | "--vim") INSTALL_VIM=true ;;
+        "-t" | "--tmux") INSTALL_TMUX=true ;;
+        "-z" | "--zsh") INSTALL_ZSH_PLUGINS=true ;;
+        "-a" | "--all")
+            INSTALL_CONFIG=true
+            INSTALL_GIT=true
+            INSTALL_VIM=true
+            INSTALL_TMUX=true
+            INSTALL_ZSH_PLUGINS=true
+            break;;
+        (--) shift; break;;
+        (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
+        (*) break;;
+    esac
+    shift
+done
+
+if $INSTALL_TMUX; then
+    "$DIR/installers/tmux.sh"
+fi
+
+if $INSTALL_GIT; then
+    "$DIR/installers/git-configuration.sh"
+fi
+
+if $INSTALL_VIM; then
+    "$DIR/installers/vim.sh"
+fi
+
+if $INSTALL_ZSH_PLUGINS; then
+    "$DIR/installers/zsh-plugins.sh"
+fi
+
+if $INSTALL_CONFIG ; then
+    "$DIR/installers/configuration.sh"
+fi
+
+

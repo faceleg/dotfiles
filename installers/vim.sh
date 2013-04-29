@@ -1,10 +1,11 @@
 #!/bin/bash
+DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "Installing vim plugins"
+printf "\nInstalling vim plugins\n"
 
-vim/install-pathogen.sh
+"$DIR/vim/pathogen.sh"
 
-INSTALLER=./vim/installer.sh
+INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER airblade vim-gitgutter
 $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-surround
@@ -27,11 +28,12 @@ $INSTALLER Townk vim-autoclose
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER tobyS pdv
 $INSTALLER pangloss vim-javascript
-$INSTALLER sickill vim-sunburst
+#$INSTALLER sickill vim-sunburst
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER hlissner vim-multiedit
 $INSTALLER Valloric MatchTagAlways
 $INSTALLER Lokaltog vim-easymotion
+$INSTALLER flazz vim-colorschemes
 
 # https://github.com/jelera/vim-javascript-syntax
 echo "Installing javascript syntax"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Configuring git"
+printf "\nConfiguring git\n"
 
 # Git config
 git config --global user.name "Michael Robinson"

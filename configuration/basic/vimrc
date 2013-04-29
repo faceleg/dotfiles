@@ -5,31 +5,35 @@ filetype plugin on
 set number
 set smartindent
 
+set nowrap
+syntax on
+colorscheme Sunburst
+
+" Disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 " Ctags
 nmap <F8> :TagbarToggle<CR>
-"let g:tagbar_phpctags_bin='~/.vim/bundle/phpctags/phpctags'
-"function CreateTags()
-"    let curNodePath = g:NERDTreeFileNode.GetSelected().path.str()
-"    exec ':!ctags -R --languages=php -f ' . curNodePath . '/tags ' . curNodePath
-"endfunction
-"nmap <silent> <F4> :call CreateTags()<CR>
-"set cscopetag
-"let g:tagbar_type_javascript = {
-"    \ 'ctagsbin' : '/usr/local/bin/jsctags'
-"\ }
+
 " Tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set nowrap
-syntax on
-colorscheme Sunburst
+" Fix delete fail on OS X http://vim.wikia.com/wiki/Backspace_and_delete_problems
+set backspace=indent,eol,start
 
-" Code folding
+" Fold all on file open
 au BufRead * normal zR
 
-" https://github.com/vim-scripts/vim-javascript
+" Vim JavaScript HTML indenting https://github.com/vim-scripts/vim-javascript
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
@@ -61,6 +65,7 @@ let g:miniBufExplModSelTarget = 1
 let g:miniBufExplForceSyntaxEnable = 0
 let g:miniBufExplMapCTabSwitchBufs = 1
 
+" Minibufexpl highlighting
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
 hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
 hi MBEVisibleChanged guifg=#F1266F guibg=fg
@@ -77,16 +82,6 @@ highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
 highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
 highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
 
-" disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
 " Searching
 set hlsearch
 set incsearch
@@ -100,7 +95,7 @@ nnoremap <CR> :noh<CR><CR>
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertLeaveEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+" autocmd InsertLeaveEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
