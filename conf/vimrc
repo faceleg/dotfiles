@@ -1,7 +1,7 @@
 execute pathogen#infect()
 filetype plugin indent on
+filetype plugin on
 
-highlight clear SignColumn
 set number
 set smartindent
 
@@ -14,7 +14,9 @@ nmap <F8> :TagbarToggle<CR>
 "endfunction
 "nmap <silent> <F4> :call CreateTags()<CR>
 "set cscopetag
-
+"let g:tagbar_type_javascript = {
+"    \ 'ctagsbin' : '/usr/local/bin/jsctags'
+"\ }
 " Tabs
 set tabstop=4
 set shiftwidth=4
@@ -22,15 +24,42 @@ set expandtab
 
 set nowrap
 syntax on
+colorscheme Sunburst
 
-" This unsets the "last search pattern" register by hitting return
-" http://stackoverflow.com/a/662914
-nnoremap <CR> :noh<CR><CR>
+" Code folding
+au BufRead * normal zR
 
-" Prevent minibufexpl (or anything else) from opening files in the NERDTree
-" window.
+" https://github.com/vim-scripts/vim-javascript
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
+au FileType javascript call JavaScriptFold()
+
+" Javascript Libraries Syntax https://github.com/othree/javascript-libraries-syntax.vim
+autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+
+" Vim sparkup
+let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
+
+" MatchTagAlways https://github.com/valloric/MatchTagAlways
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'ant': 1,
+    \}
+
+" Prevent minibufexpl (or anything else) from opening files in the NERDTree window.
 " http://www.beervsman.com/2010/10/19/vim-minibufexpl-nerdtree-and-the-quickfix-window/#comment-484052199
- let g:miniBufExplModSelTarget = 1
+let g:miniBufExplModSelTarget = 1
+let g:miniBufExplForceSyntaxEnable = 0
+let g:miniBufExplMapCTabSwitchBufs = 1
 
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
 hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
@@ -38,6 +67,15 @@ hi MBEVisibleChanged guifg=#F1266F guibg=fg
 hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
 hi MBEChanged guifg=#CD5907 guibg=fg
 hi MBENormal guifg=#808080 guibg=fg
+
+" vim-css-color - https://github.com/skammer/vim-css-color
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+" GitGutter
+highlight GitGutterAdd ctermfg=Green ctermbg=DarkGray
+highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
+highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
+highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
 
 " disable arrow keys
 map <up> <nop>
@@ -49,12 +87,20 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" Highlight whitespace
+" Searching
 set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+" This unsets the "last search pattern" register by hitting return
+" http://stackoverflow.com/a/662914
+nnoremap <CR> :noh<CR><CR>
+
+" Highlight whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeaveEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
@@ -157,8 +203,8 @@ map <C-h> <C-w><Left>
 
 " Switch to alternate file
 " http://stackoverflow.com/a/329935/187954
-map <C-Tab> :bnext<cr>
-map <C-S-Tab> :bprevious<cr>
+"map <C-Tab> :bnext<cr>
+"map <C-S-Tab> :bprevious<cr>
 
 " NERDtree
 autocmd vimenter * NERDTree
@@ -167,3 +213,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " NERDTree Tabs
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_smart_startup_focus=2
+
+" Vim powerline
+" set rtp+=~/.vim/bundle/powerline/bindings/vim
+let g:Powerline_symbols = "fancy"
+set laststatus=2
