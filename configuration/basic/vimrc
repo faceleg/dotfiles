@@ -192,6 +192,7 @@ highlight Pmenu ctermbg=black ctermfg=white
 
 " CtrlP.vim see https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
 " for more information
+let g:ctrlp_arg_map = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
 let g:ctrlp_jump_to_buffer = 'Et' " Jump to tab AND buffer if already open
