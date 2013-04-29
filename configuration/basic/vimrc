@@ -19,19 +19,40 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" Ctags
-nmap <F8> :TagbarToggle<CR>
+" Pasting
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+" Fix delete fail on OS X http://vim.wikia.com/wiki/Backspace_and_delete_problems
+set backspace=indent,eol,start
+
+" Searching
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+" This unsets the "last search pattern" register by hitting return
+" http://stackoverflow.com/a/662914
+nnoremap <CR> :noh<CR><CR>
+
+" Map ctrl-movement keys to window switching
+" http://stackoverflow.com/a/329935/187954
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
 
 " Tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Fix delete fail on OS X http://vim.wikia.com/wiki/Backspace_and_delete_problems
-set backspace=indent,eol,start
-
-" Fold all on file open
+" Unfold all blocks on file open
 au BufRead * normal zR
+
+" TagBar https://github.com/majutsushi/tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " Vim JavaScript HTML indenting https://github.com/vim-scripts/vim-javascript
 let g:html_indent_inctags = "html,body,head,tbody"
@@ -73,7 +94,7 @@ hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
 hi MBEChanged guifg=#CD5907 guibg=fg
 hi MBENormal guifg=#808080 guibg=fg
 
-" vim-css-color - https://github.com/skammer/vim-css-color
+" Vim CSS Color - https://github.com/skammer/vim-css-color
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 " GitGutter
@@ -82,27 +103,13 @@ highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
 highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
 highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
 
-" Searching
-set hlsearch
-set incsearch
-set smartcase
-set ignorecase
-" This unsets the "last search pattern" register by hitting return
-" http://stackoverflow.com/a/662914
-nnoremap <CR> :noh<CR><CR>
-
-" Highlight whitespace
+" Highlight unwanted whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 " autocmd InsertLeaveEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
-" Pasting
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-set showmode
 
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
@@ -139,7 +146,7 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -151,16 +158,6 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
 " Enable omni completion. Not required if they are already set elsewhere in .vimrc
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -189,21 +186,12 @@ let g:ctrlp_split_window = 1 " <CR> = New Tab
 let g:ctrlp_open_new_file = 't' " Open newly created files in a new tab
 let g:ctrlp_open_multiple_files = 't' " Open multiple files in new tabs
 
-" Map ctrl-movement keys to window switching
-" http://stackoverflow.com/a/329935/187954
-map <C-k> <C-w><Up>
-map <C-j> <C-w><Down>
-map <C-l> <C-w><Right>
-map <C-h> <C-w><Left>
-
-" Switch to alternate file
-" http://stackoverflow.com/a/329935/187954
-"map <C-Tab> :bnext<cr>
-"map <C-S-Tab> :bprevious<cr>
-
 " NERDtree
 autocmd vimenter * NERDTree
+" Close vim if NERDTree is the only thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Focus file window when opening vim or a file in a new tab
+autocmd VimEnter * wincmd l
 
 " NERDTree Tabs
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -213,3 +201,4 @@ let g:nerdtree_tabs_smart_startup_focus=2
 " set rtp+=~/.vim/bundle/powerline/bindings/vim
 let g:Powerline_symbols = "fancy"
 set laststatus=2
+
