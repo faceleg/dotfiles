@@ -22,6 +22,11 @@ set cc=80                       " colorcolumn 80
 set history=1000                " remember more commands and search history
 set undolevels=1000             " remember more undo levels
 
+" This makes vim act like all other editors, buffers can :u
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
 set backspace=indent,eol,start  " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
 
 syntax on
