@@ -93,7 +93,7 @@ map <c-h> <c-w><left>
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
-set list listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬
 
 " ====== Allow repeatable single character insertions ======
 " http://vim.wikia.com/wiki/Insert_a_single_character
@@ -104,7 +104,7 @@ nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
 " ====== Unfold all blocks on file open ======
-au bufread * normal zR
+au BufWinEnter * normal zR
 
 " ====== Tagbar ======
 " https://github.com/majutsushi/tagbar
