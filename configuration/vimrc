@@ -61,6 +61,11 @@ silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
 
+" ======= Scrolling ======
+set scrolloff=8                " Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
 " ======== Search ========
 set hlsearch
 set incsearch
