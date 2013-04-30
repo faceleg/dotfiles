@@ -239,3 +239,6 @@ let g:nerdtree_tabs_smart_startup_focus=2
 let g:Powerline_symbols = "fancy"
 set laststatus=2
 
+" ====== YankRing ======
+nnoremap <silent> <F3> :YRShow<CR>
+
