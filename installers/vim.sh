@@ -45,6 +45,7 @@ $INSTALLER flazz vim-colorschemes
 $INSTALLER sjl gundo.vim
 $INSTALLER vim-scripts phpfolding.vim
 $INSTALLER faceleg vim-jsdoc
+$INSTALLER jeetsukumaran vim-buffergator
 
 # https://github.com/jelera/vim-javascript-syntax
 printf "\nInstalling javascript syntax\n"
