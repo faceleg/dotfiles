@@ -1,6 +1,6 @@
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
+" The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=","
 
@@ -102,6 +102,16 @@ function! RepeatChar(char, count)
 endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+
+" ====== Delete trailing spaces on save ======
+" http://stackoverflow.com/a/1618401/187954
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd FileType c,cpp,java,php,ruby,python,javascript,vim,sh autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " ====== Unfold all blocks on file open ======
 au BufWinEnter * normal zR
