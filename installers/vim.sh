@@ -1,10 +1,10 @@
 #!/bin/bash
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-printf "\nInstalling vim plugins\n"
-# Remove existing vim bundles
-rm -rf ~/.vim
+printf "\nInstalling vim bundles\n"
+
 "$DIR/vim/pathogen.sh"
+"$DIR/vim/plugins.sh"
 
 INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER airblade vim-gitgutter
@@ -38,17 +38,18 @@ $INSTALLER Valloric MatchTagAlways
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER flazz vim-colorschemes
 $INSTALLER sjl gundo.vim
+$INSTALLER vim-scripts phpfolding.vim
+$INSTALLER faceleg vim-jsdoc
 
 # https://github.com/jelera/vim-javascript-syntax
-echo "Installing javascript syntax"
+printf "\nInstalling javascript syntax\n"
 mkdir -p ~/.vim/syntax
 curl -0 https://raw.github.com/jelera/vim-javascript-syntax/master/syntax/javascript.vim > ~/.vim/syntax/javascript.vim
 
 mkdir -p ~/.vim/ftdetect
 curl -0 https://raw.github.com/jelera/vim-javascript-syntax/master/ftdetect/javascript.vim > ~/.vim/ftdetect/javascript.vim
-echo ""
 
-echo "Installing jsctags"
+printf "\nInstalling jsctags\n"
 JSCTAGS_DIR=/usr/local/jsctags
 if [[ ! -d $JSCTAGS_DIR ]]; then
     cd /usr/local
