@@ -46,6 +46,7 @@ $INSTALLER sjl gundo.vim
 $INSTALLER vim-scripts phpfolding.vim
 $INSTALLER faceleg vim-jsdoc
 $INSTALLER jeetsukumaran vim-buffergator
+$INSTALLER vim-scripts YankRing.vim
 
 # https://github.com/jelera/vim-javascript-syntax
 printf "\nInstalling javascript syntax\n"
