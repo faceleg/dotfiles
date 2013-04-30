@@ -7,7 +7,7 @@ printf "\nConfiguring tmux\n"
 rm -rf ~/.tmux-themes
 
 # Create tmux-themes directory structure & copy files
-$CP "$DIR/../configuration/tmux/themes/" ~/.tmux-themes
+$CP "$DIR/../addons/tmux/themes/" ~/.tmux-themes
 
 chmod 755 ~/.tmux-themes
 find ~/.tmux-themes -type d -exec chmod 755 {} \;
