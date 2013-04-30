@@ -4,14 +4,14 @@
 " the plugins.
 let mapleader=","
 
-" ======== Load pathogen ========
+" ====== Load pathogen ======
 execute pathogen#infect()
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" ======== General settings ========
+" ====== General settings ======
 set number
 set smartindent
 
@@ -32,7 +32,7 @@ set backspace=indent,eol,start  " fix delete fail on os x http://vim.wikia.com/w
 syntax on
 colorscheme Sunburst
 
-" ======== Tabs ========
+" ====== Tabs ======
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -41,7 +41,7 @@ set softtabstop=4
 filetype plugin indent on
 filetype plugin on
 
-" ======== Disable arrow keys ========
+" ====== Disable arrow keys ======
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -51,16 +51,16 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" ======== Pasting ========
+" ====== Pasting ======
 nnoremap <f2> :set invpaste paste?<cr>
 set pastetoggle=<f2>            " toggle paste mode
 
-" ======== Turn Off Swap Files ========
+" ====== Turn Off Swap Files ======
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Persistent Undo ==================
+" ====== Persistent Undo ======
 " Keep undo history across sessions, by storing in file.
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
@@ -71,7 +71,7 @@ set scrolloff=8                " Start scrolling when we're 8 lines away from ma
 set sidescrolloff=15
 set sidescroll=1
 
-" ======== Search ========
+" ====== Search ======
 set hlsearch
 set incsearch
 set smartcase
@@ -80,7 +80,7 @@ set ignorecase
 " http://stackoverflow.com/a/662914
 nnoremap <cr> :noh<cr><cr>
 
-" ======== Window movement convenience ========
+" ====== Window movement convenience ======
 " map ctrl-movement keys to window switching
 " http://stackoverflow.com/a/329935/187954
 map <c-k> <c-w><up>
@@ -110,6 +110,10 @@ au BufWinEnter * normal zR
 " https://github.com/majutsushi/tagbar
 nmap <f8> :TagbarToggle<cr>
 
+" ====== Multiple cursors ======
+" Quit multi cursor mode on <C-c>
+let g:multi_cursor_quit_keys='<Esc>,<C-c>'
+
 " ====== Gundo ======
 " http://sjl.bitbucket.org/gundo.vim/#installation
 nnoremap <F5> :GundoToggle<CR>
@@ -137,6 +141,8 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 " ====== Vim JSDoc ======
 " https://github.com/faceleg/vim-jsdoc
 let g:jsdoc_input_description=1
+" Default is <C-l>, which conflicts with window movement mapped below
+nmap <C-y> <Plug>(jsdoc)
 
 " ====== Vim sparkup ======
 let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
@@ -206,7 +212,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
+"inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " Enable omni completion. Not required if they are already set elsewhere in .vimrc
