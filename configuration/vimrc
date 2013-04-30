@@ -1,25 +1,42 @@
-execute pathogen#infect()
-filetype plugin indent on
-filetype plugin on
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all 
+" the plugins.
+let mapleader=","
 
+" ======== Load pathogen ========
+execute pathogen#infect()
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" ======== General settings ========
 set number
 set smartindent
 
-set nowrap
+set nowrap                      " Do not wrap lines by default
+set autoread                    " Reload files changed outside vim
+set showmode                    " show which mode we are currently in
+set cc=80                       " colorcolumn 80
+set history=1000                " remember more commands and search history
+set undolevels=1000             " remember more undo levels
+
+set backspace=indent,eol,start  " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
+
 syntax on
 colorscheme Sunburst
-set showmode            " show which mode we are currently in
-set cc=80               " colorcolumn 80
-set history=1000        " remember more commands and search history
-set undolevels=1000     " remember more undo levels
 
-" tabs
+" ======== Tabs ========
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
 
-" disable arrow keys
+filetype plugin indent on
+filetype plugin on
+
+" ======== Disable arrow keys ========
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -29,14 +46,16 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" pasting
+" ======== Pasting ========
 nnoremap <f2> :set invpaste paste?<cr>
-set pastetoggle=<f2>    " toggle paste mode
+set pastetoggle=<f2>            " toggle paste mode
 
-" fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
-set backspace=indent,eol,start
+" ======== Turn Off Swap Files ========
+set noswapfile
+set nobackup
+set nowb
 
-" searching
+" ======== Search ========
 set hlsearch
 set incsearch
 set smartcase
@@ -45,6 +64,7 @@ set ignorecase
 " http://stackoverflow.com/a/662914
 nnoremap <cr> :noh<cr><cr>
 
+" ======== Window movement convenience ========
 " map ctrl-movement keys to window switching
 " http://stackoverflow.com/a/329935/187954
 map <c-k> <c-w><up>
@@ -52,29 +72,30 @@ map <c-j> <c-w><down>
 map <c-l> <c-w><right>
 map <c-h> <c-w><left>
 
-" Show special characters http://vimcasts.org/episodes/show-invisibles/
+" ======= Show special characters ======
+" http://vimcasts.org/episodes/show-invisibles/
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-" Allow repeatable single character insertions http://vim.wikia.com/wiki/Insert_a_single_character
+" ====== Allow repeatable single character insertions ======
+" http://vim.wikia.com/wiki/Insert_a_single_character
 function! RepeatChar(char, count)
   return repeat(a:char, a:count)
 endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
-" switch buffers
-map <f4> :ls<cr>:buffer<space>
+" ====== Unfold all blocks on file open ======
+au bufread * normal zR
 
-" unfold all blocks on file open
-au bufread * normal zr
-
-" tagbar https://github.com/majutsushi/tagbar
+" ====== Tagbar ======
+" https://github.com/majutsushi/tagbar
 nmap <f8> :TagbarToggle<cr>
 
-" gundo http://sjl.bitbucket.org/gundo.vim/#installation
+" ====== Gundo ======
+" http://sjl.bitbucket.org/gundo.vim/#installation
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width = 60
 let g:gundo_preview_height = 20
@@ -82,7 +103,8 @@ let g:gundo_right = 1
 let g:gundo_preview_bottom = 1
 let g:gundo_close_on_revert = 1
 
-" Vim JavaScript HTML indenting https://github.com/vim-scripts/vim-javascript
+" ====== JavaScript ======
+" https://github.com/vim-scripts/vim-javascript
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
@@ -96,41 +118,30 @@ autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
 autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
 autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 
-" vim-jsdoc
+" ====== Vim JSDoc ======
+" https://github.com/faceleg/vim-jsdoc
 let g:jsdoc_input_description=1
 
-" Vim sparkup
+" ====== Vim sparkup ======
 let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
 
-" MatchTagAlways https://github.com/valloric/MatchTagAlways
+" ====== MatchTagAlways ======
+" https://github.com/valloric/MatchTagAlways
 let g:mta_use_matchparen_group = 0
 highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
 
-" Prevent minibufexpl (or anything else) from opening files in the NERDTree window.
-" http://www.beervsman.com/2010/10/19/vim-minibufexpl-nerdtree-and-the-quickfix-window/#comment-484052199
-"let g:miniBufExplModSelTarget = 1
-"let g:miniBufExplForceSyntaxEnable = 0
-"let g:miniBufExplMapCTabSwitchBufs = 1
-"
-"" Minibufexpl highlighting
-"hi MBEVisibleActive guifg=#A6DB29 guibg=fg
-"hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
-"hi MBEVisibleChanged guifg=#F1266F guibg=fg
-"hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
-"hi MBEChanged guifg=#CD5907 guibg=fg
-"hi MBENormal guifg=#808080 guibg=fg
-
-" Vim CSS Color - https://github.com/skammer/vim-css-color
+" ====== Vim CSS Color ======
+" https://github.com/skammer/vim-css-color
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-" GitGutter
+" ====== GitGutter ======
 highlight GitGutterAdd ctermfg=Green ctermbg=DarkGray
 highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
 highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
 highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
 
-" Highlight unwanted whitespace
+" ====== Highlight unwanted whitespace ======
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -138,20 +149,16 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" ====== Neocomplcache ======
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
 " Launches neocomplcache automatically on vim startup.
 let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underscore completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Sets minimum char length of syntax keyword.
-let g:neocomplcache_min_syntax_length = 3
-" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_enable_smart_case = 1               " Use smartcase.
+let g:neocomplcache_enable_camel_case_completion = 1    " Use camel case completion
+let g:neocomplcache_enable_underbar_completion = 1      " Use underscore completion
+let g:neocomplcache_min_syntax_length = 3               " Sets minimum char length of syntax keyword
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*' " buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
 
 " Define file-type dependent dictionaries.
 let g:neocomplcache_dictionary_filetype_lists = {
@@ -206,8 +213,8 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " drop down colours
 highlight Pmenu ctermbg=black ctermfg=white
 
-" CtrlP.vim see https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
-" for more information
+" ====== CtrlP.vim ======
+" https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
 let g:ctrlp_arg_map = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
@@ -216,18 +223,18 @@ let g:ctrlp_jump_to_buffer = 'Et' " Jump to tab AND buffer if already open
 let g:ctrlp_open_new_file = 'v' " Open newly created files in a new tab
 let g:ctrlp_open_multiple_files = '2vjr' " Open multiple files in new tabs
 
-" NERDtree
+" ====== NERDtree ======
 autocmd vimenter * NERDTree
 " Close vim if NERDTree is the only thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Focus file window when opening vim or a file in a new tab
 autocmd VimEnter * wincmd l
 
-" NERDTree Tabs
+" ====== NERDTree Tabs ======
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_smart_startup_focus=2
 
-" Vim powerline
+" ====== Vim powerline ======
 " set rtp+=~/.vim/bundle/powerline/bindings/vim
 let g:Powerline_symbols = "fancy"
 set laststatus=2
