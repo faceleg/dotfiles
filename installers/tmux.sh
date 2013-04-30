@@ -3,6 +3,8 @@ DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
 printf "\nConfiguring tmux\n"
+
+$CP "$DIR/../configuration/tmux.conf" ~/.tmux.conf
 # Remove old tmux config
 rm -rf ~/.tmux-themes
 

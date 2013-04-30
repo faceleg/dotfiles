@@ -1,9 +1,13 @@
 #!/bin/bash
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CP="/bin/cp -vfr"
+
+printf "\nReplacing zshrc\n"
+$CP "$DIR/../configuration/zshrc" ~/.zshrc
 
 DIRECTORY="`eval echo ~/.oh-my-zsh/custom/plugins`"
 
-echo "Installing zsh-syntax-highlighting"
+printf "\nInstalling zsh-syntax-highlighting\n"
 
 if [ ! -d $DIRECTORY ]; then
     mkdir -p $DIRECTORY

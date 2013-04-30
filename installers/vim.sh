@@ -1,10 +1,15 @@
 #!/bin/bash
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-printf "\nInstalling vim bundles\n"
+CP="/bin/cp -vfr"
 
 "$DIR/vim/pathogen.sh"
 "$DIR/vim/plugins.sh"
+
+printf "\nReplacing ctags and vimrc\n"
+$CP "$DIR/../configuration/ctags" ~/.ctags
+$CP "$DIR/../configuration/vimrc" ~/.vimrc
+
+printf "\nInstalling vim bundles\n"
 
 INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER airblade vim-gitgutter
