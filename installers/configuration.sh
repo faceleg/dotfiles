@@ -5,14 +5,14 @@ CP="/bin/cp -vfr"
 printf "\nGeneral configuration\n"
 
 # Copy basic config files
-cd "$DIR/../configuration/basic"
+cd "$DIR/../configuration"
 for FILE in *; do
     EXISTING_FILE="`eval echo ~/.${FILE//>}`"
     if [[ -d $EXISTING_FILE ]]; then
        rm -v $EXISTING_FILE
     fi
 
-    $CP "$DIR/../configuration/basic/$FILE" $EXISTING_FILE  
+    $CP "$DIR/../configuration/$FILE" $EXISTING_FILE  
 done;
 cd ../
 
