@@ -17,7 +17,6 @@ $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER Shougo neocomplcache
-#$INSTALLER fholgado minibufexpl.vim
 $INSTALLER kien ctrlp.vim
 $INSTALLER scrooloose syntastic
 $INSTALLER scrooloose nerdtree
@@ -47,6 +46,7 @@ $INSTALLER vim-scripts phpfolding.vim
 $INSTALLER faceleg vim-jsdoc
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER vim-scripts YankRing.vim
+$INSTALLER plasticboy vim-markdown
 
 # https://github.com/jelera/vim-javascript-syntax
 printf "\nInstalling javascript syntax\n"
