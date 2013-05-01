@@ -4,8 +4,10 @@ CP="/bin/cp -vfr"
 
 printf "\nConfiguring tmux\n"
 
+rm -f ~/.tmux.conf
 $CP "$DIR/../configuration/tmux.conf" ~/.tmux.conf
-# Remove old tmux config
+
+# Install tmux themes
 rm -rf ~/.tmux-themes
 
 # Create tmux-themes directory structure & copy files
@@ -16,4 +18,9 @@ find ~/.tmux-themes -type d -exec chmod 755 {} \;
 find ~/.tmux-themes -type f -exec chmod 644 {} \;
 
 tmux source-file ~/.tmux.conf
+
+# Install tmux scripts
+rm -rf ~/.tmux-scripts
+
+$CP "$DIR/../addons/tmux/scripts" ~/.tmux-scripts
 
