@@ -23,8 +23,6 @@ $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose nerdcommenter
 $INSTALLER terryma vim-multiple-cursors
 $INSTALLER majutsushi tagbar
-# requres https://github.com/techlivezheng/phpctags
-#$INSTALLER techlivezheng tagbar-phpctags
 $INSTALLER xolox vim-easytags
 $INSTALLER ap vim-css-color
 $INSTALLER SirVer ultisnips
@@ -43,10 +41,15 @@ $INSTALLER Lokaltog vim-easymotion
 $INSTALLER flazz vim-colorschemes
 $INSTALLER sjl gundo.vim
 $INSTALLER vim-scripts phpfolding.vim
-$INSTALLER faceleg vim-jsdoc
+$INSTALLER heavenshell vim-jsdoc
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER vim-scripts YankRing.vim
 $INSTALLER plasticboy vim-markdown
+
+if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
+    # Use phpctags.sh installer first
+    $INSTALLER techlivezheng tagbar-phpctags
+fi
 
 # https://github.com/jelera/vim-javascript-syntax
 printf "\nInstalling javascript syntax\n"

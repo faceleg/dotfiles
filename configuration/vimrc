@@ -119,6 +119,7 @@ au BufWinEnter * normal zR
 " ====== Tagbar ======
 " https://github.com/majutsushi/tagbar
 nmap <f8> :TagbarToggle<cr>
+let g:tagbar_phpctags_bin='~/.phpctags/vendor/bin/phpctags'
 
 " ====== Multiple cursors ======
 " Quit multi cursor mode on <C-c>
@@ -150,7 +151,9 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 
 " ====== Vim JSDoc ======
 " https://github.com/faceleg/vim-jsdoc
-let g:jsdoc_input_description=1
+let g:jsdoc_input_description = 1
+let g:jsdoc_allow_input_prompt = 1
+
 " Default is <C-l>, which conflicts with window movement mapped below
 nmap <C-y> <Plug>(jsdoc)
 
