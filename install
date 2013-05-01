@@ -6,7 +6,7 @@ OPTIONS
             Print this message
 
         -g, --git
-            Perform basc git setup
+            Perform basic git setup
 
         -v, --vim
             Install VIM plugins & syntax
