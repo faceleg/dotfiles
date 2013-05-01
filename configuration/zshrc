@@ -162,9 +162,14 @@ function apt-list-packages {
   dpkg-query -W --showformat='${Installed-Size} ${Package} ${Status}\n' | grep -v deinstall | sort -n | awk '{print $1" "$2}'
 }
 
+# If the tmux scripts have been installed, alias them
+if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
+    alias 'tmux-switch=~/.tmux-scripts/switch-create-attach.sh'
+fi
+
 # TMUX
-if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
-#if [[ -z $TMUX ]]; then
+#if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
+if [[ -z $TMUX ]]; then
     # Attempt to discover a detached session and attach it, else create a new session
     CURRENT_USER=$(whoami)
     if tmux has-session -t $CURRENT_USER 2>/dev/null; then
@@ -179,3 +184,4 @@ else
         $MOTD
     fi
 fi
+

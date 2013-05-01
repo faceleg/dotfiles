@@ -3,6 +3,7 @@ DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
 printf "\nReplacing zshrc\n"
+rm -f ~/.zshrc
 $CP "$DIR/../configuration/zshrc" ~/.zshrc
 
 DIRECTORY="`eval echo ~/.oh-my-zsh/custom/plugins`"
