@@ -88,6 +88,11 @@ map <c-j> <c-w><down>
 map <c-l> <c-w><right>
 map <c-h> <c-w><left>
 
+" ====== Don't jump around line endings when moving up & down ======
+" http://statico.github.io/vim.html
+:nmap j gj
+:nmap k gk
+
 " ======= Show special characters ======
 " http://vimcasts.org/episodes/show-invisibles/
 " Shortcut to rapidly toggle `set list`
