@@ -16,6 +16,7 @@ $INSTALLER airblade vim-gitgutter
 $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
+$INSTALLER tpope vim-haml
 $INSTALLER Shougo neocomplcache
 $INSTALLER kien ctrlp.vim
 $INSTALLER scrooloose syntastic
