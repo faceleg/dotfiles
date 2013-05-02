@@ -95,6 +95,9 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+" ====== Open preview window at bottom ======
+set splitbelow
+
 " ====== Allow repeatable single character insertions ======
 " http://vim.wikia.com/wiki/Insert_a_single_character
 function! RepeatChar(char, count)
@@ -112,9 +115,6 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd FileType c,cpp,java,php,ruby,python,javascript,vim,sh autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-
-" ====== Unfold all blocks on file open ======
-au BufWinEnter * normal zR
 
 " ====== Tagbar ======
 " https://github.com/majutsushi/tagbar
