@@ -114,7 +114,7 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd FileType c,cpp,java,php,ruby,python,javascript,vim,sh autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,python,javascript,vim,sh,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " ====== Tagbar ======
 " https://github.com/majutsushi/tagbar
