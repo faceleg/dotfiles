@@ -103,8 +103,8 @@ set splitbelow
 function! RepeatChar(char, count)
   return repeat(a:char, a:count)
 endfunction
-nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
-nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <leader>s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <leader>S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
 " ====== Delete trailing spaces on save ======
 " http://stackoverflow.com/a/1618401/187954
@@ -156,6 +156,9 @@ let g:jsdoc_allow_input_prompt = 1
 
 " Default is <C-l>, which conflicts with window movement mapped below
 nmap <C-y> <Plug>(jsdoc)
+
+" ====== CSS Family folding ======
+autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 
 " ====== Vim sparkup ======
 let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
