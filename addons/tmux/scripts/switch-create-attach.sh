@@ -2,6 +2,7 @@
 set -e
 
 # Switch to previous session if no session name is provided
+# https://gist.github.com/mislav/4525198
 if [[ -z $1 ]]; then
   tmux switch-client -l
 else
