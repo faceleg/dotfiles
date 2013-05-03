@@ -187,6 +187,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" ====== Highlight current line ======
+set cursorline
+nnoremap <Leader>c :set cursorline!<CR>
+
 " ====== Neocomplcache ======
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
