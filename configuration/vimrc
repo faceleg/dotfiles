@@ -257,6 +257,7 @@ highlight Pmenu ctermbg=black ctermfg=white
 
 " ====== CtrlP.vim ======
 " https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
+let g:ctrlp_map = '<leader>p'
 let g:ctrlp_arg_map = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom = 0         " Show at top of window
