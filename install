@@ -1,5 +1,5 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-g --git] [-p --phpctags] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
+USAGE="$(basename "$0") [-h --help] [-g --git] [-c --ctags ] [-p --phpctags] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
 
 OPTIONS
         -h, --help
@@ -7,6 +7,10 @@ OPTIONS
 
         -g, --git
             Perform basic git setup
+
+        -c, --ctags
+            Install patched ctags
+
         -p, --phpctags
             Install PHPCTags
 
@@ -27,11 +31,12 @@ CP="/bin/cp -vfr"
 
 INSTALL_GIT=false
 INSTALL_PHPCTAGS=false
+INSTALL_CTAGS=false
 INSTALL_VIM=false
 INSTALL_TMUX=false
 INSTALL_ZSH_PLUGINS=false
 
-if ! OPTIONS=$(getopt -o hgpvtza -l help,git,phpctags,vim,tmux,zsh,all -- "$@")
+if ! OPTIONS=$(getopt -o hgcpvtza -l help,git,ctags,phpctags,vim,tmux,zsh,all -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -40,12 +45,14 @@ while [ $# -gt 0 ]; do
     case $1 in
         "-h" | "--help") printf "$USAGE"; exit 0 ;;
         "-g" | "--git") INSTALL_GIT=true ;;
+        "-c" | "--ctags") INSTALL_CTAGS=true ;;
         "-p" | "--phpctags") INSTALL_PHPCTAGS=true ;;
         "-v" | "--vim") INSTALL_VIM=true ;;
         "-t" | "--tmux") INSTALL_TMUX=true ;;
         "-z" | "--zsh") INSTALL_ZSH_PLUGINS=true ;;
         "-a" | "--all")
             INSTALL_GIT=true
+            INSTALL_CTAGS=true
             INSTALL_PHPCTAGS=true
             INSTALL_VIM=true
             INSTALL_TMUX=true
@@ -64,6 +71,10 @@ fi
 
 if $INSTALL_GIT; then
     "$DIR/installers/git-configuration.sh"
+fi
+
+if $INSTALL_CTAGS; then
+    "$DIR/installers/ctags.sh"
 fi
 
 if $INSTALL_PHPCTAGS; then
