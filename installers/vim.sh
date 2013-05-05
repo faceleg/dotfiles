@@ -29,8 +29,12 @@ $INSTALLER ap vim-css-color
 $INSTALLER SirVer ultisnips
 $INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER tristen vim-sparkup
-$INSTALLER Townk vim-autoclose
+$INSTALLER Townk vim-autoclose                      # https://github.com/Townk/vim-autoclose
+$INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
+$INSTALLER vim-scripts phpfolding.vim
+$INSTALLER vim-scripts YankRing.vim
 $INSTALLER Lokaltog vim-powerline
+$INSTALLER Lokaltog vim-easymotion
 $INSTALLER tobyS pdv
 $INSTALLER pangloss vim-javascript
 $INSTALLER sickill vim-sunburst
@@ -38,13 +42,10 @@ $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER hlissner vim-multiedit
 $INSTALLER Valloric vim-indent-guides
 $INSTALLER Valloric MatchTagAlways
-$INSTALLER Lokaltog vim-easymotion
 $INSTALLER flazz vim-colorschemes
 $INSTALLER sjl gundo.vim
-$INSTALLER vim-scripts phpfolding.vim
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER jeetsukumaran vim-buffergator
-$INSTALLER vim-scripts YankRing.vim
 $INSTALLER plasticboy vim-markdown
 
 if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
