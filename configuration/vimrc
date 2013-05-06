@@ -95,6 +95,9 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+" ====== Remap <C-a> to <C-i> for Tmux ======
+noremap <C-i> <C-a>
+
 " ====== Open preview window at bottom ======
 set splitbelow
 
