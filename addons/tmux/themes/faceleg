@@ -12,7 +12,8 @@ set-option -g status-left-length 45
 set-option -g status-left '#[fg=white,nobright][ #[fg=black,bright,bg=default]#S #[fg=white,bright]# @ #[fg=black,bright]#h #[fg=white,nobright]]#[default]'
 
 set-window-option -g window-status-current-format '#[fg=red,bg=default]{ #[fg=white,bright,bg=default]#I:#P #W#[fg=red,nobright,bg=default] }#[fg=default]'
-set-window-option -g window-status-format '#[fg=white,nobright][ #I:#P #W ]'
+set-window-option -g window-status-format '#[fg=white,nobright]#I:#P #W'
+set-window-option -g window-status-separator " - "
 
 set-option -g status-right-length 45
 set-option -g status-right '#[fg=white,nobright][ #[fg=black,bright]%H:%M #[fg=white,nobright]~#[fg=white,bright,bg=default] 老婆大人 #[fg=white,nobright]~#[fg=black,bright]#(uptime | rev | cut -d":" -f1 | rev | sed s/,//g )#[fg=white,nobright] ]'
