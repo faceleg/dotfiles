@@ -3,21 +3,22 @@ set-option -g status-fg white
 set-option -g status-bg default
 set-option -g status-justify centre
 
-# setw -g window-status-current-fg black
-# setw -g window-status-current-bg red
+#setw -g window-status-current-fg black
+#setw -g window-status-current-bg red
 setw -g window-status-current-attr bright
-# setw -g window-status-current-attr underscore
+#setw -g window-status-current-attr underscore
 
 set-option -g status-left-length 45
 set-option -g status-left '#[fg=white,nobright][ #[fg=black,bright,bg=default]#S #[fg=white,bright]# @ #[fg=black,bright]#h #[fg=white,nobright]]#[default]'
 
 set-window-option -g window-status-current-format '#[fg=red,bg=default]{ #[fg=white,bright,bg=default]#I:#P:#W#[fg=red,nobright,bg=default] }#[fg=default]'
+set-window-option -g window-status-format '#[fg=white,nobright]#I:#P:#W'
 
 set-option -g status-right-length 45
 set-option -g status-right '#[fg=white,nobright][ #[fg=black,bright]%H:%M #[fg=white,nobright]~#[fg=white,bright,bg=default] 老婆大人 #[fg=white,nobright]~#[fg=black,bright]#(uptime | rev | cut -d":" -f1 | rev | sed s/,//g )#[fg=white,nobright] ]'
 
-# set-window-option -g window-status-bell-attr bold
-# set-window-option -g window-status-bell-fg yellow
-# set-window-option -g window-status-bell-bg default
+set-window-option -g window-status-bell-attr bold
+set-window-option -g window-status-bell-fg yellow
+set-window-option -g window-status-bell-bg default
 
 set-option -g pane-active-border-fg cyan
