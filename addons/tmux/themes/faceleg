@@ -22,3 +22,4 @@ set-window-option -g window-status-bell-fg yellow
 set-window-option -g window-status-bell-bg default
 
 set-option -g pane-active-border-fg cyan
+
