@@ -2,7 +2,7 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-printf "\nReplacing ctags and vimrc\n"
+printf "\nReplacing ctags and vimrc configuration files\n"
 $CP "$DIR/../configuration/ctags" ~/.ctags
 $CP "$DIR/../configuration/vimrc" ~/.vimrc
 
@@ -16,6 +16,7 @@ $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER tpope vim-haml
+$INSTALLER tpope vim-eunuch                         # https://github.com/tpope/vim-eunuch
 $INSTALLER Shougo neocomplcache
 $INSTALLER kien ctrlp.vim
 $INSTALLER scrooloose syntastic
