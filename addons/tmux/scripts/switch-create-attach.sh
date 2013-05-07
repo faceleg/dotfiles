@@ -12,9 +12,12 @@ else
   # Otherwise create or attach it
   else
     if [[ -z "$TMUX" ]]; then
-      tmux new-session -s "$1"
-    else 
       tmux attach -t "$1"
+    else
+      # Create new session, switch to it
+      # http://stackoverflow.com/a/16399160/187954
+      TMUX=`tmux new-session -d -s "$1"`
+      tmux switch-client -t "$1"
     fi
  fi
 fi
