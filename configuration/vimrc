@@ -179,9 +179,13 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 " https://github.com/faceleg/vim-jsdoc
 let g:jsdoc_input_description = 1
 let g:jsdoc_allow_input_prompt = 1
-
 " Default is <C-l>, which conflicts with window movement mapped below
-nmap <C-y> <Plug>(jsdoc)
+autocmd FileType javascript map <C-y> <Plug>(jsdoc)
+
+" ====== Vim PHPDoc ======
+" autocmd FileType php nmap <C-y> <Plug>(phpdoc)
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+autocmd FileType php nnoremap <buffer> <C-y> :call pdv#DocumentWithSnip()<CR>
 
 " ====== CSS Family folding ======
 autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
