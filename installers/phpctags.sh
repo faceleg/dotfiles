@@ -6,9 +6,8 @@ printf "\nInstalling phpctags\n"
 
 rm -rf ~/.phpctags
 
-$CP "$DIR/../addons/phpctags" ~/.phpctags
-
+git clone https://github.com/techlivezheng/phpctags.git ~/.phpctags
 cd ~/.phpctags
 
-composer install
+make
 
