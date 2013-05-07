@@ -24,6 +24,7 @@ $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose nerdcommenter
 $INSTALLER terryma vim-multiple-cursors
 $INSTALLER terryma vim-smooth-scroll                # https://github.com/terryma/vim-smooth-scroll
+$INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER majutsushi tagbar
 $INSTALLER xolox vim-easytags
 $INSTALLER ap vim-css-color
