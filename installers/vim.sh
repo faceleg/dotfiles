@@ -38,6 +38,7 @@ $INSTALLER terryma vim-expand-region                # https://github.com/terryma
 $INSTALLER terryma vim-multiple-cursors
 $INSTALLER terryma vim-smooth-scroll                # https://github.com/terryma/vim-smooth-scroll
 $INSTALLER tobyS pdv
+$INSTALLER tobyS vmustache
 $INSTALLER Townk vim-autoclose                      # https://github.com/Townk/vim-autoclose
 $INSTALLER tpope vim-eunuch                         # https://github.com/tpope/vim-eunuch
 $INSTALLER tpope vim-fugitive
