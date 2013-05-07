@@ -2,12 +2,11 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-"$DIR/vim/pathogen.sh"
-"$DIR/vim/plugins.sh"
-
 printf "\nReplacing ctags and vimrc\n"
 $CP "$DIR/../configuration/ctags" ~/.ctags
 $CP "$DIR/../configuration/vimrc" ~/.vimrc
+
+"$DIR/vim/pathogen.sh"
 
 printf "\nInstalling vim bundles\n"
 
