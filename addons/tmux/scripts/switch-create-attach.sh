@@ -11,7 +11,11 @@ else
     [[ -z "$TMUX" ]] && tmux attach -t "$1" || tmux switch-client -t "$1"
   # Otherwise create or attach it
   else
-    [[ -z "$TMUX" ]] && tmux new-session -s "$1" || tmux attach -t "$1"
+    if [[ -z "$TMUX" ]]; then
+      tmux new-session -s "$1"
+    else 
+      tmux attach -t "$1"
+    fi
  fi
 fi
 
