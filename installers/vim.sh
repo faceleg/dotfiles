@@ -23,6 +23,7 @@ $INSTALLER kien ctrlp.vim
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
+$INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
 $INSTALLER myusuf3 numbers.vim                      # https://github.com/myusuf3/numbers.vim
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER pangloss vim-javascript
