@@ -71,6 +71,13 @@ set scrolloff=8                " Start scrolling when we're 8 lines away from ma
 set sidescrolloff=15
 set sidescroll=1
 
+" ====== Smooth scrolling ======
+" https://github.com/terryma/vim-smooth-scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
 " ====== Search ======
 set hlsearch
 set incsearch
