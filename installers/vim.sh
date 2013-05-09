@@ -15,6 +15,8 @@ INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER airblade vim-gitgutter
 $INSTALLER ap vim-css-color
 $INSTALLER flazz vim-colorschemes
+$INSTALLER groenewege vim-less                      # https://github.com/groenewege/vim-less
+$INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER hlissner vim-multiedit
 $INSTALLER JazzCore neocomplcache-ultisnips
@@ -25,6 +27,7 @@ $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
 $INSTALLER myusuf3 numbers.vim                      # https://github.com/myusuf3/numbers.vim
+$INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER pangloss vim-javascript
 $INSTALLER plasticboy vim-markdown
