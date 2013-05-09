@@ -107,9 +107,10 @@ set listchars=tab:▸\ ,eol:¬
 let g:enable_numbers = 0            " disable contextual switching on startup
 nnoremap <F6> :NumbersToggle<CR>
 
-" ====== Remap <C-a> to <C-i> for Tmux ======       -4
+" ====== Remap <C-a> to <C-i> for Tmux ======
+" http://stackoverflow.com/a/16452857/187954
 nn <C-i> <C-a>                       " increment number
-"noremap <C-x> <C-k>                 " decrement number
+nn <C-x> <C-k>                       " decrement number
 
 " ====== Open preview window at bottom ======
 set splitbelow
