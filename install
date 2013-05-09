@@ -19,8 +19,9 @@ OPTIONS
 
         -t, --tmux
             Install tmux addons
+
         -m, --cmus
-            Install cmus addons 
+            Install cmus addons
 
         -z, --zsh
             Install ZSH plugins\n"
