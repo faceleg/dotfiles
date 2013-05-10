@@ -1,0 +1,142 @@
+# Chat and info messages format
+message %K<%c<%C< %n%|%c%2%n%3\n
+chat %K<%c<%C< %n%|%c%2%n%3\n
+sent %K>%g>%G> %n%|%3\n
+-query_started_window
+log %K<%c<%c< %n%|%c%2%n%3\n
+sent_log %K>%g>%g> %n%|%c%2%n%3\n
+irc_joined %> %Y%2%n (%y%3%n) has joined %4\n
+
+# "Sent" message
+jabber_muc_me_sent %) %|%G%3%n %4
+sent_me %) %|%G%4%n %3
+jabber_muc_recv2us %B<%r%5%3%B>%n %T%4
+#jabber_muc_recv %B<%{3AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzYyBbMmPpCcGgYyBbMmPpCcGgYyBbMmPpCcGgYyBbMmPpCcGgYyGg}X%5%3%B>%n %4
+jabber_muc_recv %B<%w%X%5%{6BbrMmCcYyGgwBbrMmCcYyGgw}X%3%B>%n %4
+
+# Status colors
+status_avail %> (%3) %1 is %Gavailable%n
+status_avail_descr %> (%3) %1 is %Gavailable%n: %T%4%n
+status_away %> (%3) %1 is %Yaway%n
+status_away_descr %> (%3) %1 is %Yaway%n: %T%4%n
+
+away %> (%1) Status changed to %Yaway%n
+away_descr %> (%3) Status changed to %Yaway%n: %T%1%n%2
+back %> (%1) Status changed to %Gavailable%n
+back_descr %> (%3) Status changed to %Havailable%n: %T%1%n%2%n
+
+# Prompt
+prompt %T--%g>%n
+
+# Conference headers and footers
+contacts_moderator_header %C  -- Moderators --
+contacts_moderator_footer  
+
+contacts_participant_header %C -- Participants --
+contacts_participant_footer  
+
+contacts_visitor_header %C   -- Visitors --
+contacts_visitor_footer  
+
+# MUC notice
+jabber_muc_notice \n%g-- %gMessage from: %P%2%n %g--\n%3\n%g----%n\n 
+
+# Contact's colors and formatting
+header 
+contacts_header
+contacts_header_group %G%1%n
+contacts_metacontacts_header 
+contacts_vertical_line_char 
+
+# Free for chat
+contacts_chat_header %C     -- Chat --
+contacts_chat   %G%1%n
+contacts_chat_descr  %Ci%n%G%1%n
+contacts_chat_descr_full  %Ci%n%G%1%n %2
+contacts_chat_blink  %G%U%1%n
+contacts_chat_descr_blink  %Ci%n%G%U%1%n
+contacts_chat_descr_full_blink  %Ci%n%G%U%1%n %2
+
+# Avail
+contacts_avail_header %C   -- Availble --
+contacts_avail   %g%1%n
+contacts_avail_descr  %Ci%n%g%1%n
+contacts_avail_descr_full  %Ci%n%g%1%n %2
+contacts_avail_blink  %g%U%1%n
+contacts_avail_descr_blink  %Ci%n%g%U%1%n
+contacts_avail_descr_full_blink  %Ci%n%g%U%1%n %2
+
+# Away
+contacts_away_header %C     -- Away --
+contacts_away   %y%1%n
+contacts_away_descr  %Ci%n%y%1%n
+contacts_away_descr_full  %Ci%n%y%1%n %2
+contacts_away_blink   %y%U%1%n
+contacts_away_descr_blink  %Ci%n%y%U%1%n
+contacts_away_descr_full_blink  %Ci%n%y%U%1%n %2
+
+# Extended away
+contacts_xa_header %C      -- XA --
+contacts_xa   %B%1%n
+contacts_xa_descr  %Ci%n%B%1%n
+contacts_xa_descr_full  %Ci%n%B%1%n %2
+contacts_xa_blink  %B%U%1%n
+contacts_xa_descr_blink  %Ci%n%B%U%1%n
+contacts_xa_descr_full_blink  %Ci%n%B%U%1%n %2
+
+# Do not disturb
+contacts_dnd_header %C    -- DoNotD --
+contacts_dnd   %B%1%n
+contacts_dnd_descr  %Ci%n%B%1%n
+contacts_dnd_descr_full  %Ci%n%B%1%n %2
+contacts_dnd_blink  %B%U%1%n
+contacts_dnd_descr_blink  %Ci%n%B%U%1%n
+contacts_dnd_descr_full_blink  %Ci%n%B%U%1%n %2
+
+# Not available
+contacts_notavail_header %C      -- NA --
+contacts_notavail   %r%1%n
+contacts_notavail_descr  %Ci%n%r%1%n
+contacts_notavail_descr_full  %Ci%n%r%1%n %2
+contacts_notavail_blink  %r%U%1%n
+contacts_notavail_descr_blink  %Ci%n%r%U%1%n
+contacts_notavail_descr_full_blink  %Ci%n%r%U%1%n %2
+contacts_notavail_footer  
+
+# Invisible
+contacts_invisible_header %C     -- Invis --
+contacts_invisible   %B%1%n
+contacts_invisible_descr  %Ci%n%B%1%n
+contacts_invisible_descr_full  %Ci%n%B%1%n %2
+contacts_invisible_blink  %B%U%1%n
+contacts_invisible_descr_blink  %Ci%n%B%U%1%n
+contacts_invisible_descr_full_blink  %Ci%n%B%U%1%n %2
+
+# Unknown users
+contacts_unknown_header %C   -- %Y!%CUnknown --
+contacts_unknown   %M%1%n
+contacts_unknown_footer  
+
+# Blocking users
+contacts_blocking_header %C   -- Blocking --
+contacts_blocking   %B%1%n
+contacts_blocking_footer  
+
+# Error'd users
+contacts_error_header %C    -- %r!%CError --
+contacts_error   %M%1%n
+contacts_error_descr   %Ki%M%1%n
+contacts_error_footer  
+
+# Footers
+contacts_footer 
+contacts_footer_group  
+contacts_metacontacts_footer  
+
+# Colors and so on
+statusbar_act_important %G
+statusbar_act_important2us %W
+statusbar_act %r
+
+# Statusbar
+statusbar %l%w[%n%B%l%{?session %{session} %G%{?avail avail}%Y%{?away away}%{?invisible invis}%R%{?notavail notavail}%Y%{?xa xa}%R%{?dnd do not disturb}%G%{?chat freeforchat}}%{?!session ---}%w] [%n%B%l%{?window %{window}}%{?query :%{query}}%{?debug debug}%{?activity %w] [%n%r%lact: }%c%{activity}%{?mail %b] [%n%B%l mail:}%{mail}%{?more %b] [%n%B%lmore}%w]%n%l
