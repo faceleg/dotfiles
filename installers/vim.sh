@@ -12,6 +12,7 @@ printf "\nInstalling vim bundles\n"
 
 INSTALLER="$DIR/vim/bundle.sh"
 
+#$INSTALLER scrooloose nerdcommenter
 $INSTALLER airblade vim-gitgutter
 $INSTALLER ap vim-css-color
 $INSTALLER flazz vim-colorschemes
@@ -31,7 +32,6 @@ $INSTALLER othree html5.vim                         # https://github.com/othree/
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER pangloss vim-javascript
 $INSTALLER plasticboy vim-markdown
-$INSTALLER scrooloose nerdcommenter
 $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose syntastic
 $INSTALLER Shougo neocomplcache
@@ -44,6 +44,7 @@ $INSTALLER terryma vim-smooth-scroll                # https://github.com/terryma
 $INSTALLER tobyS pdv
 $INSTALLER tobyS vmustache
 $INSTALLER Townk vim-autoclose                      # https://github.com/Townk/vim-autoclose
+$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 $INSTALLER tpope vim-eunuch                         # https://github.com/tpope/vim-eunuch
 $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-haml

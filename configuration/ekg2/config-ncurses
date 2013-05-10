@@ -6,11 +6,11 @@ ncurses:contacts 1
 ncurses:contacts_descr 0
 ncurses:contacts_edge 2
 ncurses:contacts_frame 1
-ncurses:contacts_groups 
+ncurses:contacts_groups
 ncurses:contacts_groups_all_sessons 0
 ncurses:contacts_margin 1
 ncurses:contacts_metacontacts_swallow 1
-ncurses:contacts_order 
+ncurses:contacts_order
 ncurses:contacts_orderbystate 1
 ncurses:contacts_size 25
 ncurses:contacts_wrap 0
