@@ -1,0 +1,30 @@
+# vim:fenc=UTF-8
+ncurses:aspell 1
+ncurses:aspell_lang en
+ncurses:backlog_size 1000
+ncurses:contacts 1
+ncurses:contacts_descr 0
+ncurses:contacts_edge 2
+ncurses:contacts_frame 1
+ncurses:contacts_groups 
+ncurses:contacts_groups_all_sessons 0
+ncurses:contacts_margin 1
+ncurses:contacts_metacontacts_swallow 1
+ncurses:contacts_order 
+ncurses:contacts_orderbystate 1
+ncurses:contacts_size 25
+ncurses:contacts_wrap 0
+ncurses:display_transparent 1
+ncurses:enter_scrolls 0
+ncurses:header_size 0
+ncurses:kill_irc_window 1
+ncurses:lastlog_lock 1
+ncurses:lastlog_size 10
+ncurses:margin_size 15
+ncurses:mark_on_window_change 0
+ncurses:statusbar_size 1
+ncurses:text_bottomalign 0
+ncurses:traditional_clear 1
+ncurses:typing_interval 1
+ncurses:typing_timeout 10
+ncurses:typing_timeout_empty 5
