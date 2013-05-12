@@ -1,0 +1,137 @@
+auto_save 1
+auto_user_add 0
+away_reason 
+back_reason 
+beep 1
+beep_chat 1
+beep_msg 1
+beep_notify 1
+completion_char :
+completion_notify 1
+config_version 9
+console_charset UTF-8
+dcc_dir 
+debug 0
+default_status_window 1
+display_ack 0
+display_blinking 1
+display_color 1
+display_color_map nTgGbBrR
+display_crap 1
+display_day_changed 1
+display_notify 0
+display_sent 1
+display_welcome 1
+emoticons 1
+events_delay 3
+exit_exec 
+expert_mode 0
+history_savedups 1
+keep_reason 1
+last 0
+last_size 10
+lastlog_display_all 0
+lastlog_matchcase 0
+lastlog_noitems 0
+make_window 2
+mesg 1
+nickname 
+query_commands 0
+quit_reason 
+save_password 1
+save_quit 1
+send_white_lines 0
+session_default 
+session_locks 0
+sessions_save 0
+slash_messages 1
+sort_windows 0
+sound_app 
+sound_chat_file 
+sound_mail_file 
+sound_msg_file 
+sound_notify_file 
+sound_sysmsg_file 
+speech_app 
+subject_prefix ## 
+subject_reply_prefix Re: 
+tab_command 
+theme zekote
+time_deviation 300
+timestamp \%H:\%M
+timestamp_show 1
+window_session_allow 0
+windows_save 1
+alias q query
+alias ls echo %#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%
+alias ls list
+alias ls echo $#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+alias hidecontacts set ncurses:contacts 0
+alias showcontacts set ncurses:contacts 1
+alias redraw window refresh
+bind Alt-` /window switch 0
+bind Alt-1 /window switch 1
+bind Alt-2 /window switch 2
+bind Alt-3 /window switch 3
+bind Alt-4 /window switch 4
+bind Alt-5 /window switch 5
+bind Alt-6 /window switch 6
+bind Alt-7 /window switch 7
+bind Alt-8 /window switch 8
+bind Alt-9 /window switch 9
+bind Alt-0 /window switch 10
+bind Alt-Q /window switch 11
+bind Alt-W /window switch 12
+bind Alt-E /window switch 13
+bind Alt-R /window switch 14
+bind Alt-T /window switch 15
+bind Alt-Y /window switch 16
+bind Alt-U /window switch 17
+bind Alt-I /window switch 18
+bind Alt-O /window switch 19
+bind Alt-P /window switch 20
+bind Alt-K backward-contacts-line
+bind Alt-N /window new
+bind Alt-A /window active
+bind Alt-G ignore-query
+bind Alt-B backward-word
+bind Alt-F forward-word
+bind Alt-D kill-word
+bind Alt-Enter toggle-input
+bind Escape cancel-input
+bind Ctrl-N /window next
+bind Ctrl-P /window prev
+bind Backspace backward-delete-char
+bind Ctrl-H backward-delete-char
+bind Ctrl-A beginning-of-line
+bind Home beginning-of-line
+bind Ctrl-D delete-char
+bind Delete delete-char
+bind Ctrl-E end-of-line
+bind End end-of-line
+bind Ctrl-K kill-line
+bind Ctrl-Y yank
+bind Enter accept-line
+bind Ctrl-M accept-line
+bind Ctrl-U line-discard
+bind Ctrl-V quoted-insert
+bind Ctrl-W word-rubout
+bind Alt-Backspace word-rubout
+bind Ctrl-L /window refresh
+bind Tab complete
+bind Right forward-char
+bind Left backward-char
+bind Up previous-history
+bind Down next-history
+bind PageUp backward-page
+bind Ctrl-F backward-page
+bind PageDown forward-page
+bind Ctrl-G forward-page
+bind Ctrl-X cycle-sessions
+bind F1 /help
+bind F2 quick-list
+bind F3 toggle-contacts
+bind F4 next-contacts-group
+bind F12 /window switch 0
+bind F11 ui-ncurses-debug-toggle
+bind Alt-J forward-contacts-line
