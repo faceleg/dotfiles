@@ -28,6 +28,7 @@ $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
 $INSTALLER myusuf3 numbers.vim                      # https://github.com/myusuf3/numbers.vim
+$INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
 $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
 $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER pangloss vim-javascript
