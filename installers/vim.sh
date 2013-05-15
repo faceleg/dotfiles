@@ -14,7 +14,7 @@ INSTALLER="$DIR/vim/bundle.sh"
 
 $INSTALLER airblade vim-gitgutter
 $INSTALLER ap vim-css-color
-$INSTALLER flazz vim-colorschemes
+# $INSTALLER flazz vim-colorschemes
 $INSTALLER groenewege vim-less                      # https://github.com/groenewege/vim-less
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
@@ -25,7 +25,7 @@ $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
-$INSTALLER myusuf3 numbers.vim                      # https://github.com/myusuf3/numbers.vim
+# $INSTALLER myusuf3 numbers.vim                      # https://github.com/myusuf3/numbers.vim
 $INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
 $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
 $INSTALLER othree javascript-libraries-syntax.vim
@@ -48,7 +48,7 @@ $INSTALLER tpope vim-haml
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER tristen vim-sparkup
-$INSTALLER Valloric MatchTagAlways
+# $INSTALLER Valloric MatchTagAlways
 $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
 $INSTALLER vim-scripts phpfolding.vim
