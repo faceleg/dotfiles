@@ -12,7 +12,6 @@ printf "\nInstalling vim bundles\n"
 
 INSTALLER="$DIR/vim/bundle.sh"
 
-#$INSTALLER scrooloose nerdcommenter
 $INSTALLER airblade vim-gitgutter
 $INSTALLER ap vim-css-color
 $INSTALLER flazz vim-colorschemes
@@ -20,7 +19,6 @@ $INSTALLER groenewege vim-less                      # https://github.com/groenew
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER hlissner vim-multiedit
-$INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
 $INSTALLER Lokaltog vim-easymotion
@@ -35,9 +33,7 @@ $INSTALLER pangloss vim-javascript
 $INSTALLER plasticboy vim-markdown
 $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose syntastic
-$INSTALLER Shougo neocomplcache
 $INSTALLER sickill vim-sunburst
-$INSTALLER SirVer ultisnips
 $INSTALLER sjl gundo.vim
 $INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER terryma vim-multiple-cursors
@@ -53,11 +49,10 @@ $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER tristen vim-sparkup
 $INSTALLER Valloric MatchTagAlways
-$INSTALLER Valloric vim-indent-guides
+$INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
 $INSTALLER vim-scripts phpfolding.vim
 $INSTALLER vim-scripts YankRing.vim
-$INSTALLER xolox vim-easytags
 
 if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
     # Use phpctags.sh installer first
@@ -80,4 +75,8 @@ if [[ ! -d $JSCTAGS_DIR ]]; then
     cd jsctags
     sudo make install
 fi
+
+printf "\nInstalling YouCompleteMe\n"
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
 
