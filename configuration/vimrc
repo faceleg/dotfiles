@@ -137,8 +137,8 @@ autocmd FileType c,cpp,java,php,ruby,python,javascript,vim,sh,ant,xml autocmd Bu
 " https://github.com/majutsushi/tagbar
 nmap <f8> :TagbarToggle<cr>
 let g:tagbar_phpctags_bin='~/.phpctags/phpctags'
-let g:tagbar_autoshowtag = 1
-autocmd VimEnter * nested :call tagbar#autoopen(1)
+" let g:tagbar_autoshowtag = 0
+" autocmd VimEnter * nested :call tagbar#autoopen(1)
 let g:tagbar_type_css = {
 \ 'ctagstype' : 'Css',
     \ 'kinds'     : [
