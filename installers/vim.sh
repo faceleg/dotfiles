@@ -15,7 +15,6 @@ INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER airblade vim-gitgutter
 $INSTALLER ap vim-css-color
 # $INSTALLER flazz vim-colorschemes
-$INSTALLER groenewege vim-less                      # https://github.com/groenewege/vim-less
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER hlissner vim-multiedit
@@ -25,10 +24,9 @@ $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
-# $INSTALLER myusuf3 numbers.vim                      # https://github.com/myusuf3/numbers.vim
-$INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
-$INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
-$INSTALLER othree javascript-libraries-syntax.vim
+# $INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
+# $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
+# $INSTALLER othree javascript-libraries-syntax.vim
 $INSTALLER pangloss vim-javascript
 $INSTALLER plasticboy vim-markdown
 $INSTALLER scrooloose nerdtree
@@ -51,8 +49,9 @@ $INSTALLER tristen vim-sparkup
 # $INSTALLER Valloric MatchTagAlways
 $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
-$INSTALLER vim-scripts phpfolding.vim
+# $INSTALLER vim-scripts phpfolding.vim
 $INSTALLER vim-scripts YankRing.vim
+$INSTALLER rodjek vim-puppet                        # https://github.com/rodjek/vim-puppet
 
 if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
     # Use phpctags.sh installer first
@@ -76,7 +75,7 @@ if [[ ! -d $JSCTAGS_DIR ]]; then
     sudo make install
 fi
 
-printf "\nInstalling YouCompleteMe\n"
-cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
+# printf "\nInstalling YouCompleteMe\n"
+# cd ~/.vim/bundle/YouCompleteMe
+# ./install.sh --clang-completer
 

@@ -85,7 +85,9 @@ set smartcase
 set ignorecase
 " this unsets the "last search pattern" register by hitting return
 " http://stackoverflow.com/a/662914
-nnoremap <cr> :noh<cr><cr>
+" nnoremap <cr> :noh<cr><cr>
+" http://statico.github.io/vim.html
+nmap <leader>q :nohlsearch<CR>
 
 " ====== Window movement convenience ======
 " map ctrl-movement keys to window switching
@@ -101,11 +103,6 @@ map <c-h> <c-w><left>
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-
-" ====== Line numbers ======
-" https://github.com/myusuf3/numbers.vim
-" let g:enable_numbers = 0            " disable contextual switching on startup
-" nnoremap <F6> :NumbersToggle<CR>
 
 " ====== Remap <C-a> to <C-i> for Tmux ======
 " http://stackoverflow.com/a/16452857/187954
@@ -131,7 +128,7 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd FileType c,cpp,java,php,ruby,python,javascript,vim,sh,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,css,java,php,ruby,python,javascript,vim,sh,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " ====== Tagbar ======
 " https://github.com/majutsushi/tagbar
@@ -147,10 +144,6 @@ let g:tagbar_type_css = {
         \ 'i:identities'
     \ ]
 \ }
-
-" ====== Multiple cursors ======
-" Quit multi cursor mode on <C-c>
-let g:multi_cursor_quit_keys='<Esc>,<C-c>'
 
 " ====== Gundo ======
 " http://sjl.bitbucket.org/gundo.vim/#installation
@@ -170,11 +163,11 @@ let g:html_indent_style1 = "inc"
 au FileType javascript call JavaScriptFold()
 
 " Javascript Libraries Syntax https://github.com/othree/javascript-libraries-syntax.vim
-autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
-autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
-autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
-autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
-autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
+" autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+" autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 
 " ====== Vim JSDoc ======
 " https://github.com/faceleg/vim-jsdoc
@@ -304,10 +297,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Focus file window when opening vim or a file in a new tab
 autocmd VimEnter * wincmd l
 nmap <leader>n :NERDTreeFind<CR>           " Show the current file in the tree
-
-" ====== NERDTree Tabs ======
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_smart_startup_focus=2
 
 " ====== Vim powerline ======
 " set rtp+=~/.vim/bundle/powerline/bindings/vim
