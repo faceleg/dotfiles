@@ -46,10 +46,8 @@ $INSTALLER tpope vim-haml
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER tristen vim-sparkup
-# $INSTALLER Valloric MatchTagAlways
 $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
-# $INSTALLER vim-scripts phpfolding.vim
 $INSTALLER vim-scripts YankRing.vim
 $INSTALLER rodjek vim-puppet                        # https://github.com/rodjek/vim-puppet
 

@@ -291,11 +291,12 @@ let g:ctrlp_open_new_file = 'v'             " Open newly created files in a new 
 let g:ctrlp_open_multiple_files = '2vjr'    " Open multiple files in new tabs
 
 " ====== NERDtree ======
+let NERDTreeWinSize=26
 autocmd vimenter * NERDTree
 " Close vim if NERDTree is the only thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Focus file window when opening vim or a file in a new tab
-autocmd VimEnter * wincmd l
+" autocmd VimEnter * wincmd l
 nmap <leader>n :NERDTreeFind<CR>           " Show the current file in the tree
 
 " ====== Vim powerline ======
