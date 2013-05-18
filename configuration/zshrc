@@ -73,7 +73,7 @@ if command_exists rbenv; then
     USER_PLUGINS+=(rbenv)
 fi
 
-USER_PLUGINS+=(zsh-syntax-highlighting)
+USER_PLUGINS+=(zsh-syntax-highlighting,vagrant)
 plugins=($USER_PLUGINS)
 
 # Customize to your needs...

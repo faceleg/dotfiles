@@ -37,6 +37,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+au FileType python,ruby,puppet setl sw=2 sts=2 et
 
 filetype plugin indent on
 filetype plugin on
