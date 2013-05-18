@@ -35,6 +35,7 @@ $INSTALLER sickill vim-sunburst
 $INSTALLER sjl gundo.vim
 $INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER terryma vim-multiple-cursors
+$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 $INSTALLER terryma vim-smooth-scroll                # https://github.com/terryma/vim-smooth-scroll
 $INSTALLER tobyS pdv
 $INSTALLER tobyS vmustache
