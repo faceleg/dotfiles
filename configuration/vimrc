@@ -244,7 +244,7 @@ autocmd vimenter * NERDTree
 " Close vim if NERDTree is the only thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Focus file window when opening vim or a file in a new tab
-" autocmd VimEnter * wincmd l
+autocmd VimEnter * wincmd l
 nmap <leader>n :NERDTreeFind<CR>           " Show the current file in the tree
 
 " ====== Vim powerline ======
