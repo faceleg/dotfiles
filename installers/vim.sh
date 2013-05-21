@@ -13,7 +13,6 @@ printf "\nInstalling vim bundles\n"
 INSTALLER="$DIR/vim/bundle.sh"
 
 # $INSTALLER flazz vim-colorschemes
-# $INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
 # $INSTALLER othree javascript-libraries-syntax.vim
 # $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER airblade vim-gitgutter
@@ -28,6 +27,7 @@ $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
+$INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
 $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
 $INSTALLER pangloss vim-javascript
 $INSTALLER plasticboy vim-markdown
