@@ -51,6 +51,8 @@ $INSTALLER tpope vim-haml
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER tristen vim-sparkup
+$INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
+$INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
 $INSTALLER Valloric MatchTagAlways                   # https://github.com/Valloric/MatchTagAlways
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
 $INSTALLER vim-scripts YankRing.vim
