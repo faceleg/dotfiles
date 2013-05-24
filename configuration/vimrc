@@ -190,7 +190,7 @@ let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
 
 " ====== MatchTagAlways ======
 " https://github.com/valloric/MatchTagAlways
-let g:mta_use_matchparen_group = 0
+let g:mta_use_matchparen_group = 1
 highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
 let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
 
