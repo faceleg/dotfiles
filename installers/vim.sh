@@ -16,7 +16,6 @@ INSTALLER="$DIR/vim/bundle.sh"
 # $INSTALLER othree javascript-libraries-syntax.vim
 # $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER airblade vim-gitgutter
-$INSTALLER mileszs ack.vim                          # https://github.com/mileszs/ack.vim
 $INSTALLER ap vim-css-color
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
@@ -27,6 +26,7 @@ $INSTALLER kien ctrlp.vim
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
+$INSTALLER mileszs ack.vim                          # https://github.com/mileszs/ack.vim
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
 $INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
 $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
@@ -49,12 +49,13 @@ $INSTALLER tpope vim-commentary                     # https://github.com/tpope/v
 $INSTALLER tpope vim-eunuch                         # https://github.com/tpope/vim-eunuch
 $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-haml
+$INSTALLER tpope vim-repeat                         # https://github.com/tpope/vim-repeat
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER tristen vim-sparkup
 $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
 $INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
-$INSTALLER Valloric MatchTagAlways                   # https://github.com/Valloric/MatchTagAlways
+$INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
 $INSTALLER vim-scripts YankRing.vim
 
