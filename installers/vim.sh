@@ -14,6 +14,7 @@ INSTALLER="$DIR/vim/bundle.sh"
 
 # $INSTALLER flazz vim-colorschemes
 # $INSTALLER othree javascript-libraries-syntax.vim
+# $INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 # $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER airblade vim-gitgutter
 $INSTALLER ap vim-css-color
@@ -23,6 +24,7 @@ $INSTALLER hlissner vim-multiedit
 $INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
+$INSTALLER kien rainbow_parenthesis.vim             # https://github.com/kien/rainbow_parentheses.vim
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
@@ -46,7 +48,6 @@ $INSTALLER terryma vim-smooth-scroll                # https://github.com/terryma
 $INSTALLER tobyS pdv
 $INSTALLER tobyS vmustache
 $INSTALLER Townk vim-autoclose                      # https://github.com/Townk/vim-autoclose
-# $INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 $INSTALLER tpope vim-eunuch                         # https://github.com/tpope/vim-eunuch
 $INSTALLER tpope vim-fugitive
 $INSTALLER tpope vim-haml
