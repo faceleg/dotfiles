@@ -16,6 +16,7 @@ INSTALLER="$DIR/vim/bundle.sh"
 # $INSTALLER othree javascript-libraries-syntax.vim
 # $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER airblade vim-gitgutter
+$INSTALLER mileszs ack.vim                          # https://github.com/mileszs/ack.vim
 $INSTALLER ap vim-css-color
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
