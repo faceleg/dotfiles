@@ -24,7 +24,7 @@ $INSTALLER hlissner vim-multiedit
 $INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
-$INSTALLER kien rainbow_parenthesis.vim             # https://github.com/kien/rainbow_parentheses.vim
+$INSTALLER kien rainbow_parentheses.vim             # https://github.com/kien/rainbow_parentheses.vim
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
