@@ -36,10 +36,10 @@ command_exists () {
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-USER_PLUGINS=(git sublime rsync themes urltools)
+USER_PLUGINS=(git git-flow rsync themes urltools zsh-syntax-highlighting vagrant web-search)
 
 if  is_osx; then
+    USER_PLUGINS+=(osx)
     if command_exists brew; then
         USER_PLUGINS+=(brew)
     fi
@@ -66,14 +66,13 @@ if command_exists git-extras; then
     USER_PLUGINS+=(git-extras)
 fi
 
-if command_exists rbenv; then
-    # ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
-    # export PATH="$HOME/.rbenv/bin:$PATH"
-    # eval "$(rbenv init -)"
-    USER_PLUGINS+=(rbenv)
-fi
+#if command_exists rbenv; then
+#    # ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
+#    # export PATH="$HOME/.rbenv/bin:$PATH"
+#    # eval "$(rbenv init -)"
+#    USER_PLUGINS+=(rbenv)
+#fi
 
-USER_PLUGINS+=(zsh-syntax-highlighting,vagrant)
 plugins=($USER_PLUGINS)
 
 # Customize to your needs...
@@ -114,8 +113,8 @@ if [ -f "$ZSH_SYNTAX_HIGHLIGHTING_PLUGIN" ]; then
 fi
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
-#autoload -U compinit
-compinit
+autoload -U compinit
+#compinit
 
 for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
@@ -132,7 +131,7 @@ alias ll='ls -l'
 alias la='ls -a'
 
 HISTFILE=~/.zhistory
-HISTSIZE=SAVEHIST=15000
+HISTSIZE=SAVEHIST=5000
 setopt incappendhistory
 setopt sharehistory
 setopt extendedhistory
