@@ -24,3 +24,7 @@ else
     git pull
 fi
 
+printf "\nInstalling custom smt-vi theme\n"
+
+cp "$DIR/../addons/zsh/themes/smt-vi.zsh-theme" "`eval echo ~/.oh-my-zsh/themes/`"
+
