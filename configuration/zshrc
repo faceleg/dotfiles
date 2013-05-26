@@ -82,6 +82,7 @@ export VISUAL=vim
 
 # Vi mode
 bindkey -v
+bindkey "^R" history-incremental-search-backward
 
 # 10ms for key sequences
 KEYTIMEOUT=1
