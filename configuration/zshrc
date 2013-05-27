@@ -80,13 +80,6 @@ export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/u
 source $ZSH/oh-my-zsh.sh
 export VISUAL=vim
 
-# Vi mode
-bindkey -v
-bindkey '^R' history-incremental-pattern-search-backward
-
-# 10ms for key sequences
-KEYTIMEOUT=1
-
 ZSH_SYNTAX_HIGHLIGHTING_PLUGIN=~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ -f "$ZSH_SYNTAX_HIGHLIGHTING_PLUGIN" ]; then
@@ -121,7 +114,6 @@ fi
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
 autoload -U compinit
-#compinit
 
 for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
@@ -165,9 +157,13 @@ elif  is_osx; then
     # Mac OS X related aliases here
 fi
 
-function apt-list-packages {
-  dpkg-query -W --showformat='${Installed-Size} ${Package} ${Status}\n' | grep -v deinstall | sort -n | awk '{print $1" "$2}'
-}
+
+# Vi mode
+bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
+
+# 10ms for key sequences
+KEYTIMEOUT=1
 
 # If the tmux scripts have been installed, alias them
 if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
@@ -175,7 +171,6 @@ if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
 fi
 
 # TMUX
-#if [[ "$TERM" != "screen-256color" ]] && [[ "$SSH_CONNECTION" == "" ]]; then
 if [[ -z $TMUX ]]; then
     # Attempt to discover a detached session and attach it, else create a new session
     CURRENT_USER=$(whoami)
