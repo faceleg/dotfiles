@@ -162,6 +162,12 @@ fi
 bindkey -v
 bindkey '^R' history-incremental-pattern-search-backward
 
+# Allow deleting backwards
+# http://www.zsh.org/mla/workers/2008/msg01653.html
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
+
+
 # 10ms for key sequences
 KEYTIMEOUT=1
 
