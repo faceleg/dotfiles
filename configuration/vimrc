@@ -88,9 +88,8 @@ set hlsearch
 set incsearch
 set smartcase
 set ignorecase
-" this unsets the "last search pattern" register by hitting return
-" http://stackoverflow.com/a/662914
-" nnoremap <cr> :noh<cr><cr>
+
+" Clear search highlight
 " http://statico.github.io/vim.html
 nmap <leader>q :nohlsearch<CR>
 
