@@ -105,11 +105,6 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-" ====== Remap <C-a> to <C-i> for Tmux ======
-" http://stackoverflow.com/a/16452857/187954
-nn <C-i> <C-a>                       " increment number
-nn <C-x> <C-k>                       " decrement number
-
 " ====== Open preview window at bottom ======
 set splitbelow
 
