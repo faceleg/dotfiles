@@ -177,6 +177,9 @@ nmap <C-y> <Plug>(jsdoc)
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <C-y> :call pdv#DocumentWithSnip()<CR>
 
+" ====== Filetype overrides ======
+au BufNewFile,BufRead *.phtml setf phtml
+
 " ====== CSS Family folding ======
 autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 
