@@ -17,6 +17,7 @@ INSTALLER="$DIR/vim/bundle.sh"
 # $INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 # $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER airblade vim-gitgutter
+$INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER ap vim-css-color
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
