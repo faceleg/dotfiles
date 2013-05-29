@@ -12,10 +12,11 @@ printf "\nInstalling vim bundles\n"
 
 INSTALLER="$DIR/vim/bundle.sh"
 
-# $INSTALLER flazz vim-colorschemes
-# $INSTALLER othree javascript-libraries-syntax.vim
-# $INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
-# $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
+#$INSTALLER flazz vim-colorschemes
+#$INSTALLER othree javascript-libraries-syntax.vim
+#$INSTALLER Shougo neocomplcache
+#$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
+#$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 $INSTALLER airblade vim-gitgutter
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER ap vim-css-color
@@ -39,9 +40,7 @@ $INSTALLER rodjek vim-puppet                        # https://github.com/rodjek/
 $INSTALLER scrooloose nerdcommenter                 # https://github.com/scrooloose/nerdcommenter
 $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose syntastic
-$INSTALLER Shougo neocomplcache
 $INSTALLER sickill vim-sunburst
-$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 $INSTALLER sjl gundo.vim
 $INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER terryma vim-multiple-cursors
@@ -59,6 +58,7 @@ $INSTALLER tristen vim-sparkup
 $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
 $INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
 $INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
+$INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
 $INSTALLER vim-scripts YankRing.vim
 
@@ -83,4 +83,9 @@ if [[ ! -d $JSCTAGS_DIR ]]; then
     cd jsctags
     sudo make install
 fi
+
+
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
+
 
