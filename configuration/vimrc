@@ -314,3 +314,7 @@ set laststatus=2
 " ====== YankRing ======
 nnoremap <silent> <F3> :YRShow<CR>
 
+" ====== SplitJoin ======
+" https://github.com/AndrewRadev/splitjoin.vim
+nmap gS :SplitjoinSplit<cr>
+nmap gJ :SplitjoinJoin<cr>
