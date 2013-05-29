@@ -20,6 +20,7 @@ INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER airblade vim-gitgutter
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER ap vim-css-color
+$INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER hlissner vim-multiedit
