@@ -55,7 +55,7 @@ $INSTALLER tpope vim-haml
 $INSTALLER tpope vim-repeat                         # https://github.com/tpope/vim-repeat
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
-$INSTALLER tristen vim-sparkup
+$INSTALLER sinisterstuf vim-sparkup                 # https://github.com/sinisterstuf/vim-sparkup
 $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
 $INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
 $INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
