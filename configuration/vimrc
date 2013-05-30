@@ -67,6 +67,12 @@ set noswapfile
 set nobackup
 set nowb
 
+" ====== Syntastic ======
+" Show / hide location list
+noremap <silent><leader>lc :lcl<CR>
+noremap <silent><leader>lo :lw<CR>
+let syntastic_enable_signs=1
+
 " ====== Persistent Undo ======
 " Keep undo history across sessions, by storing in file.
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
