@@ -46,7 +46,9 @@ filetype plugin on
 
 " ====== Spelling toggle ======
 " http://yavin4.anshul.info/2006/05/18/spell-check-in-vim-7/
-map <silent> <F7> :set nospell!<CR>:set nospell?<CR>
+set spelllang=en_nz
+" Toggle spelling & line highlighting with F7
+map <silent> <F7> :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
 
 " ====== Disable arrow keys ======
 map <up> <nop>
