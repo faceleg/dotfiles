@@ -70,10 +70,13 @@ set nobackup
 set nowb
 
 " ====== Syntastic ======
+" https://github.com/scrooloose/syntastic
 " Show / hide location list
 noremap <silent><leader>lc :lcl<CR>
 noremap <silent><leader>lo :lw<CR>
+let g:syntastic_mode_map={ 'mode': 'active' }
 let syntastic_enable_signs=1
+let g:syntastic_always_populate_loc_list=1
 
 " ====== Persistent Undo ======
 " Keep undo history across sessions, by storing in file.
