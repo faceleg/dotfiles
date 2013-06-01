@@ -17,6 +17,7 @@ INSTALLER="$DIR/vim/bundle.sh"
 #$INSTALLER Shougo neocomplcache
 #$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 #$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
+#$INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
 $INSTALLER airblade vim-gitgutter
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER ap vim-css-color
@@ -42,6 +43,7 @@ $INSTALLER scrooloose nerdcommenter                 # https://github.com/scroolo
 $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose syntastic
 $INSTALLER sickill vim-sunburst
+$INSTALLER sinisterstuf vim-sparkup                 # https://github.com/sinisterstuf/vim-sparkup
 $INSTALLER sjl gundo.vim
 $INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER terryma vim-multiple-cursors
@@ -55,9 +57,7 @@ $INSTALLER tpope vim-haml
 $INSTALLER tpope vim-repeat                         # https://github.com/tpope/vim-repeat
 $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
-$INSTALLER sinisterstuf vim-sparkup                 # https://github.com/sinisterstuf/vim-sparkup
 $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
-$INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
 $INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
 $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
