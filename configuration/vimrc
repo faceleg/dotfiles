@@ -74,9 +74,11 @@ set nowb
 " Show / hide location list
 noremap <silent><leader>lc :lcl<CR>
 noremap <silent><leader>lo :lw<CR>
-let g:syntastic_mode_map={ 'mode': 'active' }
-let syntastic_enable_signs=1
-let g:syntastic_always_populate_loc_list=1
+let g:syntastic_mode_map = { 'mode': 'active' }
+let syntastic_enable_signs = 1
+let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_css_checkers=['csslint']
+
 
 " ====== Persistent Undo ======
 " Keep undo history across sessions, by storing in file.
@@ -144,7 +146,7 @@ autocmd FileType c,cpp,css,java,php,ruby,puppet,python,javascript,vim,sh,ant,xml
 
 " ====== Rainow Parenthesis ======
 " https://github.com/kien/rainbow_parentheses.vim
-map <Leader>r :RainbowToggle<cr>
+"map <Leader>r :RainbowParenthesesToggle<cr>
 
 " ====== Tagbar ======
 " https://github.com/majutsushi/tagbar
