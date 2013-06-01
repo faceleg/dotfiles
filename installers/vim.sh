@@ -60,7 +60,7 @@ $INSTALLER tpope vim-unimpaired
 $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
 $INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
 $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
-$INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
+$INSTALLER inkarkat closetag.vim                    # https://github.com/inkarkat/closetag.vim
 $INSTALLER vim-scripts YankRing.vim
 
 if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
