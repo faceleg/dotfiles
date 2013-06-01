@@ -26,6 +26,7 @@ $INSTALLER ap vim-css-color
 $INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER hlissner vim-multiedit
+$INSTALLER inkarkat closetag.vim                    # https://github.com/inkarkat/closetag.vim
 $INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
@@ -60,7 +61,6 @@ $INSTALLER tpope vim-unimpaired
 $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
 $INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
 $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
-$INSTALLER vim-scripts closetag.vim                 # https://github.com/vim-scripts/closetag.vim
 $INSTALLER vim-scripts YankRing.vim
 
 if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
