@@ -12,23 +12,23 @@ printf "\nInstalling vim bundles\n"
 
 INSTALLER="$DIR/vim/bundle.sh"
 
+#$INSTALLER airblade vim-gitgutter                   # Disabled as seems slow
 #$INSTALLER flazz vim-colorschemes
+#$INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
+#$INSTALLER kien rainbow_parentheses.vim             # https://github.com/kien/rainbow_parentheses.vim
 #$INSTALLER othree javascript-libraries-syntax.vim
 #$INSTALLER Shougo neocomplcache
 #$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 #$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 #$INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
-$INSTALLER airblade vim-gitgutter
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER ap vim-css-color
 $INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
-$INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER hlissner vim-multiedit
 $INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
-$INSTALLER kien rainbow_parentheses.vim             # https://github.com/kien/rainbow_parentheses.vim
 $INSTALLER Lokaltog vim-easymotion
 $INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
@@ -85,8 +85,9 @@ if [[ ! -d $JSCTAGS_DIR ]]; then
     sudo make install
 fi
 
+#cd ~/.vim/bundle/YouCompleteMe
+#./install.sh --clang-completer
 
-cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
-
+# CSSLint for Syntastic
+sudo npm install -g csslint
 
