@@ -213,10 +213,10 @@ let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 " ====== GitGutter ======
-highlight GitGutterAdd ctermfg=Green ctermbg=DarkGray
-highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
-highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
-highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
+"highlight GitGutterAdd ctermfg=Green ctermbg=DarkGray
+"highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
+"highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
+"highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
 
 " ====== Highlight unwanted whitespace ======
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -328,3 +328,39 @@ nnoremap <silent> <F3> :YRShow<CR>
 " https://github.com/AndrewRadev/splitjoin.vim
 nmap gS :SplitjoinSplit<cr>
 nmap gJ :SplitjoinJoin<cr>
+
+" ====== YouCompleteMe/Ultisnips ======
+"function! g:UltiSnips_Complete()
+    "call UltiSnips_ExpandSnippet()
+    "if g:ulti_expand_res == 0
+        "if pumvisible()
+            "return "\<C-n>"
+        "else
+            "call UltiSnips_JumpForwards()
+            "if g:ulti_jump_forwards_res == 0
+               "return "\<TAB>"
+            "endif
+        "endif
+    "endif
+    "return ""
+"endfunction
+function! g:UltiSnips_Complete()
+    call UltiSnips_JumpForwards()
+    if g:ulti_jump_forwards_res == 0
+        call UltiSnips_ExpandSnippet()
+        if g:ulti_expand_res == 0
+            if pumvisible()
+                return "\<C-n>"
+            else
+                return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+
