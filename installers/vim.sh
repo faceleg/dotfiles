@@ -14,16 +14,15 @@ INSTALLER="$DIR/vim/bundle.sh"
 
 #$INSTALLER airblade vim-gitgutter                   # Disabled as seems slow
 #$INSTALLER flazz vim-colorschemes
-#$INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 #$INSTALLER kien rainbow_parentheses.vim             # https://github.com/kien/rainbow_parentheses.vim
 #$INSTALLER othree javascript-libraries-syntax.vim
 #$INSTALLER Shougo neocomplcache
-#$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 #$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 #$INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER ap vim-css-color
 $INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
+$INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER hlissner vim-multiedit
 $INSTALLER inkarkat closetag.vim                    # https://github.com/inkarkat/closetag.vim
@@ -45,6 +44,7 @@ $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose syntastic
 $INSTALLER sickill vim-sunburst
 $INSTALLER sinisterstuf vim-sparkup                 # https://github.com/sinisterstuf/vim-sparkup
+$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 $INSTALLER sjl gundo.vim
 $INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER terryma vim-multiple-cursors
