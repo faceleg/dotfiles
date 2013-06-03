@@ -15,7 +15,6 @@ INSTALLER="$DIR/vim/bundle.sh"
 #$INSTALLER airblade vim-gitgutter                   # Disabled as seems slow
 #$INSTALLER flazz vim-colorschemes
 #$INSTALLER kien rainbow_parentheses.vim             # https://github.com/kien/rainbow_parentheses.vim
-#$INSTALLER othree javascript-libraries-syntax.vim
 #$INSTALLER Shougo neocomplcache
 #$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 #$INSTALLER uguu-org vim-matrix-screensaver          # https://github.com/uguu-org/vim-matrix-screensaver
@@ -36,6 +35,7 @@ $INSTALLER mileszs ack.vim                          # https://github.com/mileszs
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
 $INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
 $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
+$INSTALLER othree javascript-libraries-syntax.vim   # https://github.com/othree/javascript-libraries-syntax.vim
 $INSTALLER pangloss vim-javascript
 $INSTALLER plasticboy vim-markdown
 $INSTALLER rodjek vim-puppet                        # https://github.com/rodjek/vim-puppet
@@ -62,6 +62,8 @@ $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/
 $INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
 $INSTALLER Valloric YouCompleteMe                   # https://github.com/Valloric/YouCompleteMe
 $INSTALLER vim-scripts YankRing.vim
+$INSTALLER xolox vim-easytags                       # https://github.com/xolox/vim-easytags
+$INSTALLER xolox vim-misc                           # https://github.com/xolox/vim-misc
 
 if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
     # Use phpctags.sh installer first

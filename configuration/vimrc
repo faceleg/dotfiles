@@ -180,6 +180,14 @@ let g:html_indent_style1 = "inc"
 
 au FileType javascript call JavaScriptFold()
 
+" ====== JavaScript Libraries Syntax ======
+" https://github.com/othree/javascript-libraries-syntax.vim
+autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
+
 " ====== Vim JSDoc ======
 " https://github.com/faceleg/vim-jsdoc
 let g:jsdoc_input_description = 1
@@ -283,6 +291,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 "if !exists('g:neocomplcache_omni_patterns')
   "let g:neocomplcache_omni_patterns = {}
@@ -328,6 +337,9 @@ nnoremap <silent> <F3> :YRShow<CR>
 " https://github.com/AndrewRadev/splitjoin.vim
 nmap gS :SplitjoinSplit<cr>
 nmap gJ :SplitjoinJoin<cr>
+
+" ====== YouCompleteMe ======
+let g:ycm_cache_omnifunc = 0    " Don't cache omnicompletions
 
 " ====== YouCompleteMe/Ultisnips ======
 "function! g:UltiSnips_Complete()
