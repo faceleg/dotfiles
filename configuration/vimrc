@@ -144,16 +144,18 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,cpp,css,java,php,ruby,puppet,python,javascript,vim,sh,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" ====== Rainow Parenthesis ======
-" https://github.com/kien/rainbow_parentheses.vim
-"map <Leader>r :RainbowParenthesesToggle<cr>
+" ====== Niji (Rainbow)  ======
+" https://github.com/amdt/vim-niji
+let g:niji_match_all_filetypes = 1
+
+" ====== EasyTags ======
+let g:easytags_file = '~/.vim/tags'
+let g:easytags_updatetime_min = 4000
 
 " ====== Tagbar ======
 " https://github.com/majutsushi/tagbar
 nmap <f8> :TagbarToggle<cr>
 let g:tagbar_phpctags_bin='~/.phpctags/phpctags'
-" let g:tagbar_autoshowtag = 0
-" autocmd VimEnter * nested :call tagbar#autoopen(1)
 let g:tagbar_type_css = {
 \ 'ctagstype' : 'Css',
     \ 'kinds'     : [
