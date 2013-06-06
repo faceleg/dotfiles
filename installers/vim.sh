@@ -17,6 +17,7 @@ INSTALLER="$DIR/vim/bundle.sh"
 $INSTALLER sickill vim-sunburst
 
 # Syntax
+#$INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
 $INSTALLER ap vim-css-color
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
@@ -26,6 +27,7 @@ $INSTALLER plasticboy vim-markdown
 $INSTALLER rodjek vim-puppet                        # https://github.com/rodjek/vim-puppet
 $INSTALLER tobyS vmustache
 $INSTALLER tpope vim-haml
+$INSTALLER vim-scripts phpfolding.vim               # git://github.com/vim-scripts/phpfolding.vim.git
 
 # Documentation
 $INSTALLER heavenshell vim-jsdoc
@@ -37,7 +39,6 @@ $INSTALLER tobyS pdv
 #$INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
 #$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
-$INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
 $INSTALLER hlissner vim-multiedit
 $INSTALLER inkarkat closetag.vim                    # https://github.com/inkarkat/closetag.vim
 $INSTALLER JazzCore neocomplcache-ultisnips
