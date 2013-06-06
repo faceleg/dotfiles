@@ -14,6 +14,7 @@ set nocompatible
 " ====== General settings ======
 set number
 set smartindent
+set splitright
 
 set nowrap                      " Do not wrap lines by default
 set autoread                    " Reload files changed outside vim
@@ -289,12 +290,12 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
@@ -319,6 +320,7 @@ autocmd vimenter * NERDTree
 " Close vim if NERDTree is the only thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Focus file window when opening vim or a file in a new tab
+autocmd VimEnter * set winfixwidth
 autocmd VimEnter * wincmd l
 nmap <leader>n :NERDTreeFind<CR>           " Show the current file in the tree
 
@@ -334,28 +336,3 @@ nnoremap <silent> <F3> :YRShow<CR>
 " https://github.com/AndrewRadev/splitjoin.vim
 nmap gS :SplitjoinSplit<cr>
 nmap gJ :SplitjoinJoin<cr>
-
-" ====== YouCompleteMe ======
-"let g:ycm_cache_omnifunc = 0    " Don't cache omnicompletions
-
-" ====== YouCompleteMe/Ultisnips ======
-"function! g:UltiSnips_Complete()
-"    call UltiSnips_JumpForwards()
-"    if g:ulti_jump_forwards_res == 0
-"        call UltiSnips_ExpandSnippet()
-"        if g:ulti_expand_res == 0
-"            if pumvisible()
-"                return "\<C-n>"
-"            else
-"                return "\<TAB>"
-"            endif
-"        endif
-"    endif
-"    return ""
-"endfunction
-
-"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-
