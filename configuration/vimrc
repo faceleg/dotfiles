@@ -14,7 +14,6 @@ set nocompatible
 " ====== General settings ======
 set number
 set smartindent
-set splitright
 
 set nowrap                      " Do not wrap lines by default
 set autoread                    " Reload files changed outside vim
@@ -196,12 +195,13 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
 let g:jsdoc_input_description = 1
 let g:jsdoc_allow_input_prompt = 1
 " Default is <C-l>, which conflicts with window movement mapped below
-nmap <C-y> <Plug>(jsdoc)
+noremap <buffer> <C-y>j <Plug>(jsdoc)
 
 " ====== Vim PHPDoc ======
 " autocmd FileType php nmap <C-y> <Plug>(phpdoc)
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <buffer> <C-y> :call pdv#DocumentWithSnip()<CR>
+"let g:yankring_replace_n_pkey = <M-y>
+noremap <C-y>p :call pdv#DocumentWithSnip()<CR>
 
 " ====== Filetype overrides ======
 au BufNewFile,BufRead *.phtml setf phtml
