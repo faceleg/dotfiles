@@ -19,6 +19,7 @@ $INSTALLER sickill vim-sunburst
 # Syntax
 #$INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
 $INSTALLER ap vim-css-color
+$INSTALLER Glench Vim-Jinja2-Syntax                 # https://github.com/Glench/Vim-Jinja2-Syntax
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
 $INSTALLER othree html5.vim                         # https://github.com/othree/html5.vim
 $INSTALLER othree javascript-libraries-syntax.vim   # https://github.com/othree/javascript-libraries-syntax.vim
@@ -41,7 +42,7 @@ $INSTALLER tobyS pdv
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER hlissner vim-multiedit
 $INSTALLER inkarkat closetag.vim                    # https://github.com/inkarkat/closetag.vim
-$INSTALLER JazzCore neocomplcache-ultisnips
+#$INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
 $INSTALLER Lokaltog vim-easymotion
@@ -51,9 +52,10 @@ $INSTALLER mileszs ack.vim                          # https://github.com/mileszs
 $INSTALLER scrooloose nerdcommenter                 # https://github.com/scrooloose/nerdcommenter
 $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose syntastic
-$INSTALLER Shougo neocomplcache
+$INSTALLER Valloric YouCompleteMe
+#$INSTALLER Shougo neocomplcache
 $INSTALLER sinisterstuf vim-sparkup                 # https://github.com/sinisterstuf/vim-sparkup
-$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
+#$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 $INSTALLER sjl gundo.vim
 $INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER terryma vim-multiple-cursors
@@ -92,8 +94,8 @@ if [[ ! -d $JSCTAGS_DIR ]]; then
     sudo make install
 fi
 
-#cd ~/.vim/bundle/YouCompleteMe
-#./install.sh --clang-completer
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
 
 # CSSLint for Syntastic
 sudo npm install -g csslint
