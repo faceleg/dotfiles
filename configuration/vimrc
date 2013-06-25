@@ -39,6 +39,7 @@ set expandtab
 set softtabstop=4
 set sw=4                     " default shiftwidth of 4 spaces
 au FileType python,ruby,puppet setl sw=2 sts=2 et
+au FileType javascript setl sw=2 sts=2 et
 au FileType php,phtml,html setl sw=4 sts=4 et
 
 filetype plugin indent on
@@ -125,6 +126,19 @@ set listchars=tab:▸\ ,eol:¬
 
 " ====== Open preview window at bottom ======
 set splitbelow
+set splitright
+"function! PreviewDown()
+"    if !&previewwindow
+"        " Restore scroll position
+"        "normal! `xzt```
+"    endif
+"    if &previewwindow
+"        " Save scroll position
+"        "normal! Hmx``
+"    endif
+"endf
+"au BufWinEnter * call PreviewDown()
+"au BufWinLeave * call PreviewDown()
 
 " ====== Allow repeatable single character insertions ======
 " http://vim.wikia.com/wiki/Insert_a_single_character
@@ -195,12 +209,10 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
 let g:jsdoc_input_description = 1
 let g:jsdoc_allow_input_prompt = 1
 " Default is <C-l>, which conflicts with window movement mapped below
-noremap <buffer> <C-y>j <Plug>(jsdoc)
+noremap <C-y>j <Plug>(jsdoc)
 
 " ====== Vim PHPDoc ======
 " autocmd FileType php nmap <C-y> <Plug>(phpdoc)
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-"let g:yankring_replace_n_pkey = <M-y>
 noremap <C-y>p :call pdv#DocumentWithSnip()<CR>
 
 " ====== Filetype overrides ======
@@ -223,12 +235,6 @@ let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 
 " https://github.com/skammer/vim-css-color
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-" ====== GitGutter ======
-"highlight GitGutterAdd ctermfg=Green ctermbg=DarkGray
-"highlight GitGutterDelete ctermfg=Red ctermbg=DarkGray
-"highlight GitGutterChange ctermfg=Yellow ctermbg=DarkGray
-"highlight GitGutterChangeDelete ctermfg=Yellow ctermbg=DarkGray
-
 " ====== Highlight unwanted whitespace ======
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -241,47 +247,6 @@ autocmd BufWinLeave * call clearmatches()
 set cursorline
 nnoremap <Leader>c :set cursorline!<CR>
 
-" ====== Neocomplcache ======
-" Launches neocomplcache automatically on vim startup.
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_fuzzy_completion=1
-let g:neocomplcache_enable_smart_case = 1               " Use smartcase.
-let g:neocomplcache_enable_camel_case_completion = 1    " Use camel case completion
-let g:neocomplcache_enable_underbar_completion = 1      " Use underscore completion
-let g:neocomplcache_min_syntax_length = 3               " Sets minimum char length of syntax keyword
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*' " buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
-
-" Define file-type dependent dictionaries.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
-
-" Define keyword, for minor languages
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
 " ====== Omni completion ======
 " Enable omni completion. Not required if they are already set elsewhere in .vimrc
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -291,14 +256,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " drop down colours
 highlight Pmenu ctermbg=black ctermfg=white
@@ -336,3 +293,76 @@ nnoremap <silent> <F3> :YRShow<CR>
 " https://github.com/AndrewRadev/splitjoin.vim
 nmap gS :SplitjoinSplit<cr>
 nmap gJ :SplitjoinJoin<cr>
+
+" Statusline modifications, added Fugitive Status Line & Syntastic Error Message {{{2
+let g:last_mode = ''
+function! Mode()
+  let l:mode = mode()
+
+  if l:mode !=# g:last_mode
+    let g:last_mode = l:mode
+
+    hi User2 guifg=#005f00 guibg=#dfff00 gui=BOLD ctermfg=22 ctermbg=190 cterm=BOLD
+    hi User3 guifg=#FFFFFF guibg=#414243 ctermfg=255 ctermbg=241
+    hi User4 guifg=#414234 guibg=#2B2B2B ctermfg=241 ctermbg=234
+    hi User5 guifg=#4e4e4e guibg=#FFFFFF gui=bold ctermfg=239 ctermbg=255 cterm=bold
+    hi User6 guifg=#FFFFFF guibg=#8a8a8a ctermfg=255 ctermbg=245
+    hi User7 guifg=#ffff00 guibg=#8a8a8a gui=bold ctermfg=226 ctermbg=245 cterm=bold
+    hi User8 guifg=#8a8a8a guibg=#414243 ctermfg=245 ctermbg=241
+
+    if l:mode ==# 'n'
+      hi User3 guifg=#dfff00 ctermfg=190
+    elseif l:mode ==# "i"
+      hi User2 guifg=#005fff guibg=#FFFFFF ctermfg=27 ctermbg=255
+      hi User3 guifg=#FFFFFF ctermfg=255
+    elseif l:mode ==# "R"
+      hi User2 guifg=#FFFFFF guibg=#df0000 ctermfg=255 ctermbg=160
+      hi User3 guifg=#df0000 ctermfg=160
+    elseif l:mode ==? "v" || l:mode ==# "^V"
+      hi User2 guifg=#4e4e4e guibg=#ffaf00 ctermfg=239 ctermbg=214
+      hi User3 guifg=#ffaf00 ctermfg=214
+    endif
+  endif
+
+  if l:mode ==# "n"
+    return "  NORMAL "
+  elseif l:mode ==# "i"
+    return "  INSERT "
+  elseif l:mode ==# "R"
+    return "  REPLACE "
+  elseif l:mode ==# "v"
+    return "  VISUAL "
+  elseif l:mode ==# "V"
+    return "  V·LINE "
+  elseif l:mode ==# "^V"
+    return "  V·BLOCK "
+  else
+    return l:mode
+  endif
+endfunction
+
+function! GitStatus()
+  let result = split(system('git status --porcelain '.shellescape(expand('%:t'))." 2>/dev/null|awk '{print $1}'"))
+  if len(result) > 0 | return join(result).' ' | else | return '' | endif
+endfunction
+
+set statusline=%2*%{Mode()}%3*⮀
+set statusline+=%#StatusLine#
+set statusline+=%{strlen(fugitive#statusline())>0?'\ ⭠\ ':''}
+set statusline+=%{matchstr(fugitive#statusline(),'(\\zs.*\\ze)')}
+set statusline+=%{strlen(fugitive#statusline())>0?'\ \ ⮁\ ':'\ '}
+set statusline+=%f%<\ %{&ro?'⭤':''}
+set statusline+=%{GitStatus()}
+set statusline+=%{&mod?'+':''}
+set statusline+=%4*⮀
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%=
+set statusline+=%4*⮂
+set statusline+=%#StatusLine#
+set statusline+=\ %{strlen(&fileformat)>0?&fileformat.'\ ⮃\ ':''}
+set statusline+=%{strlen(&fileencoding)>0?&fileencoding.'\ ⮃\ ':''}
+set statusline+=%{strlen(&filetype)>0?&filetype.'\ ':''}
+set statusline+=%8*⮂%7*\ %p%%\
+set statusline+=%6*⮂%5*⭡\ \ %l:%c\
+" }}}2
