@@ -227,8 +227,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" ====== Highlight current line ======
-set cursorline
+" ====== Do not highlight current line ======
+set nocursorline
+set nocursorcolumn
+syntax sync minlines=256
 nnoremap <Leader>c :set cursorline!<CR>
 
 " ====== Omni completion ======
