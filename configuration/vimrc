@@ -146,10 +146,6 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,cpp,css,java,php,ruby,puppet,python,javascript,vim,sh,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" ====== Niji (Rainbow)  ======
-" https://github.com/amdt/vim-niji
-let g:niji_match_all_filetypes = 1
-
 " ====== EasyTags ======
 let g:easytags_file = '~/.vim/tags'
 let g:easytags_updatetime_min = 4000
