@@ -18,6 +18,7 @@ $INSTALLER sickill vim-sunburst
 
 # Syntax
 #$INSTALLER faceleg php.vim-html-enhanced            # https://github.com/faceleg/php.vim-html-enhanced
+#$INSTALLER vim-scripts phpfolding.vim               # git://github.com/vim-scripts/phpfolding.vim.git
 $INSTALLER ap vim-css-color
 $INSTALLER Glench Vim-Jinja2-Syntax                 # https://github.com/Glench/Vim-Jinja2-Syntax
 $INSTALLER hail2u vim-css3-syntax                   # https://github.com/hail2u/vim-css3-syntax
@@ -28,12 +29,12 @@ $INSTALLER plasticboy vim-markdown
 $INSTALLER rodjek vim-puppet                        # https://github.com/rodjek/vim-puppet
 $INSTALLER tobyS vmustache
 $INSTALLER tpope vim-haml
-$INSTALLER vim-scripts phpfolding.vim               # git://github.com/vim-scripts/phpfolding.vim.git
+$INSTALLER vim-scripts jumphl.vim                   # https://github.com/vim-scripts/jumphl.vim
 
 # Documentation
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
-$INSTALLER tobyS pdv
+#$INSTALLER tobyS pdv
 
 # Plugins
 #$INSTALLER airblade vim-gitgutter                   # Disabled as seems slow
@@ -46,7 +47,7 @@ $INSTALLER inkarkat closetag.vim                    # https://github.com/inkarka
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
 $INSTALLER Lokaltog vim-easymotion
-$INSTALLER Lokaltog vim-powerline
+#$INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
 $INSTALLER mileszs ack.vim                          # https://github.com/mileszs/ack.vim
 $INSTALLER scrooloose nerdcommenter                 # https://github.com/scrooloose/nerdcommenter
