@@ -196,7 +196,7 @@ noremap <C-y>j <Plug>(jsdoc)
 
 " ====== Vim PHPDoc ======
 " autocmd FileType php nmap <C-y> <Plug>(phpdoc)
-noremap <C-y>p :call pdv#DocumentWithSnip()<CR>
+"noremap <C-y>p :call pdv#DocumentWithSnip()<CR>
 
 " ====== Filetype overrides ======
 au BufNewFile,BufRead *.phtml setf phtml
