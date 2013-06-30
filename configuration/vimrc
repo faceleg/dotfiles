@@ -233,6 +233,10 @@ set nocursorcolumn
 syntax sync minlines=256
 nnoremap <Leader>c :set cursorline!<CR>
 
+" ====== Highlight line after jump ======
+" https://github.com/vim-scripts/jumphl.vim
+autocmd VimEnter * DoJumpHl
+
 " ====== Omni completion ======
 " Enable omni completion. Not required if they are already set elsewhere in .vimrc
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
