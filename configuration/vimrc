@@ -324,17 +324,6 @@ autocmd VimEnter * DoJumpHl
 " ====== Drop down colours ======
 highlight Pmenu ctermbg=black ctermfg=white
 
-" ====== CtrlP.vim ======
-" https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_arg_map = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_match_window_bottom = 0         " Show at top of window
-let g:ctrlp_jump_to_buffer = 'Et'           " Jump to tab AND buffer if already open
-"let g:ctrlp_split_window = 1               " <CR> = New Tab
-let g:ctrlp_open_new_file = 'v'             " Open newly created files in a new tab
-let g:ctrlp_open_multiple_files = '2vjr'    " Open multiple files in new tabs
-
 " ====== NERDtree ======
 let NERDTreeWinSize=26
 autocmd vimenter * NERDTree
@@ -357,6 +346,27 @@ nnoremap <silent> <F3> :YRShow<CR>
 " https://github.com/AndrewRadev/splitjoin.vim
 nmap gS :SplitjoinSplit<cr>
 nmap gJ :SplitjoinJoin<cr>
+
+" ====== Unite ======
+let g:unite_data_directory = expand('~/.vim/.cache/unite')
+let g:unite_enable_start_insert=1
+"let g:unite_source_history_yank_enable=1
+let g:unite_source_rec_max_cache_files=5000
+let g:unite_prompt='» '
+
+nmap <buffer> Q <plug>(unite_exit)
+nmap <buffer> <esc> <plug>(unite_exit)
+imap <buffer> <esc> <plug>(unite_exit)
+
+" CTRLP
+nnoremap <leader>p :Unite -auto-preview file_rec/async<cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#set_profile('files', 'smartcase', 1)
+call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+
+" ACK
+nnoremap <space>/ :Unite -no-quit -buffer-name=search grep:.<cr>
 
 " ====== Neocomplete ======
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
