@@ -26,25 +26,40 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 
-" Syntax
+" Colouring
 NeoBundle 'sickill/vim-sunburst'
-NeoBundle 'ap/vim-css-color'
+NeoBundle 'vim-scripts/jumphl.vim'                   " https://github.com/vim-scripts/jumphl.vim
+
+" Syntax
+NeoBundleLazy 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
+NeoBundleLazy 'cakebaker/scss-syntax.vim', {'autoload':{'filetypes':['scss','sass']}}
+NeoBundleLazy 'ap/vim-css-color', {'autoload':{'filetypes':['css','scss','sass','less','styl']}}
 NeoBundle 'Glench/Vim-Jinja2-Syntax'                 " https://github.com/Glench/Vim-Jinja2-Syntax
-NeoBundle 'hail2u/vim-css3-syntax'                   " https://github.com/hail2u/vim-css3-syntax
-NeoBundle 'othree/html5.vim'                         " https://github.com/othree/html5.vim
-NeoBundle 'othree/javascript-libraries-syntax.vim'   " https://github.com/othree/javascript-libraries-syntax.vim
-NeoBundle 'pangloss/vim-javascript'
+NeoBundleLazy 'hail2u/vim-css3-syntax', {'autoload':{'filetypes':['css','scss','sass']}}
+NeoBundleLazy 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rodjek/vim-puppet'                        " https://github.com/rodjek/vim-puppet
 NeoBundle 'tobyS/vmustache'
 NeoBundle 'tpope/vim-haml'
-NeoBundle 'vim-scripts/jumphl.vim'                   " https://github.com/vim-scripts/jumphl.vim
+NeoBundleLazy 'teramako/jscomplete-vim', {'autoload':{'filetypes':['javascript']}} "{{{
+  autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
+"}}}
+NeoBundleLazy 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
+  nnoremap <leader>fjs :call JsBeautify()<cr>
+"}}}
+NeoBundleLazy 'leafgarland/typescript-vim', {'autoload':{'filetypes':['typescript']}}
+NeoBundleLazy 'kchmck/vim-coffee-script', {'autoload':{'filetypes':['coffee']}}
+NeoBundleLazy 'mmalecki/vim-node.js', {'autoload':{'filetypes':['javascript']}}
+NeoBundleLazy 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
+NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','typescript']}}
 
 " Documentation
 NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'mudpile45/vim-phpdoc'
 
 " Plugins
+NeoBundle 'mhinz/vim-signify'
 NeoBundle 'AndrewRadev/splitjoin.vim'                " https://github.com/AndrewRadev/splitjoin.vim
 NeoBundle 'hlissner/vim-multiedit'
 NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
@@ -62,23 +77,20 @@ NeoBundle 'sinisterstuf/vim-sparkup'                 " https://github.com/sinist
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'terryma/vim-expand-region'                " https://github.com/terryma/vim-expand-region
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'terryma/vim-smooth-scroll'                " https://github.com/terryma/vim-smooth-scroll
-NeoBundle 'Townk/vim-autoclose'                      " https://github.com/Townk/vim-autoclose
-NeoBundle 'tpope/vim-eunuch'                         " https://github.com/tpope/vim-eunuch
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-repeat'                         " https://github.com/tpope/vim-repeat
-NeoBundle 'tpope/vim-surround'
+NeoBundle 'terryma/vim-smooth-scroll'
+NeoBundle 'tpope/vim-fugitive' "{{{
+      nnoremap <silent> <leader>gs :Gstatus<CR>
+      nnoremap <silent> <leader>gd :Gdiff<CR>
+      nnoremap <silent> <leader>gc :Gcommit<CR>
+      nnoremap <silent> <leader>gb :Gblame<CR>
+      nnoremap <silent> <leader>gl :Glog<CR>
+      nnoremap <silent> <leader>gp :Git push<CR>
+      nnoremap <silent> <leader>gw :Gwrite<CR>
+      nnoremap <silent> <leader>gr :Gremove<CR>
+      autocmd FileType gitcommit nmap <buffer> U :Git checkout -- <C-r><C-g><CR>
+      autocmd BufReadPost fugitive://* set bufhidden=delete
+    "}}}
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tsaleh/vim-matchit'                       " https://github.com/tsaleh/vim-matchit
-NeoBundle 'Valloric/MatchTagAlways'                  " https://github.com/Valloric/MatchTagAlways
-NeoBundle 'vim-scripts/YankRing.vim'
-NeoBundle 'xolox/vim-easytags'                       " https://github.com/xolox/vim-easytags
-NeoBundle 'xolox/vim-misc'                           " https://github.com/xolox/vim-misc
-
- " Brief help
- " :NeoBundleList          - list configured bundles
- " :NeoBundleInstall(!)    - install(update) bundles
- " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
  " Installation check.
  NeoBundleCheck
