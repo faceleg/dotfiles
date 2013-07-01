@@ -91,6 +91,8 @@ NeoBundle 'tpope/vim-fugitive' "{{{
       autocmd BufReadPost fugitive://* set bufhidden=delete
     "}}}
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-scripts/YankRing.vim'
 
  " Installation check.
  NeoBundleCheck
