@@ -30,8 +30,8 @@ if [[ ! -d $JSCTAGS_DIR ]]; then
     sudo make install
 fi
 
-cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
+#cd ~/.vim/bundle/YouCompleteMe
+#./install.sh --clang-completer
 
 # CSSLint for Syntastic
 sudo npm install -g csslint
