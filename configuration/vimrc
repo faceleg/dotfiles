@@ -8,6 +8,81 @@ let mapleader=","
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" ====== NeoBundle ======
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+
+" Syntax
+NeoBundle 'sickill/vim-sunburst'
+NeoBundle 'ap/vim-css-color'
+NeoBundle 'Glench/Vim-Jinja2-Syntax'                 " https://github.com/Glench/Vim-Jinja2-Syntax
+NeoBundle 'hail2u/vim-css3-syntax'                   " https://github.com/hail2u/vim-css3-syntax
+NeoBundle 'othree/html5.vim'                         " https://github.com/othree/html5.vim
+NeoBundle 'othree/javascript-libraries-syntax.vim'   " https://github.com/othree/javascript-libraries-syntax.vim
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'rodjek/vim-puppet'                        " https://github.com/rodjek/vim-puppet
+NeoBundle 'tobyS/vmustache'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'vim-scripts/jumphl.vim'                   " https://github.com/vim-scripts/jumphl.vim
+
+" Documentation
+NeoBundle 'heavenshell/vim-jsdoc'
+NeoBundle 'mudpile45/vim-phpdoc'
+
+" Plugins
+NeoBundle 'AndrewRadev/splitjoin.vim'                " https://github.com/AndrewRadev/splitjoin.vim
+NeoBundle 'hlissner/vim-multiedit'
+NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
+NeoBundle 'jeetsukumaran/vim-buffergator'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Shougo/unite.vim'                         " https://github.com/Shougo/unite.vim - http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
+NeoBundle 'Shougo/neocomplete.vim'                   " https://github.com/Shougo/neocomplete.vim - brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
+NeoBundle 'sinisterstuf/vim-sparkup'                 " https://github.com/sinisterstuf/vim-sparkup
+" NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'terryma/vim-expand-region'                " https://github.com/terryma/vim-expand-region
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'terryma/vim-smooth-scroll'                " https://github.com/terryma/vim-smooth-scroll
+NeoBundle 'Townk/vim-autoclose'                      " https://github.com/Townk/vim-autoclose
+NeoBundle 'tpope/vim-eunuch'                         " https://github.com/tpope/vim-eunuch
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-repeat'                         " https://github.com/tpope/vim-repeat
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tsaleh/vim-matchit'                       " https://github.com/tsaleh/vim-matchit
+NeoBundle 'Valloric/MatchTagAlways'                  " https://github.com/Valloric/MatchTagAlways
+NeoBundle 'vim-scripts/YankRing.vim'
+NeoBundle 'xolox/vim-easytags'                       " https://github.com/xolox/vim-easytags
+NeoBundle 'xolox/vim-misc'                           " https://github.com/xolox/vim-misc
+
+ " Brief help
+ " :NeoBundleList          - list configured bundles
+ " :NeoBundleInstall(!)    - install(update) bundles
+ " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+ " Installation check.
+ NeoBundleCheck
+
 " ====== General settings ======
 set number
 set smartindent
