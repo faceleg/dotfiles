@@ -32,31 +32,30 @@ $INSTALLER tpope vim-haml
 $INSTALLER vim-scripts jumphl.vim                   # https://github.com/vim-scripts/jumphl.vim
 
 # Documentation
+#$INSTALLER tobyS pdv
 $INSTALLER heavenshell vim-jsdoc
 $INSTALLER mudpile45 vim-phpdoc                     # https://github.com/mudpile45/vim-phpdoc
-#$INSTALLER tobyS pdv
 
 # Plugins
 #$INSTALLER airblade vim-gitgutter                   # Disabled as seems slow
+#$INSTALLER JazzCore neocomplcache-ultisnips
 #$INSTALLER nelstrom vim-visual-star-search          # https://github.com/nelstrom/vim-visual-star-search
+#$INSTALLER Shougo neocomplcache
+#$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 #$INSTALLER tpope vim-commentary                     # https://github.com/tpope/vim-commentary
 $INSTALLER AndrewRadev splitjoin.vim                # https://github.com/AndrewRadev/splitjoin.vim
 $INSTALLER hlissner vim-multiedit
 $INSTALLER inkarkat closetag.vim                    # https://github.com/inkarkat/closetag.vim
-#$INSTALLER JazzCore neocomplcache-ultisnips
 $INSTALLER jeetsukumaran vim-buffergator
 $INSTALLER kien ctrlp.vim
 $INSTALLER Lokaltog vim-easymotion
-#$INSTALLER Lokaltog vim-powerline
+$INSTALLER Lokaltog vim-powerline
 $INSTALLER majutsushi tagbar
 $INSTALLER mileszs ack.vim                          # https://github.com/mileszs/ack.vim
 $INSTALLER scrooloose nerdcommenter                 # https://github.com/scrooloose/nerdcommenter
 $INSTALLER scrooloose nerdtree
 $INSTALLER scrooloose syntastic
-$INSTALLER Valloric YouCompleteMe
-#$INSTALLER Shougo neocomplcache
 $INSTALLER sinisterstuf vim-sparkup                 # https://github.com/sinisterstuf/vim-sparkup
-#$INSTALLER SirVer ultisnips                         # https://github.com/SirVer/ultisnips
 $INSTALLER sjl gundo.vim
 $INSTALLER terryma vim-expand-region                # https://github.com/terryma/vim-expand-region
 $INSTALLER terryma vim-multiple-cursors
@@ -69,6 +68,7 @@ $INSTALLER tpope vim-surround
 $INSTALLER tpope vim-unimpaired
 $INSTALLER tsaleh vim-matchit                       # https://github.com/tsaleh/vim-matchit
 $INSTALLER Valloric MatchTagAlways                  # https://github.com/Valloric/MatchTagAlways
+$INSTALLER Valloric YouCompleteMe
 $INSTALLER vim-scripts YankRing.vim
 $INSTALLER xolox vim-easytags                       # https://github.com/xolox/vim-easytags
 $INSTALLER xolox vim-misc                           # https://github.com/xolox/vim-misc
