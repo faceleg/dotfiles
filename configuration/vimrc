@@ -63,7 +63,6 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'AndrewRadev/splitjoin.vim'                " https://github.com/AndrewRadev/splitjoin.vim
 NeoBundle 'hlissner/vim-multiedit'
 NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
-NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'majutsushi/tagbar'
@@ -369,6 +368,9 @@ call unite#custom#source('line,outline','matchers','matcher_fuzzy')
 
 " ACK
 nnoremap <space>/ :Unite -no-quit -buffer-name=search grep:.<cr>
+
+" Buffers
+nnoremap <space>s :Unite -quick-match buffer<cr>
 
 " ====== Neocomplete ======
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
