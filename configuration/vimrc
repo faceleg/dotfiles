@@ -91,7 +91,6 @@ NeoBundle 'tpope/vim-fugitive' "{{{
     "}}}
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-scripts/YankRing.vim'
 
  " Installation check.
  NeoBundleCheck
@@ -336,12 +335,8 @@ autocmd VimEnter * wincmd l
 nmap <leader>n :NERDTreeFind<CR>           " Show the current file in the tree
 
 " ====== Vim powerline ======
-" set rtp+=~/.vim/bundle/powerline/bindings/vim
 let g:Powerline_symbols = "fancy"
 set laststatus=2
-
-" ====== YankRing ======
-nnoremap <silent> <F3> :YRShow<CR>
 
 " ====== SplitJoin ======
 " https://github.com/AndrewRadev/splitjoin.vim
@@ -350,8 +345,8 @@ nmap gJ :SplitjoinJoin<cr>
 
 " ====== Unite ======
 let g:unite_data_directory = expand('~/.vim/.cache/unite')
-let g:unite_enable_start_insert=1
-"let g:unite_source_history_yank_enable=1
+"let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
 let g:unite_source_rec_max_cache_files=5000
 let g:unite_prompt='» '
 
@@ -371,6 +366,9 @@ nnoremap <space>/ :Unite -no-quit -buffer-name=search grep:.<cr>
 
 " Buffers
 nnoremap <space>s :Unite -quick-match buffer<cr>
+
+" Yank
+nnoremap <space>y :<C-u>Unite history/yank<CR>
 
 " ====== Neocomplete ======
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
