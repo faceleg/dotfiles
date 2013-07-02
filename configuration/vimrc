@@ -92,6 +92,7 @@ NeoBundle 'tpope/vim-fugitive' "{{{
     "}}}
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-eunuch'
 
  " Installation check.
  NeoBundleCheck
