@@ -60,7 +60,7 @@ NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'mudpile45/vim-phpdoc'
 
 " Plugins
-NeoBundle 'mhinz/vim-signify'
+"NeoBundle 'mhinz/vim-signify'
 NeoBundle 'AndrewRadev/splitjoin.vim'                " https://github.com/AndrewRadev/splitjoin.vim
 NeoBundle 'hlissner/vim-multiedit'
 NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
