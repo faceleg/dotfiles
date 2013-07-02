@@ -263,8 +263,6 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-au FileType javascript call JavaScriptFold()
-
 " ====== JavaScript Libraries Syntax ======
 " https://github.com/othree/javascript-libraries-syntax.vim
 autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
