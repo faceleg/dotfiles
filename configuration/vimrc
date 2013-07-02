@@ -355,7 +355,7 @@ nmap <buffer> <esc> <plug>(unite_exit)
 imap <buffer> <esc> <plug>(unite_exit)
 
 " CTRLP
-nnoremap <leader>p :Unite -auto-preview file_rec/async<cr>
+nnoremap <leader>p :Unite -start-insert -auto-preview file_rec/async<cr>
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#set_profile('files', 'smartcase', 1)
