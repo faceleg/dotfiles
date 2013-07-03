@@ -119,6 +119,12 @@ set nocompatible
     syntax on
     colorscheme Sunburst
 
+    " Startify custom colours
+    hi StartifyBracket ctermfg=240
+    hi StartifyNumber  ctermfg=215
+    hi StartifyPath    ctermfg=245
+    hi StartifySlash   ctermfg=240
+
     " Do not highlight current line
     set nocursorline
     set nocursorcolumn
