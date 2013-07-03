@@ -388,10 +388,6 @@ nmap <leader>q :nohlsearch<CR>
     let g:unite_source_rec_max_cache_files=5000
     let g:unite_prompt='» '
 
-    nmap <buffer> Q <plug>(unite_exit)
-    nmap <buffer> <esc> <plug>(unite_exit)
-    imap <buffer> <esc> <plug>(unite_exit)
-
     " CTRLP
     nnoremap <leader>p :Unite -start-insert -auto-preview file_rec/async<cr>
     call unite#filters#matcher_default#use(['matcher_fuzzy'])
