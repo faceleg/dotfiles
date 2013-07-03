@@ -134,9 +134,6 @@ set nocompatible
     " Highlight line after jump
     " https://github.com/vim-scripts/jumphl.vim
     autocmd VimEnter * DoJumpHl
-
-    " Drop down colours
-    highlight Pmenu ctermbg=black ctermfg=white
 " }}}
 
 " Tabs & indenting {{{
