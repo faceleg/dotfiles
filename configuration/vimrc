@@ -60,7 +60,7 @@ set nocompatible
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
     NeoBundle 'Lokaltog/vim-easymotion'
-    NeoBundle 'Lokaltog/vim-powerline'
+    NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
     NeoBundle 'scrooloose/nerdtree'
