@@ -281,6 +281,7 @@ nmap <leader>q :nohlsearch<CR>
 " EasyTags {{{
     let g:easytags_file = '~/.vim/tags'
     let g:easytags_updatetime_min = 4000
+    let g:easytags_python_enabled = 1
 " }}}
 
 " Tagbar {{{
