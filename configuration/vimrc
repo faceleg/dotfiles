@@ -180,6 +180,15 @@ set nocompatible
     set nowb
 " }}}
 
+" Position saving {{{
+    " http://amix.dk/vim/vimrc.html
+    " Return to last edit position when opening files (You want this!)
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+" }}}
+
 " Syntastic {{{
     " https://github.com/scrooloose/syntastic
     " Show / hide location list
