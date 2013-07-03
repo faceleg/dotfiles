@@ -331,7 +331,7 @@ nmap <leader>q :nohlsearch<CR>
     noremap <C-y>j <Plug>(jsdoc)
 " }}}
 
-" Vim PHP {{{
+" PHP {{{
     " autocmd FileType php nmap <C-y> <Plug>(phpdoc)
     "noremap <C-y>p :call pdv#DocumentWithSnip()<CR>
 
