@@ -93,6 +93,7 @@ set nocompatible
     NeoBundle 'Valloric/MatchTagAlways'
     NeoBundle 'mhinz/vim-startify'
     NeoBundle 'vim-scripts/YankRing.vim'
+    NeoBundle 'jiangmiao/auto-pairs'
 
     " Installation check.
     NeoBundleCheck
