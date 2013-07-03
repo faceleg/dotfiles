@@ -93,6 +93,7 @@ set nocompatible
     NeoBundle 'xolox/vim-misc'
     NeoBundle 'Valloric/MatchTagAlways'
     NeoBundle 'mhinz/vim-startify'
+    NeoBundle 'vim-scripts/YankRing.vim'
 
     " Installation check.
     NeoBundleCheck
@@ -402,10 +403,11 @@ nmap <leader>q :nohlsearch<CR>
     nnoremap <space>/ :Unite -no-quit -buffer-name=search grep:.<cr>
 
     " Buffers
-    nnoremap <space>s :Unite -start-insert -quick-match buffer<cr>
+    nnoremap <space>s :Unite -quick-match buffer<cr>
+" }}}
 
-    " Yank
-    nnoremap <space>y :<C-u>Unite history/yank<CR>
+" YankRing {{{
+    nnoremap <silent> <F3> :YRShow<CR>
 " }}}
 
 " Neocomplete {{{
