@@ -69,6 +69,7 @@ set nocompatible
     NeoBundle 'Shougo/neocomplete.vim'                   " https://github.com/Shougo/neocomplete.vim - brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
     NeoBundle 'sinisterstuf/vim-sparkup'                 " https://github.com/sinisterstuf/vim-sparkup
     " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+    NeoBundle 'Shougo/neosnippet'
     NeoBundle 'sjl/gundo.vim'
     NeoBundle 'terryma/vim-expand-region'                " https://github.com/terryma/vim-expand-region
     NeoBundle 'terryma/vim-multiple-cursors'
@@ -469,4 +470,23 @@ nmap <leader>q :nohlsearch<CR>
     " For perlomni.vim setting.
     " https://github.com/c9s/perlomni.vim
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" }}}
+
+" Neosnippet {{{
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+    " SuperTab like snippets behavior.
+    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: pumvisible() ? "\<C-n>" : "\<TAB>"
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: "\<TAB>"
+
+    " For snippet_complete marker.
+    if has('conceal')
+    set conceallevel=2 concealcursor=i
+    endif
 " }}}
