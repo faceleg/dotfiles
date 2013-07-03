@@ -267,7 +267,7 @@ nmap <leader>q :nohlsearch<CR>
     nnoremap <leader>S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 " }}}
 
-" Whitespave {{{
+" Whitespace {{{
     " Delete trailing whitespace on save
     " http://stackoverflow.com/a/1618401/187954
     fun! <SID>StripTrailingWhitespaces()
