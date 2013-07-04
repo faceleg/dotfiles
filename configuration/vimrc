@@ -370,7 +370,7 @@ nmap <leader>q :nohlsearch<CR>
 
 " NERDtree {{{
     let NERDTreeWinSize=26
-    autocmd vimenter * NERDTree
+    autocmd VimEnter * NERDTree
     " Close vim if NERDTree is the only thing open
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     " Focus file window when opening vim or a file in a new tab
