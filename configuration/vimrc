@@ -69,7 +69,7 @@ set nocompatible
     NeoBundle 'Shougo/unite.vim'                         " https://github.com/Shougo/unite.vim - http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
     NeoBundle 'Shougo/neocomplete.vim'                   " https://github.com/Shougo/neocomplete.vim - brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
     NeoBundle 'Shougo/neosnippet'
-    NeoBundle 'sinisterstuf/vim-sparkup', {'rtp': 'vim/'}                 " https://github.com/sinisterstuf/vim-sparkup
+    NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     NeoBundle 'sjl/gundo.vim'
     NeoBundle 'terryma/vim-expand-region'                " https://github.com/terryma/vim-expand-region
     NeoBundle 'terryma/vim-multiple-cursors'
