@@ -64,7 +64,6 @@ set nocompatible
     NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
-    NeoBundle 'scrooloose/nerdtree'
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'Shougo/unite.vim'                         " https://github.com/Shougo/unite.vim - http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
     NeoBundle 'Shougo/neocomplete.vim'                   " https://github.com/Shougo/neocomplete.vim - brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
@@ -382,15 +381,7 @@ nmap <leader>q :nohlsearch<CR>
 " }}}
 
 
-" NERDtree {{{
-    let NERDTreeWinSize=26
-    autocmd VimEnter * NERDTree
-    " Close vim if NERDTree is the only thing open
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-    " Focus file window when opening vim or a file in a new tab
-    autocmd VimEnter * set winfixwidth
     autocmd VimEnter * wincmd l
-    nmap <leader>n :NERDTreeFind<CR>           " Show the current file in the tree
 " }}}
 
 " Vim powerline {{{
