@@ -408,7 +408,7 @@ nmap <leader>q :nohlsearch<CR>
     let g:vimfiler_marked_file_icon = '*'
 
     "autocmd VimEnter * VimFilerExplorer
-    nmap <space>f :VimFilerExplorer<CR>
+    nmap <space>f :VimFilerExplorer<CR> && :call clearmatches()<CR>
     nmap <leader>n :VimFilerBufferDir -explorer -find<CR>
     autocmd VimEnter * wincmd l
     autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
