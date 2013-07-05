@@ -241,11 +241,11 @@ set nocompatible
     set incsearch
     set smartcase
     set ignorecase
-" }}}
 
 " Clear search highlight
 " http://statico.github.io/vim.html
 nmap <leader>q :nohlsearch<CR>
+" }}}
 
 " Window movement convenience {{{
     " map ctrl-movement keys to window switching
