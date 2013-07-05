@@ -442,7 +442,7 @@ nmap <leader>q :nohlsearch<CR>
     nnoremap <space>/ :Unite -no-quit -buffer-name=search grep:.<cr>
 
     " Buffers
-    nnoremap <space>s :Unite -quick-match buffer<cr>
+    nnoremap <space>b :Unite buffer<cr>
 
     " <F4>: Save session
     nnoremap <F4> :<C-u>UniteSessionSave
