@@ -173,7 +173,7 @@ set nocompatible
 " }}}
 
 " Buffers {{{
-    " <Leader>d: Delete the current buffer
+    " Delete the current buffer
     nnoremap <Leader>d :bdelete<CR>
 " }}}
 
