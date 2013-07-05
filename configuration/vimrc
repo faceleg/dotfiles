@@ -108,7 +108,7 @@ set nocompatible
     set nowrap                      " Do not wrap lines by default
     set autoread                    " Reload files changed outside vim
     set showmode                    " show which mode we are currently in
-    set cc=80                       " colorcolumn 80
+    set colorcolumn=80                       " colorcolumn 80
     set history=1000                " remember more commands and search history
     set undolevels=1000             " remember more undo levels
 
