@@ -65,6 +65,7 @@ set nocompatible
     NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'Shougo/unite.vim'                         " https://github.com/Shougo/unite.vim - http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
+    NeoBundle 'Shougo/unite-session'
     NeoBundle 'Shougo/neocomplete.vim'                   " https://github.com/Shougo/neocomplete.vim - brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
     NeoBundle 'Shougo/neosnippet'
     NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
