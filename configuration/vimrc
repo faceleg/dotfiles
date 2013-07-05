@@ -450,6 +450,9 @@ nmap <leader>q :nohlsearch<CR>
     " Save session automatically.
     let g:unite_source_session_enable_auto_save = 1
 
+    " Popup session selector
+    noremap <space>s :Unite -buffer-name=sessions session<CR>
+
     " Pop up session selection if no file is specified
     " TODO: Why does this not work when Vim isn't run from tmux???!
     autocmd MyAutoCmd VimEnter * call s:unite_session_on_enter()
