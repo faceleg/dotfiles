@@ -111,6 +111,13 @@ set nocompatible
     set colorcolumn=80                       " colorcolumn 80
     set history=1000                " remember more commands and search history
     set undolevels=1000             " remember more undo levels
+    set lazyredraw
+
+    " No need to show mode due to Powerline
+    set noshowmode
+
+    " Explicitly set encoding to utf-8
+    set encoding=utf-8
 
     " This makes vim act like all other editors, buffers can :u
     " exist in the background without being in a window.
