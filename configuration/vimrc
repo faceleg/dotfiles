@@ -94,6 +94,7 @@ set nocompatible
     NeoBundle 'Valloric/MatchTagAlways'
     NeoBundle 'vim-scripts/YankRing.vim'
     NeoBundle 'jiangmiao/auto-pairs'
+    NeoBundle 'Shougo/vimfiler.vim'
 
     " Installation check.
     NeoBundleCheck
@@ -291,13 +292,15 @@ nmap <leader>q :nohlsearch<CR>
     endfun
     autocmd FileType c,cpp,css,java,php,ruby,puppet,python,javascript,vim,sh,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-    " Highligh whitespace
+    " listchar=trail is not as flexible, use the below to highlight trailing
+    " whitespace. Don't do it for unite windows or readonly files
     highlight ExtraWhitespace ctermbg=red guibg=red
-    match ExtraWhitespace /\s\+$/
-    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-    " autocmd InsertLeaveEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-    autocmd BufWinLeave * call clearmatches()
+    augroup MyAutoCmd
+        autocmd BufWinEnter * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+$/ | endif
+        autocmd InsertEnter * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
+        autocmd InsertLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+$/ | endif
+        autocmd BufWinLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | call clearmatches() | endif
+    augroup END
 " }}}
 
 " EasyTags {{{
@@ -380,8 +383,23 @@ nmap <leader>q :nohlsearch<CR>
     let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
 " }}}
 
+" Vim filer {{{
+    let g:vimfiler_as_default_explorer = 1
+    let g:vimfiler_safe_mode_by_default = 0
+    let g:vimfiler_force_overwrite_statusline = 0
 
+    " Like Textmate icons.
+    let g:vimfiler_tree_leaf_icon = ' '
+    let g:vimfiler_tree_opened_icon = '▾'
+    let g:vimfiler_tree_closed_icon = '▸'
+    let g:vimfiler_file_icon = '-'
+    let g:vimfiler_marked_file_icon = '*'
+
+    autocmd VimEnter * VimFilerExplorer
+    nmap <space>f :VimFilerExplorer<CR>
+    nmap <leader>n :VimFilerBufferDir -explorer -find<CR>
     autocmd VimEnter * wincmd l
+    autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
 " }}}
 
 " Vim powerline {{{
