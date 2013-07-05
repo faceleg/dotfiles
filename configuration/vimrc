@@ -155,6 +155,11 @@ set nocompatible
     filetype plugin on
 " }}}
 
+" Sudo {{{
+    " w!!: Writes using sudo
+    cnoremap w!! w !sudo tee % >/dev/null
+" }}}
+
 " Spelling toggle {{{
     " http://yavin4.anshul.info/2006/05/18/spell-check-in-vim-7/
     set spelllang=en_nz
