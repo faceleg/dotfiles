@@ -264,7 +264,7 @@ nmap <leader>q :nohlsearch<CR>
     set listchars=tab:│\ ,trail:•,extends:❯,precedes:❮
     set shiftround
     set linebreak
-    set showbreak=↪\
+    set showbreak=↪
 " }}}
 
 " Open preview window at bottom {{{
