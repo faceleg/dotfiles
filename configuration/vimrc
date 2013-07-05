@@ -302,7 +302,7 @@ nmap <leader>q :nohlsearch<CR>
         %s/\s\+$//e
         call cursor(l, c)
     endfun
-    autocmd FileType c,cpp,css,java,php,ruby,puppet,python,javascript,vim,sh,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+    autocmd FileType c,cpp,css,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
     " listchar=trail is not as flexible, use the below to highlight trailing
     " whitespace. Don't do it for unite windows or readonly files
