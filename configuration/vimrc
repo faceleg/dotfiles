@@ -133,6 +133,8 @@ set nocompatible
     set nocursorcolumn
     syntax sync minlines=256
     nnoremap <Leader>c :set cursorline!<CR>
+    " Solid line for vsplit separator
+    set fcs=vert:│
 
     " Highlight line after jump
     " https://github.com/vim-scripts/jumphl.vim
