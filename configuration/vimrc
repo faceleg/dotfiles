@@ -89,6 +89,7 @@ set nocompatible
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
+    NeoBundle 'tpope/vim-repeat'
     NeoBundle 'xolox/vim-easytags'
     NeoBundle 'xolox/vim-misc'
     NeoBundle 'Valloric/MatchTagAlways'
