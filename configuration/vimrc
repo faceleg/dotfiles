@@ -433,6 +433,21 @@ nmap <leader>q :nohlsearch<CR>
 
     " Buffers
     nnoremap <space>s :Unite -quick-match buffer<cr>
+
+    " <F4>: Save session
+    nnoremap <F4> :<C-u>UniteSessionSave
+
+    " Save session automatically.
+    let g:unite_source_session_enable_auto_save = 1
+
+    " Pop up session selection if no file is specified
+    " TODO: Why does this not work when Vim isn't run from tmux???!
+    autocmd MyAutoCmd VimEnter * call s:unite_session_on_enter()
+    function! s:unite_session_on_enter()
+    if !argc() && !exists("g:start_session_from_cmdline")
+        Unite -buffer-name=sessions session
+    endif
+    endfunction
 " }}}
 
 " YankRing {{{
