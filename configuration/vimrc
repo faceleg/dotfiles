@@ -39,9 +39,6 @@ set nocompatible
     NeoBundle 'evanmiller/nginx-vim-syntax'
     NeoBundle 'tobyS/vmustache'
     NeoBundle 'tpope/vim-haml'
-    NeoBundleLazy 'teramako/jscomplete-vim', {'autoload':{'filetypes':['javascript']}} "{{{
-      autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
-    "}}}
     NeoBundle 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
     NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}
     NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
