@@ -410,7 +410,7 @@ nmap <leader>q :nohlsearch<CR>
 
     "autocmd VimEnter * VimFilerExplorer
     nmap <space>f :VimFilerExplorer<CR> && :call clearmatches()<CR>
-    nmap <leader>n :VimFilerBufferDir -explorer -find<CR>
+    nmap <space>n :VimFilerBufferDir -explorer -find<CR>
     autocmd VimEnter * wincmd l
     autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
 " }}}
