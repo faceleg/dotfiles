@@ -26,6 +26,7 @@ set nocompatible
     " Visual
     NeoBundle 'sickill/vim-sunburst'
     NeoBundle 'vim-scripts/jumphl.vim'                   " https://github.com/vim-scripts/jumphl.vim
+    NeoBundle 'Yggdroot/indentLine'
 
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
@@ -58,7 +59,6 @@ set nocompatible
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
     NeoBundle 'Lokaltog/vim-easymotion'
-    NeoBundle 'Yggdroot/indentLine'
     NeoBundle 'bling/vim-airline'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
