@@ -75,7 +75,6 @@ set nocompatible
     NeoBundle 'sjl/gundo.vim'
     NeoBundle 'terryma/vim-expand-region'                " https://github.com/terryma/vim-expand-region
     NeoBundle 'terryma/vim-multiple-cursors'
-    "NeoBundle 'terryma/vim-smooth-scroll'
     NeoBundle 'tpope/vim-fugitive' "{{{
           nnoremap <silent> <leader>gs :Gstatus<CR>
           nnoremap <silent> <leader>gd :Gdiff<CR>
