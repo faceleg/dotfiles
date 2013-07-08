@@ -97,6 +97,7 @@ set nocompatible
           autocmd FileType gitcommit nmap <buffer> U :Git checkout -- <C-r><C-g><CR>
           autocmd BufReadPost fugitive://* set bufhidden=delete
         "}}}
+    NeoBundle 'mhinz/vim-signify'
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
