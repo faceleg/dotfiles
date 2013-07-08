@@ -58,7 +58,7 @@ set nocompatible
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
     NeoBundle 'Lokaltog/vim-easymotion'
-    NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+    NeoBundle 'bling/vim-airline'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
     NeoBundle 'scrooloose/syntastic'
@@ -411,9 +411,11 @@ nmap <leader>q :nohlsearch<CR>
     autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
 " }}}
 
-" Vim powerline {{{
-    let g:Powerline_symbols = "fancy"
+" Vim airline {{{
     set laststatus=2
+    let g:airline_theme = "badwolf"
+    let g:airline_powerline_fonts = 1
+" }}}
 " }}}
 
 " SplitJoin {{{
