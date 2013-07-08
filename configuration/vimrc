@@ -453,14 +453,6 @@ nmap <leader>q :nohlsearch<CR>
 
     " Popup session selector
     noremap <space>s :Unite -buffer-name=sessions session<CR>
-
-    " Pop up session selection if no file is specified
-    "autocmd MyAutoCmd VimEnter * call s:unite_session_on_enter()
-    "function! s:unite_session_on_enter()
-    "    if !argc() && !exists("g:start_session_from_cmdline")
-    "        Unite -buffer-name=sessions session
-    "    endif
-    "endfunction
 " }}}
 
 " YankRing {{{
