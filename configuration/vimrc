@@ -228,11 +228,20 @@ set nocompatible
     " Show / hide location list
     noremap <silent><leader>lc :lcl<CR>
     noremap <silent><leader>lo :lw<CR>
-    let g:syntastic_mode_map = { 'mode': 'active',
-                                    \ 'passive_filetypes': ['css'] }
-    let syntastic_enable_signs = 1
-    let g:syntastic_always_populate_loc_list = 1
+    noremap <F6> :SyntasticCheck<CR>
+    let g:syntastic_mode_map = { 'mode': 'passive',
+                                \ 'active_filetypes': [],
+                                \ 'passive_filetypes': ['js', 'php', 'css', 'html'] }
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_enable_signs = 1
+    let g:syntastic_auto_jump = 1
+    "let g:syntastic_php_checkers=['php']
+    let g:syntastic_json_checkers=['jsonlint', 'jsonval']
     let g:syntastic_css_checkers=['csslint']
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_enable_highlighting = 1
+    let g:syntastic_echo_current_error  =1
 " }}}
 
 " Persistent Undo {{{
