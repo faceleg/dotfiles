@@ -2,16 +2,10 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-printf "\nReplacing ctags and vimrc configuration files\n"
-$CP "$DIR/../configuration/ctags" ~/.ctags
+#$CP "$DIR/../configuration/ctags" ~/.ctags
 $CP "$DIR/../configuration/vimrc" ~/.vimrc
 
 "$DIR/vim/neobundle.sh"
-
-if [[ -d "`eval echo ~/.phpctags/vendor/techlivezheng/phpctags`" ]]; then
-    # Use phpctags.sh installer first
-    $INSTALLER techlivezheng tagbar-phpctags
-fi
 
 # https://github.com/jelera/vim-javascript-syntax
 printf "\nInstalling javascript syntax\n"
