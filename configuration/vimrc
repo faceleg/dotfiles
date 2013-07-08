@@ -114,7 +114,23 @@ set nocompatible
     NeoBundleCheck
 " }}}
 
-" General settings{{{
+" Colourscheme {{{
+    colorscheme Sunburst
+    syntax on
+" }}}
+
+" Signify {{{
+    highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+    highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+    highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+
+    " highlight signs in Sy
+    highlight SignifySignAdd    cterm=bold ctermbg=DarkGrey  ctermfg=119
+    highlight SignifySignDelete cterm=bold ctermbg=DarkGrey  ctermfg=167
+    highlight SignifySignChange cterm=bold ctermbg=DarkGrey  ctermfg=227
+" }}}
+
+" General settings {{{
     set number
     set smartindent
 
@@ -138,9 +154,6 @@ set nocompatible
     set hidden
 
     set backspace=indent,eol,start  " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
-
-    syntax on
-    colorscheme Sunburst
 
     " Do not highlight current line
     set nocursorline
