@@ -440,7 +440,7 @@ nmap <leader>q :nohlsearch<CR>
     call unite#custom#source('line,outline','matchers','matcher_fuzzy')
 
     " ACK
-    nnoremap <space>/ :Unite -no-quit -buffer-name=search grep:.<cr>
+    nnoremap <space>/ :Unite -buffer-name=search grep:.<cr>
 
     " Buffers
     nnoremap <space>b :Unite buffer<cr>
