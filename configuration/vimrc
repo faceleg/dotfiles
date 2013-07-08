@@ -53,12 +53,14 @@ set nocompatible
     NeoBundle 'heavenshell/vim-jsdoc'
     NeoBundle 'mudpile45/vim-phpdoc'
 
+    " Usability
+    NeoBundle 'Lokaltog/vim-easymotion'
+
     " Plugins
     NeoBundle 'mhinz/vim-startify'
     NeoBundle 'AndrewRadev/splitjoin.vim'                " https://github.com/AndrewRadev/splitjoin.vim
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
-    NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'bling/vim-airline'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
