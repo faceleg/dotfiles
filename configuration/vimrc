@@ -270,9 +270,9 @@ set nocompatible
     set smartcase
     set ignorecase
 
-" Clear search highlight
-" http://statico.github.io/vim.html
-nmap <leader>q :nohlsearch<CR>
+    " Clear search highlight
+    " http://statico.github.io/vim.html
+    nmap <leader>q :nohlsearch<CR>
 " }}}
 
 " Window movement convenience {{{
