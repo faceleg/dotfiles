@@ -58,6 +58,7 @@ set nocompatible
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
     NeoBundle 'Lokaltog/vim-easymotion'
+    NeoBundle 'Yggdroot/indentLine'
     NeoBundle 'bling/vim-airline'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
@@ -167,6 +168,10 @@ set nocompatible
 " Sudo {{{
     " w!!: Writes using sudo
     cnoremap w!! w !sudo tee % >/dev/null
+" }}}
+
+" indentLine {{{
+    let g:indentLine_color_term = 239
 " }}}
 
 " Buffers {{{
