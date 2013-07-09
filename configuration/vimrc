@@ -170,6 +170,9 @@ set nocompatible
     " Highlight line after jump
     " https://github.com/vim-scripts/jumphl.vim
     autocmd VimEnter * DoJumpHl
+
+    " Select all
+    nmap <space>a ggVG<CR>
 " }}}
 
 " Startify {{{
