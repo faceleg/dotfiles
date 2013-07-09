@@ -108,7 +108,6 @@ set nocompatible
     NeoBundle 'vim-scripts/YankRing.vim'
     NeoBundle 'jiangmiao/auto-pairs'
     NeoBundle 'Shougo/vimfiler.vim'
-    NeoBundle 'zhaocai/linepower.vim'
 
     " Installation check.
     NeoBundleCheck
