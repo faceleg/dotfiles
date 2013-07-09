@@ -120,7 +120,7 @@ set nocompatible
 " }}}
 
 " Signify {{{
-    let g:signify_disable_by_default = 0
+    let g:signify_disable_by_default = 1
     let g:signify_mapping_next_hunk = '<leader>gj'
     let g:signify_mapping_prev_hunk = '<leader>gk'
 
@@ -130,7 +130,6 @@ set nocompatible
     highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
     highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
 
-    " highlight signs in Sy
     highlight SignifySignAdd    cterm=bold ctermbg=DarkGrey  ctermfg=119
     highlight SignifySignDelete cterm=bold ctermbg=DarkGrey  ctermfg=167
     highlight SignifySignChange cterm=bold ctermbg=DarkGrey  ctermfg=227
