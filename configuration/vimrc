@@ -120,6 +120,12 @@ set nocompatible
 " }}}
 
 " Signify {{{
+    let g:signify_disable_by_default = 0
+    let g:signify_mapping_next_hunk = '<leader>gj'
+    let g:signify_mapping_prev_hunk = '<leader>gk'
+
+    noremap <F10> :SignifyToggle<CR>
+
     highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
     highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
     highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
