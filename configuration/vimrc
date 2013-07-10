@@ -292,6 +292,7 @@ set nocompatible
     set incsearch
     set smartcase
     set ignorecase
+    set showmatch
 
     " Clear search highlight
     " http://statico.github.io/vim.html
