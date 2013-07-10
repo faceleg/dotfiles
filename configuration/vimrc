@@ -108,6 +108,8 @@ set nocompatible
     NeoBundle 'vim-scripts/YankRing.vim'
     NeoBundle 'jiangmiao/auto-pairs'
     NeoBundle 'Shougo/vimfiler.vim'
+    NeoBundle 'tsaleh/vim-matchit'
+
 
     " Installation check.
     NeoBundleCheck
