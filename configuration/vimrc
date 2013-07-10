@@ -25,14 +25,14 @@ set nocompatible
 
     " Visual
     NeoBundle 'sickill/vim-sunburst'
-    NeoBundle 'vim-scripts/jumphl.vim'                   " https://github.com/vim-scripts/jumphl.vim
+    NeoBundle 'vim-scripts/jumphl.vim'
     NeoBundle 'Yggdroot/indentLine'
 
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
     NeoBundle 'cakebaker/scss-syntax.vim', {'autoload':{'filetypes':['scss','sass']}}
     NeoBundle 'ap/vim-css-color', {'autoload':{'filetypes':['css','scss','sass','less','styl']}}
-    NeoBundle 'Glench/Vim-Jinja2-Syntax'                 " https://github.com/Glench/Vim-Jinja2-Syntax
+    NeoBundle 'Glench/Vim-Jinja2-Syntax'
     NeoBundle 'hail2u/vim-css3-syntax', {'autoload':{'filetypes':['css','scss','sass']}}
     NeoBundle 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
     NeoBundle 'plasticboy/vim-markdown'
@@ -73,17 +73,17 @@ set nocompatible
 
     " Plugins
     NeoBundle 'mhinz/vim-startify'
-    NeoBundle 'AndrewRadev/splitjoin.vim'                " https://github.com/AndrewRadev/splitjoin.vim
+    NeoBundle 'AndrewRadev/splitjoin.vim'
     NeoBundle 'hlissner/vim-multiedit'
-    NeoBundle 'inkarkat/closetag.vim'                    " https://github.com/inkarkat/closetag.vim
+    NeoBundle 'inkarkat/closetag.vim'
     NeoBundle 'bling/vim-airline'
     NeoBundle 'majutsushi/tagbar'
-    NeoBundle 'scrooloose/nerdcommenter'                 " https://github.com/scrooloose/nerdcommenter
+    NeoBundle 'scrooloose/nerdcommenter'
     NeoBundle 'scrooloose/syntastic'
-    NeoBundle 'Shougo/unite.vim'                         " https://github.com/Shougo/unite.vim - http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
+    NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/unite-session'
     NeoBundle 'sjl/gundo.vim'
-    NeoBundle 'terryma/vim-expand-region'                " https://github.com/terryma/vim-expand-region
+    NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
     NeoBundle 'tpope/vim-fugitive' "{{{
           nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -157,13 +157,15 @@ set nocompatible
     " http://items.sjbach.com/319/configuring-vim-right
     set hidden
 
-    set backspace=indent,eol,start  " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
+    " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
+    set backspace=indent,eol,start
 
     " Do not highlight current line
     set nocursorline
     set nocursorcolumn
     syntax sync minlines=256
     nnoremap <Leader>c :set cursorline!<CR>
+
     " Solid line for vsplit separator
     set fcs=vert:│
 
