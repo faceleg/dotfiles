@@ -110,6 +110,7 @@ set nocompatible
     NeoBundle 'Shougo/vimfiler.vim'
     NeoBundle 'tsaleh/vim-matchit'
 
+    NeoBundle 'yonchu/accelerated-smooth-scroll'
 
     " Installation check.
     NeoBundleCheck
