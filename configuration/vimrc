@@ -416,9 +416,6 @@ set nocompatible
 " }}}
 
 " PHP {{{
-    " autocmd FileType php nmap <C-y> <Plug>(phpdoc)
-    "noremap <C-y>p :call pdv#DocumentWithSnip()<CR>
-
     au BufNewFile,BufRead *.phtml setf phtml
 " }}}
 
