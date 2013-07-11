@@ -63,7 +63,6 @@ set nocompatible
 
     " Documentation
     NeoBundle 'heavenshell/vim-jsdoc'
-    NeoBundle 'mudpile45/vim-phpdoc'
     NeoBundle 'stephenmckinney/vim-dochub'
 
     " Usability
