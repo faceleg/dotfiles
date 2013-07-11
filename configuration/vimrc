@@ -84,18 +84,6 @@ set nocompatible
     NeoBundle 'sjl/gundo.vim'
     NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
-    NeoBundle 'tpope/vim-fugitive' "{{{
-          nnoremap <silent> <leader>gs :Gstatus<CR>
-          nnoremap <silent> <leader>gd :Gdiff<CR>
-          nnoremap <silent> <leader>gc :Gcommit<CR>
-          nnoremap <silent> <leader>gb :Gblame<CR>
-          nnoremap <silent> <leader>gl :Glog<CR>
-          nnoremap <silent> <leader>gp :Git push<CR>
-          nnoremap <silent> <leader>gw :Gwrite<CR>
-          nnoremap <silent> <leader>gr :Gremove<CR>
-          autocmd FileType gitcommit nmap <buffer> U :Git checkout -- <C-r><C-g><CR>
-          autocmd BufReadPost fugitive://* set bufhidden=delete
-        "}}}
     NeoBundle 'mhinz/vim-signify'
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
@@ -108,8 +96,22 @@ set nocompatible
     NeoBundle 'jiangmiao/auto-pairs'
     NeoBundle 'Shougo/vimfiler.vim'
     NeoBundle 'tsaleh/vim-matchit'
-
     NeoBundle 'yonchu/accelerated-smooth-scroll'
+
+    " VCS
+    NeoBundle 'vcscommand.vim'
+    NeoBundle 'tpope/vim-fugitive' "{{{
+          nnoremap <silent> <leader>gs :Gstatus<CR>
+          nnoremap <silent> <leader>gd :Gdiff<CR>
+          nnoremap <silent> <leader>gc :Gcommit<CR>
+          nnoremap <silent> <leader>gb :Gblame<CR>
+          nnoremap <silent> <leader>gl :Glog<CR>
+          nnoremap <silent> <leader>gp :Git push<CR>
+          nnoremap <silent> <leader>gw :Gwrite<CR>
+          nnoremap <silent> <leader>gr :Gremove<CR>
+          autocmd FileType gitcommit nmap <buffer> U :Git checkout -- <C-r><C-g><CR>
+          autocmd BufReadPost fugitive://* set bufhidden=delete
+        "}}}
 
     " Installation check.
     NeoBundleCheck
