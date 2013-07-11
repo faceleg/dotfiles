@@ -119,6 +119,8 @@ set nocompatible
 " Colourscheme {{{
     colorscheme Sunburst
     syntax on
+
+    highlight MatchParen term=reverse ctermfg=196
 " }}}
 
 " Signify {{{
