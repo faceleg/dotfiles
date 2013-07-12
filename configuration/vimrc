@@ -174,7 +174,14 @@ set nocompatible
         noremap <space>s :Unite -buffer-name=sessions session<CR>
     " }}}
     NeoBundle 'Shougo/unite-session'
-    NeoBundle 'sjl/gundo.vim'
+    NeoBundle 'sjl/gundo.vim', "{{{
+         http://sjl.bitbucket.org/gundo.vim/#installation
+        nnoremap <F5> :GundoToggle<CR>
+        let g:gundo_width = 60
+        let g:gundo_preview_height = 20
+        let g:gundo_right = 1
+        let g:gundo_close_on_revert = 1
+    " }}}
     NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
     NeoBundle 'mhinz/vim-signify', "{{{
@@ -414,15 +421,6 @@ set nocompatible
         autocmd InsertLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+$/ | endif
         autocmd BufWinLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | call clearmatches() | endif
     augroup END
-" }}}
-
-" Gundo {{{
-    " http://sjl.bitbucket.org/gundo.vim/#installation
-    nnoremap <F5> :GundoToggle<CR>
-    let g:gundo_width = 60
-    let g:gundo_preview_height = 20
-    let g:gundo_right = 1
-    let g:gundo_close_on_revert = 1
 " }}}
 
 " JavaScript {{{
