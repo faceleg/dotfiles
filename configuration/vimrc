@@ -27,6 +27,12 @@ set nocompatible
     NeoBundle 'sickill/vim-sunburst'
 "}}}
 
+" Colourscheme {{{
+    colorscheme Sunburst
+    syntax on
+
+    highlight MatchParen term=reverse ctermfg=027
+" }}}
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
     NeoBundle 'cakebaker/scss-syntax.vim', {'autoload':{'filetypes':['scss','sass']}}
