@@ -79,6 +79,7 @@ set nocompatible
         let g:tern_show_argument_hints = 1
     " }}}
 
+    NeoBundle 'shawncplus/phpcomplete.vim'
     NeoBundle 'Shougo/neocomplete.vim'                   " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
     NeoBundle 'Shougo/neosnippet'
 
