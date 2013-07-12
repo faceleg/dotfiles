@@ -82,6 +82,7 @@ set nocompatible
     NeoBundle 'shawncplus/phpcomplete.vim'
     NeoBundle 'Shougo/neocomplete.vim'                   " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
     NeoBundle 'Shougo/neosnippet'
+    NeoBundle 'Shougo/context_filetype.vim'
 
     " Documentation
     NeoBundle 'heavenshell/vim-jsdoc'
