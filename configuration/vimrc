@@ -358,6 +358,7 @@ set nocompatible
 " Show special characters {{{
     " http://vimcasts.org/episodes/show-invisibles/
     " Shortcut to rapidly toggle `set list`
+    set list
     nmap <leader>l :set list!<CR>
     " Use the same symbols as TextMate for tabstops and EOLs
     set listchars=tab:│\ ,trail:•,extends:❯,precedes:❮
