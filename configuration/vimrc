@@ -522,7 +522,7 @@ set nocompatible
         \ 'default' : '',
         \ 'vimshell' : $HOME.'/.vimshell_hist',
         \ 'scheme' : $HOME.'/.gosh_completions'
-            \ }
+        \ }
 
     if !exists('g:neocomplete#keyword_patterns')
         let g:neocomplete#keyword_patterns = {}
@@ -584,6 +584,6 @@ set nocompatible
 
     " For snippet_complete marker.
     if has('conceal')
-    set conceallevel=2 concealcursor=i
+        set conceallevel=2 concealcursor=i
     endif
 " }}}
