@@ -69,7 +69,6 @@ set nocompatible
     NeoBundle 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','typescript']}}
 
     " Completion
-    NeoBundle 'shawncplus/phpcomplete.vim'
     NeoBundle 'marijnh/tern_for_vim', {
       \ 'build' : {
       \     'mac' : 'npm install --update',
