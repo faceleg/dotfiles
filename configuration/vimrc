@@ -112,8 +112,26 @@ set nocompatible
     NeoBundle 'bling/vim-airline'
     NeoBundle 'majutsushi/tagbar'
     NeoBundle 'scrooloose/nerdcommenter'
-    NeoBundle 'scrooloose/syntastic'
     NeoBundle 'Shougo/unite.vim'
+    NeoBundle 'scrooloose/syntastic', "{{{
+        " Show / hide location list
+        noremap <silent><leader>lc :lcl<CR>
+        noremap <silent><leader>lo :lw<CR>
+        noremap <F6> :SyntasticCheck<CR>
+        let g:syntastic_mode_map = { 'mode': 'passive',
+                                    \ 'active_filetypes': [],
+                                    \ 'passive_filetypes': ['js', 'php', 'css', 'html'] }
+        let g:syntastic_check_on_open = 0
+        let g:syntastic_enable_signs = 1
+        let g:syntastic_auto_jump = 1
+        let g:syntastic_php_checkers=['php']
+        let g:syntastic_json_checkers=['jsonlint', 'jsonval']
+        let g:syntastic_css_checkers=['csslint']
+        let g:syntastic_auto_loc_list = 1
+        let g:syntastic_always_populate_loc_list = 1
+        let g:syntastic_enable_highlighting = 1
+        let g:syntastic_echo_current_error  =1
+    "}}}
     NeoBundle 'Shougo/unite-session'
     NeoBundle 'sjl/gundo.vim'
     NeoBundle 'terryma/vim-expand-region'
@@ -272,27 +290,6 @@ set nocompatible
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
-" }}}
-
-" Syntastic {{{
-    " https://github.com/scrooloose/syntastic
-    " Show / hide location list
-    noremap <silent><leader>lc :lcl<CR>
-    noremap <silent><leader>lo :lw<CR>
-    noremap <F6> :SyntasticCheck<CR>
-    let g:syntastic_mode_map = { 'mode': 'passive',
-                                \ 'active_filetypes': [],
-                                \ 'passive_filetypes': ['js', 'php', 'css', 'html'] }
-    let g:syntastic_check_on_open = 0
-    let g:syntastic_enable_signs = 1
-    let g:syntastic_auto_jump = 1
-    "let g:syntastic_php_checkers=['php']
-    let g:syntastic_json_checkers=['jsonlint', 'jsonval']
-    let g:syntastic_css_checkers=['csslint']
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_enable_highlighting = 1
-    let g:syntastic_echo_current_error  =1
 " }}}
 
 " Persistent Undo {{{
