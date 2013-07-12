@@ -138,7 +138,14 @@ set nocompatible
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
-    NeoBundle 'xolox/vim-easytags'
+    NeoBundle 'xolox/vim-easytags', "{{{
+        let g:easytags_file = '~/.vim/tags'
+        let g:easytags_updatetime_min = 4000
+        let g:easytags_on_cursorhold = 0
+        let g:easytags_python_enabled = 1
+
+        nnoremap <F11> ::UpdateTags<CR>
+    "}}}
     NeoBundle 'xolox/vim-misc'
     NeoBundle 'Valloric/MatchTagAlways'
     NeoBundle 'vim-scripts/YankRing.vim'
@@ -367,15 +374,6 @@ set nocompatible
         autocmd InsertLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+$/ | endif
         autocmd BufWinLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | call clearmatches() | endif
     augroup END
-" }}}
-
-" EasyTags {{{
-    let g:easytags_file = '~/.vim/tags'
-    let g:easytags_updatetime_min = 4000
-    let g:easytags_on_cursorhold = 0
-    let g:easytags_python_enabled = 1
-
-    nnoremap <F11> ::UpdateTags<CR>
 " }}}
 
 " Tagbar {{{
