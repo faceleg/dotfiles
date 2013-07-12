@@ -112,7 +112,19 @@ set nocompatible
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'
     NeoBundle 'bling/vim-airline'
-    NeoBundle 'majutsushi/tagbar'
+    NeoBundle 'majutsushi/tagbar', "{{{
+        " https://github.com/majutsushi/tagbar
+        nmap <f8> :TagbarToggle<cr>
+        let g:tagbar_type_css = {
+        \ 'ctagstype' : 'Css',
+            \ 'kinds'     : [
+                \ 'c:classes',
+                \ 's:selectors',
+                \ 'i:identities'
+            \ ]
+        \ }
+    " }}}
+
     NeoBundle 'scrooloose/nerdcommenter'
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
@@ -403,19 +415,6 @@ set nocompatible
         autocmd InsertLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+$/ | endif
         autocmd BufWinLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | call clearmatches() | endif
     augroup END
-" }}}
-
-" Tagbar {{{
-    " https://github.com/majutsushi/tagbar
-    nmap <f8> :TagbarToggle<cr>
-    let g:tagbar_type_css = {
-    \ 'ctagstype' : 'Css',
-        \ 'kinds'     : [
-            \ 'c:classes',
-            \ 's:selectors',
-            \ 'i:identities'
-        \ ]
-    \ }
 " }}}
 
 " Gundo {{{
