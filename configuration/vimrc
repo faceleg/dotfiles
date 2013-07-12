@@ -97,7 +97,15 @@ set nocompatible
     NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
     " Plugins
-    NeoBundle 'mhinz/vim-startify'
+    NeoBundle 'mhinz/vim-startify', "{{{
+        let g:startify_show_sessions = 1
+        let g:startify_session_dir = expand('~/.vim/.cache/unite/session')
+
+        hi StartifyBracket ctermfg=100
+        hi StartifyNumber  ctermfg=215
+        hi StartifyPath    ctermfg=245
+        hi StartifySlash   ctermfg=240
+    " }}}
     NeoBundle 'AndrewRadev/splitjoin.vim'
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'
@@ -195,16 +203,6 @@ set nocompatible
 
     " Select all
     nmap <space>a ggVG<CR>
-" }}}
-
-" Startify {{{
-    let g:startify_show_sessions = 1
-    let g:startify_session_dir = expand('~/.vim/.cache/unite/session')
-
-    hi StartifyBracket ctermfg=100
-    hi StartifyNumber  ctermfg=215
-    hi StartifyPath    ctermfg=245
-    hi StartifySlash   ctermfg=240
 " }}}
 
 " Tabs & indenting {{{
