@@ -153,29 +153,6 @@ set nocompatible
     NeoBundleCheck
 " }}}
 
-" Colourscheme {{{
-    colorscheme Sunburst
-    syntax on
-
-    highlight MatchParen term=reverse ctermfg=027
-" }}}
-
-" Signify {{{
-    let g:signify_disable_by_default = 1
-    let g:signify_mapping_next_hunk = '<leader>gj'
-    let g:signify_mapping_prev_hunk = '<leader>gk'
-
-    noremap <F10> :SignifyToggle<CR>
-
-    highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
-    highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
-    highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
-
-    highlight SignifySignAdd    cterm=bold ctermbg=DarkGrey  ctermfg=119
-    highlight SignifySignDelete cterm=bold ctermbg=DarkGrey  ctermfg=167
-    highlight SignifySignChange cterm=bold ctermbg=DarkGrey  ctermfg=227
-" }}}
-
 " General settings {{{
     set number
     set smartindent
@@ -211,10 +188,6 @@ set nocompatible
     " Solid line for vsplit separator
     set fcs=vert:│
 
-    " Highlight line after jump
-    " https://github.com/vim-scripts/jumphl.vim
-    autocmd VimEnter * DoJumpHl
-
     " Select all
     nmap <space>a ggVG<CR>
 " }}}
@@ -246,10 +219,6 @@ set nocompatible
 " Sudo {{{
     " w!!: Writes using sudo
     cnoremap w!! w !sudo tee % >/dev/null
-" }}}
-
-" indentLine {{{
-    let g:indentLine_color_term = 233
 " }}}
 
 " Buffers {{{
