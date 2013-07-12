@@ -194,7 +194,9 @@ set nocompatible
     "}}}
     NeoBundle 'xolox/vim-misc'
     NeoBundle 'Valloric/MatchTagAlways'
-    NeoBundle 'vim-scripts/YankRing.vim'
+    NeoBundle 'vim-scripts/YankRing.vim', "{{{
+        nnoremap <silent> <F3> :YRShow<CR>
+    " }}}
     NeoBundle 'jiangmiao/auto-pairs'
     NeoBundle 'Shougo/vimfiler.vim'
     NeoBundle 'tsaleh/vim-matchit'
@@ -498,11 +500,6 @@ set nocompatible
     " https://github.com/AndrewRadev/splitjoin.vim
     nmap gS :SplitjoinSplit<cr>
     nmap gJ :SplitjoinJoin<cr>
-" }}}
-
-
-" YankRing {{{
-    nnoremap <silent> <F3> :YRShow<CR>
 " }}}
 
 " tern_for_vim {{{
