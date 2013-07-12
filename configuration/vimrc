@@ -85,6 +85,11 @@ set nocompatible
     " Documentation
     NeoBundle 'heavenshell/vim-jsdoc'
     NeoBundle 'stephenmckinney/vim-dochub'
+    NeoBundle 'tobyS/vmustache'
+    NeoBundle 'tobyS/pdv', "{{{
+        let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+        nmap <C-y>p :call pdv#DocumentCurrentLine()<CR>
+    "}}}
 
     " Usability
     NeoBundle 'Lokaltog/vim-easymotion'
