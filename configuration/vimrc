@@ -502,10 +502,6 @@ set nocompatible
     nmap gJ :SplitjoinJoin<cr>
 " }}}
 
-" tern_for_vim {{{
-    let g:tern_show_argument_hints = 1
-" }}}
-
 " Neocomplete {{{
     set completeopt="menu"
 
