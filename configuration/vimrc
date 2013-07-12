@@ -198,7 +198,7 @@ set nocompatible
     NeoBundle 'jiangmiao/auto-pairs'
     NeoBundle 'Shougo/vimfiler.vim'
     NeoBundle 'tsaleh/vim-matchit'
-    NeoBundle 'yonchu/accelerated-smooth-scroll'
+    "NeoBundle 'yonchu/accelerated-smooth-scroll'
 
     " VCS
     NeoBundle 'vcscommand.vim'
