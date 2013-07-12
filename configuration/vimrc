@@ -33,6 +33,10 @@ set nocompatible
 
     highlight MatchParen term=reverse ctermfg=027
 " }}}
+    NeoBundle 'Yggdroot/indentLine', "{{{
+        let g:indentLine_color_term = 233
+    "}}}
+
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
     NeoBundle 'cakebaker/scss-syntax.vim', {'autoload':{'filetypes':['scss','sass']}}
