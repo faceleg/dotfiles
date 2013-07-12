@@ -5,7 +5,7 @@ let mapleader=","
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" NeoBundle {{{
+" NeoBundleInitialisation {{{
     if has('vim_starting')
       set runtimepath+=~/.vim/bundle/neobundle.vim/
     endif
@@ -23,10 +23,9 @@ set nocompatible
           \    },
           \ }
 
-    " Visual
+    " Syntax
     NeoBundle 'sickill/vim-sunburst'
-    NeoBundle 'vim-scripts/jumphl.vim'
-    NeoBundle 'Yggdroot/indentLine'
+"}}}
 
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
