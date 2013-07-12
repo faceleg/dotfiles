@@ -203,7 +203,6 @@ set nocompatible
     "NeoBundle 'yonchu/accelerated-smooth-scroll'
 
     " VCS
-    NeoBundle 'vcscommand.vim'
     NeoBundle 'tpope/vim-fugitive' "{{{
           nnoremap <silent> <leader>gs :Gstatus<CR>
           nnoremap <silent> <leader>gd :Gdiff<CR>
