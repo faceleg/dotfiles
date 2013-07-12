@@ -89,7 +89,22 @@ set nocompatible
     NeoBundle 'sjl/gundo.vim'
     NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
-    NeoBundle 'mhinz/vim-signify'
+    NeoBundle 'mhinz/vim-signify', "{{{
+        let g:signify_disable_by_default = 1
+        let g:signify_mapping_next_hunk = '<leader>gj'
+        let g:signify_mapping_prev_hunk = '<leader>gk'
+
+        noremap <F10> :SignifyToggle<CR>
+
+        highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+        highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+        highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+
+        highlight SignifySignAdd    cterm=bold ctermbg=DarkGrey  ctermfg=119
+        highlight SignifySignDelete cterm=bold ctermbg=DarkGrey  ctermfg=167
+        highlight SignifySignChange cterm=bold ctermbg=DarkGrey  ctermfg=227
+    " }}}
+
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
