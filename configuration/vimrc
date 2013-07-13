@@ -73,7 +73,13 @@ set nocompatible
     "}}}
     NeoBundle 'mmalecki/vim-node.js', {'autoload':{'filetypes':['javascript']}}
     NeoBundle 'leshill/vim-json', {'autoload':{'filetypes':['javascript','json']}}
-    NeoBundle 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','typescript']}}
+    NeoBundle 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','typescript']}}, "{{{
+        autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+        autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 0
+        autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 0
+        autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+        autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+    "}}}
 
     " Completion
     NeoBundle 'marijnh/tern_for_vim', {
@@ -506,14 +512,6 @@ set nocompatible
 " }}}
 
 " JavaScript {{{
-    " JavaScriptLibraries syntax
-    " https://github.com/othree/javascript-libraries-syntax.vim
-    autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
-    autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 0
-    autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 0
-    autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
-    autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
-
     " Vim JSDoc
     " https://github.com/faceleg/vim-jsdoc
     let g:jsdoc_allow_input_prompt = 1
