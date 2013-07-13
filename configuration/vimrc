@@ -550,8 +550,3 @@ set nocompatible
 " CSS {{{
     autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 " }}}
-
-" Vim sparkup {{{
-    let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
-" }}}
-
