@@ -47,7 +47,9 @@ set nocompatible
     "}}}
 
     " Syntax
-    NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}
+    NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}, "{{{
+        au BufNewFile,BufRead *.less setf less
+    "}}}
     NeoBundle 'cakebaker/scss-syntax.vim', {'autoload':{'filetypes':['scss','sass']}}
     NeoBundle 'ap/vim-css-color', {'autoload':{'filetypes':['css','scss','sass','less','styl']}}
     NeoBundle 'Glench/Vim-Jinja2-Syntax'
