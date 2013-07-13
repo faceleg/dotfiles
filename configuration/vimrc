@@ -43,7 +43,8 @@ set nocompatible
         autocmd VimEnter * DoJumpHl
     "}}}
     NeoBundle 'Yggdroot/indentLine', "{{{
-        let g:indentLine_color_term = 233
+        let g:indentLine_color_term = 235
+        let g:indentLine_char = '┊'
     "}}}
 
     " Syntax
