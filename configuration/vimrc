@@ -272,7 +272,7 @@ set nocompatible
     " }}}
     NeoBundle 'Shougo/unite-session'
     NeoBundle 'sjl/gundo.vim', "{{{
-         http://sjl.bitbucket.org/gundo.vim/#installation
+        " http://sjl.bitbucket.org/gundo.vim/#installation
         nnoremap <F5> :GundoToggle<CR>
         let g:gundo_width = 60
         let g:gundo_preview_height = 20
