@@ -60,7 +60,11 @@ set nocompatible
     NeoBundle 'puppetlabs/puppet-syntax-vim'
     NeoBundle 'evanmiller/nginx-vim-syntax'
     NeoBundle 'tpope/vim-haml'
-    NeoBundle 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}
+    NeoBundle 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}, "{{{
+        let g:html_indent_inctags = "html,body,head,tbody"
+        let g:html_indent_script1 = "inc"
+        let g:html_indent_style1 = "inc"
+    "}}}
     NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}
     NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
       nnoremap <leader>fjs :call JsBeautify()<cr>
@@ -500,11 +504,6 @@ set nocompatible
 " }}}
 
 " JavaScript {{{
-    " https://github.com/vim-scripts/vim-javascript
-    let g:html_indent_inctags = "html,body,head,tbody"
-    let g:html_indent_script1 = "inc"
-    let g:html_indent_style1 = "inc"
-
     " JavaScriptLibraries syntax
     " https://github.com/othree/javascript-libraries-syntax.vim
     autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
