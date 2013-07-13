@@ -321,7 +321,24 @@ set nocompatible
         nnoremap <silent> <F3> :YRShow<CR>
     " }}}
     NeoBundle 'jiangmiao/auto-pairs'
-    NeoBundle 'Shougo/vimfiler.vim'
+    NeoBundle 'Shougo/vimfiler.vim', "{{{
+        let g:vimfiler_as_default_explorer = 1
+        let g:vimfiler_safe_mode_by_default = 0
+        let g:vimfiler_force_overwrite_statusline = 0
+
+        " Like Textmate icons.
+        let g:vimfiler_tree_leaf_icon = ' '
+        let g:vimfiler_tree_opened_icon = '▾'
+        let g:vimfiler_tree_closed_icon = '▸'
+        let g:vimfiler_file_icon = '-'
+        let g:vimfiler_marked_file_icon = '*'
+
+        "autocmd VimEnter * VimFilerExplorer
+        nmap <space>f :VimFilerExplorer<CR> && :call clearmatches()<CR>
+        nmap <space>n :VimFilerBufferDir -explorer -find<CR>
+        autocmd VimEnter * wincmd l
+        autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
+    " }}}
     NeoBundle 'tsaleh/vim-matchit'
     "NeoBundle 'yonchu/accelerated-smooth-scroll'
 
@@ -536,24 +553,5 @@ set nocompatible
 
 " Vim sparkup {{{
     let g:sparkup='~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
-" }}}
-
-" Vim filer {{{
-    let g:vimfiler_as_default_explorer = 1
-    let g:vimfiler_safe_mode_by_default = 0
-    let g:vimfiler_force_overwrite_statusline = 0
-
-    " Like Textmate icons.
-    let g:vimfiler_tree_leaf_icon = ' '
-    let g:vimfiler_tree_opened_icon = '▾'
-    let g:vimfiler_tree_closed_icon = '▸'
-    let g:vimfiler_file_icon = '-'
-    let g:vimfiler_marked_file_icon = '*'
-
-    "autocmd VimEnter * VimFilerExplorer
-    nmap <space>f :VimFilerExplorer<CR> && :call clearmatches()<CR>
-    nmap <space>n :VimFilerBufferDir -explorer -find<CR>
-    autocmd VimEnter * wincmd l
-    autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
 " }}}
 
