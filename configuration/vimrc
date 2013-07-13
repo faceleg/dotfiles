@@ -39,7 +39,6 @@ set nocompatible
     " Visual
     NeoBundle 'vim-scripts/jumphl.vim', "{{{
         " Highlight line after jump
-        " https://github.com/vim-scripts/jumphl.vim
         autocmd VimEnter * DoJumpHl
     "}}}
     NeoBundle 'Yggdroot/indentLine', "{{{
