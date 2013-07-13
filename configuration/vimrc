@@ -197,7 +197,10 @@ set nocompatible
         hi StartifyPath    ctermfg=245
         hi StartifySlash   ctermfg=240
     " }}}
-    NeoBundle 'AndrewRadev/splitjoin.vim'
+    NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
+        nmap gS :SplitjoinSplit<cr>
+        nmap gJ :SplitjoinJoin<cr>
+    " }}}
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'
     NeoBundle 'bling/vim-airline', "{{{
@@ -554,11 +557,5 @@ set nocompatible
     nmap <space>n :VimFilerBufferDir -explorer -find<CR>
     autocmd VimEnter * wincmd l
     autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
-" }}}
-
-" SplitJoin {{{
-    " https://github.com/AndrewRadev/splitjoin.vim
-    nmap gS :SplitjoinSplit<cr>
-    nmap gJ :SplitjoinJoin<cr>
 " }}}
 
