@@ -51,8 +51,10 @@ set nocompatible
         au BufNewFile,BufRead *.less setf less
     "}}}
     NeoBundle 'cakebaker/scss-syntax.vim', {'autoload':{'filetypes':['scss','sass']}}
-    NeoBundle 'ap/vim-css-color', {'autoload':{'filetypes':['css','scss','sass','less','styl']}}
     NeoBundle 'Glench/Vim-Jinja2-Syntax'
+    NeoBundle 'ap/vim-css-color', {'autoload':{'filetypes':['css','scss','sass','less','styl']}}, "{{{
+        let g:cssColorVimDoNotMessMyUpdatetime = 1
+    "}}}
     NeoBundle 'hail2u/vim-css3-syntax', {'autoload':{'filetypes':['css','scss','sass']}}
     NeoBundle 'othree/html5.vim', {'autoload':{'filetypes':['html']}}
     NeoBundle 'plasticboy/vim-markdown'
@@ -527,9 +529,6 @@ set nocompatible
 
 " CSS {{{
     autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
-
-    " https://github.com/skammer/vim-css-color
-    let g:cssColorVimDoNotMessMyUpdatetime = 1
 " }}}
 
 " Vim sparkup {{{
