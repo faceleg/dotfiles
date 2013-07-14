@@ -211,7 +211,6 @@ set nocompatible
         let g:airline_powerline_fonts = 1
     " }}}
     NeoBundle 'majutsushi/tagbar', "{{{
-        " https://github.com/majutsushi/tagbar
         nmap <f8> :TagbarToggle<cr>
         let g:tagbar_type_css = {
         \ 'ctagstype' : 'Css',
@@ -274,7 +273,6 @@ set nocompatible
     " }}}
     NeoBundle 'Shougo/unite-session'
     NeoBundle 'sjl/gundo.vim', "{{{
-        " http://sjl.bitbucket.org/gundo.vim/#installation
         nnoremap <F5> :GundoToggle<CR>
         let g:gundo_width = 60
         let g:gundo_preview_height = 20
