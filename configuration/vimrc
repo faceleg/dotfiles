@@ -30,7 +30,6 @@ set nocompatible
 
 " Colourscheme {{{
     colorscheme Sunburst
-    set background=dark
     syntax on
 " }}}
 
