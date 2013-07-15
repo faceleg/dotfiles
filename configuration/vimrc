@@ -32,8 +32,6 @@ set nocompatible
     colorscheme Sunburst
     set background=dark
     syntax on
-
-    highlight MatchParen term=reverse ctermfg=027
 " }}}
 
 " NeoBundle {{{
