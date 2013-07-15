@@ -288,20 +288,14 @@ set nocompatible
     " }}}
     NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
+
+    " Visual
     NeoBundle 'mhinz/vim-signify', "{{{
         let g:signify_disable_by_default = 1
         let g:signify_mapping_next_hunk = '<leader>gj'
         let g:signify_mapping_prev_hunk = '<leader>gk'
 
         noremap <F10> :SignifyToggle<CR>
-
-        highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
-        highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
-        highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
-
-        highlight SignifySignAdd    cterm=bold ctermbg=DarkGrey  ctermfg=119
-        highlight SignifySignDelete cterm=bold ctermbg=DarkGrey  ctermfg=167
-        highlight SignifySignChange cterm=bold ctermbg=DarkGrey  ctermfg=227
     " }}}
 
     NeoBundle 'tpope/vim-unimpaired'
@@ -320,7 +314,6 @@ set nocompatible
     NeoBundle 'Valloric/MatchTagAlways', "{{{
         let g:mta_use_matchparen_group = 0
         let g:mta_set_default_matchtag_color = 0
-        highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
         let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
     " }}}
 
