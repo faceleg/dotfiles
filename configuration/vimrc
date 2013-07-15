@@ -45,6 +45,9 @@ set nocompatible
         let g:indentLine_char = '┊'
     "}}}
 
+    " Folding
+    NeoBundle 'phpfolding.vim'
+
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}, "{{{
         au BufNewFile,BufRead *.less setf less
