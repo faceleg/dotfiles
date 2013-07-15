@@ -24,7 +24,7 @@ set nocompatible
           \ }
 
     " Syntax
-    NeoBundle 'sickill/vim-sunburst'
+    NeoBundle 'faceleg/vim-sunburst'
 "}}}
 
 " Colourscheme {{{
