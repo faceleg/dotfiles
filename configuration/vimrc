@@ -278,8 +278,7 @@ set nocompatible
             let g:unite_source_grep_default_opts='--no-heading --no-color'
             let g:unite_source_grep_recursive_opt=''
         endif
-        nnoremap <space>/ :<C-u>Unite -buffer-name=search grep:.<cr>
-        "nnoremap <space>/ :Unite -buffer-name=search grep:.<cr>
+        nnoremap <space>/ :<C-u>Unite -auto-preview -buffer-name=search grep:.<cr>
 
         " Buffers
         nnoremap <space>b :Unite buffer<cr>
