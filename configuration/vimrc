@@ -427,11 +427,6 @@ set nocompatible
     cnoremap w!! w !sudo tee % >/dev/null
 " }}}
 
-" Buffers {{{
-    " Delete the current buffer
-    nnoremap <Leader>d :bdelete<CR>
-" }}}
-
 " Spelling toggle {{{
     " http://yavin4.anshul.info/2006/05/18/spell-check-in-vim-7/
     set spelllang=en_nz
