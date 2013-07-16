@@ -194,7 +194,7 @@ set nocompatible
     " Usability
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
-    NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+    "NeoBundle 'tristen/vim-sparkup'
 
     " Plugins
     NeoBundle 'mhinz/vim-startify', "{{{
