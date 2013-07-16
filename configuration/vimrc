@@ -195,6 +195,10 @@ set nocompatible
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
     "NeoBundle 'tristen/vim-sparkup'
+    NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
+        nmap gS :SplitjoinSplit<cr>
+        nmap gJ :SplitjoinJoin<cr>
+    " }}}
 
     " Plugins
     NeoBundle 'mhinz/vim-startify', "{{{
@@ -205,10 +209,6 @@ set nocompatible
         hi StartifyNumber  ctermfg=215
         hi StartifyPath    ctermfg=245
         hi StartifySlash   ctermfg=240
-    " }}}
-    NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
-        nmap gS :SplitjoinSplit<cr>
-        nmap gJ :SplitjoinJoin<cr>
     " }}}
     NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'inkarkat/closetag.vim'
