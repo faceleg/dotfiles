@@ -355,7 +355,6 @@ set nocompatible
         autocmd bufenter * if (winnr("$") == 1 && &ft=='vimfiler') | q | endif
     " }}}
     NeoBundle 'tsaleh/vim-matchit'
-    "NeoBundle 'yonchu/accelerated-smooth-scroll'
 
     " VCS
     NeoBundle 'tpope/vim-fugitive' "{{{
