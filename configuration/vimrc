@@ -331,6 +331,7 @@ set nocompatible
         let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
     " }}}
 
+    NeoBundle 'sickill/vim-pasta'
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <silent> <F3> :YRShow<CR>
     " }}}
