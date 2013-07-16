@@ -263,7 +263,8 @@ set nocompatible
         let g:unite_prompt='» '
 
         " CTRLP
-        nnoremap <space>p :Unite -start-insert -auto-preview file_rec/async<cr>
+        nnoremap <space>p :Unite -start-insert file_rec/async<cr>
+        call unite#custom#profile('files', 'filters', ['sorter_rank'])
         call unite#filters#matcher_default#use(['matcher_fuzzy'])
         call unite#filters#sorter_default#use(['sorter_rank'])
         call unite#set_profile('files', 'smartcase', 1)
