@@ -31,6 +31,7 @@ set nocompatible
 " Colourscheme {{{
     colorscheme Sunburst
     syntax on
+    syntax sync minlines=256
 " }}}
 
 " NeoBundle {{{
@@ -398,7 +399,6 @@ set nocompatible
     " Do not highlight current line
     set nocursorline
     set nocursorcolumn
-    syntax sync minlines=256
     nnoremap <Leader>c :set cursorline!<CR>
 
     " Solid line for vsplit separator
