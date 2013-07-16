@@ -205,6 +205,7 @@ set nocompatible
         nmap gS :SplitjoinSplit<cr>
         nmap gJ :SplitjoinJoin<cr>
     " }}}
+    NeoBundle 'inkarkat/closetag.vim'
 
     " Features
     NeoBundle 'mhinz/vim-startify', "{{{
@@ -217,7 +218,6 @@ set nocompatible
         hi StartifySlash   ctermfg=240
     " }}}
     NeoBundle 'hlissner/vim-multiedit'
-    NeoBundle 'inkarkat/closetag.vim'
     NeoBundle 'bling/vim-airline', "{{{
         set laststatus=2
         let g:airline_theme = "dark"
