@@ -196,7 +196,6 @@ set nocompatible
         let g:jsdoc_allow_input_prompt = 1
         nmap <C-y>j :JsDoc<CR>
     "}}}
-    NeoBundle 'stephenmckinney/vim-dochub'
     NeoBundle 'tobyS/vmustache'
     NeoBundle 'tobyS/pdv', "{{{
         let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
