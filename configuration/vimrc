@@ -88,6 +88,12 @@ set nocompatible
         let g:html_indent_style1 = "inc"
     "}}}
     NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
+        let g:config_Beautifier =  {
+            \'js' : {
+            \   'indent_char': ' ',
+            \   'indent_size': 2
+            \}
+        \}
       nnoremap <leader>fjs :call JsBeautify()<cr>
     "}}}
     NeoBundle 'mmalecki/vim-node.js', {'autoload':{'filetypes':['javascript']}}
