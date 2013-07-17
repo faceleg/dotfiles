@@ -205,7 +205,6 @@ set nocompatible
     " Usability
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
-    "NeoBundle 'tristen/vim-sparkup'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
         nmap gS :SplitjoinSplit<cr>
         nmap gJ :SplitjoinJoin<cr>
