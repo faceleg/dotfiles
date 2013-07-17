@@ -78,7 +78,7 @@ set nocompatible
     NeoBundle 'tpope/vim-haml'
 
     " JavaScript
-    NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}, "{{{
+    NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}, "{{{
         au FileType javascript call JavaScriptFold()
     "}}}
     NeoBundle 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}, "{{{
