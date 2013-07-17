@@ -1,3 +1,4 @@
+syntax off
 " The mapleader has to be set before vundle starts loading all the plugins.
 let mapleader=","
 
