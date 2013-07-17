@@ -24,8 +24,8 @@ set nocompatible
           \ }
 
     " Syntax
-    NeoBundle 'faceleg/vim-sunburst'
-    NeoBundle 'kshenoy/vim-signature'
+    NeoBundle 'sickill/vim-sunburst'
+
 "}}}
 
 " Colourscheme {{{
