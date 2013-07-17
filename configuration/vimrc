@@ -49,6 +49,9 @@ set nocompatible
     NeoBundle 'vim-scripts/jumphl.vim', "{{{
         autocmd VimEnter * DoJumpHl " Highlight line after jump
     "}}}
+    NeoBundle 'kshenoy/vim-signature', "{{{
+        hi SignColumn ctermfg=14 ctermbg=016 guifg=Cyan guibg=Black
+    "}}}
     NeoBundle 'Yggdroot/indentLine', "{{{
         let g:indentLine_color_term = 235
         let g:indentLine_char = '┊'
