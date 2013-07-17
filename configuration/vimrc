@@ -326,6 +326,7 @@ set nocompatible
         hi SignifySignDelete cterm=bold ctermbg=016  ctermfg=167
         hi SignifySignChange cterm=bold ctermbg=016  ctermfg=227
     " }}}
+    NeoBundle 'Arkham/vim-web-indent'
 
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
