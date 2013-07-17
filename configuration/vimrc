@@ -29,8 +29,8 @@ set nocompatible
 "}}}
 
 " Colourscheme {{{
-    colorscheme Sunburst
     syntax on
+    colorscheme Sunburst
 
     hi LineNr ctermbg=016
     hi MatchParen term=reverse ctermfg=027
