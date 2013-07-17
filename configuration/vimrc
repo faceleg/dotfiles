@@ -31,6 +31,10 @@ set nocompatible
 " Colourscheme {{{
     colorscheme Sunburst
     syntax on
+
+    hi LineNr ctermbg=016
+    hi MatchParen term=reverse ctermfg=027
+
     syntax sync minlines=256
 
     " Allow color schemes to do bright colors without forcing bold.
