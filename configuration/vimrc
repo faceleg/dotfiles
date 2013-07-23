@@ -29,6 +29,21 @@ set nocompatible
 
 "}}}
 
+" Tabs & indenting {{{
+    set tabstop=4
+    set shiftwidth=4
+    set expandtab
+    set softtabstop=4
+    set sw=4
+    "set foldmethod=syntax
+    au FileType python,ruby setl sw=2 sts=2 et
+    au FileType javascript,css,less,sass setl sw=2 sts=2 et
+    au FileType php,phtml,html setl sw=4 sts=4 et
+
+    filetype plugin indent on
+    filetype plugin on
+" }}}
+
 " Colourscheme {{{
     syntax on
     colorscheme Sunburst
@@ -436,21 +451,6 @@ set nocompatible
 
     " Select all
     nmap <space>a ggVG<CR>
-" }}}
-
-" Tabs & indenting {{{
-    set tabstop=4
-    set shiftwidth=4
-    set expandtab
-    set softtabstop=4
-    set sw=4                     " default shiftwidth of 4 spaces
-    set foldmethod=indent
-    au FileType python,ruby,puppet setl sw=2 sts=2 et
-    au FileType javascript,css,less,sass setl sw=2 sts=2 et
-    au FileType php,phtml,html setl sw=4 sts=4 et
-
-    filetype plugin indent on
-    filetype plugin on
 " }}}
 
 " Sudo {{{
