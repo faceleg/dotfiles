@@ -388,6 +388,8 @@ set nocompatible
     set number
     set smartindent
 
+    set shortmess=a
+
     set nowrap                      " Do not wrap lines by default
     set autoread                    " Reload files changed outside vim
     set colorcolumn=80
