@@ -357,6 +357,13 @@ set nocompatible
         nnoremap <silent> <F3> :YRShow<CR>
     " }}}
     NeoBundle 'jiangmiao/auto-pairs'
+    NeoBundle 'scrooloose/nerdtree', "{{{
+        nmap <space>f :NERDTreeToggle<CR>
+        nmap <space>n :NERDTreeFind<CR>
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+        let NERDTreeShowLineNumbers=1
+    "}}}
     NeoBundle 'tsaleh/vim-matchit'
 
     " VCS
