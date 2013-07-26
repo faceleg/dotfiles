@@ -342,10 +342,10 @@ set nocompatible
     NeoBundle 'xolox/vim-easytags', "{{{
         let g:easytags_file = '~/.vim/tags'
         let g:easytags_updatetime_min = 4000
-        let g:easytags_on_cursorhold = 0
+        let g:easytags_on_cursorhold = 1
         let g:easytags_python_enabled = 1
 
-        nnoremap <F11> ::UpdateTags<CR>
+        nnoremap <F11> :UpdateTags<CR>
     "}}}
 
     NeoBundle 'sickill/vim-pasta'
