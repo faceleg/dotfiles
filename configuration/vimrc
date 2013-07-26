@@ -94,11 +94,6 @@ set nocompatible
     NeoBundle 'tpope/vim-haml'
 
     " JavaScript
-    NeoBundle 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}, "{{{
-        let g:html_indent_inctags = "html,body,head,tbody"
-        let g:html_indent_script1 = "inc"
-        let g:html_indent_style1 = "inc"
-    "}}}
     NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
         let g:config_Beautifier =  {
             \'js' : {
