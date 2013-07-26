@@ -108,9 +108,6 @@ set nocompatible
         \}
       nnoremap <leader>fjs :call JsBeautify()<cr>
     "}}}
-    NeoBundle 'mmalecki/vim-node.js', {'autoload':{'filetypes':['javascript']}}
-    NeoBundle 'elzr/vim-json', {'autoload':{'filetypes':['javascript','json']}}, "{{{
-        let g:vim_json_syntax_conceal = 1
     "}}}
     NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}, "{{{
         au FileType javascript call JavaScriptFold()
