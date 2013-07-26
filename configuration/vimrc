@@ -396,7 +396,7 @@ set nocompatible
 
     set history=1000                " remember more commands and search history
     set undolevels=1000             " remember more undo levels
-    set lazyredraw
+    "set lazyredraw
     set ttyfast " u got a fast terminal
 
     " No need to show mode due to Powerline
