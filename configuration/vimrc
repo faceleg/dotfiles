@@ -338,6 +338,7 @@ set nocompatible
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
+    NeoBundle 'xolox/vim-misc'
     NeoBundle 'xolox/vim-easytags', "{{{
         let g:easytags_file = '~/.vim/tags'
         let g:easytags_updatetime_min = 4000
