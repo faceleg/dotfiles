@@ -94,9 +94,6 @@ set nocompatible
     NeoBundle 'tpope/vim-haml'
 
     " JavaScript
-    NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}, "{{{
-        au FileType javascript call JavaScriptFold()
-    "}}}
     NeoBundle 'pangloss/vim-javascript', {'autoload':{'filetypes':['javascript']}}, "{{{
         let g:html_indent_inctags = "html,body,head,tbody"
         let g:html_indent_script1 = "inc"
@@ -115,6 +112,8 @@ set nocompatible
     NeoBundle 'elzr/vim-json', {'autoload':{'filetypes':['javascript','json']}}, "{{{
         let g:vim_json_syntax_conceal = 1
     "}}}
+    NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}, "{{{
+        au FileType javascript call JavaScriptFold()
     "}}}
 
     " Completion
