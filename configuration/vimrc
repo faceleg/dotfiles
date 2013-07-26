@@ -303,7 +303,7 @@ set nocompatible
         nnoremap <space>b :Unite buffer<cr>
 
         " <F4>: Save session
-        nnoremap <F4> :<C-u>UniteSessionSave
+        nnoremap <F4> :<C-u>UniteSessionSave<space>
 
         " Save session automatically.
         let g:unite_source_session_enable_auto_save = 1
