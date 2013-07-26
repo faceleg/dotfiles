@@ -106,8 +106,7 @@ set nocompatible
             \   'indent_size': 2
             \}
         \}
-      nnoremap <leader>fjs :call JsBeautify()<cr>
-    "}}}
+        nnoremap <leader>fjs :call JsBeautify()<cr>
     "}}}
     NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}, "{{{
         au FileType javascript call JavaScriptFold()
