@@ -106,6 +106,7 @@ set nocompatible
     NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}, "{{{
         au FileType javascript call JavaScriptFold()
     "}}}
+    NeoBundle 'lukaszb/vim-web-indent'
 
     " Completion
     NeoBundle 'marijnh/tern_for_vim', {
