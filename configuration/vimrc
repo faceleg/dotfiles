@@ -355,7 +355,8 @@ set nocompatible
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <silent> <F3> :YRShow<CR>
     " }}}
-    NeoBundle 'jiangmiao/auto-pairs'
+    "NeoBundle 'jiangmiao/auto-pairs'
+    NeoBundle 'vim-scripts/simple-pairs'
     NeoBundle 'scrooloose/nerdtree', "{{{
         nmap <space>f :NERDTreeToggle<CR>
         nmap <space>n :NERDTreeFind<CR>
