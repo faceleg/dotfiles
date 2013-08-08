@@ -361,7 +361,6 @@ set nocompatible
         nnoremap <F11> :UpdateTags<CR>
     "}}}
 
-    NeoBundle 'sickill/vim-pasta'
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <silent> <F3> :YRShow<CR>
     " }}}
