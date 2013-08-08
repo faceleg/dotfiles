@@ -262,10 +262,13 @@ set nocompatible
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
         noremap <silent><leader>lo :lw<CR>
+
         noremap <F6> :SyntasticCheck<CR>
+
         let g:syntastic_mode_map = { 'mode': 'active',
-                                    \ 'active_filetypes': ['javascript'],
-                                    \ 'passive_filetypes': ['php', 'css', 'html', 'xhtml'] }
+                                    \ 'active_filetypes': ['javascript', 'php'],
+                                    \ 'passive_filetypes': ['css', 'html', 'xhtml'] }
+
         let g:syntastic_check_on_open = 1
         let g:syntastic_enable_signs = 1
         let g:syntastic_auto_jump = 1
