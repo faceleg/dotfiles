@@ -394,6 +394,22 @@ set nocompatible
     NeoBundleCheck
 " }}}
 
+" Toggle relative numbers {{{
+    let g:enable_numbers = 0
+    let g:numbers_on = 0
+    function! ToggleRelativeNumbers()
+        if g:numbers_on
+            let g:numbers_on = 0
+            set number
+        else
+            let g:numbers_on = 1
+            set relativenumber
+        endif
+    endfunction
+
+    nnoremap <silent> <F12> :call ToggleRelativeNumbers()<CR>
+"}}}
+
 " General settings {{{
     set number
     set smartindent
