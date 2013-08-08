@@ -311,7 +311,6 @@ set nocompatible
         " Buffers
         nnoremap <space>b :Unite buffer<cr>
 
-        " <F4>: Save session
         nnoremap <F4> :<C-u>UniteSessionSave<space>
 
         " Save session automatically.
