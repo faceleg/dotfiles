@@ -68,8 +68,11 @@ set nocompatible
         hi SignColumn ctermfg=14 ctermbg=016 guifg=Cyan guibg=Black
     "}}}
     NeoBundle 'Yggdroot/indentLine', "{{{
+        let g:indentLine_enabled = 0
         let g:indentLine_color_term = 235
         let g:indentLine_char = '┊'
+
+        nnoremap <space>i :IndentLinesToggle<CR>
     "}}}
 
     " Folding
