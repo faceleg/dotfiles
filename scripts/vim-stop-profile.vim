@@ -1,0 +1,2 @@
+:profile pause
+:noautocmd qall!
