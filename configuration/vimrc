@@ -223,7 +223,16 @@ set nocompatible
     " Features
     NeoBundle 'mhinz/vim-startify', "{{{
         let g:startify_show_sessions = 1
+        let g:startify_list_order = ['sessions', 'bookmarks', 'dir', 'files']
         let g:startify_session_dir = expand('~/.vim/.cache/unite/session')
+
+        autocmd FileType startify setlocal nocursorline
+        autocmd VimEnter *
+                \ if !argc() |
+                \   Startify |
+                \   NERDTree |
+                \   execute "normal \<c-w>w" |
+                \ endif
 
         hi StartifyBracket ctermfg=100
         hi StartifyNumber  ctermfg=215
