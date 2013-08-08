@@ -547,15 +547,6 @@ set nocompatible
     set splitright
 " }}}
 
-" Allow repeatable single character insertions {{{
-    " http://vim.wikia.com/wiki/Insert_a_single_character
-    function! RepeatChar(char, count)
-      return repeat(a:char, a:count)
-    endfunction
-    nnoremap <leader>s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
-    nnoremap <leader>S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
-" }}}
-
 " Whitespace {{{
     " Delete trailing whitespace on save
     " http://stackoverflow.com/a/1618401/187954
