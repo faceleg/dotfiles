@@ -225,6 +225,7 @@ set nocompatible
         let g:startify_show_sessions = 1
         let g:startify_list_order = ['sessions', 'bookmarks', 'dir', 'files']
         let g:startify_session_dir = expand('~/.vim/.cache/unite/session')
+        let g:startify_change_to_dir = 1
 
         autocmd FileType startify setlocal nocursorline
         autocmd VimEnter *
