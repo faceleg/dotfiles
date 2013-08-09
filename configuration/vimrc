@@ -75,6 +75,9 @@ set nocompatible
     " Folding
     NeoBundle 'phpfolding.vim'
 
+    " Indenting
+    NeoBundle 'pangloss/vim-javascript'
+
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}, "{{{
         au BufNewFile,BufRead *.less setf less
