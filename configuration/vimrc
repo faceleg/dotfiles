@@ -307,22 +307,6 @@ set nocompatible
     NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
 
-    " Visual
-    NeoBundle 'mhinz/vim-signify', "{{{
-        let g:signify_disable_by_default = 1
-        let g:signify_mapping_next_hunk = '<leader>gj'
-        let g:signify_mapping_prev_hunk = '<leader>gk'
-
-        noremap <F10> :SignifyToggle<CR>
-
-        hi DiffAdd cterm=bold ctermbg=016 ctermfg=119
-        hi DiffDelete cterm=bold ctermbg=016 ctermfg=167
-        hi DiffChange cterm=bold ctermbg=016 ctermfg=227
-        hi SignifySignAdd cterm=bold ctermbg=016  ctermfg=119
-        hi SignifySignDelete cterm=bold ctermbg=016  ctermfg=167
-        hi SignifySignChange cterm=bold ctermbg=016  ctermfg=227
-    " }}}
-
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
