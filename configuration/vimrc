@@ -71,6 +71,11 @@ set nocompatible
 
         nnoremap <space>i :IndentLinesToggle<CR>
     "}}}
+    NeoBundle 'qstrahl/vim-matchmaker', "{{{
+        let g:matchmaker_enable_startup = 0
+
+        nnoremap <space>m :MatchmakerToggle<CR>
+    "}}}
 
     " Folding
     NeoBundle 'phpfolding.vim'
@@ -126,7 +131,7 @@ set nocompatible
         set completeopt-=preview
         "set completeopt="menu"
 
-        let g:acp_enableAtStartup = 0
+        let g:acp_enableAtStartup = 1
         let g:neocomplete#enable_at_startup = 0
         let g:neocomplete#enable_smart_case = 1
         let g:neocomplete#sources#syntax#min_keyword_length = 3
