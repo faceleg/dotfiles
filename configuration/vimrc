@@ -265,7 +265,6 @@ set nocompatible
     NeoBundle 'Shougo/unite-outline', "{{{
         nnoremap <space>o :Unite outline<CR>
     "}}}
-
     NeoBundle 'Shougo/unite.vim', "{{{
         let g:unite_data_directory = expand('~/.vim/.cache/unite')
         let g:unite_enable_start_insert=0
