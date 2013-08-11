@@ -326,7 +326,11 @@ set nocompatible
         nnoremap <silent> <F3> :YRShow<CR>
     " }}}
     "NeoBundle 'jiangmiao/auto-pairs'
-    NeoBundle 'vim-scripts/simple-pairs'
+    "NeoBundle 'vim-scripts/simple-pairs'
+    NeoBundle 'Raimondi/delimitMate', "{{{
+        let delimitMate_expand_cr = 1
+        let delimitMate_jump_expansion = 1
+    "}}}
     NeoBundle 'scrooloose/nerdtree', "{{{
         nmap <space>f :NERDTreeToggle<CR>
         nmap <space>n :NERDTreeFind<CR>
