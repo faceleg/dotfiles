@@ -76,6 +76,7 @@ set nocompatible
     NeoBundle 'phpfolding.vim'
 
     " Indenting
+    NeoBundle '2072/PHP-Indenting-for-VIm'
     NeoBundle 'pangloss/vim-javascript'
 
     " Syntax
