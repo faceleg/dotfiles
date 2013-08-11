@@ -184,11 +184,6 @@ set nocompatible
         let g:jsdoc_allow_input_prompt = 1
         nmap <C-y>j :JsDoc<CR>
     "}}}
-    NeoBundle 'tobyS/vmustache'
-    NeoBundle 'tobyS/pdv', "{{{
-        let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
-        nmap <C-y>p :call pdv#DocumentCurrentLine()<CR>
-    "}}}
 
     " Usability
     NeoBundle 'Lokaltog/vim-easymotion'
