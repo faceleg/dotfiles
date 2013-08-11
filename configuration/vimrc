@@ -220,18 +220,6 @@ set nocompatible
         let g:airline_theme = "dark"
         let g:airline_powerline_fonts = 1
     " }}}
-    NeoBundle 'majutsushi/tagbar', "{{{
-        nmap <f8> :TagbarToggle<cr>
-        let g:tagbar_type_css = {
-        \ 'ctagstype' : 'Css',
-            \ 'kinds'     : [
-                \ 'c:classes',
-                \ 's:selectors',
-                \ 'i:identities'
-            \ ]
-        \ }
-    " }}}
-
     NeoBundle 'scrooloose/nerdcommenter'
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
@@ -312,6 +300,19 @@ set nocompatible
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'xolox/vim-misc'
+
+    " CTags
+    NeoBundle 'majutsushi/tagbar', "{{{
+        nmap <f8> :TagbarToggle<cr>
+        let g:tagbar_type_css = {
+        \ 'ctagstype' : 'Css',
+            \ 'kinds'     : [
+                \ 'c:classes',
+                \ 's:selectors',
+                \ 'i:identities'
+            \ ]
+        \ }
+    " }}}
     NeoBundle 'xolox/vim-easytags', "{{{
         let g:easytags_file = '~/.vim/tags'
         let g:easytags_updatetime_min = 4000
