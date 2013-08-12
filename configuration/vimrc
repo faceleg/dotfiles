@@ -291,6 +291,7 @@ set nocompatible
     NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
 
+    " Utility
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
