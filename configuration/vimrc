@@ -110,9 +110,7 @@ set nocompatible
         \}
         nnoremap <leader>fjs :call JsBeautify()<cr>
     "}}}
-    NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}, "{{{
-        au FileType javascript call JavaScriptFold()
-    "}}}
+    NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}
     NeoBundle 'lukaszb/vim-web-indent'
 
     " Completion
