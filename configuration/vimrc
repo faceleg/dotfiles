@@ -163,8 +163,8 @@ set nocompatible
         inoremap <expr><C-e>  neocomplete#cancel_popup()
         inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
 
-        "autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        "autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         autocmd FileType javascript setlocal omnifunc=tern#Complete
         autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
         "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
