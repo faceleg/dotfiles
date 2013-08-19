@@ -298,6 +298,13 @@ set nocompatible
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'tpope/vim-abolish'
     NeoBundle 'xolox/vim-misc'
+    NeoBundle 'Valloric/MatchTagAlways', "{{{
+        let g:mta_use_matchparen_group = 1
+        "let g:mta_set_default_matchtag_color = 0
+        "highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+        let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
+    " }}}
+
 
     " CTags
     NeoBundle 'majutsushi/tagbar', "{{{
