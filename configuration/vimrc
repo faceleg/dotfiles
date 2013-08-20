@@ -402,6 +402,9 @@ set nocompatible
     " Explicitly set encoding to utf-8
     set encoding=utf-8
 
+    " Prevents MatchParen from loading, which can cause slowdown
+    let g:loaded_matchparen=1
+
     " This makes vim act like all other editors, buffers can :u
     " exist in the background without being in a window.
     " http://items.sjbach.com/319/configuring-vim-right
