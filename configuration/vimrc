@@ -154,9 +154,7 @@ set nocompatible
         inoremap <expr><C-g>     neocomplete#undo_completion()
         inoremap <expr><C-l>     neocomplete#complete_common_string()
 
-        " <TAB>: completion.
         inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-        " <C-h>, <BS>: close popup and delete backword char.
         inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
         inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
         inoremap <expr><C-y>  neocomplete#close_popup()
@@ -164,11 +162,12 @@ set nocompatible
         inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
 
         autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType php set omnifunc=phpcomplete#CompletePHP
         autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         autocmd FileType javascript setlocal omnifunc=tern#Complete
         autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
-        "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     " }}}
     NeoBundle 'Shougo/context_filetype.vim'
 
@@ -182,6 +181,12 @@ set nocompatible
     "}}}
 
     " Usability
+    NeoBundle 'matze/vim-move', "{{{
+        " <C-k>   Move current line/selections up
+        " <C-j>   Move current line/selections down
+        let g:move_key_modifier = 'C'
+    "}}}
+    NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
@@ -298,34 +303,33 @@ set nocompatible
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'tpope/vim-abolish'
     NeoBundle 'xolox/vim-misc'
-    NeoBundle 'Valloric/MatchTagAlways', "{{{
-        let g:mta_use_matchparen_group = 1
-        "let g:mta_set_default_matchtag_color = 0
-        "highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
-        let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
-    " }}}
-
+    "NeoBundle 'Valloric/MatchTagAlways', "{{{
+    "    let g:mta_use_matchparen_group = 1
+    "    "let g:mta_set_default_matchtag_color = 0
+    "    "highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+    "    let g:mta_filetypes = { 'html' : 1, 'xhtml' : 1, 'xml' : 1, 'jinja' : 1, 'ant': 1, 'php': 1 }
+    "" }}}
 
     " CTags
-    NeoBundle 'majutsushi/tagbar', "{{{
-        nmap <f8> :TagbarToggle<cr>
-        let g:tagbar_type_css = {
-        \ 'ctagstype' : 'Css',
-            \ 'kinds'     : [
-                \ 'c:classes',
-                \ 's:selectors',
-                \ 'i:identities'
-            \ ]
-        \ }
-    " }}}
-    NeoBundle 'xolox/vim-easytags', "{{{
-        let g:easytags_file = '~/.vim/tags'
-        let g:easytags_updatetime_min = 4000
-        let g:easytags_on_cursorhold = 1
-        let g:easytags_python_enabled = 1
+    "NeoBundle 'majutsushi/tagbar', "{{{
+    "    nmap <f8> :TagbarToggle<cr>
+    "    let g:tagbar_type_css = {
+    "    \ 'ctagstype' : 'Css',
+    "        \ 'kinds'     : [
+    "            \ 'c:classes',
+    "            \ 's:selectors',
+    "            \ 'i:identities'
+    "        \ ]
+    "    \ }
+    "" }}}
+    "NeoBundle 'xolox/vim-easytags', "{{{
+    "    let g:easytags_file = '~/.vim/tags'
+    "    let g:easytags_updatetime_min = 4000
+    "    let g:easytags_on_cursorhold = 1
+    "    let g:easytags_python_enabled = 1
 
-        nnoremap <F11> :UpdateTags<CR>
-    "}}}
+    "    nnoremap <F11> :UpdateTags<CR>
+    ""}}}
 
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <silent> <F3> :YRShow<CR>
