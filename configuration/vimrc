@@ -25,7 +25,7 @@ set nocompatible
 
     " Syntax
     NeoBundle 'sickill/vim-sunburst'
-
+    NeoBundle 'itchyny/landscape.vim'
 "}}}
 
 " Tabs & indenting {{{
@@ -46,7 +46,8 @@ set nocompatible
 " Colourscheme {{{
     syntax on
     syntax sync fromstart
-    colorscheme Sunburst
+    "colorscheme Sunburst
+    colorscheme landscape
 
     hi LineNr ctermbg=016
     hi MatchParen term=reverse ctermfg=027
