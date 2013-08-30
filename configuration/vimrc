@@ -300,9 +300,9 @@ set nocompatible
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'tpope/vim-abolish'
     NeoBundle 'xolox/vim-misc'
-    "NeoBundle 'Valloric/MatchTagAlways', "{{{
-    "    nnoremap <F11> :UpdateTags<CR>
-    ""}}}
+    NeoBundle 'vim-scripts/bufkill.vim', "{{{
+        nnoremap <space>d :BW<CR>
+    "}}}
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <silent> <F3> :YRShow<CR>
     " }}}
