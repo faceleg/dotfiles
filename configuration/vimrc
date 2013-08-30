@@ -319,6 +319,27 @@ set nocompatible
     "}}}
     NeoBundle 'tsaleh/vim-matchit'
 
+    " CTags
+    NeoBundle 'majutsushi/tagbar', "{{{
+        nmap <f8> :TagbarToggle<cr>
+        let g:tagbar_type_css = {
+        \ 'ctagstype' : 'Css',
+            \ 'kinds'     : [
+                \ 'c:classes',
+                \ 's:selectors',
+                \ 'i:identities'
+            \ ]
+        \ }
+    " }}}
+    NeoBundle 'xolox/vim-easytags', "{{{
+        let g:easytags_file = '~/.vim/tags'
+        let g:easytags_updatetime_min = 4000
+        let g:easytags_on_cursorhold = 1
+        let g:easytags_python_enabled = 1
+
+        nnoremap <F11> :UpdateTags<CR>
+    "}}}
+
     " VCS
     NeoBundle 'tpope/vim-fugitive' "{{{
         noremap <silent> <leader>gs :Gstatus<CR>
