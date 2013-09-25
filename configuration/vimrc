@@ -24,7 +24,6 @@ set nocompatible
           \ }
 
     " Syntax
-    NeoBundle 'sickill/vim-sunburst'
     NeoBundle 'itchyny/landscape.vim'
 "}}}
 
@@ -46,7 +45,6 @@ set nocompatible
 " Colourscheme {{{
     syntax on
     syntax sync fromstart
-    "colorscheme Sunburst
     colorscheme landscape
 
     hi LineNr ctermbg=016
