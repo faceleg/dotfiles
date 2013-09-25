@@ -181,7 +181,6 @@ set nocompatible
         " <C-j>   Move current line/selections down
         let g:move_key_modifier = 'C'
     "}}}
-    NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
