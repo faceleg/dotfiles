@@ -488,15 +488,6 @@ set nocompatible
     nnoremap <space>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " }}}
 
-" Window movement convenience {{{
-    " map ctrl-movement keys to window switching
-    " http://stackoverflow.com/a/329935/187954
-    map <c-k> <c-w><up>
-    map <c-j> <c-w><down>
-    map <c-l> <c-w><right>
-    map <c-h> <c-w><left>
-" }}}
-
 " Show special characters {{{
     " http://vimcasts.org/episodes/show-invisibles/
     " Shortcut to rapidly toggle `set list`
