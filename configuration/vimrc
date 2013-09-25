@@ -225,7 +225,7 @@ set nocompatible
 
         let g:syntastic_mode_map = { 'mode': 'active',
                                     \ 'active_filetypes': ['javascript', 'php'],
-                                    \ 'passive_filetypes': ['css', 'html', 'xhtml'] }
+                                    \ 'passive_filetypes': ['css', 'html', 'xhtml', 'scss', 'sass'] }
 
         let g:syntastic_check_on_open = 1
         let g:syntastic_enable_signs = 1
