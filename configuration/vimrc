@@ -350,7 +350,6 @@ set nocompatible
         autocmd BufReadPost fugitive://* set bufhidden=delete
     "}}}
 
-    " Installation check.
     NeoBundleCheck
 " }}}
 
