@@ -182,6 +182,14 @@ set nocompatible
         let g:move_key_modifier = 'C'
     "}}}
     NeoBundle 'goldfeld/vim-seek'
+    NeoBundle 'prendradjaja/vim-vertigo', "{{{
+        nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
+        xnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
+        onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
+        nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
+        xnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
+        onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
+    "}}}
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
