@@ -326,6 +326,10 @@ set nocompatible
     NeoBundle 'tsaleh/vim-matchit'
 
     " VCS
+    NeoBundle 'int3/vim-extradite', "{{{
+        noremap <space>e :Extradite!<CR>
+        let g:extradite_width = 100
+    "}}}
     NeoBundle 'tpope/vim-fugitive' "{{{
         noremap <silent> <leader>gs :Gstatus<CR>
         nnoremap <silent> <leader>gd :Gdiff<CR>
