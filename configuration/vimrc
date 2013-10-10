@@ -181,6 +181,7 @@ set nocompatible
         " <C-j>   Move current line/selections down
         let g:move_key_modifier = 'C'
     "}}}
+    NeoBundle 'dbakker/vim-paragraph-motion'
     NeoBundle 'goldfeld/vim-seek'
     NeoBundle 'prendradjaja/vim-vertigo', "{{{
         nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
