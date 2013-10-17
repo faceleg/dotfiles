@@ -183,7 +183,7 @@ set nocompatible
         let g:move_key_modifier = 'C'
     "}}}
     NeoBundle 'dbakker/vim-paragraph-motion'
-    NeoBundle 'goldfeld/vim-seek'
+    NeoBundle 'justinmk/vim-sneak'
     NeoBundle 'prendradjaja/vim-vertigo', "{{{
         nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
         xnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
