@@ -99,7 +99,9 @@ set nocompatible
     NeoBundle 'zaiste/tmux.vim'
     NeoBundle 'rodjek/vim-puppet'
     NeoBundle 'evanmiller/nginx-vim-syntax'
-    NeoBundle 'tpope/vim-haml'
+
+    " Images
+    NeoBundle 'tpope/vim-afterimage'
 
     " JavaScript
     NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
