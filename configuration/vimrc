@@ -216,7 +216,6 @@ set nocompatible
         autocmd VimEnter *
                 \ if !argc() |
                 \   Startify |
-                \   NERDTree |
                 \   execute "normal \<c-w>w" |
                 \ endif
 
@@ -319,13 +318,6 @@ set nocompatible
     NeoBundle 'Raimondi/delimitMate', "{{{
         let delimitMate_expand_cr = 0
         let delimitMate_jump_expansion = 0
-    "}}}
-    NeoBundle 'scrooloose/nerdtree', "{{{
-        nmap <space>f :NERDTreeToggle<CR>
-        nmap <space>n :NERDTreeFind<CR>
-        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-        let NERDTreeShowLineNumbers=1
     "}}}
     NeoBundle 'tsaleh/vim-matchit'
 
