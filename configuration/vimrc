@@ -63,6 +63,7 @@ set nocompatible
         autocmd VimEnter * DoJumpHl " Highlight line after jump
     "}}}
     NeoBundle 'ivyl/vim-bling'
+    NeoBundle 'kana/vim-narrow'
     NeoBundle 'Yggdroot/indentLine', "{{{
         let g:indentLine_enabled = 0
         let g:indentLine_color_term = 235
