@@ -360,7 +360,7 @@ set nocompatible
         endif
     endfunction
 
-    nnoremap <silent> <F12> :call ToggleRelativeNumbers()<CR>
+    nnoremap <silent> <space>h :call ToggleRelativeNumbers()<CR>
 "}}}
 
 " General settings {{{
