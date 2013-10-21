@@ -277,7 +277,10 @@ set nocompatible
         " Buffers
         nnoremap <space>b :Unite buffer<cr>
 
+        " Session
         nnoremap <F4> :<C-u>UniteSessionSave<space>
+        noremap <space>s :Unite -buffer-name=sessions session<CR>
+        let g:unite_source_session_enable_auto_save = 1
 
         " Yank
         let g:unite_source_history_yank_enable = 1
