@@ -349,12 +349,11 @@ set nocompatible
 " }}}
 
 " Toggle relative numbers {{{
-    let g:enable_numbers = 0
     let g:numbers_on = 0
     function! ToggleRelativeNumbers()
         if g:numbers_on
             let g:numbers_on = 0
-            set number
+            set norelativenumber
         else
             let g:numbers_on = 1
             set relativenumber
