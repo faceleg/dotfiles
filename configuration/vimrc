@@ -286,8 +286,13 @@ set nocompatible
         let g:unite_source_history_yank_enable = 1
         nnoremap <space>y :Unite -quick-match history/yank<cr>
 
-        " Popup session selector
-        noremap <space>s :Unite -buffer-name=sessions session<CR>
+        " Custom mappings for the unite buffer
+        autocmd FileType unite call s:unite_settings()
+        function! s:unite_settings()
+            " Enable navigation with control-j and control-k in insert mode
+            imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+            imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+        endfunction
     " }}}
     NeoBundle 'sjl/gundo.vim', "{{{
         nnoremap <F5> :GundoToggle<CR>
