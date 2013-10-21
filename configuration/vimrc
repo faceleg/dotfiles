@@ -309,9 +309,6 @@ set nocompatible
     NeoBundle 'vim-scripts/bufkill.vim', "{{{
         nnoremap <space>d :BW<CR>
     "}}}
-    NeoBundle 'vim-scripts/YankRing.vim', "{{{
-        nnoremap <silent> <F3> :YRShow<CR>
-    " }}}
     NeoBundle 'Raimondi/delimitMate', "{{{
         let delimitMate_expand_cr = 0
         let delimitMate_jump_expansion = 0
