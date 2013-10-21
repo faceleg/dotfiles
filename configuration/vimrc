@@ -257,6 +257,7 @@ set nocompatible
     NeoBundle 'Shougo/unite-outline', "{{{
         nnoremap <space>o :Unite outline<CR>
     "}}}
+    NeoBundle 'Shougo/unite-session'
     NeoBundle 'Shougo/unite.vim', "{{{
         let g:unite_data_directory = expand('~/.vim/.cache/unite')
         let g:unite_enable_start_insert=0
@@ -288,7 +289,6 @@ set nocompatible
         " Popup session selector
         noremap <space>s :Unite -buffer-name=sessions session<CR>
     " }}}
-    NeoBundle 'Shougo/unite-session'
     NeoBundle 'sjl/gundo.vim', "{{{
         nnoremap <F5> :GundoToggle<CR>
         let g:gundo_width = 60
