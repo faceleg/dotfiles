@@ -523,6 +523,12 @@ set nocompatible
     augroup END
 " }}}
 
+" Buffer switching {{{
+     map <leader>n :bn<cr> " next buffer
+     map <leader>p :bp<cr> " previous buffer
+     map <leader>d :bd<cr> " delete buffer
+"}}}
+
 " PHP {{{
     au BufNewFile,BufRead *.phtml setf phtml
 " }}}
