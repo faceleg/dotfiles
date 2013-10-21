@@ -223,7 +223,6 @@ set nocompatible
         hi StartifyPath    ctermfg=245
         hi StartifySlash   ctermfg=240
     " }}}
-    NeoBundle 'hlissner/vim-multiedit'
     NeoBundle 'bling/vim-airline', "{{{
         set laststatus=2
         let g:airline#extensions#tabline#enabled = 1
@@ -299,6 +298,7 @@ set nocompatible
     " }}}
     NeoBundle 'terryma/vim-expand-region'
     NeoBundle 'terryma/vim-multiple-cursors'
+    NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
     NeoBundle 'tpope/vim-unimpaired'
