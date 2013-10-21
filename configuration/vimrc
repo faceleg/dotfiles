@@ -517,11 +517,18 @@ set nocompatible
     " listchar=trail is not as flexible, use the below to highlight trailing
     " whitespace. Don't do it for unite windows or readonly files
     highlight ExtraWhitespace ctermbg=red guibg=red
-    augroup MyAutoCmd
-        autocmd BufWinEnter * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+$/ | endif
-        autocmd InsertEnter * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
-        autocmd InsertLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | match ExtraWhitespace /\s\+$/ | endif
-        autocmd BufWinLeave * if (&modifiable && &ft!='unite' && &ft!='vimfiler') | call clearmatches() | endif
+
+    function! HighlightTrailingWhitespace()
+        if &ft =~ 'html|scss|css|javascript|php|vim'
+            match ExtraWhitespace /\s\+$/
+            match ExtraWhitespace /\s\+\%#\@<!$/
+        endif
+    endfunction
+
+    augroup HightlightWhitespaceAutoCmd
+        autocmd BufWinEnter * :call HighlightTrailingWhitespace()
+        autocmd InsertEnter * :call HighlightTrailingWhitespace()
+        autocmd InsertLeave * :call HighlightTrailingWhitespace()
     augroup END
 " }}}
 
