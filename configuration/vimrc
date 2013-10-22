@@ -100,22 +100,20 @@ set nocompatible
     NeoBundle 'zaiste/tmux.vim'
     NeoBundle 'rodjek/vim-puppet'
     NeoBundle 'evanmiller/nginx-vim-syntax'
-
-    " Images
-    NeoBundle 'tpope/vim-afterimage'
-
-    " JavaScript
     NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
-        let g:config_Beautifier =  {
-            \'js' : {
-            \   'indent_char': ' ',
-            \   'indent_size': 2
-            \}
-        \}
-        nnoremap <leader>fjs :call JsBeautify()<cr>
+    let g:config_Beautifier =  {
+                \'js' : {
+                \   'indent_char': ' ',
+                \   'indent_size': 2
+                \}
+                \}
+    nnoremap <leader>fjs :call JsBeautify()<cr>
     "}}}
     NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}
     NeoBundle 'lukaszb/vim-web-indent'
+
+    " Images
+    NeoBundle 'tpope/vim-afterimage'
 
     " Completion
     NeoBundle 'marijnh/tern_for_vim', {
