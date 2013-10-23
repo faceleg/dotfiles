@@ -181,6 +181,7 @@ set nocompatible
     "}}}
 
     " Usability
+    NeoBundle 'tpope/vim-commentary'
     NeoBundle 'matze/vim-move', "{{{
         " <C-k>   Move current line/selections up
         " <C-j>   Move current line/selections down
