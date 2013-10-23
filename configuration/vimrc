@@ -232,7 +232,6 @@ set nocompatible
         let g:airline_theme = "dark"
         let g:airline_powerline_fonts = 1
     " }}}
-    NeoBundle 'scrooloose/nerdcommenter'
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
