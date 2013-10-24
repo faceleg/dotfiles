@@ -280,7 +280,7 @@ set nocompatible
         " Session
         let g:unite_source_session_enable_auto_save = 1
         nnoremap <F4> :<C-u>UniteSessionSave<space>
-        noremap <space>s :Unite -buffer-name=sessions session<CR>
+        noremap <space>s :Unite -quick-match -buffer-name=sessions session<CR>
 
         " Yank
         let g:unite_source_history_yank_enable = 1
