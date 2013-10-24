@@ -275,7 +275,7 @@ set nocompatible
         nnoremap <space>/ :<C-u>Unite -buffer-name=search grep:.<cr>
 
         " Buffers
-        nnoremap <space>b :Unite -quick-match buffer<cr>
+        nnoremap <space>b :Unite -quick-match -buffer-name=buffers buffer<cr>
 
         " Session
         let g:unite_source_session_enable_auto_save = 1
