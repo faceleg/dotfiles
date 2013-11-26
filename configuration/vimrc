@@ -66,13 +66,6 @@ set nocompatible
     "}}}
     NeoBundle 'ivyl/vim-bling'
     NeoBundle 'kana/vim-narrow'
-    NeoBundle 'Yggdroot/indentLine', "{{{
-        let g:indentLine_enabled = 0
-        let g:indentLine_color_term = 235
-        let g:indentLine_char = '┊'
-
-        nnoremap <space>i :IndentLinesToggle<CR>
-    "}}}
     NeoBundle 'qstrahl/vim-matchmaker', "{{{
         let g:matchmaker_enable_startup = 0
 
