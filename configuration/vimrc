@@ -112,6 +112,7 @@ set nocompatible
     NeoBundle 'tpope/vim-afterimage'
 
     " Completion
+    NeoBundle 'vim-scripts/dbext.vim'
     NeoBundle 'marijnh/tern_for_vim', {
       \ 'build' : {
       \     'mac' : 'npm install --update',
