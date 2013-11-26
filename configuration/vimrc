@@ -229,9 +229,10 @@ set nocompatible
     " }}}
     NeoBundle 'bling/vim-airline', "{{{
         set laststatus=2
-        let g:airline_theme = "dark"
         let g:airline_powerline_fonts = 1
+        let g:airline_theme = 'airlineish'
     " }}}
+    NeoBundle 'paranoida/vim-airlineish'
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
