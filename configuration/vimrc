@@ -92,7 +92,9 @@ set nocompatible
     NeoBundle 'othree/html5.vim', {'autoload':{'filetypes':['html', 'jinja2', 'phtml']}}
     NeoBundle 'dbakker/vim-md-noerror'
     NeoBundle 'zaiste/tmux.vim'
-    NeoBundle 'rodjek/vim-puppet'
+    NeoBundle 'rodjek/vim-puppet', "{{{
+        au BufNewFile,BufRead *.pp setf puppet
+    "}}}
     NeoBundle 'evanmiller/nginx-vim-syntax'
     NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
     let g:config_Beautifier =  {
