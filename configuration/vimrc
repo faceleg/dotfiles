@@ -21,7 +21,9 @@ set nocompatible
           \     'mac' : 'make -f make_mac.mak',
           \     'unix' : 'make -f make_unix.mak',
           \    },
-          \ }
+          \ }, "{{{
+        let g:neobundle#install_process_timeout = 3000
+    "}}}
 
     " Syntax
     NeoBundle 'itchyny/landscape.vim'
