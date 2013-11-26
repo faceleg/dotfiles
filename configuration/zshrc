@@ -62,6 +62,10 @@ if command_exists pip; then
     USER_PLUGINS+=(pip)
 fi
 
+if command_exists vagrant; then
+    USER_PLUGINS+=(vagrant)
+fi
+
 if command_exists git-extras; then
     USER_PLUGINS+=(git-extras)
 fi
