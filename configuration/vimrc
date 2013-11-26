@@ -179,7 +179,7 @@ set nocompatible
         autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     " }}}
 
-    " Documentation
+    "Documentation
     NeoBundle 'heavenshell/vim-jsdoc', "{{{
         let g:jsdoc_allow_input_prompt = 1
         let g:jsdoc_default_mapping = 0
@@ -199,14 +199,6 @@ set nocompatible
     NeoBundle 'justinmk/vim-sneak', " {{{
         nmap , <Plug>SneakNext
         nmap \ <Plug>SneakPrevious
-    "}}}
-    NeoBundle 'prendradjaja/vim-vertigo', "{{{
-        nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
-        xnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
-        onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
-        nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
-        xnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
-        onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
     "}}}
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
