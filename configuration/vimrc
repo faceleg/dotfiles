@@ -120,7 +120,7 @@ set nocompatible
       \    },
       \ }, "{{{
         let g:tern_show_argument_hints = 1
-    " }}}
+    "}}}
     NeoBundle 'shawncplus/phpcomplete.vim'
     NeoBundle 'Shougo/context_filetype.vim'
     NeoBundle 'Shougo/neocomplete.vim', "{{{
