@@ -327,6 +327,7 @@ set nocompatible
     NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
+    NeoBundle 'wakatime/vim-wakatime'
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'ardagnir/united-front'
     NeoBundle 'AndrewRadev/inline_edit.vim'
