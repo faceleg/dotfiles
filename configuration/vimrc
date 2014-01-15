@@ -230,6 +230,8 @@ set nocompatible
         hi StartifyPath    ctermfg=245
         hi StartifySlash   ctermfg=240
     " }}}
+
+    " Status bar
     NeoBundle 'bling/vim-airline', "{{{
         set laststatus=2
         let g:airline_powerline_fonts = 1
