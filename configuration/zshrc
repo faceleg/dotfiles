@@ -158,7 +158,7 @@ if is_linux; then
     alias 'aw=apt-cache show'
     alias 'ad=sudo apt-get dist-upgrade'
 elif  is_osx; then
-    # Mac OS X related aliases here
+    alias 'vim=vim --servername faceleg'
 fi
 
 
