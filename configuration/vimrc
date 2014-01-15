@@ -438,8 +438,7 @@ set nocompatible
     set nocursorcolumn
     nnoremap <Leader>c :set cursorline!<CR>
 
-    " Solid line for vsplit separator
-    set fcs=vert:│
+    set fcs=vert:│ " Solid line for vsplit separator
 
     " Select all
     nmap <space>a ggVG<CR>
