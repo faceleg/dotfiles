@@ -328,6 +328,10 @@ set nocompatible
 
     " Utility
     NeoBundle 'tpope/vim-unimpaired'
+    NeoBundle 'ardagnir/united-front'
+    NeoBundle 'AndrewRadev/inline_edit.vim'
+    NeoBundle 'c9s/cascading.vim'
+    NeoBundle 'mattn/emmet-vim'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
