@@ -136,6 +136,7 @@ set nocompatible
 
     NeoBundle 'Shougo/neocomplete.vim', "{{{
         " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
+        " brew install macvim --with-cscope --with-lua --override-system-vim
         set completeopt-=preview
 
         let g:acp_enableAtStartup = 0
