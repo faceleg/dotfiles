@@ -397,6 +397,8 @@ set nocompatible
     set number
     set cindent
 
+    set re=1
+
     " a - terse messages (like [+] instead of [Modified]
     " t - truncate file names
     " I - no intro message when starting vim fileless
