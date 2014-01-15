@@ -191,23 +191,25 @@ set nocompatible
 
     " Usability
     NeoBundle 'tpope/vim-commentary'
-    NeoBundle 'matze/vim-move', "{{{
-        " <C-k>   Move current line/selections up
-        " <C-j>   Move current line/selections down
-        let g:move_key_modifier = 'C'
-    "}}}
-    NeoBundle 'dbakker/vim-paragraph-motion'
-    NeoBundle 'justinmk/vim-sneak', " {{{
-        nmap , <Plug>SneakNext
-        nmap \ <Plug>SneakPrevious
-    "}}}
-    NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'tpope/vim-speeddating'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
         nmap gS :SplitjoinSplit<cr>
         nmap gJ :SplitjoinJoin<cr>
     " }}}
     NeoBundle 'inkarkat/closetag.vim'
+
+    " Motion
+    NeoBundle 'Lokaltog/vim-easymotion'
+    NeoBundle 'dbakker/vim-paragraph-motion'
+    NeoBundle 'matze/vim-move', "{{{
+    " <C-k>   Move current line/selections up
+    " <C-j>   Move current line/selections down
+    let g:move_key_modifier = 'C'
+    "}}}
+    NeoBundle 'justinmk/vim-sneak', " {{{
+        nmap , <Plug>SneakNext
+        nmap \ <Plug>SneakPrevious
+    "}}}
 
     " Features
     NeoBundle 'mhinz/vim-startify', "{{{
