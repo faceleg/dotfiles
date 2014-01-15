@@ -436,7 +436,6 @@ set nocompatible
     " Do not highlight current line
     set nocursorline
     set nocursorcolumn
-    nnoremap <Leader>c :set cursorline!<CR>
 
     set fcs=vert:│ " Solid line for vsplit separator
 
