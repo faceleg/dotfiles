@@ -431,7 +431,7 @@ set nocompatible
     " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
     set backspace=indent,eol,start
 
-    set whichwrap+=<,>,h,l,[,] " allow k,l to wrap start/end of lines
+    " set whichwrap+=<,>,h,l,[,] " allow k,l to wrap start/end of lines
 
     " Do not highlight current line
     set nocursorline
