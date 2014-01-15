@@ -336,6 +336,7 @@ set nocompatible
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'tpope/vim-abolish'
+    NeoBundle 'tpope/vim-obsession'
     NeoBundle 'vim-scripts/bufkill.vim', "{{{
         nnoremap <space>d :BW<CR>
     "}}}
