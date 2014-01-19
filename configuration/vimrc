@@ -340,16 +340,6 @@ set nocompatible
         let delimitMate_expand_cr = 0
         let delimitMate_jump_expansion = 0
     "}}}
-    NeoBundle 'Shougo/vimfiler.vim', "{{{
-        let g:vimfiler_as_default_explorer = 1
-        let g:vimfiler_safe_mode_by_default = 0
-
-        autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') |
-                    \ q | endif
-
-        nmap <space>f :VimFiler -winwidth=40 -explorer -toggle<CR>
-        nmap <space>n :VimFiler -winwidth=40 -explorer -find<CR>
-    "}}}
     NeoBundle 'tsaleh/vim-matchit'
 
     " VCS
