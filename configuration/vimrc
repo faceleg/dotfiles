@@ -381,7 +381,7 @@ set nocompatible
 
     set re=1
 
-    " a - terse messages (like [+] instead of [Modified]
+    " a - terse messages (like [+] instead of [Modified])
     " t - truncate file names
     " I - no intro message when starting vim fileless
     " T - truncate long messages to avoid having to hit a key
