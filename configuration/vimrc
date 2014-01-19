@@ -221,6 +221,8 @@ set nocompatible
     " Syntax
     NeoBundle 'luochen1990/rainbow', "{{{
         let g:rainbow_active = 1
+
+        nnoremap <space>r :RainbowToggle<CR>
     "}}}
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
