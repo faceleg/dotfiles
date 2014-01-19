@@ -169,15 +169,6 @@ set nocompatible
     "     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     " " }}}
 
-    "Documentation
-    NeoBundle 'heavenshell/vim-jsdoc', "{{{
-        let g:jsdoc_allow_input_prompt = 1
-        let g:jsdoc_default_mapping = 0
-        let g:jsdoc_input_description = 1
-        let g:jsdoc_allow_input_prompt = 1
-        nmap <C-y>j :JsDoc<CR>
-    "}}}
-
     " Usability
     NeoBundle 'tpope/vim-commentary'
     NeoBundle 'tpope/vim-speeddating'
