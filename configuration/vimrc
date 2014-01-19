@@ -219,6 +219,9 @@ set nocompatible
     NeoBundle 'paranoida/vim-airlineish'
 
     " Syntax
+    NeoBundle 'luochen1990/rainbow', "{{{
+        let g:rainbow_active = 1
+    "}}}
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
