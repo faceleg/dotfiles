@@ -326,7 +326,9 @@ set nocompatible
 
     " Utility
     NeoBundle 'justinmk/vim-gtfo'
-    NeoBundle 'tpope/vim-vinegar'
+    NeoBundle 'tpope/vim-vinegar', "{{{
+        let g:netrw_localrmdir="rm -r"
+    "}}}
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'ardagnir/united-front'
     NeoBundle 'AndrewRadev/inline_edit.vim'
