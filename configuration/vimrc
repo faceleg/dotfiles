@@ -191,9 +191,9 @@ set nocompatible
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'dbakker/vim-paragraph-motion'
     NeoBundle 'matze/vim-move', "{{{
-    " <C-k>   Move current line/selections up
-    " <C-j>   Move current line/selections down
-    let g:move_key_modifier = 'C'
+        " <C-k>   Move current line/selections up
+        " <C-j>   Move current line/selections down
+        let g:move_key_modifier = 'C'
     "}}}
     NeoBundle 'justinmk/vim-sneak', " {{{
         nmap , <Plug>SneakNext
