@@ -113,25 +113,15 @@ set nocompatible
     " Completion
     NeoBundle 'vim-scripts/dbext.vim'
     NeoBundle 'marijnh/tern_for_vim', {
-      \ 'build' : {
-      \     'mac' : 'npm install --update',
-      \     'unix' : 'npm install --update',
-      \    },
-      \ }, "{{{
-        let g:tern_show_argument_hints = 1
+                \ 'build' : {
+                \    'unix' : './install.sh --clang-completer',
+                \    'mac' : './install.sh',
+                \ },
+                \ }, "{{{
+        " let g:ycm_cache_omnifunc = 1
+        let g:ycm_add_preview_to_completeopt = 0
+        set completeopt-=preview
     "}}}
-    NeoBundle 'shawncplus/phpcomplete.vim'
-    NeoBundle 'Shougo/context_filetype.vim'
-    " NeoBundle 'https://github.com/Valloric/YouCompleteMe.git' , {
-    "             \ 'build' : {
-    "             \    'unix' : './install.sh --clang-completer',
-    "             \    'mac' : './install.sh',
-    "             \ },
-    "             \ }, "{{{
-    "     " let g:ycm_cache_omnifunc = 1
-    "     let g:ycm_add_preview_to_completeopt = 0
-    "     set completeopt-=preview
-    " "}}}
 
     NeoBundle 'Shougo/neocomplete.vim', "{{{
         " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
