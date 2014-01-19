@@ -151,7 +151,7 @@ if is_linux; then
     alias 'aw=apt-cache show'
     alias 'ad=sudo apt-get dist-upgrade'
 elif  is_osx; then
-    alias 'vim=vim --servername faceleg'
+    alias 'vim=DYLD_FORCE_FLAT_NAMESPACE=1 vim --servername faceleg'
 fi
 
 
