@@ -171,7 +171,6 @@ set nocompatible
 
     " Usability
     NeoBundle 'tpope/vim-commentary'
-    NeoBundle 'tpope/vim-speeddating'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
         nmap gS :SplitjoinSplit<cr>
         nmap gJ :SplitjoinJoin<cr>
