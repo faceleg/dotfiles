@@ -217,7 +217,6 @@ set nocompatible
         let g:airline_theme = 'airlineish'
     " }}}
     NeoBundle 'paranoida/vim-airlineish'
-    NeoBundle 'osyo-manga/vim-anzu'
 
     " Syntax
     NeoBundle 'scrooloose/syntastic', "{{{
