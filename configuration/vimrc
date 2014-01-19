@@ -74,7 +74,6 @@ set nocompatible
     NeoBundle 'zhaocai/GoldenView.Vim' "Always have a nice view for vim split windows
 
     " Folding
-    NeoBundle 'phpfolding.vim'
 
     " Indenting
     NeoBundle '2072/PHP-Indenting-for-VIm'
