@@ -112,16 +112,6 @@ set nocompatible
 
     " Completion
     NeoBundle 'vim-scripts/dbext.vim'
-    NeoBundle 'marijnh/tern_for_vim', {
-                \ 'build' : {
-                \    'unix' : './install.sh --clang-completer',
-                \    'mac' : './install.sh',
-                \ },
-                \ }, "{{{
-        " let g:ycm_cache_omnifunc = 1
-        let g:ycm_add_preview_to_completeopt = 0
-        set completeopt-=preview
-    "}}}
 
     " NeoBundle 'Shougo/neocomplete.vim', "{{{
     "     " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
@@ -257,7 +247,7 @@ set nocompatible
         let g:ctrlp_match_window_reversed = 0
 
         nnoremap <space>p :CtrlP<cr>
-        nnoremap <space>p :CtrlPBuffer<cr>
+        nnoremap <space>b :CtrlPBuffer<cr>
     "}}}
     NeoBundle 'tacahiroy/ctrlp-funky', "{{{
         nnoremap <space>o :CtrlPFunky<cr>
