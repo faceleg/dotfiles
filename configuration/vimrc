@@ -183,10 +183,11 @@ set nocompatible
         " <C-j>   Move current line/selections down
         let g:move_key_modifier = 'C'
     "}}}
-    NeoBundle 'justinmk/vim-sneak', " {{{
-        nmap , <Plug>SneakNext
-        nmap \ <Plug>SneakPrevious
-    "}}}
+    NeoBundle 'jayflo/vim-skip'
+    " NeoBundle 'justinmk/vim-sneak', " {{{
+    "     nmap , <Plug>SneakNext
+    "     nmap \ <Plug>SneakPrevious
+    " "}}}
 
     " Features
     NeoBundle 'mhinz/vim-startify', "{{{
