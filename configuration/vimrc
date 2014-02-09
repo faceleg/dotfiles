@@ -320,8 +320,14 @@ set nocompatible
 
     " Utility
     NeoBundle 'justinmk/vim-gtfo'
-    NeoBundle 'tpope/vim-vinegar', "{{{
-        let g:netrw_localrmdir="rm -r"
+    " NeoBundle 'tpope/vim-vinegar', "{{{
+        " let g:netrw_localrmdir="rm -r"
+        " let g:netrw_localmovecmd= "mv"
+        " let g:netrw_liststyle=3
+
+        " let g:netrw_browse_split=3
+
+        " let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'ardagnir/united-front'
