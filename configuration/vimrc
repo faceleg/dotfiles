@@ -330,13 +330,10 @@ set nocompatible
         " let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
-    NeoBundle 'ardagnir/united-front'
     NeoBundle 'AndrewRadev/inline_edit.vim'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
-    NeoBundle 'tpope/vim-abolish'
-    NeoBundle 'tpope/vim-obsession'
     NeoBundle 'vim-scripts/bufkill.vim', "{{{
         nnoremap <space>d :BW<CR>
     "}}}
