@@ -34,7 +34,6 @@ set nocompatible
     set shiftwidth=4
     set expandtab
     set softtabstop=4
-    set shiftwidth=4
 
     au FileType python,ruby setl sw=2 sts=2 et
     au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
