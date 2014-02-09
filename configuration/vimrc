@@ -541,9 +541,9 @@ set nocompatible
 " }}}
 
 " Buffer switching {{{
-     map <leader>n :bn<cr> " next buffer
-     map <leader>p :bp<cr> " previous buffer
      map <leader>d :bd<cr> " delete buffer
+     nmap <tab> :bnext<CR>
+     nmap <s-tab> :bnext<CR>
 "}}}
 
 " PHP {{{
