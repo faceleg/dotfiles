@@ -1,3 +1,7 @@
+" Profile startup time
+" vim --startuptime vim.log -c q
+" vim -c 'r ! cat vim.log| sort -k 2'
+
 " The mapleader has to be set before vundle starts loading all the plugins.
 let mapleader=";"
 
@@ -50,11 +54,6 @@ set nocompatible
 
     hi LineNr ctermbg=016
     hi MatchParen term=reverse ctermfg=027
-
-    " Allow color schemes to do bright colors without forcing bold.
-    if &t_Co == 8 && $TERM !~# '^linux'
-        set t_Co=16
-    endif
 " }}}
 
 " NeoBundle {{{
@@ -82,12 +81,17 @@ set nocompatible
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}, "{{{
         au BufNewFile,BufRead *.less setf less
     "}}}
+    NeoBundle 'ntpeters/vim-better-whitespace', " {{{
+        autocmd FileType c,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+    "}}}
     NeoBundle 'hail2u/vim-css3-syntax'
     NeoBundle 'cakebaker/scss-syntax.vim', {'autoload':{'filetypes':['scss','sass']}}
     NeoBundle 'ap/vim-css-color', {'autoload':{'filetypes':['css','scss','sass','less','styl']}}, "{{{
         let g:cssColorVimDoNotMessMyUpdatetime = 1
     "}}}
-    NeoBundle 'Glench/Vim-Jinja2-Syntax'
+    NeoBundle 'Glench/Vim-Jinja2-Syntax', "{{{
+        autocmd BufRead,BufNewFile *.nunjucks setlocal filetype=jinja
+    "}}}
     NeoBundle 'othree/html5.vim', {'autoload':{'filetypes':['html', 'jinja2', 'phtml']}}
     NeoBundle 'dbakker/vim-md-noerror'
     NeoBundle 'rodjek/vim-puppet', "{{{
@@ -103,24 +107,18 @@ set nocompatible
                 \}
     nnoremap <leader>fjs :call JsBeautify()<cr>
     "}}}
-    NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript', 'json']}}
-    NeoBundle 'lukaszb/vim-web-indent'
+    NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+    " NeoBundle 'lukaszb/vim-web-indent'
 
     " Images
     NeoBundle 'tpope/vim-afterimage'
 
     " Completion
     NeoBundle 'vim-scripts/dbext.vim'
-    " NeoBundle 'https://github.com/Valloric/YouCompleteMe.git' , {
-    "             \ 'build' : {
-    "             \    'unix' : './install.sh --clang-completer',
-    "             \    'mac' : './install.sh --clang-completer',
-    "             \ },
-    "             \ }, "{{{
-    "     let g:ycm_cache_omnifunc = 1
-    "     let g:ycm_add_preview_to_completeopt = 0
-    "     set completeopt-=preview
-    " "}}}
+    NeoBundle 'marijnh/tern_for_vim', {
+        \ 'build': {
+        \   'others': 'npm install'
+        \}}
     NeoBundle 'Shougo/neocomplete.vim', "{{{
         " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
         " brew install macvim --with-cscope --with-lua --override-system-vim
@@ -183,11 +181,6 @@ set nocompatible
         " <C-j>   Move current line/selections down
         let g:move_key_modifier = 'C'
     "}}}
-    NeoBundle 'jayflo/vim-skip'
-    " NeoBundle 'justinmk/vim-sneak', " {{{
-    "     nmap , <Plug>SneakNext
-    "     nmap \ <Plug>SneakPrevious
-    " "}}}
 
     " Features
     NeoBundle 'mhinz/vim-startify', "{{{
@@ -200,6 +193,7 @@ set nocompatible
         autocmd VimEnter *
                 \ if !argc() |
                 \   Startify |
+                \   NERDTree |
                 \   execute "normal \<c-w>w" |
                 \ endif
 
@@ -219,7 +213,7 @@ set nocompatible
 
     " Syntax
     NeoBundle 'luochen1990/rainbow', "{{{
-        let g:rainbow_active = 1
+        let g:rainbow_active = 0
 
         nnoremap <space>r :RainbowToggle<CR>
     "}}}
@@ -315,7 +309,7 @@ set nocompatible
         let g:gundo_close_on_revert = 1
     " }}}
     NeoBundle 'terryma/vim-expand-region'
-    NeoBundle 'terryma/vim-multiple-cursors'
+    NeoBundle 'kris89/vim-multiple-cursors'
     NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
@@ -328,6 +322,13 @@ set nocompatible
         " let g:netrw_browse_split=3
 
         " let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+    "}}}
+    NeoBundle 'scrooloose/nerdtree', "{{{
+        nmap <space>f :NERDTreeToggle<CR>
+        nmap <space>n :NERDTreeFind<CR>
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+        let NERDTreeShowLineNumbers=1
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'AndrewRadev/inline_edit.vim'
@@ -360,21 +361,6 @@ set nocompatible
 
     NeoBundleCheck
 " }}}
-
-" Toggle relative numbers {{{
-    let g:numbers_on = 0
-    function! ToggleRelativeNumbers()
-        if g:numbers_on
-            let g:numbers_on = 0
-            set norelativenumber
-        else
-            let g:numbers_on = 1
-            set relativenumber
-        endif
-    endfunction
-
-    nnoremap <silent> <space>h :call ToggleRelativeNumbers()<CR>
-"}}}
 
 " General settings {{{
     set number
@@ -422,6 +408,7 @@ set nocompatible
 
     " Select all
     nmap <space>a ggVG<CR>
+
 " }}}
 
 " Sudo {{{
@@ -509,35 +496,6 @@ set nocompatible
 " Open preview window at bottom {{{
     set splitbelow
     set splitright
-" }}}
-
-" Whitespace {{{
-    " Delete trailing whitespace on save
-    " http://stackoverflow.com/a/1618401/187954
-    fun! <SID>StripTrailingWhitespaces()
-        let l = line(".")
-        let c = col(".")
-        %s/\s\+$//e
-        call cursor(l, c)
-    endfun
-    autocmd FileType c,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-
-    " listchar=trail is not as flexible, use the below to highlight trailing
-    " whitespace. Don't do it for unite windows or readonly files
-    highlight ExtraWhitespace ctermbg=red guibg=red
-
-    function! HighlightTrailingWhitespace()
-        if &ft =~ 'html|scss|css|javascript|php|vim'
-            match ExtraWhitespace /\s\+$/
-            match ExtraWhitespace /\s\+\%#\@<!$/
-        endif
-    endfunction
-
-    augroup HightlightWhitespaceAutoCmd
-        autocmd BufWinEnter * :call HighlightTrailingWhitespace()
-        autocmd InsertEnter * :call HighlightTrailingWhitespace()
-        autocmd InsertLeave * :call HighlightTrailingWhitespace()
-    augroup END
 " }}}
 
 " Buffer switching {{{
