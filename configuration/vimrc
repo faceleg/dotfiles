@@ -69,9 +69,6 @@ set nocompatible
 
         nnoremap <space>m :MatchmakerToggle<CR>
     "}}}
-    " NeoBundle 'zhaocai/GoldenView.Vim' "Always have a nice view for vim split windows
-
-    " Folding
 
     " Indenting
     NeoBundle '2072/PHP-Indenting-for-VIm'
