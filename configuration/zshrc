@@ -76,7 +76,7 @@ plugins=($USER_PLUGINS)
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin
 source $ZSH/oh-my-zsh.sh
 export VISUAL=vim
-export GREP_OPTIONS='--color=always' 
+# export GREP_OPTIONS='--color=always'
 
 ZSH_SYNTAX_HIGHLIGHTING_PLUGIN=~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -152,9 +152,8 @@ if is_linux; then
     alias 'aw=apt-cache show'
     alias 'ad=sudo apt-get dist-upgrade'
 elif  is_osx; then
-    #alias 'vim=DYLD_FORCE_FLAT_NAMESPACE=1 vim --servername faceleg'
+    export PATH=${PATH}:/Users/faceleg/Work/SDK/adt-bundle/sdk/platform-tools:/Users/faceleg/Work/SDK/adt-bundle/sdk/tools
 fi
-
 
 # Vi mode
 bindkey -v
@@ -164,7 +163,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 # http://www.zsh.org/mla/workers/2008/msg01653.html
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^H' backward-delete-char
-
 
 # 10ms for key sequences
 KEYTIMEOUT=1
