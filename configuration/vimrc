@@ -310,16 +310,28 @@ set nocompatible
     NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
+    NeoBundle 't9md/vim-choosewin', "{{{
+        let g:choosewin_overlay_enable = 1
+        nmap  <tab> :ChooseWin<CR>
+
+        " workaround for overlay font broken on mutibyte buffer.
+        let g:choosewin_overlay_clear_multibyte = 1
+
+        " tmux like overlay color
+        let g:choosewin_color_overlay = {
+                    \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
+                    \ 'cterm': [ 25, 25 ]
+                    \ }
+        let g:choosewin_color_overlay_current = {
+                    \ 'gui': ['firebrick1', 'firebrick1' ],
+                    \ 'cterm': [ 124, 124 ]
+                    \ }
+
+        let g:choosewin_blink_on_land      = 0 " dont' blink at land
+        let g:choosewin_statusline_replace = 0 " don't replace statusline
+        let g:choosewin_tabline_replace    = 0 " don't replace tabline
+        "}}}
     NeoBundle 'justinmk/vim-gtfo'
-    " NeoBundle 'tpope/vim-vinegar', "{{{
-        " let g:netrw_localrmdir="rm -r"
-        " let g:netrw_localmovecmd= "mv"
-        " let g:netrw_liststyle=3
-
-        " let g:netrw_browse_split=3
-
-        " let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
-    "}}}
     NeoBundle 'scrooloose/nerdtree', "{{{
         nmap <space>f :NERDTreeToggle<CR>
         nmap <space>n :NERDTreeFind<CR>
@@ -497,8 +509,8 @@ set nocompatible
 
 " Buffer switching {{{
      map <leader>d :bd<cr> " delete buffer
-     nmap <tab> :bnext<CR>
-     nmap <s-tab> :bnext<CR>
+     " nmap <tab> :bnext<CR>
+     " nmap <s-tab> :bnext<CR>
 "}}}
 
 " PHP {{{
