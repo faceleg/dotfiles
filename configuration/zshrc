@@ -59,9 +59,9 @@ if command_exists vagrant; then
     USER_PLUGINS+=(vagrant)
 fi
 
-if command_exists git-extras; then
-    USER_PLUGINS+=(git-extras)
-fi
+#if command_exists git-extras; then
+#    USER_PLUGINS+=(git-extras)
+#fi
 
 #if command_exists rbenv; then
 #    # ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
