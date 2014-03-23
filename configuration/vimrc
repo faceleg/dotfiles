@@ -106,7 +106,6 @@ set nocompatible
     nnoremap <leader>fjs :call JsBeautify()<cr>
     "}}}
     NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
-    " NeoBundle 'lukaszb/vim-web-indent'
 
     " Images
     NeoBundle 'tpope/vim-afterimage'
