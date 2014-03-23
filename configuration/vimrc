@@ -73,6 +73,7 @@ set nocompatible
     " Indenting
     NeoBundle '2072/PHP-Indenting-for-VIm'
     NeoBundle 'pangloss/vim-javascript'
+    NeoBundle 'editorconfig/editorconfig-vim'
 
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}, "{{{
