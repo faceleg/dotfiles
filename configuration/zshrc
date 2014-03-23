@@ -29,7 +29,8 @@ command_exists () {
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-USER_PLUGINS=(git git-flow rsync themes urltools zsh-syntax-highlighting vagrant web-search autojump)
+#USER_PLUGINS=(git git-flow rsync themes urltools zsh-syntax-highlighting vagrant web-search autojump)
+USER_PLUGINS=(git rsync themes urltools zsh-syntax-highlighting vagrant web-search autojump)
 
 if  is_osx; then
     USER_PLUGINS+=(osx)
