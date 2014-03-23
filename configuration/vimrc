@@ -170,6 +170,19 @@ set nocompatible
     " }}}
     NeoBundle 'inkarkat/closetag.vim'
 
+    " Documentation
+    NeoBundle 'heavenshell/vim-jsdoc', "{{{
+        let g:jsdoc_allow_input_prompt = 1
+        let g:jsdoc_input_description = 1
+        let g:jsdoc_additional_descriptions = 1
+        let g:jsdoc_return = 1
+        let g:jsdoc_return_type = 1
+        let g:jsdoc_return_description = 1
+        let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
+
+        nnoremap <space>j :JsDoc<cr>
+    "}}}
+
     " Motion
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundle 'dbakker/vim-paragraph-motion'
