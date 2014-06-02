@@ -71,9 +71,10 @@ set nocompatible
     "}}}
 
     " Indenting
+    NeoBundle 'editorconfig/editorconfig-vim'
+
     NeoBundle '2072/PHP-Indenting-for-VIm'
     NeoBundle 'pangloss/vim-javascript'
-    NeoBundle 'editorconfig/editorconfig-vim'
 
     " Syntax
     NeoBundle 'groenewege/vim-less', {'autoload':{'filetypes':['less']}}, "{{{
@@ -112,10 +113,10 @@ set nocompatible
 
     " Completion
     NeoBundle 'vim-scripts/dbext.vim'
-    " NeoBundle 'marijnh/tern_for_vim', {
-    "     \ 'build': {
-    "     \   'others': 'npm install'
-    "     \}}
+    NeoBundle 'marijnh/tern_for_vim', {
+        \ 'build': {
+        \   'others': 'npm install'
+        \}}
     NeoBundle 'https://github.com/Valloric/YouCompleteMe.git' , {
                 \ 'build' : {
                 \    'unix' : './install.sh --clang-completer',
@@ -255,9 +256,6 @@ set nocompatible
         let g:syntastic_php_checkers=['php']
         let g:syntastic_css_checkers=['csslint']
     "}}}
-    NeoBundle 'Shougo/unite-outline', "{{{
-        nnoremap <space>o :Unite outline<CR>
-    "}}}
     NeoBundle 'Shougo/unite-session'
     NeoBundle 'kien/ctrlp.vim', "{{{
         let g:ctrlp_extensions = ['funky']
@@ -345,7 +343,7 @@ set nocompatible
         let g:choosewin_blink_on_land      = 0 " dont' blink at land
         let g:choosewin_statusline_replace = 0 " don't replace statusline
         let g:choosewin_tabline_replace    = 0 " don't replace tabline
-        "}}}
+    "}}}
     NeoBundle 'scrooloose/nerdtree', "{{{
         nmap <space>f :NERDTreeToggle<CR>
         nmap <space>n :NERDTreeFind<CR>
