@@ -112,55 +112,65 @@ set nocompatible
 
     " Completion
     NeoBundle 'vim-scripts/dbext.vim'
-    NeoBundle 'marijnh/tern_for_vim', {
-        \ 'build': {
-        \   'others': 'npm install'
-        \}}
-    NeoBundle 'Shougo/neocomplete.vim', "{{{
-        " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
-        " brew install macvim --with-cscope --with-lua --override-system-vim
-        set completeopt-=preview
+    " NeoBundle 'marijnh/tern_for_vim', {
+    "     \ 'build': {
+    "     \   'others': 'npm install'
+    "     \}}
+    NeoBundle 'https://github.com/Valloric/YouCompleteMe.git' , {
+                \ 'build' : {
+                \    'unix' : './install.sh --clang-completer',
+                \    'mac' : './install.sh --clang-completer',
+                \ },
+                \ }, "{{{
+        let g:ycm_cache_omnifunc = 1
+        let g:ycm_add_preview_to_completeopt = 0
+        " set completeopt-=preview
+    "}}}
+    " NeoBundle 'Shougo/neocomplete.vim', "{{{
+    "     " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
+    "     " brew install macvim --with-cscope --with-lua --override-system-vim
+    "     set completeopt-=preview
 
-        let g:acp_enableAtStartup = 0
-        let g:neocomplete#enable_at_startup = 0
-        let g:neocomplete#enable_smart_case = 1
-        let g:neocomplete#sources#syntax#min_keyword_length = 3
-        let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-        let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
+    "     let g:acp_enableAtStartup = 0
+    "     let g:neocomplete#enable_at_startup = 0
+    "     let g:neocomplete#enable_smart_case = 1
+    "     let g:neocomplete#sources#syntax#min_keyword_length = 3
+    "     let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    "     let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 
-        " Define dictionary.
-        let g:neocomplete#sources#dictionary#dictionaries = {
-            \ 'default' : '',
-            \ 'vimshell' : $HOME.'/.vimshell_hist',
-            \ 'scheme' : $HOME.'/.gosh_completions'
-            \ }
+    "     " Define dictionary.
+    "     let g:neocomplete#sources#dictionary#dictionaries = {
+    "         \ 'default' : '',
+    "         \ 'vimshell' : $HOME.'/.vimshell_hist',
+    "         \ 'scheme' : $HOME.'/.gosh_completions'
+    "         \ }
 
-        if !exists('g:neocomplete#keyword_patterns')
-            let g:neocomplete#keyword_patterns = {}
-        endif
-        let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+    "     if !exists('g:neocomplete#keyword_patterns')
+    "         let g:neocomplete#keyword_patterns = {}
+    "     endif
+    "     let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-        " Plugin key-mappings.
-        inoremap <expr><C-g> neocomplete#undo_completion()
-        inoremap <expr><C-l> neocomplete#complete_common_string()
+    "     " Plugin key-mappings.
+    "     inoremap <expr><C-g> neocomplete#undo_completion()
+    "     inoremap <expr><C-l> neocomplete#complete_common_string()
 
-        inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-        inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-        inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-        inoremap <expr><C-y>  neocomplete#close_popup()
-        inoremap <expr><C-e>  neocomplete#cancel_popup()
-        inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
+    "     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    "     inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+    "     inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+    "     inoremap <expr><C-y>  neocomplete#close_popup()
+    "     inoremap <expr><C-e>  neocomplete#cancel_popup()
+    "     inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
 
-        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-        autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    "     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    "     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    "     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 
-        autocmd FileType javascript setlocal omnifunc=tern#Complete
+    "     autocmd FileType javascript setlocal omnifunc=tern#Complete
 
-        autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-    " }}}
+    "     autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
+    "     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    "     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    " " }}}
 
     " Usability
     NeoBundle 'tpope/vim-commentary'
@@ -222,11 +232,6 @@ set nocompatible
     NeoBundle 'paranoida/vim-airlineish'
 
     " Syntax
-    NeoBundle 'luochen1990/rainbow', "{{{
-        let g:rainbow_active = 0
-
-        nnoremap <space>r :RainbowToggle<CR>
-    "}}}
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
@@ -269,9 +274,6 @@ set nocompatible
     "}}}
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <space>y :YRShow<cr>
-    "}}}
-    NeoBundle 'luochen1990/select-and-search', "{{{
-        let g:select_and_search_active = 1
     "}}}
     NeoBundle 'Shougo/unite.vim', "{{{
         let g:unite_data_directory = expand('~/.vim/.cache/unite')
@@ -344,7 +346,6 @@ set nocompatible
         let g:choosewin_statusline_replace = 0 " don't replace statusline
         let g:choosewin_tabline_replace    = 0 " don't replace tabline
         "}}}
-    NeoBundle 'justinmk/vim-gtfo'
     NeoBundle 'scrooloose/nerdtree', "{{{
         nmap <space>f :NERDTreeToggle<CR>
         nmap <space>n :NERDTreeFind<CR>
@@ -353,7 +354,6 @@ set nocompatible
         let NERDTreeShowLineNumbers=1
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
-    NeoBundle 'AndrewRadev/inline_edit.vim'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
@@ -364,22 +364,7 @@ set nocompatible
         let delimitMate_expand_cr = 0
         let delimitMate_jump_expansion = 0
     "}}}
-    NeoBundle 'tsaleh/vim-matchit'
-
-    " VCS
-    NeoBundle 'tommcdo/vim-fugitive-blame-ext'
-    NeoBundle 'tpope/vim-fugitive', "{{{
-        noremap <silent> <leader>gs :Gstatus<CR>
-        nnoremap <silent> <leader>gd :Gdiff<CR>
-        nnoremap <silent> <leader>gc :Gcommit<CR>
-        nnoremap <silent> <leader>gb :Gblame<CR>
-        nnoremap <silent> <leader>gl :Glog<CR>
-        nnoremap <silent> <leader>gp :Git push<CR>
-        nnoremap <silent> <leader>gw :Gwrite<CR>
-        nnoremap <silent> <leader>gr :Gremove<CR>
-        autocmd FileType gitcommit nmap <buffer> U :Git checkout -- <C-r><C-g><CR>
-        autocmd BufReadPost fugitive://* set bufhidden=delete
-    "}}}
+    " NeoBundle 'tsaleh/vim-matchit'
 
     NeoBundleCheck
 " }}}
