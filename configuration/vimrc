@@ -202,6 +202,7 @@ set nocompatible
         hi StartifyPath    ctermfg=245
         hi StartifySlash   ctermfg=240
     " }}}
+    NeoBundle 'Shougo/unite-session'
 
     " Status bar
     NeoBundle 'bling/vim-airline', "{{{
@@ -211,7 +212,7 @@ set nocompatible
     " }}}
     NeoBundle 'paranoida/vim-airlineish'
 
-    " Syntax
+    " Error reporting
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
