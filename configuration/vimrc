@@ -172,7 +172,9 @@ set nocompatible
     "}}}
 
     " Motion
-    NeoBundle 'Lokaltog/vim-easymotion'
+    NeoBundle 'Lokaltog/vim-easymotion', {
+        \ 'vim_version' : '7.4'
+        \ }
     NeoBundle 'dbakker/vim-paragraph-motion'
     NeoBundle 'matze/vim-move', "{{{
         " <C-k>   Move current line/selections up
