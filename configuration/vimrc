@@ -106,6 +106,7 @@ set nocompatible
     "     let g:ycm_add_preview_to_completeopt = 0
     "     set completeopt-=preview
     " "}}}
+    NeoBundle 'rizzatti/dash.vim'
     NeoBundle 'Shougo/neocomplete.vim', "{{{
         " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
         " brew install macvim --with-cscope --with-lua --override-system-vim
@@ -236,19 +237,17 @@ set nocompatible
         let g:syntastic_php_checkers=['php']
         let g:syntastic_css_checkers=['csslint']
     "}}}
-    NeoBundle 'Shougo/unite-session'
+
+    "Usability
     NeoBundle 'kien/ctrlp.vim', "{{{
-        let g:ctrlp_extensions = ['funky']
         let g:ctrlp_match_window_bottom = 0
         let g:ctrlp_match_window_reversed = 0
-
-        " let g:ctrlp_dont_split = 'netrw'
 
         nnoremap <space>p :CtrlP<cr>
         nnoremap <space>b :CtrlPBuffer<cr>
     "}}}
-    NeoBundle 'tacahiroy/ctrlp-funky', "{{{
-        nnoremap <space>o :CtrlPFunky<cr>
+    NeoBundle 'Shougo/unite-outline', "{{{
+        nnoremap <space>o :Unite outline<CR>
     "}}}
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <space>y :YRShow<cr>
@@ -361,11 +360,9 @@ set nocompatible
 
     set nowrap                      " Do not wrap lines by default
     set autoread                    " Reload files changed outside vim
-    " set colorcolumn=80
 
     set history=1000                " remember more commands and search history
     set undolevels=1000             " remember more undo levels
-    "set lazyredraw
     set ttyfast " u got a fast terminal
 
     " No need to show mode due to Powerline
