@@ -79,6 +79,9 @@ set nocompatible
     NeoBundle 'ntpeters/vim-better-whitespace', " {{{
         autocmd FileType c,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
     "}}}
+    NeoBundle 'Glench/Vim-Jinja2-Syntax', "{{{
+        autocmd BufRead,BufNewFile *.nunjucks setlocal filetype=jinja
+    "}}}
     NeoBundle 'sheerun/vim-polyglot'
 
     " Images
