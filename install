@@ -1,5 +1,5 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-g --git] [-c --ctags ] [-m --cmus ] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
+USAGE="$(basename "$0") [-h --help] [-g --git] [-c --ctags ] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
 
 OPTIONS
         -h, --help
@@ -17,9 +17,6 @@ OPTIONS
         -t, --tmux
             Install tmux addons
 
-        -m, --cmus
-            Install cmus addons
-
         -z, --zsh
             Install ZSH plugins\n"
 if [[ -z $1 ]]; then
@@ -31,12 +28,11 @@ CP="/bin/cp -vfr"
 
 INSTALL_GIT=false
 INSTALL_CTAGS=false
-INSTALL_CMUS=false
 INSTALL_VIM=false
 INSTALL_TMUX=false
 INSTALL_ZSH_PLUGINS=false
 
-if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,git,ctags,cmus,vim,tmux,zsh,all -- "$@")
+if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,git,ctags,vim,tmux,zsh,all -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -46,14 +42,12 @@ while [ $# -gt 0 ]; do
         "-h" | "--help") printf "$USAGE"; exit 0 ;;
         "-g" | "--git") INSTALL_GIT=true ;;
         "-c" | "--ctags") INSTALL_CTAGS=true ;;
-        "-m" | "--cmus") INSTALL_CMUS=true ;;
         "-v" | "--vim") INSTALL_VIM=true ;;
         "-t" | "--tmux") INSTALL_TMUX=true ;;
         "-z" | "--zsh") INSTALL_ZSH_PLUGINS=true ;;
         "-a" | "--all")
             INSTALL_GIT=true
             INSTALL_CTAGS=true
-            INSTALL_CMUS=true
             INSTALL_VIM=true
             INSTALL_TMUX=true
             INSTALL_ZSH_PLUGINS=true
@@ -75,10 +69,6 @@ fi
 
 if $INSTALL_CTAGS; then
     "$DIR/installers/ctags.sh"
-fi
-
-if $INSTALL_CMUS; then
-    "$DIR/installers/cmus.sh"
 fi
 
 if $INSTALL_VIM; then
