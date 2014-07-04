@@ -1,12 +1,9 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-g --git] [-c --ctags ] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
+USAGE="$(basename "$0") [-h --help] [-c --ctags ] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
 
 OPTIONS
         -h, --help
             Print this message
-
-        -g, --git
-            Perform basic git setup
 
         -c, --ctags
             Install patched ctags
@@ -26,13 +23,12 @@ fi
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-INSTALL_GIT=false
 INSTALL_CTAGS=false
 INSTALL_VIM=false
 INSTALL_TMUX=false
 INSTALL_ZSH_PLUGINS=false
 
-if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,git,ctags,vim,tmux,zsh,all -- "$@")
+if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,ctags,vim,tmux,zsh,all -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -40,13 +36,11 @@ fi
 while [ $# -gt 0 ]; do
     case $1 in
         "-h" | "--help") printf "$USAGE"; exit 0 ;;
-        "-g" | "--git") INSTALL_GIT=true ;;
         "-c" | "--ctags") INSTALL_CTAGS=true ;;
         "-v" | "--vim") INSTALL_VIM=true ;;
         "-t" | "--tmux") INSTALL_TMUX=true ;;
         "-z" | "--zsh") INSTALL_ZSH_PLUGINS=true ;;
         "-a" | "--all")
-            INSTALL_GIT=true
             INSTALL_CTAGS=true
             INSTALL_VIM=true
             INSTALL_TMUX=true
@@ -61,10 +55,6 @@ done
 
 if $INSTALL_TMUX; then
     "$DIR/installers/tmux.sh"
-fi
-
-if $INSTALL_GIT; then
-    "$DIR/installers/git-configuration.sh"
 fi
 
 if $INSTALL_CTAGS; then
