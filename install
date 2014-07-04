@@ -1,5 +1,5 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-g --git] [-c --ctags ] [-m --cmus ] [-e --ekg2] [-p --phpctags] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
+USAGE="$(basename "$0") [-h --help] [-g --git] [-c --ctags ] [-m --cmus ] [-p --phpctags] [-v --vim] [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
 
 OPTIONS
         -h, --help
@@ -10,9 +10,6 @@ OPTIONS
 
         -c, --ctags
             Install patched ctags
-
-        -e, --ekg2
-            Install ekg2 config & themes
 
         -p, --phpctags
             Install PHPCTags
@@ -38,13 +35,12 @@ CP="/bin/cp -vfr"
 INSTALL_GIT=false
 INSTALL_PHPCTAGS=false
 INSTALL_CTAGS=false
-INSTALL_EKG2=false
 INSTALL_CMUS=false
 INSTALL_VIM=false
 INSTALL_TMUX=false
 INSTALL_ZSH_PLUGINS=false
 
-if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,git,ctags,ekg2,cmus,phpctags,vim,tmux,zsh,all -- "$@")
+if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,git,ctags,cmus,phpctags,vim,tmux,zsh,all -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -55,7 +51,6 @@ while [ $# -gt 0 ]; do
         "-g" | "--git") INSTALL_GIT=true ;;
         "-c" | "--ctags") INSTALL_CTAGS=true ;;
         "-m" | "--cmus") INSTALL_CMUS=true ;;
-        "-e" | "--ekg2") INSTALL_EKG2=true ;;
         "-p" | "--phpctags") INSTALL_PHPCTAGS=true ;;
         "-v" | "--vim") INSTALL_VIM=true ;;
         "-t" | "--tmux") INSTALL_TMUX=true ;;
@@ -63,7 +58,6 @@ while [ $# -gt 0 ]; do
         "-a" | "--all")
             INSTALL_GIT=true
             INSTALL_CTAGS=true
-            INSTALL_EKG2=true
             INSTALL_CMUS=true
             INSTALL_PHPCTAGS=true
             INSTALL_VIM=true
@@ -87,10 +81,6 @@ fi
 
 if $INSTALL_CTAGS; then
     "$DIR/installers/ctags.sh"
-fi
-
-if $INSTALL_EKG2; then
-    "$DIR/installers/ekg2.sh"
 fi
 
 if $INSTALL_CMUS; then

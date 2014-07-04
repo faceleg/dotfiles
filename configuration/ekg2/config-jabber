@@ -1,7 +1,0 @@
-# vim:fenc=UTF-8
-xmpp:beep_mail 0
-xmpp:dcc 0
-xmpp:dcc_ip 
-xmpp:default_pubsub_server 
-xmpp:default_search_server 
-xmpp:disable_chatstates 6
