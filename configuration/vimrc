@@ -336,7 +336,9 @@ set nocompatible
     set number
     set cindent
 
-    set re=1
+    if v:version >= 704
+      set re=1
+    endif
 
     " a - terse messages (like [+] instead of [Modified])
     " t - truncate file names
