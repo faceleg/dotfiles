@@ -187,7 +187,9 @@ set nocompatible
     "}}}
 
     " Features
-    NeoBundle 'szw/vim-ctrlspace', "{{{
+    NeoBundle 'szw/vim-ctrlspace', {
+        \ 'vim_version' : '7.4'
+        \ }, "{{{
       hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
       hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=0   guibg=#000000 cterm=NONE gui=NONE
       hi CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
