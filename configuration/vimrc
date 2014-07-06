@@ -405,6 +405,8 @@ set nocompatible
     " Select all
     nmap <space>a ggVG<CR>
 
+    " disable ex mode
+    nnoremap Q <nop>
 " }}}
 
 " Sudo {{{
@@ -432,7 +434,7 @@ set nocompatible
 
 " Pasting {{{
     nnoremap <f2> :set invpaste paste?<cr>
-    set pastetoggle=<f2>            " toggle paste mode
+    set pastetoggle=<f2>
 " }}}
 
 " Turn Off Swap Files {{{
