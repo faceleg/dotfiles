@@ -192,7 +192,7 @@ set nocompatible
         let g:ctrlspace_use_ruby_bindings = 1
         let g:ctrlspace_unicode_font = 1
 
-        autocmd VimEnter * CtrlSpace
+        " autocmd VimEnter * CtrlSpace
       "}}}
     else
       NeoBundle 'mhinz/vim-startify', "{{{
