@@ -87,17 +87,6 @@ set nocompatible
     " Images
     NeoBundle 'tpope/vim-afterimage'
 
-    " Formatting
-    NeoBundle 'maksimr/vim-jsbeautify', {'autoload':{'filetypes':['javascript']}} "{{{
-        let g:config_Beautifier =  {
-                    \'js' : {
-                    \   'indent_char': ' ',
-                    \   'indent_size': 2
-                    \}
-                    \}
-        nnoremap <leader>fjs :call JsBeautify()<cr>
-    "}}}
-
     " Completion
     " NeoBundle 'https://github.com/Valloric/YouCompleteMe.git' , {
     "             \ 'build' : {
