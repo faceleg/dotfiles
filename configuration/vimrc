@@ -179,6 +179,7 @@ set nocompatible
         " <C-j>   Move current line/selections down
         let g:move_key_modifier = 'C'
     "}}}
+    NeoBundle 'saihoooooooo/glowshi-ft.vim'
 
     " Features
     if v:version >= 704
