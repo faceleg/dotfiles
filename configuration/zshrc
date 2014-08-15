@@ -111,6 +111,19 @@ if [ -f "$ZSH_SYNTAX_HIGHLIGHTING_PLUGIN" ]; then
     ZSH_HIGHLIGHT_STYLES[assign]=none
 fi
 
+# User ctrl-z like alt-tab
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
 # autoload -U compinit
 
