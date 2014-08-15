@@ -66,7 +66,6 @@ set nocompatible
     NeoBundle 'kana/vim-narrow'
     NeoBundle 'qstrahl/vim-matchmaker', "{{{
         let g:matchmaker_enable_startup = 0
-
         nnoremap <space>m :MatchmakerToggle<CR>
     "}}}
 
@@ -182,6 +181,8 @@ set nocompatible
     NeoBundle 'saihoooooooo/glowshi-ft.vim'
 
     " Features
+    NeoBundle 'tpope/vim-fugitive'
+    NeoBundle 'tpope/vim-sleuth'
     if v:version >= 704
       NeoBundle 'szw/vim-ctrlspace', "{{{
         hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
