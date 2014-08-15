@@ -183,6 +183,17 @@ set nocompatible
     " Features
     NeoBundle 'tpope/vim-fugitive'
     NeoBundle 'tpope/vim-sleuth'
+    NeoBundle 'svermeulen/vim-easyclip', "{{{
+      imap <c-v> <plug>EasyClipInsertModePaste
+      nnoremap <space>y :Yanks<cr>
+
+      " remap add mark
+      nnoremap gm m
+
+      let g:EasyClipUseSubstituteDefaults = 1
+      let g:EasyClipYankHistorySize = 500
+      let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+    "}}}
     if v:version >= 702
       NeoBundle 'szw/vim-ctrlspace', "{{{
         hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
