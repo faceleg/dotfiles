@@ -257,6 +257,7 @@ set nocompatible
     NeoBundle 'Shougo/unite-outline', "{{{
         nnoremap <space>o :Unite outline<CR>
     "}}}
+    NeoBundle 'rhysd/committia.vim'
     NeoBundle 'vim-scripts/YankRing.vim', "{{{
         nnoremap <space>y :YRShow<cr>
     "}}}
