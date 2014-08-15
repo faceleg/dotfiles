@@ -183,7 +183,7 @@ set nocompatible
     " Features
     NeoBundle 'tpope/vim-fugitive'
     NeoBundle 'tpope/vim-sleuth'
-    if v:version >= 704
+    if v:version >= 702
       NeoBundle 'szw/vim-ctrlspace', "{{{
         hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
         hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=0   guibg=#000000 cterm=NONE gui=NONE
