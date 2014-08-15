@@ -436,11 +436,6 @@ set nocompatible
     imap <right> <nop>
 " }}}
 
-" Pasting {{{
-    nnoremap <f2> :set invpaste paste?<cr>
-    set pastetoggle=<f2>
-" }}}
-
 " Turn Off Swap Files {{{
     set noswapfile
     set nobackup
@@ -511,3 +506,28 @@ set nocompatible
     autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 " }}}
 
+" Pasting {{{
+    nnoremap <f2> :set invpaste paste?<cr>
+    set pastetoggle=<f2>
+
+    " Automatically jump to end of text you pasted:
+    vnoremap <silent> y y`]
+    vnoremap <silent> p p`]
+    nnoremap <silent> p p`]
+
+    " Quickly select text you just pasted
+    noremap gV `[v`]
+
+    " Prevent replacing paste buffer on paste
+    function! RestoreRegister()
+      let @" = s:restore_reg
+      return ''
+    endfunction
+
+    function! s:Repl()
+      let s:restore_reg = @"
+      return "p@=RestoreRegister()\<cr>"
+    endfunction
+
+    vmap <silent> <expr> p <sid>Repl()
+" }}}
