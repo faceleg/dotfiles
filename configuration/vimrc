@@ -525,17 +525,4 @@ set nocompatible
 
     " Quickly select text you just pasted
     noremap gV `[v`]
-
-    " Prevent replacing paste buffer on paste
-    function! RestoreRegister()
-      let @" = s:restore_reg
-      return ''
-    endfunction
-
-    function! s:Repl()
-      let s:restore_reg = @"
-      return "p@=RestoreRegister()\<cr>"
-    endfunction
-
-    vmap <silent> <expr> p <sid>Repl()
 " }}}
