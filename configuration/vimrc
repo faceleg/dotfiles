@@ -417,6 +417,14 @@ set nocompatible
     map <silent> <F7> :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
 " }}}
 
+" {{{
+  " Type 12<Enter> to go to line 12 (12G breaks my wrist)
+  " Hit Enter to go to end of file.
+  " Hit Backspace to go to beginning of file.
+  nnoremap <CR> G
+  nnoremap <BS> gg
+" }}}
+
 " Disable arrow keys {{{
     map <up> <nop>
     map <down> <nop>
