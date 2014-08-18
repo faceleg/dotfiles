@@ -411,6 +411,9 @@ set nocompatible
     " disable ex mode
     nnoremap Q <nop>
     map q: :q
+
+    " Disable K looking stuff up
+    map K <Nop>
 " }}}
 
 " Sudo {{{
