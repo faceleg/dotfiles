@@ -54,6 +54,8 @@ set nocompatible
 
     hi LineNr ctermbg=016
     hi MatchParen term=reverse ctermfg=027
+    highlight clear SignColumn
+    hi Statement       ctermfg=39               cterm=bold
 " }}}
 
 " NeoBundle {{{
