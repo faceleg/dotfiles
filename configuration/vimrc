@@ -173,6 +173,30 @@ set nocompatible
     NeoBundle 'saihoooooooo/glowshi-ft.vim'
 
     " Features
+    NeoBundle 'airblade/vim-gitgutter'
+    NeoBundle 'kshenoy/vim-signature', "{{{
+      let g:SignatureMap = {
+          \ 'Leader'             :  "",
+          \ 'PlaceNextMark'      :  "m,",
+          \ 'ToggleMarkAtLine'   :  "m.",
+          \ 'PurgeMarksAtLine'   :  "m-",
+          \ 'PurgeMarks'         :  "m<Space>",
+          \ 'PurgeMarkers'       :  "m<BS>",
+          \ 'GotoNextLineAlpha'  :  "']",
+          \ 'GotoPrevLineAlpha'  :  "'[",
+          \ 'GotoNextSpotAlpha'  :  "`]",
+          \ 'GotoPrevSpotAlpha'  :  "`[",
+          \ 'GotoNextLineByPos'  :  "]'",
+          \ 'GotoPrevLineByPos'  :  "['",
+          \ 'GotoNextSpotByPos'  :  "]`",
+          \ 'GotoPrevSpotByPos'  :  "[`",
+          \ 'GotoNextMarker'     :  "[+",
+          \ 'GotoPrevMarker'     :  "[-",
+          \ 'GotoNextMarkerAny'  :  "]=",
+          \ 'GotoPrevMarkerAny'  :  "[=",
+          \ 'ListLocalMarks'     :  "'?"
+          \ }
+    "}}}
     NeoBundle 'tpope/vim-fugitive'
     NeoBundle 'tpope/vim-sleuth'
     NeoBundle 'svermeulen/vim-easyclip', "{{{
