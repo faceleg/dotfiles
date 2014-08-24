@@ -89,16 +89,6 @@ set nocompatible
     NeoBundle 'tpope/vim-afterimage'
 
     " Completion
-    " NeoBundle 'https://github.com/Valloric/YouCompleteMe.git' , {
-    "             \ 'build' : {
-    "             \    'unix' : './install.sh --clang-completer',
-    "             \    'mac' : './install.sh --clang-completer',
-    "             \ },
-    "             \ }, "{{{
-    "     let g:ycm_cache_omnifunc = 1
-    "     let g:ycm_add_preview_to_completeopt = 0
-    "     set completeopt-=preview
-    " "}}}
     NeoBundle 'rizzatti/dash.vim'
     if has('lua')
       NeoBundle 'Shougo/neocomplete.vim', "{{{
