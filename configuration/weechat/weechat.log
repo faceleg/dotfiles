@@ -1,0 +1,73 @@
+[2014-08-23 20:26:30] WeeChat 0.4.3 (compiled on Aug 22 2014 19:59:07)
+[2014-08-23 20:26:30] Reading configuration file sec.conf
+[2014-08-23 20:26:30] Reading configuration file weechat.conf
+[2014-08-23 20:26:30] Reading configuration file plugins.conf
+[2014-08-23 20:26:30] Reading configuration file alias.conf
+[2014-08-23 20:26:30] Reading configuration file charset.conf
+[2014-08-23 20:26:30] Reading configuration file irc.conf
+[2014-08-23 20:26:30] irc: connecting to server chat.freenode.net/6667...
+[2014-08-23 20:26:30] Reading configuration file logger.conf
+[2014-08-23 20:26:30] Reading configuration file relay.conf
+[2014-08-23 20:26:30] Reading configuration file rmodifier.conf
+[2014-08-23 20:26:30] Reading configuration file script.conf
+[2014-08-23 20:26:30] Reading configuration file xfer.conf
+[2014-08-23 20:26:45] Writing configuration file irc.conf 
+[2014-08-23 20:26:45] Writing configuration file irc.conf 
+[2014-08-24 04:37:49] Writing configuration file irc.conf 
+[2014-08-24 04:37:59] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 04:38:13] Writing configuration file irc.conf 
+[2014-08-24 04:38:14] Writing configuration file irc.conf 
+[2014-08-24 06:26:12] Writing configuration file irc.conf 
+[2014-08-24 06:26:22] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 06:26:36] Writing configuration file irc.conf 
+[2014-08-24 06:26:36] Writing configuration file irc.conf 
+[2014-08-24 08:14:40] Writing configuration file irc.conf 
+[2014-08-24 08:14:50] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 08:15:06] Writing configuration file irc.conf 
+[2014-08-24 08:15:06] Writing configuration file irc.conf 
+[2014-08-24 10:03:00] Writing configuration file irc.conf 
+[2014-08-24 10:03:10] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 10:03:24] Writing configuration file irc.conf 
+[2014-08-24 10:03:25] Writing configuration file irc.conf 
+[2014-08-24 11:51:32] Writing configuration file irc.conf 
+[2014-08-24 11:51:42] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 11:51:57] Writing configuration file irc.conf 
+[2014-08-24 11:51:57] Writing configuration file irc.conf 
+[2014-08-24 13:39:53] Writing configuration file irc.conf 
+[2014-08-24 13:40:03] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 13:40:20] Writing configuration file irc.conf 
+[2014-08-24 13:40:20] Writing configuration file irc.conf 
+[2014-08-24 15:28:13] Writing configuration file irc.conf 
+[2014-08-24 15:28:23] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 15:28:37] Writing configuration file irc.conf 
+[2014-08-24 15:28:37] Writing configuration file irc.conf 
+[2014-08-24 15:38:31] Writing configuration file irc.conf 
+[2014-08-24 15:38:41] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 15:38:58] Writing configuration file irc.conf 
+[2014-08-24 15:38:58] Writing configuration file irc.conf 
+[2014-08-24 23:29:14] Writing configuration file irc.conf 
+[2014-08-24 23:29:24] irc: connecting to server chat.freenode.net/6667...
+[2014-08-24 23:29:40] Writing configuration file irc.conf 
+[2014-08-24 23:29:40] Writing configuration file irc.conf 
+[2014-08-25 01:17:27] Writing configuration file irc.conf 
+[2014-08-25 01:17:37] irc: connecting to server chat.freenode.net/6667...
+[2014-08-25 01:17:52] Writing configuration file irc.conf 
+[2014-08-25 01:17:52] Writing configuration file irc.conf 
+[2014-08-25 03:05:51] Writing configuration file irc.conf 
+[2014-08-25 03:06:01] irc: connecting to server chat.freenode.net/6667...
+[2014-08-25 03:06:16] Writing configuration file irc.conf 
+[2014-08-25 03:06:16] Writing configuration file irc.conf 
+[2014-08-25 04:54:10] Writing configuration file irc.conf 
+[2014-08-25 04:54:20] irc: connecting to server chat.freenode.net/6667...
+[2014-08-25 04:54:35] Writing configuration file irc.conf 
+[2014-08-25 04:54:35] Writing configuration file irc.conf 
+[2014-08-25 06:42:40] Writing configuration file irc.conf 
+[2014-08-25 06:42:50] irc: connecting to server chat.freenode.net/6667...
+[2014-08-25 06:43:03] Writing configuration file irc.conf 
+[2014-08-25 06:43:03] Writing configuration file irc.conf 
+[2014-08-25 08:47:02] Writing configuration file irc.conf 
+[2014-08-25 08:47:12] irc: connecting to server chat.freenode.net/6667...
+[2014-08-25 08:47:29] Writing configuration file irc.conf 
+[2014-08-25 08:47:29] Writing configuration file irc.conf 
+[2014-08-25 09:40:04] Writing configuration file buffers.conf (default options)
+[2014-08-25 09:40:04] Reading configuration file buffers.conf
