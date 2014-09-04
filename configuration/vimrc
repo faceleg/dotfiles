@@ -532,6 +532,11 @@ set nocompatible
     set splitright
 " }}}
 
+" Reselect visual block after indent/outdent {{{
+  vnoremap < <gv
+  vnoremap > >gv
+" }}}
+
 " PHP {{{
     au BufNewFile,BufRead *.phtml setf phtml
 " }}}
