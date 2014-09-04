@@ -394,6 +394,7 @@ set nocompatible
     set nowrap                      " Do not wrap lines by default
     set autoread                    " Reload files changed outside vim
 
+    set viminfo='1000,f1
     set history=1000                " remember more commands and search history
     set undolevels=1000             " remember more undo levels
     set ttyfast " u got a fast terminal
