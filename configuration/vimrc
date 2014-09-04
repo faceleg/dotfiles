@@ -546,8 +546,11 @@ set nocompatible
 " }}}
 
 " Pasting {{{
-    nnoremap <f2> :set invpaste paste?<cr>
+    map <f2> :set invpaste paste?<cr>
+    imap <F2> <ESC>:set paste<CR>i<Right>
+
     set pastetoggle=<f2>
+    au InsertLeave * set nopaste
 
     " Automatically jump to end of text you pasted:
     vnoremap <silent> y y`]
