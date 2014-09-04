@@ -431,6 +431,12 @@ set nocompatible
 
     " Disable K looking stuff up
     map K <Nop>
+
+    " I can type :help on my own, thanks.
+    noremap <F1> <Esc>
+
+    " Automatically reload vimrc
+    "autocmd! bufwritepost .vimrc nested source %
 " }}}
 
 " Sudo {{{
