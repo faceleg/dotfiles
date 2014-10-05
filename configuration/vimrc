@@ -15,6 +15,8 @@ set nocompatible
     endif
 
     call neobundle#rc(expand('~/.vim/bundle/'))
+    let g:neobundle#install_process_timeout = 2000
+    let g:neobundle#default_options._ = { 'verbose' : 1, 'focus' : 1 }
 
     " Let NeoBundle manage NeoBundle
     NeoBundleFetch 'Shougo/neobundle.vim'
