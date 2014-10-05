@@ -511,7 +511,7 @@ set nocompatible
     set showmatch
 
     " Clear search highlight http://statico.github.io/vim.html
-    nmap <space>q :nohlsearch<CR>
+    nmap <space>c :nohlsearch<CR>
 
     " Replace all instances of word under cursor
     nnoremap <space>r :%s/\<<C-r><C-w>\>//g<Left><Left>
