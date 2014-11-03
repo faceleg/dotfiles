@@ -20,7 +20,8 @@ set nocompatible
     set runtimepath+=~/.vim/bundle/neobundle.vim/
   endif
 
-    call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
+
     let g:neobundle#install_process_timeout = 2000
     let g:neobundle#default_options._ = { 'verbose' : 1, 'focus' : 1 }
 
@@ -53,17 +54,6 @@ set nocompatible
 
     filetype plugin indent on
     filetype plugin on
-" }}}
-
-" Colourscheme {{{
-    syntax on
-    syntax sync fromstart
-    colorscheme landscape
-
-    hi LineNr ctermbg=016
-    hi MatchParen term=reverse ctermfg=027
-    highlight clear SignColumn
-    hi Statement       ctermfg=39               cterm=bold
 " }}}
 
 " NeoBundle {{{
@@ -383,6 +373,21 @@ set nocompatible
     " NeoBundle 'tsaleh/vim-matchit'
 
     NeoBundleCheck
+" }}}
+
+ call neobundle#end()
+
+" Colourscheme {{{
+    syntax on
+    syntax sync fromstart
+    colorscheme landscape
+
+    set t_Co=256
+
+    hi LineNr ctermbg=016
+    hi MatchParen term=reverse ctermfg=027
+    highlight clear SignColumn
+    hi Statement       ctermfg=39               cterm=bold
 " }}}
 
 " General settings {{{
