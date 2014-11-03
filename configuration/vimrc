@@ -10,9 +10,15 @@ let mapleader=";"
 set nocompatible
 
 " NeoBundleInitialisation {{{
-    if has('vim_starting')
-      set runtimepath+=~/.vim/bundle/neobundle.vim/
-    endif
+" Note: Skip initialization for vim-tiny or vim-small.
+  if !1 | finish | endif
+
+  if has('vim_starting')
+    set nocompatible               " Be iMproved
+
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  endif
 
     call neobundle#rc(expand('~/.vim/bundle/'))
     let g:neobundle#install_process_timeout = 2000
