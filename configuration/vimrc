@@ -8,6 +8,7 @@ let mapleader=";"
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
 
 " NeoBundleInitialisation {{{
 " Note: Skip initialization for vim-tiny or vim-small.
@@ -41,20 +42,6 @@ set nocompatible
     " Syntax
     NeoBundle 'itchyny/landscape.vim'
 "}}}
-
-" Tabs & indenting {{{
-    set tabstop=4
-    set shiftwidth=4
-    set expandtab
-    set softtabstop=4
-
-    au FileType python,ruby setl sw=2 sts=2 et
-    au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
-    au FileType php,phtml,html setl sw=4 sts=4 et
-
-    filetype plugin indent on
-    filetype plugin on
-" }}}
 
 " NeoBundle {{{
 
@@ -388,6 +375,20 @@ set nocompatible
     hi MatchParen term=reverse ctermfg=027
     highlight clear SignColumn
     hi Statement       ctermfg=39               cterm=bold
+" }}}
+
+" Tabs & indenting {{{
+    set tabstop=4
+    set shiftwidth=4
+    set expandtab
+    set softtabstop=4
+
+    au FileType python,ruby setl sw=2 sts=2 et
+    au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
+    au FileType php,phtml,html setl sw=4 sts=4 et
+
+    filetype plugin indent on
+    filetype plugin on
 " }}}
 
 " General settings {{{
