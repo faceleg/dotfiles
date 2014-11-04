@@ -161,7 +161,7 @@ filetype off
     NeoBundle 'airblade/vim-gitgutter'
     NeoBundle 'kshenoy/vim-signature', "{{{
       let g:SignatureMap = {
-          \ 'Leader'             :  ",",
+          \ 'Leader'             :  "m",
           \ 'PlaceNextMark'      :  "m,",
           \ 'ToggleMarkAtLine'   :  "m.",
           \ 'PurgeMarksAtLine'   :  "m-",
@@ -278,6 +278,7 @@ filetype off
 
         " Searching - brew install the_silver_searcher
         let g:unite_source_grep_command='ag'
+        let g:unite_source_grep_max_candidates= 200
         let g:unite_source_grep_default_opts='--nogroup --nocolor --column --ignore .sass-cache'
         nnoremap <space>/ :<C-u>Unite -buffer-name=search grep:.<cr>
 
@@ -574,3 +575,4 @@ filetype off
     " Quickly select text you just pasted
     noremap gV `[v`]
 " }}}
+
