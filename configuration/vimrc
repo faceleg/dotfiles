@@ -248,6 +248,10 @@ filetype off
       NeoBundle 'Shougo/unite-session'
     endif
 
+    " Ruby
+    NeoBundle 'tpope/vim-endwise'
+    NeoBundle 'tpope/vim-rails'
+
     " Status bar
     NeoBundle 'bling/vim-airline', "{{{
         set laststatus=2
