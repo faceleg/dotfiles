@@ -92,6 +92,8 @@ filetype off
       NeoBundle 'Shougo/neocomplete.vim', "{{{
           " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
           " brew install macvim --with-cscope --with-lua --override-system-vim
+          "
+          " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
           set completeopt-=preview
 
           let g:acp_enableAtStartup = 0
@@ -129,6 +131,7 @@ filetype off
           autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 
           autocmd FileType javascript setlocal omnifunc=tern#Complete
+          " let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
           autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
           autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -138,6 +141,12 @@ filetype off
       NeoBundle 'Shougo/neocomplcache.vim', "{{{
       "}}}
     endif
+    NeoBundle 'marijnh/tern_for_vim', {
+          \     'build': {
+          \         'mac': 'npm install',
+          \         'unix': 'npm install'
+          \     }
+          \ }
     NeoBundle 'tpope/vim-commentary'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
         nmap gS :SplitjoinSplit<cr>
@@ -385,6 +394,7 @@ filetype off
 
       highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
     "}}}
+    NeoBundle 'Valloric/ListToggle'
 
     NeoBundleCheck
 " }}}
@@ -561,7 +571,7 @@ filetype off
     " http://vimcasts.org/episodes/show-invisibles/
     " Shortcut to rapidly toggle `set list`
     set list
-    nmap <leader>l :set list!<CR>
+    nmap <leader>i :set list!<CR>
     " Use the same symbols as TextMate for tabstops and EOLs
     set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
     set shiftround
