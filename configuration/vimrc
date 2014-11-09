@@ -171,6 +171,10 @@ filetype off
     NeoBundle 'saihoooooooo/glowshi-ft.vim'
 
     " Features
+    NeoBundle 'godlygeek/tabular', "{{{
+      vmap <Leader>a= :Tabularize /=<CR>
+      vmap <Leader>a: :Tabularize /:<CR>
+    "}}}
     NeoBundle 'airblade/vim-gitgutter'
     NeoBundle 'kshenoy/vim-signature', "{{{
       let g:SignatureMap = {
