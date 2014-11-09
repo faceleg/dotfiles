@@ -439,6 +439,7 @@ filetype off
     set history=1000                " remember more commands and search history
     set undolevels=1000             " remember more undo levels
     set ttyfast " u got a fast terminal
+    set lazyredraw
 
     " No need to show mode due to Powerline
     set noshowmode
