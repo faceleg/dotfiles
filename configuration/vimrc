@@ -70,7 +70,7 @@ filetype off
 
     "}}}
 
-    " Syntax
+    " Languages etc
     NeoBundle 'ntpeters/vim-better-whitespace', " {{{
         autocmd FileType c,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
     "}}}
