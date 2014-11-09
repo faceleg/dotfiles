@@ -60,6 +60,15 @@ filetype off
     NeoBundle 'editorconfig/editorconfig-vim'
     NeoBundle '2072/PHP-Indenting-for-VIm'
     NeoBundle 'pangloss/vim-javascript'
+    NeoBundle 'Yggdroot/indentLine', "{{{
+      let g:indentLine_char = '┊'
+      let g:indentLine_color_tty_dark = 1
+      let g:indentLine_enabled = 0
+      let g:indentLine_fileType = ['ruby', 'python', 'coffeescript']
+
+      nmap <space>i :IndentLinesToggle<cr>
+
+    "}}}
 
     " Syntax
     NeoBundle 'ntpeters/vim-better-whitespace', " {{{
