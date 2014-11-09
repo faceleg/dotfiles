@@ -78,6 +78,10 @@ filetype off
         autocmd BufRead,BufNewFile *.nunjucks setlocal filetype=jinja
     "}}}
     NeoBundle 'sheerun/vim-polyglot'
+    NeoBundle 'burnettk/vim-angular'
+    NeoBundle 'othree/javascript-libraries-syntax.vim', "{{{
+      let g:used_javascript_libs = 'underscore,angularjs'
+    "}}}
 
     " Images
     NeoBundle 'tpope/vim-afterimage'
