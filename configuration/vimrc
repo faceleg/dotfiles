@@ -379,7 +379,12 @@ filetype off
         let delimitMate_expand_cr = 0
         let delimitMate_jump_expansion = 0
     "}}}
-    " NeoBundle 'tsaleh/vim-matchit'
+    NeoBundle 'Valloric/MatchTagAlways', "{{{
+      let g:mta_use_matchparen_group = 1
+      let g:mta_set_default_matchtag_color = 1
+
+      highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+    "}}}
 
     NeoBundleCheck
 " }}}
