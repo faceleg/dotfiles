@@ -508,7 +508,7 @@ filetype off
   " Hit Enter to go to end of file.
   " Hit Backspace to go to beginning of file.
   "nnoremap <BS> gg
-  nnoremap <CR> G
+  " nnoremap <CR> G
 " }}}
 
 " Disable arrow keys {{{
