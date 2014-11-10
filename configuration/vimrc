@@ -597,6 +597,17 @@ filetype off
     autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 " }}}
 
+" {{{
+  " Import the class under the cursor with <leader>i (:h mapleader):
+  nnoremap <buffer> ,i :JavaImport<cr>
+
+  " Search for the javadocs of the element under the cursor with ,d.
+  nnoremap <buffer> ,d :JavaDocSearch -x declarations<cr>
+
+  " Perform a context sensitive search of the element under the cursor with <enter>.
+  nnoremap <buffer> <cr> :JavaSearchContext<cr>
+"}}}
+
 " Pasting {{{
     map <f2> :set invpaste paste?<cr>
     imap <F2> <ESC>:set paste<CR>i<Right>
