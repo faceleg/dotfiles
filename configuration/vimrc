@@ -104,6 +104,12 @@ filetype off
           let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
           let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 
+          if !exists('g:neocomplcache_force_omni_patterns')
+            let g:neocomplete_force_omni_patterns = {}
+          endif
+
+          let g:neocomplete_force_omni_patterns.java = '\k\.\k*'
+
           " Define dictionary.
           let g:neocomplete#sources#dictionary#dictionaries = {
               \ 'default' : '',
