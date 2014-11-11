@@ -195,6 +195,13 @@ filetype off
       vmap <Leader>a= :Tabularize /=<CR>
       vmap <Leader>a: :Tabularize /:<CR>
     "}}}
+    NeoBundle 'maksimr/vim-jsbeautify', "{{{
+      autocmd FileType javascript noremap <buffer>  ,bj :call JsBeautify()<cr>
+      " for html
+      autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
+      " for css or scss
+      autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
+    "}}}
     NeoBundle 'airblade/vim-gitgutter'
     NeoBundle 'kshenoy/vim-signature', "{{{
       let g:SignatureMap = {
