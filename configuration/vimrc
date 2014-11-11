@@ -394,6 +394,7 @@ filetype off
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
         let NERDTreeShowLineNumbers=1
+        let g:NERDTreeWinSize=50
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
