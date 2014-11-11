@@ -188,6 +188,7 @@ filetype off
         let g:move_key_modifier = 'C'
     "}}}
     NeoBundle 'saihoooooooo/glowshi-ft.vim'
+    NeoBundle 'tmhedberg/matchit'
 
     " Features
     NeoBundle 'godlygeek/tabular', "{{{
