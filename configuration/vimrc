@@ -605,7 +605,7 @@ filetype off
     " http://vimcasts.org/episodes/show-invisibles/
     " Shortcut to rapidly toggle `set list`
     set list
-    nmap <leader>i :set list!<CR>
+    nmap <leader>li :set list!<CR>
     " Use the same symbols as TextMate for tabstops and EOLs
     set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
     set shiftround
