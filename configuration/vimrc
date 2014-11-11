@@ -619,8 +619,8 @@ filetype off
 " }}}
 
 " Reselect visual block after indent/outdent {{{
-  vnoremap < <gv
-  vnoremap > >gv
+  " vnoremap < <gv
+  " vnoremap > >gv
 " }}}
 
 " PHP {{{
