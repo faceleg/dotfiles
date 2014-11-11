@@ -541,8 +541,8 @@ filetype off
   " Type 12<Enter> to go to line 12 (12G breaks my wrist)
   " Hit Enter to go to end of file.
   " Hit Backspace to go to beginning of file.
-  "nnoremap <BS> gg
-  " nnoremap <CR> G
+  nnoremap <BS> gg
+  nnoremap <CR> G
 " }}}
 
 " Disable arrow keys {{{
