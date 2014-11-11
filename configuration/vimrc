@@ -160,6 +160,9 @@ filetype off
         nmap gJ :SplitjoinJoin<cr>
     " }}}
     NeoBundle 'inkarkat/closetag.vim'
+    NeoBundle 'rstacruz/sparkup', "{{{
+      let g:sparkupNextMapping = '<c-x>'
+    "}}}
 
     " Documentation
     NeoBundle 'heavenshell/vim-jsdoc', "{{{
