@@ -1,5 +1,5 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-c --ctags ] [-v --vim] [-w --weechat] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
+USAGE="$(basename "$0") [-h --help] [-c --ctags ] [-v --vim] [-w --weechat]  [-t --tmux] [-z --zsh] -- Installs VIM plugins & configures ZSH just the way you like it
 
 OPTIONS
         -h, --help
@@ -14,6 +14,9 @@ OPTIONS
         -w, --weechat
             Install weechat plugins
 
+        -t, --tmux
+            Install tmux addons
+
         -z, --zsh
             Install ZSH plugins\n"
 if [[ -z $1 ]]; then
@@ -26,9 +29,10 @@ CP="/bin/cp -vfr"
 INSTALL_CTAGS=false
 INSTALL_VIM=false
 INSTALL_WEECHAT=false
+INSTALL_TMUX=false
 INSTALL_ZSH_PLUGINS=false
 
-if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,ctags,vim,zsh,all -- "$@")
+if ! OPTIONS=$(getopt -o hgcmpvtzae -l help,ctags,vim,weechat,tmux,zsh,all -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -39,11 +43,13 @@ while [ $# -gt 0 ]; do
         "-c" | "--ctags") INSTALL_CTAGS=true ;;
         "-v" | "--vim") INSTALL_VIM=true ;;
         "-w" | "--weechat") INSTALL_WEECHAT=true ;;
+        "-t" | "--tmux") INSTALL_TMUX=true ;;
         "-z" | "--zsh") INSTALL_ZSH_PLUGINS=true ;;
         "-a" | "--all")
             INSTALL_CTAGS=true
             INSTALL_VIM=true
             INSTALL_WEECHAT=true
+            INSTALL_TMUX=true
             INSTALL_ZSH_PLUGINS=true
             break;;
         (--) shift; break;;
@@ -63,6 +69,10 @@ fi
 
 if $INSTALL_WEECHAT; then
     "$DIR/installers/weechat.sh"
+fi
+
+if $INSTALL_TMUX; then
+    "$DIR/installers/tmux.sh"
 fi
 
 if $INSTALL_ZSH_PLUGINS; then
