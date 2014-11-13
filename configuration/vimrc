@@ -138,7 +138,6 @@ filetype off
           autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 
           autocmd FileType javascript setlocal omnifunc=tern#Complete
-          " let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
           autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
           autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
