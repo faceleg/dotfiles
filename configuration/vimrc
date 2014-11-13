@@ -429,8 +429,6 @@ filetype off
     NeoBundle 'Valloric/MatchTagAlways', "{{{
       let g:mta_use_matchparen_group = 1
       let g:mta_set_default_matchtag_color = 1
-
-      highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
     "}}}
     NeoBundle 'Valloric/ListToggle', "{{{
       let g:lt_location_list_toggle_map = '<leader>l'
@@ -682,6 +680,18 @@ filetype off
     " Quickly select text you just pasted
     noremap gV `[v`]
 " }}}
+
+" Custom highlight options {{{
+  " MatchTagAlways
+  highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+
+  " neocomplete
+  highlight Pmenu ctermbg=232 ctermfg=8 guibg=#606060
+  highlight PmenuSel ctermbg=8 ctermfg=232 guifg=#dddd00 guibg=#1f82cd
+  highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
+"}}}
+
+" Window resizing {{{
 
 " Comfortable window resizing
 nnoremap <silent> <s-k> :call UpHorizontal()<CR>
