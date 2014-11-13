@@ -94,8 +94,8 @@ filetype off
           " brew install macvim --with-cscope --with-lua --override-system-vim
           "
           " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
-          " set completeopt-=preview
-          set completeopt+=longest,menuone,preview
+          set completeopt-=preview
+          " set completeopt+=longest,menuone,preview
 
           let g:acp_enableAtStartup = 0
           let g:neocomplete#enable_at_startup = 0
