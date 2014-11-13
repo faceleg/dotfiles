@@ -186,6 +186,8 @@ if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
     alias 'tmux-switch=~/.tmux-scripts/switch-create-attach.sh'
 fi
 
+alias tmux='tmux -2'
+
 # TMUX
 # if [[ -z $TMUX ]]; then
 #     # Attempt to discover a detached session and attach it, else create a new session
