@@ -9,6 +9,7 @@ let mapleader=";"
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 filetype off
+set clipboard^=unnamed
 
 " NeoBundleInitialisation {{{
 " Note: Skip initialization for vim-tiny or vim-small.
