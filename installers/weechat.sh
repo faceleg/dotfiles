@@ -5,5 +5,5 @@ CP="/bin/cp -vfr"
 # brew uninstall weechat
 # brew install weechat --with-python --with-python
 
-$CP "$DIR/../configuration/weechat/" "~/.weechat"
+$CP "$DIR/../configuration/weechat/" "$HOME/.weechat"
 
