@@ -76,8 +76,8 @@ plugins=($USER_PLUGINS)
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin
 source $ZSH/oh-my-zsh.sh
-# export VISUAL=vim
-# export GREP_OPTIONS='--color=always'
+export VISUAL=vim
+export GREP_OPTIONS='--color=always'
 
 ZSH_SYNTAX_HIGHLIGHTING_PLUGIN=~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
