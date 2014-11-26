@@ -9,7 +9,7 @@ let mapleader=";"
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 filetype off
-set clipboard^=unnamed
+" set clipboard^=unnamed
 
 " NeoBundleInitialisation {{{
 " Note: Skip initialization for vim-tiny or vim-small.
@@ -79,6 +79,7 @@ set clipboard^=unnamed
         autocmd BufRead,BufNewFile *.nunjucks setlocal filetype=jinja
     "}}}
     NeoBundle 'sheerun/vim-polyglot'
+    NeoBundle 'lepture/vim-velocity' " TEMP UNTIL VELOCITY ADDED TO polyglot
     NeoBundle 'kana/vim-textobj-user'
     NeoBundle 'nelstrom/vim-textobj-rubyblock'
     NeoBundle 'burnettk/vim-angular'
@@ -336,6 +337,7 @@ set clipboard^=unnamed
         let g:syntastic_javascript_checkers=['jshint']
         let g:syntastic_php_checkers=['php']
         let g:syntastic_css_checkers=['csslint']
+        let g:syntastic_coffeescript_checkers=['coffeelint']
     "}}}
 
     "Usability
@@ -441,17 +443,17 @@ set clipboard^=unnamed
       let g:lt_quickfix_list_toggle_map = '<leader>q'
       map <space>pc :pclose
     "}}}
-    NeoBundle 'szw/vim-tags', "{{{
+    " NeoBundle 'szw/vim-tags', "{{{
 
     "}}}
-    " NeoBundle 'xolox/vim-misc'
-    " NeoBundle 'xolox/vim-easytags', "{{{
-    "   let g:easytags_include_members = 1
+    NeoBundle 'xolox/vim-misc'
+    NeoBundle 'xolox/vim-easytags', "{{{
+      let g:easytags_include_members = 1
 
-    "   set tags=./ctags;
-    "   let g:easytags_dynamic_files = 2
-    "   let g:easytags_autorecurse = 0
-    " "}}}
+      set tags=./.ctags;
+      let g:easytags_dynamic_files = 2
+      let g:easytags_autorecurse = 1
+    "}}}
     NeoBundle 'majutsushi/tagbar', "{{{
       nmap <F8> :TagbarToggle<CR>
     "}}}
@@ -467,11 +469,6 @@ set clipboard^=unnamed
     colorscheme landscape
 
     set t_Co=256
-
-    hi LineNr ctermbg=016
-    hi MatchParen term=reverse ctermfg=027
-    highlight clear SignColumn
-    hi Statement       ctermfg=39               cterm=bold
 " }}}
 
 " Tabs & indenting {{{
@@ -698,6 +695,11 @@ set clipboard^=unnamed
   highlight Pmenu ctermbg=232 ctermfg=8 guibg=#606060
   highlight PmenuSel ctermbg=8 ctermfg=232 guifg=#dddd00 guibg=#1f82cd
   highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
+
+  highlight LineNr ctermbg=016
+  " highlight MatchParen term=reverse ctermfg=027
+  highlight clear SignColumn
+  highlight Statement       ctermfg=39               cterm=bold
 "}}}
 
 " Window resizing {{{
