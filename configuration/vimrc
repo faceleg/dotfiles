@@ -81,7 +81,7 @@ set clipboard^=unnamed
     NeoBundle 'sheerun/vim-polyglot'
     NeoBundle 'burnettk/vim-angular'
     NeoBundle 'othree/javascript-libraries-syntax.vim', "{{{
-      let g:used_javascript_libs = 'underscore,angularjs'
+      let g:used_javascript_libs = 'underscore,angularjs,jquery'
     "}}}
 
     " Images
