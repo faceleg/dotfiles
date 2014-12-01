@@ -105,11 +105,12 @@ filetype off
           let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
           let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 
-          if !exists('g:neocomplcache_force_omni_patterns')
-            let g:neocomplete_force_omni_patterns = {}
+          if !exists('g:neocomplete#force_omni_input_patterns')
+            let g:neocomplete#force_omni_input_patterns = {}
           endif
 
-          let g:neocomplete_force_omni_patterns.java = '\k\.\k*'
+          let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
+          let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
           " Define dictionary.
           let g:neocomplete#sources#dictionary#dictionaries = {
