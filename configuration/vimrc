@@ -255,8 +255,17 @@ filetype off
       nnoremap gm m
 
       let g:EasyClipUseSubstituteDefaults = 1
-      let g:EasyClipYankHistorySize = 500
+      let g:EasyClipYankHistorySize =100
       let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+
+      " Manually map yanks to avoid conflicts with tpope/unimpaired
+      let g:EasyClipUseYankDefaults = 0
+      nmap ;y <Plug>EasyClipRotateYanksForward
+      nmap ,y <Plug>EasyClipRotateYanksBackward
+      nmap y <Plug>YankPreserveCursorPosition
+      nmap Y <Plug>:EasyClipBeforeYank<cr>y$
+      nmap yy <Plug>YankLinePreserveCursorPosition
+      xmap y <Plug>VisualModeYank
     "}}}
     if v:version >= 702
       NeoBundle 'szw/vim-ctrlspace', "{{{
@@ -670,9 +679,9 @@ filetype off
     au InsertLeave * set nopaste
 
     " Automatically jump to end of text you pasted:
-    vnoremap <silent> y y`]
-    vnoremap <silent> p p`]
-    nnoremap <silent> p p`]
+    " vnoremap <silent> y y`]
+    " vnoremap <silent> p p`]
+    " nnoremap <silent> p p`]
 
     " Quickly select text you just pasted
     noremap gV `[v`]
@@ -805,4 +814,3 @@ filetype off
     echo 'Enabled autocomplete'
   endfunction
 "}}}
-
