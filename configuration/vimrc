@@ -50,7 +50,6 @@ filetype off
         autocmd VimEnter * DoJumpHl " Highlight line after jump
     "}}}
     NeoBundle 'ivyl/vim-bling'
-    NeoBundle 'kana/vim-narrow'
     NeoBundle 'qstrahl/vim-matchmaker', "{{{
         let g:matchmaker_enable_startup = 0
         nnoremap <space>m :MatchmakerToggle<CR>
