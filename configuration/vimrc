@@ -77,6 +77,9 @@ filetype off
     " NeoBundle 'Glench/Vim-Jinja2-Syntax', "{{{
     "     autocmd BufRead,BufNewFile *.nunjucks setlocal filetype=jinja | :runtime macros/matchit.vim
     " "}}}
+    NeoBundle 'othree/xml.vim', "{{{
+      let xml_use_html = 1
+    "}}}
     NeoBundle 'sheerun/vim-polyglot'
     NeoBundle 'lepture/vim-velocity' " TEMP UNTIL VELOCITY ADDED TO polyglot
     NeoBundle 'kana/vim-textobj-user'
