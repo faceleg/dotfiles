@@ -1,7 +1,7 @@
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
 
-source "$HOME/.zsh/antigen.zsh"
+source "$HOME/.antigen/antigen.zsh"
 
 antigen use oh-my-zsh
 
