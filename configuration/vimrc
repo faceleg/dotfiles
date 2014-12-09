@@ -375,9 +375,13 @@ set foldlevel=1
         let g:syntastic_php_checkers=['php']
         let g:syntastic_css_checkers=['csslint']
         let g:syntastic_coffeescript_checkers=['coffeelint']
-        
+
         " https://github.com/koalaman/shellcheck
         let g:syntastic_sh_checkers=['sh']
+
+        " https://github.com/syngan/vim-vimlint
+        let g:syntastic_vim_checkers=['vimlint']
+
     "}}}
 
     "Usability
