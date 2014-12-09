@@ -89,8 +89,8 @@ set foldlevel=1
     NeoBundle 'tpope/vim-rails'
     NeoBundle 'nelstrom/vim-textobj-rubyblock', { 'depends': 'kana/vim-textobj-user' }
 
-    NeoBundle 'ntpeters/vim-better-whitespace', " {{{
-        autocmd FileType c,coffeescript,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+    NeoBundle 'ntpeters/vim-better-whitespace', "{{{
+        autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
     "}}}
     " NeoBundle 'Glench/Vim-Jinja2-Syntax', "{{{
     "     autocmd BufRead,BufNewFile *.nunjucks setlocal filetype=jinja | :runtime macros/matchit.vim
