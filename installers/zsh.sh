@@ -2,29 +2,17 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
+printf "\nInstalling / updating Antigen\n"
+ANTIGEN="`eval echo ~/.antigen/`"
+if [ -d $ANTIGEN ]; then
+    rm -rf $ANTIGEN
+fi
+
+mkdir -p $ANTIGEN
+
+curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > "$ANTIGEN/antigen.zsh"
+
 printf "\nReplacing zshrc\n"
 rm -f ~/.zshrc
 $CP "$DIR/../configuration/zshrc" ~/.zshrc
-
-DIRECTORY="`eval echo ~/.oh-my-zsh/custom/plugins`"
-
-printf "\nInstalling zsh-syntax-highlighting\n"
-
-if [ ! -d $DIRECTORY ]; then
-    mkdir -p $DIRECTORY
-fi
-
-ZSH_SYNTAX="$DIRECTORY/zsh-syntax-highlighting"
-
-if [ ! -d "`eval echo ${ZSH_SYNTAX//>}`" ]; then
-    cd ~/.oh-my-zsh/custom/plugins
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git zsh-syntax-highlighting
-else
-    cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    git pull
-fi
-
-printf "\nInstalling custom smt-vi theme\n"
-
-cp "$DIR/../addons/zsh/themes/smt-vi.zsh-theme" "`eval echo ~/.oh-my-zsh/themes/`"
 
