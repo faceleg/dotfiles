@@ -371,6 +371,7 @@ set foldlevel=1
         let g:syntastic_enable_highlighting = 1
         let g:syntastic_echo_current_error  = 1
 
+        " let g:syntastic_javascript_checkers=['jshint', 'flow']
         let g:syntastic_javascript_checkers=['jshint']
         let g:syntastic_php_checkers=['php']
         let g:syntastic_css_checkers=['csslint']
@@ -439,7 +440,7 @@ set foldlevel=1
       vmap v <Plug>(expand_region_expand)
       vmap <S-v> <Plug>(expand_region_shrink)
     "}}}
-    NeoBundle 'kris89/vim-multiple-cursors'
+    NeoBundle 'terryma/vim-multiple-cursors'
     NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
@@ -469,7 +470,7 @@ set foldlevel=1
         nmap <space>n :NERDTreeFind<CR>
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-        let NERDTreeShowLineNumbers=1
+        let g:NERDTreeShowLineNumbers=1
         let g:NERDTreeWinSize=50
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
@@ -480,8 +481,8 @@ set foldlevel=1
         nnoremap <space>d :BW<CR>
     "}}}
     NeoBundle 'Raimondi/delimitMate', "{{{
-        let delimitMate_expand_cr = 0
-        let delimitMate_jump_expansion = 0
+        let g:delimitMate_expand_cr = 0
+        let g:delimitMate_jump_expansion = 0
     "}}}
     NeoBundle 'Valloric/MatchTagAlways', "{{{
       let g:mta_use_matchparen_group = 1
@@ -492,17 +493,14 @@ set foldlevel=1
       let g:lt_quickfix_list_toggle_map = '<leader>q'
       map <space>pc :pclose
     "}}}
-    " NeoBundle 'szw/vim-tags', "{{{
+    " NeoBundle 'xolox/vim-misc'
+    " NeoBundle 'xolox/vim-easytags', "{{{
+    "   let g:easytags_include_members = 1
 
-    "}}}
-    NeoBundle 'xolox/vim-misc'
-    NeoBundle 'xolox/vim-easytags', "{{{
-      let g:easytags_include_members = 1
-
-      set tags=./.ctags;
-      let g:easytags_dynamic_files = 2
-      let g:easytags_autorecurse = 1
-    "}}}
+    "   set tags=./.ctags;
+    "   let g:easytags_dynamic_files = 2
+    "   let g:easytags_autorecurse = 1
+    " "}}}
     NeoBundle 'majutsushi/tagbar', "{{{
       nmap <F8> :TagbarToggle<CR>
     "}}}
@@ -600,6 +598,9 @@ set foldlevel=1
 " Sudo {{{
     " w!!: Writes using sudo
     cnoremap w!! w !sudo tee % >/dev/null
+" }}}
+" Saving mapping {{{
+    map <silent> <F12> :w<CR>
 " }}}
 
 " Spelling toggle {{{
@@ -704,20 +705,25 @@ set foldlevel=1
 " }}}
 
 " {{{
-   let g:EclimJavascriptValidate = 0
-   let g:EclimCompletionMethod = 'omnifunc'
+  let g:EclimJavascriptValidate = 0
+  let g:EclimHtmlValidate = 0
+  let g:EclimCompletionMethod = 'omnifunc'
 
-  " Import the class under the cursor with <leader>i (:h mapleader):
-  autocmd FileType java map <buffer> ,i :JavaImport<cr>
-  autocmd FileType java map <buffer> ,fi :JavaImportOrganize<cr>
-  autocmd FileType java map <buffer> ,h :JavaCallHeirarchy<cr>
-  autocmd FileType java map <buffer> ,c :JavaCorrect<cr>
-  autocmd FileType java map <buffer> ,dc :JavaDocComment<cr>
+  autocmd FileType java call SetJavaOptions()
+  function SetJavaOptions()
 
-  autocmd FileType java map <buffer> ,d :JavaDocSearch -x declarations<cr>
+    " Import the class under the cursor with <leader>i (:h mapleader):
+    autocmd FileType java map <buffer> ,i :JavaImport<cr>
+    autocmd FileType java map <buffer> ,fi :JavaImportOrganize<cr>
+    autocmd FileType java map <buffer> ,h :JavaCallHeirarchy<cr>
+    autocmd FileType java map <buffer> ,c :JavaCorrect<cr>
+    autocmd FileType java map <buffer> ,dc :JavaDocComment<cr>
 
-  " Perform a context sensitive search of the element under the cursor with <enter>.
-  autocmd FileType java map <buffer> <cr> :JavaSearchContext<cr>
+    autocmd FileType java map <buffer> ,d :JavaDocSearch -x declarations<cr>
+
+    " Perform a context sensitive search of the element under the cursor with <enter>.
+    autocmd FileType java map <buffer> <cr> :JavaSearchContext<cr>
+  endfunction
 "}}}
 
 " Pasting {{{
