@@ -2,6 +2,8 @@
 " vim --startuptime vim.log -c q
 " vim -c 'r ! cat vim.log| sort -k 2'
 
+scriptencoding utf-8
+
 " The mapleader has to be set before vundle starts loading all the plugins.
 let mapleader=";"
 let maplocalleader=";"
