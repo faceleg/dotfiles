@@ -353,6 +353,7 @@ set foldlevel=1
     NeoBundle 'paranoida/vim-airlineish'
 
     " Error reporting
+    NeoBundle 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
     NeoBundle 'scrooloose/syntastic', "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
