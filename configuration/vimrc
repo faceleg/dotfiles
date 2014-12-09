@@ -244,6 +244,9 @@ set foldlevel=1
     NeoBundle 'tmhedberg/matchit'
 
     " Features
+    NeoBundle 'gorkunov/smartpairs.vim', "{{{
+     let g:smartpairs_nextpairs_key_i = 'K'
+    "}}}
     NeoBundle 'godlygeek/tabular', "{{{
       vmap <Leader>a= :Tabularize /=<CR>
       vmap <Leader>a: :Tabularize /:<CR>
