@@ -1,19 +1,32 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="steeef"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
 DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
+
+source "$HOME/.zsh/antigen.zsh"
+
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+
+# Guess what to install when running an unknown command.
+command-not-found
+
+# Version control
+git
+git-flow
+
+colored-man
+bower
+
+zsh-users/zsh-completions src
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+wgallios/zsh-autosuggestions
+
+EOBUNDLES
+
+# Theme
+# antigen theme steeef
+antigen bundle sindresorhus/pure
 
 is_linux () {
     [[ $('uname') == 'Linux' ]];
@@ -23,93 +36,136 @@ is_osx () {
     [[ $('uname') == 'Darwin' ]]
 }
 
+if is_osx; then
+  antigen bundles << EOBUNDLES
+  brew
+  osx
+EOBUNDLES
+fi
+
+# zsh-autosuggestions
+source ~/.zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
+
+# zsh-history-substring-search
+if is_osx; then
+  # zsh-history-substring-search
+  # bind UP and DOWN arrow keys
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+elif is_linux; then
+  # bind UP and DOWN arrow keys
+  zmodload zsh/terminfo
+  bindkey "$terminfo[kcuu1]" history-substring-search-up
+  bindkey "$terminfo[kcud1]" history-substring-search-down
+
+  # bind P and N for EMACS mode
+  bindkey -M emacs '^P' history-substring-search-up
+  bindkey -M emacs '^N' history-substring-search-down
+
+  # bind k and j for VI mode
+  bindkey -M vicmd 'k' history-substring-search-up
+  bindkey -M vicmd 'j' history-substring-search-down
+fi
+
 command_exists () {
     type "$1" &> /dev/null;
 }
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-#USER_PLUGINS=(git git-flow rsync themes urltools zsh-syntax-highlighting vagrant web-search autojump)
-USER_PLUGINS=(git rsync themes urltools zsh-syntax-highlighting vagrant web-search autojump)
-
-if  is_osx; then
-    USER_PLUGINS+=(osx)
-    if command_exists brew; then
-        USER_PLUGINS+=(brew)
-    fi
-    # if command_exists node; then
-    #     USER_PLUGINS+=(node npm)
-    # fi
-else
-    USER_PLUGINS+=(command-not-found)
+if command_exists phing; then
+  antigen bundle phing
 fi
 
-# if command_exists phing; then
-#     USER_PLUGINS+=(phing)
-# fi
+if command_exists composer; then
+  antigen bundle composer
+fi
 
-# if command_exists composer; then
-#     USER_PLUGINS+=(composer)
-# fi
-
-# if command_exists pip; then
-#     USER_PLUGINS+=(pip)
-# fi
+if command_exists pip; then
+  antigen bundle pip
+fi
 
 if command_exists vagrant; then
-    USER_PLUGINS+=(vagrant)
+  antigen bundle vagrant
 fi
 
-#if command_exists git-extras; then
-#    USER_PLUGINS+=(git-extras)
-#fi
+if command_exists git-extras; then
+  antigen bundle git-extras
+fi
 
-#if command_exists rbenv; then
-#    # ZSH rbenv plugin doesn't work on not Mac OS so doing it manually
-#    # export PATH="$HOME/.rbenv/bin:$PATH"
-#    # eval "$(rbenv init -)"
-#    USER_PLUGINS+=(rbenv)
-#fi
+if command_exists rvm; then
+  antigen bundle rvm
+fi
 
-plugins=($USER_PLUGINS)
+if command_exists rails; then
+  antigen bundle rails
+fi
 
-# Customize to your needs...
+if command_exists node; then
+  antigen bundle node
+  antigen bundle npm
+  antigen bundle nvm
+fi
+
+antigen apply
+
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin
-source $ZSH/oh-my-zsh.sh
 export VISUAL=vim
 export GREP_OPTIONS='--color=always'
 
-ZSH_SYNTAX_HIGHLIGHTING_PLUGIN=~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# if [ -f "$ZSH_SYNTAX_HIGHLIGHTING_PLUGIN" ]; then
+#     source $ZSH_SYNTAX_HIGHLIGHTING_PLUGIN
 
-if [ -f "$ZSH_SYNTAX_HIGHLIGHTING_PLUGIN" ]; then
-    source $ZSH_SYNTAX_HIGHLIGHTING_PLUGIN
+#     # Enable highlighters - https://coderwall.com/p/qmvfya
+#     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-    # Enable highlighters - https://coderwall.com/p/qmvfya
-    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+#     # Override highlighter colors
+#     ZSH_HIGHLIGHT_STYLES[default]=none
+#     ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
+#     ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
+#     ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
+#     ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
+#     ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
+#     ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
+#     ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
+#     ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+#     ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
+#     ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
+#     ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
+#     ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
+#     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=green
+#     ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=green
+#     ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+#     ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
+#     ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
+#     ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
+#     ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
+#     ZSH_HIGHLIGHT_STYLES[assign]=none
+# fi
 
-    # Override highlighter colors
-    ZSH_HIGHLIGHT_STYLES[default]=none
-    ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
-    ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
-    ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
-    ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
-    ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
-    ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
-    ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
-    ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-    ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
-    ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
-    ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
-    ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
-    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=green
-    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=green
-    ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-    ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
-    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
-    ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
-    ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
-    ZSH_HIGHLIGHT_STYLES[assign]=none
-fi
+# ZSH_AUTOSUGGESTIONS=~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
+
+# if [ -f "$ZSH_AUTOSUGGESTIONS" ]; then
+#   source $ZSH_AUTOSUGGESTIONS
+
+#   # Enable autosuggestions automatically
+#   zle-line-init() {
+#     zle autosuggest-start
+#   }
+#   zle -N zle-line-init
+
+#   # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+#   # zsh-autosuggestions is designed to be unobtrusive)
+#   bindkey '^T' autosuggest-toggle
+# fi
 
 # User ctrl-z like alt-tab
 fancy-ctrl-z () {
@@ -125,7 +181,7 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
-# autoload -U compinit
+autoload -U compinit
 
 for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
@@ -157,14 +213,14 @@ setopt interactivecomments # pound sign in interactive prompt
 setopt auto_cd
 
 if is_linux; then
-    alias 'a=sudo apt-get'
-    alias 'ai=sudo apt-get install'
-    alias 'ar=sudo apt-get remove'
-    alias 'au=sudo apt-get update'
-    alias 'ag=sudo apt-get safe-upgrade'
-    alias 'as=apt-cache search'
-    alias 'aw=apt-cache show'
-    alias 'ad=sudo apt-get dist-upgrade'
+    # alias 'a=sudo apt-get'
+    # alias 'ai=sudo apt-get install'
+    # alias 'ar=sudo apt-get remove'
+    # alias 'au=sudo apt-get update'
+    # alias 'ag=sudo apt-get safe-upgrade'
+    # alias 'as=apt-cache search'
+    # alias 'aw=apt-cache show'
+    # alias 'ad=sudo apt-get dist-upgrade'
 elif  is_osx; then
     export PATH=${PATH}:/Users/faceleg/Work/SDK/adt-bundle/sdk/platform-tools:/Users/faceleg/Work/SDK/adt-bundle/sdk/tools
 fi
@@ -187,6 +243,9 @@ if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
 fi
 
 alias tmux='tmux -2'
+
+source /usr/local/rvm/scripts/rvm
+export _JAVA_OPTIONS="-Xmx4096m -Xms1024m"
 
 # TMUX
 if [[ -z $TMUX ]]; then
