@@ -102,8 +102,17 @@ set foldlevel=1
     "}}}
     NeoBundle 'sheerun/vim-polyglot'
     NeoBundle 'lepture/vim-velocity' " TEMP UNTIL VELOCITY ADDED TO polyglot
-    NeoBundle 'kana/vim-textobj-user'
-    NeoBundle 'nelstrom/vim-textobj-rubyblock'
+
+    " JavaScript
+    NeoBundle 'facebook/vim-flow', {
+          \     'build': {
+          \         'mac': 'npm install -g flow-bin',
+          \         'unix': 'npm install -g flow-bin'
+          \     }
+          \ }, "{{{
+      let g:flow#enable = 1
+      let g:flow#autoclose = 1
+    "}}}
     NeoBundle 'burnettk/vim-angular'
     NeoBundle 'othree/javascript-libraries-syntax.vim', "{{{
       let g:used_javascript_libs = 'underscore,angularjs,jquery'
