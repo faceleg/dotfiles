@@ -13,6 +13,10 @@ let g:maplocalleader=";"
 set nocompatible
 filetype off
 
+set foldenable
+set foldmethod=indent
+set foldlevel=1
+
 " NeoBundleInitialisation {{{
 " Note: Skip initialization for vim-tiny or vim-small.
   if !1 | finish | endif
