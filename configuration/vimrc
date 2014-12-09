@@ -114,6 +114,7 @@ set foldlevel=1
       let g:flow#autoclose = 1
     "}}}
     NeoBundle 'burnettk/vim-angular'
+    NeoBundle 'curist/vim-angular-template'
     NeoBundle 'othree/javascript-libraries-syntax.vim', "{{{
       let g:used_javascript_libs = 'underscore,angularjs,jquery'
     "}}}
