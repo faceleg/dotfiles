@@ -316,7 +316,7 @@ set foldlevel=1
         let g:ctrlspace_unicode_font = 1
 
         " autocmd VimEnter * CtrlSpace
-        if executable("ag")
+        if executable('ag')
           let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
         endif
       "}}}
