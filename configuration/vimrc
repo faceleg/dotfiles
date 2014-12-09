@@ -362,11 +362,13 @@ set foldlevel=1
         noremap <F6> :SyntasticCheck<CR>
 
         let g:syntastic_mode_map = { 'mode': 'active',
-                                    \ 'active_filetypes': ['javascript', 'php'],
-                                    \ 'passive_filetypes': ['css', 'html', 'xhtml', 'scss', 'sass'] }
+                                    \ 'active_filetypes': ['javascript', 'php', 'html', 'xhtml', 'scss', 'sass', 'css'],
+                                    \ 'passive_filetypes': [] }
 
         let g:syntastic_check_on_open = 0
         let g:syntastic_enable_signs = 1
+
+        " Jump to the first issue only if it is an error
         let g:syntastic_auto_jump = 1
         let g:syntastic_auto_loc_list = 0
         let g:syntastic_always_populate_loc_list = 1
