@@ -82,13 +82,12 @@ set foldlevel=1
     "}}}
 
     " Languages etc
-    NeoBundle 'kana/vim-textobj-user'
-    NeoBundle 'argtextobj.vim'
+    NeoBundle 'argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
 
     " Ruby
     NeoBundle 'tpope/vim-endwise'
     NeoBundle 'tpope/vim-rails'
-    NeoBundle 'nelstrom/vim-textobj-rubyblock'
+    NeoBundle 'nelstrom/vim-textobj-rubyblock', { 'depends': 'kana/vim-textobj-user' }
 
     NeoBundle 'ntpeters/vim-better-whitespace', " {{{
         autocmd FileType c,coffeescript,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
