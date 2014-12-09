@@ -361,10 +361,6 @@ set foldlevel=1
 
         noremap <F6> :SyntasticCheck<CR>
 
-        let g:syntastic_mode_map = { 'mode': 'active',
-                                    \ 'active_filetypes': ['javascript', 'php', 'html', 'xhtml', 'scss', 'sass', 'css'],
-                                    \ 'passive_filetypes': [] }
-
         let g:syntastic_check_on_open = 0
         let g:syntastic_enable_signs = 1
 
