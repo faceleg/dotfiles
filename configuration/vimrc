@@ -382,6 +382,16 @@ set foldlevel=1
         " https://github.com/syngan/vim-vimlint
         let g:syntastic_vim_checkers=['vimlint']
 
+        " https://github.com/w3c/tidy-html5.git
+        let g:syntastic_html_checkers=['tidy']
+        let g:syntastic_html_tidy_ignore_errors = [
+              \ "proprietary attribute",
+              \ "unescaped & which should be written as &amp;",
+              \ "<img> lacks \"src\" attribute",
+              \ "trimming empty <button>",
+              \ "trimming empty <span>",
+              \ "<a> escaping malformed URI reference"
+              \ ]
     "}}}
 
     "Usability
