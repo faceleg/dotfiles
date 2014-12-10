@@ -180,30 +180,97 @@ bindkey -M viins '^H' backward-delete-char
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-# If the tmux scripts have been installed, alias them
-if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
-    alias 'tmux-switch=~/.tmux-scripts/switch-create-attach.sh'
-fi
-
-alias tmux='tmux -2'
-
 source /usr/local/rvm/scripts/rvm
 export _JAVA_OPTIONS="-Xmx4096m -Xms1024m"
 
+# http://vim.wikia.com/wiki/256_colors_in_vim
+if [ "$TERM" = "xterm" ] ; then
+    if [ -z "$COLORTERM" ] ; then
+        if [ -z "$XTERM_VERSION" ] ; then
+            echo "Warning: Terminal wrongly calling itself 'xterm'."
+        else
+            case "$XTERM_VERSION" in
+            "XTerm(256)") TERM="xterm-256color" ;;
+            "XTerm(88)") TERM="xterm-88color" ;;
+            "XTerm") ;;
+            *)
+                echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION"
+                ;;
+            esac
+        fi
+    else
+        case "$COLORTERM" in
+            gnome-terminal)
+                # Those crafty Gnome folks require you to check COLORTERM,
+                # but don't allow you to just *favor* the setting over TERM.
+                # Instead you need to compare it and perform some guesses
+                # based upon the value. This is, perhaps, too simplistic.
+                TERM="gnome-256color"
+                ;;
+            *)
+                echo "Warning: Unrecognized COLORTERM: $COLORTERM"
+                ;;
+        esac
+    fi
+fi
+
+SCREEN_COLORS="`tput colors`"
+if [ -z "$SCREEN_COLORS" ] ; then
+    case "$TERM" in
+        screen-*color-bce)
+            echo "Unknown terminal $TERM. Falling back to 'screen-bce'."
+            export TERM=screen-bce
+            ;;
+        *-88color)
+            echo "Unknown terminal $TERM. Falling back to 'xterm-88color'."
+            export TERM=xterm-88color
+            ;;
+        *-256color)
+            echo "Unknown terminal $TERM. Falling back to 'xterm-256color'."
+            export TERM=xterm-256color
+            ;;
+    esac
+    SCREEN_COLORS=`tput colors`
+fi
+if [ -z "$SCREEN_COLORS" ] ; then
+    case "$TERM" in
+        gnome*|xterm*|konsole*|aterm|[Ee]term)
+            echo "Unknown terminal $TERM. Falling back to 'xterm'."
+            export TERM=xterm
+            ;;
+        rxvt*)
+            echo "Unknown terminal $TERM. Falling back to 'rxvt'."
+            export TERM=rxvt
+            ;;
+        screen*)
+            echo "Unknown terminal $TERM. Falling back to 'screen'."
+            export TERM=screen
+            ;;
+    esac
+    SCREEN_COLORS=`tput colors`
+fi
+
+# If the tmux scripts have been installed, alias them
+# if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
+#     alias 'tmux-switch=~/.tmux-scripts/switch-create-attach.sh'
+# fi
+
+alias tmux='tmux -2'
+
 # TMUX
 if [[ -z $TMUX ]]; then
-    # Attempt to discover a detached session and attach it, else create a new session
-    CURRENT_USER=$(whoami)
-    if tmux has-session -t $CURRENT_USER 2>/dev/null; then
-        tmux -2 attach-session -t $CURRENT_USER
-    else
-        tmux -2 new-session -s $CURRENT_USER
-    fi
+  # Attempt to discover a detached session and attach it, else create a new session
+  CURRENT_USER=$(whoami)
+  if tmux has-session -t $CURRENT_USER 2>/dev/null; then
+    tmux -2 attach-session -t $CURRENT_USER
+  else
+    tmux -2 new-session -s $CURRENT_USER
+  fi
 else
-    # If inside tmux session then print MOTD
-    MOTD=/etc/motd.tcl
-    if [ -f $MOTD ]; then
-        $MOTD
-    fi
+  # If inside tmux session then print MOTD
+  MOTD=/etc/motd.tcl
+  if [ -f $MOTD ]; then
+    $MOTD
+  fi
 fi
 
