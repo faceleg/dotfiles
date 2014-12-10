@@ -48,6 +48,7 @@ set foldlevel=1
 
     " Syntax
     NeoBundle 'itchyny/landscape.vim'
+    NeoBundle 'chriskempson/base16-vim'
 "}}}
 
 " NeoBundle {{{
@@ -512,9 +513,10 @@ set foldlevel=1
 
 " Colourscheme {{{
     syntax on
+    set background=dark
     syntax sync fromstart
-    colorscheme landscape
-
+    let base16colorspace=256  " Access colors present in 256 colorspace
+    colorscheme base16-colors
     set t_Co=256
 " }}}
 
