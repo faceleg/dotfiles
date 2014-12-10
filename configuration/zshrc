@@ -147,6 +147,7 @@ select-word-style shell
 
 alias ll='ls -l'
 alias la='ls -a'
+alias lsa='ls -alh'
 
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=5000
