@@ -10,17 +10,9 @@ antigen bundles <<EOBUNDLES
 
 # Guess what to install when running an unknown command.
 command-not-found
-
-git-flow
-
 colored-man
-bower
 
-zsh-users/zsh-completions src
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-history-substring-search
-wgallios/zsh-autosuggestions
-
+zsh-users/zsh-completions
 EOBUNDLES
 
 # Theme
