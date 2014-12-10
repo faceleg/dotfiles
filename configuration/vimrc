@@ -495,14 +495,14 @@ set foldlevel=1
       let g:lt_quickfix_list_toggle_map = '<leader>q'
       map <space>pc :pclose
     "}}}
-    " NeoBundle 'xolox/vim-misc'
-    " NeoBundle 'xolox/vim-easytags', "{{{
-    "   let g:easytags_include_members = 1
+    NeoBundle 'xolox/vim-easytags', { 'depends': 'xolox/vim-misc' }, "{{{
+      let g:easytags_include_members = 1
+      let g:easytags_async = 1
 
-    "   set tags=./.ctags;
-    "   let g:easytags_dynamic_files = 2
-    "   let g:easytags_autorecurse = 1
-    " "}}}
+      set tags=./tags;
+      let g:easytags_dynamic_files = 1
+      let g:easytags_autorecurse = 1
+    "}}}
     NeoBundle 'majutsushi/tagbar', "{{{
       nmap <F8> :TagbarToggle<CR>
     "}}}
