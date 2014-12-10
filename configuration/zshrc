@@ -25,6 +25,10 @@ EOBUNDLES
 
 # Theme
 # antigen theme steeef
+# antigen theme dstufft
+# antigen theme jonathan
+# antigen theme smt
+# antigen bundle sindresorhus/pure
 antigen bundle sindresorhus/pure
 
 antigen bundle chriskempson/base16-shell base16-colors.dark.sh
