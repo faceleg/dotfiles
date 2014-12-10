@@ -34,10 +34,7 @@ is_osx () {
 }
 
 if is_osx; then
-  antigen bundles << EOBUNDLES
-  brew
-  osx
-EOBUNDLES
+  antigen bundle osx
 fi
 
 # zsh-autosuggestions
