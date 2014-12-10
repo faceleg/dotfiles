@@ -1,5 +1,6 @@
 DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="false"
+COMPLETION_WAITING_DOTS="false"
 
 source "$HOME/.antigen/antigen.zsh"
 
