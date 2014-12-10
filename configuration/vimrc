@@ -387,6 +387,7 @@ set foldlevel=1
         " https://github.com/w3c/tidy-html5.git
         let g:syntastic_html_checkers=['tidy']
         let g:syntastic_html_tidy_ignore_errors = [
+              \ "\"colspan\" has invalid value",
               \ "proprietary attribute",
               \ "unescaped & which should be written as &amp;",
               \ "<img> lacks \"src\" attribute",
