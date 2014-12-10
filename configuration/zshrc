@@ -37,20 +37,7 @@ if is_osx; then
   antigen bundle osx
 fi
 
-# zsh-autosuggestions
-source ~/.zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle
-
-# zsh-history-substring-search
+antigen bundle zsh-users/zsh-history-substring-search
 if is_osx; then
   # zsh-history-substring-search
   # bind UP and DOWN arrow keys
