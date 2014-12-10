@@ -65,7 +65,7 @@ fi
 # # zle -N zle-line-init
 
 antigen bundle zsh-users/zsh-syntax-highlighting
-#     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # # Override highlighter colors
 # ZSH_HIGHLIGHT_STYLES[default]=none
