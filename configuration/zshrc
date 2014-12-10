@@ -11,8 +11,6 @@ antigen bundles <<EOBUNDLES
 # Guess what to install when running an unknown command.
 command-not-found
 
-# Version control
-git
 git-flow
 
 colored-man
@@ -28,6 +26,8 @@ EOBUNDLES
 # Theme
 # antigen theme steeef
 antigen bundle sindresorhus/pure
+
+antigen bundle chriskempson/base16-shell base16-colors.dark.sh
 
 is_linux () {
     [[ $('uname') == 'Linux' ]];
