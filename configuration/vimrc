@@ -747,17 +747,17 @@ set foldlevel=1
 
 " Custom highlight options {{{
   " MatchTagAlways
-  highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+  " highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
 
-  " neocomplete
-  highlight Pmenu ctermbg=232 ctermfg=8 guibg=#606060
-  highlight PmenuSel ctermbg=8 ctermfg=232 guifg=#dddd00 guibg=#1f82cd
-  highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
+  " " neocomplete
+  " highlight Pmenu ctermbg=232 ctermfg=8 guibg=#606060
+  " highlight PmenuSel ctermbg=8 ctermfg=232 guifg=#dddd00 guibg=#1f82cd
+  " highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
 
-  highlight LineNr ctermbg=016
-  " highlight MatchParen term=reverse ctermfg=027
-  highlight clear SignColumn
-  highlight Statement       ctermfg=39               cterm=bold
+  highlight LineNr ctermbg=18
+  highlight SignColumn ctermbg=0
+  " " highlight MatchParen term=reverse ctermfg=027
+  " highlight Statement       ctermfg=39               cterm=bold
 "}}}
 
 " Window resizing {{{
