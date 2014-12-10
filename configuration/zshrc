@@ -164,17 +164,8 @@ setopt interactivecomments # pound sign in interactive prompt
 
 setopt auto_cd
 
-if is_linux; then
-    # alias 'a=sudo apt-get'
-    # alias 'ai=sudo apt-get install'
-    # alias 'ar=sudo apt-get remove'
-    # alias 'au=sudo apt-get update'
-    # alias 'ag=sudo apt-get safe-upgrade'
-    # alias 'as=apt-cache search'
-    # alias 'aw=apt-cache show'
-    # alias 'ad=sudo apt-get dist-upgrade'
-elif  is_osx; then
-    export PATH=${PATH}:/Users/faceleg/Work/SDK/adt-bundle/sdk/platform-tools:/Users/faceleg/Work/SDK/adt-bundle/sdk/tools
+if  is_osx; then
+  export PATH=${PATH}:/Users/faceleg/Work/SDK/adt-bundle/sdk/platform-tools:/Users/faceleg/Work/SDK/adt-bundle/sdk/tools
 fi
 
 # Vi mode
