@@ -89,23 +89,34 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
 # ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 # ZSH_HIGHLIGHT_STYLES[assign]=none
-# fi
 
-# ZSH_AUTOSUGGESTIONS=~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
+command_exists () {
+    type "$1" &> /dev/null;
+}
 
-# if [ -f "$ZSH_AUTOSUGGESTIONS" ]; then
-#   source $ZSH_AUTOSUGGESTIONS
+antigen bundles << EOBUNDLES
+phing
+composer
+pip
+vagrant
+git
+git-extras
+rvm
+node
+npm
+nvm
+autojump
+brew
+bundler
+cabal
+gem
+EOBUNDLES
 
-#   # Enable autosuggestions automatically
-#   zle-line-init() {
-#     zle autosuggest-start
-#   }
-#   zle -N zle-line-init
+antigen apply
 
-#   # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-#   # zsh-autosuggestions is designed to be unobtrusive)
-#   bindkey '^T' autosuggest-toggle
-# fi
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin
+export VISUAL=vim
+export GREP_OPTIONS='--color=always'
 
 # User ctrl-z like alt-tab
 fancy-ctrl-z () {
