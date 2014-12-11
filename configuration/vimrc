@@ -92,9 +92,17 @@ filetype off
     NeoBundle 'vim-scripts/argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
 
     " Ruby
-    NeoBundle 'tpope/vim-endwise'
-    NeoBundle 'tpope/vim-rails'
-    NeoBundle 'nelstrom/vim-textobj-rubyblock', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundleLazy 'tpope/vim-endwise', { 'autoload': {
+          \     'filetypes': 'ruby'
+          \ }}
+    NeoBundleLazy 'tpope/vim-rails', { 'autoload': {
+          \     'filetypes': 'ruby'
+          \ }}
+    NeoBundleLazy 'nelstrom/vim-textobj-rubyblock', {
+          \ 'depends': 'kana/vim-textobj-user',
+          \ 'autoload': {
+          \         'filetypes': 'ruby'
+          \ }}
 
     NeoBundle 'ntpeters/vim-better-whitespace', "{{{
         autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
@@ -106,34 +114,64 @@ filetype off
           \ 'autoload': {
           \     'filetypes': [ 'html', 'xhtml', 'xml' ]
           \ }}
-    NeoBundle 'othree/xml.vim', "{{{
+    NeoBundleLazy 'othree/xml.vim', { 'autoload': {
+          \ 'filetypes': [ 'html', 'xhtml', 'xml' ]
+          \ }}, "{{{
       let g:xml_use_html = 1
     "}}}
+    NeoBundleLazy 'inkarkat/closetag.vim', { 'autoload': {
+          \ 'filetypes': [ 'html', 'xhtml', 'xml' ]
+          \ }}
+    NeoBundleLazy 'rstacruz/sparkup', { 'autoload': {
+          \ 'filetypes': [ 'html', 'xhtml', 'xml' ]
+          \ }}, "{{{
+      let g:sparkupNextMapping = '<c-x>'
+    "}}}
+
     NeoBundle 'sheerun/vim-polyglot'
-    NeoBundle 'lepture/vim-velocity' " TEMP UNTIL VELOCITY ADDED TO polyglot
+    " TEMP UNTIL VELOCITY ADDED TO polyglot
+    NeoBundleLazy 'lepture/vim-velocity', { 'autoload': {
+          \ 'filetypes': 'velocity'
+          \ }}
 
     " JavaScript
-    NeoBundle 'facebook/vim-flow', {
-          \     'build': {
-          \         'mac': 'npm install -g flow-bin',
-          \         'unix': 'npm install -g flow-bin'
-          \     }
-          \ }, "{{{
+    NeoBundleLazy 'facebook/vim-flow', {
+          \ 'autoload': {
+          \     'filetypes': 'javascript'
+          \ },
+          \ 'build': {
+          \     'mac': 'npm install -g flow-bin',
+          \     'unix': 'npm install -g flow-bin'
+          \ }}, "{{{
       let g:flow#enable = 1
       let g:flow#autoclose = 1
     "}}}
-    NeoBundle 'burnettk/vim-angular'
-    NeoBundle 'curist/vim-angular-template'
-    NeoBundle 'othree/javascript-libraries-syntax.vim', "{{{
+    NeoBundleLazy 'burnettk/vim-angular', { 'autoload': {
+          \ 'filetypes': 'javascript'
+          \ }}
+    NeoBundleLazy 'curist/vim-angular-template',{ 'autoload': {
+          \ 'filetypes': 'javascript'
+          \ }}
+    NeoBundle 'othree/javascript-libraries-syntax.vim', { 'autoload': {
+          \ 'filetypes': 'javascript'
+          \ }}, "{{{
       let g:used_javascript_libs = 'underscore,angularjs,jquery'
     "}}}
-
-    " Images
-    NeoBundle 'tpope/vim-afterimage'
+    NeoBundleLazy 'marijnh/tern_for_vim', {
+          \ 'autoload': {
+          \   'filetypes': 'javascript'
+          \ },
+          \ 'build': {
+          \     'mac': 'npm install',
+          \     'unix': 'npm install'
+          \ }}
 
     " Completion
     if has('lua')
-      NeoBundle 'Shougo/neocomplete.vim', "{{{
+      NeoBundleLazy 'Shougo/neocomplete.vim', {
+            \ 'autoload': {
+            \   'insert': 1
+            \ }}, "{{{
           " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
           " brew install macvim --with-cscope --with-lua --override-system-vim
           "
@@ -187,10 +225,16 @@ filetype off
           autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
       " }}}
     else
-      NeoBundle 'Shougo/neocomplcache.vim', "{{{
-      "}}}
+      NeoBundleLazy 'Shougo/neocomplcache.vim', {
+            \ 'autoload': {
+            \   'insert': 1
+            \ }}
     endif
-    NeoBundle 'Shougo/neosnippet', "{{{
+    NeoBundleLazy 'Shougo/neosnippet', {
+      \ 'autoload' : {
+      \   'insert' : 1,
+      \   'filetypes' : 'snippet',
+      \ }}, "{{{
       " Plugin key-mappings.
       imap <C-k>     <Plug>(neosnippet_expand_or_jump)
       smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -209,22 +253,17 @@ filetype off
         set conceallevel=2 concealcursor=i
       endif
     "}}}
-    NeoBundle 'Shougo/neosnippet-snippets'
-    NeoBundle 'marijnh/tern_for_vim', {
-          \     'build': {
-          \         'mac': 'npm install',
-          \         'unix': 'npm install'
-          \     }
-          \ }
+    NeoBundleLazy 'Shougo/neosnippet-snippets', {
+          \ 'depends': 'neosnippet',
+          \ 'autoload' : {
+          \   'insert' : 1,
+          \   'filetypes' : 'snippet',
+          \ }}
     NeoBundle 'tpope/vim-commentary'
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
         nmap gS :SplitjoinSplit<cr>
         nmap gJ :SplitjoinJoin<cr>
     " }}}
-    NeoBundle 'inkarkat/closetag.vim'
-    NeoBundle 'rstacruz/sparkup', "{{{
-      let g:sparkupNextMapping = '<c-x>'
-    "}}}
 
     " Documentation
     NeoBundle 'heavenshell/vim-jsdoc', "{{{
@@ -363,6 +402,7 @@ filetype off
         let g:airline_exclude_preview = 1
     " }}}
     NeoBundle 'paranoida/vim-airlineish'
+    NeoBundle 'gcavallanti/vim-noscrollbar'
 
     " Error reporting
     " NeoBundle 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
@@ -478,13 +518,19 @@ filetype off
         let g:choosewin_statusline_replace = 0 " don't replace statusline
         let g:choosewin_tabline_replace    = 0 " don't replace tabline
     "}}}
-    NeoBundle 'scrooloose/nerdtree', "{{{
+    NeoBundleLazy 'scrooloose/nerdtree', { 'augroup': 'NERDTree' }, "{{{
         nmap <space>f :NERDTreeToggle<CR>
         nmap <space>n :NERDTreeFind<CR>
         autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
         let g:NERDTreeShowLineNumbers=1
         let g:NERDTreeWinSize=50
+
+        command! NERDTree :call NERDTree()
+        function! NERDTree()
+          NeoBundleSource The-NERD-tree
+          NERDTree
+        endfunction
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
@@ -876,3 +922,9 @@ filetype off
     echo 'Enabled autocomplete'
   endfunction
 "}}}
+
+" TEMP - pending https://github.com/gcavallanti/vim-noscrollbar/issues/1
+function! Noscrollbar(...)
+  let w:airline_section_z = '%{noscrollbar#statusline(9,''■'',''◫'',[''◧''],[''◨''])}'
+endfunction
+call airline#add_statusline_func('Noscrollbar')
