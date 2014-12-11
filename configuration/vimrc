@@ -4,6 +4,8 @@
 
 scriptencoding utf-8
 
+set shell=/bin/bash
+
 " The mapleader has to be set before vundle starts loading all the plugins.
 let g:mapleader=";"
 let g:maplocalleader=";"
