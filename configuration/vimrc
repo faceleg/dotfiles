@@ -54,7 +54,6 @@ filetype off
     "}}}
 
     " Syntax
-    NeoBundle 'itchyny/landscape.vim'
     NeoBundle 'chriskempson/base16-vim'
 "}}}
 
