@@ -15,9 +15,15 @@ let g:maplocalleader=";"
 set nocompatible
 filetype off
 
-set foldenable
-set foldmethod=indent
-set foldlevel=1
+" Folding {{{
+  set foldenable
+  set foldmethod=syntax
+  set foldlevel=1
+
+  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+  autocmd BufNewFile,BufReadPost *.html setl foldmethod=indent
+  autocmd BufNewFile,BufReadPost *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+" }}}
 
 " NeoBundleInitialisation {{{
 " Note: Skip initialization for vim-tiny or vim-small.
