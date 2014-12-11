@@ -135,6 +135,28 @@ filetype off
           \ }}
 
     " JavaScript
+    NeoBundleLazy 'maksimr/vim-jsbeautify', { 'autoload': {
+          \ 'filetypes': 'javascript'
+          \ }}, "{{{
+      autocmd FileType javascript noremap <buffer>  ,bj :call JsBeautify()<cr>
+      " for html
+      autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
+      " for css or scss
+      autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
+    "}}}
+    NeoBundleLazy 'heavenshell/vim-jsdoc', { 'autoload': {
+          \ 'filetypes': 'javascript'
+          \ }}, "{{{
+        let g:jsdoc_allow_input_prompt = 1
+        let g:jsdoc_input_description = 1
+        let g:jsdoc_additional_descriptions = 0
+        let g:jsdoc_return = 1
+        let g:jsdoc_return_type = 1
+        let g:jsdoc_return_description = 1
+        let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
+
+        nnoremap <space>j :JsDoc<cr>
+    "}}}
     NeoBundleLazy 'facebook/vim-flow', {
           \ 'autoload': {
           \     'filetypes': 'javascript'
@@ -265,19 +287,6 @@ filetype off
         nmap gJ :SplitjoinJoin<cr>
     " }}}
 
-    " Documentation
-    NeoBundle 'heavenshell/vim-jsdoc', "{{{
-        let g:jsdoc_allow_input_prompt = 1
-        let g:jsdoc_input_description = 1
-        let g:jsdoc_additional_descriptions = 0
-        let g:jsdoc_return = 1
-        let g:jsdoc_return_type = 1
-        let g:jsdoc_return_description = 1
-        let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
-
-        nnoremap <space>j :JsDoc<cr>
-    "}}}
-
     " Motion
     NeoBundle 'Lokaltog/vim-easymotion', {
         \ 'vim_version' : '7.4'
@@ -298,13 +307,6 @@ filetype off
     NeoBundle 'godlygeek/tabular', "{{{
       vmap <Leader>a= :Tabularize /=<CR>
       vmap <Leader>a: :Tabularize /:<CR>
-    "}}}
-    NeoBundle 'maksimr/vim-jsbeautify', "{{{
-      autocmd FileType javascript noremap <buffer>  ,bj :call JsBeautify()<cr>
-      " for html
-      autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
-      " for css or scss
-      autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
     "}}}
     NeoBundle 'airblade/vim-gitgutter', "{{{
       let g:gitgutter_escape_grep = 1
@@ -406,7 +408,11 @@ filetype off
 
     " Error reporting
     " NeoBundle 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
-    NeoBundle 'scrooloose/syntastic', "{{{
+    NeoBundleLazy 'scrooloose/syntastic', { 'autoload': {
+          \ 'filetypes': [
+          \     'javascript', 'php', 'scss', 'sass', 'html', 'xhtml', 'xml',
+          \     'css', 'coffeescript', 'ruby', 'sh', 'bash', 'vim'
+          \ ]}}, "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
         noremap <silent><leader>lo :lw<CR>
