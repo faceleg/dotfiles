@@ -76,8 +76,6 @@ filetype off
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    NeoBundle '2072/PHP-Indenting-for-VIm'
-    NeoBundle 'pangloss/vim-javascript'
     NeoBundle 'Yggdroot/indentLine', "{{{
       let g:indentLine_char = '┊'
       let g:indentLine_color_tty_dark = 1
