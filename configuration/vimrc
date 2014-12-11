@@ -88,8 +88,8 @@ filetype off
 
     "}}}
 
-    " Languages etc
-    NeoBundle 'argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
+    " Functions
+    NeoBundle 'vim-scripts/argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
 
     " Ruby
     NeoBundle 'tpope/vim-endwise'
