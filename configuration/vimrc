@@ -703,10 +703,6 @@ set foldlevel=1
     au BufNewFile,BufRead *.phtml setf phtml
 " }}}
 
-" CSS {{{
-    autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
-" }}}
-
 " {{{
   let g:EclimJavascriptValidate = 0
   let g:EclimHtmlValidate = 0
