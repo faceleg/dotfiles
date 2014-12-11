@@ -501,11 +501,6 @@ filetype off
       let g:mta_use_matchparen_group = 1
       let g:mta_set_default_matchtag_color = 1
     "}}}
-    NeoBundle 'Valloric/ListToggle', "{{{
-      let g:lt_location_list_toggle_map = '<leader>l'
-      let g:lt_quickfix_list_toggle_map = '<leader>q'
-      map <space>pc :pclose
-    "}}}
     NeoBundle 'xolox/vim-easytags', { 'depends': 'xolox/vim-misc' }, "{{{
       let g:easytags_include_members = 1
       let g:easytags_async = 1
@@ -527,7 +522,7 @@ filetype off
     syntax on
     set background=dark
     syntax sync fromstart
-    let base16colorspace=256  " Access colors present in 256 colorspace
+    let g:base16colorspace=256  " Access colors present in 256 colorspace
     colorscheme base16-colors
     set t_Co=256
 " }}}
