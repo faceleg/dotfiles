@@ -101,6 +101,11 @@ filetype off
     "}}}
 
     " HTML
+    NeoBundleLazy 'whatyouhide/vim-textobj-xmlattr', {
+          \ 'depends': 'kana/vim-textobj-user',
+          \ 'autoload': {
+          \     'filetypes': [ 'html', 'xhtml', 'xml' ]
+          \ }}
     NeoBundle 'othree/xml.vim', "{{{
       let g:xml_use_html = 1
     "}}}
