@@ -267,7 +267,10 @@ filetype off
       " for css or scss
       autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
     "}}}
-    NeoBundle 'airblade/vim-gitgutter'
+    NeoBundle 'airblade/vim-gitgutter', "{{{
+      let g:gitgutter_escape_grep = 1
+      let g:gitgutter_highlight_lines = 1
+    "}}}
     NeoBundle 'kshenoy/vim-signature', "{{{
       let g:SignatureMap = {
           \ 'Leader'             :  "m",
