@@ -269,7 +269,7 @@ filetype off
     "}}}
     NeoBundle 'airblade/vim-gitgutter', "{{{
       let g:gitgutter_escape_grep = 1
-      let g:gitgutter_highlight_lines = 1
+      let g:gitgutter_highlight_lines = 0
     "}}}
     NeoBundle 'kshenoy/vim-signature', "{{{
       let g:SignatureMap = {
