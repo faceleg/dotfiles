@@ -99,9 +99,6 @@ filetype off
     NeoBundle 'ntpeters/vim-better-whitespace', "{{{
         autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
     "}}}
-    " NeoBundle 'Glench/Vim-Jinja2-Syntax', "{{{
-    "     autocmd BufRead,BufNewFile *.nunjucks setlocal filetype=jinja | :runtime macros/matchit.vim
-    " "}}}
 
     " HTML
     NeoBundle 'othree/xml.vim', "{{{
