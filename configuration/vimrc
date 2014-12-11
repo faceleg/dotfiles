@@ -76,7 +76,9 @@ filetype off
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    NeoBundle 'Yggdroot/indentLine', "{{{
+    NeoBundleLazy 'Yggdroot/indentLine', { 'autoload': {
+          \     'filetypes': 'ruby'
+          \ }}, "{{{
       let g:indentLine_char = '┊'
       let g:indentLine_color_tty_dark = 1
       let g:indentLine_enabled = 0
