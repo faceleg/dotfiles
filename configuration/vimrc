@@ -346,7 +346,8 @@ filetype off
           \ 'ListLocalMarks'     :  "'?"
           \ }
     "}}}
-    NeoBundle 'tpope/vim-fugitive'
+    NeoBundleLazy 'tpope/vim-fugitive', { 'augroup': 'fugitive' }
+    NeoBundle 'rhysd/committia.vim'
     NeoBundle 'tpope/vim-sleuth'
     NeoBundle 'svermeulen/vim-easyclip', "{{{
       imap <c-v> <plug>EasyClipInsertModePaste
@@ -465,11 +466,7 @@ filetype off
     "}}}
 
     "Usability
-    NeoBundle 'Shougo/unite-outline', "{{{
-        nnoremap <space>o :Unite outline<CR>
-    "}}}
-    NeoBundle 'rhysd/committia.vim'
-    NeoBundle 'Shougo/unite.vim', "{{{
+    NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }, "{{{
         let g:unite_data_directory = expand('~/.vim/.cache/unite')
         let g:unite_enable_start_insert=0
         let g:unite_source_rec_max_cache_files=5000
@@ -497,9 +494,11 @@ filetype off
             nmap <buffer> <ESC> <Plug>(unite_exit)
 
         endfunction
-
     " }}}
-    NeoBundle 'sjl/gundo.vim', "{{{
+    NeoBundleLazy 'Shougo/unite-outline', { 'augroup': 'Unite outline' }, "{{{
+        nnoremap <space>o :Unite outline<CR>
+    "}}}
+    NeoBundleLazy 'sjl/gundo.vim', { 'augroup': 'GundoToggle' }, "{{{
         nnoremap <F5> :GundoToggle<CR>
         let g:gundo_right = 1
         let g:gundo_preview_bottom = 1
@@ -513,7 +512,7 @@ filetype off
     NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
-    NeoBundle 't9md/vim-choosewin', "{{{
+    NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<tab>' }, "{{{
         let g:choosewin_overlay_enable = 1
         nmap  <tab> :ChooseWin<CR>
 
@@ -680,6 +679,7 @@ filetype off
     " w!!: Writes using sudo
     cnoremap w!! w !sudo tee % >/dev/null
 " }}}
+
 " Saving mapping {{{
     map <silent> <F12> :w<CR>
 " }}}
