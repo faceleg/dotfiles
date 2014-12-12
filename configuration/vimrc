@@ -60,16 +60,13 @@ filetype off
           \ }, "{{{
     "}}}
 
-    " Syntax
-    NeoBundle 'chriskempson/base16-vim'
 "}}}
 
 " NeoBundle {{{
+    " Syntax
+    NeoBundle 'chriskempson/base16-vim'
 
     " Visual
-    " NeoBundle 'vim-scripts/jumphl.vim', "{{{
-    "     autocmd VimEnter * DoJumpHl " Highlight line after jump
-    " "}}}
     NeoBundle 'miyakogi/conoline.vim', "{{{
       let g:conoline_auto_enable = 1
       let g:conoline_use_colorscheme_default_normal=0
