@@ -611,7 +611,6 @@ filetype off
     au FileType php,phtml,html setl sw=4 sts=4 et
 
     filetype plugin indent on
-    filetype plugin on
 " }}}
 
 " General settings {{{
