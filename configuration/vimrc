@@ -541,12 +541,7 @@ filetype off
 
         let g:NERDTreeShowLineNumbers=1
         let g:NERDTreeWinSize=50
-
-        command! NERDTree :call NERDTree()
-        function! NERDTree()
-          NeoBundleSource The-NERD-tree
-          NERDTree
-        endfunction
+        let g:NERDTreeChDirMode=0
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
