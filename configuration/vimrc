@@ -26,15 +26,17 @@ filetype off
 " }}}
 
 " NeoBundleInitialisation {{{
-" Note: Skip initialization for vim-tiny or vim-small.
-  if !1 | finish | endif
+    " Note: Skip initialization for vim-tiny or vim-small.
+    if !1 | finish | endif
 
-  if has('vim_starting')
-    set nocompatible               " Be iMproved
-
-    " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-  endif
+    if has('vim_starting')
+        set runtimepath+=~/.vim/bundle/neobundle.vim/
+        if !isdirectory(expand('~/.vim/bundle/neobundle.vim'))
+            echo "Installing NeoBundle\n"
+            silent execute '!mkdir -p ~/.vim/bundle'
+            silent execute '!git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim'
+        endif
+    endif
 
   call neobundle#begin(expand('~/.vim/bundle/'))
 
