@@ -545,7 +545,6 @@ filetype off
     "}}}
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
-    NeoBundle 'tpope/vim-eunuch'
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'vim-scripts/bufkill.vim', "{{{
         nnoremap <space>d :BW<CR>
