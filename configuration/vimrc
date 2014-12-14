@@ -97,6 +97,8 @@ filetype off
 
     " Functions
     NeoBundle 'vim-scripts/argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
 
     " Ruby
     NeoBundleLazy 'tpope/vim-endwise', { 'autoload': {
