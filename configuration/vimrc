@@ -533,6 +533,9 @@ filetype off
     NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
+    NeoBundleLazy 'junegunn/rainbow_parentheses.vim', { 'mappings': ',r' }, "{{{
+      nmap <leader>r :RainbowParentheses!!<CR>
+    "}}}
     NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<tab>' }, "{{{
         let g:choosewin_overlay_enable = 1
         nmap  <tab> :ChooseWin<CR>
