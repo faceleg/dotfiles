@@ -110,7 +110,7 @@ filetype off
     NeoBundleLazy 'nelstrom/vim-textobj-rubyblock', {
           \ 'depends': 'kana/vim-textobj-user',
           \ 'autoload': {
-          \         'filetypes': 'ruby'
+          \     'filetypes': 'ruby'
           \ }}
 
     NeoBundle 'ntpeters/vim-better-whitespace', "{{{
