@@ -529,10 +529,6 @@ filetype off
         let g:gundo_preview_bottom = 1
         let g:gundo_close_on_revert = 1
     " }}}
-    " NeoBundle 'terryma/vim-expand-region', "{{{
-    "   vmap v <Plug>(expand_region_expand)
-    "   vmap <S-v> <Plug>(expand_region_shrink)
-    " "}}}
     NeoBundle 'terryma/vim-multiple-cursors'
     NeoBundle 'hlissner/vim-multiedit'
 
