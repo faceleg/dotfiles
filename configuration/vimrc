@@ -288,7 +288,10 @@ filetype off
           \   'insert' : 1,
           \   'filetypes' : 'snippet',
           \ }}
-    NeoBundle 'tpope/vim-commentary'
+    " NeoBundle 'tpope/vim-commentary'
+    NeoBundleLazy 'tomtom/tcomment_vim', { 'autoload': {
+          \ 'mappings': 'g'
+          \ }}
     NeoBundle 'AndrewRadev/splitjoin.vim', "{{{
         nmap gS :SplitjoinSplit<cr>
         nmap gJ :SplitjoinJoin<cr>
