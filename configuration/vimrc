@@ -80,17 +80,20 @@ filetype off
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    NeoBundleLazy 'Yggdroot/indentLine', { 'autoload': {
-          \     'filetypes': 'ruby'
-          \ }}, "{{{
-      let g:indentLine_char = '┊'
-      let g:indentLine_color_tty_dark = 1
-      let g:indentLine_enabled = 0
-      let g:indentLine_fileType = ['ruby', 'python', 'coffeescript']
+    NeoBundleLazy 'nathanaelkane/vim-indent-guides', { 'autoload': {
+          \ 'filetypes': ['coffee', 'ruby', 'python']
+          \ }}
+    " NeoBundleLazy 'Yggdroot/indentLine', { 'autoload': {
+    "       \     'filetypes': 'ruby'
+    "       \ }}, "{{{
+    "   let g:indentLine_char = '┊'
+    "   let g:indentLine_color_tty_dark = 1
+    "   let g:indentLine_enabled = 0
+    "   let g:indentLine_fileType = ['ruby', 'python', 'coffeescript']
 
-      nmap <space>i :IndentLinesToggle<cr>
+    "   nmap <space>i :IndentLinesToggle<cr>
 
-    "}}}
+    " "}}}
 
     " Functions
     NeoBundle 'vim-scripts/argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
