@@ -419,12 +419,28 @@ filetype off
     NeoBundle 'gcavallanti/vim-noscrollbar'
 
     " Error reporting
-    " NeoBundle 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
-    NeoBundleLazy 'scrooloose/syntastic', { 'autoload': {
-          \ 'filetypes': [
-          \     'javascript', 'php', 'scss', 'sass', 'html', 'xhtml', 'xml',
-          \     'css', 'coffeescript', 'ruby', 'sh', 'bash', 'vim'
-          \ ]}}, "{{{
+    NeoBundleLazy 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
+    NeoBundleLazy 'scrooloose/syntastic', {
+          \ 'depends': 'vim-vimlint',
+          \ 'autoload': {
+          \     'filetypes': [
+          \         'bash',
+          \         'coffeescript',
+          \         'css',
+          \         'html',
+          \         'javascript',
+          \         'json',
+          \         'ruby',
+          \         'php',
+          \         'sass',
+          \         'scss',
+          \         'sh',
+          \         'vim',
+          \         'xhtml',
+          \         'xml',
+          \         'vim'
+          \     ]
+          \ }}, "{{{
         " Show / hide location list
         noremap <silent><leader>lc :lcl<CR>
         noremap <silent><leader>lo :lw<CR>
@@ -441,11 +457,19 @@ filetype off
         let g:syntastic_enable_highlighting = 1
         let g:syntastic_echo_current_error  = 1
 
+        " npm install -g jshint
         " let g:syntastic_javascript_checkers=['jshint', 'flow']
         let g:syntastic_javascript_checkers=['jshint']
         let g:syntastic_php_checkers=['php']
+
+        " npm install -g csslint
         let g:syntastic_css_checkers=['csslint']
+
+        " npm install -g coffeelint
         let g:syntastic_coffeescript_checkers=['coffeelint']
+
+        " npm install -g jsonlint
+        let g:syntastic_json_checkers=['jsonlint']
 
         " https://github.com/koalaman/shellcheck
         let g:syntastic_sh_checkers=['sh']
