@@ -73,13 +73,6 @@ filetype off
       let g:conoline_use_colorscheme_default_insert=0
     "}}}
     NeoBundle 'ivyl/vim-bling'
-    NeoBundle 'daisuzu/rainbowcyclone.vim', "{{{
-      nmap <space>c :RCReset<CR>:nohlsearch<CR>
-      nmap / <Plug>(rc_search_forward)
-      nmap \ <Plug>(rc_search_backward)
-      nmap n <Plug>(rc_search_forward_with_last_pattern)
-      nmap N <Plug>(rc_search_backward_with_last_pattern)
-    "}}}
     NeoBundle 'qstrahl/vim-matchmaker', "{{{
         let g:matchmaker_enable_startup = 0
         nnoremap <space>m :MatchmakerToggle<CR>
@@ -748,6 +741,7 @@ filetype off
     set ignorecase
     set showmatch
 
+    nmap <space>c :nohlsearch<CR>
     " Replace all instances of word under cursor
     nnoremap <space>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " }}}
