@@ -267,8 +267,8 @@ filetype off
           \ 'autoload' : {
           \   'insert' : 1,
           \ }}
-    " NeoBundle 'tpope/vim-commentary'
-    NeoBundleLazyFor 'tomtom/tcomment_vim', 'mappings', 'g'
+    NeoBundle 'tpope/vim-commentary'
+    " NeoBundleLazyFor 'tomtom/tcomment_vim', 'mappings', 'g'
     NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
       nmap gS :SplitjoinSplit<cr>
       nmap gJ :SplitjoinJoin<cr>
