@@ -298,17 +298,6 @@ filetype off
 
       map <Leader>n <Plug>(easymotion-next)
       map <Leader>N <Plug>(easymotion-next)
-    " NeoBundleLazyFor 'kana/vim-smartword', 'mappings', [
-    "       \     '<Plug>(smartword-w)',
-    "       \     '<Plug>(smartword-b)',
-    "       \     '<Plug>(smartword-e)',
-    "       \     '<Plug>(smartword-ge)',
-    "       \ ]
-    "   map w  <Plug>(smartword-w)
-    "   map b  <Plug>(smartword-b)
-    "   map e  <Plug>(smartword-e)
-    "   map ge  <Plug>(smartword-ge)
-    " "}}}
     NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
     NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
       " <C-k>   Move current line/selections up
