@@ -122,10 +122,11 @@ filetype off
     NeoBundleLazyFor 'nathanaelkane/vim-indent-guides', 'filetype',
           \ ['coffee', 'ruby', 'python']
 
-    " Functions
+    " Text Objects
     NeoBundle 'vim-scripts/argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
 
     " Ruby
     NeoBundleLazyFor 'tpope/vim-endwise', 'filetypes', 'ruby'
