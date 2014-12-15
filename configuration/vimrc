@@ -55,7 +55,6 @@ filetype off
         let l:name = l:bundle[len(l:bundle) - 1]
 
         let l:additional_configuration = {}
-        let l:autoload_array = []
         let l:autoload = { 'autoload': {}}
 
         if a:0 == 1
