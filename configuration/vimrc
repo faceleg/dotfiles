@@ -288,8 +288,8 @@ filetype off
         \   '<Plug>(easymotion-next)',
         \ ],
         \ { 'vim_version' : '7.4' }
-      map <Leader><Leader>s <Plug>(easymotion-s)
-      map <Leader><Leader>t <Plug>(easymotion-t)
+      map <Leader>s <Plug>(easymotion-s)
+      map <Leader>t <Plug>(easymotion-t)
 
       map <Leader>l <Plug>(easymotion-lineforward)
       map <Leader>j <Plug>(easymotion-j)
