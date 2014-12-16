@@ -257,7 +257,13 @@ filetype off
     NeoBundleLazyFor 'Shougo/neosnippet', 'filetypes', 'snippet', {
       \ 'autoload' : {
       \   'insert' : 1,
-      \ }}
+      \ },
+      \ 'depends': [
+      \     'Shougo/context_filetype.vim',
+      \     'Shougo/neosnippet-snippets',
+      \     'honza/vim-snippets',
+      \     'matthewsimo/angular-vim-snippets'
+      \ ]}
       " Plugin key-mappings.
       imap <C-k>     <Plug>(neosnippet_expand_or_jump)
       smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -275,11 +281,9 @@ filetype off
       if has('conceal')
         set conceallevel=2 concealcursor=i
       endif
-    NeoBundleLazyFor 'Shougo/neosnippet-snippets', 'filetypes', 'snippet', {
-          \ 'depends': 'neosnippet',
-          \ 'autoload' : {
-          \   'insert' : 1,
-          \ }}
+
+      let g:neosnippet#snippets_directory = $HOME . '/.vim/bundle/angular-vim-snippets/snippets/' . ','
+            \                             . $HOME . '/.vim/bundle/vim-snippets/snippets/'
     NeoBundle 'tpope/vim-commentary'
     NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
       nmap gS :SplitjoinSplit<cr>
