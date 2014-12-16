@@ -128,6 +128,14 @@ filetype off
     NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
+          \ 'c',
+          \ 'javascript',
+          \ 'perl',
+          \ 'ruby',
+          \ 'python',
+          \ 'vim'
+          \ ], { 'depends': 'kana/vim-textobj-user' }
 
     " Ruby
     NeoBundleLazyFor 'tpope/vim-endwise', 'filetypes', 'ruby'
