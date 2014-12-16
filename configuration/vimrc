@@ -368,8 +368,8 @@ filetype off
           \ 'GotoPrevMarkerAny'  :  "[=",
           \ 'ListLocalMarks'     :  "'?"
           \ }
-    NeoBundleLazy 'tpope/vim-fugitive', { 'augroup': 'fugitive' }
-    NeoBundleLazy 'rhysd/committia.vim', { 'augroup': 'fugitive' }
+    NeoBundle 'tpope/vim-fugitive'
+    NeoBundleLazyFor 'rhysd/committia.vim', { 'commands': 'Gcommit' }
     NeoBundle 'tpope/vim-sleuth'
     NeoBundle 'svermeulen/vim-easyclip'
       imap <c-v> <plug>EasyClipInsertModePaste
