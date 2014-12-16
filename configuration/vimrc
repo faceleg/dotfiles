@@ -159,7 +159,7 @@ filetype off
       let g:sparkupNextMapping = '<c-x>'
 
     NeoBundle 'sheerun/vim-polyglot'
-    " TEMP UNTIL VELOCITY ADDED TO polyglot
+    NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', 'coffee'
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', 'velocity'
 
     " JavaScript
