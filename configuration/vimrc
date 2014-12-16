@@ -164,6 +164,8 @@ filetype off
     " NeoBundle 'sheerun/vim-polyglot'
     NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', 'coffee'
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', 'velocity'
+    NeoBundleLazyFor 'elzr/vim-json', 'filetypes', 'json'
+      let g:vim_json_syntax_conceal = 0
 
     " JavaScript
     NeoBundleLazyFor 'maksimr/vim-jsbeautify', 'filetypes', 'javascript'
