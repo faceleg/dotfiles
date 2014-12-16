@@ -123,7 +123,8 @@ filetype off
           \ ['coffee', 'ruby', 'python']
 
     " Text Objects
-    NeoBundle 'vim-scripts/argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
+    " NeoBundle 'vim-scripts/argtextobj.vim', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
