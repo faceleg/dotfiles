@@ -119,7 +119,7 @@ filetype off
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    NeoBundleLazyFor 'nathanaelkane/vim-indent-guides', 'filetype',
+    NeoBundleLazyFor 'nathanaelkane/vim-indent-guides', 'filetypes',
           \ ['coffee', 'ruby', 'python']
 
     " Text Objects
