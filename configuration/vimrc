@@ -189,7 +189,7 @@ filetype off
       let g:flow#enable = 1
       let g:flow#autoclose = 1
     NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
-    NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', 'javascript'
+    NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
     NeoBundleLazyFor 'othree/javascript-libraries-syntax.vim', 'filetypes', 'javascript'
       let g:used_javascript_libs = 'underscore,angularjs,jquery'
     NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
