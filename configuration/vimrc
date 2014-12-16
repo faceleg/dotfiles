@@ -575,6 +575,8 @@ filetype off
           \ ]
       nmap <leader>r :RainbowParentheses!!<CR>
       autocmd FileType coffee,java,javascript,json,php,python,sass,scss,vim :RainbowParentheses
+      let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
     NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<tab>' }
       let g:choosewin_overlay_enable = 1
       nmap  <tab> :ChooseWin<CR>
