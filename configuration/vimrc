@@ -132,10 +132,7 @@ filetype off
     NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
     NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
           \ 'c',
-          \ 'javascript',
-          \ 'perl',
-          \ 'ruby',
-          \ 'python',
+          \ 'java',
           \ 'vim'
           \ ], { 'depends': 'kana/vim-textobj-user' }
 
