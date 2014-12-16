@@ -127,6 +127,7 @@ filetype off
     NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundle 'vim-scripts/camelcasemotion', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
     NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
