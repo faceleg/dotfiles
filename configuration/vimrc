@@ -158,7 +158,7 @@ filetype off
     NeoBundleLazyFor 'rstacruz/sparkup', 'filetypes', ['html', 'xhtml', 'xml']
       let g:sparkupNextMapping = '<c-x>'
 
-    NeoBundle 'sheerun/vim-polyglot'
+    " NeoBundle 'sheerun/vim-polyglot'
     NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', 'coffee'
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', 'velocity'
 
