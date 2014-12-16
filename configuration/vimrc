@@ -135,6 +135,8 @@ filetype off
           \ 'java',
           \ 'vim'
           \ ], { 'depends': 'kana/vim-textobj-user' }
+    NeoBundleLazyFor 'thinca/vim-textobj-function-javascript', 'filetypes', 'javascript', { 'depends': 'vim-textobj-function' }
+    NeoBundleLazyFor 'thinca/vim-textobj-function-perl', 'filetypes', 'perl', { 'depends': 'vim-textobj-function' }
 
     " Ruby
     NeoBundleLazyFor 'tpope/vim-endwise', 'filetypes', 'ruby'
