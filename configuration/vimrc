@@ -143,6 +143,8 @@ filetype off
     NeoBundleLazyFor 'tpope/vim-rails', 'filetypes', 'ruby'
     NeoBundleLazyFor 'nelstrom/vim-textobj-rubyblock', 'filetypes', 'ruby',
           \ { 'depends': 'kana/vim-textobj-user' }
+    NeoBundleLazyFor 'bootleq/vim-textobj-rubysymbol', 'filetypes', 'ruby',
+          \ { 'depends': 'kana/vim-textobj-user' }
 
     NeoBundleLazyFor 'ntpeters/vim-better-whitespace', 'filetypes', [
           \ 'c', 'coffee', 'cpp', 'css', 'less', 'sass', 'scss', 'java', 'php',
