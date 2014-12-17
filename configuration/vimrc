@@ -482,8 +482,8 @@ filetype off
         let g:syntastic_echo_current_error  = 1
 
         " npm install -g jshint
-        " let g:syntastic_javascript_checkers=['jshint', 'flow']
-        let g:syntastic_javascript_checkers=['jshint']
+        let g:syntastic_javascript_checkers=['jshint', 'flow']
+        " let g:syntastic_javascript_checkers=['jshint']
         let g:syntastic_php_checkers=['php']
 
         " npm install -g csslint
