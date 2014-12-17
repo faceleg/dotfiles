@@ -161,7 +161,13 @@ filetype off
     NeoBundleLazyFor 'rstacruz/sparkup', 'filetypes', ['html', 'xhtml', 'xml']
       let g:sparkupNextMapping = '<c-x>'
 
-    " NeoBundle 'sheerun/vim-polyglot'
+    " Markdown
+    NeoBundleLazyFor 'greyblake/vim-preview', 'filetypes', ['markdown'], {
+          \ 'build': {
+          \     'unix': 'gem install redcarpet'
+          \ }}
+
+    " Misc languages
     NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', 'coffee'
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', 'velocity'
     NeoBundleLazyFor 'elzr/vim-json', 'filetypes', 'json'
