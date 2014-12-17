@@ -10,7 +10,6 @@ antigen bundles <<EOBUNDLES
 
 # Guess what to install when running an unknown command.
 command-not-found
-last-working-dir
 colored-man
 
 zsh-users/zsh-completions
