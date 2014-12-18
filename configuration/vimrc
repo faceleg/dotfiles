@@ -584,6 +584,7 @@ filetype off
 
     " Utility
     NeoBundleLazyFor 'bruno-/vim-vertical-move', 'mappings', ['[v', ']v']
+    NeoBundle 'tommcdo/vim-exchange'
     NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
           \     'coffee',
           \     'java',
