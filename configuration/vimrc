@@ -108,7 +108,7 @@ filetype off
 
     " Visual
     NeoBundle 'jaxbot/semantic-highlight.vim'
-      let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,17,19,20,21]
+      let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
 
       let g:semanticEnableFileTypes = ['javascript', 'vim']
     NeoBundle 'miyakogi/conoline.vim', "{{{
