@@ -107,6 +107,10 @@ filetype off
     NeoBundle 'chriskempson/base16-vim'
 
     " Visual
+    NeoBundle 'jaxbot/semantic-highlight.vim'
+      let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,17,19,20,21]
+
+      let g:semanticEnableFileTypes = ['javascript', 'vim']
     NeoBundle 'miyakogi/conoline.vim', "{{{
       let g:conoline_auto_enable = 1
       let g:conoline_use_colorscheme_default_normal=0
@@ -579,6 +583,7 @@ filetype off
     NeoBundle 'hlissner/vim-multiedit'
 
     " Utility
+    NeoBundleLazyFor 'bruno-/vim-vertical-move', 'mappings', ['[v', ']v']
     NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
           \     'coffee',
           \     'java',
