@@ -272,7 +272,8 @@ filetype off
       \     'Shougo/context_filetype.vim',
       \     'Shougo/neosnippet-snippets',
       \     'honza/vim-snippets',
-      \     'matthewsimo/angular-vim-snippets'
+      \     'matthewsimo/angular-vim-snippets',
+      \     'jamescarr/snipmate-nodejs'
       \ ]}
       " Plugin key-mappings.
       imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -292,8 +293,9 @@ filetype off
         set conceallevel=2 concealcursor=i
       endif
 
-      let g:neosnippet#snippets_directory = $HOME . '/.vim/bundle/angular-vim-snippets/snippets/' . ','
-            \                             . $HOME . '/.vim/bundle/vim-snippets/snippets/'
+      let g:neosnippet#snippets_directory = $HOME . '/.vim/bundle/angular-vim-snippets/snippets/,'
+            \                             . $HOME . '/.vim/bundle/vim-snippets/snippets/,'
+            \                             . $HOME . '/.vim/bundle/snipmate-nodejs/snippets/'
     NeoBundle 'tpope/vim-commentary'
     NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
       nmap gS :SplitjoinSplit<cr>
