@@ -99,7 +99,13 @@ filetype off
           \     'unix' : g:make,
           \    },
           \ }
-
+    NeoBundle 'rhysd/auto-neobundle', {
+          \ 'depends': ['unite.vim', 'vimproc']
+          \ }
+      augroup AutoNeoBundle
+        autocmd!
+        autocmd VimEnter * call auto_neobundle#update_weekly()
+      augroup END
 "}}}
 
 " NeoBundle {{{
