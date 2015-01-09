@@ -20,7 +20,6 @@ EOBUNDLES
 # antigen theme dstufft
 # antigen theme jonathan
 # antigen theme smt
-# antigen bundle sindresorhus/pure
 antigen bundle sindresorhus/pure
 
 antigen bundle chriskempson/base16-shell base16-colors.dark.sh
@@ -58,11 +57,11 @@ elif is_linux; then
   bindkey -M vicmd 'j' history-substring-search-down
 fi
 
-# # antigen bundle tarruda/zsh-autosuggestions
-# # zle-line-init() {
-# #     zle autosuggest-start
-# # }
-# # zle -N zle-line-init
+# antigen bundle tarruda/zsh-autosuggestions
+# zle-line-init() {
+#     zle autosuggest-start
+# }
+# zle -N zle-line-init
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 # ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
