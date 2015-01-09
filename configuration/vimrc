@@ -557,7 +557,7 @@ filetype off
         " npm install -g jshint
         let g:syntastic_javascript_checkers=['jshint', 'flow']
         " let g:syntastic_javascript_checkers=['jshint']
-        autocmd BufEnter *.js let g:syntastic_javascript_flow_quiet_messages = { '!file:p': '\\V' . escape(expand('%:p'), '\\') }
+        " autocmd BufEnter *.js let g:syntastic_javascript_flow_quiet_messages = { '!file:p': '\\V' . escape(expand('%:p'), '\\') }
 
         let g:syntastic_php_checkers=['php']
 
