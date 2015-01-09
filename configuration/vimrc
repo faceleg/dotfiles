@@ -727,9 +727,15 @@ filetype off
     syntax on
     set background=dark
     syntax sync fromstart
+
     let g:base16colorspace=256  " Access colors present in 256 colorspace
     colorscheme base16-colors
     set t_Co=256
+
+    set synmaxcol=200
+    set ttyfast
+    set ttyscroll=3
+    set lazyredraw
 " }}}
 
 " Custom highlight options {{{
