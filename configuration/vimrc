@@ -845,6 +845,7 @@ filetype off
     set spelllang=en_nz
     " Toggle spelling & line highlighting with F7
     map <silent> <F7> :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
+    map <silent> <space>s :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
 " }}}
 
 " {{{
