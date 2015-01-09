@@ -277,7 +277,7 @@ filetype off
         autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
         autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     else
-      NeoBundle 'Shougo/neocomplcache.vim'
+      NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 } }
         set completeopt-=preview
 
         let g:acp_enableAtStartup = 0
