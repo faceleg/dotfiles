@@ -167,6 +167,7 @@ filetype off
           \ 'ruby', 'puppet', 'python', 'javascript', 'vim', 'sh', 'nginx', 'ant', 'xml'
           \ ]
       autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+      let g:better_whitespace_filetypes_blacklist = ['unite']
 
     " HTML
     NeoBundleLazyFor 'whatyouhide/vim-textobj-xmlattr', 'filetypes', [ 'html', 'xhtml', 'xml' ],
