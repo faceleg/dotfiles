@@ -319,7 +319,6 @@ filetype off
         let g:neocomplcache_force_omni_input_patterns.java = '\k\.\k*'
         let g:neocomplcache_force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
-        " Define dictionary.
         let g:neocomplcache_sources#dictionary#dictionaries = {
             \ 'default' : '',
             \ 'vimshell' : $HOME.'/.vimshell_hist',
