@@ -135,8 +135,12 @@ filetype off
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    NeoBundleLazyFor 'nathanaelkane/vim-indent-guides', 'filetypes',
+    NeoBundleLazyFor 'Yggdroot/indentLine', 'filetypes',
           \ ['coffee', 'ruby', 'python']
+      " vertical line indentation
+      let g:indentLine_color_term = 239
+      let g:indentLine_color_gui = '#09AA08'
+      let g:indentLine_char = '│'
 
     " Text Objects
     NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
