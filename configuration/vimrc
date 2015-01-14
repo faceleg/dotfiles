@@ -739,13 +739,16 @@ filetype off
     NeoBundleLazyFor 'Valloric/MatchTagAlways', 'filetypes', ['html', 'xml', 'xhtml']
       let g:mta_use_matchparen_group = 1
       let g:mta_set_default_matchtag_color = 1
-    NeoBundle 'xolox/vim-easytags', { 'depends': 'xolox/vim-misc' }
-      let g:easytags_include_members = 1
-      let g:easytags_async = 1
+    NeoBundleLazy 'tpope/vim-dispatch'
+    " NeoBundleLazyFor 'szw/vim-tags', 'commands', ['w', 'x'], { 'depends': 'vim-dispatch' }
+    NeoBundle 'szw/vim-tags', { 'depends': 'vim-dispatch' }
+    " NeoBundle 'xolox/vim-easytags', { 'depends': 'xolox/vim-misc' }
+    "   let g:easytags_include_members = 1
+    "   let g:easytags_async = 1
 
-      set tags=./tags;
-      let g:easytags_dynamic_files = 1
-      let g:easytags_autorecurse = 1
+    "   set tags=./tags;
+    "   " let g:easytags_dynamic_files = 1
+    "   let g:easytags_autorecurse = 1
     NeoBundleCheck
 " }}}
 
