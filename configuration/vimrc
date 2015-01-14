@@ -147,7 +147,24 @@ filetype off
     NeoBundle 'b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
-    NeoBundle 'vim-scripts/camelcasemotion', { 'depends': 'kana/vim-textobj-user' }
+    " NeoBundle 'vim-scripts/camelcasemotion', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundle 'bkad/CamelCaseMotion', { 'depends': 'kana/vim-textobj-user' }
+      " map <silent> w <Plug>CaseMotion_w
+      " map <silent> b <Plug>CamelCaseMotion_b
+      " map <silent> e <Plug>CamelCaseMotion_e
+      " sunmap w
+      " sunmap b
+      " sunmap e
+
+      " omap <silent> iw <Plug>CamelCaseMotion_iw
+      " xmap <silent> iw <Plug>CamelCaseMotion_iw
+      " omap <silent> ib <Plug>CamelCaseMotion_ib
+      " xmap <silent> ib <Plug>CamelCaseMotion_ib
+      " omap <silent> ie <Plug>CamelCaseMotion_ie
+      " xmap <silent> ie <Plug>CamelCaseMotion_ie
+      map <S-W> <Plug>CamelCaseMotion_w
+      map <S-B> <Plug>CamelCaseMotion_b
+      map <S-E> <Plug>CamelCaseMotion_e
     NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
     NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
