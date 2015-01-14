@@ -1029,21 +1029,21 @@ filetype off
 
   "WINDOW RESIZING Down
   func! DownHorizontal()
-  let currentWin = winnr()
-  "If no window below or above leave as is, otherwise call function
-    wincmd j
-  if winnr() == currentWin
-    wincmd k
+    let currentWin = winnr()
+    "If no window below or above leave as is, otherwise call function
+      wincmd j
     if winnr() == currentWin
-        wincmd k
+      wincmd k
+      if winnr() == currentWin
+          wincmd k
+      else
+          exe currentWin . "wincmd w"
+          call DownHorizontalAdjust()
+      endif
     else
-        exe currentWin . "wincmd w"
-        call DownHorizontalAdjust()
+      exe currentWin . "wincmd w"
+      call DownHorizontalAdjust()
     endif
-  else
-    exe currentWin . "wincmd w"
-    call DownHorizontalAdjust()
-  endif
   endfun
 
   func! DownHorizontalAdjust()
