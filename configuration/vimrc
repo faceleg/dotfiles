@@ -799,7 +799,7 @@ filetype off
     colorscheme base16-colors
     set t_Co=256
 
-    set synmaxcol=200
+    set synmaxcol=250
     set ttyfast
     set ttyscroll=3
     set lazyredraw
