@@ -395,6 +395,8 @@ filetype off
         \   '<Plug>(easymotion-prev)',
         \   '<Plug>(easymotion-s)',
         \   '<Plug>(easymotion-t)',
+        \   '<Plug>(easymotion-s2)',
+        \   '<Plug>(easymotion-t2)',
         \   '<Plug>(easymotion-lineforward)',
         \   '<Plug>(easymotion-j)',
         \   '<Plug>(easymotion-k)',
@@ -403,8 +405,8 @@ filetype off
         \   '<Plug>(easymotion-next)',
         \ ],
         \ { 'vim_version' : '7.4' }
-      map <Leader>s <Plug>(easymotion-s)
-      map <Leader>t <Plug>(easymotion-t)
+      map <Leader>s <Plug>(easymotion-s2)
+      map <Leader>t <Plug>(easymotion-t2)
 
       map <Leader>l <Plug>(easymotion-lineforward)
       map <Leader>j <Plug>(easymotion-j)
