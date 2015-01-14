@@ -486,8 +486,10 @@ filetype off
       nnoremap gm m
 
       let g:EasyClipUseSubstituteDefaults = 1
-      let g:EasyClipYankHistorySize =100
+      let g:EasyClipYankHistorySize = 100
+      let g:EasyClipShowYanksWidth = 200
       let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+      let g:EasyClipShareYanks = 1
 
       " Manually map yanks to avoid conflicts with tpope/unimpaired
       let g:EasyClipUseYankDefaults = 0
