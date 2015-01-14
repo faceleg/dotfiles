@@ -437,6 +437,10 @@ filetype off
       map \) <plug>(glowshi-ft-opposite)
     NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp']
 
+    " External programs
+    NeoBundle 'vim-scripts/TwitVim'
+    NeoBundle 'danielmiessler/VimBlog'
+
     " Features
     NeoBundleLazyFor 'calebsmith/vim-lambdify', 'filetypes', ['ruby', 'javascript', 'scheme', 'erlang', 'python']
     NeoBundle 'gorkunov/smartpairs.vim'
