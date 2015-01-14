@@ -749,6 +749,42 @@ filetype off
     "   set tags=./tags;
     "   " let g:easytags_dynamic_files = 1
     "   let g:easytags_autorecurse = 1
+
+    " if isdirectory(expand('/opt/eclipse'))
+      " NeoBundleLazyFor 'ervandew/eclim', 'filetypes', ['java'], {
+
+      NeoBundleLazyFor 'ervandew/eclim', 'filetypes', 'java', {
+        \ 'build': {
+        \   'windows': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '')
+        \              . ' -Dvim.files=' . escape(expand('~/.vim/bundle'), ''),
+        \   'unix': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '')
+        \           . ' -Dvim.files=' . escape(expand('~/.vim/bundle/eclim'), '')
+        \   }
+        \ }
+
+        autocmd FileType java NeoBundleSource eclim
+        let g:EclimJavascriptValidate = 0
+        let g:EclimHtmlValidate = 0
+        let g:EclimCompletionMethod = 'omnifunc'
+
+        autocmd FileType java call SetJavaOptions()
+
+        function! SetJavaOptions()
+
+          " Import the class under the cursor with <leader>i (:h mapleader):
+          autocmd FileType java map <buffer> ,i :JavaImport<CR>
+          autocmd FileType java map <buffer> ,fi :JavaImportOrganize<CR>
+          autocmd FileType java map <buffer> ,h :JavaCallHeirarchy<CR>
+          autocmd FileType java map <buffer> ,c :JavaCorrect<CR>
+          autocmd FileType java map <buffer> ,dc :JavaDocComment<CR>
+
+          autocmd FileType java map <buffer> ,d :JavaDocSearch -x declarations<CR>
+
+          " Perform a context sensitive search of the element under the cursor with <enter>.
+          autocmd FileType java map <buffer> <CR> :JavaSearchContext<CR>
+        endfunction
+    " endif
+
     NeoBundleCheck
 " }}}
 
