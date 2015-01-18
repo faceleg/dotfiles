@@ -545,7 +545,6 @@ filetype off
         let g:airline_exclude_preview = 1
     " }}}
     NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
-    NeoBundle 'gcavallanti/vim-noscrollbar', { 'depends': 'vim-airline' }
     NeoBundle 'majutsushi/tagbar', { 'depends': 'vim-airline' }
       nmap <F8> :TagbarToggle<CR>
 
@@ -1142,8 +1141,3 @@ filetype off
   vnoremap <C-r> c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>"
 "}}}
 
-" TEMP - pending https://github.com/gcavallanti/vim-noscrollbar/issues/1
-function! Noscrollbar(...)
-  let w:airline_section_z = '%{noscrollbar#statusline(9,''■'',''◫'',[''◧''],[''◨''])}'
-endfunction
-call airline#add_statusline_func('Noscrollbar')
