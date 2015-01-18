@@ -130,7 +130,7 @@ filetype off
     NeoBundle 'ivyl/vim-bling'
     NeoBundleLazyFor 'qstrahl/vim-matchmaker', 'mappings', '<space>m'
       let g:matchmaker_enable_startup = 0
-      nnoremap <space>m :MatchmakerToggle<CR>
+      nnoremap <space>m :MatchmakerToggle<cr>
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
