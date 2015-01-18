@@ -1010,11 +1010,6 @@ filetype off
     set pastetoggle=<f2>
     au InsertLeave * set nopaste
 
-    " Automatically jump to end of text you pasted:
-    " vnoremap <silent> y y`]
-    " vnoremap <silent> p p`]
-    " nnoremap <silent> p p`]
-
     " Quickly select text you just pasted
     noremap gV `[v`]
 " }}}
