@@ -1105,20 +1105,21 @@ filetype off
 
 " https://github.com/terryma/vim-multiple-cursors/issues/5://github.com/terryma/vim-multiple-cursors/issues/51
 " Hooks to turn off neocomplete when multi-editing {{{
-
-  if exists('*NeoCompleteLock')
     function! Multiple_cursors_before()
-      exe 'NeoCompleteLock'
-      echo 'Disabled autocomplete'
+      if exists('*NeoCompleteLock')
+        exe 'NeoCompleteLock'
+      elseif exists('*NeoComplcacheLock')
+        exe 'NeoComplcacheLock'
+      endif
     endfunction
-  endif
 
-  if exists('*NeoCompleteUnlock')
     function! Multiple_cursors_after()
-      exe 'NeoCompleteUnlock'
-      echo 'Enabled autocomplete'
+      if exists('*NeoCompleteUnlock')
+        exe 'NeoCompleteUnlock'
+      elseif exists('*NeoComplcacheUnlock')
+        exe 'NeoComplcacheUnlock'
+      endif
     endfunction
-  endif
 "}}}
 
 " http://vim.wikia.com/wiki/Reverse_selected_text {{{
