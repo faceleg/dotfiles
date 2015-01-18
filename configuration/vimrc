@@ -507,6 +507,8 @@ filetype off
         hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=NONE   guibg=#000000 cterm=NONE    gui=NONE
 
         let g:ctrlspace_save_workspace_on_exit = 1
+        let g:ctrlspace_save_workspace_on_switch = 1
+        let g:ctrlspace_load_last_workspace_on_start = 1
         let g:ctrlspace_use_ruby_bindings = 1
         let g:ctrlspace_unicode_font = 1
 
