@@ -615,7 +615,6 @@ filetype off
               \ "trimming empty <span>",
               \ "<a> escaping malformed URI reference"
               \ ]
-    "}}}
 
     " Usability
     NeoBundleLazyFor 'haya14busa/incsearch.vim', 'mappings', [
