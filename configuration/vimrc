@@ -516,7 +516,7 @@ filetype off
           let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
         endif
     else
-      NeoBundle 'mhinz/vim-startify', "{{{
+      NeoBundle 'mhinz/vim-startify'
         let g:startify_show_sessions = 1
         let g:startify_list_order = ['sessions', 'bookmarks', 'dir', 'files']
         let g:startify_session_dir = expand('~/.vim/.cache/unite/session')
@@ -534,7 +534,6 @@ filetype off
         hi StartifyNumber  ctermfg=215
         hi StartifyPath    ctermfg=245
         hi StartifySlash   ctermfg=240
-      " }}}
       NeoBundle 'Shougo/unite-session'
     endif
 
