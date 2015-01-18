@@ -882,7 +882,7 @@ filetype off
     set fcs=vert:│ " Solid line for vsplit separator
 
     " Select all
-    nmap <space>a ggVG<CR>
+    nmap <space>a GVgg<CR>
 
     " disable ex mode
     nnoremap Q <nop>
