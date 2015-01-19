@@ -20,9 +20,9 @@ filetype off
   set foldmethod=syntax
   set foldlevel=1
 
-  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
-  autocmd BufNewFile,BufReadPost *.html setl foldmethod=indent
-  autocmd BufNewFile,BufReadPost *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+  " autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+  " autocmd BufNewFile,BufReadPost *.html setl foldmethod=indent
+  " autocmd BufNewFile,BufReadPost *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 " }}}
 
 " NeoBundleInitialisation {{{
