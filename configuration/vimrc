@@ -780,18 +780,18 @@ filetype off
  call neobundle#end()
 "
 " Colourscheme {{{
-    syntax on
-    set background=dark
-    syntax sync fromstart
+  syntax on
+  set background=dark
+  syntax sync fromstart
 
-    let g:base16colorspace=256  " Access colors present in 256 colorspace
-    colorscheme base16-colors
-    set t_Co=256
+  let g:base16colorspace=256  " Access colors present in 256 colorspace
+  colorscheme base16-colors
+  set t_Co=256
 
-    set synmaxcol=250
-    set ttyfast
-    set ttyscroll=3
-    set lazyredraw
+  set synmaxcol=250
+  set ttyfast
+  set ttyscroll=3
+  set lazyredraw
 " }}}
 
 " Custom highlight options {{{
@@ -813,96 +813,96 @@ filetype off
 "}}}
 
 " Tabs & indenting {{{
-    set tabstop=4
-    set shiftwidth=4
-    set expandtab
-    set softtabstop=4
+  set tabstop=4
+  set shiftwidth=4
+  set expandtab
+  set softtabstop=4
 
-    au FileType python,ruby setl sw=2 sts=2 et
-    au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
-    au FileType php,phtml,html setl sw=4 sts=4 et
+  au FileType python,ruby setl sw=2 sts=2 et
+  au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
+  au FileType php,phtml,html setl sw=4 sts=4 et
 
-    filetype plugin indent on
+  filetype plugin indent on
 " }}}
 
 " General settings {{{
-    set number
-    set cindent
+  set number
+  set cindent
 
-    if v:version >= 704
-      set re=1
-    endif
+  if v:version >= 704
+    set re=1
+  endif
 
-    " a - terse messages (like [+] instead of [Modified])
-    " t - truncate file names
-    " I - no intro message when starting vim fileless
-    " T - truncate long messages to avoid having to hit a key
-    set shortmess=atIT
+  " a - terse messages (like [+] instead of [Modified])
+  " t - truncate file names
+  " I - no intro message when starting vim fileless
+  " T - truncate long messages to avoid having to hit a key
+  set shortmess=atIT
 
-    set nowrap                      " Do not wrap lines by default
-    set autoread                    " Reload files changed outside vim
+  set nowrap                      " Do not wrap lines by default
+  set autoread                    " Reload files changed outside vim
 
-    set viminfo='1000,f1
-    set history=1000                " remember more commands and search history
-    set undolevels=1000             " remember more undo levels
-    set ttyfast " u got a fast terminal
-    set lazyredraw
+  set viminfo='1000,f1
+  set history=1000                " remember more commands and search history
+  set undolevels=1000             " remember more undo levels
+  set ttyfast " u got a fast terminal
+  set lazyredraw
 
-    " No need to show mode due to Powerline
-    set noshowmode
+  " No need to show mode due to Powerline
+  set noshowmode
 
-    " Explicitly set encoding to utf-8
-    set encoding=utf-8
+  " Explicitly set encoding to utf-8
+  set encoding=utf-8
 
-    " Prevents MatchParen from loading, which can cause slowdown
-    " let g:loaded_matchparen=1
+  " Prevents MatchParen from loading, which can cause slowdown
+  " let g:loaded_matchparen=1
 
-    " This makes vim act like all other editors, buffers can :u
-    " exist in the background without being in a window.
-    " http://items.sjbach.com/319/configuring-vim-right
-    set hidden
+  " This makes vim act like all other editors, buffers can :u
+  " exist in the background without being in a window.
+  " http://items.sjbach.com/319/configuring-vim-right
+  set hidden
 
-    " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
-    set backspace=indent,eol,start
+  " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
+  set backspace=indent,eol,start
 
-    " Do not highlight current line
-    set nocursorline
-    set nocursorcolumn
+  " Do not highlight current line
+  set nocursorline
+  set nocursorcolumn
 
-    set fcs=vert:│ " Solid line for vsplit separator
+  set fcs=vert:│ " Solid line for vsplit separator
 
-    " Select all
-    nmap <space>a GVgg<CR>
+  " Select all
+  nmap <space>a GVgg<CR>
 
-    " disable ex mode
-    nnoremap Q <nop>
-    map q: :q
+  " disable ex mode
+  nnoremap Q <nop>
+  map q: :q
 
-    " Disable K looking stuff up
-    map K <Nop>
+  " Disable K looking stuff up
+  map K <Nop>
 
-    " I can type :help on my own, thanks.
-    noremap <F1> <Esc>
+  " I can type :help on my own, thanks.
+  noremap <F1> <Esc>
 
-    " Automatically reload vimrc
-    "autocmd! bufwritepost .vimrc nested source %
+  " Automatically reload vimrc
+  "autocmd! bufwritepost .vimrc nested source %
 " }}}
 
 " Sudo {{{
-    " w!!: Writes using sudo
-    cnoremap w!! w !sudo tee % >/dev/null
+  " w!!: Writes using sudo
+  cnoremap w!! w !sudo tee % >/dev/null
 " }}}
 
 " Saving mapping {{{
-    map <silent> <F12> :w<CR>
+  map <silent> <F12> :w<CR>
 " }}}
 
 " Spelling toggle {{{
-    " http://yavin4.anshul.info/2006/05/18/spell-check-in-vim-7/
-    set spelllang=en_nz
-    " Toggle spelling & line highlighting with F7
-    map <silent> <F7> :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
-    map <silent> <space>s :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
+  " http://yavin4.anshul.info/2006/05/18/spell-check-in-vim-7/
+  set spelllang=en_nz
+  " Toggle spelling & line highlighting with F7
+  map <silent> <F7> :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
+  map <silent> <space>s :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
 " }}}
 
 " {{{
@@ -914,94 +914,94 @@ filetype off
 " }}}
 
 " Disable arrow keys {{{
-    map <up> <nop>
-    map <down> <nop>
-    map <left> <nop>
-    map <right> <nop>
-    imap <up> <nop>
-    imap <down> <nop>
-    imap <left> <nop>
-    imap <right> <nop>
+  map <up> <nop>
+  map <down> <nop>
+  map <left> <nop>
+  map <right> <nop>
+  imap <up> <nop>
+  imap <down> <nop>
+  imap <left> <nop>
+  imap <right> <nop>
 " }}}
 
 " Turn Off Swap Files {{{
-    set noswapfile
-    set nobackup
-    set nowb
+  set noswapfile
+  set nobackup
+  set nowb
 " }}}
 
 " Position saving {{{
-    " http://amix.dk/vim/vimrc.html
-    " Return to last edit position when opening files (You want this!)
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
+  " http://amix.dk/vim/vimrc.html
+  " Return to last edit position when opening files (You want this!)
+  autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 " }}}
 
 " Persistent Undo {{{
-    " Keep undo history across sessions, by storing in file.
-    silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  " Keep undo history across sessions, by storing in file.
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
 
-    if has("persistent_undo")
-      set undodir=~/.vim/backups
-      set undofile
-    endif
+  if has("persistent_undo")
+    set undodir=~/.vim/backups
+    set undofile
+  endif
 " }}}
 
 " Scrolling {{{
-    set scrolloff=8 " Start scrolling when we're 8 lines away from margins
-    set sidescrolloff=15
-    set sidescroll=1
+  set scrolloff=8 " Start scrolling when we're 8 lines away from margins
+  set sidescrolloff=15
+  set sidescroll=1
 " }}}
 
 " Search & Replace {{{
-    set hlsearch
-    set incsearch
-    set smartcase
-    set ignorecase
-    set showmatch
+  set hlsearch
+  set incsearch
+  set smartcase
+  set ignorecase
+  set showmatch
 
-    nmap <space>c :nohlsearch<CR>
-    " Replace all instances of word under cursor
-    nnoremap <space>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+  nmap <space>c :nohlsearch<CR>
+  " Replace all instances of word under cursor
+  nnoremap <space>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " }}}
 
 " Show special characters {{{
-    " http://vimcasts.org/episodes/show-invisibles/
-    " Shortcut to rapidly toggle `set list`
-    set list
-    nmap <leader>li :set list!<CR>
-    " Use the same symbols as TextMate for tabstops and EOLs
-    set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
-    set shiftround
-    set linebreak
-    set showbreak=↪
+  " http://vimcasts.org/episodes/show-invisibles/
+  " Shortcut to rapidly toggle `set list`
+  set list
+  nmap <leader>li :set list!<CR>
+  " Use the same symbols as TextMate for tabstops and EOLs
+  set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
+  set shiftround
+  set linebreak
+  set showbreak=↪
 " }}}
 
 " Open preview window at bottom {{{
-    set splitbelow
-    set splitright
+  set splitbelow
+  set splitright
 " }}}
 
 " Reselect visual block after indent/outdent {{{
-  " vnoremap < <gv
-  " vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 " }}}
 
 " PHP {{{
-    au BufNewFile,BufRead *.phtml setf phtml
+  au BufNewFile,BufRead *.phtml setf phtml
 " }}}
 
 " Pasting {{{
-    map <f2> :set invpaste paste?<CR>
-    imap <F2> <ESC>:set paste<CR>i<Right>
+  map <f2> :set invpaste paste?<CR>
+  imap <F2> <ESC>:set paste<CR>i<Right>
 
-    set pastetoggle=<f2>
-    au InsertLeave * set nopaste
+  set pastetoggle=<f2>
+  au InsertLeave * set nopaste
 
-    " Quickly select text you just pasted
-    noremap gV `[v`]
+  " Quickly select text you just pasted
+  noremap gV `[v`]
 " }}}
 
 " Window resizing {{{
