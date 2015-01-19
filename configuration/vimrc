@@ -450,10 +450,9 @@ filetype off
       vmap <Enter> <Plug>(EasyAlign)
       " Start interactive EasyAlign for a motion/text object (e.g. gaip)
       nmap ga <Plug>(EasyAlign)
-    NeoBundle 'airblade/vim-gitgutter', { 'augroup': 'gitgutter' }
-      let g:gitgutter_escape_grep = 1
-      let g:gitgutter_highlight_lines = 0
-    NeoBundle 'kshenoy/vim-signature'
+    NeoBundle 'mhinz/vim-signify'
+       let g:signify_vcs_list = ['git', 'hg']
+    NeoBundle 'kshenoy/vim-signature',
       let g:SignatureMap = {
           \ 'Leader'             :  "m",
           \ 'PlaceNextMark'      :  "m,",
