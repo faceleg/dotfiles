@@ -2,7 +2,19 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-printf "\nConfiguring tmux\n"
+mkdir -p ~/.tmux/plugins
+
+printf "
+(Re)Installing TMP
+"
+TMUX_PLUGINS="`eval echo ~/.tmux/plugins/`"
+if [ -d $TMUX_PLUGINS ]; then
+    rm -rf $TMUX_PLUGINS/tpm
+else
+    mkdir -p $TMUX_PLUGINS
+fi
+
+git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGINS/tpm
 
 rm -f ~/.tmux.conf
 $CP "$DIR/../configuration/tmux.conf" ~/.tmux.conf
@@ -18,9 +30,4 @@ find ~/.tmux-themes -type d -exec chmod 755 {} \;
 find ~/.tmux-themes -type f -exec chmod 644 {} \;
 
 tmux source-file ~/.tmux.conf
-
-# Install tmux scripts
-rm -rf ~/.tmux-scripts
-
-$CP "$DIR/../addons/tmux/scripts" ~/.tmux-scripts
 
