@@ -131,7 +131,7 @@ filetype off
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    NeoBundleLazyFor 'Yggdroot/indentLine', 'mappings', '<space>i'
+    NeoBundleLazyFor 'Yggdroot/indentLine', 'commands', 'IndentLinesToggle'
       " vertical line indentation
       let g:indentLine_color_term = 239
       let g:indentLine_color_gui = '#09AA08'
@@ -192,6 +192,7 @@ filetype off
           \ { 'depends': 'kana/vim-textobj-user' }
     NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
       let g:xml_use_html = 1
+    NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
     NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
     NeoBundleLazyFor 'rstacruz/sparkup', 'filetypes', ['html', 'xhtml', 'xml']
       let g:sparkupNextMapping = '<c-x>'
@@ -203,7 +204,9 @@ filetype off
           \ }}
 
     " Misc languages
+    " NeoBundle 'sheerun/vim-polyglot'
     NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', 'coffee'
+      autocmd BufRead,BufNewFile *.coffee set filetype=coffee
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', 'velocity'
     NeoBundleLazyFor 'elzr/vim-json', 'filetypes', 'json'
       let g:vim_json_syntax_conceal = 0
@@ -223,12 +226,12 @@ filetype off
       let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
       nnoremap <space>j :JsDoc<cr>
-    NeoBundleLazyFor 'facebook/vim-flow', 'filetypes', 'javascript', { 'build': {
-          \     'mac': 'npm install -g flow-bin',
-          \     'unix': 'npm install -g flow-bin'
-          \ }}
-      let g:flow#enable = 0
-      let g:flow#autoclose = 1
+    " NeoBundleLazyFor 'facebook/vim-flow', 'filetypes', 'javascript', { 'build': {
+    "       \     'mac': 'npm install -g flow-bin',
+    "       \     'unix': 'npm install -g flow-bin'
+    "       \ }}
+    "   let g:flow#enable = 0
+    "   let g:flow#autoclose = 1
     NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
     NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
     NeoBundleLazyFor 'othree/javascript-libraries-syntax.vim', 'filetypes', 'javascript'
@@ -379,6 +382,7 @@ filetype off
       let g:neosnippet#snippets_directory = $HOME . '/.vim/bundle/angular-vim-snippets/snippets/,'
             \                             . $HOME . '/.vim/bundle/vim-snippets/snippets/,'
             \                             . $HOME . '/.vim/bundle/snipmate-nodejs/snippets/'
+            \                             . $HOME . '/.vim/bundle/neosnippet-snippetsi/neosnippets/'
     NeoBundle 'tpope/vim-commentary'
     NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
       nmap gS :SplitjoinSplit<cr>
@@ -579,8 +583,8 @@ filetype off
         let g:syntastic_echo_current_error  = 1
 
         " npm install -g jshint
-        let g:syntastic_javascript_checkers=['jshint', 'flow']
-        " let g:syntastic_javascript_checkers=['jshint']
+        " let g:syntastic_javascript_checkers=['jshint', 'flow']
+        let g:syntastic_javascript_checkers=['jshint']
         " autocmd BufEnter *.js let g:syntastic_javascript_flow_quiet_messages = { '!file:p': '\\V' . escape(expand('%:p'), '\\') }
 
         let g:syntastic_php_checkers=['php']
@@ -593,6 +597,8 @@ filetype off
 
         " npm install -g jsonlint
         let g:syntastic_json_checkers=['jsonlint']
+
+        let g:syntastic_java_checkers=['javac']
 
         " https://github.com/koalaman/shellcheck
         let g:syntastic_sh_checkers=['sh']
@@ -757,16 +763,18 @@ filetype off
         function! SetJavaOptions()
 
           " Import the class under the cursor with <leader>i (:h mapleader):
-          autocmd FileType java map <buffer> ,i :JavaImport<CR>
-          autocmd FileType java map <buffer> ,fi :JavaImportOrganize<CR>
-          autocmd FileType java map <buffer> ,h :JavaCallHeirarchy<CR>
-          autocmd FileType java map <buffer> ,c :JavaCorrect<CR>
-          autocmd FileType java map <buffer> ,dc :JavaDocComment<CR>
+          map <buffer> ,i :JavaImport<CR>
+          map ,io :JavaImportOrganize<CR>
+          map <buffer> ,fi :JavaImportOrganize<CR>
+          map <buffer> ,h :JavaCallHeirarchy<CR>
+          map <buffer> ,c :JavaCorrect<CR>
+          map <buffer> ,dc :JavaDocComment<CR>
+          map <buffer> ,ju :JUnit<CR>
 
-          autocmd FileType java map <buffer> ,d :JavaDocSearch -x declarations<CR>
+          map <buffer> ,d :JavaDocSearch -x declarations<CR>
 
           " Perform a context sensitive search of the element under the cursor with <enter>.
-          autocmd FileType java map <buffer> <CR> :JavaSearchContext<CR>
+          map <buffer> <CR> :JavaSearchContext<CR>
         endfunction
     " endif
 
@@ -778,7 +786,7 @@ filetype off
 " Colourscheme {{{
   syntax on
   set background=dark
-  syntax sync fromstart
+  " syntax sync fromstart
 
   let g:base16colorspace=256  " Access colors present in 256 colorspace
   colorscheme base16-colors
