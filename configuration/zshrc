@@ -13,6 +13,15 @@ command-not-found
 colored-man
 
 zsh-users/zsh-completions
+unixorn/autoupdate-antigen.zshplugin
+djui/alias-tips
+walesmd/caniuse.plugin.zsh
+# mfaerevaag/wd
+MikeDacre/cdbk
+unixorn/git-extra-commands
+voronkovich/gitignore.plugin.zsh
+supercrabtree/k
+ascii-soup/zsh-url-highlighter
 EOBUNDLES
 
 # Theme
@@ -35,33 +44,6 @@ is_osx () {
 if is_osx; then
   antigen bundle osx
 fi
-
-antigen bundle zsh-users/zsh-history-substring-search
-if is_osx; then
-  # zsh-history-substring-search
-  # bind UP and DOWN arrow keys
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-elif is_linux; then
-  # bind UP and DOWN arrow keys
-  zmodload zsh/terminfo
-  bindkey "$terminfo[kcuu1]" history-substring-search-up
-  bindkey "$terminfo[kcud1]" history-substring-search-down
-
-  # bind P and N for EMACS mode
-  bindkey -M emacs '^P' history-substring-search-up
-  bindkey -M emacs '^N' history-substring-search-down
-
-  # bind k and j for VI mode
-  bindkey -M vicmd 'k' history-substring-search-up
-  bindkey -M vicmd 'j' history-substring-search-down
-fi
-
-# antigen bundle tarruda/zsh-autosuggestions
-# zle-line-init() {
-#     zle autosuggest-start
-# }
-# zle -N zle-line-init
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 # ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -89,26 +71,54 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 # ZSH_HIGHLIGHT_STYLES[assign]=none
 
+antigen bundle zsh-users/zsh-history-substring-search
+if is_osx; then
+  # zsh-history-substring-search
+  # bind UP and DOWN arrow keys
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+elif is_linux; then
+  # bind UP and DOWN arrow keys
+  zmodload zsh/terminfo
+  bindkey "$terminfo[kcuu1]" history-substring-search-up
+  bindkey "$terminfo[kcud1]" history-substring-search-down
+
+  # bind P and N for EMACS mode
+  bindkey -M emacs '^P' history-substring-search-up
+  bindkey -M emacs '^N' history-substring-search-down
+
+  # bind k and j for VI mode
+  bindkey -M vicmd 'k' history-substring-search-up
+  bindkey -M vicmd 'j' history-substring-search-down
+fi
+
+antigen bundle tarruda/zsh-autosuggestions
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+
 command_exists () {
     type "$1" &> /dev/null;
 }
 
 antigen bundles << EOBUNDLES
-phing
-composer
-pip
-vagrant
-git
-git-extras
-rvm
-node
-npm
-nvm
 autojump
 brew
 bundler
 cabal
+composer
 gem
+git
+git-extras
+# last-working-dir
+node
+npm
+nvm
+phing
+pip
+rvm
+vagrant
 EOBUNDLES
 
 antigen apply
@@ -180,7 +190,6 @@ bindkey -M viins '^H' backward-delete-char
 KEYTIMEOUT=1
 
 source /usr/local/rvm/scripts/rvm
-export _JAVA_OPTIONS="-Xmx4096m -Xms1024m"
 
 # http://vim.wikia.com/wiki/256_colors_in_vim
 if [ "$TERM" = "xterm" ] ; then
@@ -248,11 +257,6 @@ if [ -z "$SCREEN_COLORS" ] ; then
     esac
     SCREEN_COLORS=`tput colors`
 fi
-
-# If the tmux scripts have been installed, alias them
-# if [[ -x "`eval echo ~/.tmux-scripts/switch-create-attach.sh`" ]]; then
-#     alias 'tmux-switch=~/.tmux-scripts/switch-create-attach.sh'
-# fi
 
 alias tmux='tmux -2'
 
