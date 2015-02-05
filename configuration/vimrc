@@ -107,6 +107,7 @@ filetype off
 " NeoBundle {{{
     " Syntax
     NeoBundle 'chriskempson/base16-vim'
+    NeoBundle 'itchyny/landscape.vim'
 
     " Visual
     NeoBundle 'jaxbot/semantic-highlight.vim'
