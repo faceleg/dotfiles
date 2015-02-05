@@ -31,7 +31,7 @@ EOBUNDLES
 # antigen theme smt
 antigen bundle sindresorhus/pure
 antigen-bundle arialdomartini/oh-my-git
-antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+antigen theme arialdomartini/oh-my-git-themes arialdo-pathinline
 
 antigen bundle chriskempson/base16-shell base16-colors.dark.sh
 
