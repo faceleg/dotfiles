@@ -441,7 +441,7 @@ filetype off
 
     " External programs
     NeoBundle 'vim-scripts/TwitVim'
-    NeoBundle 'danielmiessler/VimBlog'
+    NeoBundle 'bitbucket:faceleg/vimrepress'
 
     " Features
     NeoBundleLazyFor 'calebsmith/vim-lambdify', 'filetypes', ['ruby', 'javascript', 'scheme', 'erlang', 'python']
