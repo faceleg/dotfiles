@@ -92,11 +92,11 @@ elif is_linux; then
   bindkey -M vicmd 'j' history-substring-search-down
 fi
 
-antigen bundle tarruda/zsh-autosuggestions
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
+# antigen bundle tarruda/zsh-autosuggestions
+# zle-line-init() {
+#     zle autosuggest-start
+# }
+# zle -N zle-line-init
 
 command_exists () {
     type "$1" &> /dev/null;
