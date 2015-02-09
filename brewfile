@@ -1,0 +1,11 @@
+install wget
+install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
+install macvim --with-cscope --with-lua --override-system-vim
+install openssl
+
+install caskroom/cask/brew-cask
+
+cask install alfred
+cask install google-chrome
+cask install iterm2
+
