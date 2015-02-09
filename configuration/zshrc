@@ -178,6 +178,7 @@ setopt auto_cd
 
 if  is_osx; then
   export PATH=${PATH}:/Users/faceleg/Work/SDK/adt-bundle/sdk/platform-tools:/Users/faceleg/Work/SDK/adt-bundle/sdk/tools
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 fi
 
 # Vi mode
