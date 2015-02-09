@@ -193,7 +193,9 @@ bindkey -M viins '^H' backward-delete-char
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-source /usr/local/rvm/scripts/rvm
+if command_exists 'rvm'; then
+  source /usr/local/rvm/scripts/rvm
+fi
 
 # http://vim.wikia.com/wiki/256_colors_in_vim
 if [ "$TERM" = "xterm" ] ; then

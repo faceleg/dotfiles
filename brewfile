@@ -1,11 +1,44 @@
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# brew doctor
+
 install wget
-install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
 install macvim --with-cscope --with-lua --override-system-vim
 install openssl
+install node
+install nvm
 
 install caskroom/cask/brew-cask
 
+# Programming
+cask install iterm2
+cask install git
+cask install smartgit
+
+cask install libreoffice
+cask install the-unarchiver
 cask install alfred
 cask install google-chrome
-cask install iterm2
+cask install dropbox
+cask install transmission
+cask install vlc
+cask install owncloud
+cask install evernote
+cask install skitch
+cask install grandperspective
+cask install ifunbox
+cask install appzapper
+cask install 1password
 
+# Games
+brew cask install steam
+
+# Quicklook extension
+cask install qlcolorcode
+cask install qlstephen
+cask install qlmarkdown
+cask install quicklook-json
+cask install qlprettypatch
+cask install quicklook-csv
+cask install betterzipql
+cask install webpquicklook
+cask install suspicious-package
