@@ -4,10 +4,11 @@ CP="/bin/cp -vfr"
 
 printf "\nInstalling/Updating Antigen\n"
 ANTIGEN="`eval echo ~/.antigen/`"
-if [ -d $ANTIGEN ]; then
+if [ -d "$ANTIGEN/.git" ]; then
     cd $ANTIGEN
     git pull
 else
+    rm -rf $ANTIGEN
     git clone https://github.com/zsh-users/antigen.git $ANTIGEN
 fi
 

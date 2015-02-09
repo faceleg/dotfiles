@@ -1,3 +1,15 @@
+command_exists () {
+  type "$1" &> /dev/null;
+}
+
+is_linux () {
+    [[ $('uname') == 'Linux' ]];
+}
+
+is_osx () {
+    [[ $('uname') == 'Darwin' ]]
+}
+
 DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
@@ -7,10 +19,24 @@ source "$HOME/.antigen/antigen.zsh"
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
-
-# Guess what to install when running an unknown command.
 command-not-found
 colored-man
+autojump
+brew
+bundler
+cabal
+composer
+gem
+git
+git-extras
+# last-working-dir
+node
+npm
+nvm
+phing
+pip
+rvm
+vagrant
 
 zsh-users/zsh-completions
 unixorn/autoupdate-antigen.zshplugin
@@ -24,57 +50,45 @@ supercrabtree/k
 ascii-soup/zsh-url-highlighter
 EOBUNDLES
 
-# Theme
-# antigen theme steeef
-# antigen theme dstufft
-# antigen theme jonathan
-# antigen theme smt
-# antigen bundle sindresorhus/pure
-antigen-bundle arialdomartini/oh-my-git
-antigen theme arialdomartini/oh-my-git-themes arialdo-pathinline
-# antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
-
-antigen bundle chriskempson/base16-shell base16-colors.dark.sh
-
-is_linux () {
-    [[ $('uname') == 'Linux' ]];
-}
-
-is_osx () {
-    [[ $('uname') == 'Darwin' ]]
-}
-
 if is_osx; then
+  antigen-bundle chriskempson/base16-iterm2
   antigen bundle osx
 fi
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+# Theme
+antigen-bundle arialdomartini/oh-my-git
+antigen theme arialdomartini/oh-my-git-themes arialdo-pathinline
 
-# # Override highlighter colors
-# ZSH_HIGHLIGHT_STYLES[default]=none
-# ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
-# ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
-# ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
-# ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-# ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
-# ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
-# ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
-# ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
-# ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=green
-# ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=green
-# ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-# ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
-# ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
-# ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
-# ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
-# ZSH_HIGHLIGHT_STYLES[assign]=none
+antigen bundle chriskempson/base16-shell base16-colors.dark.sh
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
+# Override highlighter colors
+ZSH_HIGHLIGHT_STYLES[default]=none
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
+ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
+ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
+ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
+ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=green
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=green
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
+ZSH_HIGHLIGHT_STYLES[assign]=none
 
 antigen bundle zsh-users/zsh-history-substring-search
+
 if is_osx; then
   # zsh-history-substring-search
   # bind UP and DOWN arrow keys
@@ -100,29 +114,6 @@ fi
 #     zle autosuggest-start
 # }
 # zle -N zle-line-init
-
-command_exists () {
-    type "$1" &> /dev/null;
-}
-
-antigen bundles << EOBUNDLES
-autojump
-brew
-bundler
-cabal
-composer
-gem
-git
-git-extras
-# last-working-dir
-node
-npm
-nvm
-phing
-pip
-rvm
-vagrant
-EOBUNDLES
 
 antigen apply
 
@@ -177,8 +168,11 @@ setopt interactivecomments # pound sign in interactive prompt
 setopt auto_cd
 
 if  is_osx; then
-  export PATH=${PATH}:/Users/faceleg/Work/SDK/adt-bundle/sdk/platform-tools:/Users/faceleg/Work/SDK/adt-bundle/sdk/tools
   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+  if command_exists 'ruby'; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew tab homebrew/boneyard
+  fi
 fi
 
 # Vi mode
