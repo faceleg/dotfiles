@@ -1,4 +1,13 @@
 #!/bin/bash
+is_osx () {
+    [[ $('uname') == 'Darwin' ]]
+}
+
+if [ $('uname') != 'Darwin' ]; then
+    echo "Not in OS X!"
+    exit
+fi
+
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 command_exists () {
