@@ -7,6 +7,7 @@ install openssl
 install node
 install nvm
 
+# Cask
 install caskroom/cask/brew-cask
 
 # Programming
