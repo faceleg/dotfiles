@@ -6,6 +6,7 @@ install macvim --with-cscope --with-lua --override-system-vim
 install openssl
 install node
 install nvm
+install hg
 
 # Cask
 install caskroom/cask/brew-cask
