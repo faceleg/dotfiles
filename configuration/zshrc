@@ -55,31 +55,11 @@ if is_osx; then
   antigen bundle osx
 fi
 
-omg_second_line="%~ • "
-omg_is_a_git_repo_symbol=''
-omg_has_untracked_files_symbol=''        #                ?    
-omg_has_adds_symbol=''
-omg_has_deletions_symbol=''
-omg_has_cached_deletions_symbol:=''}
-omg_has_modifications_symbol:=''}
-omg_has_cached_modifications_symbol:=''}
-omg_ready_to_commit_symbol:=''}            #   →
-omg_is_on_a_tag_symbol:=''}                #   
-omg_needs_to_merge_symbol:='ᄉ'}
-omg_detached_symbol:=''}
-omg_can_fast_forward_symbol:=''}
-omg_has_diverged_symbol:=''}               #   
-omg_not_tracked_branch_symbol:=''}
-omg_rebase_tracking_branch_symbol:=''}     #   
-omg_merge_tracking_branch_symbol:=''}      #  
-omg_should_push_symbol:=''}                #    
-omg_has_stashes_symbol:=''}
-omg_has_action_in_progress_symbol:=''}     #                  
-
 # Theme
-antigen-bundle arialdomartini/oh-my-git
+# antigen-bundle arialdomartini/oh-my-git
 # antigen theme arialdomartini/oh-my-git-themes arialdo-pathinline
-antigen theme arialdomartini/oh-my-git-themes arialdo-granzestyle
+# antigen theme arialdomartini/oh-my-git-themes arialdo-granzestyle
+antigen bundle sindresorhus/pure
 
 antigen bundle chriskempson/base16-shell base16-colors.dark.sh
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -189,11 +169,11 @@ setopt interactivecomments # pound sign in interactive prompt
 
 setopt auto_cd
 
-if  is_osx; then
+if is_osx; then
   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-  if command_exists 'ruby'; then
+  if [[ ! -f '/usr/local/bin/brew' ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew tab homebrew/boneyard
+    brew tap homebrew/boneyard
   fi
 fi
 

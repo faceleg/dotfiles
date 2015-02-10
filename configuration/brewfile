@@ -30,6 +30,7 @@ cask install grandperspective
 # cask install ifunbox
 cask install appzapper
 cask install 1password
+cask install totalfinder
 
 # Games
 brew cask install steam
