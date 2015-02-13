@@ -29,13 +29,14 @@ cask install owncloud
 # cask install evernote
 cask install skitch
 cask install grandperspective
-# cask install ifunbox
+cask install opera
+cask install ifunbox
 cask install appzapper
 cask install 1password
 cask install totalfinder
 
 # Games
-brew cask install steam
+cask install steam
 
 # Quicklook extension
 cask install qlcolorcode
