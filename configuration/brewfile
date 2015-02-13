@@ -15,6 +15,7 @@ install caskroom/cask/brew-cask
 cask install iterm2
 cask install git
 cask install smartgit
+cask install transmit
 
 cask install istat-menus
 cask install libreoffice
@@ -26,7 +27,7 @@ cask install transmission
 cask install vlc
 cask install owncloud
 # cask install evernote
-# cask install skitch
+cask install skitch
 cask install grandperspective
 # cask install ifunbox
 cask install appzapper
