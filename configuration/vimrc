@@ -190,8 +190,8 @@ filetype off
       autocmd FileType javascript noremap <buffer>  ,bj :call JsBeautify()<cr>
       autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
       autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
-    " NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['html', 'xhtml', 'java', 'python', 'objective-c', 'javascript', 'json', 'css', 'scss', 'xml', 'ruby']
-    "   noremap ,f :Autoformat<CR><CR>
+    NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python']
+      autocmd FileType ruby noremap <buffer> ,br :Autoformat<cr><cr>
     NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
       let g:jsdoc_allow_input_prompt = 1
       let g:jsdoc_input_description = 1
@@ -202,16 +202,16 @@ filetype off
       let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
       nnoremap <space>j :JsDoc<cr>
-    " NeoBundleLazyFor 'facebook/vim-flow', 'filetypes', 'javascript', { 'build': {
-    "       \     'mac': 'npm install -g flow-bin',
-    "       \     'unix': 'npm install -g flow-bin'
-    "       \ }}
-    "   let g:flow#enable = 0
-    "   let g:flow#autoclose = 1
+    NeoBundleLazyFor 'facebook/vim-flow', 'filetypes', 'javascript', { 'build': {
+          \     'mac': 'npm install -g flow-bin',
+          \     'unix': 'npm install -g flow-bin'
+          \ }}
+      let g:flow#enable = 0
+      let g:flow#autoclose = 1
     NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
     NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
-    NeoBundleLazyFor 'othree/javascript-libraries-syntax.vim', 'filetypes', 'javascript'
-      let g:used_javascript_libs = 'underscore,angularjs,jquery'
+    " NeoBundleLazyFor 'othree/javascript-libraries-syntax.vim', 'filetypes', 'javascript'
+    "   let g:used_javascript_libs = 'underscore,angularjs,jquery'
     NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
           \     'mac': 'npm install',
           \     'unix': 'npm install'
@@ -695,7 +695,7 @@ filetype off
       let g:choosewin_blink_on_land      = 1 " dont' blink at land
       let g:choosewin_statusline_replace = 0 " don't replace statusline
       let g:choosewin_tabline_replace    = 0 " don't replace tabline
-    NeoBundleLazyFor 'scrooloose/nerdtree', 'mappings', ['<space>f', '<space>n']
+    " NeoBundleLazyFor 'scrooloose/nerdtree', 'mappings', ['<space>f', '<space>n']
     NeoBundle 'scrooloose/nerdtree'
       nmap <space>f :NERDTreeToggle<CR>
       nmap <space>n :NERDTreeFind<CR>
