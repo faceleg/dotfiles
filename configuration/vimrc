@@ -210,8 +210,6 @@ filetype off
       let g:flow#autoclose = 1
     NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
     NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
-    " NeoBundleLazyFor 'othree/javascript-libraries-syntax.vim', 'filetypes', 'javascript'
-    "   let g:used_javascript_libs = 'underscore,angularjs,jquery'
     NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
           \     'mac': 'npm install',
           \     'unix': 'npm install'
@@ -453,7 +451,6 @@ filetype off
           \ }
     NeoBundle 'tpope/vim-fugitive'
     NeoBundleLazyFor 'rhysd/committia.vim', { 'commands': 'Gcommit' }
-    " NeoBundle 'tpope/vim-sleuth'
     NeoBundle 'svermeulen/vim-easyclip'
       " Manually map yanks to avoid conflicts with tpope/unimpaired
       let g:EasyClipUseYankDefaults = 0
@@ -695,7 +692,6 @@ filetype off
       let g:choosewin_blink_on_land      = 1 " dont' blink at land
       let g:choosewin_statusline_replace = 0 " don't replace statusline
       let g:choosewin_tabline_replace    = 0 " don't replace tabline
-    " NeoBundleLazyFor 'scrooloose/nerdtree', 'mappings', ['<space>f', '<space>n']
     NeoBundle 'scrooloose/nerdtree'
       nmap <space>f :NERDTreeToggle<CR>
       nmap <space>n :NERDTreeFind<CR>
@@ -713,9 +709,6 @@ filetype off
         let g:delimitMate_expand_cr = 0
         let g:delimitMate_jump_expansion = 0
     "}}}
-    " NeoBundleLazyFor 'Valloric/MatchTagAlways', 'filetypes', ['html', 'xml', 'xhtml']
-    "   let g:mta_use_matchparen_group = 1
-    "   let g:mta_set_default_matchtag_color = 1
     NeoBundleLazy 'tpope/vim-dispatch'
 
     function! SourceEclim() abort
@@ -773,8 +766,6 @@ filetype off
   let html_no_pre = 1
   let html_number_lines = 0
 
-
-  " set synmaxcol=250
   set ttyfast
   set ttyscroll=3
   set lazyredraw
