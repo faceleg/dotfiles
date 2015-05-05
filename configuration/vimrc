@@ -696,6 +696,7 @@ filetype off
       let g:choosewin_statusline_replace = 0 " don't replace statusline
       let g:choosewin_tabline_replace    = 0 " don't replace tabline
     NeoBundleLazyFor 'scrooloose/nerdtree', 'mappings', ['<space>f', '<space>n']
+    NeoBundle 'scrooloose/nerdtree'
       nmap <space>f :NERDTreeToggle<CR>
       nmap <space>n :NERDTreeFind<CR>
       autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
