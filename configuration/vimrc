@@ -126,19 +126,9 @@ filetype off
       let g:conoline_use_colorscheme_default_insert=0
     "}}}
     NeoBundle 'ivyl/vim-bling'
-    " NeoBundleLazyFor 'qstrahl/vim-matchmaker', 'mappings', '<space>m'
-    "   let g:matchmaker_enable_startup = 0
-    "   nnoremap <space>m :MatchmakerToggle<cr>
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    " NeoBundleLazyFor 'Yggdroot/indentLine', 'commands', 'IndentLinesToggle'
-    "   " vertical line indentation
-    "   let g:indentLine_color_term = 239
-    "   let g:indentLine_color_gui = '#09AA08'
-    "   let g:indentLine_char = '│'
-
-    "   nnoremap <space>i :IndentLinesToggle<cr>
 
     " Text Objects
     NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
@@ -193,14 +183,7 @@ filetype off
 
     " Misc languages
     NeoBundle 'sheerun/vim-polyglot'
-    " NeoBundle 'nkzawa/js-inspector.vim', { 'filetypes': ['javascript'] }
-    "   call jsinspector#keymaps();
     NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
-    " NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', 'coffee'
-    "   autocmd BufRead,BufNewFile *.coffee set filetype=coffee
-    " NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', 'velocity'
-    " NeoBundleLazyFor 'elzr/vim-json', 'filetypes', 'json'
-    "   let g:vim_json_syntax_conceal = 0
 
     " JavaScript
     NeoBundleLazyFor 'maksimr/vim-jsbeautify', 'filetypes', 'javascript'
@@ -577,9 +560,7 @@ filetype off
 
         " npm install -g jshint
         " let g:syntastic_javascript_checkers=['jshint', 'flow']
-        " let g:syntastic_javascript_flow_exec='/usr/local/bin/flotate'
         let g:syntastic_javascript_checkers=['jshint']
-        " autocmd BufEnter *.js let g:syntastic_javascript_flow_quiet_messages = { '!file:p': '\\V' . escape(expand('%:p'), '\\') }
 
         let g:syntastic_php_checkers=['php']
 
