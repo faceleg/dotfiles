@@ -16,8 +16,8 @@ set nocompatible
 filetype off
 
 " Folding {{{
-  set foldenable
   set foldmethod=syntax
+  set foldenable
   set foldlevel=1
 " }}}
 
@@ -107,10 +107,10 @@ filetype off
 " NeoBundle {{{
     " Syntax
     NeoBundle 'chriskempson/base16-vim'
-    NeoBundle 'itchyny/landscape.vim'
+    " NeoBundle 'itchyny/landscape.vim'
 
     " Visual
-    NeoBundle 'jaxbot/semantic-highlight.vim'
+    NeoBundleLazyFor 'jaxbot/semantic-highlight.vim', 'filetypes', ['javascript', 'java', 'ruby', 'php', 'vim', 'coffee']
       let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
       let g:semanticEnableFileTypes = {
             \ 'javascript': 'js',
@@ -118,48 +118,25 @@ filetype off
             \ 'vim': 'vim',
             \ 'php': 'php',
             \ }
-      let g:semanticUseCache = 1
-      let g:semanticPersistCache = 1
+      " let g:semanticUseCache = 1
+      " let g:semanticPersistCache = 1
     NeoBundle 'miyakogi/conoline.vim', "{{{
       let g:conoline_auto_enable = 1
       let g:conoline_use_colorscheme_default_normal=0
       let g:conoline_use_colorscheme_default_insert=0
     "}}}
     NeoBundle 'ivyl/vim-bling'
-    NeoBundleLazyFor 'qstrahl/vim-matchmaker', 'mappings', '<space>m'
-      let g:matchmaker_enable_startup = 0
-      nnoremap <space>m :MatchmakerToggle<cr>
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
-    NeoBundleLazyFor 'Yggdroot/indentLine', 'commands', 'IndentLinesToggle'
-      " vertical line indentation
-      let g:indentLine_color_term = 239
-      let g:indentLine_color_gui = '#09AA08'
-      let g:indentLine_char = '│'
-
-      nnoremap <space>i :IndentLinesToggle<cr>
 
     " Text Objects
     NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
-    " NeoBundle 'vim-scripts/camelcasemotion', { 'depends': 'kana/vim-textobj-user' }
+    NeoBundle 'vim-scripts/camelcasemotion', { 'depends': 'kana/vim-textobj-user' }
     NeoBundle 'bkad/CamelCaseMotion', { 'depends': 'kana/vim-textobj-user' }
-      " map <silent> w <Plug>CaseMotion_w
-      " map <silent> b <Plug>CamelCaseMotion_b
-      " map <silent> e <Plug>CamelCaseMotion_e
-      " sunmap w
-      " sunmap b
-      " sunmap e
-
-      " omap <silent> iw <Plug>CamelCaseMotion_iw
-      " xmap <silent> iw <Plug>CamelCaseMotion_iw
-      " omap <silent> ib <Plug>CamelCaseMotion_ib
-      " xmap <silent> ib <Plug>CamelCaseMotion_ib
-      " omap <silent> ie <Plug>CamelCaseMotion_ie
-      " xmap <silent> ie <Plug>CamelCaseMotion_ie
       map <S-W> <Plug>CamelCaseMotion_w
       map <S-B> <Plug>CamelCaseMotion_b
       map <S-E> <Plug>CamelCaseMotion_e
@@ -205,18 +182,16 @@ filetype off
           \ }}
 
     " Misc languages
-    " NeoBundle 'sheerun/vim-polyglot'
-    NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', 'coffee'
-      autocmd BufRead,BufNewFile *.coffee set filetype=coffee
-    NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', 'velocity'
-    NeoBundleLazyFor 'elzr/vim-json', 'filetypes', 'json'
-      let g:vim_json_syntax_conceal = 0
+    NeoBundle 'sheerun/vim-polyglot'
+    NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
 
     " JavaScript
     NeoBundleLazyFor 'maksimr/vim-jsbeautify', 'filetypes', 'javascript'
       autocmd FileType javascript noremap <buffer>  ,bj :call JsBeautify()<cr>
       autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
       autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
+    NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python']
+      autocmd FileType ruby noremap <buffer> ,br :Autoformat<cr><cr>
     NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
       let g:jsdoc_allow_input_prompt = 1
       let g:jsdoc_input_description = 1
@@ -227,16 +202,16 @@ filetype off
       let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
       nnoremap <space>j :JsDoc<cr>
-    " NeoBundleLazyFor 'facebook/vim-flow', 'filetypes', 'javascript', { 'build': {
-    "       \     'mac': 'npm install -g flow-bin',
-    "       \     'unix': 'npm install -g flow-bin'
-    "       \ }}
-    "   let g:flow#enable = 0
-    "   let g:flow#autoclose = 1
+    NeoBundleLazyFor 'facebook/vim-flow', 'filetypes', 'javascript', { 'build': {
+          \     'mac': 'npm install -g flow-bin',
+          \     'unix': 'npm install -g flow-bin'
+          \ }}
+      let g:flow#enable = 0
+      let g:flow#autoclose = 1
     NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
     NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
-    NeoBundleLazyFor 'othree/javascript-libraries-syntax.vim', 'filetypes', 'javascript'
-      let g:used_javascript_libs = 'underscore,angularjs,jquery'
+    " NeoBundleLazyFor 'othree/javascript-libraries-syntax.vim', 'filetypes', 'javascript'
+    "   let g:used_javascript_libs = 'underscore,angularjs,jquery'
     NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
           \     'mac': 'npm install',
           \     'unix': 'npm install'
@@ -441,7 +416,7 @@ filetype off
 
     " External programs
     NeoBundle 'vim-scripts/TwitVim'
-    NeoBundle 'bitbucket:faceleg/vimrepress'
+    " NeoBundle 'bitbucket:faceleg/vimrepress'
 
     " Features
     NeoBundleLazyFor 'calebsmith/vim-lambdify', 'filetypes', ['ruby', 'javascript', 'scheme', 'erlang', 'python']
@@ -478,9 +453,18 @@ filetype off
           \ }
     NeoBundle 'tpope/vim-fugitive'
     NeoBundleLazyFor 'rhysd/committia.vim', { 'commands': 'Gcommit' }
-    NeoBundle 'tpope/vim-sleuth'
+    " NeoBundle 'tpope/vim-sleuth'
     NeoBundle 'svermeulen/vim-easyclip'
+      " Manually map yanks to avoid conflicts with tpope/unimpaired
+      let g:EasyClipUseYankDefaults = 0
+      nmap ;y <Plug>EasyClipRotateYanksForward
+      nmap ,y <Plug>EasyClipRotateYanksBackward
+      nmap y <Plug>YankPreserveCursorPosition
+      nmap Y <Plug>:EasyClipBeforeYank<cr>y$
+      nmap yy <Plug>YankLinePreserveCursorPosition
+      xmap y <Plug>VisualModeYank
       imap <c-v> <plug>EasyClipInsertModePaste
+
       nnoremap <space>y :Yanks<cr>
 
       " remap add mark
@@ -491,15 +475,6 @@ filetype off
       let g:EasyClipShowYanksWidth = 200
       let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
       let g:EasyClipShareYanks = 1
-
-      " Manually map yanks to avoid conflicts with tpope/unimpaired
-      let g:EasyClipUseYankDefaults = 0
-      nmap ;y <Plug>EasyClipRotateYanksForward
-      nmap ,y <Plug>EasyClipRotateYanksBackward
-      nmap y <Plug>YankPreserveCursorPosition
-      nmap Y <Plug>:EasyClipBeforeYank<cr>y$
-      nmap yy <Plug>YankLinePreserveCursorPosition
-      xmap y <Plug>VisualModeYank
     if v:version >= 702
       NeoBundle 'szw/vim-ctrlspace'
         hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
@@ -585,9 +560,7 @@ filetype off
 
         " npm install -g jshint
         " let g:syntastic_javascript_checkers=['jshint', 'flow']
-        " let g:syntastic_javascript_flow_exec='/usr/local/bin/flotate'
         let g:syntastic_javascript_checkers=['jshint']
-        " autocmd BufEnter *.js let g:syntastic_javascript_flow_quiet_messages = { '!file:p': '\\V' . escape(expand('%:p'), '\\') }
 
         let g:syntastic_php_checkers=['php']
 
@@ -722,7 +695,8 @@ filetype off
       let g:choosewin_blink_on_land      = 1 " dont' blink at land
       let g:choosewin_statusline_replace = 0 " don't replace statusline
       let g:choosewin_tabline_replace    = 0 " don't replace tabline
-    NeoBundleLazy 'scrooloose/nerdtree', { 'augroup': 'NERDTree' }
+    " NeoBundleLazyFor 'scrooloose/nerdtree', 'mappings', ['<space>f', '<space>n']
+    NeoBundle 'scrooloose/nerdtree'
       nmap <space>f :NERDTreeToggle<CR>
       nmap <space>n :NERDTreeFind<CR>
       autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -739,46 +713,49 @@ filetype off
         let g:delimitMate_expand_cr = 0
         let g:delimitMate_jump_expansion = 0
     "}}}
-    NeoBundleLazyFor 'Valloric/MatchTagAlways', 'filetypes', ['html', 'xml', 'xhtml']
-      let g:mta_use_matchparen_group = 1
-      let g:mta_set_default_matchtag_color = 1
+    " NeoBundleLazyFor 'Valloric/MatchTagAlways', 'filetypes', ['html', 'xml', 'xhtml']
+    "   let g:mta_use_matchparen_group = 1
+    "   let g:mta_set_default_matchtag_color = 1
     NeoBundleLazy 'tpope/vim-dispatch'
-    " NeoBundle 'szw/vim-tags', { 'depends': 'vim-dispatch' }
 
-    " if isdirectory(expand('/opt/eclipse'))
-      NeoBundleLazyFor 'ervandew/eclim', 'filetypes', 'java', {
-        \ 'build': {
-        \   'windows': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '')
-        \              . ' -Dvim.files=' . escape(expand('~/.vim/bundle'), ''),
-        \   'unix': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '')
-        \           . ' -Dvim.files=' . escape(expand('~/.vim/bundle/eclim'), '')
-        \   }
-        \ }
+    function! SourceEclim() abort
+      if !isdirectory('/opt/eclipse')
+        echo 'Eclipse not found at /opt/eclipse'
+        return
+      endif
 
-        autocmd FileType java NeoBundleSource eclim
-        let g:EclimJavascriptValidate = 0
-        let g:EclimHtmlValidate = 0
-        let g:EclimCompletionMethod = 'omnifunc'
+      NeoBundleLazy 'ervandew/eclim', {
+            \ 'build': {
+            \   'windows': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '') . ' -Dvim.files=' . escape(expand('~/.vim/bundle'), ''),
+            \   'unix': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '') . ' -Dvim.files=' . escape(expand('~/.vim/bundle/eclim'), '')
+            \   }
+            \ }
 
-        autocmd FileType java call SetJavaOptions()
+      autocmd FileType java NeoBundleSource eclim
+      let g:EclimJavascriptValidate = 0
+      let g:EclimHtmlValidate = 0
+      let g:EclimCompletionMethod = 'omnifunc'
 
-        function! SetJavaOptions()
+      autocmd FileType java call SetJavaOptions()
 
-          " Import the class under the cursor with <leader>i (:h mapleader):
-          map <buffer> ,i :JavaImport<CR>
-          map ,io :JavaImportOrganize<CR>
-          map <buffer> ,fi :JavaImportOrganize<CR>
-          map <buffer> ,h :JavaCallHeirarchy<CR>
-          map <buffer> ,c :JavaCorrect<CR>
-          map <buffer> ,dc :JavaDocComment<CR>
-          map <buffer> ,ju :JUnit<CR>
+      function! SetJavaOptions()
 
-          map <buffer> ,d :JavaDocSearch -x declarations<CR>
+        " Import the class under the cursor with <leader>i (:h mapleader):
+        map <buffer> ,i :JavaImport<CR>
+        map ,io :JavaImportOrganize<CR>
+        map <buffer> ,fi :JavaImportOrganize<CR>
+        map <buffer> ,h :JavaCallHeirarchy<CR>
+        map <buffer> ,c :JavaCorrect<CR>
+        map <buffer> ,dc :JavaDocComment<CR>
+        map <buffer> ,ju :JUnit<CR>
 
-          " Perform a context sensitive search of the element under the cursor with <enter>.
-          map <buffer> <CR> :JavaSearchContext<CR>
-        endfunction
-    " endif
+        map <buffer> ,d :JavaDocSearch -x declarations<CR>
+
+        " Perform a context sensitive search of the element under the cursor with <enter>.
+        map <buffer> <CR> :JavaSearchContext<CR>
+      endfunction
+    endfunction
+    command! SourceEclim call SourceEclim()
 
     NeoBundleCheck
 " }}}
@@ -797,7 +774,7 @@ filetype off
   let html_number_lines = 0
 
 
-  set synmaxcol=250
+  " set synmaxcol=250
   set ttyfast
   set ttyscroll=3
   set lazyredraw
