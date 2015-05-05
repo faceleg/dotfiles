@@ -767,7 +767,6 @@ filetype off
   let html_number_lines = 0
 
   set ttyfast
-  set ttyscroll=3
   set lazyredraw
 " }}}
 

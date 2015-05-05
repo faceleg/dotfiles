@@ -1,4 +1,3 @@
-# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # brew doctor
 
 install wget
@@ -7,13 +6,13 @@ install openssl
 install node
 install nvm
 install hg
+install git
 
 # Cask
 install caskroom/cask/brew-cask
 
 # Programming
 cask install iterm2
-cask install git
 cask install smartgit
 cask install transmit
 
@@ -28,10 +27,11 @@ cask install vlc
 cask install owncloud
 # cask install evernote
 cask install skitch
+cask install max
 cask install grandperspective
 cask install opera
 cask install ifunbox
-cask install appzapper
+cask install apptrap
 cask install 1password
 cask install totalfinder
 
