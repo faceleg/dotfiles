@@ -773,10 +773,7 @@ filetype off
   let html_no_pre = 1
   let html_number_lines = 0
 
-
-  " set synmaxcol=250
   set ttyfast
-  set ttyscroll=3
   set lazyredraw
 " }}}
 
