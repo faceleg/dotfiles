@@ -227,12 +227,14 @@ filetype off
 
     " Completion
     if has('lua')
-      NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 } }
+        NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 }, 'depends': 'Shougo/echodoc' }
         " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
         " brew install macvim --with-cscope --with-lua --override-system-vim
         " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
-        set completeopt-=preview
-        " set completeopt+=longest,menuone,preview
+        " set completeopt-=preview
+        set completeopt+=longest,menuone,preview
+        set cmdheight=2
+        " set completeopt+=menuone
 
         let g:acp_enableAtStartup = 0
         let g:neocomplete#enable_at_startup = 1
@@ -243,13 +245,15 @@ filetype off
         let g:neocomplete#sources#syntax#min_keyword_length = 3
         let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
         let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
+        let g:echodoc_enable_at_startup = 1
 
-        if !exists('g:neocomplete#force_omni_input_patterns')
-          let g:neocomplete#force_omni_input_patterns = {}
-        endif
 
-        let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
-        let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
+        " if !exists('g:neocomplete#force_omni_input_patterns')
+        "   let g:neocomplete#force_omni_input_patterns = {}
+        " endif
+
+        " let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
+        " let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
         " Define dictionary.
         let g:neocomplete#sources#dictionary#dictionaries = {
@@ -278,6 +282,7 @@ filetype off
         autocmd FileType php set omnifunc=phpcomplete#CompletePHP
         autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
         autocmd FileType javascript setlocal omnifunc=tern#Complete
+        autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
         autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
         autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
         autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
