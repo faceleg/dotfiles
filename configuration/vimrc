@@ -188,6 +188,14 @@ filetype off
     NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
 
     " JavaScript
+    NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['javascript', 'typescript'], {
+          \ 'build': {
+          \     'unix': 'npm install -g typescript',
+          \     'mac': 'npm install -g typecript'
+          \ }}
+        autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
+    NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
+
     NeoBundleLazyFor 'maksimr/vim-jsbeautify', 'filetypes', 'javascript'
       autocmd FileType javascript noremap <buffer>  ,bj :call JsBeautify()<cr>
       autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
