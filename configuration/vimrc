@@ -433,6 +433,8 @@ filetype off
 
     " Features
     NeoBundleLazyFor 'calebsmith/vim-lambdify', 'filetypes', ['ruby', 'javascript', 'scheme', 'erlang', 'python']
+    NeoBundle 'kana/vim-smartinput'
+    " NeoBundle 'jiangmiao/auto-pairs'
     NeoBundle 'gorkunov/smartpairs.vim'
      let g:smartpairs_nextpairs_key_i = 'K'
 
