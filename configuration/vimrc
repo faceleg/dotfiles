@@ -186,8 +186,8 @@ filetype off
     " Misc languages
     NeoBundle 'sheerun/vim-polyglot'
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
-    NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
       au BufNewFile,BufRead *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
+    NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
 
     " JavaScript
     NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['javascript', 'typescript'], {
@@ -233,10 +233,9 @@ filetype off
         " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
         " brew install macvim --with-cscope --with-lua --override-system-vim
         " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
-        " set completeopt-=preview
         set completeopt+=longest,menuone,preview
-        set cmdheight=2
-        " set completeopt+=menuone
+        set completeopt-=preview
+        " set cmdheight=2
 
         let g:acp_enableAtStartup = 0
         let g:neocomplete#enable_at_startup = 1
@@ -872,6 +871,9 @@ filetype off
 
   " Select all
   nmap <space>a GVgg<CR>
+
+  " Close quickfix/location list http://superuser.com/a/835959/31909
+  noremap <Leader>c :ccl <bar> lcl<CR>
 
   " disable ex mode
   nnoremap Q <nop>
