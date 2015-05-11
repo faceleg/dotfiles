@@ -435,6 +435,7 @@ filetype off
     NeoBundleLazyFor 'calebsmith/vim-lambdify', 'filetypes', ['ruby', 'javascript', 'scheme', 'erlang', 'python']
     NeoBundle 'gorkunov/smartpairs.vim'
      let g:smartpairs_nextpairs_key_i = 'K'
+
     NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
       " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
       vmap <Enter> <Plug>(EasyAlign)
