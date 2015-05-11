@@ -575,6 +575,9 @@ filetype off
         " let g:syntastic_javascript_checkers=['jshint', 'flow']
         let g:syntastic_javascript_checkers=['jshint']
 
+        " npm install -g typescript
+        let g:syntastic_typescript_checkers=['tsc']
+
         let g:syntastic_php_checkers=['php']
 
         " npm install -g csslint
