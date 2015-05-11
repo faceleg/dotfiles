@@ -186,7 +186,7 @@ filetype off
     " Misc languages
     NeoBundle 'sheerun/vim-polyglot'
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
-      au BufNewFile,BufRead *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
+      au BufNewFile,BufRead *.vm set ft=velocity
     NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
 
     " JavaScript
@@ -233,7 +233,7 @@ filetype off
         " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
         " brew install macvim --with-cscope --with-lua --override-system-vim
         " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
-        set completeopt+=longest,menuone,preview
+        " set completeopt+=longest,menuone,preview
         set completeopt-=preview
         " set cmdheight=2
 
@@ -722,6 +722,9 @@ filetype off
       let g:NERDTreeShowLineNumbers=1
       let g:NERDTreeWinSize=50
       let g:NERDTreeChDirMode=0
+    NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+    NeoBundle 'low-ghost/nerdtree-fugitive'
+
     NeoBundle 'tpope/vim-unimpaired'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-repeat'
