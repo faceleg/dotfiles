@@ -761,7 +761,7 @@ filetype off
         map ,io :JavaImportOrganize<CR>
         map <buffer> ,fi :JavaImportOrganize<CR>
         map <buffer> ,h :JavaCallHeirarchy<CR>
-        map <buffer> ,c :JavaCorrect<CR>
+        map <buffer> ,jc :JavaCorrect<CR>
         map <buffer> ,dc :JavaDocComment<CR>
         map <buffer> ,ju :JUnit<CR>
 
