@@ -644,10 +644,15 @@ filetype off
         let g:unite_source_rec_max_cache_files=5000
         let g:unite_prompt='» '
 
-        " Searching - brew install the_silver_searcher
-        let g:unite_source_grep_command='ag'
         let g:unite_source_grep_max_candidates= 200
-        let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
+        if executable('ag')
+            " Searching - brew install the_silver_searcher
+            let g:unite_source_grep_command='ag'
+            let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
+        else
+            let g:unite_source_grep_command='grep'
+            let g:unite_source_grep_default_opts='--color=never --exclude-dir=".git"'
+        endif
         nnoremap <space>/ :<C-u>Unite -buffer-name=search grep:.<cr>
 
         " Custom mappings for the unite buffer
