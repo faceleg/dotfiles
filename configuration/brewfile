@@ -36,6 +36,7 @@ cask install apptrap
 cask install 1password
 cask install totalfinder
 cask install sketch
+cask install github
 
 # Games
 cask install steam
