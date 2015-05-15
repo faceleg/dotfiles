@@ -832,6 +832,10 @@ filetype off
   au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
   au FileType php,phtml,html setl sw=4 sts=4 et
 
+  highlight WarningOverLength ctermfg=11
+  highlight ErrorOverLength ctermfg=09
+  au BufWinEnter * let w:m1=matchadd('WarningOverLength', '\%<121v.\%>115v', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorOverLength', '\%>120v.\+', -1)
   filetype plugin indent on
 " }}}
 
