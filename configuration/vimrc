@@ -1000,10 +1000,6 @@ filetype off
 " vnoremap > >gv
 " }}}
 
-" PHP {{{
-  au BufNewFile,BufRead *.phtml setf phtml
-" }}}
-
 " Pasting {{{
   map <f2> :set invpaste paste?<CR>
   imap <F2> <ESC>:set paste<CR>i<Right>
