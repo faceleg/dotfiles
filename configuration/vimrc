@@ -209,6 +209,7 @@ filetype off
       autocmd FileType ruby noremap <buffer> ,br :Autoformat<cr><cr>
       autocmd FileType javascript noremap <buffer>  ,bj :Autoformat<cr><cr>
       let g:formatprg_js = 'jscs'
+      autocmd BufWritePre,FileWritePre *.js silent! :Autoformat<CR>
     NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
       let g:jsdoc_allow_input_prompt = 1
       let g:jsdoc_input_description = 1
