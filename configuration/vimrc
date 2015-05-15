@@ -199,11 +199,16 @@ filetype off
     NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 
     NeoBundleLazyFor 'maksimr/vim-jsbeautify', 'filetypes', 'javascript'
-      autocmd FileType javascript noremap <buffer>  ,bj :call JsBeautify()<cr>
       autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
       autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
-    NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python']
+    NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python'], {
+          \ 'build': {
+          \     'unix': 'npm install -g jscs',
+          \     'mac': 'npm install -g jscs'
+          \ }}
       autocmd FileType ruby noremap <buffer> ,br :Autoformat<cr><cr>
+      autocmd FileType javascript noremap <buffer>  ,bj :Autoformat<cr><cr>
+      let g:formatprg_js = 'jscs'
     NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
       let g:jsdoc_allow_input_prompt = 1
       let g:jsdoc_input_description = 1
@@ -576,7 +581,7 @@ filetype off
 
         " npm install -g jshint
         " let g:syntastic_javascript_checkers=['jshint', 'flow']
-        let g:syntastic_javascript_checkers=['jshint']
+        let g:syntastic_javascript_checkers=['jscs']
 
         " npm install -g typescript
         let g:syntastic_typescript_checkers=['tsc']
