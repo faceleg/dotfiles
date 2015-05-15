@@ -793,7 +793,6 @@ filetype off
 " Colourscheme {{{
   syntax on
   set background=dark
-  " syntax sync fromstart
 
   let g:base16colorspace=256  " Access colors present in 256 colorspace
   colorscheme base16-colors
