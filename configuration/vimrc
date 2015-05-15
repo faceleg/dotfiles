@@ -1001,7 +1001,7 @@ filetype off
 " }}}
 
 " Pasting {{{
-  map <f2> :set invpaste paste?<CR>
+  map <F2> :set invpaste paste?<CR>
   imap <F2> <ESC>:set paste<CR>i<Right>
 
   set pastetoggle=<f2>
