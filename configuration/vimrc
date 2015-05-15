@@ -119,8 +119,8 @@ filetype off
             \ 'vim': 'vim',
             \ 'php': 'php',
             \ }
-      " let g:semanticUseCache = 1
-      " let g:semanticPersistCache = 1
+      let g:semanticUseCache = 1
+      let g:semanticPersistCache = 1
     NeoBundle 'miyakogi/conoline.vim', "{{{
       let g:conoline_auto_enable = 1
       let g:conoline_use_colorscheme_default_normal=0
