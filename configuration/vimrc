@@ -193,7 +193,7 @@ filetype off
     NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['javascript', 'typescript'], {
           \ 'build': {
           \     'unix': 'npm install -g typescript',
-          \     'mac': 'npm install -g typecript'
+          \     'mac': 'npm install -g typescript'
           \ }}
         autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
     NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
