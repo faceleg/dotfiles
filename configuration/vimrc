@@ -199,9 +199,16 @@ filetype off
     NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 
     NeoBundleLazyFor 'maksimr/vim-jsbeautify', 'filetypes', 'javascript'
-      autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
+      " autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
       autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
-    NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python'], {
+    NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss'], {
+          \ 'build': {
+          \     'unix': 'npm install -g csscomb',
+          \     'mac': 'npm install -g csscomb'
+          \ }}
+      autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
+      autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
+    NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python', 'html'], {
           \ 'build': {
           \     'unix': 'npm install -g jscs',
           \     'mac': 'npm install -g jscs'
@@ -256,12 +263,12 @@ filetype off
         let g:echodoc_enable_at_startup = 1
 
 
-        " if !exists('g:neocomplete#force_omni_input_patterns')
-        "   let g:neocomplete#force_omni_input_patterns = {}
-        " endif
+        if !exists('g:neocomplete#force_omni_input_patterns')
+          let g:neocomplete#force_omni_input_patterns = {}
+        endif
 
         " let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
-        " let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
+        let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
         " Define dictionary.
         let g:neocomplete#sources#dictionary#dictionaries = {
