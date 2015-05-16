@@ -206,8 +206,9 @@ filetype off
           \     'unix': 'npm install -g jscs',
           \     'mac': 'npm install -g jscs'
           \ }}
-      autocmd FileType ruby noremap <buffer> ,br :Autoformat<cr><cr>
-      autocmd FileType javascript noremap <buffer>  ,bj :Autoformat<cr><cr>
+      autocmd FileType ruby noremap <buffer> ,br :Autoformat<CR>
+
+      autocmd FileType javascript noremap <buffer> ,bj :Autoformat<CR>
       let g:formatprg_js = 'jscs'
       autocmd BufWritePre,FileWritePre *.js silent! :Autoformat<CR>
     NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
