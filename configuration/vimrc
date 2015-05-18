@@ -446,7 +446,6 @@ filetype off
     " NeoBundle 'bitbucket:faceleg/vimrepress'
 
     " Features
-    NeoBundleLazyFor 'calebsmith/vim-lambdify', 'filetypes', ['ruby', 'javascript', 'scheme', 'erlang', 'python']
     NeoBundle 'kana/vim-smartinput'
     NeoBundle 'gorkunov/smartpairs.vim'
      let g:smartpairs_nextpairs_key_i = 'K'
