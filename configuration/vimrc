@@ -677,7 +677,7 @@ filetype off
         endfunction
     NeoBundleLazy 'Shougo/unite-outline', { 'augroup': 'Unite outline' }
         nnoremap <space>o :Unite outline<CR>
-    NeoBundleLazy 'sjl/gundo.vim', { 'augroup': 'GundoToggle' }
+    NeoBundleLazyFor 'sjl/gundo.vim', 'mappings', ['F5'], { 'augroup': 'GundoToggle' }
         nnoremap <F5> :GundoToggle<CR>
         let g:gundo_right = 1
         let g:gundo_preview_bottom = 1
