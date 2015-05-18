@@ -68,14 +68,16 @@ if ! zgen saved; then
     # theme
     zgen load chriskempson/base16-shell base16-colors.dark.sh
     # zgen load sindresorhus/pure
-    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
-    BULLETTRAIN_NVM_SHOW=true
+    # BULLETTRAIN_NVM_SHOW=true
+    # zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+    zgen load willghatch/zsh-megaprompt
+    # zgen load nojhan/liquidprompt
 
     # save all to init script
     zgen save
 fi
 
-ZSH_THEME="bullet-train"
+# ZSH_THEME="bullet-train"
 
 zmodload zsh/terminfo
 
