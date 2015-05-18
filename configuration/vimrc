@@ -233,13 +233,7 @@ filetype off
       let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
       nnoremap <space>j :JsDoc<cr>
-    NeoBundleLazyFor 'facebook/vim-flow', 'filetypes', 'javascript', { 'build': {
-          \     'mac': 'npm install -g flow-bin',
-          \     'unix': 'npm install -g flow-bin'
-          \ }}
-      let g:flow#enable = 0
-      let g:flow#autoclose = 1
-    NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
+    " NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
     NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
     NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
           \     'mac': 'npm install',
