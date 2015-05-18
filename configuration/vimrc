@@ -541,7 +541,7 @@ filetype off
         let g:airline_exclude_preview = 1
     " }}}
     NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
-    NeoBundle 'majutsushi/tagbar', { 'depends': 'vim-airline' }
+    NeoBundleLazyFor 'majutsushi/tagbar', 'mappings', ['F8'], { 'depends': 'vim-airline' }
       nmap <F8> :TagbarToggle<CR>
 
     " Error reporting
