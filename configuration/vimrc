@@ -192,13 +192,12 @@ filetype off
           \ }}
 
     " Misc languages
-    NeoBundle 'sheerun/vim-polyglot'
-    NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
       au BufNewFile,BufRead *.vm set ft=velocity
     NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
 
     " JavaScript
+    NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
     NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
           \ 'build': {
           \     'unix': 'npm install -g typescript',
