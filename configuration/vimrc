@@ -130,6 +130,14 @@ filetype off
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
+    NeoBundle 'Konfekt/FastFold'
+      set foldmethod=syntax
+
+      let g:tex_fold_enabled=1
+      let g:vimsyn_folding='af'
+      let g:xml_syntax_folding = 1
+      let g:php_folding = 1
+      let g:perl_fold = 1
 
     " Text Objects
     NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
