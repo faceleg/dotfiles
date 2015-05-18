@@ -52,6 +52,7 @@ if ! zgen saved; then
     zgen load supercrabtree/k
     zgen load unixorn/autoupdate-zgen
     zgen load ascii-soup/zsh-url-highlighter
+    zgen load willghatch/zsh-hooks
 
     zgen load unixorn/git-extra-commands
 
