@@ -206,9 +206,6 @@ filetype off
         autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
     NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 
-    NeoBundleLazyFor 'maksimr/vim-jsbeautify', 'filetypes', 'javascript'
-      " autocmd FileType html noremap <buffer> ,bh :call HtmlBeautify()<cr>
-      autocmd FileType css noremap <buffer> ,bc :call CSSBeautify()<cr>
     NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss'], {
           \ 'build': {
           \     'unix': 'npm install -g csscomb',
