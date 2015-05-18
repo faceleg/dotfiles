@@ -123,7 +123,6 @@ fi
 #   bindkey -M vicmd 'j' history-substring-search-down
 # fi
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin
 export VISUAL=vim
 export GREP_OPTIONS='--color=always'
 
@@ -141,18 +140,18 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
-# autoload -U compinit
+autoload -U compinit
 
-# for func in $^fpath.zwc(N-.r:); autoload -U -w $func
+for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
-# setopt completeinword
-# setopt prompt_subst
+setopt completeinword
+setopt prompt_subst
 
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-# zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
-# autoload select-word-style
-# select-word-style shell
+autoload select-word-style
+select-word-style shell
 
 alias ll='ls -l'
 alias la='ls -a'
@@ -193,15 +192,7 @@ bindkey -M viins '^H' backward-delete-char
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-if command_exists 'rvm'; then
-  source /usr/local/rvm/scripts/rvm
-fi
-
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin:$PATH"
-
-if [ -d "$HOME/.rvm" ]; then
-    export PATH="$HOME/.rvm:$PATH"
-fi
 
 # Install global npm packages locally
 NPM_PACKAGES="${HOME}/.npm-packages"
@@ -210,6 +201,12 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+# RVM fiddling
+if [ -d "$HOME/.rvm" ]; then
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+    export PATH="$PATH:$HOME/.rvm/bin"
+fi
 
 # http://vim.wikia.com/wiki/256_colors_in_vim
 if [ "$TERM" = "xterm" ] ; then
