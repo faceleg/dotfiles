@@ -810,7 +810,7 @@ filetype off
 " }}}
 
 " Custom highlight options {{{
-  highlight LineNr ctermbg=18
+  highlight LineNr ctermbg=0
   highlight SignColumn ctermbg=0
 
   " GitGutter
