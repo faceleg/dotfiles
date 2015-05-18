@@ -14,82 +14,122 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
 
-source "$HOME/.antigen/antigen.zsh"
+# Load zgen
+ZDOTDIR="${HOME}/.zgen"
+ZGEN_DIR="$ZDOTDIR/plugins"
+source "${HOME}/.zgen/zgen.zsh"
 
-antigen use oh-my-zsh
+# Check if there's no init script.
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-antigen bundles <<EOBUNDLES
-command-not-found
-colored-man
-autojump
-brew
-bundler
-cabal
-composer
-gem
-git
-git-extras
-# last-working-dir
-node
-npm
-nvm
-phing
-pip
-rvm
-vagrant
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/colored-man
+    zgen oh-my-zsh plugins/autojump
+    zgen oh-my-zsh plugins/brew
+    zgen oh-my-zsh plugins/bundler
+    zgen oh-my-zsh plugins/cabal
+    zgen oh-my-zsh plugins/composer
+    zgen oh-my-zsh plugins/gem
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/git-extras
+    # zgen oh-my-zsh plugins/# last-working-dir
+    zgen oh-my-zsh plugins/node
+    zgen oh-my-zsh plugins/npm
+    zgen oh-my-zsh plugins/nvm
+    zgen oh-my-zsh plugins/phing
+    zgen oh-my-zsh plugins/pip
+    zgen oh-my-zsh plugins/rvm
+    zgen oh-my-zsh plugins/vagrant
 
-zsh-users/zsh-completions
-unixorn/autoupdate-antigen.zshplugin
-djui/alias-tips
-walesmd/caniuse.plugin.zsh
-# mfaerevaag/wd
-MikeDacre/cdbk
-unixorn/git-extra-commands
-voronkovich/gitignore.plugin.zsh
-supercrabtree/k
-ascii-soup/zsh-url-highlighter
-EOBUNDLES
+    # plugins
+    zgen load marzocchi/zsh-notify
+    zgen load djui/alias-tips
+    zgen load MikeDacre/cdbk
+    zgen load supercrabtree/k
+    zgen load unixorn/autoupdate-zgen
+    zgen load ascii-soup/zsh-url-highlighter
 
-if is_osx; then
-  antigen-bundle chriskempson/base16-iterm2
-  antigen bundle osx
+    zgen load unixorn/git-extra-commands
+
+    zgen load zsh-users/zsh-completions src
+    zgen load jimmijj/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
+    zgen load tarruda/zsh-autosuggestions
+    zgen load zsh-users/zsh-completions src
+
+    if is_osx; then
+        zgen load chriskempson/base16-iterm2
+    fi
+
+    # theme
+    zgen load chriskempson/base16-shell base16-colors.dark.sh
+    # zgen load sindresorhus/pure
+    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+    # save all to init script
+    zgen save
+fi
+
+ZSH_THEME="bullet-train"
+
+zmodload zsh/terminfo
+
+# Make sure the terminal is in application mode, when zle is active. Only then
+# are the values from $terminfo valid. And also activate autosuggestions.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    # Bind UP and DOWN arrow keys to history-substring-search.
+    bindkey "$terminfo[kcuu1]" history-substring-search-up
+    bindkey "$terminfo[kcud1]" history-substring-search-down
+
+    function zle-line-init () {
+        printf '%s' "${terminfo[smkx]}"
+
+        # Enable autosuggestions automatically
+        zle autosuggest-start
+    }
+
+    function zle-line-finish () {
+        printf '%s' "${terminfo[rmkx]}"
+    }
+
+    zle -N zle-line-init
+    zle -N zle-line-finish
 fi
 
 # Theme
 # antigen-bundle arialdomartini/oh-my-git
 # antigen theme arialdomartini/oh-my-git-themes arialdo-pathinline
 # antigen theme arialdomartini/oh-my-git-themes arialdo-granzestyle
-antigen bundle sindresorhus/pure
+# antigen bundle sindresorhus/pure
 
-antigen bundle chriskempson/base16-shell base16-colors.dark.sh
-antigen bundle zsh-users/zsh-syntax-highlighting
+# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
-# Override highlighter colors
-ZSH_HIGHLIGHT_STYLES[default]=none
-ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
-ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
-ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
-ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
-ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
-ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
-ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
-ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
-ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
-ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=green
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=green
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
-ZSH_HIGHLIGHT_STYLES[assign]=none
-
-antigen bundle zsh-users/zsh-history-substring-search
+# # Override highlighter colors
+# ZSH_HIGHLIGHT_STYLES[default]=none
+# ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
+# ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
+# ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
+# ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
+# ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
+# ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
+# ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
+# ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+# ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
+# ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
+# ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
+# ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
+# ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=green
+# ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=green
+# ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+# ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
+# ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
+# ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
+# ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
+# ZSH_HIGHLIGHT_STYLES[assign]=none
 
 if is_osx; then
   # zsh-history-substring-search
@@ -111,14 +151,6 @@ elif is_linux; then
   bindkey -M vicmd 'j' history-substring-search-down
 fi
 
-# antigen bundle tarruda/zsh-autosuggestions
-# zle-line-init() {
-#     zle autosuggest-start
-# }
-# zle -N zle-line-init
-
-antigen apply
-
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin
 export VISUAL=vim
 export GREP_OPTIONS='--color=always'
@@ -137,18 +169,18 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 # From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
-autoload -U compinit
+# autoload -U compinit
 
-for func in $^fpath.zwc(N-.r:); autoload -U -w $func
+# for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
-setopt completeinword
-setopt prompt_subst
+# setopt completeinword
+# setopt prompt_subst
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
-autoload select-word-style
-select-word-style shell
+# autoload select-word-style
+# select-word-style shell
 
 alias ll='ls -l'
 alias la='ls -a'
@@ -165,7 +197,7 @@ setopt extendedglob
 unsetopt caseglob
 unsetopt nomatch 2>/dev/null
 
-setopt interactivecomments # pound sign in interactive prompt
+# setopt interactivecomments # pound sign in interactive prompt
 
 setopt auto_cd
 
