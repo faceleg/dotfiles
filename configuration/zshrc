@@ -131,25 +131,25 @@ fi
 # ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 # ZSH_HIGHLIGHT_STYLES[assign]=none
 
-if is_osx; then
-  # zsh-history-substring-search
-  # bind UP and DOWN arrow keys
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-elif is_linux; then
-  # bind UP and DOWN arrow keys
-  zmodload zsh/terminfo
-  bindkey "$terminfo[kcuu1]" history-substring-search-up
-  bindkey "$terminfo[kcud1]" history-substring-search-down
+# if is_osx; then
+#   # zsh-history-substring-search
+#   # bind UP and DOWN arrow keys
+#   bindkey '^[[A' history-substring-search-up
+#   bindkey '^[[B' history-substring-search-down
+# elif is_linux; then
+#   # bind UP and DOWN arrow keys
+#   zmodload zsh/terminfo
+#   bindkey "$terminfo[kcuu1]" history-substring-search-up
+#   bindkey "$terminfo[kcud1]" history-substring-search-down
 
-  # bind P and N for EMACS mode
-  bindkey -M emacs '^P' history-substring-search-up
-  bindkey -M emacs '^N' history-substring-search-down
+#   # bind P and N for EMACS mode
+#   bindkey -M emacs '^P' history-substring-search-up
+#   bindkey -M emacs '^N' history-substring-search-down
 
-  # bind k and j for VI mode
-  bindkey -M vicmd 'k' history-substring-search-up
-  bindkey -M vicmd 'j' history-substring-search-down
-fi
+#   # bind k and j for VI mode
+#   bindkey -M vicmd 'k' history-substring-search-up
+#   bindkey -M vicmd 'j' history-substring-search-down
+# fi
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin
 export VISUAL=vim
