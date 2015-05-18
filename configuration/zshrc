@@ -68,6 +68,7 @@ if ! zgen saved; then
     zgen load chriskempson/base16-shell base16-colors.dark.sh
     # zgen load sindresorhus/pure
     zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+    BULLETTRAIN_NVM_SHOW=true
 
     # save all to init script
     zgen save
