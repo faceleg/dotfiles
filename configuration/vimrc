@@ -198,7 +198,7 @@ filetype off
     NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
 
     " JavaScript
-    NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['javascript', 'typescript'], {
+    NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
           \ 'build': {
           \     'unix': 'npm install -g typescript',
           \     'mac': 'npm install -g typescript'
