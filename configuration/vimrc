@@ -749,7 +749,6 @@ filetype off
         let g:delimitMate_expand_cr = 0
         let g:delimitMate_jump_expansion = 0
     "}}}
-    NeoBundleLazy 'tpope/vim-dispatch'
 
     function! SourceEclim() abort
       if !isdirectory('/opt/eclipse')
