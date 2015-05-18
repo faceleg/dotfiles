@@ -110,7 +110,8 @@ filetype off
     " NeoBundle 'itchyny/landscape.vim'
 
     " Visual
-    NeoBundleLazyFor 'jaxbot/semantic-highlight.vim', 'filetypes', ['javascript', 'typescript', 'java', 'ruby', 'php', 'vim', 'coffee']
+    NeoBundleLazyFor 'jaxbot/semantic-highlight.vim', 'filetypes', [
+                \ 'javascript', 'typescript', 'java', 'ruby', 'php', 'vim', 'coffee' ]
       let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
       let g:semanticEnableFileTypes = {
             \ 'javascript': 'js',
