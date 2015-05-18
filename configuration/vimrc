@@ -15,12 +15,6 @@ let g:maplocalleader=";"
 set nocompatible
 filetype off
 
-" Folding {{{
-  set foldmethod=syntax
-  set foldenable
-  set foldlevel=1
-" }}}
-
 " NeoBundleInitialisation {{{
     " Note: Skip initialization for vim-tiny or vim-small.
     if !1 | finish | endif
