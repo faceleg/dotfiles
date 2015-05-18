@@ -107,7 +107,6 @@ filetype off
 " NeoBundle {{{
     " Highlighting
     NeoBundle 'chriskempson/base16-vim'
-    " NeoBundle 'itchyny/landscape.vim'
 
     " Visual
     NeoBundleLazyFor 'jaxbot/semantic-highlight.vim', 'filetypes', [
