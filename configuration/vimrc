@@ -974,6 +974,7 @@ filetype off
   nmap <leader>li :set list!<CR>
   " Use the same symbols as TextMate for tabstops and EOLs
   set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
+  set fillchars=diff:·
   set shiftround
   set linebreak
   set showbreak=↪
