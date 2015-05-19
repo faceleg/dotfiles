@@ -762,7 +762,7 @@ filetype off
 " }}}
 
  call neobundle#end()
-"
+
 " Colourscheme {{{
   syntax on
   set background=dark
