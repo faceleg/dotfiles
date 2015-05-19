@@ -120,7 +120,6 @@ filetype off
       let g:conoline_use_colorscheme_default_normal=0
       let g:conoline_use_colorscheme_default_insert=0
     "}}}
-    NeoBundle 'ivyl/vim-bling'
 
     " Indenting
     NeoBundle 'editorconfig/editorconfig-vim'
