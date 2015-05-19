@@ -618,31 +618,6 @@ filetype off
               \ ]
 
     " Usability
-    NeoBundleLazyFor 'haya14busa/incsearch.vim', 'mappings', [
-          \ '<Plug>(incsearch-forward)',
-          \ '<Plug>(incsearch-backward)',
-          \ '<Plug>(incsearch-stay)',
-          \ '<Plug>(incsearch-nohl-n)',
-          \ '<Plug>(incsearch-nohl-N)',
-          \ '<Plug>(incsearch-nohl-*)',
-          \ '<Plug>(incsearch-nohl-#)',
-          \ '<Plug>(incsearch-nohl-g*)',
-          \ '<Plug>(incsearch-nohl-g#)',
-          \ ]
-      map /  <Plug>(incsearch-forward)
-      map ?  <Plug>(incsearch-backward)
-      map g/ <Plug>(incsearch-stay)
-
-      let g:incsearch#auto_nohlsearch = 0
-      map n  <Plug>(incsearch-nohl-n)
-      map N  <Plug>(incsearch-nohl-N)
-      map *  <Plug>(incsearch-nohl-*)
-      map #  <Plug>(incsearch-nohl-#)
-      map g* <Plug>(incsearch-nohl-g*)
-      map g# <Plug>(incsearch-nohl-g#)
-
-      let g:incsearch#magic = '\v'
-
     NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
         let g:unite_data_directory = expand('~/.vim/.cache/unite')
         let g:unite_enable_start_insert=0
