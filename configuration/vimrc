@@ -188,7 +188,6 @@ filetype off
     " Misc languages
     NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
       au BufNewFile,BufRead *.vm set ft=velocity
-    NeoBundleLazyFor 'gorodinskiy/vim-coloresque', 'filetypes', ['css', 'scss', 'sass']
     NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
     NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', ['coffee']
       au BufNewFile,BufRead *.coffee set ft=coffee
