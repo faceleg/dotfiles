@@ -475,6 +475,16 @@ filetype off
           \ 'ListLocalMarks'     :  "'?"
           \ }
     NeoBundle 'tpope/vim-fugitive'
+    NeoBundle 'vim-scripts/git-log'
+        let g:GITLOG_default_mode = 2
+        map <silent> <space>gl :call GITLOG_ToggleWindows()<cr>
+        map <silent> <space>gf :call GITLOG_FlipWindows()<cr>
+
+        let g:GITLOG_default_mode=2
+        " let g:GITLOG_walk_full_tree=1
+        " let g:GITLOG_show_hidden_files=0
+        let g:GITLOG_ignore_suffixes=['swp', 'swn', 'pyc', 'o']
+        let g:GITLOG_ignore_directories=['.git', 'out']
     NeoBundleLazyFor 'rhysd/committia.vim', { 'commands': 'Gcommit' }
     NeoBundle 'svermeulen/vim-easyclip'
       " Manually map yanks to avoid conflicts with tpope/unimpaired
