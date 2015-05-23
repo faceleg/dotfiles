@@ -50,7 +50,11 @@ if ! zgen saved; then
     zgen load djui/alias-tips
     zgen load MikeDacre/cdbk
     zgen load supercrabtree/k
+
+    ZGEN_PLUGIN_UPDATE_DAYS=14
+    ZGEN_SYSTEM_UPDATE_DAYS=14
     zgen load unixorn/autoupdate-zgen
+
     zgen load ascii-soup/zsh-url-highlighter
     zgen load willghatch/zsh-hooks
 
