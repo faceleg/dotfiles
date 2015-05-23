@@ -593,7 +593,7 @@ let g:syntastic_enable_highlighting = 1
 let g:syntastic_echo_current_error  = 1
 
 " npm install -g jshint
-" let g:syntastic_javascript_checkers=['jshint', 'flow']
+" let g:syntastic_javascript_checkers=['jscs', 'flow']
 let g:syntastic_javascript_checkers=['jscs']
 
 " npm install -g typescript
