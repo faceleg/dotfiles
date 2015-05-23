@@ -690,15 +690,16 @@ function! s:unite_settings()
 
 endfunction
 NeoBundleLazy 'Shougo/unite-outline', { 'augroup': 'Unite outline' }
-nnoremap <space>o :Unite outline<CR>
+  nnoremap <space>o :Unite outline<CR>
 NeoBundleLazyFor 'sjl/gundo.vim', 'mappings', ['F5'], { 'augroup': 'GundoToggle' }
-nnoremap <F5> :GundoToggle<CR>
-let g:gundo_right = 1
-let g:gundo_preview_bottom = 1
-let g:gundo_close_on_revert = 1
-NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', '<C-n>'
-let g:multi_cursor_quit_key='<C-c>'
-nnoremap <C-c> :call multiple_cursors#quit()<CR>
+  nnoremap <F5> :GundoToggle<CR>
+  let g:gundo_right = 1
+  let g:gundo_preview_bottom = 1
+  let g:gundo_close_on_revert = 1
+" NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', '<C-n>'
+NeoBundle 'terryma/vim-multiple-cursors'
+  " let g:multi_cursor_quit_key='<C-c>'
+  " nnoremap <C-c> :call multiple_cursors#quit()<CR>
 NeoBundle 'hlissner/vim-multiedit'
 
 " Utility
