@@ -220,7 +220,7 @@ autocmd FileType ruby noremap <buffer> ,br :Autoformat<CR>
 autocmd FileType javascript noremap <buffer> ,bj :Autoformat<CR>
 let g:formatprg_js = 'jscs'
 let g:formatters_javascript=['jscs']
-autocmd BufWritePre,FileWritePre *.js silent! :Autoformat<CR>
+" autocmd BufWritePre,FileWritePre *.js silent! :Autoformat<CR>
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
@@ -696,10 +696,10 @@ NeoBundleLazyFor 'sjl/gundo.vim', 'mappings', ['F5'], { 'augroup': 'GundoToggle'
   let g:gundo_right = 1
   let g:gundo_preview_bottom = 1
   let g:gundo_close_on_revert = 1
-" NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', '<C-n>'
-NeoBundle 'terryma/vim-multiple-cursors'
-  " let g:multi_cursor_quit_key='<C-c>'
-  " nnoremap <C-c> :call multiple_cursors#quit()<CR>
+NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>']
+" NeoBundle 'terryma/vim-multiple-cursors'
+  let g:multi_cursor_quit_key='<C-c>'
+  nnoremap <C-c> :call multiple_cursors#quit()<CR>
 NeoBundle 'hlissner/vim-multiedit'
 
 " Utility
