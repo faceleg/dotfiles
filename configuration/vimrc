@@ -285,7 +285,13 @@ if has('lua')
 
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
   inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  " inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr> <BS> delimitMate#WithinEmptyPair() ?
+        \ "\<C-R>=delimitMate#BS()\<CR>" :
+        \ neocomplete#smart_close_popup() . '<BS>'
+  inoremap <expr> <CR> delimitMate#WithinEmptyPair() ?
+            \ "\<C-R>=delimitMate#ExpandReturn()\<CR>" :
+            \ neocomplete#close_popup() . '<CR>'
   inoremap <expr><C-y>  neocomplete#close_popup()
   inoremap <expr><C-e>  neocomplete#cancel_popup()
   inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
