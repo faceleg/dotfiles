@@ -858,6 +858,7 @@ au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
 au FileType php,phtml,html setl sw=4 sts=4 et
 
 set textwidth=120
+set formatoptions-=t
 
 highlight WarningOverLength ctermfg=11
 highlight ErrorOverLength ctermfg=09
