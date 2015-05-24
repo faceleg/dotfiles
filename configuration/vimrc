@@ -460,10 +460,10 @@ NeoBundle 'Raimondi/delimitMate'
 " let g:smartpairs_nextpairs_key_i = 'K'
 
 NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+  " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+  vmap <Enter> <Plug>(EasyAlign)
+  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kshenoy/vim-signature',
 let g:SignatureMap = {
