@@ -450,9 +450,14 @@ NeoBundle 'vim-scripts/TwitVim'
 " NeoBundle 'bitbucket:faceleg/vimrepress'
 
 " Features
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'gorkunov/smartpairs.vim'
-let g:smartpairs_nextpairs_key_i = 'K'
+" NeoBundle 'kana/vim-smartinput'
+" NeoBundle 'atsepkov/vim-smartinput
+NeoBundle 'Raimondi/delimitMate'
+  let delimitMate_expand_cr = 1
+  let delimitMate_jump_expansion = 1
+  let delimitMate_balance_matchpairs = 1
+" NeoBundle 'gorkunov/smartpairs.vim'
+" let g:smartpairs_nextpairs_key_i = 'K'
 
 NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
