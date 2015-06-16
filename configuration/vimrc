@@ -165,18 +165,18 @@ NeoBundleLazyFor 'ntpeters/vim-better-whitespace', 'filetypes', [
       \ 'c', 'coffee', 'cpp', 'css', 'less', 'sass', 'scss', 'java', 'php',
       \ 'ruby', 'puppet', 'python', 'javascript', 'vim', 'sh', 'nginx', 'ant', 'xml'
       \ ]
-autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
-let g:better_whitespace_filetypes_blacklist = ['unite']
+  autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+  let g:better_whitespace_filetypes_blacklist = ['unite']
 
 " HTML
 NeoBundleLazyFor 'whatyouhide/vim-textobj-xmlattr', 'filetypes', [ 'html', 'xhtml', 'xml' ],
       \ { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
-let g:xml_use_html = 1
+  let g:xml_use_html = 1
 NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
 NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
 NeoBundleLazyFor 'rstacruz/sparkup', 'filetypes', ['html', 'xhtml', 'xml']
-let g:sparkupNextMapping = '<c-x>'
+  let g:sparkupNextMapping = '<c-x>'
 
 " Markdown
 NeoBundleLazyFor 'shime/vim-livedown', 'filetypes', ['markdown'], {
@@ -200,7 +200,7 @@ NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
       \     'unix': 'npm install -g typescript',
       \     'mac': 'npm install -g typescript'
       \ }}
-autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
+  autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
 NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 
 NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss'], {
@@ -208,27 +208,27 @@ NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss'], {
       \     'unix': 'npm install -g csscomb',
       \     'mac': 'npm install -g csscomb'
       \ }}
-autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
-autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
+  autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
+  autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs',
       \     'mac': 'npm install -g jscs'
       \ }}
-autocmd FileType ruby noremap <buffer> ,br :Autoformat<CR>
+  autocmd FileType ruby noremap <buffer> ,br :Autoformat<CR>
 
-autocmd FileType javascript noremap <buffer> ,bj :Autoformat<CR>
-let g:formatprg_js = 'jscs'
-let g:formatters_javascript=['jscs']
-" autocmd BufWritePre,FileWritePre *.js silent! :Autoformat<CR>
+  autocmd FileType javascript noremap <buffer> ,bj :Autoformat<CR>
+  let g:formatprg_js = 'jscs'
+  let g:formatters_javascript=['jscs']
+  autocmd BufWritePre,FileWritePre *.js silent! :Autoformat
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
-let g:jsdoc_allow_input_prompt = 1
-let g:jsdoc_input_description = 1
-let g:jsdoc_additional_descriptions = 0
-let g:jsdoc_return = 1
-let g:jsdoc_return_type = 1
-let g:jsdoc_return_description = 1
-let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
+  let g:jsdoc_allow_input_prompt = 1
+  let g:jsdoc_input_description = 1
+  let g:jsdoc_additional_descriptions = 0
+  let g:jsdoc_return = 1
+  let g:jsdoc_return_type = 1
+  let g:jsdoc_return_description = 1
+  let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
 nnoremap <space>j :JsDoc<cr>
 " NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
@@ -605,7 +605,7 @@ let g:syntastic_echo_current_error  = 1
 
 " npm install -g jshint
 " let g:syntastic_javascript_checkers=['jscs', 'flow']
-let g:syntastic_javascript_checkers=['jscs']
+let g:syntastic_javascript_checkers=['jscs', 'eslint']
 
 " npm install -g typescript
 let g:syntastic_typescript_checkers=['tsc']
@@ -857,17 +857,17 @@ au FileType python,ruby setl sw=2 sts=2 et
 au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
 au FileType php,phtml,html setl sw=4 sts=4 et
 
-set textwidth=120
+" set textwidth=120
 set formatoptions-=t
 
-highlight WarningOverLength ctermfg=11
-highlight ErrorOverLength ctermfg=09
-au BufWinEnter * call HighlightLongLines()
+" highlight WarningOverLength ctermfg=11
+" highlight ErrorOverLength ctermfg=09
+" au BufWinEnter * call HighlightLongLines()
 
-function! HighlightLongLines() abort
-  let w:m1=matchadd('WarningOverLength', '\%<121v.\%>115v', -1)
-  let w:m2=matchadd('ErrorOverLength', '\%>120v.\+', -1)
-endfunction
+" function! HighlightLongLines() abort
+"   let w:m1=matchadd('WarningOverLength', '\%<121v.\%>115v', -1)
+"   let w:m2=matchadd('ErrorOverLength', '\%>120v.\+', -1)
+" endfunction
 
 filetype plugin indent on
 " }}}
@@ -918,9 +918,6 @@ set fcs=vert:│ " Solid line for vsplit separator
 
 " Select all
 nmap <space>a GVgg<CR>
-
-" Close quickfix/location list http://superuser.com/a/835959/31909
-noremap <Leader>c :ccl <bar> lcl<CR>
 
 " disable ex mode
 nnoremap Q <nop>
