@@ -708,8 +708,8 @@ NeoBundleLazyFor 'sjl/gundo.vim', 'mappings', ['F5'], { 'augroup': 'GundoToggle'
   let g:gundo_preview_bottom = 1
   let g:gundo_close_on_revert = 1
 NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>']
-  let g:multi_cursor_quit_key='<C-c>'
-  nnoremap <C-c> :call multiple_cursors#quit()<CR>
+  " let g:multi_cursor_quit_key='<C-c>'
+  " nnoremap <C-c> :call multiple_cursors#quit()<CR>
 NeoBundle 'hlissner/vim-multiedit'
 
 " Utility
