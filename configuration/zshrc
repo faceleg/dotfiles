@@ -46,7 +46,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/vagrant
 
     # plugins
-    # zgen load marzocchi/zsh-notify notify.plugin.zsh next-iterm
     zgen load djui/alias-tips
     zgen load MikeDacre/cdbk
     zgen load supercrabtree/k
