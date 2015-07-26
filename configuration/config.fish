@@ -16,6 +16,9 @@ Plugin 'jump'
 Plugin 'git-flow'
 Plugin 'gi'
 Plugin 'pbcopy'
+
+# brew install grc
+# grc_1.9.orig.tar.gz
 Plugin 'grc'
 Plugin 'tmux'
 
@@ -29,7 +32,11 @@ or begin
 end
 
 function nvm
-    bass source /usr/local/opt/nvm/nvm.sh ';' nvm $argv
+    if test -e ~/.nvm/nvm.sh
+      bass source ~/.nvm/nvm.sh ';' nvm $argv
+    else
+      bass source /usr/local/opt/nvm/nvm.sh ';' nvm $argv
+    end
 end
 
 # Base16 Shell
