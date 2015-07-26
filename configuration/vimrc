@@ -631,6 +631,9 @@ let g:syntastic_sh_checkers=['sh']
 " https://github.com/syngan/vim-vimlint
 let g:syntastic_vim_checkers=['vimlint']
 
+" npm install -g stylint
+let g:syntastic_stylus_checkers=['stylint']
+
 " https://github.com/w3c/tidy-html5.git
 let g:syntastic_html_checkers=['tidy']
 let g:syntastic_html_tidy_ignore_errors = [
