@@ -205,7 +205,7 @@ NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
   autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
 NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 
-NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss'], {
+NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'stylus'], {
       \ 'build': {
       \     'unix': 'npm install -g csscomb',
       \     'mac': 'npm install -g csscomb'
@@ -856,7 +856,7 @@ set expandtab
 set softtabstop=4
 
 au FileType python,ruby setl sw=2 sts=2 et
-au FileType javascript,css,less,sass,scss setl sw=2 sts=2 et
+au FileType javascript,css,less,sass,scss,stylus setl sw=2 sts=2 et
 au FileType php,phtml,html setl sw=4 sts=4 et
 
 " set textwidth=120
