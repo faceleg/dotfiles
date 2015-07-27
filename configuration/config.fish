@@ -86,4 +86,5 @@ function tree4; tree --dirsfirst -ChFLQ 4 $argv; end
 function tree5; tree --dirsfirst -ChFLQ 5 $argv; end
 function tree6; tree --dirsfirst -ChFLQ 6 $argv; end
 
-fish_vi_mode
+set -U fish_key_bindings fish_vi_key_bindings
+
