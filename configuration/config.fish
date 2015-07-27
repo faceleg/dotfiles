@@ -9,7 +9,8 @@ set fish_path $HOME/.oh-my-fish
 
 # Custom plugins and themes may be added to ~/.oh-my-fish/custom
 # Plugins and themes can be found at https://github.com/oh-my-fish/
-Theme 'jacaetevha'
+# Theme 'jacaetevha'
+Theme 'dangerous'
 Plugin 'theme'
 Plugin 'brew'
 Plugin 'jump'
@@ -84,3 +85,5 @@ function tree3; tree --dirsfirst -ChFLQ 3 $argv; end
 function tree4; tree --dirsfirst -ChFLQ 4 $argv; end
 function tree5; tree --dirsfirst -ChFLQ 5 $argv; end
 function tree6; tree --dirsfirst -ChFLQ 6 $argv; end
+
+fish_vi_mode
