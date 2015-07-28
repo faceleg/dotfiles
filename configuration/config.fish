@@ -17,39 +17,52 @@ Plugin 'jump'
 Plugin 'git-flow'
 Plugin 'gi'
 Plugin 'pbcopy'
+Plugin 'rvm'
+Plugin 'localhost'
 
 # brew install grc
 # grc_1.9.orig.tar.gz
 Plugin 'grc'
-Plugin 'tmux'
 
+# Tmux
+Plugin 'tmux'
 begin
-    tmux has-session -t remote
-    and tmux attach-session -t remote
+  tmux has-session -t remote
+  and tmux attach-session -t remote
 end
 or begin
-    tmux new-session -s remote
-    and kill %self
+  tmux new-session -s remote
+  and kill %self
 end
 
+# NVM
 function nvm
-    if test -e ~/.nvm/nvm.sh
-      bass source ~/.nvm/nvm.sh ';' nvm $argv
-    else
-      bass source /usr/local/opt/nvm/nvm.sh ';' nvm $argv
-    end
+  if test -e ~/.nvm/nvm.sh
+    bass source ~/.nvm/nvm.sh ';' nvm $argv
+  else
+    bass source /usr/local/opt/nvm/nvm.sh ';' nvm $argv
+  end
 end
 
 # Base16 Shell
 eval sh $HOME/.config/base16-shell/base16-colors.dark.sh
 
+# Bash refugees
+function sudo
+  if test "$argv" = !!
+    eval command sudo $history[1]
+  else
+    command sudo $argv
+  end
+end
+
+function history_merge -e fish_postexec
+  history --merge
+end
+
 # Aliases
 
-################################
-###  Program ShortCut
-################################
-
-# git related shortcut
+# git related shortcuts
 alias undopush="git push -f origin HEAD^:master"
 alias gd="git diff"
 alias gdc="git diff --cached"
