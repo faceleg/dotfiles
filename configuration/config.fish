@@ -1,5 +1,7 @@
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
+set -x SHELL /usr/local/bin/fish
+# eval "(docker-machine env local)" 
 
 # Path to your custom folder (default path is ~/.oh-my-fish/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -61,6 +63,7 @@ function history_merge -e fish_postexec
 end
 
 # Aliases
+alias takeover="tmux detach -a"
 
 # git related shortcuts
 alias undopush="git push -f origin HEAD^:master"
@@ -100,4 +103,9 @@ function tree5; tree --dirsfirst -ChFLQ 5 $argv; end
 function tree6; tree --dirsfirst -ChFLQ 6 $argv; end
 
 set -U fish_key_bindings fish_vi_key_bindings
+
+set DOCKER_TLS_VERIFY "1"
+set DOCKER_HOST "tcp://192.168.99.100:2376"
+set DOCKER_CERT_PATH "/Users/faceleg/.docker/machine/machines/local"
+set DOCKER_MACHINE_NAME "local"
 
