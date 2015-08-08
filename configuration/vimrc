@@ -220,7 +220,7 @@ NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', '
       \ }}
   autocmd FileType ruby noremap <buffer> ,br :Autoformat<CR>
   autocmd FileType javascript noremap <buffer> ,bj :Autoformat<CR>
-  autocmd BufWritePre,FileWritePre *.js silent! :Autoformat
+  " autocmd BufWritePre,FileWritePre *.js silent! :Autoformat
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   let g:jsdoc_allow_input_prompt = 1
   let g:jsdoc_input_description = 1
