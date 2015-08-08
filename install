@@ -36,7 +36,7 @@ INSTALL_TMUX=false
 INSTALL_WEECHAT=false
 INSTALL_BREW=false
 
-if ! OPTIONS=$(getopt -o hcvtzabf -l help,ctags,vim,fish,tmux,weechat,brew,all -- "$@")
+if ! OPTIONS=$(getopt -o hcvtwabf -l help,ctags,vim,fish,tmux,weechat,brew,all -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
