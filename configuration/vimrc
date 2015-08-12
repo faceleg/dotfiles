@@ -175,8 +175,8 @@ NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
   let g:xml_use_html = 1
 NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
 NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
-NeoBundleLazyFor 'rstacruz/sparkup', 'filetypes', ['html', 'xhtml', 'xml']
-  let g:sparkupNextMapping = '<c-x>'
+" NeoBundleLazyFor 'rstacruz/sparkup', 'filetypes', ['html', 'xhtml', 'xml']
+  " let g:sparkupNextMapping = '<c-x>'
 
 " Markdown
 NeoBundleLazyFor 'shime/vim-livedown', 'filetypes', ['markdown'], {
@@ -219,7 +219,7 @@ NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', '
       \     'mac': 'npm install -g jscs'
       \ }}
   autocmd FileType ruby noremap <buffer> ,br :Autoformat<CR>
-  autocmd FileType javascript noremap <buffer> ,bj :Autoformat<CR>
+  autocmd FileType javascript,typescript noremap <buffer> ,bj :Autoformat<CR>
   " autocmd BufWritePre,FileWritePre *.js silent! :Autoformat
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   let g:jsdoc_allow_input_prompt = 1
@@ -230,170 +230,44 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   let g:jsdoc_return_description = 1
   let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
-nnoremap <space>j :JsDoc<cr>
-" NeoBundleLazyFor 'burnettk/vim-angular', 'filetypes', 'javascript'
+  nnoremap <space>j :JsDoc<cr>
+
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
 NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
       \     'mac': 'npm install',
       \     'unix': 'npm install'
       \ }}
 
-" Completion
-if has('lua')
-  NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 }, 'depends': 'Shougo/echodoc' }
-  " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
-  " brew install macvim --with-cscope --with-lua --override-system-vim
-  " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
-  " set completeopt+=longest,menuone,preview
-  set completeopt-=preview
-  " set cmdheight=2
+NeoBundle 'Valloric/YouCompleteMe'
+  let g:ycm_semantic_triggers =  {
+              \   'c' : ['->', '.'],
+              \   'objc' : ['->', '.'],
+              \   'ocaml' : ['.', '#'],
+              \   'cpp,objcpp' : ['->', '.', '::'],
+              \   'perl' : ['->'],
+              \   'php' : ['->', '::', '"', "'", 'use ', 'namespace ', '\'],
+              \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+              \   'html': ['<', '"', '</', ' '],
+              \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
+              \   'ruby' : ['.', '::'],
+              \   'lua' : ['.', ':'],
+              \   'erlang' : [':'],
+              \   'haskell' : ['.', 're!.']
+              \ }
+  let g:ycm_key_invoke_completion = '<C-k>'
 
-  let g:acp_enableAtStartup = 0
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_smart_case = 1
-  let g:neocomplete#enable_fuzzy_completion = 1
-  let g:neocomplete#enable_auto_select = 1
-  let g:neocomplete#enable_insert_char_pre = 1
-  let g:neocomplete#sources#syntax#min_keyword_length = 3
-  let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-  let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
-  let g:echodoc_enable_at_startup = 1
-
-
-  if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-  endif
-
-  " let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
-  let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
-
-  " Define dictionary.
-  let g:neocomplete#sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-  if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-  " Plugin key-mappings.
-  inoremap <expr><C-g> neocomplete#undo_completion()
-  inoremap <expr><C-l> neocomplete#complete_common_string()
-
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  " inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr> <BS> delimitMate#WithinEmptyPair() ?
-        \ "\<C-R>=delimitMate#BS()\<CR>" :
-        \ neocomplete#smart_close_popup() . '<BS>'
-  inoremap <expr> <CR> delimitMate#WithinEmptyPair() ?
-            \ "\<C-R>=delimitMate#ExpandReturn()\<CR>" :
-            \ neocomplete#close_popup() . '<CR>'
-  inoremap <expr><C-y>  neocomplete#close_popup()
-  inoremap <expr><C-e>  neocomplete#cancel_popup()
-  inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
-
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-  autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
-  autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-else
-  NeoBundleLazyFor 'Shougo/neocomplcache.vim', { 'autoload': { 'insert': 1 } }
-  set completeopt-=preview
-
-  let g:acp_enableAtStartup = 0
-  let g:neocomplcache_enable_at_startup = 1
-  let g:neocomplcache_enable_smart_case = 1
-  let g:neocomplcache_auto_completion_start_length = 2
-  let g:neocomplcache_enable_fuzzy_completion = 1
-  let g:neocomplcache_enable_auto_select = 1
-  let g:neocomplcache_enable_insert_char_pre = 1
-  let g:neocomplcache_sources#syntax#min_keyword_length = 3
-  let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-  let g:neocomplcache_data_directory='~/.vim/.cache/neocomplcache'
-
-  if !exists('g:neocomplcache_force_omni_input_patterns')
-    let g:neocomplcache_force_omni_input_patterns = {}
-  endif
-
-  let g:neocomplcache_force_omni_input_patterns.java = '\k\.\k*'
-  let g:neocomplcache_force_omni_input_patterns.javascript = '[^. \t]\.\w*'
-
-  let g:neocomplcache_sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-  if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-  endif
-  let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-  " Plugin key-mappings.
-  inoremap <expr><C-g> neocomplcache#undo_completion()
-  inoremap <expr><C-l> neocomplcache#complete_common_string()
-
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-y>  neocomplcache#close_popup()
-  inoremap <expr><C-e>  neocomplcache#cancel_popup()
-  inoremap <expr><C-Space> neocomplcache#start_manual_complete('omni')
-
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-  autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-endif
-
-NeoBundleLazyFor 'Shougo/neosnippet', 'filetypes', 'snippet', {
-      \ 'autoload' : {
-      \   'insert' : 1,
-      \ },
+NeoBundle 'SirVer/ultisnips', {
       \ 'depends': [
-      \     'Shougo/context_filetype.vim',
-      \     'Shougo/neosnippet-snippets',
       \     'honza/vim-snippets',
       \     'matthewsimo/angular-vim-snippets',
       \     'jamescarr/snipmate-nodejs'
       \ ]}
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-e>     <Plug>(neosnippet_expand_target)
+  let g:UltiSnipsExpandTrigger = '<C-k>'
 
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
-let g:neosnippet#snippets_directory = $HOME . '/.vim/bundle/angular-vim-snippets/snippets/,'
-      \                             . $HOME . '/.vim/bundle/vim-snippets/snippets/,'
-      \                             . $HOME . '/.vim/bundle/snipmate-nodejs/snippets/'
-      \                             . $HOME . '/.vim/bundle/neosnippet-snippetsi/neosnippets/'
 NeoBundle 'tpope/vim-commentary'
 NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
-nmap gS :SplitjoinSplit<cr>
-nmap gJ :SplitjoinJoin<cr>
+  nmap gS :SplitjoinSplit<cr>
+  nmap gJ :SplitjoinJoin<cr>
 
 " Motion
 NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
@@ -696,7 +570,7 @@ function! s:unite_settings()
   imap <silent><buffer> <C-k> <Plug>(unite_select_previous_line)
 
   " Enable opening items in splits or tab
-  imap <silent><buffer><expr> <C-x> unite#do_action('split')
+  " imap <silent><buffer><expr> <C-x> unite#do_action('split')
   imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
   imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
 
