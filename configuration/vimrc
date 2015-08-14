@@ -202,7 +202,7 @@ NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
   autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
 NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 
-NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'stylus'], {
+NeoBundleLazyFor 'csscomb/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'stylus'], {
       \ 'build': {
       \     'unix': 'npm install -g csscomb',
       \     'mac': 'npm install -g csscomb'
@@ -211,11 +211,11 @@ NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'st
   " autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python', 'html'], {
       \ 'build': {
-      \     'unix': 'npm install -g jscs',
-      \     'mac': 'npm install -g jscs'
+      \     'unix': 'npm install -g jscs cssfmt',
+      \     'mac': 'npm install -g jscs cssfmt'
       \ }}
-  autocmd FileType ruby noremap <buffer> ,br :Autoformat<CR>
-  autocmd FileType javascript,typescript noremap <buffer> ,bj :Autoformat<CR>
+  autocmd FileType css,ruby,javascript noremap <buffer> ,af :Autoformat<CR>
+  autocmd BufWritePre,FileWritePre *.css silent! :Autoformat
   " autocmd BufWritePre,FileWritePre *.js silent! :Autoformat
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   let g:jsdoc_allow_input_prompt = 1
@@ -473,7 +473,6 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
   let g:syntastic_echo_current_error  = 1
 
   " npm install -g jshint
-  " let g:syntastic_javascript_checkers=['jscs', 'flow']
   let g:syntastic_javascript_checkers=['jscs', 'eslint']
 
   " npm install -g typescript
@@ -481,8 +480,8 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
 
   let g:syntastic_php_checkers=['php']
 
-  " npm install -g csslint
-  let g:syntastic_css_checkers=['csslint']
+  " " npm install -g csslint
+  " let g:syntastic_css_checkers=['csslint']
 
   " npm install -g coffeelint
   let g:syntastic_coffeescript_checkers=['coffeelint']
