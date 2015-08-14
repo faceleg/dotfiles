@@ -115,34 +115,32 @@ let g:semanticEnableFileTypes = {
       \ }
 let g:semanticUseCache = 1
 let g:semanticPersistCache = 1
-NeoBundle 'miyakogi/conoline.vim', "{{{
-let g:conoline_auto_enable = 1
-let g:conoline_use_colorscheme_default_normal=0
-let g:conoline_use_colorscheme_default_insert=0
-"}}}
+NeoBundle 'miyakogi/conoline.vim'
+  let g:conoline_auto_enable = 1
+  let g:conoline_use_colorscheme_default_normal=0
+  let g:conoline_use_colorscheme_default_insert=0
 NeoBundle 'ivyl/vim-bling'
 
 " Indenting
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'Konfekt/FastFold'
-set foldmethod=syntax
+  set foldmethod=syntax
 
-let g:tex_fold_enabled=1
-let g:vimsyn_folding='af'
-let g:xml_syntax_folding = 1
-let g:php_folding = 1
-let g:perl_fold = 1
+  let g:tex_fold_enabled=1
+  let g:vimsyn_folding='af'
+  let g:xml_syntax_folding = 1
+  let g:php_folding = 1
+  let g:perl_fold = 1
 
 " Text Objects
 NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
-" NeoBundle 'vim-scripts/camelcasemotion', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'bkad/CamelCaseMotion', { 'depends': 'kana/vim-textobj-user' }
-map <S-W> <Plug>CamelCaseMotion_w
-map <S-B> <Plug>CamelCaseMotion_b
-map <S-E> <Plug>CamelCaseMotion_e
+  map <S-W> <Plug>CamelCaseMotion_w
+  map <S-B> <Plug>CamelCaseMotion_b
+  map <S-E> <Plug>CamelCaseMotion_e
 NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
@@ -175,8 +173,6 @@ NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
   let g:xml_use_html = 1
 NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
 NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
-" NeoBundleLazyFor 'rstacruz/sparkup', 'filetypes', ['html', 'xhtml', 'xml']
-  " let g:sparkupNextMapping = '<c-x>'
 
 " Markdown
 NeoBundleLazyFor 'shime/vim-livedown', 'filetypes', ['markdown'], {
@@ -194,7 +190,7 @@ NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
 NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', ['coffee']
   au BufNewFile,BufRead *.coffee set ft=coffee
 NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json']
-let g:vim_json_syntax_conceal = 0
+  let g:vim_json_syntax_conceal = 0
 NeoBundleLazyFor 'mutewinter/nginx.vim'
 
 " JavaScript
@@ -212,7 +208,7 @@ NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'st
       \     'mac': 'npm install -g csscomb'
       \ }}
   autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
-  autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
+  " autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs',
@@ -287,20 +283,20 @@ NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
       \   '<Plug>(easymotion-next)',
       \ ],
       \ { 'vim_version' : '7.4' }
-map <Leader>s <Plug>(easymotion-s2)
-map <Leader>t <Plug>(easymotion-t2)
+  map <Leader>s <Plug>(easymotion-s2)
+  map <Leader>t <Plug>(easymotion-t2)
 
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+  map <Leader>l <Plug>(easymotion-lineforward)
+  map <Leader>j <Plug>(easymotion-j)
+  map <Leader>k <Plug>(easymotion-k)
+  map <Leader>h <Plug>(easymotion-linebackward)
 
-map <Leader>n <Plug>(easymotion-next)
-map <Leader>N <Plug>(easymotion-next)
+  map <Leader>n <Plug>(easymotion-next)
+  map <Leader>N <Plug>(easymotion-next)
 NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
 NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
-" <C-k>   Move current line/selections up
-" <C-j>   Move current line/selections down
+  " <C-k>   Move current line/selections up
+  " <C-j>   Move current line/selections down
 let g:move_key_modifier = 'C'
 NeoBundleLazyFor 'saihoooooooo/glowshi-ft.vim', 'mappings', [
       \     '<plug>(glowshi-ft-f)',
@@ -310,26 +306,25 @@ NeoBundleLazyFor 'saihoooooooo/glowshi-ft.vim', 'mappings', [
       \     '<plug>(glowshi-ft-repeat)',
       \     '<plug>(glowshi-ft-opposite)',
       \ ]
-let g:glowshi_ft_no_default_key_mappings = 1
-map f <plug>(glowshi-ft-f)
-map F <plug>(glowshi-ft-F)
-map t <plug>(glowshi-ft-t)
-map T <plug>(glowshi-ft-T)
-map \( <plug>(glowshi-ft-repeat)
-map \) <plug>(glowshi-ft-opposite)
+  let g:glowshi_ft_no_default_key_mappings = 1
+  map f <plug>(glowshi-ft-f)
+  map F <plug>(glowshi-ft-F)
+  map t <plug>(glowshi-ft-t)
+  map T <plug>(glowshi-ft-T)
+  map \( <plug>(glowshi-ft-repeat)
+  map \) <plug>(glowshi-ft-opposite)
 NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp']
 
 " External programs
 NeoBundle 'vim-scripts/TwitVim'
-" NeoBundle 'bitbucket:faceleg/vimrepress'
 
 " Features
 " NeoBundle 'kana/vim-smartinput'
 " NeoBundle 'atsepkov/vim-smartinput
-NeoBundle 'Raimondi/delimitMate'
-  let delimitMate_expand_cr = 1
-  let delimitMate_jump_expansion = 1
-  let delimitMate_balance_matchpairs = 1
+" NeoBundle 'Raimondi/delimitMate'
+"   let delimitMate_expand_cr = 1
+"   let delimitMate_jump_expansion = 1
+  " let delimitMate_balance_matchpairs = 1
 " NeoBundle 'gorkunov/smartpairs.vim'
 " let g:smartpairs_nextpairs_key_i = 'K'
 
@@ -433,15 +428,14 @@ else
 endif
 
 " Status bar
-NeoBundle 'bling/vim-airline', "{{{
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'airlineish'
-let g:airline_exclude_preview = 1
-" }}}
+NeoBundle 'bling/vim-airline'
+  set laststatus=2
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'airlineish'
+  let g:airline_exclude_preview = 1
 NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
 NeoBundleLazyFor 'majutsushi/tagbar', 'mappings', ['F8'], { 'depends': 'vim-airline' }
-nmap <F8> :TagbarToggle<CR>
+  nmap <F8> :TagbarToggle<CR>
 
 " Error reporting
 NeoBundleLazy 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
@@ -461,62 +455,62 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
       \     'xhtml',
       \     'xml'
       \ ], { 'depends': 'vim-vimlint' }
-" Show / hide location list
-noremap <silent><leader>lc :lcl<CR>
-noremap <silent><leader>lo :lw<CR>
+  " Show / hide location list
+  noremap <silent><leader>lc :lcl<CR>
+  noremap <silent><leader>lo :lw<CR>
 
-noremap <F6> :SyntasticCheck<CR>
+  noremap <F6> :SyntasticCheck<CR>
 
-let g:syntastic_check_on_open = 0
-let g:syntastic_enable_signs = 1
+  let g:syntastic_check_on_open = 0
+  let g:syntastic_enable_signs = 1
 
-" Jump to the first issue only if it is an error
-let g:syntastic_auto_jump = 2
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_echo_current_error  = 1
+  " Jump to the first issue only if it is an error
+  let g:syntastic_auto_jump = 2
+  let g:syntastic_auto_loc_list = 0
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_enable_highlighting = 1
+  let g:syntastic_echo_current_error  = 1
 
-" npm install -g jshint
-" let g:syntastic_javascript_checkers=['jscs', 'flow']
-let g:syntastic_javascript_checkers=['jscs', 'eslint']
+  " npm install -g jshint
+  " let g:syntastic_javascript_checkers=['jscs', 'flow']
+  let g:syntastic_javascript_checkers=['jscs', 'eslint']
 
-" npm install -g typescript
-let g:syntastic_typescript_checkers=['tsc']
+  " npm install -g typescript
+  let g:syntastic_typescript_checkers=['tsc']
 
-let g:syntastic_php_checkers=['php']
+  let g:syntastic_php_checkers=['php']
 
-" npm install -g csslint
-let g:syntastic_css_checkers=['csslint']
+  " npm install -g csslint
+  let g:syntastic_css_checkers=['csslint']
 
-" npm install -g coffeelint
-let g:syntastic_coffeescript_checkers=['coffeelint']
+  " npm install -g coffeelint
+  let g:syntastic_coffeescript_checkers=['coffeelint']
 
-" npm install -g jsonlint
-let g:syntastic_json_checkers=['jsonlint']
+  " npm install -g jsonlint
+  let g:syntastic_json_checkers=['jsonlint']
 
-let g:syntastic_java_checkers=['javac']
+  let g:syntastic_java_checkers=['javac']
 
-" https://github.com/koalaman/shellcheck
-let g:syntastic_sh_checkers=['sh']
+  " https://github.com/koalaman/shellcheck
+  let g:syntastic_sh_checkers=['sh']
 
-" https://github.com/syngan/vim-vimlint
-let g:syntastic_vim_checkers=['vimlint']
+  " https://github.com/syngan/vim-vimlint
+  let g:syntastic_vim_checkers=['vimlint']
 
-" npm install -g stylint
-let g:syntastic_stylus_checkers=['stylint']
+  " npm install -g stylint
+  let g:syntastic_stylus_checkers=['stylint']
 
-" https://github.com/w3c/tidy-html5.git
-let g:syntastic_html_checkers=['tidy']
-let g:syntastic_html_tidy_ignore_errors = [
-      \ "\"colspan\" has invalid value",
-      \ "proprietary attribute",
-      \ "unescaped & which should be written as &amp;",
-      \ "<img> lacks \"src\" attribute",
-      \ "trimming empty <button>",
-      \ "trimming empty <span>",
-      \ "<a> escaping malformed URI reference"
-      \ ]
+  " https://github.com/w3c/tidy-html5.git
+  let g:syntastic_html_checkers=['tidy']
+  let g:syntastic_html_tidy_ignore_errors = [
+        \ "\"colspan\" has invalid value",
+        \ "proprietary attribute",
+        \ "unescaped & which should be written as &amp;",
+        \ "<img> lacks \"src\" attribute",
+        \ "trimming empty <button>",
+        \ "trimming empty <span>",
+        \ "<a> escaping malformed URI reference"
+        \ ]
 
 " Usability
 NeoBundleLazyFor 'haya14busa/incsearch.vim', 'mappings', [
