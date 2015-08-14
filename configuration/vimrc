@@ -327,6 +327,7 @@ NeoBundle 'vim-scripts/TwitVim'
   " let delimitMate_balance_matchpairs = 1
 " NeoBundle 'gorkunov/smartpairs.vim'
 " let g:smartpairs_nextpairs_key_i = 'K'
+NeoBundle 'cohama/lexima.vim'
 
 NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
   " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
