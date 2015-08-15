@@ -603,30 +603,30 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
       \     'scss',
       \     'vim'
       \ ]
-nmap <leader>r :RainbowParentheses!!<CR>
-autocmd FileType coffee,java,javascript,json,php,python,sass,scss,vim :RainbowParentheses
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+  nmap <leader>r :RainbowParentheses!!<CR>
+  autocmd FileType coffee,java,javascript,json,php,python,sass,scss,vim :RainbowParentheses
+  let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<tab>' }
-let g:choosewin_overlay_enable = 1
-nmap  <tab> :ChooseWin<CR>
+  let g:choosewin_overlay_enable = 1
+  nmap  <tab> :ChooseWin<CR>
 
-" workaround for overlay font broken on mutibyte buffer.
-" let g:choosewin_overlay_clear_multibyte = 1
+  " workaround for overlay font broken on mutibyte buffer.
+  " let g:choosewin_overlay_clear_multibyte = 1
 
-" tmux like overlay color
-let g:choosewin_color_overlay = {
-      \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
-      \ 'cterm': [ 25, 25 ]
-      \ }
-let g:choosewin_color_overlay_current = {
-      \ 'gui': ['firebrick1', 'firebrick1' ],
-      \ 'cterm': [ 124, 124 ]
-      \ }
+  " tmux like overlay color
+  let g:choosewin_color_overlay = {
+        \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
+        \ 'cterm': [ 25, 25 ]
+        \ }
+  let g:choosewin_color_overlay_current = {
+        \ 'gui': ['firebrick1', 'firebrick1' ],
+        \ 'cterm': [ 124, 124 ]
+        \ }
 
-let g:choosewin_blink_on_land      = 1 " dont' blink at land
-let g:choosewin_statusline_replace = 0 " don't replace statusline
-let g:choosewin_tabline_replace    = 0 " don't replace tabline
+  let g:choosewin_blink_on_land      = 1 " dont' blink at land
+  let g:choosewin_statusline_replace = 0 " don't replace statusline
+  let g:choosewin_tabline_replace    = 0 " don't replace tabline
 NeoBundle 'scrooloose/nerdtree', {
       \ 'depends': [ 'Xuyuanp/nerdtree-git-plugin', 'low-ghost/nerdtree-fugitive']}
 nmap <space>f :NERDTreeToggle<CR>
