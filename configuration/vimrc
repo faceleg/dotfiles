@@ -137,6 +137,12 @@ NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' }
+NeoBundle 'kana/vim-textobj-lastpat', { 'depends': 'kana/vim-textobj-user' }
+  let g:textobj_lastpat_no_default_key_mappings = 0
+  map ah <Plug>(textobj-lastpat-n)
+  map ih <Plug>(textobj-lastpat-n)
+  map aH <Plug>(textobj-lastpat-N)
+  map iH <Plug>(textobj-lastpat-N)
 NeoBundle 'bkad/CamelCaseMotion', { 'depends': 'kana/vim-textobj-user' }
   map <S-W> <Plug>CamelCaseMotion_w
   map <S-B> <Plug>CamelCaseMotion_b
