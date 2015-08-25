@@ -478,7 +478,6 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
   let g:syntastic_enable_highlighting = 1
   let g:syntastic_echo_current_error  = 1
 
-  " npm install -g jshint
   let g:syntastic_javascript_checkers=['jscs', 'eslint']
 
   " npm install -g typescript
@@ -530,19 +529,19 @@ NeoBundleLazyFor 'haya14busa/incsearch.vim', 'mappings', [
       \ '<Plug>(incsearch-nohl-g*)',
       \ '<Plug>(incsearch-nohl-g#)',
       \ ]
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
 
-let g:incsearch#auto_nohlsearch = 0
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+  let g:incsearch#auto_nohlsearch = 0
+  map n  <Plug>(incsearch-nohl-n)
+  map N  <Plug>(incsearch-nohl-N)
+  map *  <Plug>(incsearch-nohl-*)
+  map #  <Plug>(incsearch-nohl-#)
+  map g* <Plug>(incsearch-nohl-g*)
+  map g# <Plug>(incsearch-nohl-g#)
 
-let g:incsearch#magic = '\v'
+  let g:incsearch#magic = '\v'
 
 NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
 let g:unite_data_directory = expand('~/.vim/.cache/unite')
