@@ -143,11 +143,13 @@ NeoBundle 'kana/vim-textobj-lastpat', { 'depends': 'kana/vim-textobj-user' }
   map ih <Plug>(textobj-lastpat-n)
   map aH <Plug>(textobj-lastpat-N)
   map iH <Plug>(textobj-lastpat-N)
-NeoBundle 'bkad/CamelCaseMotion', { 'depends': 'kana/vim-textobj-user' }
-  map <S-W> <Plug>CamelCaseMotion_w
-  map <S-B> <Plug>CamelCaseMotion_b
-  map <S-E> <Plug>CamelCaseMotion_e
+NeoBundle 'Julian/vim-textobj-variable-segment', { 'depends': 'kana/vim-textobj-user' }
+" NeoBundle 'bkad/CamelCaseMotion', { 'depends': 'kana/vim-textobj-user' }
+"   map <S-W> <Plug>CamelCaseMotion_w
+"   map <S-B> <Plug>CamelCaseMotion_b
+"   map <S-E> <Plug>CamelCaseMotion_e
 NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
+NeoBundle 'beloglazov/vim-textobj-punctuation', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
       \ 'c',
