@@ -209,13 +209,13 @@ NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
   autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
 NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 
-NeoBundleLazyFor 'csscomb/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'stylus'], {
-      \ 'build': {
-      \     'unix': 'npm install -g csscomb',
-      \     'mac': 'npm install -g csscomb'
-      \ }}
-  autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
-  " autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
+" NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'stylus'], {
+"       \ 'build': {
+"       \     'unix': 'npm install -g csscomb',
+"       \     'mac': 'npm install -g csscomb'
+"       \ }}
+"   autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
+"   autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
@@ -258,6 +258,7 @@ NeoBundle 'Valloric/YouCompleteMe'
               \   'haskell' : ['.', 're!.']
               \ }
   let g:ycm_key_invoke_completion = '<C-k>'
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 NeoBundle 'SirVer/ultisnips', {
       \ 'depends': [
@@ -450,7 +451,6 @@ NeoBundleLazy 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
 NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
       \     'bash',
       \     'coffeescript',
-      \     'css',
       \     'html',
       \     'javascript',
       \     'json',
@@ -503,8 +503,8 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
   " https://github.com/syngan/vim-vimlint
   let g:syntastic_vim_checkers=['vimlint']
 
-  " npm install -g stylint
-  let g:syntastic_stylus_checkers=['stylint']
+" npm install -g stylint
+" let g:syntastic_stylus_checkers=['stylint']
 
   " https://github.com/w3c/tidy-html5.git
   let g:syntastic_html_checkers=['tidy']
@@ -601,6 +601,7 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
       \     'ruby',
       \     'sass',
       \     'scss',
+      \     'css',
       \     'vim'
       \ ]
   nmap <leader>r :RainbowParentheses!!<CR>
