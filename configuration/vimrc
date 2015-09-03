@@ -195,6 +195,7 @@ NeoBundleLazyFor 'shime/vim-livedown', 'filetypes', ['markdown'], {
 " Misc languages
 NeoBundleLazyFor 'wavded/vim-stylus', 'filetypes', ['stylus']
   au BufNewFile,BufRead *.styl set ft=stylus
+NeoBundle 'tpope/vim-afterimage'
 NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
   au BufNewFile,BufRead *.vm set ft=velocity
 NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
