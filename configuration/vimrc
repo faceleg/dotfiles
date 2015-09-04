@@ -162,6 +162,10 @@ NeoBundle 'Julian/vim-textobj-brace', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-syntax', { 'depends': 'kana/vim-textobj-user' }
   " iy, ay
+NeoBundle 'beloglazov/vim-textobj-quotes', { 'depends': 'kana/vim-textobj-user' }
+  " iq, aq
+NeoBundle 'saihoooooooo/vim-textobj-space', { 'depends': 'kana/vim-textobj-user' }
+  " iS, aS
 NeoBundle 'beloglazov/vim-textobj-punctuation', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
