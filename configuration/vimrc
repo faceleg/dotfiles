@@ -944,11 +944,6 @@ nmap <space>c :nohlsearch<CR>
 " }}}
 
 " Pasting {{{
-map <F2> :set invpaste paste?<CR>
-imap <F2> <ESC>:set paste<CR>i<Right>
-
-set pastetoggle=<f2>
-au InsertLeave * set nopaste
 
 " Quickly select text you just pasted
 noremap gV `[v`]
