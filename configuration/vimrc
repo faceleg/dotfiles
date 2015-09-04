@@ -285,6 +285,9 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
   nmap gS :SplitjoinSplit<cr>
   nmap gJ :SplitjoinJoin<cr>
+NeoBundleLazyFor 'AndrewRadev/sideways.vim', 'mappings', ['c-h', 'c-l']
+  nmap <c-h> :SidewaysLeft<cr>
+  nmap <c-l> :SidewaysRight<cr>
 
 " Motion
 NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
