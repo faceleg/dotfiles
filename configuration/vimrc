@@ -160,6 +160,8 @@ NeoBundle 'Julian/vim-textobj-variable-segment', { 'depends': 'kana/vim-textobj-
 NeoBundle 'Julian/vim-textobj-brace', { 'depends': 'kana/vim-textobj-user' }
   " ij, aj
 NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
+NeoBundle 'kana/vim-textobj-syntax', { 'depends': 'kana/vim-textobj-user' }
+  " iy, ay
 NeoBundle 'beloglazov/vim-textobj-punctuation', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
@@ -186,7 +188,7 @@ NeoBundleLazyFor 'ntpeters/vim-better-whitespace', 'filetypes', [
   let g:better_whitespace_filetypes_blacklist = ['unite']
 
 " HTML
-NeoBundleLazyFor 'whatyouhide/vim-textobj-xmlattr', 'filetypes', [ 'html', 'xhtml', 'xml' ],
+NeoBundleLazyFor 'whatyouhide/vim-textobj-xmlattr', 'filetypes', ['html', 'xhtml', 'xml'],
       \ { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
   let g:xml_use_html = 1
