@@ -367,6 +367,9 @@ NeoBundle 'vim-scripts/TwitVim'
 " NeoBundle 'gorkunov/smartpairs.vim'
 " let g:smartpairs_nextpairs_key_i = 'K'
 NeoBundle 'cohama/lexima.vim'
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
+NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
+" <c-w>o
 
 NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
   " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
