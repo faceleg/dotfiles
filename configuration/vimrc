@@ -203,7 +203,16 @@ NeoBundleLazyFor 'shime/vim-livedown', 'filetypes', ['markdown'], {
 " Misc languages
 NeoBundleLazyFor 'wavded/vim-stylus', 'filetypes', ['stylus']
   au BufNewFile,BufRead *.styl set ft=stylus
-NeoBundle 'tpope/vim-afterimage'
+if has("gui_running")
+  NeoBundle 'tpope/vim-afterimage'
+else
+  NeoBundle 'ashisha/image.vim', {
+        \ 'build': {
+        \   'unix': 'pip install Pillow',
+        \   'mac': 'pip install Pillow'
+        \ }}
+  " au BufRead *.png,*.jpg,*.jpeg :call DisplayImage()
+endif
 NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
   au BufNewFile,BufRead *.vm set ft=velocity
 NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
