@@ -269,24 +269,29 @@ NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
       \     'unix': 'npm install'
       \ }}
 
-NeoBundle 'Valloric/YouCompleteMe'
-  let g:ycm_semantic_triggers =  {
-              \   'c' : ['->', '.'],
-              \   'objc' : ['->', '.'],
-              \   'ocaml' : ['.', '#'],
-              \   'cpp,objcpp' : ['->', '.', '::'],
-              \   'perl' : ['->'],
-              \   'php' : ['->', '::', '"', "'", 'use ', 'namespace ', '\'],
-              \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-              \   'html': ['<', '"', '</', ' '],
-              \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
-              \   'ruby' : ['.', '::'],
-              \   'lua' : ['.', ':'],
-              \   'erlang' : [':'],
-              \   'haskell' : ['.', 're!.']
-              \ }
-  let g:ycm_key_invoke_completion = '<C-k>'
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
+if has("python3")
+  NeoBundle 'Shougo/deoplete.nvim'
+    let g:deoplete#enable_at_startup = 1
+else
+  NeoBundle 'Valloric/YouCompleteMe'
+    let g:ycm_semantic_triggers =  {
+                \   'c' : ['->', '.'],
+                \   'objc' : ['->', '.'],
+                \   'ocaml' : ['.', '#'],
+                \   'cpp,objcpp' : ['->', '.', '::'],
+                \   'perl' : ['->'],
+                \   'php' : ['->', '::', '"', "'", 'use ', 'namespace ', '\'],
+                \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+                \   'html': ['<', '"', '</', ' '],
+                \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
+                \   'ruby' : ['.', '::'],
+                \   'lua' : ['.', ':'],
+                \   'erlang' : [':'],
+                \   'haskell' : ['.', 're!.']
+                \ }
+    let g:ycm_key_invoke_completion = '<C-k>'
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
 
 NeoBundle 'SirVer/ultisnips', {
       \ 'depends': [
@@ -295,6 +300,36 @@ NeoBundle 'SirVer/ultisnips', {
       \     'jamescarr/snipmate-nodejs'
       \ ]}
   let g:UltiSnipsExpandTrigger = '<C-k>'
+
+" Requires: https://github.com/ryanoasis/nerd-fonts
+NeoBundle 'ryanoasis/vim-devicons'
+  let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+  let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+
+  " NERDTress File highlighting
+  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+    exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  endfunction
+
+  autocmd VimEnter * call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('js', 'Green', 'none', 'green', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+  autocmd VimEnter * call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 
 NeoBundle 'tpope/vim-commentary'
 NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
@@ -549,7 +584,11 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
         \ "<img> lacks \"src\" attribute",
         \ "trimming empty <button>",
         \ "trimming empty <span>",
-        \ "<a> escaping malformed URI reference"
+        \ "<a> escaping malformed URI reference",
+        \ "<centered> is not recognized!",
+        \ "discarding unexpected <centered>",
+        \ "<ng-message> is not recognized!",
+        \ "discarding unexpected <ng-message>"
         \ ]
 
 " Usability
