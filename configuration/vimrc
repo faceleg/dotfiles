@@ -436,26 +436,34 @@ let g:SignatureMap = {
       \ }
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'svermeulen/vim-easyclip'
-" Manually map yanks to avoid conflicts with tpope/unimpaired
-let g:EasyClipUseYankDefaults = 0
-nmap ;y <Plug>EasyClipRotateYanksForward
-nmap ,y <Plug>EasyClipRotateYanksBackward
-nmap y <Plug>YankPreserveCursorPosition
-nmap Y <Plug>:EasyClipBeforeYank<cr>y$
-nmap yy <Plug>YankLinePreserveCursorPosition
-xmap y <Plug>VisualModeYank
-imap <c-v> <plug>EasyClipInsertModePaste
+  " Manually map yanks to avoid conflicts with tpope/unimpaired
+  let g:EasyClipUseYankDefaults = 0
+  nmap ;y <Plug>EasyClipRotateYanksForward
+  nmap ,y <Plug>EasyClipRotateYanksBackward
+  nmap y <Plug>YankPreserveCursorPosition
+  nmap Y <Plug>:EasyClipBeforeYank<cr>y$
+  nmap yy <Plug>YankLinePreserveCursorPosition
+  xmap y <Plug>VisualModeYank
+  imap <c-v> <plug>EasyClipInsertModePaste
 
-nnoremap <space>y :Yanks<cr>
+  nnoremap <space>y :Yanks<cr>
 
-" remap add mark
-nnoremap gm m
+  " remap add mark
+  nnoremap gm m
 
-let g:EasyClipUseSubstituteDefaults = 1
-let g:EasyClipYankHistorySize = 100
-let g:EasyClipShowYanksWidth = 200
-let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
-let g:EasyClipShareYanks = 1
+  " Preserve default behaviour of S, use all other substitute bindings
+  let g:EasyClipUseSubstituteDefaults = 0
+  nmap s <plug>SubstituteOverMotionMap
+  nmap gs <plug>G_SubstituteOverMotionMap
+  nmap ss <plug>SubstituteLine
+  xmap s <plug>XEasyClipPaste
+  " nmap S <plug>SubstituteToEndOfLine
+  nmap gS <plug>G_SubstituteToEndOfLine
+
+  let g:EasyClipYankHistorySize = 100
+  let g:EasyClipShowYanksWidth = 200
+  let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+  let g:EasyClipShareYanks = 1
 if v:version >= 702
   NeoBundle 'szw/vim-ctrlspace'
   hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
@@ -1015,7 +1023,6 @@ func! DownHorizontalAdjust()
     resize +1
   endif
 endfun
-
 
 "WINDOW RESIZING Up
 func! UpHorizontal ()
