@@ -393,15 +393,10 @@ NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua
 NeoBundle 'vim-scripts/TwitVim'
 
 " Features
-" NeoBundle 'kana/vim-smartinput'
-" NeoBundle 'atsepkov/vim-smartinput
-" NeoBundle 'Raimondi/delimitMate'
-"   let delimitMate_expand_cr = 1
-"   let delimitMate_jump_expansion = 1
-  " let delimitMate_balance_matchpairs = 1
-" NeoBundle 'gorkunov/smartpairs.vim'
-" let g:smartpairs_nextpairs_key_i = 'K'
-NeoBundle 'cohama/lexima.vim'
+NeoBundle 'atsepkov/vim-smartinput'
+NeoBundle 'gorkunov/smartpairs.vim'
+  let g:smartpairs_nextpairs_key_i = 'K'
+
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
 " <c-w>o
