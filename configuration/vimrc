@@ -265,7 +265,7 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
 
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
 
-if has("python3")
+if has("python3") && has("nvim")
   NeoBundle 'Shougo/deoplete.nvim'
     let g:deoplete#enable_at_startup = 1
 else
