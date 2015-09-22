@@ -974,13 +974,6 @@ nmap <space>c :nohlsearch<CR>
   set splitright
 " }}}
 
-" Reselect visual block after indent/outdent {{{
-" vnoremap < <gv
-" vnoremap > >gv
-" }}}
-
-" Pasting {{{
-
 " Quickly select text you just pasted
 noremap gV `[v`]
 " }}}
