@@ -449,7 +449,7 @@ NeoBundle 'svermeulen/vim-easyclip'
   nmap ss <plug>SubstituteLine
   xmap s <plug>XEasyClipPaste
   " nmap S <plug>SubstituteToEndOfLine
-  nmap gS <plug>G_SubstituteToEndOfLine
+  " nmap gS <plug>G_SubstituteToEndOfLine
 
   let g:EasyClipYankHistorySize = 100
   let g:EasyClipShowYanksWidth = 200
