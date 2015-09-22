@@ -455,6 +455,18 @@ NeoBundle 'svermeulen/vim-easyclip'
   let g:EasyClipShowYanksWidth = 200
   let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
   let g:EasyClipShareYanks = 1
+NeoBundle 'ctrlpvim/ctrlp.vim'
+  let g:ctrlp_map = '<c-p>'
+  let g:ctrlp_cmd = 'CtrlP'
+  let g:ctrlp_buftag_types = { 'javascript': '--language-force=javascript --javascript-types=fcmv' }
+  nmap <space>p :CtrlP<CR>
+  nmap <space>b :CtrlPBufTag<CR>
+  nmap <space>ab :CtrlPBufTagAll<CR>
+NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
+  nmap <space>o :Obsession
+  nmap <space>do :Obsession!<CR>
+  let g:prosession_tmux_title=1
+
 if v:version >= 702
   NeoBundle 'szw/vim-ctrlspace'
   hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
