@@ -491,6 +491,7 @@ NeoBundle 'bling/vim-airline'
   let g:airline_powerline_fonts = 1
   let g:airline_theme = 'airlineish'
   let g:airline_exclude_preview = 1
+  " let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
 
 NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
@@ -712,8 +713,6 @@ let g:NERDTreeChDirMode=0
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
-NeoBundle 'vim-scripts/bufkill.vim'
-nnoremap <space>d :BW<CR>
 NeoBundle 'Raimondi/delimitMate'
 let g:delimitMate_expand_cr = 0
 let g:delimitMate_jump_expansion = 0
