@@ -268,25 +268,61 @@ NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', '
 if has("python3") && has("nvim")
   NeoBundle 'Shougo/deoplete.nvim'
     let g:deoplete#enable_at_startup = 1
-else
-  NeoBundle 'Valloric/YouCompleteMe'
-    let g:ycm_semantic_triggers =  {
-                \   'c' : ['->', '.'],
-                \   'objc' : ['->', '.'],
-                \   'ocaml' : ['.', '#'],
-                \   'cpp,objcpp' : ['->', '.', '::'],
-                \   'perl' : ['->'],
-                \   'php' : ['->', '::', '"', "'", 'use ', 'namespace ', '\'],
-                \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-                \   'html': ['<', '"', '</', ' '],
-                \   'vim' : ['re![_a-za-z]+[_\w]*\.'],
-                \   'ruby' : ['.', '::'],
-                \   'lua' : ['.', ':'],
-                \   'erlang' : [':'],
-                \   'haskell' : ['.', 're!.']
-                \ }
-    let g:ycm_key_invoke_completion = '<C-k>'
+elseif has('lua')
+  NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 } }
+    " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
+    " brew install macvim --with-cscope --with-lua --override-system-vim
+    " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
+    set completeopt-=preview
+    " set completeopt+=longest,menuone,preview
+
+    let g:acp_enableAtStartup = 0
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#enable_fuzzy_completion = 1
+    let g:neocomplete#enable_auto_select = 1
+    let g:neocomplete#enable_insert_char_pre = 1
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
+
+    if !exists('g:neocomplete#force_omni_input_patterns')
+      let g:neocomplete#force_omni_input_patterns = {}
+    endif
+
+    let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
+    let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
+
+    " Define dictionary.
+    let g:neocomplete#sources#dictionary#dictionaries = {
+        \ 'default' : '',
+        \ 'vimshell' : $HOME.'/.vimshell_hist',
+        \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+    " Plugin key-mappings.
+    inoremap <expr><C-g> neocomplete#undo_completion()
+    inoremap <expr><C-l> neocomplete#complete_common_string()
+
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><C-y>  neocomplete#close_popup()
+    inoremap <expr><C-e>  neocomplete#cancel_popup()
+    inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
+
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=tern#Complete
+    autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
 NeoBundle 'SirVer/ultisnips', {
