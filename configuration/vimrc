@@ -510,7 +510,8 @@ NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
   " <Leader> ttd  :TernDefTab Definition in new tab
   " <Leader> tr :TernRefs All references under cursor
   " <Leader> tR :TernRename Rename variable
-NeoBundleLazyFor 'majutsushi/tagbar', 'mappings', ['F8'], { 'depends': 'vim-airline' }
+NeoBundleLazyFor 'majutsushi/tagbar', 'mappings', ['F8'], {
+      \ 'depends': 'vim-airline' }
   nmap <F8> :TagbarToggle<CR>
 
 " Error reporting
