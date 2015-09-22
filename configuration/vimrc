@@ -483,26 +483,6 @@ if v:version >= 702
   if executable('ag')
     let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
   endif
-else
-  NeoBundle 'mhinz/vim-startify'
-  let g:startify_show_sessions = 1
-  let g:startify_list_order = ['sessions', 'bookmarks', 'dir', 'files']
-  let g:startify_session_dir = expand('~/.vim/.cache/unite/session')
-  let g:startify_change_to_dir = 1
-
-  autocmd FileType startify setlocal nocursorline
-  autocmd VimEnter *
-        \ if !argc() |
-        \   Startify |
-        \   NERDTree |
-        \   execute "normal \<c-w>w" |
-        \ endif
-
-  hi StartifyBracket ctermfg=100
-  hi StartifyNumber  ctermfg=215
-  hi StartifyPath    ctermfg=245
-  hi StartifySlash   ctermfg=240
-  NeoBundle 'Shougo/unite-session'
 endif
 
 " Status bar
