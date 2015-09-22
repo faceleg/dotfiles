@@ -264,10 +264,6 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   nnoremap <space>j :JsDoc<cr>
 
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
-NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
-      \     'mac': 'npm install',
-      \     'unix': 'npm install'
-      \ }}
 
 if has("python3")
   NeoBundle 'Shougo/deoplete.nvim'
@@ -504,6 +500,24 @@ NeoBundle 'bling/vim-airline'
   let g:airline_theme = 'airlineish'
   let g:airline_exclude_preview = 1
 NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
+
+NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
+      \     'mac': 'npm install',
+      \     'unix': 'npm install'
+      \ }}
+  let g:tern_map_keys=1
+  let g:tern_show_argument_hints='on_hold'
+  let g:tern_show_signature_in_pum=1
+
+  " <Leader> td :TernDoc  Documentation under cursor
+  " <Leader> tb :TernDocBrowse  Browse documentation
+  " <Leader> tt :TernType Type hints
+  " <Leader> td :TernDef  Jump to definition (yes, 'td' is duplicated)
+  " <Leader> tpd  :TernDefPreview Jump to definition inside preview
+  " <Leader> tsd  :TernDefSplit Definition in new split
+  " <Leader> ttd  :TernDefTab Definition in new tab
+  " <Leader> tr :TernRefs All references under cursor
+  " <Leader> tR :TernRename Rename variable
 NeoBundleLazyFor 'majutsushi/tagbar', 'mappings', ['F8'], { 'depends': 'vim-airline' }
   nmap <F8> :TagbarToggle<CR>
 
