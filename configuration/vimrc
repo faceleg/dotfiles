@@ -678,9 +678,9 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
   autocmd FileType coffee,java,javascript,json,php,python,sass,scss,vim :RainbowParentheses
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
-NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<tab>' }
+NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_overlay_enable = 1
-  nmap  <tab> :ChooseWin<CR>
+  nmap  <space>w :ChooseWin<CR>
 
   " workaround for overlay font broken on mutibyte buffer.
   " let g:choosewin_overlay_clear_multibyte = 1
