@@ -394,8 +394,8 @@ NeoBundle 'vim-scripts/TwitVim'
 
 " Features
 NeoBundle 'atsepkov/vim-smartinput'
-NeoBundle 'gorkunov/smartpairs.vim'
-  let g:smartpairs_nextpairs_key_i = 'K'
+" NeoBundle 'gorkunov/smartpairs.vim'
+"   let g:smartpairs_nextpairs_key_i = 'K'
 
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
