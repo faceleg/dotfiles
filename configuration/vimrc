@@ -207,22 +207,6 @@ NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json']
   let g:vim_json_syntax_conceal = 0
 NeoBundleLazyFor 'mutewinter/nginx.vim', 'filetypes', ['nginx']
 
-" JavaScript
-NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
-      \ 'build': {
-      \     'unix': 'npm install -g typescript',
-      \     'mac': 'npm install -g typescript'
-      \ }}
-  autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>echo tsuquyomi#hint()<CR>
-NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
-
-" NeoBundleLazyFor 'faceleg/vim-csscomb', 'filetypes', ['css', 'sass', 'scss', 'stylus'], {
-"       \ 'build': {
-"       \     'unix': 'npm install -g csscomb',
-"       \     'mac': 'npm install -g csscomb'
-"       \ }}
-"   autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
-"   autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
