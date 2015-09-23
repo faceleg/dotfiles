@@ -184,9 +184,9 @@ NeoBundleLazyFor 'bootleq/vim-textobj-rubysymbol', 'filetypes', 'ruby',
 
 NeoBundleLazyFor 'ntpeters/vim-better-whitespace', 'filetypes', [
       \ 'c', 'coffee', 'cpp', 'css', 'less', 'sass', 'scss', 'java', 'php',
-      \ 'ruby', 'puppet', 'python', 'javascript', 'vim', 'sh', 'nginx', 'ant', 'xml'
+      \ 'ruby', 'javascript', 'vim', 'sh', 'nginx', 'xml'
       \ ]
-  autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+  autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
   let g:better_whitespace_filetypes_blacklist = ['unite']
 
 NeoBundleLazyFor 'whatyouhide/vim-textobj-xmlattr', 'filetypes', ['html', 'xhtml', 'xml'],
