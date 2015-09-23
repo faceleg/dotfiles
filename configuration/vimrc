@@ -171,6 +171,7 @@ NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
       \ 'c',
       \ 'java',
       \ 'vim'
+      \ 'javascript'
       \ ], { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'thinca/vim-textobj-function-javascript', 'filetypes', 'javascript', { 'depends': 'vim-textobj-function' }
 
