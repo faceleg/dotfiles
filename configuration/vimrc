@@ -173,7 +173,6 @@ NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
       \ 'vim'
       \ ], { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'thinca/vim-textobj-function-javascript', 'filetypes', 'javascript', { 'depends': 'vim-textobj-function' }
-NeoBundleLazyFor 'thinca/vim-textobj-function-perl', 'filetypes', 'perl', { 'depends': 'vim-textobj-function' }
 
 " Ruby
 NeoBundleLazyFor 'tpope/vim-endwise', 'filetypes', 'ruby'
@@ -190,7 +189,6 @@ NeoBundleLazyFor 'ntpeters/vim-better-whitespace', 'filetypes', [
   autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,python,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
   let g:better_whitespace_filetypes_blacklist = ['unite']
 
-" HTML
 NeoBundleLazyFor 'whatyouhide/vim-textobj-xmlattr', 'filetypes', ['html', 'xhtml', 'xml'],
       \ { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
@@ -198,19 +196,8 @@ NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
 NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
 NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
 
-" Misc languages
 NeoBundleLazyFor 'wavded/vim-stylus', 'filetypes', ['stylus']
   au BufNewFile,BufRead *.styl set ft=stylus
-if has("gui_running")
-  NeoBundle 'tpope/vim-afterimage'
-else
-  NeoBundle 'ashisha/image.vim', {
-        \ 'build': {
-        \   'unix': 'pip install Pillow',
-        \   'mac': 'pip install Pillow'
-        \ }}
-  " au BufRead *.png,*.jpg,*.jpeg :call DisplayImage()
-endif
 NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
   au BufNewFile,BufRead *.vm set ft=velocity
 NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
@@ -236,14 +223,12 @@ NeoBundleLazyFor 'leafgarland/typescript-vim', 'filetypes', 'typescript'
 "       \ }}
 "   autocmd FileType css noremap <buffer> ,bc :CSScomb<CR>
 "   autocmd BufWritePre,FileWritePre *.css,*.scss,*.sass :CSScomb
-NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'python', 'html'], {
+NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
       \     'mac': 'npm install -g jscs cssfmt'
       \ }}
   autocmd FileType css,ruby,javascript noremap <buffer> ,af :Autoformat<CR>
-  autocmd BufWritePre,FileWritePre *.css silent! :Autoformat
-  " autocmd BufWritePre,FileWritePre *.js silent! :Autoformat
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   let g:jsdoc_allow_input_prompt = 1
   let g:jsdoc_input_description = 1
@@ -313,7 +298,6 @@ elseif has('lua')
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=tern#Complete
     autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
@@ -680,7 +664,7 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
       \     'vim'
       \ ]
   nmap <leader>r :RainbowParentheses!!<CR>
-  autocmd FileType coffee,java,javascript,json,php,python,sass,scss,vim :RainbowParentheses
+  autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
@@ -805,7 +789,7 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
-au FileType python,ruby setl sw=2 sts=2 et
+au FileType ruby setl sw=2 sts=2 et
 au FileType javascript,css,less,sass,scss,stylus setl sw=2 sts=2 et
 au FileType php,phtml,html setl sw=4 sts=4 et
 
