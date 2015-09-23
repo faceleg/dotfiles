@@ -170,10 +170,10 @@ NeoBundle 'glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
 NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
       \ 'c',
       \ 'java',
-      \ 'vim'
+      \ 'vim',
       \ 'javascript'
       \ ], { 'depends': 'kana/vim-textobj-user' }
-NeoBundleLazyFor 'thinca/vim-textobj-function-javascript', 'filetypes', 'javascript', { 'depends': 'vim-textobj-function' }
+NeoBundleLazyFor 'thinca/vim-textobj-function-javascript', 'filetypes', 'javascript', { 'depends': 'kana/vim-textobj-function' }
 
 " Ruby
 NeoBundleLazyFor 'tpope/vim-endwise', 'filetypes', 'ruby'
@@ -363,8 +363,6 @@ NeoBundle 'vim-scripts/TwitVim'
 
 " Features
 NeoBundle 'atsepkov/vim-smartinput'
-" NeoBundle 'gorkunov/smartpairs.vim'
-"   let g:smartpairs_nextpairs_key_i = 'K'
 
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
@@ -929,27 +927,24 @@ nmap <space>c :nohlsearch<CR>
   nnoremap <space>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " }}}
 
-  " Show special characters {{{
-  " http://vimcasts.org/episodes/show-invisibles/
-  " Shortcut to rapidly toggle `set list`
-  set list
-  nmap <leader>li :set list!<CR>
-  " Use the same symbols as TextMate for tabstops and EOLs
-  set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
-  set fillchars=diff:·
-  set shiftround
-  set linebreak
-  set showbreak=↪
-" }}}
+" Show special characters
+" http://vimcasts.org/episodes/show-invisibles/
+" Shortcut to rapidly toggle `set list`
+set list
+nmap <leader>li :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
+set fillchars=diff:·
+set shiftround
+set linebreak
+set showbreak=↪
 
-" Open preview window at bottom {{{
-  set splitbelow
-  set splitright
-" }}}
+" Open preview window at bottom
+set splitbelow
+set splitright
 
 " Quickly select text you just pasted
 noremap gV `[v`]
-" }}}
 
 " Window resizing {{{
 
@@ -1050,12 +1045,10 @@ func! LeftVertical()
 endfun
 "}}}
 
-" http://vim.wikia.com/wiki/Reverse_selected_text {{{
+" http://vim.wikia.com/wiki/Reverse_selected_text
 vnoremap <C-r> c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>"
-"}}}
 
-" Profile {{{
+" Profile
 nnoremap <silent> <leader>DD :exe ":profile start profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
 nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
-"}}}
 
