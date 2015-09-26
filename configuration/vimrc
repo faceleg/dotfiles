@@ -225,7 +225,7 @@ NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', ['coffee']
   au BufNewFile,BufRead *.coffee set ft=coffee
 NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json']
   let g:vim_json_syntax_conceal = 0
-NeoBundleLazyFor 'mutewinter/nginx.vim'
+NeoBundleLazyFor 'mutewinter/nginx.vim', 'filetypes', ['nginx']
 
 " JavaScript
 NeoBundleLazyFor 'Quramy/tsuquyomi', 'filetypes', ['typescript'], {
