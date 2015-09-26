@@ -98,7 +98,6 @@ augroup AutoNeoBundle
 augroup END
 "}}}
 
-" NeoBundle {{{
 " Highlighting
 NeoBundle 'chriskempson/base16-vim'
 
