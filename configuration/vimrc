@@ -472,7 +472,7 @@ NeoBundle 'svermeulen/vim-easyclip'
   nmap Y <Plug>:EasyClipBeforeYank<cr>y$
   nmap yy <Plug>YankLinePreserveCursorPosition
   xmap y <Plug>VisualModeYank
-  imap <c-v> <plug>EasyClipInsertModePaste
+  " imap <c-v> <plug>EasyClipInsertModePaste
 
   nnoremap <space>y :Yanks<cr>
 
