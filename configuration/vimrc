@@ -362,6 +362,8 @@ NeoBundle 'SirVer/ultisnips', {
 "   autocmd VimEnter * call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
 "   autocmd VimEnter * call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
 
+NeoBundle 'tpope/vim-vinegar'
+  let g:netrw_liststyle=3
 NeoBundle 'tpope/vim-commentary'
 NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
   nmap gS :SplitjoinSplit<cr>
