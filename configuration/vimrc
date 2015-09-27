@@ -736,15 +736,15 @@ NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_blink_on_land      = 1 " dont' blink at land
   let g:choosewin_statusline_replace = 0 " don't replace statusline
   let g:choosewin_tabline_replace    = 0 " don't replace tabline
-NeoBundle 'scrooloose/nerdtree', {
-      \ 'depends': [ 'Xuyuanp/nerdtree-git-plugin', 'low-ghost/nerdtree-fugitive']}
-nmap <space>f :NERDTreeToggle<CR>
-nmap <space>n :NERDTreeFind<CR>
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" NeoBundle 'scrooloose/nerdtree', {
+"       \ 'depends': [ 'Xuyuanp/nerdtree-git-plugin', 'low-ghost/nerdtree-fugitive']}
+" nmap <space>f :NERDTreeToggle<CR>
+" nmap <space>n :NERDTreeFind<CR>
+" autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-let g:NERDTreeShowLineNumbers=1
-let g:NERDTreeWinSize=50
-let g:NERDTreeChDirMode=0
+" let g:NERDTreeShowLineNumbers=1
+" let g:NERDTreeWinSize=50
+" let g:NERDTreeChDirMode=0
 
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
