@@ -364,6 +364,21 @@ NeoBundle 'SirVer/ultisnips', {
 
 NeoBundle 'tpope/vim-vinegar'
   let g:netrw_liststyle=3
+
+  " Create dirpath for file on save
+  " http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
+  function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+      let dir=fnamemodify(a:file, ':h')
+      if !isdirectory(dir)
+        call mkdir(dir, 'p')
+      endif
+    endif
+  endfunction
+  augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+  augroup END
 NeoBundle 'tpope/vim-commentary'
 NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
   nmap gS :SplitjoinSplit<cr>
