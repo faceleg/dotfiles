@@ -198,13 +198,6 @@ NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
 NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
 NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
 
-" Markdown
-NeoBundleLazyFor 'shime/vim-livedown', 'filetypes', ['markdown'], {
-      \ 'build': {
-      \     'unix': 'npm install -g livedown',
-      \     'mac': 'npm install -g livedown'
-      \ }}
-
 " Misc languages
 NeoBundleLazyFor 'wavded/vim-stylus', 'filetypes', ['stylus']
   au BufNewFile,BufRead *.styl set ft=stylus
