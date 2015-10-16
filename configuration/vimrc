@@ -394,10 +394,8 @@ let g:SignatureMap = {
       \ 'ListLocalMarks'     :  "'?"
       \ }
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'vim-scripts/YankRing.vim'
-  nmap <Leader>y :YRShow<cr>
 NeoBundle 'ctrlpvim/ctrlp.vim'
-  let g:ctrlp_map = '<c-p>'
+  let g:ctrlp_map = '<c-f>'
   let g:ctrlp_cmd = 'CtrlP'
   let g:ctrlp_buftag_types = { 'javascript': '--language-force=javascript --javascript-types=fcmv' }
   nmap <space>p :CtrlP<CR>
@@ -566,6 +564,10 @@ NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
   let g:unite_enable_start_insert=0
   let g:unite_source_rec_max_cache_files=5000
   let g:unite_prompt='» '
+
+  " YankRing
+  let g:unite_source_history_yank_enable = 1
+  nnoremap <Leader>y :Unite history/yank<cr>
 
   let g:unite_source_grep_max_candidates= 200
   if executable('ag')
