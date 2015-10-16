@@ -430,6 +430,10 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
   nmap <space>p :CtrlP<CR>
   nmap <space>b :CtrlPBufTag<CR>
   nmap <space>ab :CtrlPBufTagAll<CR>
+  let g:ctrlp_prompt_mappings = { 'ToggleMRURelative()': ['<F2>'] }
+  let g:ctrlp_mruf_relative=1
+  nmap <space>m :CtrlPMRUFiles<CR>
+
 NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
   nmap <space>o :Obsession
   let g:prosession_tmux_title=1
