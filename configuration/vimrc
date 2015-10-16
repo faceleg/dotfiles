@@ -394,35 +394,8 @@ let g:SignatureMap = {
       \ 'ListLocalMarks'     :  "'?"
       \ }
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'svermeulen/vim-easyclip'
-  " Manually map yanks to avoid conflicts with tpope/unimpaired
-  let g:EasyClipUseYankDefaults = 0
-  nmap ;y <Plug>EasyClipRotateYanksForward
-  nmap ,y <Plug>EasyClipRotateYanksBackward
-  nmap y <Plug>YankPreserveCursorPosition
-  nmap Y <Plug>:EasyClipBeforeYank<cr>y$
-  nmap yy <Plug>YankLinePreserveCursorPosition
-  xmap y <Plug>VisualModeYank
-  " imap <c-v> <plug>EasyClipInsertModePaste
-
-  nnoremap <space>y :Yanks<cr>
-
-  " remap add mark
-  nnoremap gm m
-
-  " Preserve default behaviour of S, use all other substitute bindings
-  let g:EasyClipUseSubstituteDefaults = 0
-  nmap s <plug>SubstituteOverMotionMap
-  nmap gs <plug>G_SubstituteOverMotionMap
-  nmap ss <plug>SubstituteLine
-  xmap s <plug>XEasyClipPaste
-  " nmap S <plug>SubstituteToEndOfLine
-  " nmap gS <plug>G_SubstituteToEndOfLine
-
-  let g:EasyClipYankHistorySize = 100
-  let g:EasyClipShowYanksWidth = 200
-  let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
-  let g:EasyClipShareYanks = 1
+NeoBundle 'vim-scripts/YankRing.vim'
+  nmap <Leader>y :YRShow<cr>
 NeoBundle 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_map = '<c-p>'
   let g:ctrlp_cmd = 'CtrlP'
