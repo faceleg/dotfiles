@@ -297,9 +297,6 @@ NeoBundle 'SirVer/ultisnips', {
 NeoBundle 'Shougo/vimfiler.vim'
   let g:vimfiler_as_default_explorer=1
   nmap <space>f :VimFilerBufferDir -force-quit<CR>
-  nmap <buffer> c <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_copy_file)
-  nmap <buffer> m <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_move_file)
-  nmap <buffer> d <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_delete_file)
 NeoBundle 'tpope/vim-commentary'
 NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
   nmap gS :SplitjoinSplit<cr>
