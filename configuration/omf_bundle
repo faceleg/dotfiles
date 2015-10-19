@@ -1,0 +1,13 @@
+theme dangerous
+package brew
+package jump
+package git-flow
+package gi
+package pbcopy
+package rvm
+package nvm
+package foreign-env
+
+# brew install grc
+# grc_1.9.orig.tar.gz
+package grc

@@ -1,33 +1,17 @@
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
 set -x SHELL /usr/local/bin/fish
-# eval "(docker-machine env local)" 
+# eval "(docker-machine env local)"
 
 # Path to your custom folder (default path is ~/.oh-my-fish/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
 
+
+eval sh $HOME/.config/base16-shell/base16-colors.dark.sh
+
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
 
-# Custom plugins and themes may be added to ~/.oh-my-fish/custom
-# Plugins and themes can be found at https://github.com/oh-my-fish/
-# Theme 'jacaetevha'
-Theme 'dangerous'
-Plugin 'theme'
-Plugin 'brew'
-Plugin 'jump'
-Plugin 'git-flow'
-Plugin 'gi'
-Plugin 'pbcopy'
-Plugin 'rvm'
-Plugin 'localhost'
-
-# brew install grc
-# grc_1.9.orig.tar.gz
-Plugin 'grc'
-
-# Tmux
-Plugin 'tmux'
 begin
   tmux has-session -t remote
   and tmux attach-session -t remote
@@ -108,4 +92,6 @@ set DOCKER_TLS_VERIFY "1"
 set DOCKER_HOST "tcp://192.168.99.100:2376"
 set DOCKER_CERT_PATH "/Users/faceleg/.docker/machine/machines/local"
 set DOCKER_MACHINE_NAME "local"
+
+set TERM "xterm-256color"
 
