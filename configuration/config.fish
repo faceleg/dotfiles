@@ -95,3 +95,9 @@ set DOCKER_MACHINE_NAME "local"
 
 set TERM "xterm-256color"
 
+# Path to Oh My Fish install.
+set -gx OMF_PATH $HOME.local/share/omf
+
+# Load oh-my-fish configuration.
+source $OMF_PATH/init.fish
+
