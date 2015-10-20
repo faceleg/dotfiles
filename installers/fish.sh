@@ -23,5 +23,5 @@ $CP /tmp/z-fish/z_complete.fish ~/.config/fish/completions/z_complete.fish
 printf "\nReplacing fish.config\n"
 rm -fv ~/.config/fish.config
 $CP "$DIR/../configuration/config.fish" ~/.config/fish/config.fish
-rm -fv "$OMF_CONFIG/bundle"
-$CP "$DIR/../configuration/omf_bundle" "$OMF_CONFIG/bundle"
+rm -fv "$HOME/.config/omf/bundle"
+$CP "$DIR/../configuration/omf_bundle" "$HOME/.config/omf/bundle"
