@@ -3,32 +3,15 @@ set fish_path $HOME/.oh-my-fish
 set -x SHELL /usr/local/bin/fish
 # eval "(docker-machine env local)"
 
-# Path to your custom folder (default path is ~/.oh-my-fish/custom)
-#set fish_custom $HOME/dotfiles/oh-my-fish
-
-
-eval sh $HOME/.config/base16-shell/base16-colors.dark.sh
-
-# Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
-
-begin
-  tmux has-session -t remote
-  and tmux attach-session -t remote
-end
-or begin
-  tmux new-session -s remote
-  and kill %self
-end
 
 # NVM
-function nvm
-  if test -e ~/.nvm/nvm.sh
-    bass source ~/.nvm/nvm.sh ';' nvm $argv
-  else
-    bass source /usr/local/opt/nvm/nvm.sh ';' nvm $argv
-  end
-end
+#function nvm
+#  if test -e ~/.nvm/nvm.sh
+#    bass source ~/.nvm/nvm.sh ';' nvm $argv
+#  else
+#    bass source /usr/local/opt/nvm/nvm.sh ';' nvm $argv
+#  end
+#end
 
 # Base16 Shell
 eval sh $HOME/.config/base16-shell/base16-colors.dark.sh
@@ -47,6 +30,7 @@ function history_merge -e fish_postexec
 end
 
 # Aliases
+alias tmux="tmux -2"
 alias takeover="tmux detach -a"
 
 # git related shortcuts
@@ -101,3 +85,11 @@ set -gx OMF_PATH $HOME.local/share/omf
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
+begin
+  tmux -2 has-session -t remote
+  and tmux -2 attach-session -t remote
+end
+or begin
+  tmux -2 new-session -s remote
+  and kill %self
+end
