@@ -838,15 +838,13 @@ cnoremap w!! w !sudo tee % >/dev/null
 map <silent> <F12> :w<CR>
 " }}}
 
-" Spelling toggle {{{
+" Spelling toggle
 " http://yavin4.anshul.info/2006/05/18/spell-check-in-vim-7/
 set spelllang=en_nz
+
 " Toggle spelling & line highlighting with F7
 map <silent> <F7> :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
-map <silent> <space>s :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
-" }}}
 
-" {{{
 " Type 12<Enter> to go to line 12 (12G breaks my wrist)
 " Hit Enter to go to end of file.
 " Hit Backspace to go to beginning of file.
@@ -856,9 +854,8 @@ nnoremap <CR> G
 " Delete a given line then move back to initial line
 " http://stackoverflow.com/a/8495125/187954
 command! -range -nargs=0 D <line1>,<line2>d|norm ``
-" }}}
 
-" Disable arrow keys {{{
+" Disable arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -867,13 +864,11 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-" }}}
 
-" Turn Off Swap Files {{{
+" Turn Off Swap Files
 set noswapfile
 set nobackup
 set nowb
-" }}}
 
 " Position saving {{{
 " http://amix.dk/vim/vimrc.html
