@@ -119,17 +119,6 @@ NeoBundle 'miyakogi/conoline.vim'
   " let g:conoline_use_colorscheme_default_normal=1
   " let g:conoline_use_colorscheme_default_insert=1
 
-" Indenting
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'Konfekt/FastFold'
-  set foldmethod=syntax
-
-  let g:tex_fold_enabled=1
-  let g:vimsyn_folding='af'
-  let g:xml_syntax_folding = 1
-  let g:php_folding = 1
-  let g:perl_fold = 1
-
 " Text Objects
 NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' }
@@ -638,11 +627,6 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
 NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_overlay_enable = 1
   nmap  <space>w :ChooseWin<CR>
-
-  " workaround for overlay font broken on mutibyte buffer.
-  " let g:choosewin_overlay_clear_multibyte = 1
-
-  " tmux like overlay color
   let g:choosewin_color_overlay = {
         \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
         \ 'cterm': [ 25, 25 ]
@@ -655,15 +639,6 @@ NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_blink_on_land      = 1 " dont' blink at land
   let g:choosewin_statusline_replace = 0 " don't replace statusline
   let g:choosewin_tabline_replace    = 0 " don't replace tabline
-" NeoBundle 'scrooloose/nerdtree', {
-"       \ 'depends': [ 'Xuyuanp/nerdtree-git-plugin', 'low-ghost/nerdtree-fugitive']}
-" nmap <space>f :NERDTreeToggle<CR>
-" nmap <space>n :NERDTreeFind<CR>
-" autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" let g:NERDTreeShowLineNumbers=1
-" let g:NERDTreeWinSize=50
-" let g:NERDTreeChDirMode=0
 
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
@@ -674,66 +649,25 @@ NeoBundle 'Raimondi/delimitMate'
   let g:delimitMate_expand_cr = 0
   let g:delimitMate_jump_expansion = 0
 
-function! SourceEclim() abort
-  if !isdirectory('/opt/eclipse')
-    echo 'Eclipse not found at /opt/eclipse'
-    return
-  endif
-
-  NeoBundleLazy 'ervandew/eclim', {
-        \ 'build': {
-        \   'windows': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '') . ' -Dvim.files=' . escape(expand('~/.vim/bundle'), ''),
-        \   'unix': 'ant -Declipse.home=' . escape(expand('/opt/eclipse'), '') . ' -Dvim.files=' . escape(expand('~/.vim/bundle/eclim'), '')
-        \   }
-        \ }
-
-  autocmd FileType java NeoBundleSource eclim
-  let g:EclimJavascriptValidate = 0
-  let g:EclimHtmlValidate = 0
-  let g:EclimCompletionMethod = 'omnifunc'
-
-  autocmd FileType java call SetJavaOptions()
-
-  function! SetJavaOptions()
-
-    " Import the class under the cursor with <leader>i (:h mapleader):
-    map <buffer> ,i :JavaImport<CR>
-    map ,io :JavaImportOrganize<CR>
-    map <buffer> ,fi :JavaImportOrganize<CR>
-    map <buffer> ,h :JavaCallHeirarchy<CR>
-    map <buffer> ,jc :JavaCorrect<CR>
-    map <buffer> ,dc :JavaDocComment<CR>
-    map <buffer> ,ju :JUnit<CR>
-
-    map <buffer> ,d :JavaDocSearch -x declarations<CR>
-
-    " Perform a context sensitive search of the element under the cursor with <enter>.
-    map <buffer> <CR> :JavaSearchContext<CR>
-  endfunction
-endfunction
-command! SourceEclim call SourceEclim()
-
 NeoBundleCheck
-" }}}
 
 call neobundle#end()
 
-" Colourscheme {{{
-  syntax on
-  set background=dark
+" Colourscheme
+syntax on
+set background=dark
 
-  let g:base16colorspace=256  " Access colors present in 256 colorspace
-  colorscheme base16-colors
+let g:base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-colors
 
-  set t_Co=256
-  let html_no_pre = 1
-  let html_number_lines = 0
+set t_Co=256
+let html_no_pre = 1
+let html_number_lines = 0
 
-  set ttyfast
-  set lazyredraw
-" }}}
+set ttyfast
+set lazyredraw
 
-" Custom highlight options {{{
+" Custom highlight options
 highlight LineNr ctermbg=0
 highlight SignColumn ctermbg=0
 
@@ -749,9 +683,8 @@ highlight SyntasticErrorSign ctermbg=0 ctermfg=1
 highlight SyntasticWarningSign ctermbg=0 ctermfg=3
 highlight SyntasticStyleErrorSign ctermbg=0 ctermfg=1
 highlight SyntasticStyleWarningSign ctermbg=0 ctermfg=3
-"}}}
 
-" Tabs & indenting {{{
+" Tabs & indenting
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -761,82 +694,72 @@ au FileType ruby setl sw=2 sts=2 et
 au FileType javascript,css,less,sass,scss,stylus setl sw=2 sts=2 et
 au FileType php,phtml,html setl sw=4 sts=4 et
 
-" set textwidth=120
+set textwidth=120
 set formatoptions-=t
 
 filetype plugin indent on
-" }}}
 
-" General settings {{{
-  set completeopt=menuone
-  set number
-  set cindent
+" General settings
+set completeopt=menuone
+set number
+set cindent
 
-  if v:version >= 704
-    set re=1
-  endif
+if v:version >= 704
+  set re=1
+endif
 
-  " a - terse messages (like [+] instead of [Modified])
-  " t - truncate file names
-  " I - no intro message when starting vim fileless
-  " T - truncate long messages to avoid having to hit a key
-  set shortmess=atIT
+" a - terse messages (like [+] instead of [Modified])
+" t - truncate file names
+" I - no intro message when starting vim fileless
+" T - truncate long messages to avoid having to hit a key
+set shortmess=atIT
 
-  set nowrap                      " Do not wrap lines by default
-  set autoread                    " Reload files changed outside vim
+set nowrap                      " Do not wrap lines by default
+set autoread                    " Reload files changed outside vim
 
-  set viminfo='1000,f1
-  set history=1000                " remember more commands and search history
-  set undolevels=1000             " remember more undo levels
+set viminfo='1000,f1
+set history=1000                " remember more commands and search history
+set undolevels=1000             " remember more undo levels
 
-  " No need to show mode due to Powerline
-  set noshowmode
+" No need to show mode due to Powerline
+set noshowmode
 
-  " Explicitly set encoding to utf-8
-  set encoding=utf-8
+" Explicitly set encoding to utf-8
+set encoding=utf-8
 
-  " Prevents MatchParen from loading, which can cause slowdown
-  let g:loaded_matchparen=1
+" Prevents MatchParen from loading, which can cause slowdown
+let g:loaded_matchparen=1
 
-  " This makes vim act like all other editors, buffers can :u
-  " exist in the background without being in a window.
-  " http://items.sjbach.com/319/configuring-vim-right
-  set hidden
+" This makes vim act like all other editors, buffers can :u
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
 
-  " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
-  set backspace=indent,eol,start
+" fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
+set backspace=indent,eol,start
 
-  " Do not highlight current line
-  set nocursorline
-  set nocursorcolumn
+" Do not highlight current line
+set nocursorline
+set nocursorcolumn
 
-  set fcs=vert:│ " Solid line for vsplit separator
+set fcs=vert:│ " Solid line for vsplit separator
 
-  " Select all
-  nmap <space>a GVgg<CR>
+" Select all
+nmap <space>a GVgg<CR>
 
-  " disable ex mode
-  nnoremap Q <nop>
-  map q: :q
+" disable ex mode
+nnoremap Q <nop>
+map q: :q
 
-  " Disable K looking stuff up
-  map K <Nop>
+" Disable K looking stuff up
+map K <Nop>
 
-  " I can type :help on my own, thanks.
-  noremap <F1> <Esc>
+" I can type :help on my own, thanks.
+noremap <F1> <Esc>
 
-  " Automatically reload vimrc
-  "autocmd! bufwritepost .vimrc nested source %
-" }}}
-
-" Sudo {{{
+" Sudo
 " w!!: Writes using sudo
 cnoremap w!! w !sudo tee % >/dev/null
-" }}}
-
-" Saving mapping {{{
-map <silent> <F12> :w<CR>
-" }}}
 
 " Spelling toggle
 " http://yavin4.anshul.info/2006/05/18/spell-check-in-vim-7/
@@ -870,16 +793,15 @@ set noswapfile
 set nobackup
 set nowb
 
-" Position saving {{{
+" Position saving
 " http://amix.dk/vim/vimrc.html
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \   exe "normal! g`\"" |
       \ endif
-" }}}
 
-" Persistent Undo {{{
+" Persistent Undo
 " Keep undo history across sessions, by storing in file.
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 
@@ -887,25 +809,22 @@ if has("persistent_undo")
   set undodir=~/.vim/backups
   set undofile
 endif
-" }}}
 
-" Scrolling {{{
-  set scrolloff=8 " Start scrolling when we're 8 lines away from margins
-  set sidescrolloff=15
-  set sidescroll=1
-" }}}
+" Scrolling
+set scrolloff=8 " Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
 
-" Search & Replace {{{
-  set hlsearch
-  set incsearch
-  set smartcase
-  set ignorecase
-  set showmatch
+" Search & Replace
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+set showmatch
 
 nmap <space>c :nohlsearch<CR>
   " Replace all instances of word under cursor
   nnoremap <space>r :%s/\<<C-r><C-w>\>//g<Left><Left>
-" }}}
 
 " Show special characters
 " http://vimcasts.org/episodes/show-invisibles/
@@ -925,8 +844,6 @@ set splitright
 
 " Quickly select text you just pasted
 noremap gV `[v`]
-
-" Window resizing {{{
 
 " Comfortable window resizing
 nnoremap <silent> <s-k> :call UpHorizontal()<CR>
