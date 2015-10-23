@@ -601,8 +601,6 @@ NeoBundleLazyFor 'sjl/gundo.vim', 'mappings', ['F5'], { 'augroup': 'GundoToggle'
   let g:gundo_preview_bottom = 1
   let g:gundo_close_on_revert = 1
 NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>']
-  " let g:multi_cursor_quit_key='<C-c>'
-  " nnoremap <C-c> :call multiple_cursors#quit()<CR>
 NeoBundle 'hlissner/vim-multiedit'
 
 " Utility
@@ -623,7 +621,6 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
   nmap <leader>r :RainbowParentheses!!<CR>
   autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-
 NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_overlay_enable = 1
   nmap  <space>w :ChooseWin<CR>
