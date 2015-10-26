@@ -185,26 +185,11 @@ NeoBundleLazyFor 'othree/xml.vim', 'filetypes', ['html', 'xhtml', 'xml']
 NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
 NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
 
-NeoBundleLazyFor 'wavded/vim-stylus', 'filetypes', ['stylus']
-  au BufNewFile,BufRead *.styl set ft=stylus
-NeoBundleLazyFor 'lepture/vim-velocity', 'filetypes', ['velocity']
-  au BufNewFile,BufRead *.vm set ft=velocity
-NeoBundleLazyFor 'jelera/vim-javascript-syntax', 'filetypes', ['javascript']
-NeoBundleLazyFor 'kchmck/vim-coffee-script', 'filetypes', ['coffee']
-  au BufNewFile,BufRead *.coffee set ft=coffee
-NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json']
+NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'sheerun/vim-polyglot'
   let g:vim_json_syntax_conceal = 0
-NeoBundleLazyFor 'mutewinter/nginx.vim', 'filetypes', ['nginx']
-NeoBundle 'jelera/vim-javascript-syntax',  {
-      \ 'lazy': 1,
-      \ 'autoload': { 'filetypes': ['javascript', 'html'] }
-      \}
-NeoBundle 'pangloss/vim-javascript',  {
-      \ 'lazy': 1,
-      \ 'autoload': { 'filetypes': ['javascript']}
-      \}
-  let b:javascript_fold=1
-
+  au BufNewFile,BufRead *.vm set ft=velocity
+  au BufNewFile,BufRead *.coffee set ft=coffee
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
