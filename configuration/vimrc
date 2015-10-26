@@ -692,33 +692,6 @@ highlight SyntasticWarningSign ctermbg=0 ctermfg=3
 highlight SyntasticStyleErrorSign ctermbg=0 ctermfg=1
 highlight SyntasticStyleWarningSign ctermbg=0 ctermfg=3
 
-" Folding
-
-" set foldmethod=syntax
-set foldcolumn=2
-set foldlevelstart=3
-
-" let javaScript_fold=1         " JavaScript
-" let perl_fold=1               " Perl
-" let php_folding=1             " PHP
-" let r_syntax_folding=1        " R
-" let ruby_fold=1               " Ruby
-" let sh_fold_enabled=1         " sh
-" let vimsyn_folding='af'       " Vim script
-" let xml_syntax_folding=1      " XML
-
-function! JavaScriptFold()
-  setl foldmethod=syntax
-  setl foldcolumn=2
-  setl foldlevelstart=3
-
-  syntax region foldCurlyBraces start=/{/ end=/}/ transparent fold keepend extend
-  syntax region foldSquareBraces start=/\[/ end=/\]/ transparent fold keepend extend
-  syntax region foldBraces start=/(/ end=/)/ transparent fold keepend extend
-  syntax region javascriptDocComment start="/\*\*"  end="\*/" fold keepend
-endfunction
-au BufReadPost,FileReadPost *.js call JavaScriptFold()
-
 " Tabs & indenting
 set tabstop=4
 set shiftwidth=4
