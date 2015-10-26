@@ -320,6 +320,7 @@ NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
       \   '<Plug>(easymotion-next)',
       \ ],
       \ { 'vim_version' : '7.4' }
+  let g:EasyMotion_smartcase = 1
   map <Leader>s <Plug>(easymotion-s2)
   map <Leader>t <Plug>(easymotion-t2)
 
