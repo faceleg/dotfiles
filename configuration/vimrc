@@ -393,6 +393,7 @@ let g:SignatureMap = {
       \ }
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
   let g:ctrlp_map = '<c-f>'
   let g:ctrlp_cmd = 'CtrlP'
   let g:ctrlp_buftag_types = { 'javascript': '--language-force=javascript --javascript-types=fcmv' }
