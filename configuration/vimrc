@@ -518,8 +518,10 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
         \ "discarding unexpected <ng-message>"
         \ ]
 
-NeoBundleLazyFor 'wincent/loupe', 'mappings', [ '/', '<Leader>c' ]
-  nmap <Leader>c <Plug>(LoupeClearHighlight)
+NeoBundleLazyFor 'wincent/loupe', 'mappings', [
+      \ '/',
+      \ '<Plug>(LoupeClearHighlight)'
+      \ ]
 NeoBundleLazyFor 'wincent/ferret', 'mappings', [
       \ '<Leader>a',
       \ '<Leader>r',
