@@ -543,7 +543,7 @@ NeoBundleLazyFor 'haya14busa/incsearch.vim', 'mappings', [
 
   let g:incsearch#magic = '\v'
 
-NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
+NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite', 'depends': 'Shougo/neoyank.vim' }
   let g:unite_data_directory = expand('~/.vim/.cache/unite')
   let g:unite_enable_start_insert=0
   let g:unite_source_rec_max_cache_files=5000
@@ -551,7 +551,7 @@ NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
 
   " YankRing
   let g:unite_source_history_yank_enable = 1
-  let g:unite_source_history_yank_file = $HOME . '/.vim/yankring.txt'
+  let g:neoyank#file = $HOME . '/.vim/yankring.txt'
   nnoremap <Leader>y :Unite history/yank<cr>
 
   " https://github.com/pazams/d-is-for-delete
