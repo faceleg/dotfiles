@@ -5,7 +5,7 @@ CP="/bin/cp -vfr"
 printf "\Installing Base16 Colors"
 git clone https://github.com/chriskempson/base16-shell ~/.config/base16-shell
 
-\curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 
 printf "\nInstalling bass\n"
 git clone https://github.com/edc/bass.git /tmp/bass
