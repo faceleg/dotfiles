@@ -305,6 +305,7 @@ NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
       \   '<Plug>(easymotion-next)',
       \ ],
       \ { 'vim_version' : '7.4' }
+  let g:EasyMotion_do_mapping = 0 " Disable default mappings
   let g:EasyMotion_smartcase = 1
   map <Leader>s <Plug>(easymotion-s2)
   map <Leader>t <Plug>(easymotion-t2)
@@ -314,8 +315,8 @@ NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
   map <Leader>k <Plug>(easymotion-k)
   map <Leader>h <Plug>(easymotion-linebackward)
 
-  map <Leader>n <Plug>(easymotion-next)
-  map <Leader>N <Plug>(easymotion-next)
+  " map <Leader>n <Plug>(easymotion-next)
+  " map <Leader>N <Plug>(easymotion-next)
 NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
 NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
   " <C-k>   Move current line/selections up
