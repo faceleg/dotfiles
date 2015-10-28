@@ -36,8 +36,6 @@ let g:neobundle#default_options._ = { 'verbose' : 1, 'focus' : 1 }
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Utility {{{
-
 " Inspired by https://raw.githubusercontent.com/hecomi/dotfiles/master/.vimrc
 function! s:neobundle_lazy_for(bundle, ...)
   call neobundle#parser#lazy([a:bundle])
