@@ -116,6 +116,7 @@ NeoBundle 'miyakogi/conoline.vim'
   let g:conoline_auto_enable = 1
   " let g:conoline_use_colorscheme_default_normal=1
   " let g:conoline_use_colorscheme_default_insert=1
+NeoBundle 'vim-utils/vim-troll-stopper'
 
 " Text Objects
 NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
