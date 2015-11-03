@@ -342,7 +342,7 @@ NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua
 NeoBundle 'vim-scripts/TwitVim'
 
 " Features
-NeoBundle 'atsepkov/vim-smartinput'
+NeoBundle 'jiangmiao/auto-pairs'
 
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
