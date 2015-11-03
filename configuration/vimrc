@@ -737,12 +737,6 @@ set spelllang=en_nz
 " Toggle spelling & line highlighting with F7
 map <silent> <F7> :set nospell!<CR>:set nospell?<CR> <bar> :set cursorline!<CR>
 
-" Type 12<Enter> to go to line 12 (12G breaks my wrist)
-" Hit Enter to go to end of file.
-" Hit Backspace to go to beginning of file.
-nnoremap <BS> gg
-nnoremap <CR> G
-
 " Delete a given line then move back to initial line
 " http://stackoverflow.com/a/8495125/187954
 command! -range -nargs=0 D <line1>,<line2>d|norm ``
