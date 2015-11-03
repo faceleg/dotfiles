@@ -899,7 +899,6 @@ func! LeftVertical()
     exe currentWin . "wincmd w"
   endif
 endfun
-"}}}
 
 " http://vim.wikia.com/wiki/Reverse_selected_text
 vnoremap <C-r> c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>"
