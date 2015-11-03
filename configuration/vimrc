@@ -528,28 +528,36 @@ NeoBundleLazyFor 'wincent/ferret', 'mappings', [
       \ '<Leader>l'
       \ ], { 'depends': 'tpope/vim-dispatch' }
   nmap <leader>z <Plug>(FerretAckWord)
+NeoBundle 'svermeulen/vim-easyclip'
+  " Manually map yanks to avoid conflicts with tpope/unimpaired
+  let g:EasyClipUseYankDefaults = 0
+  nmap ;y <Plug>EasyClipRotateYanksForward
+  nmap ,y <Plug>EasyClipRotateYanksBackward
+  nmap y <Plug>YankPreserveCursorPosition
+  nmap Y <Plug>:EasyClipBeforeYank<cr>y$
+  nmap yy <Plug>YankLinePreserveCursorPosition
+  xmap y <Plug>VisualModeYank
+  imap <c-v> <plug>EasyClipInsertModePaste
 
-NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite', 'depends': 'Shougo/neoyank.vim' }
+  nnoremap <space>y :Yanks<cr>
+
+  " remap add mark
+  nnoremap gm m
+
+  " Preserve default behaviour of S, use all other substitute bindings
+  let g:EasyClipUseSubstituteDefaults = 0
+  nmap s <plug>SubstituteOverMotionMap
+  nmap gs <plug>G_SubstituteOverMotionMap
+  nmap ss <plug>SubstituteLine
+  xmap s <plug>XEasyClipPaste
+  " nmap S <plug>SubstituteToEndOfLine
+  " nmap gS <plug>G_SubstituteToEndOfLine
+
+NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
   let g:unite_data_directory = expand('~/.vim/.cache/unite')
   let g:unite_enable_start_insert=0
   let g:unite_source_rec_max_cache_files=5000
   let g:unite_prompt='» '
-
-  " YankRing
-  let g:unite_source_history_yank_enable = 1
-  let g:neoyank#file = $HOME . '/.vim/yankring.txt'
-  nnoremap <Leader>y :Unite history/yank<cr>
-
-  " https://github.com/pazams/d-is-for-delete
-  " Don't record deletes in the default register
-  nnoremap x "_x
-  nnoremap d "_d
-  nnoremap D "_D
-  vnoremap d "_d
-
-  nnoremap <leader>d ""d
-  nnoremap <leader>D ""D
-  vnoremap <leader>d ""d
 
   " Custom mappings for the unite buffer
   autocmd FileType unite call s:unite_settings()
