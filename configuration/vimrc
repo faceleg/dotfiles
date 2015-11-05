@@ -143,6 +143,12 @@ NeoBundle 'kana/vim-textobj-lastpat', { 'depends': 'kana/vim-textobj-user' }
   vmap iH <Plug>(textobj-lastpat-N)
 NeoBundle 'Julian/vim-textobj-variable-segment', { 'depends': 'kana/vim-textobj-user' }
   " iv, av
+NeoBundle 'bkad/CamelCaseMotion'
+  " ,e
+  " ,w
+  " ... etc
+NeoBundle 'tyru/operator-camelize.vim', { 'depends': 'kana/vim-operator-user' }
+  map <Leader>c <Plug>(operator-camelize-toggle)
 NeoBundle 'Julian/vim-textobj-brace', { 'depends': 'kana/vim-textobj-user' }
   " ij, aj
 NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
