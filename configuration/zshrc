@@ -37,6 +37,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/nvm
 
     # plugins
+    zgen load chrissicool/zsh-256color
     zgen load djui/alias-tips
     zgen load MikeDacre/cdbk
     zgen load supercrabtree/k
