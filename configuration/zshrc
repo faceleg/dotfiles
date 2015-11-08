@@ -141,17 +141,7 @@ setopt extendedglob
 unsetopt caseglob
 unsetopt nomatch 2>/dev/null
 
-# setopt interactivecomments # pound sign in interactive prompt
-
 setopt auto_cd
-
-if is_osx; then
-  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-  if [[ ! -f '/usr/local/bin/brew' ]]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew tap homebrew/boneyard
-  fi
-fi
 
 # Vi mode
 bindkey -v
