@@ -40,7 +40,6 @@ if ! zgen saved; then
     zgen load chrissicool/zsh-256color
     zgen load djui/alias-tips
     zgen load rupa/z
-    zgen load supercrabtree/k
 
     ZGEN_PLUGIN_UPDATE_DAYS=14
     ZGEN_SYSTEM_UPDATE_DAYS=14
