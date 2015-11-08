@@ -162,91 +162,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^H' backward-delete-char
 
-# 10ms for key sequences
-KEYTIMEOUT=1
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/share/npm/bin:$PATH"
-
-# Install global npm packages locally
-NPM_PACKAGES="${HOME}/.npm-packages"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-PATH="$NPM_PACKAGES/bin:$PATH"
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-
-# RVM fiddling
-if [ -d "$HOME/.rvm" ]; then
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-    export PATH="$PATH:$HOME/.rvm/bin"
-fi
-
-# http://vim.wikia.com/wiki/256_colors_in_vim
-if [ "$TERM" = "xterm" ] ; then
-    if [ -z "$COLORTERM" ] ; then
-        if [ -z "$XTERM_VERSION" ] ; then
-            echo "Warning: Terminal wrongly calling itself 'xterm'."
-        else
-            case "$XTERM_VERSION" in
-            "XTerm(256)") TERM="xterm-256color" ;;
-            "XTerm(88)") TERM="xterm-88color" ;;
-            "XTerm") ;;
-            *)
-                echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION"
-                ;;
-            esac
-        fi
-    else
-        case "$COLORTERM" in
-            gnome-terminal)
-                # Those crafty Gnome folks require you to check COLORTERM,
-                # but don't allow you to just *favor* the setting over TERM.
-                # Instead you need to compare it and perform some guesses
-                # based upon the value. This is, perhaps, too simplistic.
-                TERM="gnome-256color"
-                ;;
-            *)
-                echo "Warning: Unrecognized COLORTERM: $COLORTERM"
-                ;;
-        esac
-    fi
-fi
-
-SCREEN_COLORS="`tput colors`"
-if [ -z "$SCREEN_COLORS" ] ; then
-    case "$TERM" in
-        screen-*color-bce)
-            echo "Unknown terminal $TERM. Falling back to 'screen-bce'."
-            export TERM=screen-bce
-            ;;
-        *-88color)
-            echo "Unknown terminal $TERM. Falling back to 'xterm-88color'."
-            export TERM=xterm-88color
-            ;;
-        *-256color)
-            echo "Unknown terminal $TERM. Falling back to 'xterm-256color'."
-            export TERM=xterm-256color
-            ;;
-    esac
-    SCREEN_COLORS=`tput colors`
-fi
-if [ -z "$SCREEN_COLORS" ] ; then
-    case "$TERM" in
-        gnome*|xterm*|konsole*|aterm|[Ee]term)
-            echo "Unknown terminal $TERM. Falling back to 'xterm'."
-            export TERM=xterm
-            ;;
-        rxvt*)
-            echo "Unknown terminal $TERM. Falling back to 'rxvt'."
-            export TERM=rxvt
-            ;;
-        screen*)
-            echo "Unknown terminal $TERM. Falling back to 'screen'."
-            export TERM=screen
-            ;;
-    esac
-    SCREEN_COLORS=`tput colors`
-fi
+KEYTIMEOUT=1 # 10ms for key sequences
 
 alias tmux='tmux -2'
 
@@ -258,11 +174,5 @@ if [[ -z $TMUX ]]; then
     tmux -2 attach-session -t $CURRENT_USER
   else
     tmux -2 new-session -s $CURRENT_USER
-  fi
-else
-  # If inside tmux session then print MOTD
-  MOTD=/etc/motd.tcl
-  if [ -f $MOTD ]; then
-    $MOTD
   fi
 fi
