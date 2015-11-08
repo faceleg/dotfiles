@@ -101,11 +101,13 @@ set -g @tpm_plugins '              \
   tmux-plugins/tmux-sensible       \
   tmux-plugins/tmux-resurrect      \
   tmux-plugins/tmux-yank           \
+  tmux-plugins/tmux-pain-control   \
+  tmux-plugins/tmux-copycat        \
+  tmux-plugins/tmux-open           \
+  tmux-plugins/tmux-battery        \
+  tmux-plugins/tmux-cpu            \
   faceleg/tmux-move-window         \
 '
 
 run-shell '~/.tmux/plugins/tpm/tpm'
-
-# Load Theme
-source-file "${HOME}/.tmux-themes/faceleg"
 
