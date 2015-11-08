@@ -7,7 +7,7 @@ mkdir -p ~/.tmux/plugins
 printf "
 (Re)Installing TMP
 "
-TMUX_PLUGINS="`eval echo ~/.tmux/plugins/`"
+TMUX_PLUGINS="`eval echo ~/.tmux/plugins`"
 if [ -d $TMUX_PLUGINS ]; then
     rm -rf $TMUX_PLUGINS/tpm
 else
@@ -16,18 +16,9 @@ fi
 
 git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGINS/tpm
 
-rm -f ~/.tmux.conf
-$CP "$DIR/../configuration/tmux.conf" ~/.tmux.conf
-
-# Install tmux themes
-rm -rf ~/.tmux-themes
-
-# Create tmux-themes directory structure & copy files
-$CP "$DIR/../addons/tmux/themes/" ~/.tmux-themes
-
-chmod 755 ~/.tmux-themes
-find ~/.tmux-themes -type d -exec chmod 755 {} \;
-find ~/.tmux-themes -type f -exec chmod 644 {} \;
+rm -f ~/.tmux.conf ~/.tmux.conf.local
+$CP "$DIR/../configuration/tmux.conf.local" ~/.tmux.conf.local
+wget https://raw.githubusercontent.com/faceleg/maglev/master/.tmux.conf -O ~/.tmux.conf
 
 tmux source-file ~/.tmux.conf
 
