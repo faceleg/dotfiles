@@ -39,7 +39,7 @@ if ! zgen saved; then
     # plugins
     zgen load chrissicool/zsh-256color
     zgen load djui/alias-tips
-    zgen load MikeDacre/cdbk
+    zgen load rupa/z
     zgen load supercrabtree/k
 
     ZGEN_PLUGIN_UPDATE_DAYS=14
