@@ -53,7 +53,7 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-completions src
     zgen load jimmijj/zsh-syntax-highlighting
     zgen load zsh-users/zsh-history-substring-search
-    zgen load tarruda/zsh-autosuggestions
+    # zgen load tarruda/zsh-autosuggestions
 
     if is_osx; then
         zgen load chriskempson/base16-iterm2
