@@ -398,7 +398,6 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 
 NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
   nmap <space>o :Obsession
-  let g:prosession_tmux_title=1
 
 if v:version >= 702
   NeoBundle 'szw/vim-ctrlspace'
