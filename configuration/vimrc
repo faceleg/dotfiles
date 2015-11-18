@@ -520,6 +520,7 @@ NeoBundleLazyFor 'scrooloose/syntastic', 'filetypes', [
         \ "<centered> is not recognized!",
         \ "discarding unexpected <centered>",
         \ "<ng-message> is not recognized!",
+        \ "<pix",
         \ "discarding unexpected <ng-message>"
         \ ]
 
