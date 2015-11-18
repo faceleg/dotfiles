@@ -819,6 +819,11 @@ set splitright
 " Quickly select text you just pasted
 noremap gV `[v`]
 
+" c-s save
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
+
 " Comfortable window resizing
 nnoremap <silent> <s-k> :call UpHorizontal()<CR>
 nnoremap <silent> <s-j> :call DownHorizontal()<CR>
