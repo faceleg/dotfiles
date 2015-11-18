@@ -143,6 +143,9 @@ unsetopt nomatch 2>/dev/null
 
 setopt auto_cd
 
+# Allow c-s to pass through
+stty -ixon
+
 # Vi mode
 bindkey -v
 bindkey '^R' history-incremental-pattern-search-backward
