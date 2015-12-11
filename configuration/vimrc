@@ -549,11 +549,6 @@ NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
     nmap <buffer> <ESC> <Plug>(unite_exit)
 
   endfunction
-NeoBundleLazyFor 'sjl/gundo.vim', 'mappings', ['F5'], { 'augroup': 'GundoToggle' }
-  nnoremap <F5> :GundoToggle<CR>
-  let g:gundo_right = 1
-  let g:gundo_preview_bottom = 1
-  let g:gundo_close_on_revert = 1
 NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>']
 NeoBundle 'hlissner/vim-multiedit'
 
