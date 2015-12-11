@@ -347,6 +347,13 @@ NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua
 
 " External programs
 NeoBundle 'vim-scripts/TwitVim'
+NeoBundle 'benmills/vimux'
+ map <Leader>vp :VimuxPromptCommand<CR>
+ map <Leader>vl :VimuxRunLastCommand<CR>
+ map <Leader>vq :VimuxCloseRunner<CR>
+ map <Leader>vs :VimuxInterruptRunner<CR>
+ map <Leader>vu :VimuxScrollUpInspect<CR>
+ map <Leader>vd :VimuxScrollDownInspect<CR>
 
 " Features
 NeoBundle 'jiangmiao/auto-pairs'
