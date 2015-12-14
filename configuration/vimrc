@@ -480,35 +480,12 @@ NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
   " npm install -g stylint
   let g:neomake_stylus_enabled_makers = ['stylint']
 
-"   " https://github.com/w3c/tidy-html5.git
-  let g:neomake_html_enabled_makers = ['tidy']
-  let g:neomake_xhtml_enabled_makers = ['tidy']
-"   let g:syntastic_html_tidy_ignore_errors = [
-"         \ "\"colspan\" has invalid value",
-"         \ "proprietary attribute",
-"         \ "unescaped & which should be written as &amp;",
-"         \ "<img> lacks \"src\" attribute",
-"         \ "trimming empty <button>",
-"         \ "trimming empty <span>",
-"         \ "<a> escaping malformed URI reference",
-"         \ "<centered> is not recognized!",
-"         \ "discarding unexpected <centered>",
-"         \ "<ng-message> is not recognized!",
-"         \ "<pix",
-"         \ "discarding unexpected <ng-message>"
-"         \ ]
-
 NeoBundleLazyFor 'wincent/loupe', 'mappings', [
       \ '/',
       \ '<Plug>(LoupeClearHighlight)'
       \ ]
-NeoBundleLazyFor 'wincent/ferret', 'mappings', [
-      \ '<Leader>a',
-      \ '<Leader>r',
-      \ '<Leader>z',
-      \ '<Leader>l'
-      \ ], { 'depends': 'tpope/vim-dispatch' }
-  nmap <leader>z <Plug>(FerretAckWord)
+NeoBundle 'dkprice/vim-easygrep'
+  let g:EasyGrepFilesToExclude='.svn,.git,node_modules/'
 NeoBundle 'svermeulen/vim-easyclip'
   " Manually map yanks to avoid conflicts with tpope/unimpaired
   let g:EasyClipUseYankDefaults = 0
