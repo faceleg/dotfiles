@@ -486,6 +486,7 @@ NeoBundleLazyFor 'wincent/loupe', 'mappings', [
       \ ]
 NeoBundle 'dkprice/vim-easygrep'
   let g:EasyGrepFilesToExclude='.svn,.git,node_modules/'
+  let g:EasyGrepCommand='ack'
 NeoBundle 'svermeulen/vim-easyclip'
   " Manually map yanks to avoid conflicts with tpope/unimpaired
   let g:EasyClipUseYankDefaults = 0
