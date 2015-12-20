@@ -7,8 +7,8 @@ scriptencoding utf-8
 set shell=/bin/bash
 
 " The mapleader has to be set before vundle starts loading all the plugins.
-let g:mapleader=";"
-let g:maplocalleader=";"
+let g:mapleader=';'
+let g:maplocalleader=';'
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -28,7 +28,7 @@ if has('vim_starting')
   endif
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+call g:neobundle#begin(expand('~/.vim/bundle/'))
 
 let g:neobundle#install_process_timeout = 2000
 let g:neobundle#default_options._ = { 'verbose' : 1, 'focus' : 1 }
@@ -38,7 +38,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Inspired by https://raw.githubusercontent.com/hecomi/dotfiles/master/.vimrc
 function! s:neobundle_lazy_for(bundle, ...)
-  call neobundle#parser#lazy([a:bundle])
+  call g:neobundle#parser#lazy([a:bundle])
   let l:bundle = split( substitute(a:bundle, "['\", ]", '', 'g'), '/' )
   let l:name = l:bundle[len(l:bundle) - 1]
 
@@ -68,7 +68,7 @@ function! s:neobundle_lazy_for(bundle, ...)
   call extend(l:configuration, l:additional_configuration)
   call extend(l:configuration, l:autoload)
 
-  call neobundle#config(l:name, l:configuration)
+  call g:neobundle#config(l:name, l:configuration)
 endfunction
 
 command! -nargs=+ NeoBundleLazyFor
@@ -455,7 +455,6 @@ NeoBundleLazyFor 'majutsushi/tagbar', 'mappings', ['F8'], {
   nmap <F8> :TagbarToggle<CR>
 
 " Error reporting
-NeoBundleLazy 'syngan/vim-vimlint', { 'depends' : 'ynkdir/vim-vimlparser'}
 NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
       \     'javascript',
       \     'coffeescript',
@@ -465,18 +464,18 @@ NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
       \     'vim',
       \     'html',
       \     'xhtml',
-      \ ], { 'depends': 'vim-vimlint' }
+      \ ]
 
   autocmd! BufWritePost * Neomake
 
   let g:neomake_javascript_enabled_makers = ['eslint']
-  " https://github.com/syngan/vim-vimlint
-  let g:neomake_vim_enabled_makers = ['vimlint']
+    " pip install vim-vint
+  let g:neomake_vim_enabled_makers = ['vint']
   let g:neomake_coffeescript_enabled_makers = ['coffeelint']
   let g:neomake_json_enabled_makers = ['jsonlint']
   let g:neomake_java_enabled_makers = ['javac']
   " https://github.com/koalaman/shellcheck
-  let g:neomake_sh_enabled_makers = ['sh']
+  let g:neomake_sh_enabled_makers = ['shellcheck']
   " npm install -g stylint
   let g:neomake_stylus_enabled_makers = ['stylint']
 
@@ -636,7 +635,7 @@ set number
 set cindent
 
 if v:version >= 704
-  set re=1
+  set regexpengine=1
 endif
 
 " a - terse messages (like [+] instead of [Modified])
@@ -645,8 +644,19 @@ endif
 " T - truncate long messages to avoid having to hit a key
 set shortmess=atIT
 
-set nowrap                      " Do not wrap lines by default
 set autoread                    " Reload files changed outside vim
+
+" wrapping
+setlocal wrap linebreak nolist
+set virtualedit=
+setlocal display+=lastline
+set showbreak=…
+nnoremap k gk
+nnoremap j gj
+nnoremap 0 g0
+nnoremap $ g$
+onoremap j gj
+onoremap k gk
 
 set viminfo='1000,f1
 set history=1000                " remember more commands and search history
@@ -756,8 +766,6 @@ nmap <leader>li :set list!<CR>
 set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
 set fillchars=diff:·
 set shiftround
-set linebreak
-set showbreak=↪
 
 " Open preview window at bottom
 set splitbelow
