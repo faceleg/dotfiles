@@ -8,7 +8,7 @@ set shell=/bin/bash
 
 " The mapleader has to be set before vundle starts loading all the plugins.
 let g:mapleader=';'
-let g:maplocalleader=';'
+let g:maplocalleader='\'
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
