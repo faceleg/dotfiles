@@ -149,7 +149,7 @@ NeoBundle 'bkad/CamelCaseMotion'
   " ... etc
 NeoBundle 'tyru/operator-camelize.vim', { 'depends': 'kana/vim-operator-user' }
   map <Leader>c <Plug>(operator-camelize-toggle)
-NeoBundle 'tpope/vim-abolish' { 'depends': 'tpope/vim-repeat' }
+NeoBundle 'tpope/vim-abolish', { 'depends': 'tpope/vim-repeat' }
 NeoBundle 'Julian/vim-textobj-brace', { 'depends': 'kana/vim-textobj-user' }
   " ij, aj
 NeoBundle 'kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' }
