@@ -148,7 +148,7 @@ NeoBundle 'bkad/CamelCaseMotion'
   " ,w
   " ... etc
 NeoBundle 'tyru/operator-camelize.vim', { 'depends': 'kana/vim-operator-user' }
-  map <Leader>c <Plug>(operator-camelize-toggle)
+  map <leader>c <Plug>(operator-camelize-toggle)
 NeoBundle 'tpope/vim-abolish', { 'depends': 'tpope/vim-repeat' }
 NeoBundle 'Julian/vim-textobj-brace', { 'depends': 'kana/vim-textobj-user' }
   " ij, aj
@@ -196,6 +196,7 @@ NeoBundle 'sheerun/vim-polyglot'
   let g:vim_json_syntax_conceal = 0
   au BufNewFile,BufRead *.vm set ft=velocity
   au BufNewFile,BufRead *.coffee set ft=coffee
+  au BufNewFile,BufRead *.html set ft=html
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
@@ -470,6 +471,12 @@ NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
   autocmd! BufWritePost * Neomake
 
   let g:neomake_javascript_enabled_makers = ['eslint']
+
+  " load local eslint in the project root
+  " modified from https://github.com/mtscout6/syntastic-local-eslint.vim
+  let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+  let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+
     " pip install vim-vint
   let g:neomake_vim_enabled_makers = ['vint']
   let g:neomake_coffeescript_enabled_makers = ['coffeelint']
