@@ -564,7 +564,8 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_overlay_enable = 1
-  nmap  <space>w :ChooseWin<CR>
+  nmap  - :ChooseWin<CR>
+  " nmap - <Plug>(choosewin)
   let g:choosewin_color_overlay = {
         \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
         \ 'cterm': [ 25, 25 ]
@@ -575,8 +576,8 @@ NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
         \ }
 
   let g:choosewin_blink_on_land      = 1 " dont' blink at land
-  let g:choosewin_statusline_replace = 0 " don't replace statusline
-  let g:choosewin_tabline_replace    = 0 " don't replace tabline
+  " let g:choosewin_statusline_replace = 0 " don't replace statusline
+  " let g:choosewin_tabline_replace    = 0 " don't replace tabline
 
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
