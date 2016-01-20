@@ -53,7 +53,8 @@ if ! zgen saved; then
 
     # zgen load zsh-users/zsh-completions src
     zgen load jimmijj/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-history-substring-search
+    # zgen load zsh-users/zsh-history-substring-search
+    zgen load tarruda/zsh-autosuggestions
 
     if is_osx; then
         zgen load chriskempson/base16-iterm2
@@ -73,25 +74,30 @@ if ! zgen saved; then
     zgen save
 fi
 
+zle-line-init() {
+  zle autosuggest-start
+}
+zle -N zle-line-init
+
 ZSH_THEME="bullet-train"
 
 zmodload zsh/terminfo
 
-if is_osx; then
-  # zsh-history-substring-search
-  # bind UP and DOWN arrow keys
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-elif is_linux; then
-  # bind UP and DOWN arrow keys
-  zmodload zsh/terminfo
-  bindkey "$terminfo[kcuu1]" history-substring-search-up
-  bindkey "$terminfo[kcud1]" history-substring-search-down
+# if is_osx; then
+#   # zsh-history-substring-search
+#   # bind UP and DOWN arrow keys
+#   bindkey '^[[A' history-substring-search-up
+#   bindkey '^[[B' history-substring-search-down
+# elif is_linux; then
+#   # bind UP and DOWN arrow keys
+#   zmodload zsh/terminfo
+#   bindkey "$terminfo[kcuu1]" history-substring-search-up
+#   bindkey "$terminfo[kcud1]" history-substring-search-down
 
-  # bind k and j for VI mode
-  bindkey -M vicmd 'k' history-substring-search-up
-  bindkey -M vicmd 'j' history-substring-search-down
-fi
+#   # bind k and j for VI mode
+#   bindkey -M vicmd 'k' history-substring-search-up
+#   bindkey -M vicmd 'j' history-substring-search-down
+# fi
 
 export VISUAL=vim
 export GREP_OPTIONS='--color=always'
@@ -108,11 +114,6 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-
-# From: http://askubuntu.com/questions/1577/moving-from-bash-to-zsh
-# autoload -U compinit
-
-# for func in $^fpath.zwc(N-.r:); autoload -U -w $func
 
 setopt completeinword
 setopt prompt_subst
