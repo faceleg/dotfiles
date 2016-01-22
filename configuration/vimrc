@@ -293,55 +293,75 @@ NeoBundleLazyFor 'AndrewRadev/sideways.vim', 'mappings', ['c-h', 'c-l']
   nmap <c-l> :SidewaysRight<cr>
 
 " Motion
-NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
-      \   '<Plug>(easymotion-sn)',
-      \   '<Plug>(easymotion-tn)',
-      \   '<Plug>(easymotion-next)',
-      \   '<Plug>(easymotion-prev)',
-      \   '<Plug>(easymotion-s)',
-      \   '<Plug>(easymotion-t)',
-      \   '<Plug>(easymotion-s2)',
-      \   '<Plug>(easymotion-t2)',
-      \   '<Plug>(easymotion-lineforward)',
-      \   '<Plug>(easymotion-j)',
-      \   '<Plug>(easymotion-k)',
-      \   '<Plug>(easymotion-linebackward)',
-      \   '<Plug>(easymotion-next)',
-      \   '<Plug>(easymotion-next)',
-      \ ],
-      \ { 'vim_version' : '7.4' }
-  let g:EasyMotion_do_mapping = 0 " Disable default mappings
-  let g:EasyMotion_smartcase = 1
-  map <Leader>s <Plug>(easymotion-s2)
-  map <Leader>t <Plug>(easymotion-t2)
+NeoBundle 't9md/vim-smalls'
+  nmap <Leader>s <Plug>(smalls)
+  omap <Leader>s <Plug>(smalls)
+  xmap <Leader>s <Plug>(smalls)
 
-  map <Leader>l <Plug>(easymotion-lineforward)
-  map <Leader>j <Plug>(easymotion-j)
-  map <Leader>k <Plug>(easymotion-k)
-  map <Leader>h <Plug>(easymotion-linebackward)
+  let g:smalls_highlight = {
+        \   'SmallsCandidate': [['NONE', 'NONE', 'blue'], ['bold', 'NONE', 'blue']],
+        \   'SmallsCurrent': [['NONE', 'NONE', 'red'], ['bold', 'NONE', 'red']],
+        \   'SmallsJumpTarget': [['NONE', 'NONE', 'red'], ['bold', 'NONE', 'red']]
+        \ }
+" NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
+"       \   '<Plug>(easymotion-sn)',
+"       \   '<Plug>(easymotion-tn)',
+"       \   '<Plug>(easymotion-next)',
+"       \   '<Plug>(easymotion-prev)',
+"       \   '<Plug>(easymotion-s)',
+"       \   '<Plug>(easymotion-t)',
+"       \   '<Plug>(easymotion-s2)',
+"       \   '<Plug>(easymotion-t2)',
+"       \   '<Plug>(easymotion-lineforward)',
+"       \   '<Plug>(easymotion-j)',
+"       \   '<Plug>(easymotion-k)',
+"       \   '<Plug>(easymotion-linebackward)',
+"       \   '<Plug>(easymotion-next)',
+"       \   '<Plug>(easymotion-next)',
+"       \ ], { 'vim_version' : '7.4', 'depends': 'haya14busa/vim-easyoperator-line' }
+"   " let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"   let g:EasyMotion_smartcase = 1
 
-  " map <Leader>n <Plug>(easymotion-next)
-  " map <Leader>N <Plug>(easymotion-next)
+"   " map  / <Plug>(easymotion-sn)
+"   " omap / <Plug>(easymotion-tn)
+
+"   map  n <Plug>(easymotion-next)
+"   map  N <Plug>(easymotion-prev)
+
+"   map <Leader>s <Plug>(easymotion-s2)
+"   map <Leader>t <Plug>(easymotion-t2)
+
+"   map <Leader>l <Plug>(easymotion-lineforward)
+"   map <Leader>j <Plug>(easymotion-j)
+"   map <Leader>k <Plug>(easymotion-k)
+"   map <Leader>h <Plug>(easymotion-linebackward)
+
+"     omap <Leader>L  <Plug>(easyoperator-line-select)
+"     xmap <Leader>L  <Plug>(easyoperator-line-select)
+"     nmap d<Leader>L <Plug>(easyoperator-line-delete)
+"     nmap p<Leader>L <Plug>(easyoperator-line-yank)
+
+
 NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
 NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
   " <C-k>   Move current line/selections up
   " <C-j>   Move current line/selections down
 let g:move_key_modifier = 'C'
-NeoBundleLazyFor 'saihoooooooo/glowshi-ft.vim', 'mappings', [
-      \     '<plug>(glowshi-ft-f)',
-      \     '<plug>(glowshi-ft-F)',
-      \     '<plug>(glowshi-ft-t)',
-      \     '<plug>(glowshi-ft-T)',
-      \     '<plug>(glowshi-ft-repeat)',
-      \     '<plug>(glowshi-ft-opposite)',
-      \ ]
-  let g:glowshi_ft_no_default_key_mappings = 1
-  map f <plug>(glowshi-ft-f)
-  map F <plug>(glowshi-ft-F)
-  map t <plug>(glowshi-ft-t)
-  map T <plug>(glowshi-ft-T)
-  map \( <plug>(glowshi-ft-repeat)
-  map \) <plug>(glowshi-ft-opposite)
+" NeoBundleLazyFor 'saihoooooooo/glowshi-ft.vim', 'mappings', [
+"       \     '<plug>(glowshi-ft-f)',
+"       \     '<plug>(glowshi-ft-F)',
+"       \     '<plug>(glowshi-ft-t)',
+"       \     '<plug>(glowshi-ft-T)',
+"       \     '<plug>(glowshi-ft-repeat)',
+"       \     '<plug>(glowshi-ft-opposite)',
+"       \ ]
+"   let g:glowshi_ft_no_default_key_mappings = 1
+"   map f <plug>(glowshi-ft-f)
+"   map F <plug>(glowshi-ft-F)
+"   map t <plug>(glowshi-ft-t)
+"   map T <plug>(glowshi-ft-T)
+"   map \( <plug>(glowshi-ft-repeat)
+"   map \) <plug>(glowshi-ft-opposite)
 NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp']
 
 " External programs
@@ -758,8 +778,8 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Search & Replace
-set hlsearch
-set incsearch
+" set hlsearch
+" set incsearch
 set smartcase
 set ignorecase
 set showmatch
