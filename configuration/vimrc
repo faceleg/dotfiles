@@ -258,7 +258,6 @@ elseif has('lua')
     inoremap <expr><C-l> neocomplete#complete_common_string()
 
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
     inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
     inoremap <expr><C-y>  neocomplete#close_popup()
     inoremap <expr><C-e>  neocomplete#cancel_popup()
@@ -292,87 +291,79 @@ NeoBundleLazyFor 'AndrewRadev/sideways.vim', 'mappings', ['c-h', 'c-l']
   nmap <c-h> :SidewaysLeft<cr>
   nmap <c-l> :SidewaysRight<cr>
 
+  nmap <Leader>r :redraw<CR>
+
 " Motion
-NeoBundle 't9md/vim-smalls'
-  nmap <Leader>s <Plug>(smalls)
-  omap <Leader>s <Plug>(smalls)
-  xmap <Leader>s <Plug>(smalls)
+NeoBundle 'haya14busa/incsearch-fuzzy.vim', { 'depends': 'haya14busa/incsearch.vim' }
+  map f/ <Plug>(incsearch-fuzzy-/)
+  map f? <Plug>(incsearch-fuzzy-?)
+  map fg/ <Plug>(incsearch-fuzzy-stay)
 
-  let g:smalls_highlight = {
-        \   'SmallsCandidate': [['NONE', 'NONE', 'blue'], ['bold', 'NONE', 'blue']],
-        \   'SmallsCurrent': [['NONE', 'NONE', 'red'], ['bold', 'NONE', 'red']],
-        \   'SmallsJumpTarget': [['NONE', 'NONE', 'red'], ['bold', 'NONE', 'red']]
-        \ }
-" NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
-"       \   '<Plug>(easymotion-sn)',
-"       \   '<Plug>(easymotion-tn)',
-"       \   '<Plug>(easymotion-next)',
-"       \   '<Plug>(easymotion-prev)',
-"       \   '<Plug>(easymotion-s)',
-"       \   '<Plug>(easymotion-t)',
-"       \   '<Plug>(easymotion-s2)',
-"       \   '<Plug>(easymotion-t2)',
-"       \   '<Plug>(easymotion-lineforward)',
-"       \   '<Plug>(easymotion-j)',
-"       \   '<Plug>(easymotion-k)',
-"       \   '<Plug>(easymotion-linebackward)',
-"       \   '<Plug>(easymotion-next)',
-"       \   '<Plug>(easymotion-next)',
-"       \ ], { 'vim_version' : '7.4', 'depends': 'haya14busa/vim-easyoperator-line' }
-"   " let g:EasyMotion_do_mapping = 0 " Disable default mappings
-"   let g:EasyMotion_smartcase = 1
+NeoBundle 'haya14busa/incsearch-easymotion.vim', { 'depends': 'haya14busa/incsearch.vim' }
+  map z/ <Plug>(incsearch-easymotion-/)
+  map z? <Plug>(incsearch-easymotion-?)
+  map zg/ <Plug>(incsearch-easymotion-stay)
 
-"   " map  / <Plug>(easymotion-sn)
-"   " omap / <Plug>(easymotion-tn)
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
 
-"   map  n <Plug>(easymotion-next)
-"   map  N <Plug>(easymotion-prev)
+  set hlsearch
+  let g:incsearch#auto_nohlsearch = 1
+  map n  <Plug>(incsearch-nohl-n)
+  map N  <Plug>(incsearch-nohl-N)
+  map *  <Plug>(incsearch-nohl-*)
+  map #  <Plug>(incsearch-nohl-#)
+  map g* <Plug>(incsearch-nohl-g*)
+  map g# <Plug>(incsearch-nohl-g#)
 
-"   map <Leader>s <Plug>(easymotion-s2)
-"   map <Leader>t <Plug>(easymotion-t2)
+NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
+      \   '<Plug>(easymotion-bd-f)',
+      \   '<Plug>(easymotion-overwin-f)',
+      \   '<Plug>(easymotion-overwin-f2)',
+      \   '<Plug>(easymotion-overwin-bd-jk)',
+      \   '<Plug>(easymotion-overwin-line)',
+      \   '<Plug>(easymotion-overwin-bd-w)',
+      \   '<Plug>(easymotion-overwin-w)',
+      \   '<Plug>(easymotion-sn)',
+      \   '<Plug>(easymotion-tn)',
+      \   '<Plug>(easymotion-next)',
+      \   '<Plug>(easymotion-prev)',
+      \   '<Plug>(easymotion-s)',
+      \   '<Plug>(easymotion-t)',
+      \   '<Plug>(easymotion-s2)',
+      \   '<Plug>(easymotion-t2)',
+      \   '<Plug>(easymotion-lineforward)',
+      \   '<Plug>(easymotion-j)',
+      \   '<Plug>(easymotion-k)',
+      \   '<Plug>(easymotion-linebackward)',
+      \   '<Plug>(easymotion-next)',
+      \ ], { 'vim_version' : '7.4', 'depends': 'haya14busa/vim-easyoperator-line' }
+  let g:EasyMotion_smartcase = 1
 
-"   map <Leader>l <Plug>(easymotion-lineforward)
-"   map <Leader>j <Plug>(easymotion-j)
-"   map <Leader>k <Plug>(easymotion-k)
-"   map <Leader>h <Plug>(easymotion-linebackward)
+  " <Leader>f{char} to move to {char}
+  map  <Leader>f <Plug>(easymotion-bd-f)
+  nmap <Leader>f <Plug>(easymotion-overwin-f)
 
-"     omap <Leader>L  <Plug>(easyoperator-line-select)
-"     xmap <Leader>L  <Plug>(easyoperator-line-select)
-"     nmap d<Leader>L <Plug>(easyoperator-line-delete)
-"     nmap p<Leader>L <Plug>(easyoperator-line-yank)
+  " s{char}{char} to move to {char}{char}
+  map <Leader>s <Plug>(easymotion-s2)
+  nmap <Leader>s <Plug>(easymotion-overwin-f2)
 
+  " Move to line
+  map <Leader>n <Plug>(easymotion-bd-jk)
+  nmap <Leader>n <Plug>(easymotion-overwin-line)
 
-NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
-NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
-  " <C-k>   Move current line/selections up
-  " <C-j>   Move current line/selections down
-let g:move_key_modifier = 'C'
-" NeoBundleLazyFor 'saihoooooooo/glowshi-ft.vim', 'mappings', [
-"       \     '<plug>(glowshi-ft-f)',
-"       \     '<plug>(glowshi-ft-F)',
-"       \     '<plug>(glowshi-ft-t)',
-"       \     '<plug>(glowshi-ft-T)',
-"       \     '<plug>(glowshi-ft-repeat)',
-"       \     '<plug>(glowshi-ft-opposite)',
-"       \ ]
-"   let g:glowshi_ft_no_default_key_mappings = 1
-"   map f <plug>(glowshi-ft-f)
-"   map F <plug>(glowshi-ft-F)
-"   map t <plug>(glowshi-ft-t)
-"   map T <plug>(glowshi-ft-T)
-"   map \( <plug>(glowshi-ft-repeat)
-"   map \) <plug>(glowshi-ft-opposite)
+  " Move to word
+  map  <Leader>w <Plug>(easymotion-bd-w)
+  nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+  map <Leader>j <Plug>(easymotion-j)
+  map <Leader>k <Plug>(easymotion-k)
+
 NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp']
 
 " External programs
 NeoBundle 'vim-scripts/TwitVim'
-NeoBundle 'benmills/vimux'
- map <Leader>vp :VimuxPromptCommand<CR>
- map <Leader>vl :VimuxRunLastCommand<CR>
- map <Leader>vq :VimuxCloseRunner<CR>
- map <Leader>vs :VimuxInterruptRunner<CR>
- map <Leader>vu :VimuxScrollUpInspect<CR>
- map <Leader>vd :VimuxScrollDownInspect<CR>
 
 " Features
 NeoBundle 'jiangmiao/auto-pairs'
@@ -387,28 +378,6 @@ NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'kshenoy/vim-signature',
-let g:SignatureMap = {
-      \ 'Leader'             :  "m",
-      \ 'PlaceNextMark'      :  "m,",
-      \ 'ToggleMarkAtLine'   :  "m.",
-      \ 'PurgeMarksAtLine'   :  "m-",
-      \ 'PurgeMarks'         :  "m<Space>",
-      \ 'PurgeMarkers'       :  "m<BS>",
-      \ 'GotoNextLineAlpha'  :  "']",
-      \ 'GotoPrevLineAlpha'  :  "'[",
-      \ 'GotoNextSpotAlpha'  :  "`]",
-      \ 'GotoPrevSpotAlpha'  :  "`[",
-      \ 'GotoNextLineByPos'  :  "]'",
-      \ 'GotoPrevLineByPos'  :  "['",
-      \ 'GotoNextSpotByPos'  :  "]`",
-      \ 'GotoPrevSpotByPos'  :  "[`",
-      \ 'GotoNextMarker'     :  "[+",
-      \ 'GotoPrevMarker'     :  "[-",
-      \ 'GotoNextMarkerAny'  :  "]=",
-      \ 'GotoPrevMarkerAny'  :  "[=",
-      \ 'ListLocalMarks'     :  "'?"
-      \ }
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -531,8 +500,8 @@ NeoBundle 'svermeulen/vim-easyclip'
   let g:EasyClipUseSubstituteDefaults = 0
   nmap s <plug>SubstituteOverMotionMap
   nmap gs <plug>G_SubstituteOverMotionMap
-  nmap ss <plug>SubstituteLine
-  xmap s <plug>XEasyClipPaste
+  " nmap ss <plug>SubstituteLine
+  " xmap s <plug>XEasyClipPaste
   " nmap S <plug>SubstituteToEndOfLine
   " nmap gS <plug>G_SubstituteToEndOfLine
 
@@ -558,6 +527,12 @@ NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
     nmap <buffer> <ESC> <Plug>(unite_exit)
 
   endfunction
+NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
+NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
+  " <C-k>   Move current line/selections up
+  " <C-j>   Move current line/selections down
+  let g:move_key_modifier = 'C'
+
 NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>']
 NeoBundle 'hlissner/vim-multiedit'
 
@@ -576,9 +551,9 @@ NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
       \     'css',
       \     'vim'
       \ ]
-  nmap <leader>r :RainbowParentheses!!<CR>
   autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
 NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_overlay_enable = 1
   nmap  - :ChooseWin<CR>
