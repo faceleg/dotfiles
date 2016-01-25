@@ -533,8 +533,10 @@ NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
   " <C-j>   Move current line/selections down
   let g:move_key_modifier = 'C'
 
-NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>']
-NeoBundle 'hlissner/vim-multiedit'
+" NeoBundle 'hlissner/vim-multiedit'
+NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>', '<C-p>']
+  let  g:multi_cursor_exit_from_visual_mode = 0
+  let  g:multi_cursor_exit_from_insert_mode = 0
 
 " Utility
 NeoBundleLazyFor 'bruno-/vim-vertical-move', 'mappings', ['[v', ']v']
