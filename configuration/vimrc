@@ -473,10 +473,6 @@ NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
   " npm install -g stylint
   let g:neomake_stylus_enabled_makers = ['stylint']
 
-NeoBundleLazyFor 'wincent/loupe', 'mappings', [
-      \ '/',
-      \ '<Plug>(LoupeClearHighlight)'
-      \ ]
 NeoBundle 'dkprice/vim-easygrep'
   let g:EasyGrepFilesToExclude='.svn,.git,node_modules/'
   let g:EasyGrepCommand='ack'
@@ -754,9 +750,6 @@ set scrolloff=8 " Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" Search & Replace
-" set hlsearch
-" set incsearch
 set smartcase
 set ignorecase
 set showmatch
@@ -779,9 +772,9 @@ set splitright
 noremap gV `[v`]
 
 " c-s save
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
+noremap <silent> <C-S>          :update<CR><ESC>
+vnoremap <silent> <C-S>         <C-C>:update<CR><ESC>
+inoremap <silent> <C-S>         <C-O>:update<CR><ESC>
 
 " Comfortable window resizing
 nnoremap <silent> <s-k> :call UpHorizontal()<CR>
