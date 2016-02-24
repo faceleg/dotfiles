@@ -488,7 +488,6 @@ NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
   " npm install -g stylint
   let g:neomake_stylus_enabled_makers = ['stylint']
 
-  highlight NeomakeWarningMsg ctermfg=227 ctermbg=237 guifg=#FFFF5F guibg=#111111
   let g:neomake_warning_sign={
         \ 'text': '⚠',
         \ 'texthl': 'NeomakeWarningMsg'
@@ -633,6 +632,7 @@ highlight SyntasticErrorSign ctermbg=0 ctermfg=1 guibg=111
 highlight SyntasticWarningSign ctermbg=0 ctermfg=3 guibg=111
 highlight SyntasticStyleErrorSign ctermbg=0 ctermfg=1 guibg=111
 highlight SyntasticStyleWarningSign ctermbg=0 ctermfg=3 guibg=111
+highlight NeomakeWarningMsg ctermfg=227 ctermbg=237 guifg=#FFFF5F guibg=#111111
 
 " Tabs & indenting
 set tabstop=4
