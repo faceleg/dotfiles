@@ -488,6 +488,16 @@ NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
   " npm install -g stylint
   let g:neomake_stylus_enabled_makers = ['stylint']
 
+  highlight NeomakeWarningMsg ctermfg=227 ctermbg=237 guifg=#FFFF5F guibg=#111111
+  let g:neomake_warning_sign={
+        \ 'text': '⚠',
+        \ 'texthl': 'NeomakeWarningMsg'
+        \ }
+  let g:neomake_error_sign = {
+        \ 'text': '✖',
+        \ 'texthl': 'ErrorMsg',
+        \ }
+
 NeoBundle 'dkprice/vim-easygrep'
   let g:EasyGrepFilesToExclude='.svn,.git,node_modules/'
   let g:EasyGrepCommand='ack'
