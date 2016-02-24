@@ -4,6 +4,8 @@
 
 scriptencoding utf-8
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 set shell=/bin/bash
 
 " The mapleader has to be set before vundle starts loading all the plugins.
