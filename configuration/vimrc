@@ -308,9 +308,6 @@ NeoBundle 'faceleg/delete-surrounding-function-call.vim'
 NeoBundleLazyFor 'AndrewRadev/sideways.vim', 'mappings', ['c-h', 'c-l']
   nmap <c-h> :SidewaysLeft<cr>
   nmap <c-l> :SidewaysRight<cr>
-
-  nmap <Leader>r :redraw<CR>
-
 " Motion
 NeoBundle 'haya14busa/incsearch-fuzzy.vim', { 'depends': 'haya14busa/incsearch.vim' }
   map f/ <Plug>(incsearch-fuzzy-/)
@@ -646,6 +643,8 @@ set textwidth=120
 set formatoptions-=t
 
 filetype plugin indent on
+
+nmap <Leader>r :redraw<CR>
 
 " General settings
 set completeopt=menuone
