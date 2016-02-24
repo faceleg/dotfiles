@@ -279,13 +279,20 @@ elseif has('lua')
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
-NeoBundle 'SirVer/ultisnips', {
-      \ 'depends': [
-      \     'honza/vim-snippets',
-      \     'matthewsimo/angular-vim-snippets',
-      \     'jamescarr/snipmate-nodejs'
-      \ ]}
-  let g:UltiSnipsExpandTrigger = '<C-k>'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+  " For conceal markers.
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+    endif"
 
 NeoBundle 'Shougo/vimfiler.vim'
   let g:vimfiler_as_default_explorer=1
