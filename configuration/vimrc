@@ -586,7 +586,6 @@ NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
 
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
-  nmap <silent> dsf ds)db
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'vim-scripts/bufkill.vim'
   nnoremap <space>d :BW<CR>
