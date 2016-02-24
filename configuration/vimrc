@@ -319,9 +319,9 @@ NeoBundle 'haya14busa/incsearch-easymotion.vim', { 'depends': 'haya14busa/incsea
   map z? <Plug>(incsearch-easymotion-?)
   map zg/ <Plug>(incsearch-easymotion-stay)
 
-  map /  <Plug>(incsearch-forward)
-  map ?  <Plug>(incsearch-backward)
-  map g/ <Plug>(incsearch-stay)
+  " map /  <Plug>(incsearch-forward)
+  " map ?  <Plug>(incsearch-backward)
+  " map g/ <Plug>(incsearch-stay)
 
   set hlsearch
   let g:incsearch#auto_nohlsearch = 1
@@ -332,6 +332,7 @@ NeoBundle 'haya14busa/incsearch-easymotion.vim', { 'depends': 'haya14busa/incsea
   map g* <Plug>(incsearch-nohl-g*)
   map g# <Plug>(incsearch-nohl-g#)
 
+NeoBundle 'henrik/vim-indexed-search'
 NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
       \   '<Plug>(easymotion-bd-f)',
       \   '<Plug>(easymotion-overwin-f)',
