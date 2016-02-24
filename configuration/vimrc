@@ -302,6 +302,8 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundleLazyFor 'AndrewRadev/splitjoin.vim', 'mappings', ['gS', 'gJ']
   nmap gS :SplitjoinSplit<cr>
   nmap gJ :SplitjoinJoin<cr>
+NeoBundleLazyFor 'AndrewRadev/switch.vim', 'mappings', ['gs']
+  " gs to switch booleans and ... other thingsg
 NeoBundleLazyFor 'AndrewRadev/sideways.vim', 'mappings', ['c-h', 'c-l']
   nmap <c-h> :SidewaysLeft<cr>
   nmap <c-l> :SidewaysRight<cr>
