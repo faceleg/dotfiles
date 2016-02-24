@@ -119,6 +119,11 @@ NeoBundle 'vim-utils/vim-troll-stopper'
 
 " Text Objects
 NeoBundle 'wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' }
+  " ( ) b (work on parentheses)
+  " { } B (work on curly braces)
+  " [ ] (work on square brackets)
+  " < > (work on angle brackets)
+  " t (work on tags)<Paste>
 NeoBundle 'b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' }
 NeoBundle 'kana/vim-textobj-entire', { 'depends': 'kana/vim-textobj-user' }
