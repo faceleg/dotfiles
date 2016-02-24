@@ -149,6 +149,11 @@ KEYTIMEOUT=1 # 10ms for key sequences
 
 alias tmux='tmux -2'
 
+if is_osx; then
+  # workaround for https://github.com/neovim/neovim/issues/2048
+  export TERMINFO="$HOME/.terminfo"
+fi
+
 # TMUX
 if [[ -z $TMUX ]]; then
   # Attempt to discover a detached session and attach it, else create a new session
