@@ -590,9 +590,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'vim-scripts/bufkill.vim'
   nnoremap <space>d :BW<CR>
-NeoBundle 'Raimondi/delimitMate'
-  let g:delimitMate_expand_cr = 0
-  let g:delimitMate_jump_expansion = 0
 
 NeoBundleCheck
 
