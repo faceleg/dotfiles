@@ -71,12 +71,6 @@ if ! zgen saved; then
     zgen save
 fi
 
-# Enable autosuggestions
-# zle-line-init() {
-#     zle autosuggest-start
-# }
-# zle -N zle-line-init
-
 ZSH_THEME="bullet-train"
 
 zmodload zsh/terminfo
