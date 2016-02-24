@@ -383,6 +383,9 @@ NeoBundle 'vim-scripts/TwitVim'
 " Features
 NeoBundle 'jiangmiao/auto-pairs'
 
+NeoBundle 'takac/vim-hardtime'
+  let g:hardtime_default_on = 1
+  let g:hardtime_showmsg = 1
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
 " <c-w>o
