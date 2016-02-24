@@ -201,6 +201,7 @@ NeoBundle 'sheerun/vim-polyglot'
   au BufNewFile,BufRead *.vm set ft=velocity
   au BufNewFile,BufRead *.coffee set ft=coffee
   au BufNewFile,BufRead *.html set ft=html
+  let g:polyglot_disabled = ['jinja']
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
