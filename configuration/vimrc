@@ -380,8 +380,13 @@ NeoBundleLazyFor 'tmhedberg/matchit', 'filetypes', ['html', 'xhtml', 'xml', 'lua
 " External programs
 NeoBundle 'vim-scripts/TwitVim'
 
-" Features
+" Auto insert brackets
 NeoBundle 'jiangmiao/auto-pairs'
+" NeoBundle 'Raimondi/delimitMate'
+"   let g:delimitMate_expand_cr = 0
+"   let g:delimitMate_jump_expansion = 0
+" NeoBundle 'Townk/vim-autoclose'
+" NeoBundle 'cohama/lexima.vim' " breaks when adding ( at start of word
 
 NeoBundle 'takac/vim-hardtime'
   let g:hardtime_default_on = 1
