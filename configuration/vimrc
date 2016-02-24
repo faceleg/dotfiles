@@ -711,6 +711,8 @@ map K <Nop>
 
 " I can type :help on my own, thanks.
 noremap <F1> <Esc>
+nmap <F1> <nop>
+imap <F1> <nop>
 
 " Sudo
 " w!!: Writes using sudo
