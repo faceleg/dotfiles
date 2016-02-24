@@ -388,7 +388,7 @@ NeoBundle 'takac/vim-hardtime'
   let g:hardtime_showmsg = 1
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
-" <c-w>o
+  " <c-w>o
 
 NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
   " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
