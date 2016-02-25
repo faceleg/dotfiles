@@ -721,6 +721,12 @@ set nocursorcolumn
 
 set fcs=vert:│ " Solid line for vsplit separator
 
+" Replace previous search
+nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
+
+" Replace selection
+vnoremap <space>r "hy:%s/<C-r>h//gc<left><left><left>
+
 " disable ex mode
 nnoremap Q <nop>
 map q: :q
