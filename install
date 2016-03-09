@@ -1,5 +1,5 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-c --ctags ] [-v --vim] [-t --tmux] [-w --weechat] [-b --brew]
+USAGE="$(basename "$0") [-h --help] [-c --ctags ] [-v --vim] [-t --tmux] [-f --fzf] [-b --brew]
 
 OPTIONS
         -h, --help
@@ -14,8 +14,8 @@ OPTIONS
         -t, --tmux
             Install tmux addons
 
-        -w, --weechat
-          Install weechat config
+        -f, --fzf
+          Install fzf config
 
         -z, --zsh
             Install zsh config
@@ -33,10 +33,10 @@ INSTALL_CTAGS=false
 INSTALL_VIM=false
 INSTALL_ZSH=false
 INSTALL_TMUX=false
-INSTALL_WEECHAT=false
+INSTALL_FZF=false
 INSTALL_BREW=false
 
-if ! OPTIONS=$(getopt -o hcvtwabfz -l help,ctags,vim,tmux,weechat,brew,zsh,all -- "$@")
+if ! OPTIONS=$(getopt -o hcvtwabfz -l help,ctags,vim,tmux,fzf,brew,zsh,all -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -48,13 +48,13 @@ while [ $# -gt 0 ]; do
         "-v" | "--vim") INSTALL_VIM=true ;;
         "-z" | "--zsh") INSTALL_ZSH=true ;;
         "-t" | "--tmux") INSTALL_TMUX=true ;;
-        "-w" | "--weechat") INSTALL_WEECHAT=true ;;
+        "-f" | "--fzf") INSTALL_FZF=true ;;
         "-b" | "--brew") INSTALL_BREW=true ;;
         "-a" | "--all")
             INSTALL_CTAGS=true
             INSTALL_VIM=true
             INSTALL_TMUX=true
-            INSTALL_WEECHAT=true
+            INSTALL_FZF=true
             INSTALL_BREW=true
             break;;
         (--) shift; break;;
@@ -80,8 +80,8 @@ if $INSTALL_TMUX; then
     "$DIR/installers/tmux.sh"
 fi
 
-if $INSTALL_WEECHAT; then
-    "$DIR/installers/weechat.sh"
+if $INSTALL_FZF; then
+    "$DIR/installers/fzf.sh"
 fi
 
 if $INSTALL_BREW; then

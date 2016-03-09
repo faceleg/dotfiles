@@ -2,7 +2,7 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-printf "\nInstalling/zgen\n"
+printf "\nInstalling zgen\n"
 ANTIGEN="`eval echo ~/.zgen/`"
 if [ -d "$ANTIGEN/.git" ]; then
     cd $ANTIGEN

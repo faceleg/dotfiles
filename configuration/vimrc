@@ -87,7 +87,7 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'rhysd/auto-neobundle', {
-      \ 'depends': ['unite.vim', 'vimproc']
+      \ 'depends': ['Shougo/unite.vim', 'Shougo/vimproc']
       \ }
 augroup AutoNeoBundle
   autocmd!
@@ -221,64 +221,76 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
 
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
 
+NeoBundle 'Valloric/YouCompleteMe', {
+      \ 'build'      : {
+      \ 'mac'     : './install.py --tern-completer',
+      \ 'unix'    : './install.p --tern-completer',
+      \ 'windows' : 'install.p --tern-completer',
+      \ 'cygwin'  : './install.p --tern-completer'
+      \ }
+      \ }
+let g:neobundle#install_process_timeout = 1500
 if has("python3") && has("nvim")
-  NeoBundle 'Shougo/deoplete.nvim'
-    let g:deoplete#enable_at_startup = 1
+  " NeoBundle 'Shougo/deoplete.nvim'
+  "   let g:deoplete#enable_at_startup = 1
 elseif has('lua')
-  NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 } }
-    " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
-    " brew install macvim --with-cscope --with-lua --override-system-vim
-    " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
-    set completeopt-=preview
-    " set completeopt+=longest,menuone,preview
+  " NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 } }
+  "   " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
+  "   " brew install macvim --with-cscope --with-lua --override-system-vim
+  "   " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
+  "   set completeopt-=preview
+  "   " set completeopt+=longest,menuone,preview
 
-    let g:acp_enableAtStartup = 0
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#enable_fuzzy_completion = 1
-    let g:neocomplete#enable_auto_select = 1
-    let g:neocomplete#enable_insert_char_pre = 1
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-    let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
+  "   let g:acp_enableAtStartup = 0
+  "   let g:neocomplete#enable_at_startup = 1
+  "   let g:neocomplete#enable_smart_case = 1
+  "   let g:neocomplete#enable_fuzzy_completion = 1
+  "   let g:neocomplete#enable_auto_select = 1
+  "   let g:neocomplete#enable_insert_char_pre = 1
+  "   let g:neocomplete#sources#syntax#min_keyword_length = 3
+  "   let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+  "   let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 
-    if !exists('g:neocomplete#force_omni_input_patterns')
-      let g:neocomplete#force_omni_input_patterns = {}
-    endif
+  "   if !exists('g:neocomplete#force_omni_input_patterns')
+  "     let g:neocomplete#force_omni_input_patterns = {}
+  "   endif
 
-    let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
-    let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
+  "   let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
+  "   let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
 
-    " Define dictionary.
-    let g:neocomplete#sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+  "   " Define dictionary.
+  "   let g:neocomplete#sources#dictionary#dictionaries = {
+  "       \ 'default' : '',
+  "       \ 'vimshell' : $HOME.'/.vimshell_hist',
+  "       \ 'scheme' : $HOME.'/.gosh_completions'
+  "       \ }
 
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+  "   if !exists('g:neocomplete#keyword_patterns')
+  "       let g:neocomplete#keyword_patterns = {}
+  "   endif
+  "   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-    " Plugin key-mappings.
-    inoremap <expr><C-g> neocomplete#undo_completion()
-    inoremap <expr><C-l> neocomplete#complete_common_string()
+  "   " Plugin key-mappings.
+  "   inoremap <expr><C-g> neocomplete#undo_completion()
+  "   inoremap <expr><C-l> neocomplete#complete_common_string()
 
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><C-y>  neocomplete#close_popup()
-    inoremap <expr><C-e>  neocomplete#cancel_popup()
-    inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
+  "   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  "   inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  "   inoremap <expr><C-y>  neocomplete#close_popup()
+  "   inoremap <expr><C-e>  neocomplete#cancel_popup()
+  "   inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
 
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=tern#Complete
-    autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  "   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  "   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+  "   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  "   autocmd FileType javascript setlocal omnifunc=tern#Complete
+  "   autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
+  "   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
 
+NeoBundle 'kana/vim-narrow'
+  vmap <space>n :Narrow<CR>
+  map <space>w :Widen<CR>
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
   " Plugin key-mappings.
@@ -319,9 +331,9 @@ NeoBundle 'haya14busa/incsearch-easymotion.vim', { 'depends': 'haya14busa/incsea
   map z? <Plug>(incsearch-easymotion-?)
   map zg/ <Plug>(incsearch-easymotion-stay)
 
-  " map /  <Plug>(incsearch-forward)
-  " map ?  <Plug>(incsearch-backward)
-  " map g/ <Plug>(incsearch-stay)
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
 
   set hlsearch
   let g:incsearch#auto_nohlsearch = 1
@@ -332,8 +344,8 @@ NeoBundle 'haya14busa/incsearch-easymotion.vim', { 'depends': 'haya14busa/incsea
   map g* <Plug>(incsearch-nohl-g*)
   map g# <Plug>(incsearch-nohl-g#)
 
-NeoBundle 'henrik/vim-indexed-search'
- map <leader>c :set hlsearch!<cr>
+" NeoBundle 'henrik/vim-indexed-search'
+"  map <leader>c :set hlsearch!<cr>
 NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
       \   '<Plug>(easymotion-bd-f)',
       \   '<Plug>(easymotion-overwin-f)',
@@ -391,12 +403,12 @@ NeoBundle 'jiangmiao/auto-pairs'
 " NeoBundle 'cohama/lexima.vim' " breaks when adding ( at start of word
 
 NeoBundle 'takac/vim-hardtime'
-  let g:hardtime_default_on = 1
+  let g:hardtime_default_on = 0
   let g:hardtime_showmsg = 1
   let g:hardtime_allow_different_key = 1
-  let g:hardtime_maxcount = 2
-  let g:hardtime_ignore_buffer_patterns = ["vimfiler"]
-  let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>", "e", "b", "w"]
+  let g:hardtime_maxcount = 4
+  let g:hardtime_ignore_buffer_patterns = ['vimfiler']
+  let g:list_of_normal_keys = ['h', 'j', 'k', 'l', '-', '+', '<UP>', '<DOWN>', '<LEFT>', '<RIGHT>', 'e', 'b', 'w']
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 NeoBundleLazyFor 'troydm/zoomwintab.vim', 'mappings', ['<c-w>o']
   " <c-w>o
@@ -408,17 +420,15 @@ NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
   nmap ga <Plug>(EasyAlign)
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-  let g:ctrlp_map = '<c-f>'
-  let g:ctrlp_cmd = 'CtrlP'
-  let g:ctrlp_buftag_types = { 'javascript': '--language-force=javascript --javascript-types=fcmv' }
-  nmap <space>p :CtrlP<CR>
-  nmap <space>b :CtrlPBufTag<CR>
-  nmap <space>ab :CtrlPBufTagAll<CR>
-  let g:ctrlp_prompt_mappings = { 'ToggleMRURelative()': ['<F2>'] }
-  let g:ctrlp_mruf_relative=1
-  nmap <space>m :CtrlPMRUFiles<CR>
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+NeoBundle 'junegunn/fzf.vim'
+  nmap <c-f> :Files<CR>
+
+  " p for project files
+  nmap <space>p :GitFiles<CR>
+
+  " g for grep
+  nmap <space>g :Ag<CR>
 
 NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
   nmap <space>o :Obsession
@@ -447,7 +457,6 @@ NeoBundle 'bling/vim-airline'
   let g:airline_powerline_fonts = 1
   let g:airline_theme = 'airlineish'
   let g:airline_exclude_preview = 1
-  " let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
 
 NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
@@ -467,9 +476,6 @@ NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
   " <Leader> ttd  :TernDefTab Definition in new tab
   " <Leader> tr :TernRefs All references under cursor
   " <Leader> tR :TernRename Rename variable
-NeoBundleLazyFor 'majutsushi/tagbar', 'mappings', ['F8'], {
-      \ 'depends': 'vim-airline' }
-  nmap <F8> :TagbarToggle<CR>
 
 " Error reporting
 NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
@@ -539,28 +545,6 @@ NeoBundle 'svermeulen/vim-easyclip'
   " nmap S <plug>SubstituteToEndOfLine
   " nmap gS <plug>G_SubstituteToEndOfLine
 
-NeoBundleLazy 'Shougo/unite.vim', { 'augroup': 'Unite' }
-  let g:unite_data_directory = expand('~/.vim/.cache/unite')
-  let g:unite_enable_start_insert=0
-  let g:unite_source_rec_max_cache_files=5000
-  let g:unite_prompt='» '
-
-  " Custom mappings for the unite buffer
-  autocmd FileType unite call s:unite_settings()
-  function! s:unite_settings()
-
-    " Enable navigation with control-j and control-k in insert mode
-    imap <silent><buffer> <C-j> <Plug>(unite_select_next_line)
-    imap <silent><buffer> <C-k> <Plug>(unite_select_previous_line)
-
-    " Enable opening items in splits or tab
-    " imap <silent><buffer><expr> <C-x> unite#do_action('split')
-    imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-    imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
-
-    nmap <buffer> <ESC> <Plug>(unite_exit)
-
-  endfunction
 NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
 NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
   " <C-k>   Move current line/selections up
@@ -606,7 +590,11 @@ NeoBundleLazy 't9md/vim-choosewin', { 'augroup': '<space>w' }
   let g:choosewin_blink_on_land      = 1 " dont' blink at land
   " let g:choosewin_statusline_replace = 0 " don't replace statusline
   " let g:choosewin_tabline_replace    = 0 " don't replace tabline
-
+NeoBundle 'wesQ3/vim-windowswap'
+  let g:windowswap_map_keys = 0 "prevent default bindings
+  nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
+  nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
+  nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -726,6 +714,8 @@ nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
 
 " Replace selection
 vnoremap <space>r "hy:%s/<C-r>h//gc<left><left><left>
+nnoremap <space>r :%s/\<<C-r><C-w>\>/
+
 
 " disable ex mode
 nnoremap Q <nop>
@@ -808,9 +798,6 @@ set shiftround
 " Open preview window at bottom
 set splitbelow
 set splitright
-
-" Quickly select text you just pasted
-noremap gV `[v`]
 
 " c-s save
 noremap <silent> <C-S>          :update<CR><ESC>
