@@ -221,72 +221,56 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
 
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
 
-NeoBundle 'Valloric/YouCompleteMe', {
-      \ 'build'      : {
-      \ 'mac'     : './install.py --tern-completer',
-      \ 'unix'    : './install.p --tern-completer',
-      \ 'windows' : 'install.p --tern-completer',
-      \ 'cygwin'  : './install.p --tern-completer'
-      \ }
-      \ }
-let g:neobundle#install_process_timeout = 1500
-if has("python3") && has("nvim")
-  " NeoBundle 'Shougo/deoplete.nvim'
-  "   let g:deoplete#enable_at_startup = 1
-elseif has('lua')
-  " NeoBundleLazyFor 'Shougo/neocomplete.vim', { 'autoload': { 'insert': 1 } }
-  "   " brew install vim --with-python --with-ruby --with-perl --with-lua --with-tcl
-  "   " brew install macvim --with-cscope --with-lua --override-system-vim
-  "   " ./configure --with-features=huge --with-x --enable-pythoninterp --enable-python3interp --enable-luainterp --enable-perlinterp  --enable-rubyinterp --with-ruby-command=/usr/bin/ruby --enable-tclinterp --enable-sniff --prefix=/usr --with-global-runtime=/usr/share/vim/site
-  "   set completeopt-=preview
-  "   " set completeopt+=longest,menuone,preview
+" NeoBundle 'Valloric/YouCompleteMe', {
+"       \ 'build'      : {
+"       \ 'mac'     : './install.py --tern-completer',
+"       \ 'unix'    : './install.p --tern-completer',
+"       \ 'windows' : 'install.p --tern-completer',
+"       \ 'cygwin'  : './install.p --tern-completer'
+"       \ }
+"       \ }
+" let g:neobundle#install_process_timeout = 1500
+NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
+      \     'mac': 'npm install',
+      \     'unix': 'npm install'
+      \ }}
+  let g:tern_map_keys=1
+  let g:tern_show_argument_hints='on_hold'
+  let g:tern_show_signature_in_pum=1
+  let g:tern_map_prefix = '<leader>'
 
-  "   let g:acp_enableAtStartup = 0
-  "   let g:neocomplete#enable_at_startup = 1
-  "   let g:neocomplete#enable_smart_case = 1
-  "   let g:neocomplete#enable_fuzzy_completion = 1
-  "   let g:neocomplete#enable_auto_select = 1
-  "   let g:neocomplete#enable_insert_char_pre = 1
-  "   let g:neocomplete#sources#syntax#min_keyword_length = 3
-  "   let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-  "   let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
+  " <Leader> td :TernDoc  Documentation under cursor
+  " <Leader> tb :TernDocBrowse  Browse documentation
+  " <Leader> tt :TernType Type hints
+  " <Leader> td :TernDef  Jump to definition (yes, 'td' is duplicated)
+  " <Leader> tpd  :TernDefPreview Jump to definition inside preview
+  " <Leader> tsd  :TernDefSplit Definition in new split
+  " <Leader> ttd  :TernDefTab Definition in new tab
+  " <Leader> tr :TernRefs All references under cursor
+  " <Leader> tR :TernRename Rename variable
 
-  "   if !exists('g:neocomplete#force_omni_input_patterns')
-  "     let g:neocomplete#force_omni_input_patterns = {}
-  "   endif
+  NeoBundle 'carlitux/deoplete-ternjs', {
+        \ 'build': {
+        \   'mac': 'npm install -g tern',
+        \   'unix': 'npm install -g tern'
+        \ }}
+NeoBundle 'othree/jspc.vim'
+NeoBundle 'Shougo/deoplete.nvim'
+  let g:deoplete#enable_at_startup = 1
+  " if !exists('g:deoplete#omni#input_patterns')
+  "   let g:deoplete#omni#input_patterns = {}
+  " endif
+  " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-  "   let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
-  "   let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
-
-  "   " Define dictionary.
-  "   let g:neocomplete#sources#dictionary#dictionaries = {
-  "       \ 'default' : '',
-  "       \ 'vimshell' : $HOME.'/.vimshell_hist',
-  "       \ 'scheme' : $HOME.'/.gosh_completions'
-  "       \ }
-
-  "   if !exists('g:neocomplete#keyword_patterns')
-  "       let g:neocomplete#keyword_patterns = {}
-  "   endif
-  "   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-  "   " Plugin key-mappings.
-  "   inoremap <expr><C-g> neocomplete#undo_completion()
-  "   inoremap <expr><C-l> neocomplete#complete_common_string()
-
-  "   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  "   inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-  "   inoremap <expr><C-y>  neocomplete#close_popup()
-  "   inoremap <expr><C-e>  neocomplete#cancel_popup()
-  "   inoremap <expr><C-Space> neocomplete#start_manual_complete('omni')
-
+  " omnifuncs
+  " augroup omnifuncs
+  "   autocmd!
   "   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  "   autocmd FileType php set omnifunc=phpcomplete#CompletePHP
   "   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  "   autocmd FileType javascript setlocal omnifunc=tern#Complete
-  "   autocmd FileType coffee setlocal omnifunc=javascriptcomplete#CompleteJS
+  "   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  "   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   "   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-endif
+  " augroup end
 
 NeoBundle 'kana/vim-narrow'
   vmap <space>n :Narrow<CR>
@@ -458,24 +442,6 @@ NeoBundle 'bling/vim-airline'
   let g:airline_theme = 'airlineish'
   let g:airline_exclude_preview = 1
 NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
-
-NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
-      \     'mac': 'npm install',
-      \     'unix': 'npm install'
-      \ }}
-  let g:tern_map_keys=1
-  let g:tern_show_argument_hints='on_hold'
-  let g:tern_show_signature_in_pum=1
-
-  " <Leader> td :TernDoc  Documentation under cursor
-  " <Leader> tb :TernDocBrowse  Browse documentation
-  " <Leader> tt :TernType Type hints
-  " <Leader> td :TernDef  Jump to definition (yes, 'td' is duplicated)
-  " <Leader> tpd  :TernDefPreview Jump to definition inside preview
-  " <Leader> tsd  :TernDefSplit Definition in new split
-  " <Leader> ttd  :TernDefTab Definition in new tab
-  " <Leader> tr :TernRefs All references under cursor
-  " <Leader> tR :TernRename Rename variable
 
 " Error reporting
 NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
