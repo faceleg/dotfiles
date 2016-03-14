@@ -221,15 +221,15 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
 
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
 
-" NeoBundle 'Valloric/YouCompleteMe', {
-"       \ 'build'      : {
-"       \ 'mac'     : './install.py --tern-completer',
-"       \ 'unix'    : './install.p --tern-completer',
-"       \ 'windows' : 'install.p --tern-completer',
-"       \ 'cygwin'  : './install.p --tern-completer'
-"       \ }
-"       \ }
-" let g:neobundle#install_process_timeout = 1500
+NeoBundle 'Valloric/YouCompleteMe', {
+      \ 'build'      : {
+      \ 'mac'     : './install.py --tern-completer',
+      \ 'unix'    : './install.p --tern-completer',
+      \ 'windows' : 'install.p --tern-completer',
+      \ 'cygwin'  : './install.p --tern-completer'
+      \ }
+      \ }
+let g:neobundle#install_process_timeout = 1500
 NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
       \     'mac': 'npm install',
       \     'unix': 'npm install'
@@ -249,28 +249,28 @@ NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
   " <Leader> tr :TernRefs All references under cursor
   " <Leader> tR :TernRename Rename variable
 
-  NeoBundle 'carlitux/deoplete-ternjs', {
-        \ 'build': {
-        \   'mac': 'npm install -g tern',
-        \   'unix': 'npm install -g tern'
-        \ }}
+" NeoBundle 'carlitux/deoplete-ternjs', {
+"       \ 'build': {
+"       \   'mac': 'npm install -g tern',
+"       \   'unix': 'npm install -g tern'
+"       \ }}
 NeoBundle 'othree/jspc.vim'
-NeoBundle 'Shougo/deoplete.nvim'
-  let g:deoplete#enable_at_startup = 1
-  " if !exists('g:deoplete#omni#input_patterns')
-  "   let g:deoplete#omni#input_patterns = {}
-  " endif
-  " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" NeoBundle 'Shougo/deoplete.nvim'
+"   let g:deoplete#enable_at_startup = 1
+"   " if !exists('g:deoplete#omni#input_patterns')
+"   "   let g:deoplete#omni#input_patterns = {}
+"   " endif
+"   " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-  " omnifuncs
-  " augroup omnifuncs
-  "   autocmd!
-  "   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  "   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  "   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  "   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  "   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-  " augroup end
+"   " omnifuncs
+"   " augroup omnifuncs
+"   "   autocmd!
+"   "   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"   "   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"   "   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"   "   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"   "   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"   " augroup end
 
 NeoBundle 'kana/vim-narrow'
   vmap <space>n :Narrow<CR>
@@ -453,7 +453,11 @@ NeoBundleLazyFor 'benekastah/neomake', 'filetypes', [
       \     'vim',
       \     'html',
       \     'xhtml',
-      \ ]
+      \ ],
+      \ {
+      \ 'build': {
+      \   'mac': 'npm install jsonlint eslint -g'
+      \ }}
 
   autocmd! BufWritePost * Neomake
 
