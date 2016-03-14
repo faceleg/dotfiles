@@ -733,6 +733,19 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  call youcompleteme#DisableCursorMovedAutocommands()
+  let s:old_ycm_whitelist = g:ycm_filetype_whitelist
+  let g:ycm_filetype_whitelist = {}
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  call youcompleteme#EnableCursorMovedAutocommands()
+  let g:ycm_filetype_whitelist = s:old_ycm_whitelist
+endfunction
+
 " Turn Off Swap Files
 set noswapfile
 set nobackup
