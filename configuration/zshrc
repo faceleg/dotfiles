@@ -33,7 +33,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/node
     zgen oh-my-zsh plugins/npm
     zgen oh-my-zsh plugins/nvm
-    zgen oh-my-zsh plugins/last-working-dir
 
     # plugins
     zgen load chrissicool/zsh-256color
@@ -65,39 +64,21 @@ if ! zgen saved; then
 
     # theme
     zgen load chriskempson/base16-shell base16-colors.dark.sh
-    # zgen load sindresorhus/pure
-    BULLETTRAIN_NVM_SHOW=true
-    BULLETTRAIN_STATUS_EXIT_SHOW=true
-    BULLETTRAIN_GIT_UNTRACKED=" %F{magenta}✭%F{black}"
     zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
-    # zgen load willghatch/zsh-megaprompt
-    # zgen load nojhan/liquidprompt
 
     # save all to init script
     zgen save
 fi
 
 ZSH_THEME="bullet-train"
+export BULLETTRAIN_NVM_SHOW=true
+export BULLETTRAIN_NVM_FG="black"
+export BULLETTRAIN_STATUS_EXIT_SHOW=true
+export BULLETTRAIN_GIT_UNTRACKED=" %F{magenta}✭%F{black}"
 
 zmodload zsh/terminfo
 
 bindkey '^ ' autosuggest-accept
-
-# if is_osx; then
-#   # zsh-history-substring-search
-#   # bind UP and DOWN arrow keys
-#   bindkey '^[[A' history-substring-search-up
-#   bindkey '^[[B' history-substring-search-down
-# elif is_linux; then
-#   # bind UP and DOWN arrow keys
-#   zmodload zsh/terminfo
-#   bindkey "$terminfo[kcuu1]" history-substring-search-up
-#   bindkey "$terminfo[kcud1]" history-substring-search-down
-
-#   # bind k and j for VI mode
-#   bindkey -M vicmd 'k' history-substring-search-up
-#   bindkey -M vicmd 'j' history-substring-search-down
-# fi
 
 export VISUAL=vim
 export GREP_OPTIONS='--color=always'
