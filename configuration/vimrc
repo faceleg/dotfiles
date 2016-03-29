@@ -205,6 +205,7 @@ NeoBundleLazyFor 'othree/html5.vim', 'filetypes', ['html', 'xhtml', 'html5']
 NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
 
 NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'sheerun/vim-polyglot'
   let g:vim_json_syntax_conceal = 0
   au BufNewFile,BufRead *.vm set ft=velocity
