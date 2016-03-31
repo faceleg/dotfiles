@@ -212,7 +212,7 @@ NeoBundle 'sheerun/vim-polyglot'
   au BufNewFile,BufRead *.html set ft=html
 
   let g:polyglot_disabled = ['jinja', 'json']
-NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json'], {
+NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json']
   let g:vim_json_syntax_conceal = 0
 
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
