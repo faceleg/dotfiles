@@ -207,11 +207,14 @@ NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'sheerun/vim-polyglot'
-  let g:vim_json_syntax_conceal = 0
   au BufNewFile,BufRead *.vm set ft=velocity
   au BufNewFile,BufRead *.coffee set ft=coffee
   au BufNewFile,BufRead *.html set ft=html
-  let g:polyglot_disabled = ['jinja']
+
+  let g:polyglot_disabled = ['jinja', 'json']
+NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json'], {
+  let g:vim_json_syntax_conceal = 0
+
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
@@ -231,6 +234,17 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
 
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
 
+NeoBundle 'fntlnz/atags.vim'
+  let g:atags_build_commands_list = [
+      \ 'ag -g "" | ctags -L - --fields=+l -f tags.tmp',
+      \ 'awk "length($0) < 400" tags.tmp > tags',
+      \ 'rm tags.tmp'
+      \ ]
+  map <Leader>t :call atags#generate()<cr>
+  autocmd BufWritePost * call atags#generate()
+NeoBundle 'majutsushi/tagbar'
+
+  nmap <F8> :TagbarToggle<CR>
 NeoBundle 'Valloric/YouCompleteMe', {
       \ 'build'      : {
       \ 'mac'     : './install.py --tern-completer',
