@@ -438,6 +438,7 @@ NeoBundle 'junegunn/fzf.vim'
   " g for grep
   nmap <space>g :Ag<CR>
 
+NeoBundle 'dietsche/vim-lastplace'
 NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
   nmap <space>o :Obsession
 
