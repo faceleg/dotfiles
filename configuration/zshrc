@@ -53,10 +53,11 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-autosuggestions
 
     # `fzf`'s “**blah”-completion behaviour, ⌘T, etc.
-    if whence fzf >/dev/null; then
+    # if whence fzf >/dev/null; then
+      zgen load junegunn/fzf shell
       zgen load junegunn/fzf shell/completion.zsh
       zgen load junegunn/fzf shell/key-bindings.zsh
-    fi
+    # fi
 
     if is_osx; then
         zgen load chriskempson/base16-iterm2
@@ -142,6 +143,8 @@ if is_osx; then
   # workaround for https://github.com/neovim/neovim/issues/2048
   export TERMINFO="$HOME/.terminfo"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # TMUX
 if [[ -z $TMUX ]]; then
