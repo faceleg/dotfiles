@@ -512,17 +512,12 @@ NeoBundle 'svermeulen/vim-easyclip'
 
   nnoremap <space>y :Yanks<cr>
 
-  " remap add mark
-  nnoremap gm m
+  nnoremap gm m " remap add mark
 
   " Preserve default behaviour of S, use all other substitute bindings
   let g:EasyClipUseSubstituteDefaults = 0
   nmap s <plug>SubstituteOverMotionMap
   nmap gs <plug>G_SubstituteOverMotionMap
-  " nmap ss <plug>SubstituteLine
-  " xmap s <plug>XEasyClipPaste
-  " nmap S <plug>SubstituteToEndOfLine
-  " nmap gS <plug>G_SubstituteToEndOfLine
 
 NeoBundleLazyFor 'dbakker/vim-paragraph-motion', 'mappings', ['{', '}']
 NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
