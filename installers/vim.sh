@@ -9,4 +9,6 @@ $CP "$DIR/../configuration/vimrc" ~/.vimrc
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 mkdir -p "$XDG_CONFIG_HOME/nvim"
 $CP "$DIR/../configuration/vimrc" "$XDG_CONFIG_HOME/nvim/init.vim"
-
+if [ ! -f  "$XDG_CONFIG_HOME/nvim/github.vim" ]; then
+    $CP "$DIR/../configuration/vimrc.github.vim" "$XDG_CONFIG_HOME/nvim/github.vim"
+fi
