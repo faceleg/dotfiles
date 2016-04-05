@@ -106,10 +106,6 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 autoload select-word-style
 select-word-style shell
 
-alias ll='ls -l'
-alias la='ls -a'
-alias lsa='ls -alh'
-
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=5000
 setopt incappendhistory
@@ -145,6 +141,17 @@ if is_osx; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# GRC colorizes nifty unix tools all over the place
+# https://github.com/holman/dotfiles/blob/master/system/grc.zsh
+if (( $+commands[grc] )) && (( $+commands[brew] ))
+then
+  source `brew --prefix`/etc/grc.bashrc
+fi
+
+alias ll='colourify ls -l'
+alias la='colourify ls -a'
+alias lsa='colourify ls -alh'
 
 # TMUX
 if [[ -z $TMUX ]]; then

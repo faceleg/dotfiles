@@ -17,3 +17,10 @@ printf "\nReplacing zshrc\n"
 rm -fv ~/.zshrc
 $CP "$DIR/../configuration/zshrc" ~/.zshrc
 
+exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+if ! exists grc; then
+    brew install grc
+fi
