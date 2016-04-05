@@ -261,29 +261,6 @@ NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
   " <Leader> tr :TernRefs All references under cursor
   " <Leader> tR :TernRename Rename variable
 
-  " NeoBundle 'carlitux/deoplete-ternjs', {
-  "       \ 'build': {
-  "       \   'mac': 'npm install -g tern',
-  "       \   'unix': 'npm install -g tern'
-  "       \ }}
-" NeoBundle 'othree/jspc.vim'
-" NeoBundle 'Shougo/deoplete.nvim'
-"   let g:deoplete#enable_at_startup = 1
-  " if !exists('g:deoplete#omni#input_patterns')
-  "   let g:deoplete#omni#input_patterns = {}
-  " endif
-  " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-  " omnifuncs
-  " augroup omnifuncs
-  "   autocmd!
-  "   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  "   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  "   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  "   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  "   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-  " augroup end
-
 NeoBundle 'kana/vim-narrow'
   vmap <space>n :Narrow<CR>
   map <space>w :Widen<CR>
