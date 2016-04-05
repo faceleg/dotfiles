@@ -317,8 +317,6 @@ NeoBundle 'haya14busa/incsearch-easymotion.vim', { 'depends': 'haya14busa/incsea
   map g* <Plug>(incsearch-nohl-g*)
   map g# <Plug>(incsearch-nohl-g#)
 
-" NeoBundle 'henrik/vim-indexed-search'
-"  map <leader>c :set hlsearch!<cr>
 NeoBundleLazyFor 'Lokaltog/vim-easymotion', 'mappings', [
       \   '<Plug>(easymotion-bd-f)',
       \   '<Plug>(easymotion-overwin-f)',
