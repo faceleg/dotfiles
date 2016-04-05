@@ -99,18 +99,6 @@ augroup END
 NeoBundle 'chriskempson/base16-vim'
 
 " Visual
-NeoBundleLazyFor 'jaxbot/semantic-highlight.vim', 'filetypes', [
-      \ 'javascript', 'typescript', 'java', 'ruby', 'php', 'vim', 'coffee' ]
-let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
-let g:semanticEnableFileTypes = {
-      \ 'javascript': 'js',
-      \ 'typescript': 'ts',
-      \ 'coffee': 'coffee',
-      \ 'vim': 'vim',
-      \ 'php': 'php',
-      \ }
-let g:semanticUseCache = 1
-let g:semanticPersistCache = 1
 NeoBundle 'miyakogi/conoline.vim'
   let g:conoline_auto_enable = 1
   let g:conoline_use_colorscheme_default_normal=1
@@ -595,6 +583,26 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'vim-scripts/bufkill.vim'
   nnoremap <space>d :BW<CR>
+
+NeoBundle 'jaxbot/github-issues.vim'
+  let s:githubTokenFile = $HOME . '/.config/nvim/github.vim' " github access token
+  if !empty(glob(s:githubTokenFile))
+    exec 'source ' . s:githubTokenFile
+  else
+    echom 'No file found at ' . s:githubTokenFile . ', github integration will not work for private repositories'
+  endif
+NeoBundleLazyFor 'faceleg/semantic-highlight.vim', 'filetypes', [
+      \ 'javascript', 'typescript', 'java', 'ruby', 'php', 'vim', 'coffee' ]
+  let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
+  let g:semanticEnableFileTypes = {
+        \ 'javascript': 'js',
+        \ 'typescript': 'ts',
+        \ 'coffee': 'coffee',
+        \ 'vim': 'vim',
+        \ 'php': 'php',
+        \ }
+  let g:semanticUseCache = 1
+  let g:semanticPersistCache = 1
 
 NeoBundleCheck
 
