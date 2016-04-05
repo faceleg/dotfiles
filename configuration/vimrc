@@ -367,6 +367,8 @@ NeoBundle 'vim-scripts/TwitVim'
 
 " Auto insert brackets
 NeoBundle 'jiangmiao/auto-pairs'
+
+" Auto pairs graveyard
 " NeoBundle 'Raimondi/delimitMate'
 "   let g:delimitMate_expand_cr = 0
 "   let g:delimitMate_jump_expansion = 0
@@ -394,24 +396,15 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 NeoBundle 'junegunn/fzf.vim'
   nmap <c-f> :Files<CR>
-
   " p for project files
   nmap <space>p :GitFiles<CR>
-
   " g for grep
   nmap <space>g :Ag<CR>
 
 NeoBundle 'dietsche/vim-lastplace'
 NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
   nmap <space>o :Obsession
-
-if v:version >= 702
-  NeoBundle 'szw/vim-ctrlspace'
-  hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#000000 cterm=bold gui=bold
-  hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=0   guibg=#000000 cterm=NONE gui=NONE
-  hi CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
-  hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=NONE   guibg=#000000 cterm=NONE    gui=NONE
-
+NeoBundle 'szw/vim-ctrlspace'
   let g:ctrlspace_save_workspace_on_exit = 1
   let g:ctrlspace_save_workspace_on_switch = 1
   let g:ctrlspace_load_last_workspace_on_start = 1
@@ -421,7 +414,6 @@ if v:version >= 702
   if executable('ag')
     let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
   endif
-endif
 
 " Status bar
 NeoBundle 'bling/vim-airline'
@@ -499,8 +491,6 @@ NeoBundleLazyFor 'matze/vim-move', 'mappings', ['<C-k>', '<C-j>']
   " <C-k>   Move current line/selections up
   " <C-j>   Move current line/selections down
   let g:move_key_modifier = 'C'
-
-" NeoBundle 'hlissner/vim-multiedit'
 NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>', '<C-p>']
   let  g:multi_cursor_exit_from_visual_mode = 0
   let  g:multi_cursor_exit_from_insert_mode = 0
@@ -508,6 +498,7 @@ NeoBundleLazyFor 'terryma/vim-multiple-cursors', 'mappings', ['<C-n>', '<C-c>', 
 " Utility
 NeoBundleLazyFor 'bruno-/vim-vertical-move', 'mappings', ['[v', ']v']
 NeoBundle 'tommcdo/vim-exchange'
+NeoBundle 'ap/vim-css-color'
 NeoBundleLazyFor 'junegunn/rainbow_parentheses.vim', 'filetypes', [
       \     'coffee',
       \     'java',
@@ -577,10 +568,8 @@ call neobundle#end()
 " Colourscheme
 syntax on
 set background=dark
-
 colorscheme base16-colors
 
-set t_Co=256
 let html_no_pre = 1
 let html_number_lines = 0
 
@@ -598,22 +587,21 @@ highlight GitGutterDelete ctermbg=0 guibg=111
 highlight GitGutterChangeDelete ctermbg=0 guibg=111
 highlight GitGutterChangeDeleteFirstLine ctermbg=0 guibg=111
 
-" Syntastic
-highlight SyntasticErrorSign ctermbg=0 ctermfg=1 guibg=111
-highlight SyntasticWarningSign ctermbg=0 ctermfg=3 guibg=111
-highlight SyntasticStyleErrorSign ctermbg=0 ctermfg=1 guibg=111
-highlight SyntasticStyleWarningSign ctermbg=0 ctermfg=3 guibg=111
-highlight NeomakeWarningMsg ctermfg=227 ctermbg=237 guifg=#FFFF5F guibg=#111111
+" CtrlSpace
+hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0    guibg=#333 cterm=bold gui=bold
+hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=0   guibg=#333 cterm=NONE gui=NONE
+hi CtrlSpaceSearch   ctermfg=220  guifg=#808080 ctermbg=NONE  guibg=#000014    cterm=bold    gui=bold
+hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=NONE   guibg=#333 cterm=NONE    gui=NONE
 
 " Tabs & indenting
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 
 au FileType ruby setl sw=2 sts=2 et
 au FileType javascript,css,less,sass,scss,stylus setl sw=2 sts=2 et
-au FileType php,phtml,html setl sw=4 sts=4 et
+au FileType php,phtml,html setl sw=2 sts=2 et
 
 set textwidth=120
 set formatoptions-=t
@@ -626,10 +614,19 @@ nmap <Leader>r :redraw<CR>
 set completeopt=menuone
 set number
 set cindent
+set regexpengine=1
+set hidden
+set viminfo='1000,f1
+set history=1000                " remember more commands and search history
+set undolevels=1000             " remember more undo levels
+set noshowmode " No need to show mode due to Powerline
+set encoding=utf-8 " Explicitly set encoding to utf-8
+" let g:loaded_matchparen=1 " Prevents MatchParen from loading, which can cause slowdown
+set backspace=indent,eol,start " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
 
-if v:version >= 704
-  set regexpengine=1
-endif
+" Do not highlight current line
+set nocursorline
+set nocursorcolumn
 
 " a - terse messages (like [+] instead of [Modified])
 " t - truncate file names
@@ -650,31 +647,6 @@ nnoremap 0 g0
 nnoremap $ g$
 onoremap j gj
 onoremap k gk
-
-set viminfo='1000,f1
-set history=1000                " remember more commands and search history
-set undolevels=1000             " remember more undo levels
-
-" No need to show mode due to Powerline
-set noshowmode
-
-" Explicitly set encoding to utf-8
-set encoding=utf-8
-
-" Prevents MatchParen from loading, which can cause slowdown
-let g:loaded_matchparen=1
-
-" This makes vim act like all other editors, buffers can :u
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-" fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
-set backspace=indent,eol,start
-
-" Do not highlight current line
-set nocursorline
-set nocursorcolumn
 
 set fcs=vert:│ " Solid line for vsplit separator
 
