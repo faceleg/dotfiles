@@ -393,6 +393,7 @@ NeoBundleLazyFor 'junegunn/vim-easy-align', 'mappings', '<Plug>(EasyAlign)'
   nmap ga <Plug>(EasyAlign)
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 NeoBundle 'junegunn/fzf.vim'
   nmap <c-f> :Files<CR>
