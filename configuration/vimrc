@@ -241,7 +241,11 @@ NeoBundle 'Valloric/YouCompleteMe', {
       \ 'cygwin'  : './install.p --tern-completer'
       \ }
       \ }
-let g:neobundle#install_process_timeout = 1500
+  let g:ycm_autoclose_preview_window_after_completion = 1
+  let g:ycm_seed_identifiers_with_syntax = 1
+  let g:ycm_collect_identifiers_from_tags_files = 1
+  let g:ycm_complete_in_strings = 1
+
 NeoBundleLazyFor 'marijnh/tern_for_vim', 'filetypes', 'javascript', { 'build': {
       \     'mac': 'npm install',
       \     'unix': 'npm install'
@@ -397,24 +401,13 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 NeoBundle 'junegunn/fzf.vim'
   nmap <c-f> :Files<CR>
-  " p for project files
-  nmap <space>p :GitFiles<CR>
-  " g for grep
-  nmap <space>g :Ag<CR>
+  nmap <space>p :GitFiles<CR> " p for project files
+  nmap <space>g :Ag<CR> " g for grep
+  nmap <c-@> :Buffers<CR> " c-space
 
 NeoBundle 'dietsche/vim-lastplace'
 NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
   nmap <space>o :Obsession
-NeoBundle 'szw/vim-ctrlspace'
-  let g:ctrlspace_save_workspace_on_exit = 1
-  let g:ctrlspace_save_workspace_on_switch = 1
-  let g:ctrlspace_load_last_workspace_on_start = 1
-  let g:ctrlspace_use_ruby_bindings = 1
-  let g:ctrlspace_unicode_font = 1
-
-  if executable('ag')
-    let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
-  endif
 
 " Status bar
 NeoBundle 'bling/vim-airline'
