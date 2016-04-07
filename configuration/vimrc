@@ -194,6 +194,8 @@ NeoBundleLazyFor 'inkarkat/closetag.vim', 'filetypes', ['html', 'xhtml', 'xml']
 
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'editorconfig/editorconfig-vim'
+
+" Syntax
 NeoBundle 'sheerun/vim-polyglot'
   au BufNewFile,BufRead *.vm set ft=velocity
   au BufNewFile,BufRead *.coffee set ft=coffee
@@ -203,12 +205,19 @@ NeoBundle 'sheerun/vim-polyglot'
 NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json']
   let g:vim_json_syntax_conceal = 0
 
+" Formatting
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
       \     'unix': 'npm install -g jscs cssfmt',
       \     'mac': 'npm install -g jscs cssfmt'
       \ }}
   autocmd FileType css,ruby,javascript noremap <buffer> ,af :Autoformat<CR>
+
+" Typescript
+NeoBundleLazyFor 'leafgarland/typescript-vim', 'fileyptes', 'typescript'
+NeoBundleLazyFor 'Quramy/tsuquyomi', 'fileyptes', 'typescript'
+
+" JavaScript
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   let g:jsdoc_allow_input_prompt = 1
   let g:jsdoc_input_description = 1
@@ -219,7 +228,6 @@ NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
   let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
   nnoremap <space>j :JsDoc<cr>
-
 NeoBundleLazyFor 'curist/vim-angular-template', 'filetypes', ['html', 'xhtml', 'jade']
 
 NeoBundle 'fntlnz/atags.vim'
