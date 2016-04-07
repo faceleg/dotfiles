@@ -214,8 +214,7 @@ NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', '
   autocmd FileType css,ruby,javascript noremap <buffer> ,af :Autoformat<CR>
 
 " Typescript
-NeoBundleLazyFor 'leafgarland/typescript-vim', 'fileyptes', 'typescript'
-NeoBundleLazyFor 'Quramy/tsuquyomi', 'fileyptes', 'typescript'
+" NeoBundle 'Quramy/tsuquyomi'
 
 " JavaScript
 NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
