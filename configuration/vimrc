@@ -664,6 +664,8 @@ noremap <F1> <Esc>
 nmap <F1> <nop>
 imap <F1> <nop>
 
+nnoremap <F2> :set invpaste paste?<CR>
+
 " Sudo
 " w!!: Writes using sudo
 cnoremap w!! w !sudo tee % >/dev/null
