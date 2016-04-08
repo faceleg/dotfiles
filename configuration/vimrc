@@ -201,17 +201,18 @@ NeoBundle 'sheerun/vim-polyglot'
   au BufNewFile,BufRead *.coffee set ft=coffee
   au BufNewFile,BufRead *.html set ft=html
 
-  let g:polyglot_disabled = ['jinja', 'json']
+  let g:polyglot_disabled = ['jinja', 'json', 'javascript']
 NeoBundleLazyFor 'elzr/vim-json', 'filetypes', ['json']
   let g:vim_json_syntax_conceal = 0
+" NeoBundleLazyFor 'othree/yajs.vim', 'filetypes', 'javascript'
 
 " Formatting
 NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', 'typescript', 'html'], {
       \ 'build': {
-      \     'unix': 'npm install -g jscs cssfmt',
-      \     'mac': 'npm install -g jscs cssfmt'
+      \     'unix': 'npm install -g jscs cssfmt js-beautify typescript-formatter',
+      \     'mac': 'npm install -g jscs cssfmt js-beautify typescript-formatter'
       \ }}
-  autocmd FileType css,ruby,javascript noremap <buffer> ,af :Autoformat<CR>
+  autocmd FileType css,ruby,javascript,typescript noremap <buffer> ,af :Autoformat<CR>
 
 " Typescript
 " NeoBundle 'Quramy/tsuquyomi'
@@ -551,8 +552,9 @@ NeoBundle 'jaxbot/github-issues.vim'
   else
     echom 'No file found at ' . s:githubTokenFile . ', github integration will not work for private repositories'
   endif
-NeoBundleLazyFor 'faceleg/semantic-highlight.vim', 'filetypes', [
-      \ 'javascript', 'typescript', 'java', 'ruby', 'php', 'vim', 'coffee' ]
+NeoBundle 'jaxbot/semantic-highlight.vim', 'feature/highlight-match-dollar'
+" 'filetypes', [
+"       \ 'javascript', 'typescript', 'java', 'ruby', 'php', 'vim', 'coffee' ]
   let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
   let g:semanticEnableFileTypes = {
         \ 'javascript': 'js',
