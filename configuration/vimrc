@@ -421,9 +421,12 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 NeoBundle 'junegunn/fzf.vim'
   nmap <c-f> :Files<CR>
-  nmap <space>p :GitFiles<CR> " p for project files
-  nmap <space>g :Ag<CR> " g for grep
-  nmap <c-@> :Buffers<CR> " c-space
+  " p for project files
+  nmap <space>p :GitFiles<CR>
+  " g for grep
+  nmap <space>g :Ag<CR>
+  " c-space
+  nmap <c-@> :Buffers<CR>
 
 NeoBundle 'dietsche/vim-lastplace'
 NeoBundle 'dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' }
