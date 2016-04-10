@@ -438,6 +438,7 @@ NeoBundle 'bling/vim-airline'
   let g:airline_powerline_fonts = 1
   let g:airline_theme = 'airlineish'
   let g:airline_exclude_preview = 1
+  let g:airline#extensions#tabline#enabled = 1
 NeoBundle 'paranoida/vim-airlineish', { 'depends': 'vim-airline' }
 NeoBundle 'ntpeters/vim-airline-colornum'
 
