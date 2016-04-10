@@ -215,7 +215,18 @@ NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', '
   autocmd FileType css,ruby,javascript,typescript noremap <buffer> ,af :Autoformat<CR>
 
 " Typescript
-" NeoBundle 'Quramy/tsuquyomi'
+NeoBundle 'Quramy/tsuquyomi'
+  g:tsuquyomi_disable_quickfix = 1
+  " A way to open a target file when |:TsuquyomiDefinition|.
+  " * 0: |:edit|
+  " * 1: |:split|
+  " * 2: |:vplit|
+  " * 3: |:tabedit|
+  g:tsuquyomi_definition_split = 3
+
+  " <C-]>			<Plug>(TsuquyomiDefinition)
+  " <C-t>			<Plug>(TsuquyomiGoBack)
+  " <C-^>			<Plug>(TsuquyomiReferences)
 
 " JavaScript
 NeoBundleLazyFor 'othree/jsdoc-syntax.vim', 'filetypes', ['javascript', 'typescript']
