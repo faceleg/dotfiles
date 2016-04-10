@@ -218,7 +218,8 @@ NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', '
 " NeoBundle 'Quramy/tsuquyomi'
 
 " JavaScript
-NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', 'javascript'
+NeoBundleLazyFor 'othree/jsdoc-syntax.vim', 'filetypes', ['javascript', 'typescript']
+NeoBundleLazyFor 'heavenshell/vim-jsdoc', 'filetypes', ['javascript', 'typescript']
   let g:jsdoc_allow_input_prompt = 1
   let g:jsdoc_input_description = 1
   let g:jsdoc_additional_descriptions = 0
