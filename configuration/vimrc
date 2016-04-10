@@ -166,9 +166,10 @@ NeoBundleLazyFor 'kana/vim-textobj-function', 'filetypes', [
       \ 'c',
       \ 'java',
       \ 'vim',
-      \ 'javascript'
+      \ 'javascript',
+      \ 'typescript',
       \ ], { 'depends': 'kana/vim-textobj-user' }
-NeoBundleLazyFor 'thinca/vim-textobj-function-javascript', 'filetypes', 'javascript', { 'depends': 'kana/vim-textobj-function' }
+NeoBundleLazyFor 'thinca/vim-textobj-function-javascript', 'filetypes', ['javascript', 'typescript'], { 'depends': 'kana/vim-textobj-function' }
 
 " Ruby
 NeoBundleLazyFor 'tpope/vim-endwise', 'filetypes', 'ruby'
@@ -180,9 +181,9 @@ NeoBundleLazyFor 'bootleq/vim-textobj-rubysymbol', 'filetypes', 'ruby',
 
 NeoBundleLazyFor 'ntpeters/vim-better-whitespace', 'filetypes', [
       \ 'c', 'coffee', 'cpp', 'css', 'less', 'sass', 'scss', 'java', 'php',
-      \ 'ruby', 'javascript', 'vim', 'sh', 'nginx', 'xml'
+      \ 'ruby', 'javascript', 'typescript', 'vim', 'sh', 'nginx', 'xml'
       \ ]
-  autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+  autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,typescript,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
   let g:better_whitespace_filetypes_blacklist = ['unite']
 
 NeoBundleLazyFor 'whatyouhide/vim-textobj-xmlattr', 'filetypes', ['html', 'xhtml', 'xml'],
