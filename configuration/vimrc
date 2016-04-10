@@ -215,6 +215,13 @@ NeoBundleLazyFor 'Chiel92/vim-autoformat', 'filetypes', ['javascript', 'ruby', '
       \ }}
   autocmd FileType css,ruby,javascript,typescript noremap <buffer> ,af :Autoformat<CR>
 
+NeoBundle 'milkypostman/vim-togglelist'
+  nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+  nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
+
+  " force quickfix to be at bottom and take up entire width
+  au FileType qf wincmd J
+
 " Typescript
 NeoBundle 'Quramy/tsuquyomi'
   g:tsuquyomi_disable_quickfix = 1
