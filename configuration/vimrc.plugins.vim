@@ -425,7 +425,7 @@ call dein#add('jaxbot/github-issues.vim')
   endif
 
 " fzf
-call dein#add('junegunn/fzf', { 'build': './install', 'rtp': './fzf' }) " dir': '~/.fzf', 'do': 'yes \| ./install' })
+call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
 call dein#add('junegunn/fzf.vim', { 'depends': 'junegunn/fzf' })
   nmap <c-f> :Files<CR>
   " p for project files
