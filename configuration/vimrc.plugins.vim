@@ -10,6 +10,7 @@ call dein#add('junegunn/vim-easy-align', { 'on_map': '<Plug>(EasyAlign)' })
   vmap <Leader><Enter> <Plug>(EasyAlign)
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
+call dein#add('tpope/vim-eunuch')
 
 " navigation
 call dein#add('kshenoy/vim-signature')
