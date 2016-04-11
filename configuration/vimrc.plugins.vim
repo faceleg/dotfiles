@@ -212,7 +212,7 @@ call dein#add('marijnh/tern_for_vim', { 'on_ft': 'javascript', 'build': 'npm ins
   " <Leader> tR :TernRename Rename variable
 
 " typescript
-call dein#add('Quramy/tsuquyomi', { 'on_ft': 'typescript' })
+call dein#add('Quramy/tsuquyomi')
   " A way to open a target file when |:TsuquyomiDefinitio|.
   " * 0: |:edit|
   " * 1: |:split|
