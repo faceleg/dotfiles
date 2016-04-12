@@ -382,6 +382,7 @@ call dein#add('vim-scripts/TwitVim', { 'on_cmd': ['PostToTwitter'] })
 "   let g:delimitMate_jump_expansion = 0
 call dein#add('Raimondi/delimitMate')
   map <Leader>j <Plug>delimitMateJumpMany
+  let delimitMate_expand_cr = 1
 " call dein#add('Townk/vim-autoclose')
 " call dein#add('cohama/lexima.vim') " breaks when adding ( at start of word
 " call dein#add('kana/vim-smartinput')
