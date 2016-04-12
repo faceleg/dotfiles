@@ -30,18 +30,20 @@ function! s:source_file(path) abort
 endfunction
 
 let g:dein#install_process_timeout = 2000
-let s:path = expand('$VARPATH/dein')
-" if dein#load_state(s:path)
+let s:path = expand($VARPATH . '/dein')
+if dein#load_state(s:path)
   call dein#begin(s:path)
   call s:source_file('plugins.vim')
   call dein#end()
   call dein#save_state()
-" endif
+endif
 
 " Installation check
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
+
+call s:source_file('plugins.config.vim')
 
 filetype plugin indent on
 
