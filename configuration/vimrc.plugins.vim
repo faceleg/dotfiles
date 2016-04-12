@@ -239,8 +239,7 @@ call dein#add('heavenshell/vim-jsdoc', { 'on_ft': ['javascript', 'typescript'] }
   let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
 " html/xml
-call dein#add('whatyouhide/vim-textobj-xmlattr', { 'on_ft': ['html', 'xhtml', 'xml'],
-     \ 'depends': 'kana/vim-textobj-user' })
+call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('othree/xml.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
   let g:xml_use_html = 1
 call dein#add('othree/html5.vim', { 'on_ft': ['html', 'xhtml', 'html5'] })
