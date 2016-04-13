@@ -294,7 +294,7 @@
     echom 'No file found at ' . s:githubTokenFile . ', github integration will not work for private repositories'
   endif
 
-" fzf
+" searching
 " junegunn/fzf.vim
   nmap <c-f> :Files<CR>
   " p for project files
@@ -303,6 +303,9 @@
   nmap <space>g :Ag<CR>
   " c-space
   nmap <c-@> :Buffers<CR>
+" dkprice/vim-easygrep
+  let g:EasyGrepCommand="ag"
+  nmap <space>e :Grep<space>
 
 " session management
 " dhruvasagar/vim-prosession

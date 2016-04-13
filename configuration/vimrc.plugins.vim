@@ -200,9 +200,10 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('gregsexton/gitv')
 call dein#add('jaxbot/github-issues.vim')
 
-" fzf
+" searching
 call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
 call dein#add('junegunn/fzf.vim', { 'depends': 'junegunn/fzf' })
+call dein#add('dkprice/vim-easygrep')
 
 " session management
 call dein#add('dietsche/vim-lastplace')
