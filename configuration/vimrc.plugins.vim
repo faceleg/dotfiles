@@ -52,7 +52,6 @@ call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
       \     'vim'
       \ ] })
 call dein#add('jaxbot/semantic-highlight.vim')
-call dein#add('/Users/mr1483/.cache/nvim/dein/repos/github.com/jaxbot/semantic-highlight.vim')
 
 " visual
 call dein#add('miyakogi/conoline.vim')
@@ -116,8 +115,8 @@ call dein#add('marijnh/tern_for_vim', { 'on_ft': 'javascript', 'build': 'npm ins
 call dein#add('Quramy/tsuquyomi')
 
 " javascript & typescript
-call dein#add('othree/jsdoc-syntax.vim', { 'on_ft': ['javascript', 'typescript'] })
-call dein#add('heavenshell/vim-jsdoc', { 'on_ft': ['javascript', 'typescript'] })
+call dein#add('othree/jsdoc-syntax.vim')
+call dein#add('heavenshell/vim-jsdoc')
 
 " html/xml
 call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
