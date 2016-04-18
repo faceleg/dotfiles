@@ -22,6 +22,7 @@
   autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 " jaxbot/semantic-highlight.vim
+  autocmd FileType javascript setlocal iskeyword+=$
   let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
   let g:semanticEnableFileTypes = {
         \ 'javascript': 'js',
@@ -257,7 +258,6 @@
 
 " auto pairs graveyard
 " Raimondi/delimitMate
-  map <Leader>j <Plug>delimitMateJumpMany
   let delimitMate_expand_cr = 1
 
 " pasting

@@ -51,7 +51,8 @@ call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
       \     'css',
       \     'vim'
       \ ] })
-call dein#add('jaxbot/semantic-highlight.vim', { 'on_ft': [ 'javascript', 'typescript', 'java', 'ruby', 'php', 'vim', 'coffee' ] })
+call dein#add('jaxbot/semantic-highlight.vim')
+call dein#add('/Users/mr1483/.cache/nvim/dein/repos/github.com/jaxbot/semantic-highlight.vim')
 
 " visual
 call dein#add('miyakogi/conoline.vim')
