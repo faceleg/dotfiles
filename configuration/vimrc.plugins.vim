@@ -108,8 +108,8 @@ call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
 
 " javascript
-call dein#add('othree/yajs.vim', { 'on_ft': 'javascript' })
-call dein#add('marijnh/tern_for_vim', { 'on_ft': 'javascript', 'build': 'npm install' })
+call dein#add('gavocanov/vim-js-indent')
+call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 
 " typescript
 call dein#add('Quramy/tsuquyomi')
