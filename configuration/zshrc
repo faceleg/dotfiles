@@ -17,25 +17,31 @@ COMPLETION_WAITING_DOTS="false"
 # Load zgen
 ZDOTDIR="${HOME}/.zgen"
 ZGEN_DIR="$ZDOTDIR/plugins"
+
 source "${HOME}/.zgen/zgen.zsh"
+
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
 
 # Check if there's no init script.
 if ! zgen saved; then
-    echo "Creating a zgen save"
+  echo "Creating a zgen save"
 
-    zgen oh-my-zsh
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/brew
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/git-extras
-    zgen oh-my-zsh plugins/node
-    zgen oh-my-zsh plugins/npm
-    zgen oh-my-zsh plugins/nvm
+    # zgen oh-my-zsh
+    # zgen oh-my-zsh plugins/sudo
+    # zgen oh-my-zsh plugins/command-not-found
+    # zgen oh-my-zsh plugins/brew
+    # zgen oh-my-zsh plugins/git
+    # zgen oh-my-zsh plugins/git-extras
+    # zgen oh-my-zsh plugins/node
+    # zgen oh-my-zsh plugins/npm
+
+    # Causes startup delays with bullet train
+    # zgen oh-my-zsh plugins/nvm
 
     # plugins
-    zgen load chrissicool/zsh-256color
     zgen load djui/alias-tips
     zgen load rupa/z
 
@@ -43,21 +49,17 @@ if ! zgen saved; then
     ZGEN_SYSTEM_UPDATE_DAYS=14
     zgen load unixorn/autoupdate-zgen
 
-    zgen load ascii-soup/zsh-url-highlighter
-    zgen load willghatch/zsh-hooks
     zgen load unixorn/git-extra-commands
 
-    zgen load zsh-users/zsh-completions src
+    # zgen load zsh-users/zsh-completions src
     zgen load jimmijj/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-history-substring-search
+    # zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
 
     # `fzf`'s “**blah”-completion behaviour, ⌘T, etc.
-    # if whence fzf >/dev/null; then
-      zgen load junegunn/fzf shell
-      zgen load junegunn/fzf shell/completion.zsh
-      zgen load junegunn/fzf shell/key-bindings.zsh
-    # fi
+    zgen load junegunn/fzf shell
+    zgen load junegunn/fzf shell/completion.zsh
+    zgen load junegunn/fzf shell/key-bindings.zsh
 
     if is_osx; then
         zgen load chriskempson/base16-iterm2
@@ -75,7 +77,9 @@ ZSH_THEME="bullet-train"
 export BULLETTRAIN_NVM_SHOW=true
 export BULLETTRAIN_NVM_FG="black"
 export BULLETTRAIN_STATUS_EXIT_SHOW=true
-export BULLETTRAIN_GIT_UNTRACKED=" %F{magenta}✭%F{black}"
+export BULLETTRAIN_GIT_COLORIZE_DIRTY=true
+# Git extended can cause slow zsh startup times
+export BULLETTRAIN_GIT_EXTENDED=false
 
 zmodload zsh/terminfo
 
@@ -83,19 +87,6 @@ bindkey '^ ' autosuggest-accept
 
 export VISUAL=vim
 export GREP_OPTIONS='--color=always'
-
-# User ctrl-z like alt-tab
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
 
 setopt completeinword
 setopt prompt_subst
@@ -152,6 +143,11 @@ fi
 alias ll='colourify ls -l'
 alias la='colourify ls -a'
 alias lsa='colourify ls -alh'
+
+# This loads nvm
+# nvm dramatically slows down zsh startup, use brew install node until https://github.com/creationix/nvm/issues/860 is resolved
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # TMUX
 if [[ -z $TMUX ]]; then
