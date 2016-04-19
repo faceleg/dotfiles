@@ -216,7 +216,6 @@
   map f/ <Plug>(incsearch-fuzzy-/)
   map f? <Plug>(incsearch-fuzzy-?)
   map fg/ <Plug>(incsearch-fuzzy-stay)
-
 " haya14busa/incsearch-easymotion.vim
   map z/ <Plug>(incsearch-easymotion-/)
   map z? <Plug>(incsearch-easymotion-?)
