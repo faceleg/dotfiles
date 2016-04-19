@@ -140,7 +140,7 @@ call dein#add('AndrewRadev/sideways.vim', { 'on_cmd': ['SidewaysLeft', 'Sideways
 call dein#add('kana/vim-narrow', { 'on_cmd': ['Narrow', 'Widen'] })
 
 " file management
-call dein#add('Shougo/vimfiler.vim', { 'depends': 'Shougo/unite.vim' }) " , { 'on_cmd': ['VimFilerBufferDir'], 'depends': 'Shougo/unite.vim' })
+call dein#add('Shougo/vimfiler.vim', { 'depends': 'Shougo/unite.vim' })
 
 " cursor motion
 call dein#add('bruno-/vim-vertical-move')
@@ -149,7 +149,6 @@ call dein#add('matze/vim-move')
 call dein#add('haya14busa/incsearch.vim', { 'depends': 'kana/kana/vim-textobj-user' })
 call dein#add('haya14busa/incsearch-fuzzy.vim', { 'depends': 'haya14busa/incsearch.vim' })
 call dein#add('haya14busa/incsearch-easymotion.vim', { 'depends': 'haya14busa/incsearch.vim' })
-" call dein#add('haya14busa/vim-easyoperator-line', { 'depends': 'kana/kana/vim-textobj-user' })
 call dein#add('Lokaltog/vim-easymotion', { 'on_map': [
       \   '<Plug>(easymotion-bd-f)',
       \   '<Plug>(easymotion-overwin-f)',
