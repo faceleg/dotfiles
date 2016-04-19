@@ -103,6 +103,7 @@ set noshowmode " No need to show mode due to Powerline
 set encoding=utf-8 " Explicitly set encoding to utf-8
 let loaded_matchparen=1 " Prevents MatchParen from loading, which can cause slowdown
 set backspace=indent,eol,start " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
+set clipboard=unnamed
 
 " Do not highlight current line
 set nocursorline
