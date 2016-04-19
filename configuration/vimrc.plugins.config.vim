@@ -235,25 +235,23 @@
   map g# <Plug>(incsearch-nohl-g#)
 " Lokaltog/vim-easymotion
   let g:EasyMotion_smartcase = 1
+  let g:EasyMotion_do_shade = 1
+  let g:EasyMotion_do_mapping = 1
 
   " <Leader>f{char} to move to {char}
-  map  <Leader>f <Plug>(easymotion-bd-f)
-  nmap <Leader>f <Plug>(easymotion-overwin-f)
+  " map  <Leader>f <Plug>(easymotion-bd-f)
+  " nmap <Leader>f <Plug>(easymotion-overwin-f)
 
   " s{char}{char} to move to {char}{char}
-  map <Leader>s <Plug>(easymotion-s2)
-  nmap <Leader>s <Plug>(easymotion-overwin-f2)
-
-  " Move to line
-  map <Leader>n <Plug>(easymotion-bd-jk)
-  nmap <Leader>n <Plug>(easymotion-overwin-line)
-
-  " Move to word
-  map  <Leader>w <Plug>(easymotion-bd-w)
-  nmap <Leader>w <Plug>(easymotion-overwin-w)
+  map s <Plug>(easymotion-s2)
+  map t <Plug>(easymotion-t2)
+  " nmap <Leader>s <Plug>(easymotion-overwin-f2)
 
   map <Leader>j <Plug>(easymotion-j)
   map <Leader>k <Plug>(easymotion-k)
+
+  nmap <leader>n <plug>(easymotion-next)
+  nmap <leader>b <plug>(easymotion-prev)
 
 " auto pairs graveyard
 " Raimondi/delimitMate
@@ -267,7 +265,7 @@
 
   " Manually map yanks to avoid conflicts with tpope/unimpaired
   let g:EasyClipUseYankDefaults = 0
-  nmap ;y <Plug>EasyClipRotateYanksForward
+  nmap <leader>y <Plug>EasyClipRotateYanksForward
   nmap ,y <Plug>EasyClipRotateYanksBackward
   nmap y <Plug>YankPreserveCursorPosition
   nmap Y <Plug>:EasyClipBeforeYank<cr>y$
@@ -280,8 +278,8 @@
 
   " Preserve default behaviour of S, use all other substitute bindings
   let g:EasyClipUseSubstituteDefaults = 0
-  nmap s <plug>SubstituteOverMotionMap
-  nmap gs <plug>G_SubstituteOverMotionMap
+  " nmap s <plug>SubstituteOverMotionMap
+  " nmap gs <plug>G_SubstituteOverMotionMap
 
 " git integration
 " jaxbot/github-issues.vim
