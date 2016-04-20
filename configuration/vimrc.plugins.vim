@@ -118,6 +118,9 @@ call dein#add('Quramy/tsuquyomi')
 call dein#add('othree/jsdoc-syntax.vim')
 call dein#add('heavenshell/vim-jsdoc')
 
+" java
+call dein#add('artur-shaik/vim-javacomplete2')
+
 " html/xml
 call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('othree/xml.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
