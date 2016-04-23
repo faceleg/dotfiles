@@ -112,7 +112,8 @@ call dein#add('gavocanov/vim-js-indent')
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 
 " typescript
-call dein#add('Quramy/tsuquyomi')
+" call dein#add('Quramy/tsuquyomi')
+call dein#add('leafgarland/typescript-vim')
 
 " javascript & typescript
 call dein#add('othree/jsdoc-syntax.vim')
@@ -129,9 +130,10 @@ call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 
 " completion, snippets
 call dein#add('c9s/vimomni.vim')
-call dein#add('Valloric/YouCompleteMe', { 'build': './install.py --tern-completer' })
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('carlitux/deoplete-ternjs', { 'depends': 'Shougo/deoplete.nvim', 'build': 'npm install -g tern' })
+call dein#add('Shougo/neosnippet', { 'depends': 'Shougo/deoplete.nvim' })
+call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
 
 " vim feature enhancement
 call dein#add('milkypostman/vim-togglelist')
