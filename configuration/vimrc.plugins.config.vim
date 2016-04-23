@@ -133,23 +133,22 @@
   " <Leader> tR :TernRename Rename variable
 
 " typescript
-" " Quramy/tsuquyomi
-"   " A way to open a target file when |:TsuquyomiDefinitio|.
-"   " * 0: |:edit|
-"   " * 1: |:split|
-"   " * 2: |:vplit|
-"   " * 3: |:tabedit|
-"   let g:tsuquyomi_definition_split = 3
+" Quramy/tsuquyomi
+  " A way to open a target file when |:TsuquyomiDefinition|.
+  " * 0: |:edit|
+  " * 1: |:split|
+  " * 2: |:vplit|
+  " * 3: |:tabedit|
 
-"   " <C-]>			<Plug>(TsuquyomiDefinition)
-"   " <C-t>			<Plug>(TsuquyomiGoBack)
-"   " <C-^>			<Plug>(TsuquyomiReferences)
+  " <C-]>			<Plug>(TsuquyomiDefinition)
+  " <C-t>			<Plug>(TsuquyomiGoBack)
+  " <C-^>			<Plug>(TsuquyomiReferences)
 
-"   autocmd FileType typescript nmap <buffer> <space>t : <C-u>echo tsuquyomi#hint()<CR>
-"   autocmd CursorHold *.ts :echo tsuquyomi#hint()
+  autocmd FileType typescript nmap <buffer> <space>t : <C-u>echo tsuquyomi#hint()<CR>
+  autocmd CursorHold *.ts :echo tsuquyomi#hint()
 " leafgarland/typescript-vim
-  autocmd QuickFixCmdPost [^l]* nested cwindow
-  autocmd QuickFixCmdPost    l* nested lwindow
+  " autocmd QuickFixCmdPost [^l]* nested cwindow
+  " autocmd QuickFixCmdPost    l* nested lwindow
 
 " javascript & typescript
 " heavenshell/vim-jsdoc
@@ -186,10 +185,15 @@
   let g:xml_use_html = 1
 
 " completion, snippets
+" Valloric/YouCompleteMe
+  let g:ycm_autoclose_preview_window_after_completion = 1
+  let g:ycm_seed_identifiers_with_syntax = 1
+  let g:ycm_collect_identifiers_from_tags_files = 1
+  let g:ycm_complete_in_strings = 1
 " Shougo/deoplete.nvim
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#enable_smart_case = 1
-
+  " let g:deoplete#enable_at_startup = 1
+  " " let g:deoplete#enable_smart_case = 1
+  " let g:auto_complete_start_length = 0
 " Shougo/neosnippet-snippets
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
   smap <C-k>     <Plug>(neosnippet_expand_or_jump)
