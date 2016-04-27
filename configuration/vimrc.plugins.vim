@@ -93,9 +93,6 @@ call dein#add('Chiel92/vim-autoformat', { 'on_ft': ['javascript', 'ruby', 'types
 " languages
 call dein#add('sheerun/vim-polyglot')
 
-" css
-call dein#add('ap/vim-css-color')
-
 " ruby
 call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' })
 call dein#add('tpope/vim-rails', { 'on_ft': 'ruby' })
@@ -115,7 +112,6 @@ call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 call dein#add('Quramy/tsuquyomi', { 'depends': 'Shougo/vimproc.vim' })
 
 " javascript & typescript
-call dein#add('othree/jsdoc-syntax.vim')
 call dein#add('heavenshell/vim-jsdoc')
 
 " java
