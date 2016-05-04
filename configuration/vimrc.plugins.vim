@@ -8,35 +8,6 @@ call dein#add('Shougo/unite.vim')
 call dein#add('junegunn/vim-easy-align', { 'on_map': '<Plug>(EasyAlign)' })
 call dein#add('tpope/vim-eunuch')
 
-" navigation
-call dein#add('kshenoy/vim-signature')
-  let g:SignatureMap = {
-      \ 'Leader'             :  "gm",
-      \ 'PlaceNextMark'      :  "gm,",
-      \ 'ToggleMarkAtLine'   :  "gm.",
-      \ 'PurgeMarksAtLine'   :  "gm-",
-      \ 'DeleteMark'         :  "dgm",
-      \ 'PurgeMarks'         :  "gm<Space>",
-      \ 'PurgeMarkers'       :  "gm<BS>",
-      \ 'GotoNextLineAlpha'  :  "']",
-      \ 'GotoPrevLineAlpha'  :  "'[",
-      \ 'GotoNextSpotAlpha'  :  "`]",
-      \ 'GotoPrevSpotAlpha'  :  "`[",
-      \ 'GotoNextLineByPos'  :  "]'",
-      \ 'GotoPrevLineByPos'  :  "['",
-      \ 'GotoNextSpotByPos'  :  "]`",
-      \ 'GotoPrevSpotByPos'  :  "[`",
-      \ 'GotoNextMarker'     :  "]-",
-      \ 'GotoPrevMarker'     :  "[-",
-      \ 'GotoNextMarkerAny'  :  "]=",
-      \ 'GotoPrevMarkerAny'  :  "[=",
-      \ 'ListBufferMarks'    :  "gm/",
-      \ 'ListBufferMarkers'  :  "gm?"
-      \ }
-
-call dein#add('fntlnz/atags.vim')
-call dein#add('majutsushi/tagbar')
-
 " highlighting
 call dein#add('chriskempson/base16-vim')
 call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
@@ -87,11 +58,11 @@ call dein#add('thinca/vim-textobj-function-javascript', { 'on_ft': ['javascript'
 " formatting
 call dein#add('ntpeters/vim-better-whitespace')
 call dein#add('editorconfig/editorconfig-vim')
-call dein#add('Chiel92/vim-autoformat', { 'on_ft': ['javascript', 'ruby', 'typescript', 'html'],
-      \ 'build': 'npm --no-color install -g jscs cssfmt js-beautify typescript-formatter' })
 
 " languages
-call dein#add('sheerun/vim-polyglot')
+" call dein#add('sheerun/vim-polyglot')
+" call dein#add('HerringtonDarkholme/yats.vim')
+call dein#add('leafgarland/typescript-vim')
 
 " ruby
 call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' })
@@ -115,7 +86,7 @@ call dein#add('Quramy/tsuquyomi', { 'depends': 'Shougo/vimproc.vim' })
 call dein#add('heavenshell/vim-jsdoc')
 
 " java
-call dein#add('artur-shaik/vim-javacomplete2')
+call dein#add('artur-shaik/vim-javacomplete2', { 'on_ft': 'java' })
 
 " html/xml
 call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
@@ -197,9 +168,6 @@ call dein#add('svermeulen/vim-easyclip', { 'depends': 'tpope/vim-repeat' })
 
 " git integration
 call dein#add('sgur/vim-lazygutter')
-call dein#add('tpope/vim-fugitive')
-call dein#add('gregsexton/gitv')
-call dein#add('jaxbot/github-issues.vim')
 
 " searching
 call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })

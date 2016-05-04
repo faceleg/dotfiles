@@ -5,18 +5,6 @@
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 
-" navigation
-" fntlnz/atags.vim
-  let g:atags_build_commands_list = [
-      \ 'ag -g "" | ctags -L - --fields=+l -f tags.tmp',
-      \ 'awk "length($0) < 400" tags.tmp > tags',
-      \ 'rm tags.tmp'
-      \ ]
-  map <Leader>t :call atags#generate()<cr>
-  autocmd BufWritePost * call atags#generate()
-" majutsushi/tagbar
-  nmap <F8> :TagbarToggle<CR>
-
 " highlighting
 " junegunn/rainbow_parentheses.vim
   autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
@@ -100,16 +88,13 @@
 " ntpeters/vim-better-whitespace
   autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,typescript,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
   let g:better_whitespace_filetypes_blacklist = ['unite']
-" Chiel92/vim-autoformat
-      \ 'build': 'npm --no-color install -g jscs cssfmt js-beautify typescript-formatter' })
-  autocmd FileType css,ruby,javascript,typescript noremap <buffer> ,af :Autoformat<CR>
 
 " languages
 " sheerun/vim-polyglot
-  au BufNewFile,BufRead *.vm set ft=velocity
-  au BufNewFile,BufRead *.coffee set ft=coffee
-  au BufNewFile,BufRead *.html set ft=html
-  let g:polyglot_disabled = ['jinja', 'json', 'javascript']
+  " au BufNewFile,BufRead *.vm set ft=velocity
+  " au BufNewFile,BufRead *.coffee set ft=coffee
+  " au BufNewFile,BufRead *.html set ft=html
+  " let g:polyglot_disabled = ['jinja', 'json', 'javascript']
 
 " json
 " elzr/vim-json
@@ -145,7 +130,7 @@
   " <C-^>			<Plug>(TsuquyomiReferences)
 
   autocmd FileType typescript nmap <buffer> <space>t : <C-u>echo tsuquyomi#hint()<CR>
-  autocmd CursorHold *.ts :echo tsuquyomi#hint()
+  map <leader>g :TsuGeterr<cr>
 " leafgarland/typescript-vim
   " autocmd QuickFixCmdPost [^l]* nested cwindow
   " autocmd QuickFixCmdPost    l* nested lwindow
