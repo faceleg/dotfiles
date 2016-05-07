@@ -1,5 +1,4 @@
 call dein#add('Shougo/dein.vim', { 'rtp': expand('~/.vim/bundle/dein.vim') })
-call dein#add('Shougo/vimproc.vim', { 'build': 'make' })
 
 " utilities
 call dein#add('tpope/vim-unimpaired')
@@ -38,7 +37,6 @@ call dein#add('b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('kana/vim-textobj-line', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('kana/vim-textobj-entire', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user' })
-call dein#add('gilligan/textobj-gitgutter', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('kana/vim-textobj-lastpat', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('Julian/vim-textobj-variable-segment', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('bkad/CamelCaseMotion')
@@ -59,11 +57,6 @@ call dein#add('thinca/vim-textobj-function-javascript', { 'on_ft': ['javascript'
 call dein#add('ntpeters/vim-better-whitespace')
 call dein#add('editorconfig/editorconfig-vim')
 
-" languages
-" call dein#add('sheerun/vim-polyglot')
-" call dein#add('HerringtonDarkholme/yats.vim')
-call dein#add('leafgarland/typescript-vim')
-
 " ruby
 call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' })
 call dein#add('tpope/vim-rails', { 'on_ft': 'ruby' })
@@ -80,7 +73,8 @@ call dein#add('gavocanov/vim-js-indent')
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 
 " typescript
-call dein#add('Quramy/tsuquyomi', { 'depends': 'Shougo/vimproc.vim' })
+call dein#add('clausreinke/typescript-tools.vim')
+call dein#add('leafgarland/typescript-vim')
 
 " javascript & typescript
 call dein#add('heavenshell/vim-jsdoc')
@@ -97,11 +91,10 @@ call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 " completion, snippets
 call dein#add('Valloric/YouCompleteMe', { 'build': './install.py --tern-completer' })
 call dein#add('c9s/vimomni.vim')
-" call dein#add('Shougo/deoplete.nvim')
-" call dein#add('mhartington/deoplete-typescript')
-" call dein#add('carlitux/deoplete-ternjs', { 'depends': 'Shougo/deoplete.nvim', 'build': 'npm install -g tern' })
-call dein#add('Shougo/neosnippet', { 'depends': 'Shougo/deoplete.nvim' })
-call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+" call dein#add('Shougo/neosnippet', { 'depends': 'Shougo/deoplete.nvim' })
+" call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
 
 " vim feature enhancement
 call dein#add('milkypostman/vim-togglelist')
@@ -110,7 +103,6 @@ call dein#add('AndrewRadev/splitjoin.vim', { 'on_cmd': ['SplitjoinJoin', 'Splitj
 call dein#add('AndrewRadev/switch.vim')
 call dein#add('faceleg/delete-surrounding-function-call.vim')
 call dein#add('AndrewRadev/sideways.vim', { 'on_cmd': ['SidewaysLeft', 'SidewaysRight'] })
-call dein#add('kana/vim-narrow', { 'on_cmd': ['Narrow', 'Widen'] })
 
 " file management
 call dein#add('Shougo/vimfiler.vim', { 'depends': 'Shougo/unite.vim' })

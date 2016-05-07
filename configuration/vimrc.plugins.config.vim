@@ -117,24 +117,6 @@
   " <Leader> tr :TernRefs All references under cursor
   " <Leader> tR :TernRename Rename variable
 
-" typescript
-" Quramy/tsuquyomi
-  " A way to open a target file when |:TsuquyomiDefinition|.
-  " * 0: |:edit|
-  " * 1: |:split|
-  " * 2: |:vplit|
-  " * 3: |:tabedit|
-
-  " <C-]>			<Plug>(TsuquyomiDefinition)
-  " <C-t>			<Plug>(TsuquyomiGoBack)
-  " <C-^>			<Plug>(TsuquyomiReferences)
-
-  autocmd FileType typescript nmap <buffer> <space>t : <C-u>echo tsuquyomi#hint()<CR>
-  map <leader>g :TsuGeterr<cr>
-" leafgarland/typescript-vim
-  " autocmd QuickFixCmdPost [^l]* nested cwindow
-  " autocmd QuickFixCmdPost    l* nested lwindow
-
 " javascript & typescript
 " heavenshell/vim-jsdoc
   let g:jsdoc_allow_input_prompt = 1
@@ -331,7 +313,7 @@
   autocmd! BufWritePost * Neomake
   nmap <space>m :Neomake<cr>
 
-  let g:neomake_typescript_enabled_makers = ['tslint']
+  let g:neomake_typescript_enabled_makers = ['tslint', 'tsc']
   let g:neomake_javascript_enabled_makers = ['eslint']
 
   " load local eslint in the project root
