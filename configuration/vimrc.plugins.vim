@@ -52,6 +52,7 @@ call dein#add('glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' }
 call dein#add('beloglazov/vim-textobj-punctuation', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('kana/vim-textobj-function', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('thinca/vim-textobj-function-javascript', { 'on_ft': ['javascript', 'typescript'], 'depends': 'kana/vim-textobj-function' })
+call dein#add('coderifous/textobj-word-column.vim', { 'depends': 'kana/vim-textobj-user' })
 
 " formatting
 call dein#add('ntpeters/vim-better-whitespace')
