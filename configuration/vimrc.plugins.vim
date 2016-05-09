@@ -160,6 +160,8 @@ call dein#add('svermeulen/vim-easyclip', { 'depends': 'tpope/vim-repeat' })
 
 " git integration
 call dein#add('sgur/vim-lazygutter')
+call dein#add('tpope/vim-fugitive')
+call dein#add('gregsexton/gitv')
 
 " searching
 call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
