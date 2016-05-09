@@ -236,7 +236,7 @@
 
   " s{char}{char} to move to {char}{char}
   map s <Plug>(easymotion-s2)
-  map t <Plug>(easymotion-t2)
+  " map t <Plug>(easymotion-t2)
   " nmap <Leader>s <Plug>(easymotion-overwin-f2)
 
   map <Leader>j <Plug>(easymotion-j)
