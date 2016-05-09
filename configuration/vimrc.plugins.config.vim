@@ -83,6 +83,8 @@
   " iq, aq
 " glts/vim-textobj-comment
   " iS, aS
+" coderifous/textobj-word-column.vim
+  " ic, ac, iC, aC
 
 " formatting
 " ntpeters/vim-better-whitespace
