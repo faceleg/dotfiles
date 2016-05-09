@@ -9,6 +9,7 @@ call dein#add('tpope/vim-eunuch')
 
 " highlighting
 call dein#add('chriskempson/base16-vim')
+call dein#add('godlygeek/csapprox')
 call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
       \     'coffee',
       \     'java',
