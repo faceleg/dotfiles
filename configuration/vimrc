@@ -208,6 +208,10 @@ autocmd BufReadPost *
 " https://ddrscott.github.io/blog/2016/yank-without-jank/
 vnoremap <expr>y "my\"" . v:register . "y`y"
 
+" ^ is too far
+nnoremap 0 ^
+nnoremap ^ 0
+
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
