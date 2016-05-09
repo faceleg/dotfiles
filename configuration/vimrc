@@ -204,6 +204,10 @@ autocmd BufReadPost *
       \   exe "normal! g`\"" |
       \ endif
 
+" Yank without jank - preserve expected cursor position after yank
+" https://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap <expr>y "my\"" . v:register . "y`y"
+
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -348,4 +352,3 @@ nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 
 " insert current filename
 inoremap \fn <leader>f=expand("%:t")<CR>
-
