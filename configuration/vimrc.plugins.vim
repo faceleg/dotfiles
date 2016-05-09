@@ -73,7 +73,6 @@ call dein#add('gavocanov/vim-js-indent')
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 
 " typescript
-call dein#add('clausreinke/typescript-tools.vim')
 call dein#add('leafgarland/typescript-vim')
 
 " javascript & typescript
