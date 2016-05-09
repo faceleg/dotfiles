@@ -27,6 +27,7 @@ call dein#add('jaxbot/semantic-highlight.vim')
 " visual
 call dein#add('miyakogi/conoline.vim')
 call dein#add('vim-utils/vim-troll-stopper')
+call dein#add('kshenoy/vim-signature')
 
 " text objects
 call dein#add('tommcdo/vim-exchange')
