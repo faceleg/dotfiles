@@ -77,6 +77,7 @@ call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 
 " typescript
 call dein#add('leafgarland/typescript-vim')
+call dein#add('mhartington/vim-typings')
 
 " javascript & typescript
 call dein#add('heavenshell/vim-jsdoc')
