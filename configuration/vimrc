@@ -60,7 +60,8 @@ set lazyredraw
 
 " Custom highlight options
 highlight LineNr ctermbg=0 guibg=111
-highlight SignColumn ctermbg=0 guibg=111
+highlight SignColumn ctermfg=14 ctermbg=0 guifg=Cyan guibg=111
+highlight SignatureMarkText guifg=orange
 
 " GitGutter
 highlight GitGutterAdd ctermbg=0 guibg=111
