@@ -30,6 +30,30 @@
 " kshenoy/vim-signature
   let g:SignatureMarkTextHLDynamic = 1
 
+  let g:SignatureMap = {
+        \ 'Leader'             :  "'",
+        \ 'PlaceNextMark'      :  'm,',
+        \ 'ToggleMarkAtLine'   :  'm.',
+        \ 'PurgeMarksAtLine'   :  'm-',
+        \ 'DeleteMark'         :  'dm',
+        \ 'PurgeMarks'         :  'm<Space>',
+        \ 'PurgeMarkers'       :  'm<BS>',
+        \ 'GotoNextLineAlpha'  :  "']",
+        \ 'GotoPrevLineAlpha'  :  "'[",
+        \ 'GotoNextSpotAlpha'  :  '`]',
+        \ 'GotoPrevSpotAlpha'  :  '`[',
+        \ 'GotoNextLineByPos'  :  "]'",
+        \ 'GotoPrevLineByPos'  :  "['",
+        \ 'GotoNextSpotByPos'  :  ']`',
+        \ 'GotoPrevSpotByPos'  :  '[`',
+        \ 'GotoNextMarker'     :  ']-',
+        \ 'GotoPrevMarker'     :  '[-',
+        \ 'GotoNextMarkerAny'  :  ']=',
+        \ 'GotoPrevMarkerAny'  :  '[=',
+        \ 'ListBufferMarks'    :  'm/',
+        \ 'ListBufferMarkers'  :  'm?'
+        \ }
+
 " text objects
 " tommcdo/vim-exchange
   " To exchange two words, place your cursor on the first word and type cxiw.
@@ -274,7 +298,6 @@
 
   " Manually map yanks to avoid conflicts with tpope/unimpaired
   let g:EasyClipUseYankDefaults = 0
-  nmap <leader>y <Plug>EasyClipRotateYanksForward
   nmap ,y <Plug>EasyClipRotateYanksBackward
   nmap y <Plug>YankPreserveCursorPosition
   nmap Y <Plug>:EasyClipBeforeYank<cr>y$
