@@ -161,14 +161,23 @@
 
 " completion, snippets
 " Valloric/YouCompleteMe
-  let g:ycm_autoclose_preview_window_after_completion = 1
-  let g:ycm_seed_identifiers_with_syntax = 1
-  let g:ycm_collect_identifiers_from_tags_files = 1
-  let g:ycm_complete_in_strings = 1
+  " let g:ycm_autoclose_preview_window_after_completion = 1
+  " let g:ycm_seed_identifiers_with_syntax = 1
+  " let g:ycm_collect_identifiers_from_tags_files = 1
+  " let g:ycm_complete_in_strings = 1
 " Shougo/deoplete.nvim
-  " let g:deoplete#enable_at_startup = 1
-  " " let g:deoplete#enable_smart_case = 1
-  " let g:auto_complete_start_length = 0
+  let g:deoplete#enable_at_startup = 1
+  " let g:deoplete#enable_smart_case = 1
+  let g:deoplete#enable_ignore_case = 1
+  let g:deoplete#auto_complete_start_length = 0
+  let g:deoplete#enable_refresh_always = 1
+  let g:deoplete#enable_debug = 1
+  let g:deoplete#enable_profile = 0
+  let g:deoplete#max_abbr_width = 160
+  let g:deoplete#max_menu_width = 80
+
+  call deoplete#enable_logging('DEBUG', '/Users/mr1483/deoplete.log')
+
 " Shougo/neosnippet-snippets
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
   smap <C-k>     <Plug>(neosnippet_expand_or_jump)

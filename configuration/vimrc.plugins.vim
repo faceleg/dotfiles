@@ -82,6 +82,9 @@ call dein#add('mhartington/vim-typings')
 " javascript & typescript
 call dein#add('heavenshell/vim-jsdoc')
 
+" python
+call dein#add('hdima/python-syntax')
+
 " java
 call dein#add('artur-shaik/vim-javacomplete2', { 'on_ft': 'java' })
 
@@ -92,12 +95,18 @@ call dein#add('othree/html5.vim', { 'on_ft': ['html', 'xhtml', 'html5'] })
 call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 
 " completion, snippets
-call dein#add('Valloric/YouCompleteMe', { 'build': './install.py --tern-completer' })
-call dein#add('c9s/vimomni.vim')
+" call dein#add('Valloric/YouCompleteMe', { 'build': './install.py --tern-completer' })
+" call dein#add('Shougo/neosnippet')
+" call dein#add('Shougo/neosnippet-snippets')
+" call dein#add('c9s/vimomni.vim')
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-jedi')
+call dein#add('carlitux/deoplete-ternjs')
+call dein#add('Shougo/neco-vim')
+call dein#add('Shougo/neoinclude.vim')
 call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
-" call dein#add('Shougo/neosnippet', { 'depends': 'Shougo/deoplete.nvim' })
-" call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
+call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
+call dein#local('/Users/mr1483/.cache/nvim/dein/repos/github.com/mhartington', {}, ['deoplete-typescript'])
 
 " vim feature enhancement
 call dein#add('milkypostman/vim-togglelist')
