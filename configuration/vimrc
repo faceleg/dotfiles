@@ -357,3 +357,6 @@ nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 
 " insert current filename
 inoremap \fn <leader>f=expand("%:t")<CR>
+
+" select previously changed text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
