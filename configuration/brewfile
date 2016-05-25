@@ -1,53 +1,58 @@
-# brew doctor
+cask_args appdir: '/Applications'
 
-install wget
-install macvim --with-cscope --with-lua --override-system-vim
-install openssl
-install node
-install nvm
-install hg
-install git
-install zsh
+brew 'docker'
+brew 'docker-compose'
+brew 'docker-machine'
+brew 'grc'
+brew 'neovim/neovim/neovim'
+brew 'node'
+brew 'postgresql'
+brew 'python3'
+brew 'shellcheck'
+brew 'the_silver_searcher'
+brew 'tmux'
+brew 'tree'
+brew 'wget'
+brew 'zsh'
 
-# Cask
-install caskroom/cask/brew-cask
+# Casks
+tap 'caskroom/cask'
 
-# Programming
-cask install iterm2
-cask install smartgit
-cask install transmit
-
-cask install istat-menus
-cask install libreoffice
-cask install the-unarchiver
-cask install alfred
-cask install google-chrome
-cask install dropbox
-cask install transmission
-cask install vlc
-# cask install owncloud
-# cask install evernote
-cask install skitch
-cask install max
-cask install grandperspective
-cask install opera
-cask install ifunbox
-cask install apptrap
-cask install 1password
-cask install totalfinder
-cask install sketch
-cask install github
-
-# Games
-cask install steam
+cask '1password'
+cask 'alfred'
+cask 'apptrap'
+cask 'caskroom/fonts/font-hack'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'grandperspective'
+cask 'istat-menus'
+cask 'istat-menus'
+cask 'iterm2'
+cask 'skitch'
+cask 'skype'
+cask 'smartgit'
+cask 'sublime-text3'
+cask 'the-unarchiver'
+cask 'time-out'
+cask 'transmit'
+cask 'virtualbox'
+cask 'vlc'
 
 # Quicklook extension
-cask install qlcolorcode
-cask install qlstephen
-cask install qlmarkdown
-cask install quicklook-json
-cask install qlprettypatch
-cask install quicklook-csv
-cask install betterzipql
-cask install webpquicklook
-cask install suspicious-package
+cask 'betterzipql'
+cask 'qlcolorcode'
+cask 'qlmarkdown'
+cask 'qlprettypatch'
+cask 'qlstephen'
+cask 'quicklook-csv'
+cask 'quicklook-json'
+cask 'suspicious-package'
+cask 'webpquicklook'
+
+# Optional
+# cask 'opera'
+# cask 'transmission'
+# cask 'max'
+
+# Games
+# cask 'steam'

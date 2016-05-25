@@ -19,13 +19,12 @@ printf "\nInstalling/Updating Brew\n"
 if command_exists 'brew'; then
     brew update
     brew upgrade
-    cask update
-    cask upgrade
 else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-cd "$DIR/configuration"
+cd "$DIR/../configuration"
 
-brew tap homebrew/boneyard
+brew tap Homebrew/bundle
 brew bundle
+brew link node
