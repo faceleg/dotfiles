@@ -171,12 +171,12 @@
   let g:deoplete#enable_ignore_case = 1
   let g:deoplete#auto_complete_start_length = 0
   let g:deoplete#enable_refresh_always = 1
-  let g:deoplete#enable_debug = 1
-  let g:deoplete#enable_profile = 0
+  " let g:deoplete#enable_debug = 1
+  " let g:deoplete#enable_profile = 0
   let g:deoplete#max_abbr_width = 160
   let g:deoplete#max_menu_width = 80
 
-  call deoplete#enable_logging('DEBUG', '/Users/mr1483/deoplete.log')
+  " call deoplete#enable_logging('DEBUG', '/Users/mr1483/deoplete.log')
 
 " Shougo/neosnippet-snippets
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -289,16 +289,6 @@
   let g:EasyClipUseSubstituteDefaults = 0
   " nmap s <plug>SubstituteOverMotionMap
   " nmap gs <plug>G_SubstituteOverMotionMap
-
-" git integration
-" jaxbot/github-issues.vim
-  " github access token
-  let s:githubTokenFile = $HOME . '/.config/nvim/config/github.vim'
-  if !empty(glob(s:githubTokenFile))
-    exec 'source ' . s:githubTokenFile
-  else
-    echom 'No file found at ' . s:githubTokenFile . ', github integration will not work for private repositories'
-  endif
 
 " searching
 " junegunn/fzf.vim
