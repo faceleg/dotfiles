@@ -298,7 +298,7 @@
   " g for grep
   nmap <space>g :Ag<CR>
   " c-space
-  nmap <c-@> :Buffers<CR>
+  nmap <c-space> :Buffers<CR>
 " dkprice/vim-easygrep
   let g:EasyGrepCommand="ag"
   nmap <space>e :Grep<space>
@@ -347,6 +347,9 @@
 " terryma/vim-multiple-cursors
   let  g:multi_cursor_exit_from_visual_mode = 0
   let  g:multi_cursor_exit_from_insert_mode = 0
+
+  nnoremap <silent> <leader>c :MultipleCursorsFind <C-R>/<CR>
+  vnoremap <silent> <space>c :MultipleCursorsFind <C-R>/<CR>
 
 " window management
 " t9md/vim-choosewin

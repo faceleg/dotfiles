@@ -71,6 +71,9 @@ call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
 " json
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
 
+" less
+call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
+
 " javascript
 call dein#add('gavocanov/vim-js-indent')
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
