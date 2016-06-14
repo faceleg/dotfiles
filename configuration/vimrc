@@ -91,8 +91,6 @@ au FileType php,phtml,html setl sw=2 sts=2 et
 set textwidth=120
 set formatoptions-=t
 
-nmap <Leader>r :redraw<CR>
-
 " General settings
 set completeopt=menuone
 set number
@@ -106,7 +104,7 @@ set noshowmode " No need to show mode due to Powerline
 set encoding=utf-8 " Explicitly set encoding to utf-8
 " let loaded_matchparen=1 " Prevents MatchParen from loading, which can cause slowdown
 set backspace=indent,eol,start " fix delete fail on os x http://vim.wikia.com/wiki/backspace_and_delete_problems
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " Do not highlight current line
 set nocursorline
@@ -237,7 +235,7 @@ set showmatch
 " http://vimcasts.org/episodes/show-invisibles/
 " Shortcut to rapidly toggle `set list`
 set list
-nmap <leader>li :set list!<CR>
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:┆\ ,trail:•,extends:❯,precedes:❮
 set fillchars=diff:·
@@ -354,11 +352,11 @@ vnoremap <C-r> c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>"
 " Profile startup time
 " vim --startuptime vim.log -c q
 " vim -c 'r ! cat vim.log| sort -k 2'
-nnoremap <silent> <leader>DD :exe ":profile start profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
-nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
-
-" insert current filename
-inoremap \fn <leader>f=expand("%:t")<CR>
+" nnoremap <silent> <leader>DD :exe ":profile start profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
+" nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 
 " select previously changed text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" Tabs
+map <leader>t :tabnew<CR>
