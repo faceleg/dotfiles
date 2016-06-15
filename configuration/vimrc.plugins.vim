@@ -109,7 +109,8 @@ call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neoinclude.vim')
 call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
-call dein#local('/Users/mr1483/.cache/nvim/dein/repos/github.com/mhartington', {}, ['deoplete-typescript'])
+call dein#add('mhartington/deoplete-typescript')
+" call dein#local('/Users/mr1483/.cache/nvim/dein/repos/github.com/mhartington', {}, ['deoplete-typescript'])
 
 " vim feature enhancement
 call dein#add('milkypostman/vim-togglelist')
