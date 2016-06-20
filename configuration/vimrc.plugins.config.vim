@@ -238,7 +238,11 @@
 " Shougo/vimfiler.vim
   let g:vimfiler_as_default_explorer = 1
   let g:vimfiler_safe_mode_by_default = 0
-  nmap <space>f :VimFilerBufferDir -force-quit<CR>
+  nmap <space>f :VimFilerBufferDir -explorer -force-quit<CR>
+  nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit<CR>
+
+  " Quicklook OS X
+  let g:vimfiler_quick_look_command = 'qlmanage -p'
 
 " cursor motion
 " matze/vim-move
@@ -377,20 +381,11 @@
 " window management
 " t9md/vim-choosewin
   let g:choosewin_overlay_enable = 1
-  nmap  - :ChooseWin<CR>
-  " nmap - <Plug>(choosewin)
-  let g:choosewin_color_overlay = {
-        \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
-        \ 'cterm': [ 25, 25 ]
-        \ }
-  let g:choosewin_color_overlay_current = {
-        \ 'gui': ['firebrick1', 'firebrick1' ],
-        \ 'cterm': [ 124, 124 ]
-        \ }
+  nmap - :ChooseWin<CR>
 
-  let g:choosewin_blink_on_land      = 1 " dont' blink at land
+  " let g:choosewin_blink_on_land      = 1 " dont' blink at land
   let g:choosewin_statusline_replace = 0 " don't replace statusline
-  let g:choosewin_tabline_replace    = 0 " don't replace tabline
+  " let g:choosewin_tabline_replace    = 0 " don't replace tabline
 " wesQ3/vim-windowswap
   let g:windowswap_map_keys = 0 "prevent default bindings
   nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
