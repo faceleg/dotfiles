@@ -360,3 +360,4 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Tabs
 map <leader>t :tabnew<CR>
+map <leader>x :tabclose<CR>
