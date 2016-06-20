@@ -6,6 +6,7 @@ call dein#add('tpope/vim-repeat')
 call dein#add('Shougo/unite.vim')
 call dein#add('junegunn/vim-easy-align', { 'on_map': '<Plug>(EasyAlign)' })
 call dein#add('tpope/vim-eunuch')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
 " highlighting
 call dein#add('chriskempson/base16-vim')
