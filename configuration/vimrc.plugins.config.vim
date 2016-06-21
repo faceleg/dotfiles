@@ -238,8 +238,8 @@
 " Shougo/vimfiler.vim
   let g:vimfiler_as_default_explorer = 1
   let g:vimfiler_safe_mode_by_default = 0
-  nmap <space>f :VimFilerBufferDir -explorer -force-quit<CR>
-  nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit<CR>
+  nmap <space>f :VimFilerBufferDir -explorer -force-quit -horizontal<CR>
+  nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit -horizontal<CR>
 
   " Quicklook OS X
   let g:vimfiler_quick_look_command = 'qlmanage -p'

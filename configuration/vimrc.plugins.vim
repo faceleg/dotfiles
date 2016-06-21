@@ -214,7 +214,7 @@ call dein#add('benekastah/neomake', { 'on_ft': [
 call dein#add('terryma/vim-multiple-cursors')
 
 " window management
-call dein#add('t9md/vim-choosewin', {'on_map': '<Plug>(choosewin)'})
+call dein#add('t9md/vim-choosewin')
 call dein#add('wesQ3/vim-windowswap')
 
 " buffer management
