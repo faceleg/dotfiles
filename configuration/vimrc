@@ -361,3 +361,38 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Tabs
 map <leader>t :tabnew<CR>
 map <leader>x :tabclose<CR>
+
+" Toggle Window Layout
+" Vimball Archiver by Charles E. Campbell, Jr., Ph.D.
+com! -nargs=0 TWL :call s:ToggleWinLayout()
+map <leader>w :TWL<CR>
+
+" ---------------------------------------------------------------------
+" ToggleWinLayout: toggles between all-horizontal and all-vertical {{{1
+"                  window layouts.  BTW, to make all buffers into
+"                  separate windows, use :sba.  Based on the vimtip
+"                  http://vim.sourceforge.net/tips/tip.php?tip_id=862
+"                    W
+"    W | W | W  <=>  W
+"                    W
+fun! s:ToggleWinLayout()
+"  call Dfunc("ToggleWinLayout()")
+  let curwin= winnr()
+  if curwin == 1
+   " try to go down one window
+   wincmd j
+   let isvert= winnr() != curwin
+   wincmd k
+  else
+   " try to go up one window
+   wincmd k
+   let isvert= winnr() != curwin
+   wincmd j
+  endif
+  if isvert
+   noautocmd windo wincmd H
+  else
+   noautocmd windo wincmd K
+  endif
+"  call Dret("ToggleWinLayout : (isvert=".isvert.")")
+endfun
