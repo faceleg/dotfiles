@@ -29,15 +29,16 @@
   let g:conoline_use_colorscheme_default_insert = 1
 " kshenoy/vim-signature
   let g:SignatureMarkTextHLDynamic = 1
+  let g:SignatureIncludeMarks = 'abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXZ'
 
   let g:SignatureMap = {
-        \ 'Leader'             :  "'",
-        \ 'PlaceNextMark'      :  'm,',
-        \ 'ToggleMarkAtLine'   :  'm.',
-        \ 'PurgeMarksAtLine'   :  'm-',
+        \ 'Leader'             :  "t",
+        \ 'PlaceNextMark'      :  't,',
+        \ 'ToggleMarkAtLine'   :  't.',
+        \ 'PurgeMarksAtLine'   :  't-',
         \ 'DeleteMark'         :  'dm',
-        \ 'PurgeMarks'         :  'm<Space>',
-        \ 'PurgeMarkers'       :  'm<BS>',
+        \ 'PurgeMarks'         :  't<Space>',
+        \ 'PurgeMarkers'       :  't<BS>',
         \ 'GotoNextLineAlpha'  :  "']",
         \ 'GotoPrevLineAlpha'  :  "'[",
         \ 'GotoNextSpotAlpha'  :  '`]',
@@ -50,8 +51,8 @@
         \ 'GotoPrevMarker'     :  '[-',
         \ 'GotoNextMarkerAny'  :  ']=',
         \ 'GotoPrevMarkerAny'  :  '[=',
-        \ 'ListBufferMarks'    :  'm/',
-        \ 'ListBufferMarkers'  :  'm?'
+        \ 'ListBufferMarks'    :  't/',
+        \ 'ListBufferMarkers'  :  't?'
         \ }
 
 " text objects
