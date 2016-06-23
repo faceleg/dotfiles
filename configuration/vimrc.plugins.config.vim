@@ -196,12 +196,8 @@
   let g:deoplete#enable_ignore_case = 1
   let g:deoplete#auto_complete_start_length = 0
   let g:deoplete#enable_refresh_always = 1
-  " let g:deoplete#enable_debug = 1
-  " let g:deoplete#enable_profile = 0
   let g:deoplete#max_abbr_width = 160
   let g:deoplete#max_menu_width = 80
-
-  " call deoplete#enable_logging('DEBUG', '/Users/mr1483/deoplete.log')
 
 " Shougo/neosnippet-snippets
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
