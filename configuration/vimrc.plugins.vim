@@ -79,6 +79,7 @@ call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 " javascript
 call dein#add('gavocanov/vim-js-indent')
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
+call dein#add('mvolkmann/vim-js-arrow-function')
 
 " typescript
 call dein#add('leafgarland/typescript-vim')

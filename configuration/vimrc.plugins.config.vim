@@ -145,6 +145,8 @@
   " <Leader> ttd  :TernDefTab Definition in new tab
   " <Leader> tr :TernRefs All references under cursor
   " <Leader> tR :TernRename Rename variable
+" mvolkmann/vim-js-arrow-function
+  map <leader>af :JsAnonFnToArrowFn<CR>
 
 " javascript & typescript
 " heavenshell/vim-jsdoc
