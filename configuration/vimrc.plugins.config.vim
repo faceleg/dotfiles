@@ -380,9 +380,10 @@
   let g:choosewin_overlay_enable = 1
   nmap - :ChooseWin<CR>
 
-  " let g:choosewin_blink_on_land      = 1 " dont' blink at land
-  let g:choosewin_statusline_replace = 0 " don't replace statusline
-  " let g:choosewin_tabline_replace    = 0 " don't replace tabline
+  let g:choosewin_blink_on_land      = 1 " dont' blink at land
+  let g:choosewin_statusline_replace = 1 " don't replace statusline
+  let g:choosewin_tabline_replace    = 1 " don't replace tabline
+
 " wesQ3/vim-windowswap
   let g:windowswap_map_keys = 0 "prevent default bindings
   nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
