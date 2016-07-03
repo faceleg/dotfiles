@@ -1,5 +1,6 @@
 scriptencoding utf-8
 set shell=/bin/bash
+let g:base16_shell_path=expand('~/.zgen/plugins/chriskempson/base16-shell-master/scripts')
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " set termguicolors
