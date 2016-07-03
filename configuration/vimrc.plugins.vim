@@ -7,6 +7,7 @@ call dein#add('Shougo/unite.vim')
 call dein#add('junegunn/vim-easy-align', { 'on_map': '<Plug>(EasyAlign)' })
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('justinmk/vim-gtfo')
+call dein#add('vim-ctrlspace/vim-ctrlspace')
 
 " highlighting
 call dein#add('faceleg/base16-vim') " forked from chriskempson/base16-vim
