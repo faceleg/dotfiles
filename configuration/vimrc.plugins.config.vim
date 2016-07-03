@@ -323,8 +323,6 @@
   nmap <space>p :GitFiles<CR>
   " g for grep
   nmap <space>g :Ag<CR>
-  " c-space
-  nmap <c-space> :Buffers<CR>
 " dkprice/vim-easygrep
   let g:EasyGrepCommand="ag"
   nmap <space>e :Grep<space>
