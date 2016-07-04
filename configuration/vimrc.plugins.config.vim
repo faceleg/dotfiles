@@ -330,6 +330,8 @@
 " session management
 " dhruvasagar/vim-prosession
   nmap <space>o :Obsession
+" vim-ctrlspace/vim-ctrlspace
+ nmap <c-space> :CtrlSpace<CR>
 
 " status bar
 " bling/vim-airline
