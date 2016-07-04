@@ -286,9 +286,6 @@
   map <Leader>j <Plug>(easymotion-j)
   map <Leader>k <Plug>(easymotion-k)
 
-  nmap <leader>n <plug>(easymotion-next)
-  nmap <leader>b <plug>(easymotion-prev)
-
 " auto pairs graveyard
 " Raimondi/delimitMate
   let delimitMate_expand_cr = 1
