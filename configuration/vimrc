@@ -397,4 +397,4 @@ fun! s:ToggleWinLayout()
 "  call Dret("ToggleWinLayout : (isvert=".isvert.")")
 endfun
 
-map <leader>n :f!
+map <leader>n :f!<CR>
