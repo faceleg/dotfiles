@@ -57,7 +57,8 @@ if ! zgen saved; then
     fi
 
     # theme
-    zgen load chriskempson/base16-shell base16-colors.dark.sh
+    # zgen load chriskempson/base16-shell base16-colors.dark.sh
+    zgen load faceleg/base16-shell base16-colors-dark.sh
     zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
     # save all to init script
