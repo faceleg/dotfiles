@@ -159,8 +159,6 @@
   let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
 " typescript
-  " mhartington/vim-typings
-  map <space>t :Unite typings
 
 " java
 " artur-shaik/vim-javacomplete2
