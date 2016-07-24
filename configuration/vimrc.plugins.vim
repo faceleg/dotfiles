@@ -85,7 +85,6 @@ call dein#add('faceleg/vim-js-arrow-function', { 'rev': 'feature/typescript'})
 
 " typescript
 call dein#add('leafgarland/typescript-vim')
-call dein#add('mhartington/vim-typings')
 
 " javascript & typescript
 call dein#add('heavenshell/vim-jsdoc')
