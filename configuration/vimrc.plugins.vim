@@ -177,6 +177,7 @@ call dein#add('Raimondi/delimitMate')
 call dein#add('ConradIrwin/vim-bracketed-paste')
 call dein#add('troydm/zoomwintab.vim')
 call dein#add('svermeulen/vim-easyclip', { 'depends': 'tpope/vim-repeat' })
+call dein#add('Shougo/neoyank.vim')
 
 " git integration
 call dein#add('sgur/vim-lazygutter')

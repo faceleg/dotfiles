@@ -304,12 +304,15 @@
   xmap y <Plug>VisualModeYank
   imap <c-v> <plug>EasyClipInsertModePaste
 
-  nnoremap <space>y :Yanks<cr>
+  " nnoremap <space>y :Yanks<cr>
 
   " Preserve default behaviour of S, use all other substitute bindings
   let g:EasyClipUseSubstituteDefaults = 0
   " nmap s <plug>SubstituteOverMotionMap
   " nmap gs <plug>G_SubstituteOverMotionMap
+" Shougo/neoyank.vim
+  nmap <space>y :Unite history/yank -default-action=append<CR>
+  let g:neoyank#file = $HOME.'/.vim/neoyank.txt'
 
 " searching
 " junegunn/fzf.vim
