@@ -159,57 +159,33 @@
 
 " typescript
 
-" java
-" artur-shaik/vim-javacomplete2
-  autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-  " To enable smart (trying to guess import option) inserting class imports with F4, add:
-  nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-  imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-
-  " To enable usual (will ask for import option) inserting class imports with F5, add:
-  nmap <F5> <Plug>(JavaComplete-Imports-Add)
-  imap <F5> <Plug>(JavaComplete-Imports-Add)
-
-  " To add all missing imports with F6:
-  nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-  imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-
-  " To remove all missing imports with F7:
-  nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-  imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-
-" html/xml
-" othree/xml.vim
-  let g:xml_use_html = 1
-
 " completion, snippets
 " Valloric/YouCompleteMe
-  " let g:ycm_autoclose_preview_window_after_completion = 1
-  " let g:ycm_seed_identifiers_with_syntax = 1
-  " let g:ycm_collect_identifiers_from_tags_files = 1
-  " let g:ycm_complete_in_strings = 1
+  let g:ycm_autoclose_preview_window_after_completion = 1
+  let g:ycm_seed_identifiers_with_syntax = 1
+  let g:ycm_collect_identifiers_from_tags_files = 1
+  let g:ycm_complete_in_strings = 1
 " Shougo/deoplete.nvim
-  let g:deoplete#enable_at_startup = 1
-  " let g:deoplete#enable_smart_case = 1
-  let g:deoplete#enable_ignore_case = 1
-  let g:deoplete#auto_complete_start_length = 0
-  let g:deoplete#enable_refresh_always = 1
-  let g:deoplete#max_abbr_width = 160
-  let g:deoplete#max_menu_width = 80
+  " let g:deoplete#enable_at_startup = 1
+  " " let g:deoplete#enable_smart_case = 1
+  " let g:deoplete#enable_ignore_case = 1
+  " let g:deoplete#auto_complete_start_length = 0
+  " let g:deoplete#enable_refresh_always = 1
+  " let g:deoplete#max_abbr_width = 160
+  " let g:deoplete#max_menu_width = 80
 
-" Shougo/neosnippet-snippets
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
+" " Shougo/neosnippet-snippets
+  " " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  " " smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  " " xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  " " smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  " " \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-  " For conceal markers.
-  if has('conceal')
-    set conceallevel=2 concealcursor=niv
-  endif
+  " " " For conceal markers.
+  " " if has('conceal')
+  " "   set conceallevel=2 concealcursor=niv
+  " " endif
 
 " vim feature enhancement
 " milkypostman/vim-togglelist
