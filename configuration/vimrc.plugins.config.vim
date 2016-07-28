@@ -90,6 +90,7 @@
   " ,e
   " ,w
   " ... etc
+  call camelcasemotion#CreateMotionMappings(',')
 " tyru/operator-camelize.vim
   map <leader>c <Plug>(operator-camelize-toggle)
 " tpope/vim-abolish
