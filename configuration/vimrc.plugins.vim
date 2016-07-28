@@ -91,9 +91,6 @@ call dein#add('heavenshell/vim-jsdoc')
 " python
 call dein#add('hdima/python-syntax')
 
-" java
-call dein#add('artur-shaik/vim-javacomplete2', { 'on_ft': 'java' })
-
 " html/xml
 call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('othree/xml.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
