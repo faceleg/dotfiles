@@ -344,6 +344,16 @@
   nmap <space>m :Neomake<cr>
 
   let g:neomake_typescript_enabled_makers = ['tslint', 'tsc']
+  let g:neomake_typescript_tsc_maker = {
+        \ 'args': [
+        \ '--module', 'commonjs', '--noEmit', '--target', 'es6'
+        \ ],
+        \ 'errorformat':
+        \ '%E%f %#(%l\,%c): error %m,' .
+        \ '%E%f %#(%l\,%c): %m,' .
+        \ '%Eerror %m,' .
+        \ '%C%\s%\+%m' }
+
   let g:neomake_javascript_enabled_makers = ['eslint']
 
   " load local eslint in the project root
