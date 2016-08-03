@@ -75,6 +75,9 @@ call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
 " json
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
 
+" pug
+call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
+
 " less
 call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 
