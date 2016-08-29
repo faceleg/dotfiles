@@ -12,6 +12,9 @@
     <property name="KEYMAP" value="reform&#10;everywhere&#10;search ev" />
     <property name="settings.code.style.selected.tab.TypeScript" value="Spaces" />
     <property name="selected.color.option.type" value="IDENTIFIER_UNDER_CARET_ATTRIBUTES" />
-    <property name="search.everywhere.max.popup.width" value="747" />
+    <property name="search.everywhere.max.popup.width" value="667" />
+    <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.0" value="300" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.47494555" />
+    <property name="CommitChangeListDialog.DETAILS_SHOW_OPTION_" value="true" />
   </component>
 </application>

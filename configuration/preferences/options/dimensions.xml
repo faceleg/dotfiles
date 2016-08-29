@@ -5,9 +5,10 @@
     <location key="#Browse_Repositories.0.0.1680.1050" x="427" y="195" />
     <location key="SettingsEditor.0.0.1680.1050" x="321" y="196" />
     <location key="StructurePopup.0.0.1680.1050" x="634" y="313" />
-    <location key="CommitChangelistDialog2.0.0.1680.1050" x="435" y="249" />
+    <location key="CommitChangelistDialog2.0.0.1680.1050" x="0" y="23" />
     <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1680.1050" x="170" y="402" />
     <location key="findTextDialog.0.0.1680.1050" x="602" y="261" />
     <size key="StructurePopup.0.0.1680.1050" width="412" height="421" />
+    <size key="CommitChangelistDialog2.0.0.1680.1050" width="1680" height="1023" />
   </component>
 </application>

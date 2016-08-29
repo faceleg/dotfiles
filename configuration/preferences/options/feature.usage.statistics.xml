@@ -4,16 +4,16 @@
     <feature id="codeassists.comment.line" count="1" last-shown="0" last-used="1472438863695" shown-count="0" />
     <feature id="codeassists.surroundwith.statement" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="refactoring.rename" count="5" last-shown="0" last-used="1472438583201" shown-count="0" />
-    <feature id="navigation.popup.action" count="11" last-shown="0" last-used="1472442662596" shown-count="0" />
+    <feature id="navigation.popup.action" count="13" last-shown="0" last-used="1472444543242" shown-count="0" />
     <feature id="editing.completion.cancelByControlArrows" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="navigation.popup.symbol" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="find.recent.search" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="editing.completion.replace" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="navigation.goto.inspection" count="0" last-shown="0" last-used="0" shown-count="0" />
-    <feature id="navigation.popup.camelprefix" count="0" last-shown="0" last-used="0" shown-count="0" />
-    <feature id="SearchEverywhere" count="13" last-shown="0" last-used="1472442882463" shown-count="0" />
-    <feature id="navigation.popup.class" count="1" last-shown="0" last-used="1472438878185" shown-count="0" />
-    <feature id="navigation.popup.file" count="2" last-shown="0" last-used="1472438882152" shown-count="0" />
+    <feature id="navigation.popup.camelprefix" count="1" last-shown="0" last-used="1472444549509" shown-count="0" />
+    <feature id="SearchEverywhere" count="14" last-shown="0" last-used="1472444200294" shown-count="0" />
+    <feature id="navigation.popup.class" count="2" last-shown="0" last-used="1472444170790" shown-count="0" />
+    <feature id="navigation.popup.file" count="4" last-shown="0" last-used="1472444203645" shown-count="0" />
     <feature id="navigation.popup.wildcards" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="refactoring.introduceVariable" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="codeassists.quickdefinition" count="0" last-shown="0" last-used="0" shown-count="0" />
@@ -48,7 +48,7 @@
       <option name="lastDate" value="1472385600000" />
     </completionStatsTag>
     <fixesStatsTag>
-      <option name="invocations" value="1" />
+      <option name="invocations" value="2" />
       <option name="startDate" value="1472385600000" />
       <option name="dayCount" value="1" />
       <option name="lastDate" value="1472385600000" />
