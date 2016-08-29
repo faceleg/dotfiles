@@ -55,6 +55,9 @@
         <mark key="^" line="89" column="35" />
         <mark key="." line="89" column="64" />
       </file>
+      <file name="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10ondemand/acceleratoraddon/web/webroot/_ui/responsive/themes/ondemand/js/Mitre10Player.js" timestamp="1472442978340">
+        <mark key="'" line="1006" column="0" />
+      </file>
       <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.ts" timestamp="1472438780130">
         <mark key="'" line="10" column="3" />
         <mark key="[" line="7" column="24" />
@@ -87,6 +90,8 @@
       <jump line="10" column="0" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" />
       <jump line="90" column="32" filename="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10storefront/web/webroot/WEB-INF/views/responsive/cms/mitre10gcc4bannercomponent.jsp" />
       <jump line="89" column="32" filename="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10storefront/web/webroot/WEB-INF/views/responsive/cms/mitre10gcc4bannercomponent.jsp" />
+      <jump line="47" column="32" filename="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10ondemand/acceleratoraddon/web/webroot/_ui/responsive/themes/ondemand/js/Mitre10Player.js" />
+      <jump line="1006" column="0" filename="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10ondemand/acceleratoraddon/web/webroot/_ui/responsive/themes/ondemand/js/Mitre10Player.js" />
     </jumps>
     <registers>
       <register name="&quot;" type="2">

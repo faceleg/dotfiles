@@ -36,13 +36,14 @@
   <component name="UsageTrigger">
     <counts>
       <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.Console_Font" count="2" />
       <entry feature="ide.settings.General" count="1" />
       <entry feature="ide.settings.Keymap" count="2" />
       <entry feature="ide.settings.Plugins" count="3" />
       <entry feature="ide.settings.TSLint" count="1" />
       <entry feature="ide.settings.TypeScript" count="2" />
       <entry feature="ideaapp.started" count="7" />
-      <entry feature="terminal.mac" count="3" />
+      <entry feature="terminal.mac" count="6" />
       <entry feature="welcome.screen.WelcomeScreen.OpenDirectoryProject" count="2" />
     </counts>
   </component>
