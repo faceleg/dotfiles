@@ -144,15 +144,15 @@ alias lsa='colourify ls -alh'
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # TMUX
-if [[ -z $TMUX ]]; then
-  # Attempt to discover a detached session and attach it, else create a new session
-  CURRENT_USER=$(whoami)
-  if tmux has-session -t $CURRENT_USER 2>/dev/null; then
-    tmux -2 attach-session -t $CURRENT_USER
-  else
-    tmux -2 new-session -s $CURRENT_USER
-  fi
-fi
+# if [[ -z $TMUX ]]; then
+#   # Attempt to discover a detached session and attach it, else create a new session
+#   CURRENT_USER=$(whoami)
+#   if tmux has-session -t $CURRENT_USER 2>/dev/null; then
+#     tmux -2 attach-session -t $CURRENT_USER
+#   else
+#     tmux -2 new-session -s $CURRENT_USER
+#   fi
+# fi
 
 # FZF
 
