@@ -1,0 +1,11 @@
+<application>
+  <component name="DimensionService">
+    <location key="FileChooserDialogImpl.0.0.1680.1050" x="628" y="201" />
+    <location key="WELCOME_SCREEN.0.0.1680.1050" x="840" y="230" />
+    <location key="#Browse_Repositories.0.0.1680.1050" x="427" y="195" />
+    <location key="SettingsEditor.0.0.1680.1050" x="321" y="196" />
+    <location key="StructurePopup.0.0.1680.1050" x="634" y="313" />
+    <location key="CommitChangelistDialog2.0.0.1680.1050" x="435" y="249" />
+    <size key="StructurePopup.0.0.1680.1050" width="412" height="421" />
+  </component>
+</application>

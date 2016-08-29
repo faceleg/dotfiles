@@ -1,0 +1,10 @@
+<application>
+  <component name="FindRecents">
+    <findStrings>
+      <find>home</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>house</replace>
+    </replaceStrings>
+  </component>
+</application>

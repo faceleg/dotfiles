@@ -1,0 +1,155 @@
+<application>
+  <component name="VimSettings">
+    <state version="4" enabled="true" />
+    <globalmarks />
+    <filemarks>
+      <file name="/Dummy.txt" timestamp="1472438577759">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="^" line="0" column="0" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.js" timestamp="1472438574713">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="34" />
+        <mark key="." line="0" column="34" />
+        <mark key="^" line="0" column="34" />
+      </file>
+      <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile.js" timestamp="1472437387225">
+        <mark key="[" line="5" column="0" />
+        <mark key="]" line="5" column="0" />
+        <mark key="." line="5" column="0" />
+      </file>
+      <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" timestamp="1472438849114">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="1" column="0" />
+        <mark key="." line="1" column="0" />
+        <mark key="^" line="1" column="0" />
+      </file>
+      <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile.ts/profile.ts" timestamp="1472438825585">
+        <mark key="[" line="3" column="30" />
+        <mark key="]" line="3" column="29" />
+        <mark key="." line="3" column="29" />
+        <mark key="^" line="3" column="29" />
+      </file>
+      <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.ts" timestamp="1472438780130">
+        <mark key="'" line="10" column="3" />
+        <mark key="[" line="7" column="24" />
+        <mark key="]" line="8" column="1" />
+        <mark key="." line="8" column="1" />
+        <mark key="^" line="8" column="1" />
+      </file>
+      <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" timestamp="1472438858407">
+        <mark key="'" line="10" column="0" />
+        <mark key="[" line="9" column="0" />
+        <mark key="]" line="9" column="0" />
+        <mark key="." line="9" column="0" />
+        <mark key="^" line="50" column="2" />
+      </file>
+    </filemarks>
+    <jumps>
+      <jump line="92" column="3" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" />
+      <jump line="129" column="19" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" />
+      <jump line="16" column="30" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" />
+      <jump line="89" column="2" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" />
+      <jump line="8" column="0" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
+      <jump line="7" column="10" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
+      <jump line="2" column="10" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
+      <jump line="4" column="10" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
+      <jump line="5" column="10" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
+      <jump line="6" column="10" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
+      <jump line="1" column="0" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.ts" />
+      <jump line="10" column="3" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.ts" />
+      <jump line="0" column="0" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
+      <jump line="10" column="0" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" />
+    </jumps>
+    <registers>
+      <register name="&quot;" type="2">
+        <text encoding="base64">fSkK</text>
+      </register>
+      <register name="-" type="4">
+        <text>/</text>
+      </register>
+      <register name="/" type="4">
+        <text>var</text>
+      </register>
+      <register name="0" type="4">
+        <text>onClickHold</text>
+      </register>
+      <register name="1" type="2">
+        <text encoding="base64">fSkK</text>
+      </register>
+      <register name="2" type="2">
+        <text encoding="base64">KCk7Cg==</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">ZQo=</text>
+      </register>
+      <register name="4" type="2">
+        <text encoding="base64">ICAndXNlIHN0cmljdCc7Cg==</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">KGZ1bmN0aW9uKCkgewo=</text>
+      </register>
+      <register name="6" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="7" type="2">
+        <text encoding="base64">fSkoKTsK</text>
+      </register>
+      <register name="8" type="2">
+        <text encoding="base64">ICAndXNlIHN0cmljdCc7Cg==</text>
+      </register>
+      <register name="9" type="2">
+        <text encoding="base64">KGZ1bmN0aW9uKCkgewo=</text>
+      </register>
+      <register name=":" type="4">
+        <text>q</text>
+      </register>
+    </registers>
+    <search>
+      <last-search>var</last-search>
+      <last-offset />
+      <last-pattern>var</last-pattern>
+      <last-replace>const</last-replace>
+      <last-substitute>var</last-substitute>
+      <last-dir>1</last-dir>
+      <show-last>false</show-last>
+    </search>
+    <history>
+      <history-search>
+        <entry>home</entry>
+        <entry>var</entry>
+      </history-search>
+      <history-cmd>
+        <entry>1</entry>
+        <entry>10</entry>
+        <entry>Q</entry>
+        <entry>e</entry>
+        <entry>w</entry>
+        <entry>s/var/const/gi</entry>
+        <entry>q</entry>
+      </history-cmd>
+      <history-expr />
+      <history-input />
+    </history>
+    <shortcut-conflicts>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed D</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed V</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed H</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed F</text>
+      </shortcut-conflict>
+    </shortcut-conflicts>
+    <editor>
+      <key-repeat enabled="true" />
+    </editor>
+  </component>
+</application>

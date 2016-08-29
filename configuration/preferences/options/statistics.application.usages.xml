@@ -1,0 +1,39 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="Git">
+      <project id="web-frontend" values="data.remote.branches.count.2+,config.save.policy.STASH,config.force.push.enabled,config.repo.sync.NOT_DECIDED,data.local.branches.count.2+,config.cherry-pick.autocommit.disabled,config.ssh.enabled,config.warn.about.crlf.enabled,config.warn.about.detached.enabled,config.push.autoupdate.disabled,data.remotes.in.project.1,config.push.update.all.roots.enabled,config.update.type.BRANCH_DEFAULT" collectionTime="1472437774353" />
+    </group>
+    <group name="vcs">
+      <project id="web-frontend" values="Git" collectionTime="1472437774328" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="web-frontend" values="ECMAScript 5.1" collectionTime="1472437774356" />
+    </group>
+    <group name="images.ide.background">
+      <project id="web-frontend" values="frame 0,editor 0" collectionTime="1472437774351" />
+    </group>
+    <group name="VCS Log 2">
+      <project id="web-frontend" values="data.commit.count.1K+,data.git.root.count.1" collectionTime="1472437774351" />
+    </group>
+    <group name="file-type">
+      <project id="web-frontend" values="JSON,JSON Schema,SourceMap,JavaScript,CSS,XML,TypeScript,TSLint,HTML,UNKNOWN,PLAIN_TEXT,Images" collectionTime="1472437774343" />
+    </group>
+    <group name="module type">
+      <project id="web-frontend" values="WEB_MODULE" collectionTime="1472437774329" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="web-frontend" values="Directory,Project,Project" collectionTime="1472437774356" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.Keymap" count="2" />
+      <entry feature="ide.settings.Plugins" count="2" />
+      <entry feature="ide.settings.TSLint" count="1" />
+      <entry feature="ide.settings.TypeScript" count="2" />
+      <entry feature="ideaapp.started" count="5" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenDirectoryProject" count="1" />
+    </counts>
+  </component>
+</application>

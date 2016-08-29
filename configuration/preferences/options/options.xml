@@ -1,0 +1,16 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="evlsprt3.162" value="14" />
+    <property name="WebStorm.dumbRunEnabled" value="true" />
+    <property name="WebStorm.initialConfigurationShown" value="true" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/.nvm/versions/node/v6.3.1/lib/node_modules/typescript/lib&#10;/Users/faceleg/.nvm/versions/node/v6.3.1/lib/node_modules/typescript&#10;/Users/faceleg/.nvm/versions/node/v6.3.1/bin&#10;/Users/faceleg/Work/Personal/web-frontend" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
+    <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
+    <property name="HbAutoCollapseBlocks" value="disabled" />
+    <property name="PLUGIN_FILTER" value="tslint&#10;highlight&#10;semantic&#10;vim" />
+    <property name="ideavim.statistics.timestamp" value="1472436194703" />
+    <property name="KEYMAP" value="reform&#10;everywhere&#10;search ev" />
+    <property name="settings.code.style.selected.tab.TypeScript" value="Spaces" />
+    <property name="search.everywhere.max.popup.width" value="611" />
+  </component>
+</application>
