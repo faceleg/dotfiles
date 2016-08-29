@@ -2,9 +2,14 @@
   <component name="FindRecents">
     <findStrings>
       <find>home</find>
+      <find>.product--dollar-sign</find>
+      <find>product--price-long</find>
     </findStrings>
     <replaceStrings>
       <replace>house</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10storefront</dir>
+    </dirStrings>
   </component>
 </application>

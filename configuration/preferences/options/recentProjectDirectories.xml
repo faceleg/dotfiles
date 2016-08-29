@@ -2,17 +2,29 @@
   <component name="RecentDirectoryProjectsManager">
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom" />
         <option value="$USER_HOME$/Work/Personal/web-frontend" />
       </list>
     </option>
     <option name="openPaths">
       <list>
-        <option value="$USER_HOME$/Work/Personal/web-frontend" />
+        <option value="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom" />
       </list>
     </option>
-    <option name="lastPath" value="$USER_HOME$/Work/Personal/web-frontend" />
+    <option name="lastPath" value="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom" />
     <option name="additionalInfo">
       <map>
+        <entry key="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="WS-162.1628.41" />
+              <option name="productionCode" value="WS" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1472442865091" />
+              <option name="buildTimestamp" value="1471262400000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Work/Personal/web-frontend">
           <value>
             <RecentProjectMetaInfo>

@@ -9,6 +9,15 @@
         <mark key="^" line="0" column="0" />
         <mark key="." line="0" column="0" />
       </file>
+      <file name="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/brightcove/web/webroot/_ui/addons/mitre10ondemand/responsive/themes/ondemand/less/components/profile.less" timestamp="1472441359628">
+        <mark key="[" line="502" column="35" />
+        <mark key="]" line="503" column="1" />
+        <mark key="." line="503" column="1" />
+        <mark key="^" line="503" column="1" />
+      </file>
+      <file name="/a.dummy" timestamp="1472442493664">
+        <mark key="[" line="0" column="0" />
+      </file>
       <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.js" timestamp="1472438574713">
         <mark key="[" line="0" column="0" />
         <mark key="]" line="0" column="34" />
@@ -19,6 +28,12 @@
         <mark key="[" line="5" column="0" />
         <mark key="]" line="5" column="0" />
         <mark key="." line="5" column="0" />
+      </file>
+      <file name="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10storefront/web/webroot/WEB-INF/_ui-src/responsive/themes/blue/less/partials/features.less" timestamp="1472442710600">
+        <mark key="[" line="291" column="35" />
+        <mark key="]" line="291" column="36" />
+        <mark key="^" line="292" column="6" />
+        <mark key="." line="291" column="36" />
       </file>
       <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" timestamp="1472438849114">
         <mark key="'" line="0" column="0" />
@@ -32,6 +47,13 @@
         <mark key="]" line="3" column="29" />
         <mark key="." line="3" column="29" />
         <mark key="^" line="3" column="29" />
+      </file>
+      <file name="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10storefront/web/webroot/WEB-INF/views/responsive/cms/mitre10gcc4bannercomponent.jsp" timestamp="1472442486370">
+        <mark key="'" line="89" column="32" />
+        <mark key="[" line="89" column="64" />
+        <mark key="]" line="89" column="64" />
+        <mark key="^" line="89" column="35" />
+        <mark key="." line="89" column="64" />
       </file>
       <file name="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.ts" timestamp="1472438780130">
         <mark key="'" line="10" column="3" />
@@ -63,55 +85,57 @@
       <jump line="10" column="3" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/profile/profile-controller.ts" />
       <jump line="0" column="0" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/components/home/home.ts" />
       <jump line="10" column="0" filename="$USER_HOME$/Work/Personal/web-frontend/typescript/app/app.ts" />
+      <jump line="90" column="32" filename="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10storefront/web/webroot/WEB-INF/views/responsive/cms/mitre10gcc4bannercomponent.jsp" />
+      <jump line="89" column="32" filename="$USER_HOME$/Work/Datacom/Mitre10/On_Demand/hybris-base/hybris/bin/custom/mitre10storefront/web/webroot/WEB-INF/views/responsive/cms/mitre10gcc4bannercomponent.jsp" />
     </jumps>
     <registers>
       <register name="&quot;" type="2">
-        <text encoding="base64">fSkK</text>
+        <text encoding="base64">ICAgICAgICBmb250LXNpemU6IH4iY2FsYygxMDAlIC0gMC40ZW0pIjsKICAgICAgfQo=</text>
       </register>
       <register name="-" type="4">
-        <text>/</text>
+        <text>}</text>
       </register>
       <register name="/" type="4">
-        <text>var</text>
+        <text>dollar-sign</text>
       </register>
-      <register name="0" type="4">
-        <text>onClickHold</text>
+      <register name="0" type="2">
+        <text encoding="base64">ICAgICAgICBmb250LXNpemU6IH4iY2FsYygxMDAlIC0gMC40ZW0pIjsKICAgICAgfQo=</text>
       </register>
       <register name="1" type="2">
-        <text encoding="base64">fSkK</text>
+        <text encoding="base64">ICAgICAgLnByb2R1Y3QtLXByaWNlLWRvbGxhci5wcm9kdWN0LS1wcmljZS1sb25nLAo=</text>
       </register>
       <register name="2" type="2">
-        <text encoding="base64">KCk7Cg==</text>
+        <text encoding="base64">bwo=</text>
       </register>
       <register name="3" type="2">
-        <text encoding="base64">ZQo=</text>
-      </register>
-      <register name="4" type="2">
-        <text encoding="base64">ICAndXNlIHN0cmljdCc7Cg==</text>
-      </register>
-      <register name="5" type="2">
-        <text encoding="base64">KGZ1bmN0aW9uKCkgewo=</text>
-      </register>
-      <register name="6" type="2">
         <text encoding="base64">Cg==</text>
       </register>
+      <register name="4" type="2">
+        <text encoding="base64">ICAK</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">ICAK</text>
+      </register>
+      <register name="6" type="2">
+        <text encoding="base64">ICAK</text>
+      </register>
       <register name="7" type="2">
-        <text encoding="base64">fSkoKTsK</text>
+        <text encoding="base64">fSkK</text>
       </register>
       <register name="8" type="2">
-        <text encoding="base64">ICAndXNlIHN0cmljdCc7Cg==</text>
+        <text encoding="base64">KCk7Cg==</text>
       </register>
       <register name="9" type="2">
-        <text encoding="base64">KGZ1bmN0aW9uKCkgewo=</text>
+        <text encoding="base64">ZQo=</text>
       </register>
       <register name=":" type="4">
-        <text>q</text>
+        <text>w</text>
       </register>
     </registers>
     <search>
-      <last-search>var</last-search>
+      <last-search>dollar-sign</last-search>
       <last-offset />
-      <last-pattern>var</last-pattern>
+      <last-pattern>dollar-sign</last-pattern>
       <last-replace>const</last-replace>
       <last-substitute>var</last-substitute>
       <last-dir>1</last-dir>
@@ -121,15 +145,19 @@
       <history-search>
         <entry>home</entry>
         <entry>var</entry>
+        <entry>calc</entry>
+        <entry>price-dolla</entry>
+        <entry>dollar-sign</entry>
       </history-search>
       <history-cmd>
         <entry>1</entry>
         <entry>10</entry>
         <entry>Q</entry>
         <entry>e</entry>
-        <entry>w</entry>
         <entry>s/var/const/gi</entry>
         <entry>q</entry>
+        <entry>set wrap</entry>
+        <entry>w</entry>
       </history-cmd>
       <history-expr />
       <history-input />
@@ -146,6 +174,18 @@
       </shortcut-conflict>
       <shortcut-conflict owner="vim">
         <text>ctrl pressed F</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed G</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed N</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed R</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed A</text>
       </shortcut-conflict>
     </shortcut-conflicts>
     <editor>
