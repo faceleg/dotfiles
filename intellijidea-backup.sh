@@ -1,14 +1,22 @@
 #!/bin/bash
-DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-CP="/bin/cp -fr"
 
-PRODUCT="IntelliJIdea2016.2"
+source ./intellijidea-variables.sh
 
-$CP ~/Library/Preferences/${PRODUCT}/ "$DIR/configuration/$PRODUCT/configuration"
-$CP ~/Library/Application\ Support/${PRODUCT} "$DIR/configuration/$PRODUCT/plugins"
+mkdir -p "$BACKUP/configuration"
+mkdir -p "$BACKUP/plugins"
 
-rm -rf ${DIR}/configuration/${PRODUCT}/configuration/port*
-rm -rf ${DIR}/configuration/${PRODUCT}/configuration/tasks
-rm -rf ${DIR}/configuration/${PRODUCT}/configuration/settingsRepository
-rm -rf ${DIR}/configuration/${PRODUCT}/configuration/jdbc-drivers
-rm -rf ${DIR}/configuration/${PRODUCT}/configuration/eval
+$CP ~/Library/Preferences/${PRODUCT}/* "$BACKUP/configuration/"
+rm -rf $BACKUP/configuration/port*
+rm -rf $BACKUP/configuration/tasks
+rm -rf $BACKUP/configuration/settingsRepository
+rm -rf $BACKUP/configuration/jdbc-drivers
+rm -rf $BACKUP/configuration/eval
+rm -rf $BACKUP/configuration/options/git.xml
+rm -rf $BACKUP/configuration/options/jdk.table.xml
+rm -rf $BACKUP/configuration/options/window.manager.xml
+rm -rf $BACKUP/configuration/options/window.state.xml
+rm -rf $BACKUP/configuration/options/options.xml
+rm -rf $BACKUP/configuration/options/databaseDrivers.xml
+rm -rf $BACKUP/configuration/options/databaseSettings.xml
+
+$CP ~/Library/Application\ Support/${PRODUCT}/* "$BACKUP/plugins/"
