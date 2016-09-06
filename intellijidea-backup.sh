@@ -20,3 +20,5 @@ rm -rf $BACKUP/configuration/options/databaseDrivers.xml
 rm -rf $BACKUP/configuration/options/databaseSettings.xml
 
 $CP ~/Library/Application\ Support/${PRODUCT}/* "$BACKUP/plugins/"
+
+$CP ~/.ideavimrc "$BACKUP/ideavimrc"

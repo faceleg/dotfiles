@@ -1,0 +1,71 @@
+set surround
+set clipboard+=unnamed
+
+scriptencoding utf-8
+
+let g:mapleader=';'
+let g:maplocalleader='\'
+
+filetype plugin indent on
+
+set number
+set cindent
+set encoding=utf-8 " Explicitly set encoding to utf-8
+
+" Do not highlight current line
+set nocursorline
+set nocursorcolumn
+
+setlocal wrap linebreak nolist
+set virtualedit=
+setlocal display+=lastline
+set showbreak=…
+
+" Normal line movement
+nnoremap k gk
+nnoremap j gj
+nnoremap 0 g0
+nnoremap $ g$
+onoremap j gj
+onoremap k gk
+
+" Disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" Position saving
+" http://amix.dk/vim/vimrc.html
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
+
+" ^ is too far
+nnoremap 0 ^
+nnoremap ^ 0
+
+" Scrolling
+set scrolloff=8 " Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+set smartcase
+set ignorecase
+set showmatch
+
+" Show special characters
+" http://vimcasts.org/episodes/show-invisibles/
+" Shortcut to rapidly toggle `set list`
+set list
+
+" c-s save
+noremap <silent> <C-S>          :update<CR><ESC>
+vnoremap <silent> <C-S>         <C-C>:update<CR><ESC>
+inoremap <silent> <C-S>         <C-O>:update<CR><ESC>
