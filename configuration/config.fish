@@ -26,3 +26,7 @@ alias gr='git rebase'
 alias gri='git rebase -i'
 alias gst='git status'
 alias g='git'
+
+function fish_greeting
+    cat ~/.config/fish/logo.txt
+end
