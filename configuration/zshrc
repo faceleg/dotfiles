@@ -53,6 +53,7 @@ if ! zgen saved; then
     zgen load junegunn/fzf shell
     zgen load junegunn/fzf shell/completion.zsh
     zgen load junegunn/fzf shell/key-bindings.zsh
+    zgen load supercrabtree/k
 
     if is_osx; then
         zgen load chriskempson/base16-iterm2
