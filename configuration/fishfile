@@ -14,5 +14,13 @@ fisherman/last_job_id
 fisherman/menu
 fisherman/nvm
 oh-my-fish/plugin-tab
-daveyarwood/tomita
 fisherman/z
+brgmnn/fish-docker-compose
+anicode # search unicode
+
+# Themes
+# daveyarwood/tomita
+# rafaelrinaldi/pure
+
+# https://github.com/fisherman/simple
+simple
