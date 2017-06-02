@@ -27,7 +27,7 @@ alias gri='git rebase -i'
 alias gst='git status'
 alias g='git'
 
-POSTGRES_BIN_PATH_MACOS=/Applications/Postgres.app/Contents/Versions/9.5/bin/
+set POSTGRES_BIN_PATH_MACOS /Applications/Postgres.app/Contents/Versions/9.5/bin/
 if test -d "$POSTGRES_BIN_PATH_MACOS"
     set PATH "$POSTGRES_BIN_PATH_MACOS" $PATH
 end
