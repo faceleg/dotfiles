@@ -3,7 +3,7 @@ set shell=/bin/bash
 let g:base16_shell_path=expand('~/.zgen/plugins/chriskempson/base16-shell-master/scripts')
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" set termguicolors
+set termguicolors
 
 " The mapleader has to be set before any plugins are loaded
 let g:mapleader=';'
@@ -54,11 +54,19 @@ filetype plugin indent on
 syntax on
 set background=dark
 colorscheme base16-colors
+let base16colorspace=256
 let html_number_lines = 0
 let html_no_pre = 1
 
+" rendering
 set ttyfast
 set lazyredraw
+set ttimeoutlen=10
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=1000
+augroup END
 
 " Custom highlight options
 highlight LineNr ctermbg=0 guibg=111
@@ -77,6 +85,9 @@ highlight CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=0  
 highlight CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=0   guibg=#333 cterm=NONE gui=NONE
 highlight CtrlSpaceSearch   ctermfg=220  guifg=#808080 ctermbg=NONE  guibg=#000014    cterm=bold    gui=bold
 highlight CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=NONE   guibg=#333 cterm=NONE    gui=NONE
+
+highlight ALEErrorSign guibg=111 guifg=red
+highlight ALEWarningSign guibg=111 guifg=yellow
 
 " Tabs & indenting
 set tabstop=2
