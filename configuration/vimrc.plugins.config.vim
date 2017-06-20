@@ -230,7 +230,7 @@
   nmap <space>f :VimFilerBufferDir -explorer -force-quit -horizontal<CR>
   nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit -horizontal<CR>
 " scrooloose/nerdtre
-  autocmd vimenter * NERDTree
+  " autocmd vimenter * NERDTree
   map <space>n :NERDTreeToggle<CR>
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
