@@ -36,9 +36,9 @@ function fish_greeting
     cat ~/.config/fish/logo.txt
 end
 
-if command -v tmux>/dev/null; and test -z $TMUX;
-    # tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg; and kill %self
-    tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg;
-    echo "tmux failed to start; using plain fish shell"
-end
+# if command -v tmux>/dev/null; and test -z $TMUX;
+#     # tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg; and kill %self
+#     tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg;
+#     echo "tmux failed to start; using plain fish shell"
+# end
 
