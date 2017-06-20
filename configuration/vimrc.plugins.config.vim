@@ -13,17 +13,17 @@
   " autocmd FileType jsx,javascript call semhl#highlight()
   " autocmd CursorHold *.jsx,*.js call semhl#highlight()
 
-  autocmd FileType javascript setlocal iskeyword+=$
-  let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
-  let g:semanticEnableFileTypes = {
-        \ 'javascript': 'js',
-        \ 'typescript': 'ts',
-        \ 'coffee': 'coffee',
-        \ 'vim': 'vim',
-        \ 'php': 'php',
-        \ }
-  let g:semanticUseCache = 1
-  let g:semanticPersistCache = 1
+  " autocmd FileType javascript setlocal iskeyword+=$
+  " let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
+  " let g:semanticEnableFileTypes = {
+  "       \ 'javascript': 'js',
+  "       \ 'typescript': 'ts',
+  "       \ 'coffee': 'coffee',
+  "       \ 'vim': 'vim',
+  "       \ 'php': 'php',
+  "       \ }
+  " let g:semanticUseCache = 1
+  " let g:semanticPersistCache = 1
 
 " visual
 " miyakogi/conoline.vim
@@ -95,7 +95,7 @@
   " ... etc
   call camelcasemotion#CreateMotionMappings(',')
 " tyru/operator-camelize.vim
-  map <leader>c <Plug>(operator-camelize-toggle)
+  " map <leader>c <Plug>(operator-camelize-toggle)
 " tpope/vim-abolish
   " crs coerce to sname_case
   " crm
