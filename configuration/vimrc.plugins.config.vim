@@ -10,6 +10,9 @@
   autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 " jaxbot/semantic-highlight.vim
+  " autocmd FileType jsx,javascript call semhl#highlight()
+  " autocmd CursorHold *.jsx,*.js call semhl#highlight()
+
   autocmd FileType javascript setlocal iskeyword+=$
   let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
   let g:semanticEnableFileTypes = {
@@ -167,12 +170,26 @@
   " let g:ycm_complete_in_strings = 1
 " Shougo/deoplete.nvim
   let g:deoplete#enable_at_startup = 1
-  " let g:deoplete#enable_smart_case = 1
+  let g:deoplete#enable_smart_case = 1
   let g:deoplete#enable_ignore_case = 1
   let g:deoplete#auto_complete_start_length = 0
   let g:deoplete#enable_refresh_always = 1
   let g:deoplete#max_abbr_width = 160
   let g:deoplete#max_menu_width = 80
+
+  " carlitux/deoplete-ternjs
+  let g:tern_request_timeout = 1
+  let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
+
+  "Add extra filetypes
+  let g:tern#filetypes = [
+        \ 'jsx',
+        \ 'javascript.jsx',
+        \ 'vue',
+        \ '...'
+        \ ]
+  let g:tern#command = ['tern']
+  let g:tern#arguments = ['--persistent']
 
 " Shougo/neosnippet-snippets
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -212,6 +229,10 @@
   let g:vimfiler_safe_mode_by_default = 0
   nmap <space>f :VimFilerBufferDir -explorer -force-quit -horizontal<CR>
   nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit -horizontal<CR>
+" scrooloose/nerdtre
+  autocmd vimenter * NERDTree
+  map <space>n :NERDTreeToggle<CR>
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
   " Quicklook OS X
   let g:vimfiler_quick_look_command = 'qlmanage -p'
@@ -296,8 +317,10 @@
   nmap <space>p :GitFiles<CR>
   " g for grep
   nmap <space>g :Ag<CR>
+  " b for buffers
+  nmap <space>b :Buffers<CR>
 " dkprice/vim-easygrep
-  let g:EasyGrepCommand="ag"
+  let g:EasyGrepCommand='ag'
   nmap <space>e :Grep<space>
 
 " session management
@@ -315,42 +338,51 @@
   let g:airline#extensions#tabline#enabled = 1
 
 " error reporting
+" w0rp/ale
+  let g:ale_javascript_eslint_use_global = 1
+  let g:ale_sign_error = '✖'
+  let g:ale_sign_warning = '⚠'
+
+  highlight clear ALEErrorSign
+  highlight clear ALEWarningSign
+
 " benekastah/neomake
-  autocmd! BufWritePost * Neomake
-  nmap <space>m :Neomake<cr>
+  " autocmd! BufWritePost * Neomake
+  " nmap <space>m :Neomake<cr>
 
-  let g:neomake_typescript_enabled_makers = ['tslint', 'tsc']
-  let g:neomake_typescript_tsc_maker = {
-        \ 'args': [
-        \ '--module', 'commonjs', '--noEmit', '--target', 'es6'
-        \ ],
-        \ 'errorformat':
-        \ '%E%f %#(%l\,%c): error %m,' .
-        \ '%E%f %#(%l\,%c): %m,' .
-        \ '%Eerror %m,' .
-        \ '%C%\s%\+%m' }
+  " let g:neomake_typescript_enabled_makers = ['tslint', 'tsc']
+  " let g:neomake_typescript_tsc_maker = {
+  "       \ 'args': [
+  "       \ '--module', 'commonjs', '--noEmit', '--target', 'es6'
+  "       \ ],
+  "       \ 'errorformat':
+  "       \ '%E%f %#(%l\,%c): error %m,' .
+  "       \ '%E%f %#(%l\,%c): %m,' .
+  "       \ '%Eerror %m,' .
+  "       \ '%C%\s%\+%m' }
 
-  let g:neomake_javascript_enabled_makers = ['eslint']
+  " let g:neomake_javascript_enabled_makers = ['eslint']
+  " let g:neomake_jsx_enabled_makers = ['eslint']
 
   " load local eslint in the project root
   " modified from https://github.com/mtscout6/syntastic-local-eslint.vim
-  let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-  let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+  " let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+  " let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 
-  let g:neomake_vim_enabled_makers = ['vint']  " pip install vim-vint
-  let g:neomake_coffeescript_enabled_makers = ['coffeelint']
-  let g:neomake_json_enabled_makers = ['jsonlint']
-  let g:neomake_java_enabled_makers = ['javac']
-  let g:neomake_sh_enabled_makers = ['shellcheck'] " https://github.com/koalaman/shellcheck
-  let g:neomake_stylus_enabled_makers = ['stylint'] " npm install -g stylint
-  let g:neomake_warning_sign={
-        \ 'text': '⚠',
-        \ 'texthl': 'NeomakeWarningMsg'
-        \ }
-  let g:neomake_error_sign = {
-        \ 'text': '✖',
-        \ 'texthl': 'ErrorMsg',
-        \ }
+"   let g:neomake_vim_enabled_makers = ['vint']  " pip install vim-vint
+"   let g:neomake_coffeescript_enabled_makers = ['coffeelint']
+"   let g:neomake_json_enabled_makers = ['jsonlint']
+"   let g:neomake_java_enabled_makers = ['javac']
+"   let g:neomake_sh_enabled_makers = ['shellcheck'] " https://github.com/koalaman/shellcheck
+"   let g:neomake_stylus_enabled_makers = ['stylint'] " npm install -g stylint
+"   let g:neomake_warning_sign={
+"         \ 'text': '⚠',
+"         \ 'texthl': 'NeomakeWarningMsg'
+"         \ }
+"   let g:neomake_error_sign = {
+"         \ 'text': '✖',
+"         \ 'texthl': 'ErrorMsg',
+"         \ }
 
 " multiselect
 " terryma/vim-multiple-cursors

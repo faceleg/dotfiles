@@ -27,16 +27,18 @@ call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
       \     'vim'
       \ ] })
 call dein#add('jaxbot/semantic-highlight.vim')
+" call dein#add('jonathanglasmeyer/semantic-highlight.vim')
 
 " visual
-call dein#add('miyakogi/conoline.vim')
+" call dein#add('miyakogi/conoline.vim')
 call dein#add('vim-utils/vim-troll-stopper')
-call dein#add('kshenoy/vim-signature')
 
 " text objects
 call dein#add('tommcdo/vim-exchange')
+call dein#add('kshenoy/vim-signature')
 call dein#add('tpope/vim-surround')
 call dein#add('kana/vim-textobj-user')
+call dein#add('kana/vim-textobj-function')
 call dein#add('kana/vim-operator-user')
 call dein#add('wellle/targets.vim', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('b4winckler/vim-angry', { 'depends': 'kana/vim-textobj-user' })
@@ -46,18 +48,17 @@ call dein#add('kana/vim-textobj-underscore', { 'depends': 'kana/vim-textobj-user
 call dein#add('kana/vim-textobj-lastpat', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('Julian/vim-textobj-variable-segment', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('bkad/CamelCaseMotion')
-call dein#add('tyru/operator-camelize.vim', { 'depends': 'kana/vim-operator-user' })
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-abolish', { 'depends': 'tpope/vim-repeat' })
 call dein#add('Julian/vim-textobj-brace', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' })
+call dein#add('tyru/operator-camelize.vim', { 'depends': 'kana/vim-operator-user' })
 call dein#add('kana/vim-textobj-syntax', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('beloglazov/vim-textobj-quotes', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('saihoooooooo/vim-textobj-space', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('glts/vim-textobj-comment', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('beloglazov/vim-textobj-punctuation', { 'depends': 'kana/vim-textobj-user' })
-call dein#add('kana/vim-textobj-function', { 'depends': 'kana/vim-textobj-user' })
-call dein#add('thinca/vim-textobj-function-javascript', { 'on_ft': ['javascript', 'typescript'], 'depends': 'kana/vim-textobj-function' })
+call dein#add('thinca/vim-textobj-function-javascript', { 'depends': 'kana/vim-textobj-function' })
 call dein#add('coderifous/textobj-word-column.vim', { 'depends': 'kana/vim-textobj-user' })
 
 " formatting
@@ -76,20 +77,20 @@ call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
 
 " pug
-call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
+" call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
 
 " less
-call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
+" call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 
 " javascript
 call dein#add('gavocanov/vim-js-indent')
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 
 " typescript
-call dein#add('leafgarland/typescript-vim')
+call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
 
 " javascript & typescript
-call dein#add('heavenshell/vim-jsdoc')
+" call dein#add('heavenshell/vim-jsdoc')
 
 " python
 call dein#add('hdima/python-syntax')
@@ -107,7 +108,8 @@ call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 " call dein#add('c9s/vimomni.vim')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-jedi')
-call dein#add('carlitux/deoplete-ternjs')
+call dein#add('carlitux/deoplete-ternjs', { 'on_ft': 'javascript'})
+call dein#add('othree/jspc.vim')
 call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neoinclude.vim')
 call dein#add('Shougo/neosnippet')
@@ -124,6 +126,7 @@ call dein#add('AndrewRadev/sideways.vim', { 'on_cmd': ['SidewaysLeft', 'Sideways
 
 " file management
 call dein#add('Shougo/vimfiler.vim', { 'depends': 'Shougo/unite.vim' })
+call dein#add('scrooloose/nerdtree')
 
 " cursor motion
 call dein#add('bruno-/vim-vertical-move')
@@ -198,19 +201,21 @@ call dein#add('paranoida/vim-airlineish', { 'depends': 'vim-airline' })
 call dein#add('ntpeters/vim-airline-colornum')
 
 " error reporting
-call dein#add('benekastah/neomake', { 'on_ft': [
-      \     'javascript',
-      \     'typescript',
-      \     'coffeescript',
-      \     'bash',
-      \     'json',
-      \     'java',
-      \     'vim',
-      \     'html',
-      \     'xhtml',
-      \ ],
-      \ 'build': 'npm --no-color install jsonlint eslint tslint stylint -g'
-      \ })
+call dein#add('w0rp/ale')
+" call dein#add('benekastah/neomake', { 'on_ft': [
+"       \     'javascript',
+"       \     'typescript',
+"       \     'coffeescript',
+"       \     'bash',
+"       \     'json',
+"       \     'java',
+"       \     'vim',
+"       \     'html',
+"       \     'xhtml',
+"       \ ],
+"       \ 'build': 'npm --no-color install jsonlint eslint tslint stylint -g'
+"       \ })
+" call dein#add('benjie/neomake-local-eslint.vim', { 'depends': 'benekastah/neomake' })
 
 " multiselect
 call dein#add('terryma/vim-multiple-cursors')
