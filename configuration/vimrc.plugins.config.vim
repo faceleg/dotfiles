@@ -22,8 +22,8 @@
   "       \ 'vim': 'vim',
   "       \ 'php': 'php',
   "       \ }
-  " let g:semanticUseCache = 1
-  " let g:semanticPersistCache = 1
+  let g:semanticUseCache = 1
+  let g:semanticPersistCache = 1
 
 " visual
 " miyakogi/conoline.vim
@@ -326,8 +326,6 @@
 " session management
 " dhruvasagar/vim-prosession
   nmap <space>o :Obsession
-" vim-ctrlspace/vim-ctrlspace
- nmap <c-space> :CtrlSpace<CR>
 
 " status bar
 " bling/vim-airline
@@ -345,44 +343,6 @@
 
   highlight clear ALEErrorSign
   highlight clear ALEWarningSign
-
-" benekastah/neomake
-  " autocmd! BufWritePost * Neomake
-  " nmap <space>m :Neomake<cr>
-
-  " let g:neomake_typescript_enabled_makers = ['tslint', 'tsc']
-  " let g:neomake_typescript_tsc_maker = {
-  "       \ 'args': [
-  "       \ '--module', 'commonjs', '--noEmit', '--target', 'es6'
-  "       \ ],
-  "       \ 'errorformat':
-  "       \ '%E%f %#(%l\,%c): error %m,' .
-  "       \ '%E%f %#(%l\,%c): %m,' .
-  "       \ '%Eerror %m,' .
-  "       \ '%C%\s%\+%m' }
-
-  " let g:neomake_javascript_enabled_makers = ['eslint']
-  " let g:neomake_jsx_enabled_makers = ['eslint']
-
-  " load local eslint in the project root
-  " modified from https://github.com/mtscout6/syntastic-local-eslint.vim
-  " let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-  " let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-
-"   let g:neomake_vim_enabled_makers = ['vint']  " pip install vim-vint
-"   let g:neomake_coffeescript_enabled_makers = ['coffeelint']
-"   let g:neomake_json_enabled_makers = ['jsonlint']
-"   let g:neomake_java_enabled_makers = ['javac']
-"   let g:neomake_sh_enabled_makers = ['shellcheck'] " https://github.com/koalaman/shellcheck
-"   let g:neomake_stylus_enabled_makers = ['stylint'] " npm install -g stylint
-"   let g:neomake_warning_sign={
-"         \ 'text': '⚠',
-"         \ 'texthl': 'NeomakeWarningMsg'
-"         \ }
-"   let g:neomake_error_sign = {
-"         \ 'text': '✖',
-"         \ 'texthl': 'ErrorMsg',
-"         \ }
 
 " multiselect
 " terryma/vim-multiple-cursors
