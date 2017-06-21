@@ -13,7 +13,7 @@
     autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
 
     " jaxbot/semantic-highlight.vim
-    autocmd CursorHold *.jsx,*.js call semhl#highlight()
+    autocmd CursorHold *.jsx,*.js :SemanticHighlight
   augroup end
 
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
@@ -342,7 +342,6 @@
   let g:ale_fixers = {
   \   'javascript': [
   \       'eslint',
-  \       'prettier',
   \   ],
   \}
 
