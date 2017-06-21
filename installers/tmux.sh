@@ -2,6 +2,8 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
+brew install reattach-to-user-namespace
+
 rm -f ~/.tmux.conf ~/.tmux.conf.local
 $CP "$DIR/../configuration/tmux.conf" ~/.tmux.conf
 
