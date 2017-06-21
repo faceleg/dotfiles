@@ -6,22 +6,28 @@
   nmap ga <Plug>(EasyAlign)
 
 " highlighting
-" junegunn/rainbow_parentheses.vim
-  autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
+  augroup vimrc_highlighting
+    autocmd!
+
+    " junegunn/rainbow_parentheses.vim
+    autocmd FileType coffee,java,javascript,json,php,sass,scss,vim :RainbowParentheses
+
+    " jaxbot/semantic-highlight.vim
+    autocmd CursorHold *.jsx,*.js call semhl#highlight()
+  augroup end
+
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 " jaxbot/semantic-highlight.vim
-  " autocmd FileType jsx,javascript call semhl#highlight()
-  " autocmd CursorHold *.jsx,*.js call semhl#highlight()
 
   " autocmd FileType javascript setlocal iskeyword+=$
   " let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
-  " let g:semanticEnableFileTypes = {
-  "       \ 'javascript': 'js',
-  "       \ 'typescript': 'ts',
-  "       \ 'coffee': 'coffee',
-  "       \ 'vim': 'vim',
-  "       \ 'php': 'php',
-  "       \ }
+  let g:semanticEnableFileTypes = {
+        \ 'javascript': 'js',
+        \ 'typescript': 'ts',
+        \ 'coffee': 'coffee',
+        \ 'vim': 'vim',
+        \ 'php': 'php',
+        \ }
   let g:semanticUseCache = 1
   let g:semanticPersistCache = 1
 
@@ -119,7 +125,10 @@
 
 " formatting
 " ntpeters/vim-better-whitespace
-  autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,typescript,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+  augroup vimrc_better_whitespace
+    autocmd!
+    autocmd FileType c,coffee,cpp,css,less,sass,scss,java,php,ruby,puppet,typescript,javascript,vim,sh,nginx,ant,xml autocmd BufWritePre <buffer> StripWhitespace
+  augroup end
   let g:better_whitespace_filetypes_blacklist = ['unite']
 
 " languages
@@ -288,27 +297,28 @@
 " troydm/zoomwintab.vim
   " <c-w>o
 " svermeulen/vim-easyclip
-  let g:EasyClipShareYanks = 1
+  " let g:EasyClipShareYanks = 1
+  " let g:EasyClipYankHistorySize = 50
 
-  " Manually map yanks to avoid conflicts with tpope/unimpaired
-  let g:EasyClipUseYankDefaults = 0
-  nmap ,y <Plug>EasyClipRotateYanksBackward
-  nmap y <Plug>YankPreserveCursorPosition
-  nmap Y <Plug>:EasyClipBeforeYank<cr>y$
+  " " Manually map yanks to avoid conflicts with tpope/unimpaired
+  " let g:EasyClipUseYankDefaults = 0
+  " nmap ,y <Plug>EasyClipRotateYanksBackward
+  " nmap y <Plug>YankPreserveCursorPosition
+  " nmap Y <Plug>:EasyClipBeforeYank<cr>y$
 
-  nmap yy <Plug>YankLinePreserveCursorPosition
-  xmap y <Plug>VisualModeYank
-  imap <c-v> <plug>EasyClipInsertModePaste
+  " nmap yy <Plug>YankLinePreserveCursorPosition
+  " xmap y <Plug>VisualModeYank
+  " imap <c-v> <plug>EasyClipInsertModePaste
 
   " nnoremap <space>y :Yanks<cr>
 
   " Preserve default behaviour of S, use all other substitute bindings
-  let g:EasyClipUseSubstituteDefaults = 0
   " nmap s <plug>SubstituteOverMotionMap
+  " let g:EasyClipUseSubstituteDefaults = 0
   " nmap gs <plug>G_SubstituteOverMotionMap
 " Shougo/neoyank.vim
   nmap <space>y :Unite history/yank -default-action=append<CR>
-  let g:neoyank#file = $HOME.'/.vim/neoyank.txt'
+  let g:neoyank#file = $HOME.'/.cache/nvim/easy-clip-yanks.txt'
 
 " searching
 " junegunn/fzf.vim

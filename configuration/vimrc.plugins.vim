@@ -5,10 +5,8 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-repeat')
 call dein#add('Shougo/unite.vim')
 call dein#add('junegunn/vim-easy-align', { 'on_map': '<Plug>(EasyAlign)' })
-call dein#add('tpope/vim-eunuch')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('justinmk/vim-gtfo')
-call dein#add('vim-ctrlspace/vim-ctrlspace')
 
 " highlighting
 call dein#add('faceleg/base16-vim') " forked from chriskempson/base16-vim
@@ -26,10 +24,9 @@ call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
       \     'vim'
       \ ] })
 call dein#add('jaxbot/semantic-highlight.vim')
-" call dein#add('jonathanglasmeyer/semantic-highlight.vim')
 
 " visual
-" call dein#add('miyakogi/conoline.vim')
+call dein#add('miyakogi/conoline.vim')
 call dein#add('vim-utils/vim-troll-stopper')
 
 " text objects
@@ -50,7 +47,6 @@ call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-abolish', { 'depends': 'tpope/vim-repeat' })
 call dein#add('Julian/vim-textobj-brace', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('kana/vim-textobj-indent', { 'depends': 'kana/vim-textobj-user' })
-" call dein#add('tyru/operator-camelize.vim', { 'depends': 'kana/vim-operator-user' })
 call dein#add('kana/vim-textobj-syntax', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('beloglazov/vim-textobj-quotes', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('saihoooooooo/vim-textobj-space', { 'depends': 'kana/vim-textobj-user' })
@@ -82,8 +78,8 @@ call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
 call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 
 " javascript
-call dein#add('gavocanov/vim-js-indent')
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
+call dein#add('othree/yajs.vim', { 'on_ft': ['javascript'] })
 
 " typescript
 call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
@@ -92,7 +88,7 @@ call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
 call dein#add('heavenshell/vim-jsdoc', { 'on_ft': 'javascript' })
 
 " python
-call dein#add('hdima/python-syntax')
+call dein#add('hdima/python-syntax', { 'on_ft': 'python' })
 
 " html/xml
 call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
@@ -101,14 +97,10 @@ call dein#add('othree/html5.vim', { 'on_ft': ['html', 'xhtml', 'html5'] })
 call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 
 " completion, snippets
-" call dein#add('Valloric/YouCompleteMe', { 'build': './install.py --tern-completer' })
-" call dein#add('Shougo/neosnippet')
-" call dein#add('Shougo/neosnippet-snippets')
-" call dein#add('c9s/vimomni.vim')
 call dein#add('Shougo/deoplete.nvim')
-call dein#add('zchee/deoplete-jedi')
+call dein#add('zchee/deoplete-jedi', { 'on_ft': 'python' })
 call dein#add('carlitux/deoplete-ternjs', { 'on_ft': 'javascript'})
-call dein#add('othree/jspc.vim')
+call dein#add('othree/jspc.vim', { 'on_ft': ['javascript', 'typescript'] })
 call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neoinclude.vim')
 call dein#add('Shougo/neosnippet')
@@ -155,7 +147,6 @@ call dein#add('Lokaltog/vim-easymotion', { 'on_map': [
       \   '<Plug>(easymotion-linebackward)',
       \   '<Plug>(easymotion-next)',
       \ ] })
-      " \ ], 'depends': 'haya14busa/vim-easyoperator-line' })
 call dein#add('tmhedberg/matchit', { 'on_ft': ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp'] })
 
 " external programs
@@ -163,8 +154,8 @@ call dein#add('vim-scripts/TwitVim', { 'on_cmd': ['PostToTwitter'] })
 
 " auto pairs graveyard
 " call dein#add('eapache/auto-pairs')
-  " let g:AutoPairsUseInsertedCount = 1
-  " let g:AutoPairsShortcutFastWrap = '<Leader>e'
+"   let g:AutoPairsUseInsertedCount = 1
+"   let g:AutoPairsShortcutFastWrap = '<Leader>e'
 "   let g:delimitMate_expand_cr = 0
 "   let g:delimitMate_jump_expansion = 0
 call dein#add('Raimondi/delimitMate')
@@ -175,7 +166,6 @@ call dein#add('Raimondi/delimitMate')
 " pasting
 call dein#add('ConradIrwin/vim-bracketed-paste')
 call dein#add('troydm/zoomwintab.vim')
-call dein#add('svermeulen/vim-easyclip', { 'depends': 'tpope/vim-repeat' })
 call dein#add('Shougo/neoyank.vim')
 
 " git integration
@@ -200,20 +190,6 @@ call dein#add('ntpeters/vim-airline-colornum')
 
 " error reporting
 call dein#add('w0rp/ale')
-" call dein#add('benekastah/neomake', { 'on_ft': [
-"       \     'javascript',
-"       \     'typescript',
-"       \     'coffeescript',
-"       \     'bash',
-"       \     'json',
-"       \     'java',
-"       \     'vim',
-"       \     'html',
-"       \     'xhtml',
-"       \ ],
-"       \ 'build': 'npm --no-color install jsonlint eslint tslint stylint -g'
-"       \ })
-" call dein#add('benjie/neomake-local-eslint.vim', { 'depends': 'benekastah/neomake' })
 
 " multiselect
 call dein#add('terryma/vim-multiple-cursors')
