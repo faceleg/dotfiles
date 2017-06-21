@@ -117,6 +117,7 @@ call dein#add('AndrewRadev/sideways.vim', { 'on_cmd': ['SidewaysLeft', 'Sideways
 
 " file management
 call dein#add('scrooloose/nerdtree')
+call dein#add('EvanDotPro/nerdtree-chmod', { 'depends': 'scrooloose/nerdtree' })
 
 " cursor motion
 call dein#add('bruno-/vim-vertical-move')

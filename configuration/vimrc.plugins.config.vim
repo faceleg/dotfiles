@@ -234,17 +234,20 @@
 
 " file management
 " Shougo/vimfiler.vim
-  let g:vimfiler_as_default_explorer = 1
-  let g:vimfiler_safe_mode_by_default = 0
-  nmap <space>f :VimFilerBufferDir -explorer -force-quit -horizontal<CR>
-  nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit -horizontal<CR>
-" scrooloose/nerdtre
-  " autocmd vimenter * NERDTree
-  map <space>n :NERDTreeToggle<CR>
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  " let g:vimfiler_as_default_explorer = 1
+  " let g:vimfiler_safe_mode_by_default = 0
+  " nmap <space>f :VimFilerBufferDir -explorer -force-quit -horizontal<CR>
+  " nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit -horizontal<CR>
 
   " Quicklook OS X
-  let g:vimfiler_quick_look_command = 'qlmanage -p'
+  " let g:vimfiler_quick_look_command = 'qlmanage -p'
+
+" scrooloose/nerdtre
+  " autocmd vimenter * NERDTree
+  nmap <space>n :NERDTreeToggle<CR>
+  nmap <space>f :NERDTreeFind<CR>
+
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " cursor motion
 " matze/vim-move
@@ -296,29 +299,9 @@
 " pasting
 " troydm/zoomwintab.vim
   " <c-w>o
-" svermeulen/vim-easyclip
-  " let g:EasyClipShareYanks = 1
-  " let g:EasyClipYankHistorySize = 50
-
-  " " Manually map yanks to avoid conflicts with tpope/unimpaired
-  " let g:EasyClipUseYankDefaults = 0
-  " nmap ,y <Plug>EasyClipRotateYanksBackward
-  " nmap y <Plug>YankPreserveCursorPosition
-  " nmap Y <Plug>:EasyClipBeforeYank<cr>y$
-
-  " nmap yy <Plug>YankLinePreserveCursorPosition
-  " xmap y <Plug>VisualModeYank
-  " imap <c-v> <plug>EasyClipInsertModePaste
-
-  " nnoremap <space>y :Yanks<cr>
-
-  " Preserve default behaviour of S, use all other substitute bindings
-  " nmap s <plug>SubstituteOverMotionMap
-  " let g:EasyClipUseSubstituteDefaults = 0
-  " nmap gs <plug>G_SubstituteOverMotionMap
 " Shougo/neoyank.vim
   nmap <space>y :Unite history/yank -default-action=append<CR>
-  let g:neoyank#file = $HOME.'/.cache/nvim/easy-clip-yanks.txt'
+  let g:neoyank#file = $HOME.'/.cache/nvim/yanks.txt'
 
 " searching
 " junegunn/fzf.vim
@@ -347,12 +330,23 @@
 
 " error reporting
 " w0rp/ale
-  let g:ale_javascript_eslint_use_global = 1
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⚠'
 
   highlight clear ALEErrorSign
   highlight clear ALEWarningSign
+
+  nmap <silent> <space>k <Plug>(ale_previous_wrap)
+  nmap <silent> <space>j <Plug>(ale_next_wrap)
+
+  let g:ale_fixers = {
+  \   'javascript': [
+  \       'eslint',
+  \       'prettier',
+  \   ],
+  \}
+
+  nmap <F8> <Plug>(ale_fix)
 
 " multiselect
 " terryma/vim-multiple-cursors
