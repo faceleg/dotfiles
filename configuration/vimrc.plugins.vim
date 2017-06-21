@@ -11,8 +11,7 @@ call dein#add('justinmk/vim-gtfo')
 call dein#add('vim-ctrlspace/vim-ctrlspace')
 
 " highlighting
-" call dein#add('chriskempson/base16-vim')
-call dein#add('faceleg/base16-vim')
+call dein#add('faceleg/base16-vim') " forked from chriskempson/base16-vim
 call dein#add('godlygeek/csapprox')
 call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
       \     'coffee',
@@ -77,10 +76,10 @@ call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
 
 " pug
-" call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
+call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
 
 " less
-" call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
+call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 
 " javascript
 call dein#add('gavocanov/vim-js-indent')
@@ -90,7 +89,7 @@ call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
 
 " javascript & typescript
-" call dein#add('heavenshell/vim-jsdoc')
+call dein#add('heavenshell/vim-jsdoc', { 'on_ft': 'javascript' })
 
 " python
 call dein#add('hdima/python-syntax')
@@ -125,7 +124,6 @@ call dein#add('faceleg/delete-surrounding-function-call.vim')
 call dein#add('AndrewRadev/sideways.vim', { 'on_cmd': ['SidewaysLeft', 'SidewaysRight'] })
 
 " file management
-call dein#add('Shougo/vimfiler.vim', { 'depends': 'Shougo/unite.vim' })
 call dein#add('scrooloose/nerdtree')
 
 " cursor motion
