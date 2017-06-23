@@ -68,6 +68,9 @@ call dein#add('nelstrom/vim-textobj-rubyblock', { 'on_ft': 'ruby',
 call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
       \ 'depends': 'kana/vim-textobj-user' })
 
+" whitespace languages
+call dein#add('nathanaelkane/vim-indent-guides', { 'on_ft': ['yaml', 'python', 'ruby'] })
+
 " json
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
 
@@ -201,3 +204,4 @@ call dein#add('wesQ3/vim-windowswap')
 
 " buffer management
 call dein#add('vim-scripts/bufkill.vim')
+call dein#add('jeetsukumaran/vim-buffergator')
