@@ -306,10 +306,20 @@
 " searching
 " junegunn/fzf.vim
   nmap <c-f> :Files<CR>
+  command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
   " p for project files
   nmap <space>p :GitFiles<CR>
   " g for grep
-  nmap <space>g :Ag<CR>
+  nmap <space>g :Ag!<CR>
+  " https://github.com/junegunn/fzf.vim/blob/master/doc/fzf-vim.txt#L190
+  command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
   " b for buffers
   nmap <space>b :Buffers<CR>
 " dkprice/vim-easygrep
