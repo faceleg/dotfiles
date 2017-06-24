@@ -315,12 +315,12 @@
   " p for project files
   nmap <space>p :GitFiles<CR>
   " g for grep
-  nmap <space>g :Ag!<CR>
+  nmap <space>g :Ag<CR>
   " https://github.com/junegunn/fzf.vim/blob/master/doc/fzf-vim.txt#L190
   command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                         : fzf#vim#with_preview('right:50%'),
   \                 <bang>0)
 
   " b for buffers
