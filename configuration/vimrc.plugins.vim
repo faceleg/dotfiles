@@ -86,6 +86,7 @@ call dein#add('othree/yajs.vim', { 'on_ft': ['javascript'] })
 
 " typescript
 call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
+call dein#add('mhartington/nvim-typescript', { 'on_ft': 'typescript' })
 
 " javascript & typescript
 call dein#add('heavenshell/vim-jsdoc', { 'on_ft': 'javascript' })
