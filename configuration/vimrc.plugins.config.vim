@@ -305,6 +305,9 @@
 
 " searching
 " junegunn/fzf.vim
+  let g:fzf_history_dir = '~/.local/share/fzf-history'
+  let g:fzf_buffers_jump = 1
+
   nmap <c-f> :Files<CR>
   command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
