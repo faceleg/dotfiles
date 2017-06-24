@@ -356,7 +356,20 @@
   \   'javascript': [
   \       'eslint',
   \   ],
+  \   'typescript': [
+  \       'tslint',
+  \   ]
   \}
+
+  let g:ale_linters = {
+    \   'javascript': [
+    \      'eslint'
+    \   ],
+    \   'typescript': [
+    \       'tslint',
+    \       'tsserver',
+    \   ]
+    \}
 
   nmap <F8> <Plug>(ale_fix)
 
