@@ -41,7 +41,7 @@
   let g:SignatureIncludeMarks = 'abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXZ'
 
   let g:SignatureMap = {
-        \ 'Leader'             :  "t",
+        \ 'Leader'             :  't',
         \ 'PlaceNextMark'      :  't,',
         \ 'ToggleMarkAtLine'   :  't.',
         \ 'PurgeMarksAtLine'   :  't-',
