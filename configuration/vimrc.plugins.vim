@@ -120,8 +120,9 @@ call dein#add('faceleg/delete-surrounding-function-call.vim')
 call dein#add('AndrewRadev/sideways.vim', { 'on_cmd': ['SidewaysLeft', 'SidewaysRight'] })
 
 " file management
-call dein#add('scrooloose/nerdtree')
-call dein#add('EvanDotPro/nerdtree-chmod', { 'depends': 'scrooloose/nerdtree' })
+call dein#add('Shougo/vimfiler.vim', { 'depends': 'Shougo/unite.vim' })
+" call dein#add('scrooloose/nerdtree')
+" call dein#add('EvanDotPro/nerdtree-chmod', { 'depends': 'scrooloose/nerdtree' })
 
 " cursor motion
 call dein#add('bruno-/vim-vertical-move')

@@ -234,20 +234,20 @@
 
 " file management
 " Shougo/vimfiler.vim
-  " let g:vimfiler_as_default_explorer = 1
-  " let g:vimfiler_safe_mode_by_default = 0
-  " nmap <space>f :VimFilerBufferDir -explorer -force-quit -horizontal<CR>
-  " nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit -horizontal<CR>
+  let g:vimfiler_as_default_explorer = 1
+  let g:vimfiler_safe_mode_by_default = 0
+  nmap <space>f :VimFilerBufferDir -explorer -force-quit -horizontal<CR>
+  nmap <leader>f :VimFilerBufferDir -find -explorer -force-quit -horizontal<CR>
 
   " Quicklook OS X
-  " let g:vimfiler_quick_look_command = 'qlmanage -p'
+  let g:vimfiler_quick_look_command = 'qlmanage -p'
 
 " scrooloose/nerdtre
   " autocmd vimenter * NERDTree
-  nmap <space>n :NERDTreeToggle<CR>
-  nmap <space>f :NERDTreeFind<CR>
+  " nmap <space>n :NERDTreeToggle<CR>
+  " nmap <space>f :NERDTreeFind<CR>
 
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " cursor motion
 " matze/vim-move
