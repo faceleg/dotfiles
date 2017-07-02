@@ -123,7 +123,7 @@ call dein#add('AndrewRadev/sideways.vim', { 'on_cmd': ['SidewaysLeft', 'Sideways
 call dein#add('Shougo/vimfiler.vim', { 'depends': 'Shougo/unite.vim' })
 
 " cursor motion
-call dein#add('bruno-/vim-vertical-move')
+" call dein#add('bruno-/vim-vertical-move')
 call dein#add('dbakker/vim-paragraph-motion')
 call dein#add('matze/vim-move')
 call dein#add('haya14busa/incsearch.vim', { 'depends': 'kana/kana/vim-textobj-user' })
