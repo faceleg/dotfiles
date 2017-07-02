@@ -151,7 +151,7 @@ call dein#add('Lokaltog/vim-easymotion', { 'on_map': [
       \   '<Plug>(easymotion-linebackward)',
       \   '<Plug>(easymotion-next)',
       \ ] })
-call dein#add('tmhedberg/matchit', { 'on_ft': ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp'] })
+" call dein#add('tmhedberg/matchit', { 'on_ft': ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp'] })
 
 " auto pairs graveyard
 " call dein#add('eapache/auto-pairs')
