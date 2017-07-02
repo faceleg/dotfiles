@@ -178,6 +178,15 @@
   " let g:ycm_collect_identifiers_from_tags_files = 1
   " let g:ycm_complete_in_strings = 1
 " Shougo/deoplete.nvim
+  let g:deoplete#disable_auto_complete = 1
+	inoremap <silent><expr> <TAB>
+		\ pumvisible() ? "\<C-n>" :
+		\ <SID>check_back_space() ? "\<TAB>" :
+		\ deoplete#mappings#manual_complete()
+		function! s:check_back_space() abort "{{{
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~ '\s'
+		endfunction"}}}
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#enable_smart_case = 1
   let g:deoplete#enable_ignore_case = 1
