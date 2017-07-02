@@ -153,9 +153,6 @@ call dein#add('Lokaltog/vim-easymotion', { 'on_map': [
       \ ] })
 call dein#add('tmhedberg/matchit', { 'on_ft': ['html', 'xhtml', 'xml', 'lua', 'vim', 'jsp'] })
 
-" external programs
-call dein#add('vim-scripts/TwitVim', { 'on_cmd': ['PostToTwitter'] })
-
 " auto pairs graveyard
 " call dein#add('eapache/auto-pairs')
 "   let g:AutoPairsUseInsertedCount = 1
