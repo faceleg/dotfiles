@@ -83,10 +83,10 @@ call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 
 " javascript
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
-call dein#add('othree/yajs.vim', { 'on_ft': ['javascript'] })
+" call dein#add('othree/yajs.vim', { 'on_ft': ['javascript'] })
 
 " typescript
-call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
+" call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
 call dein#add('mhartington/nvim-typescript', { 'on_ft': 'typescript' })
 
 " javascript & typescript
@@ -99,7 +99,7 @@ call dein#add('hdima/python-syntax', { 'on_ft': 'python' })
 call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
 call dein#add('othree/xml.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 call dein#add('othree/html5.vim', { 'on_ft': ['html', 'xhtml', 'html5'] })
-call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
+" call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 
 " completion, snippets
 call dein#add('Shougo/deoplete.nvim')
