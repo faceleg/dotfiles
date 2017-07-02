@@ -27,7 +27,7 @@ call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
 call dein#add('jaxbot/semantic-highlight.vim')
 
 " visual
-call dein#add('miyakogi/conoline.vim')
+" call dein#add('miyakogi/conoline.vim')
 call dein#add('vim-utils/vim-troll-stopper')
 
 " text objects
