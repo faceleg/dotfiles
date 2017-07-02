@@ -37,32 +37,32 @@
   " let g:conoline_use_colorscheme_default_normal = 1
   " let g:conoline_use_colorscheme_default_insert = 1
 " kshenoy/vim-signature
-  let g:SignatureMarkTextHLDynamic = 1
-  let g:SignatureIncludeMarks = 'abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXZ'
+  " let g:SignatureMarkTextHLDynamic = 1
+  " let g:SignatureIncludeMarks = 'abcdefghijklmnopqrstuvwxzABCDEFGHIJKLMNOPQRSTUVWXZ'
 
-  let g:SignatureMap = {
-        \ 'Leader'             :  't',
-        \ 'PlaceNextMark'      :  't,',
-        \ 'ToggleMarkAtLine'   :  't.',
-        \ 'PurgeMarksAtLine'   :  't-',
-        \ 'DeleteMark'         :  'dm',
-        \ 'PurgeMarks'         :  't<Space>',
-        \ 'PurgeMarkers'       :  't<BS>',
-        \ 'GotoNextLineAlpha'  :  "']",
-        \ 'GotoPrevLineAlpha'  :  "'[",
-        \ 'GotoNextSpotAlpha'  :  '`]',
-        \ 'GotoPrevSpotAlpha'  :  '`[',
-        \ 'GotoNextLineByPos'  :  "]'",
-        \ 'GotoPrevLineByPos'  :  "['",
-        \ 'GotoNextSpotByPos'  :  ']`',
-        \ 'GotoPrevSpotByPos'  :  '[`',
-        \ 'GotoNextMarker'     :  ']-',
-        \ 'GotoPrevMarker'     :  '[-',
-        \ 'GotoNextMarkerAny'  :  ']=',
-        \ 'GotoPrevMarkerAny'  :  '[=',
-        \ 'ListBufferMarks'    :  't/',
-        \ 'ListBufferMarkers'  :  't?'
-        \ }
+  " let g:SignatureMap = {
+  "       \ 'Leader'             :  't',
+  "       \ 'PlaceNextMark'      :  't,',
+  "       \ 'ToggleMarkAtLine'   :  't.',
+  "       \ 'PurgeMarksAtLine'   :  't-',
+  "       \ 'DeleteMark'         :  'dm',
+  "       \ 'PurgeMarks'         :  't<Space>',
+  "       \ 'PurgeMarkers'       :  't<BS>',
+  "       \ 'GotoNextLineAlpha'  :  "']",
+  "       \ 'GotoPrevLineAlpha'  :  "'[",
+  "       \ 'GotoNextSpotAlpha'  :  '`]',
+  "       \ 'GotoPrevSpotAlpha'  :  '`[',
+  "       \ 'GotoNextLineByPos'  :  "]'",
+  "       \ 'GotoPrevLineByPos'  :  "['",
+  "       \ 'GotoNextSpotByPos'  :  ']`',
+  "       \ 'GotoPrevSpotByPos'  :  '[`',
+  "       \ 'GotoNextMarker'     :  ']-',
+  "       \ 'GotoPrevMarker'     :  '[-',
+  "       \ 'GotoNextMarkerAny'  :  ']=',
+  "       \ 'GotoPrevMarkerAny'  :  '[=',
+  "       \ 'ListBufferMarks'    :  't/',
+  "       \ 'ListBufferMarkers'  :  't?'
+  "       \ }
 
 " text objects
 " tommcdo/vim-exchange
