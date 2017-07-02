@@ -19,8 +19,8 @@
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 " jaxbot/semantic-highlight.vim
 
-  " autocmd FileType javascript setlocal iskeyword+=$
-  " let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
+  autocmd FileType javascript setlocal iskeyword+=$
+  let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
   let g:semanticEnableFileTypes = {
         \ 'javascript': 'js',
         \ 'typescript': 'ts',
