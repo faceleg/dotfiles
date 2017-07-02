@@ -113,7 +113,6 @@ call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
 call dein#add('mhartington/deoplete-typescript', { 'on_ft': 'typescript' })
 
 " vim feature enhancement
-call dein#add('milkypostman/vim-togglelist')
 call dein#add('tpope/vim-commentary')
 call dein#add('AndrewRadev/splitjoin.vim', { 'on_cmd': ['SplitjoinJoin', 'SplitjoinSplit'] })
 call dein#add('AndrewRadev/switch.vim')

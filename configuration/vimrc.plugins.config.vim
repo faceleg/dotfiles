@@ -214,9 +214,6 @@
   endif
 
 " vim feature enhancement
-" milkypostman/vim-togglelist
-  nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
-  nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
   " force quickfix to be at bottom and take up entire width
   au FileType qf wincmd J
