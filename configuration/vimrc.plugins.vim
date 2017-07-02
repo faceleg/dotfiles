@@ -197,7 +197,7 @@ call dein#add('terryma/vim-multiple-cursors')
 
 " window management
 call dein#add('t9md/vim-choosewin')
-call dein#add('wesQ3/vim-windowswap')
+" call dein#add('wesQ3/vim-windowswap')
 
 " buffer management
 call dein#add('vim-scripts/bufkill.vim')
