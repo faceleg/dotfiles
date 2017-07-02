@@ -400,10 +400,10 @@
   let g:choosewin_tabline_replace    = 1 " don't replace tabline
 
 " wesQ3/vim-windowswap
-  let g:windowswap_map_keys = 0 "prevent default bindings
-  nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
-  nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
-  nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
+  " let g:windowswap_map_keys = 0 "prevent default bindings
+  " nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
+  " nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
+  " nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
 
 " buffer management
 " vim-scripts/bufkill.vim
