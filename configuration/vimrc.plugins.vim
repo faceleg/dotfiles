@@ -11,7 +11,7 @@ call dein#add('vim-ctrlspace/vim-ctrlspace')
 
 " highlighting
 call dein#add('faceleg/base16-vim') " forked from chriskempson/base16-vim
-call dein#add('godlygeek/csapprox')
+" call dein#add('godlygeek/csapprox')
 call dein#add('junegunn/rainbow_parentheses.vim', { 'on_ft': [
       \     'coffee',
       \     'java',
