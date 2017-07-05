@@ -84,6 +84,7 @@ call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 " javascript
 call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 " call dein#add('othree/yajs.vim', { 'on_ft': ['javascript'] })
+call dein#add('jelera/vim-javascript-syntax', { 'on_ft': 'javascript' })
 
 " typescript
 " call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
