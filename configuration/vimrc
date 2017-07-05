@@ -397,26 +397,26 @@ map <leader>w :TWL<CR>
 "                    W
 "    W | W | W  <=>  W
 "                    W
-fun! s:ToggleWinLayout()
-"  call Dfunc("ToggleWinLayout()")
-  let curwin= winnr()
-  if curwin == 1
-   " try to go down one window
-   wincmd j
-   let isvert= winnr() != curwin
-   wincmd k
-  else
-   " try to go up one window
-   wincmd k
-   let isvert= winnr() != curwin
-   wincmd j
-  endif
-  if isvert
-   noautocmd windo wincmd H
-  else
-   noautocmd windo wincmd K
-  endif
-"  call Dret("ToggleWinLayout : (isvert=".isvert.")")
-endfun
+" fun! s:ToggleWinLayout()
+" "  call Dfunc("ToggleWinLayout()")
+"   let curwin= winnr()
+"   if curwin == 1
+"    " try to go down one window
+"    wincmd j
+"    let isvert= winnr() != curwin
+"    wincmd k
+"   else
+"    " try to go up one window
+"    wincmd k
+"    let isvert= winnr() != curwin
+"    wincmd j
+"   endif
+"   if isvert
+"    noautocmd windo wincmd H
+"   else
+"    noautocmd windo wincmd K
+"   endif
+" "  call Dret("ToggleWinLayout : (isvert=".isvert.")")
+" endfun
 
 map <leader>n :f!<CR>
