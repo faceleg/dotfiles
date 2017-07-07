@@ -1,9 +1,12 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-v --vim] [-t --tmux] [-f --fzf] [-b --brew] [-F fish]
+USAGE="$(basename "$0") [-h --help] [-v --vim] [-t --tmux] [-f --fzf] [-a --alacritty] [-F fish]
 
 OPTIONS
         -h, --help
             Print this message
+
+        -a, --alacritty
+            Install VIM plugins & syntax
 
         -v, --vim
             Install VIM plugins & syntax
@@ -18,10 +21,7 @@ OPTIONS
           Install fish config
 
         -z, --zsh
-            Install zsh config
-
-        -b, --brew
-            Install homebrew & casks\n"
+            Install zsh config\n"
 if [[ -z $1 ]]; then
     printf "$USAGE"
     exit 0
@@ -33,10 +33,10 @@ INSTALL_VIM=false
 INSTALL_ZSH=false
 INSTALL_TMUX=false
 INSTALL_FZF=false
-INSTALL_BREW=false
+INSTALL_ALACRITTY=false
 INSTALL_FISH=false
 
-if ! OPTIONS=$(getopt -o hvtabfzF -l help,vim,tmux,fzf,brew,zsh,all,fish -- "$@")
+if ! OPTIONS=$(getopt -o hvtafzF -l help,vim,tmux,fzf,alacritty,zsh,all,fish -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -48,15 +48,8 @@ while [ $# -gt 0 ]; do
         "-z" | "--zsh") INSTALL_ZSH=true ;;
         "-t" | "--tmux") INSTALL_TMUX=true ;;
         "-f" | "--fzf") INSTALL_FZF=true ;;
-        "-b" | "--brew") INSTALL_BREW=true ;;
+        "-a" | "--alacritty") INSTALL_ALACRITTY=true ;;
         "-F" | "--fish") INSTALL_FISH=true ;;
-        "-a" | "--all")
-            INSTALL_VIM=true
-            INSTALL_TMUX=true
-            INSTALL_FZF=true
-            INSTALL_BREW=true
-            INSTALL_FISH=true
-            break;;
         (--) shift; break;;
         (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
         (*) break;;
@@ -80,8 +73,8 @@ if $INSTALL_FZF; then
     "$DIR/installers/fzf.sh"
 fi
 
-if $INSTALL_BREW; then
-    "$DIR/installers/brew.sh"
+if $INSTALL_ALACRITTY; then
+    "$DIR/installers/alacritty.sh"
 fi
 
 if $INSTALL_FISH; then
