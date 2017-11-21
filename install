@@ -1,9 +1,12 @@
 #!/bin/bash
-USAGE="$(basename "$0") [-h --help] [-v --vim] [-t --tmux] [-f --fzf] [-a --alacritty] [-F fish]
+USAGE="$(basename "$0") [-i --ideavimrc] [-h --help] [-v --vim] [-t --tmux] [-f --fzf] [-a --alacritty] [-F fish]
 
 OPTIONS
         -h, --help
             Print this message
+
+        -i, --ideavimrc
+            Install IdeaVim rc file
 
         -a, --alacritty
             Install VIM plugins & syntax
@@ -35,8 +38,9 @@ INSTALL_TMUX=false
 INSTALL_FZF=false
 INSTALL_ALACRITTY=false
 INSTALL_FISH=false
+INSTALL_IDEAVIMRC=false
 
-if ! OPTIONS=$(getopt -o hvtafzF -l help,vim,tmux,fzf,alacritty,zsh,all,fish -- "$@")
+if ! OPTIONS=$(getopt -o ihvtafzF -l ideavim,help,vim,tmux,fzf,alacritty,zsh,all,fish -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -50,6 +54,7 @@ while [ $# -gt 0 ]; do
         "-f" | "--fzf") INSTALL_FZF=true ;;
         "-a" | "--alacritty") INSTALL_ALACRITTY=true ;;
         "-F" | "--fish") INSTALL_FISH=true ;;
+        "-i" | "--ideavim") INSTALL_IDEAVIMRC=true ;;
         (--) shift; break;;
         (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
         (*) break;;
@@ -79,4 +84,8 @@ fi
 
 if $INSTALL_FISH; then
     "$DIR/installers/fish.sh"
+fi
+
+if $INSTALL_IDEAVIMRC; then
+    "$DIR/installers/ideavim.sh"
 fi
