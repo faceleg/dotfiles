@@ -9,6 +9,10 @@ function fish_mode_prompt; end
 
 set -g fish_key_bindings fish_vi_key_bindings
 
+function fuck
+    thefuck $history[2] | source
+end
+
 ##----GIT------
 alias gs='clear ;and git status'
 alias gb='git branch'
@@ -26,6 +30,7 @@ alias gr='git rebase'
 alias gri='git rebase -i'
 alias gst='git status'
 alias g='git'
+alias f='fuck'
 
 set POSTGRES_BIN_PATH_MACOS /Applications/Postgres.app/Contents/Versions/9.5/bin/
 if test -d "$POSTGRES_BIN_PATH_MACOS"
