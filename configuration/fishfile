@@ -2,13 +2,14 @@ fisherman/await
 edc/bass
 oh-my-fish/plugin-brew
 fisherman/docker-completion
+brgmnn/fish-docker-compose
 fisherman/fnm
 fisherman/fzf
 fisherman/get
 fisherman/get_file_age
 fisherman/getopts
 fisherman/git_util
-# fisherman/grc
+fisherman/grc
 # fisherman/imgcat
 fisherman/last_job_id
 fisherman/menu
@@ -18,9 +19,10 @@ fisherman/z
 brgmnn/fish-docker-compose
 # anicode # search unicode
 
+# Git
+shinriyo/breeze
+
 # Themes
 # daveyarwood/tomita
 # rafaelrinaldi/pure
-
-# https://github.com/fisherman/simple
-simple
+faceleg/simple
