@@ -8,7 +8,7 @@ fisherman/fzf
 fisherman/get
 fisherman/get_file_age
 fisherman/getopts
-fisherman/git_util
+# fisherman/git_util
 fisherman/grc
 # fisherman/imgcat
 fisherman/last_job_id

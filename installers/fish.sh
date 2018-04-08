@@ -1,11 +1,29 @@
 #!/usr/bin/env bash
 
-#!/bin/bash
+set -x
+set -e
+
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
 
-printf "\Installing Base16 Colors"
-git clone https://github.com/chriskempson/base16-shell ~/.config/base16-shell
+printf "\nInstalling Base16 Colors"
+BASE16="`eval echo ~/.config/base16-shell/`"
+if [ -d "$BASE16/.git" ]; then
+    cd $BASE16
+    git pull
+else
+    rm -rf $BASE16
+    git clone https://github.com/chriskempson/base16-shell.git $BASE16
+fi
+
+printf "\nInstall hub completions"
+if command -v hub >/dev/null 2>&1; then
+  curl https://raw.githubusercontent.com/github/hub/master/etc/hub.fish_completion > ~/.config/fish/completions/hub.fish
+else
+  printf "\nhub command does not exist, install before continuing"
+  exit 1
+fi
+
 
 printf "\nReplacing fish.config\n"
 rm -fv ~/.config/fish.config
