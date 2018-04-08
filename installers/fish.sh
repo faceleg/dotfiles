@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
 set -e
 
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -16,11 +15,11 @@ else
     git clone https://github.com/chriskempson/base16-shell.git $BASE16
 fi
 
-printf "\nInstall hub completions"
+printf "\nInstall hub check"
 if command -v hub >/dev/null 2>&1; then
   curl https://raw.githubusercontent.com/github/hub/master/etc/hub.fish_completion > ~/.config/fish/completions/hub.fish
 else
-  printf "\nhub command does not exist, install before continuing"
+  printf "\nhub command does not exist, install before continuing \n\nbrew install hub"
   exit 1
 fi
 

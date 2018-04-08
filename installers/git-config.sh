@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-set -x
 set -e
 
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CP="/bin/cp -vfr"
+
+if ! command -v diff-so-fancy >/dev/null 2>&1; then
+  printf "\ndiff-so-fancy command does not exist, install before continuing \n\nbrew install diff-so-fancy"
+  exit 1
+fi
 
 echo '
 [color]
@@ -20,14 +24,13 @@ echo '
         commit = yellow bold
         old = red bold
         new = green bold
- [core]
+        whitespace = red reverse
+[core]
         pager = diff-so-fancy | less --tabs=4 -RFX
 ' > ~/.gitconfig_faceleg
 
-if grep -q ".gitconfig_faceleg" ~/.gitconfig
+if ! grep -q ".gitconfig_faceleg" ~/.gitconfig
 then
-  echo "Config include exists"
-else
   echo "[include]
   path = .gitconfig_faceleg
 " >> ~/.gitconfig
