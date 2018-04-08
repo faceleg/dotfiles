@@ -8,6 +8,9 @@ OPTIONS
         -i, --ideavimrc
             Install IdeaVim rc file
 
+        -g, --gitconfig
+            Install gitconfig extensions
+
         -a, --alacritty
             Install VIM plugins & syntax
 
@@ -39,8 +42,9 @@ INSTALL_FZF=false
 INSTALL_ALACRITTY=false
 INSTALL_FISH=false
 INSTALL_IDEAVIMRC=false
+INSTALL_GITCONFIG=false
 
-if ! OPTIONS=$(getopt -o ihvtafzF -l ideavim,help,vim,tmux,fzf,alacritty,zsh,all,fish -- "$@")
+if ! OPTIONS=$(getopt -o ihvtafzFg -l ideavim,help,vim,tmux,fzf,alacritty,zsh,all,fish,gitconfig -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -55,6 +59,7 @@ while [ $# -gt 0 ]; do
         "-a" | "--alacritty") INSTALL_ALACRITTY=true ;;
         "-F" | "--fish") INSTALL_FISH=true ;;
         "-i" | "--ideavim") INSTALL_IDEAVIMRC=true ;;
+        "-g" | "--gitconfig") INSTALL_GITCONFIG=true ;;
         (--) shift; break;;
         (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
         (*) break;;
@@ -88,4 +93,8 @@ fi
 
 if $INSTALL_IDEAVIMRC; then
     "$DIR/installers/ideavim.sh"
+fi
+
+if $INSTALL_GITCONFIG; then
+    "$DIR/installers/git-config.sh"
 fi
