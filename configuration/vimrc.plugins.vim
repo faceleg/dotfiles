@@ -62,12 +62,12 @@ call dein#add('ntpeters/vim-better-whitespace')
 call dein#add('editorconfig/editorconfig-vim')
 
 " ruby
-call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' })
-call dein#add('tpope/vim-rails', { 'on_ft': 'ruby' })
-call dein#add('nelstrom/vim-textobj-rubyblock', { 'on_ft': 'ruby',
-      \ 'depends': 'kana/vim-textobj-user' })
-call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
-      \ 'depends': 'kana/vim-textobj-user' })
+" call dein#add('tpope/vim-endwise', { 'on_ft': 'ruby' })
+" call dein#add('tpope/vim-rails', { 'on_ft': 'ruby' })
+" call dein#add('nelstrom/vim-textobj-rubyblock', { 'on_ft': 'ruby',
+"       \ 'depends': 'kana/vim-textobj-user' })
+" call dein#add('bootleq/vim-textobj-rubysymbol', { 'on_ft': 'ruby',
+"       \ 'depends': 'kana/vim-textobj-user' })
 
 " whitespace languages
 call dein#add('nathanaelkane/vim-indent-guides', { 'on_ft': ['yaml', 'python', 'ruby'] })
@@ -76,42 +76,42 @@ call dein#add('nathanaelkane/vim-indent-guides', { 'on_ft': ['yaml', 'python', '
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
 
 " pug
-call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
+" call dein#add('digitaltoad/vim-pug', { 'on_ft': ['pug'] })
 
 " less
-call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
+" call dein#add('groenewege/vim-less', { 'on_ft': ['less'] })
 
 " javascript
-call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
+" call dein#add('marijnh/tern_for_vim', { 'build': 'npm install' })
 " call dein#add('othree/yajs.vim', { 'on_ft': ['javascript'] })
-call dein#add('jelera/vim-javascript-syntax', { 'on_ft': 'javascript' })
+" call dein#add('jelera/vim-javascript-syntax', { 'on_ft': 'javascript' })
 
 " typescript
 " call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
-call dein#add('mhartington/nvim-typescript', { 'on_ft': 'typescript' })
+" call dein#add('mhartington/nvim-typescript', { 'on_ft': 'typescript' })
 
 " javascript & typescript
-call dein#add('heavenshell/vim-jsdoc', { 'on_ft': 'javascript' })
+" call dein#add('heavenshell/vim-jsdoc', { 'on_ft': 'javascript' })
 
 " python
-call dein#add('hdima/python-syntax', { 'on_ft': 'python' })
+" call dein#add('hdima/python-syntax', { 'on_ft': 'python' })
 
 " html/xml
-call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
-call dein#add('othree/xml.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
-call dein#add('othree/html5.vim', { 'on_ft': ['html', 'xhtml', 'html5'] })
+" call dein#add('whatyouhide/vim-textobj-xmlattr', { 'depends': 'kana/vim-textobj-user' })
+" call dein#add('othree/xml.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
+" call dein#add('othree/html5.vim', { 'on_ft': ['html', 'xhtml', 'html5'] })
 " call dein#add('inkarkat/closetag.vim', { 'on_ft': ['html', 'xhtml', 'xml'] })
 
 " completion, snippets
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('zchee/deoplete-jedi', { 'on_ft': 'python' })
-call dein#add('carlitux/deoplete-ternjs', { 'on_ft': 'javascript'})
-call dein#add('othree/jspc.vim', { 'on_ft': ['javascript', 'typescript'] })
-call dein#add('Shougo/neco-vim', { 'on_ft': 'vim' })
-call dein#add('Shougo/neoinclude.vim')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
-call dein#add('mhartington/deoplete-typescript', { 'on_ft': 'typescript' })
+" call dein#add('Shougo/deoplete.nvim')
+" call dein#add('zchee/deoplete-jedi', { 'on_ft': 'python' })
+" call dein#add('carlitux/deoplete-ternjs', { 'on_ft': 'javascript'})
+" call dein#add('othree/jspc.vim', { 'on_ft': ['javascript', 'typescript'] })
+" call dein#add('Shougo/neco-vim', { 'on_ft': 'vim' })
+" call dein#add('Shougo/neoinclude.vim')
+" call dein#add('Shougo/neosnippet')
+" call dein#add('Shougo/neosnippet-snippets', { 'depends': 'Shougo/neosnippet' })
+" call dein#add('mhartington/deoplete-typescript', { 'on_ft': 'typescript' })
 
 " vim feature enhancement
 call dein#add('tpope/vim-commentary')
