@@ -1,7 +1,7 @@
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/core'
-tap 'homebrew/versions'
+
 brew 'ack'
 brew 'fontconfig'
 brew 'freetype'
@@ -19,6 +19,7 @@ brew 'tree'
 brew 'watch'
 brew 'wget'
 brew 'fish'
+
 cask 'airmail'
 cask '1password'
 cask 'alfred'

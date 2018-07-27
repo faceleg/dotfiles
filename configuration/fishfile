@@ -13,7 +13,6 @@ fisherman/grc
 # fisherman/imgcat
 fisherman/last_job_id
 fisherman/menu
-fisherman/nvm
 oh-my-fish/plugin-tab
 fisherman/z
 brgmnn/fish-docker-compose
