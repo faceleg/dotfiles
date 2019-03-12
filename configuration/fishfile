@@ -1,6 +1,6 @@
 fisherman/await
 edc/bass
-oh-my-fish/plugin-brew
+# oh-my-fish/plugin-brew
 fisherman/docker-completion
 brgmnn/fish-docker-compose
 fisherman/fnm
@@ -8,20 +8,18 @@ fisherman/fzf
 fisherman/get
 fisherman/get_file_age
 fisherman/getopts
-# fisherman/git_util
 fisherman/grc
-# fisherman/imgcat
 fisherman/last_job_id
 fisherman/menu
-oh-my-fish/plugin-tab
+# oh-my-fish/plugin-tab
 fisherman/z
-brgmnn/fish-docker-compose
-# anicode # search unicode
+# brgmnn/fish-docker-compose
 
 # Git
-shinriyo/breeze
+# shinriyo/breeze
 
 # Themes
 # daveyarwood/tomita
 # rafaelrinaldi/pure
-faceleg/simple
+# faceleg/simple
+simple

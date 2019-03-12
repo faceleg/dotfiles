@@ -1,6 +1,6 @@
 scriptencoding utf-8
 set shell=/bin/bash
-let g:base16_shell_path=expand('~/.zgen/plugins/chriskempson/base16-shell-master/scripts')
+let g:base16_shell_path=expand('~/.config/base16-shell/base16-shell-master/scripts')
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
@@ -10,36 +10,27 @@ let g:mapleader=';'
 let g:maplocalleader='\'
 
 if &compatible
-  set nocompatible
+ set nocompatible
+endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.cache/dein')
+ call dein#begin('~/.cache/dein')
+
+ call dein#add('~/.cache/dein')
+ call dein#add('Shougo/deoplete.nvim')
+ if !has('nvim')
+   call dein#add('roxma/nvim-yarp')
+   call dein#add('roxma/vim-hug-neovim-rpc')
+ endif
+
+ call dein#end()
+ call dein#save_state()
 endif
 
-" Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
-if has('vim_starting')
-  set runtimepath^=~/.vim/bundle/dein.vim
-  if !isdirectory(expand('~/.vim/bundle/dein.vim'))
-    echo "Installing Dein\n"
-    silent execute '!mkdir -p ~/.vim/bundle'
-    silent execute '!git clone https://github.com/Shougo/dein.vim ~/.vim/bundle/dein.vim'
-  endif
-endif
-
-let $VARPATH=expand('$HOME/.cache/nvim')
-let $VIMPATH=expand('$HOME/.config/nvim')
-
-function! s:source_file(path) abort
-  execute 'source' fnameescape($VIMPATH.'/config/'.a:path)
-endfunction
-
-let g:dein#install_process_timeout = 5000
-let s:path = expand($VARPATH . '/dein')
-if dein#load_state(s:path)
-  call dein#begin(s:path)
-  call s:source_file('plugins.vim')
-  call dein#end()
-  call dein#save_state()
-endif
+filetype plugin indent on
+syntax enable
 
 " Installation check
 if has('vim_starting') && dein#check_install()
@@ -53,7 +44,7 @@ filetype plugin indent on
 " Colourscheme
 syntax on
 set background=dark
-colorscheme base16-colors
+" colorscheme base16-colors
 let base16colorspace=256
 let html_number_lines = 0
 let html_no_pre = 1
