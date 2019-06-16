@@ -1,6 +1,6 @@
 fisherman/await
 edc/bass
-# oh-my-fish/plugin-brew
+oh-my-fish/plugin-brew
 fisherman/docker-completion
 brgmnn/fish-docker-compose
 fisherman/fnm
@@ -13,13 +13,15 @@ fisherman/last_job_id
 fisherman/menu
 # oh-my-fish/plugin-tab
 fisherman/z
-# brgmnn/fish-docker-compose
 
 # Git
 # shinriyo/breeze
 
+# Support
+fishpkg/fish-humanize-duration
+
 # Themes
 # daveyarwood/tomita
 # rafaelrinaldi/pure
-# faceleg/simple
-simple
+faceleg/simple:master
+# simple
