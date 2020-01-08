@@ -24,3 +24,4 @@ $CP "$DIR/../configuration/init.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
 
 $CP "$DIR/../configuration/plugins.vim" "$XDG_CONFIG_HOME/$VIM_DIR_NAME/config/plugins.vim"
 $CP "$DIR/../configuration/plugins.config.vim" "$XDG_CONFIG_HOME/$VIM_DIR_NAME/config/plugins.config.vim"
+$CP "$DIR/../configuration/plugins.config.coc.vim" "$XDG_CONFIG_HOME/$VIM_DIR_NAME/config/plugins.config.coc.vim"
