@@ -19,11 +19,13 @@ if dein#load_state('~/.cache/dein')
  call dein#begin('~/.cache/dein')
 
  call dein#add('~/.cache/dein')
- call dein#add('Shougo/deoplete.nvim')
+" call dein#add('Shougo/deoplete.nvim')
  if !has('nvim')
    call dein#add('roxma/nvim-yarp')
    call dein#add('roxma/vim-hug-neovim-rpc')
  endif
+
+ source ~/.config/nvim/config/plugins.vim
 
  call dein#end()
  call dein#save_state()
@@ -37,7 +39,7 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
-call s:source_file('plugins.config.vim')
+source ~/.config/nvim/config/plugins.config.vim
 
 filetype plugin indent on
 

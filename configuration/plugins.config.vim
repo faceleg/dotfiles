@@ -1,3 +1,6 @@
+" colorscheme
+colorscheme base16-bright
+
 " utilities
 " junegunn/vim-easy-align
   " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
@@ -17,8 +20,8 @@
   augroup end
 
   let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-" jaxbot/semantic-highlight.vim
 
+" jaxbot/semantic-highlight.vim
   autocmd FileType javascript setlocal iskeyword+=$
   let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
   let g:semanticEnableFileTypes = {
@@ -134,92 +137,139 @@
   " let g:polyglot_disabled = ['jinja', 'json', 'javascript']
 
 " json
-" elzr/vim-json
-  let g:vim_json_syntax_conceal = 0
 
 " javascript
-" marijnh/tern_for_vim
-  let g:tern_map_keys=1
-  let g:tern_show_argument_hints='on_hold'
-  let g:tern_show_signature_in_pum=1
-  let g:tern_map_prefix = '<leader>'
-
-  " <Leader> td :TernDoc  Documentation under cursor
-  " <Leader> tb :TernDocBrowse  Browse documentation
-  " <Leader> tt :TernType Type hints
-  " <Leader> td :TernDef  Jump to definition (yes, 'td' is duplicated)
-  " <Leader> tpd  :TernDefPreview Jump to definition inside preview
-  " <Leader> tsd  :TernDefSplit Definition in new split
-  " <Leader> ttd  :TernDefTab Definition in new tab
-  " <Leader> tr :TernRefs All references under cursor
-  " <Leader> tR :TernRename Rename variable
-
-" javascript & typescript
-" heavenshell/vim-jsdoc
-  let g:jsdoc_allow_input_prompt = 1
-  let g:jsdoc_input_description = 1
-  let g:jsdoc_additional_descriptions = 0
-  let g:jsdoc_return = 1
-  let g:jsdoc_return_type = 1
-  let g:jsdoc_return_description = 1
-  let g:jsdoc_default_mapping = 0 " default: 1 Set value to 0 to turn off default mapping of :JsDoc
 
 " typescript
 
 " completion, snippets
-" Valloric/YouCompleteMe
-  " let g:ycm_autoclose_preview_window_after_completion = 1
-  " let g:ycm_seed_identifiers_with_syntax = 1
-  " let g:ycm_collect_identifiers_from_tags_files = 1
-  " let g:ycm_complete_in_strings = 1
-" Shougo/deoplete.nvim
-  let g:deoplete#disable_auto_complete = 1
-	inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-		endfunction"}}}
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#enable_smart_case = 1
-  let g:deoplete#enable_ignore_case = 1
-  let g:deoplete#auto_complete_start_length = 0
-  let g:deoplete#enable_refresh_always = 1
-  let g:deoplete#max_abbr_width = 160
-  let g:deoplete#max_menu_width = 80
 
-  " carlitux/deoplete-ternjs
-  let g:tern_request_timeout = 1
-  let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
+" coc
+" Better display for messages
+set cmdheight=2
 
-  "Add extra filetypes
-  let g:tern#filetypes = [
-        \ 'jsx',
-        \ 'javascript.jsx',
-        \ 'vue',
-        \ '...'
-        \ ]
-  let g:tern#command = ['tern']
-  let g:tern#arguments = ['--persistent']
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
 
-" Shougo/neosnippet-snippets
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
-  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" always show signcolumns
+set signcolumn=yes
 
-  " " For conceal markers.
-  " if has('conceal')
-  "   set conceallevel=2 concealcursor=niv
-  " endif
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " vim feature enhancement
 
-  " force quickfix to be at bottom and take up entire width
+" force quickfix to be at bottom and take up entire width
   au FileType qf wincmd J
 " AndrewRadev/splitjoin.vim
   nmap gS :SplitjoinSplit<cr>
@@ -229,9 +279,6 @@
 " AndrewRadev/sideways.vim
   nmap <c-h> :SidewaysLeft<cr>
   nmap <c-l> :SidewaysRight<cr>
-" kana/vim-narrow
-  vmap <space>n :Narrow<CR>
-  map <space>w :Widen<CR>
 
 " file management
 " Shougo/vimfiler.vim
@@ -244,19 +291,16 @@
   " Quicklook OS X
   let g:vimfiler_quick_look_command = 'qlmanage -p'
 
-" scrooloose/nerdtre
-  " autocmd vimenter * NERDTree
-  " nmap <space>n :NERDTreeToggle<CR>
-  " nmap <space>f :NERDTreeFind<CR>
-
-  " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " cursor motion
 " matze/vim-move
   " <C-k>   Move current line/selections up
   " <C-j>   Move current line/selections down
   let g:move_key_modifier = 'C'
 " haya14busa/incsearch-fuzzy.vim
+  if has('nvim')
+    set inccommand=nosplit
+  endif
+
   map f/ <Plug>(incsearch-fuzzy-/)
   map f? <Plug>(incsearch-fuzzy-?)
   map fg/ <Plug>(incsearch-fuzzy-stay)
@@ -269,7 +313,7 @@
   map ?  <Plug>(incsearch-backward)
   map g/ <Plug>(incsearch-stay)
 
-  " set hlsearch
+" set hlsearch
   let g:incsearch#auto_nohlsearch = 1
   map n  <Plug>(incsearch-nohl-n)
   map N  <Plug>(incsearch-nohl-N)
@@ -342,41 +386,11 @@
 " bling/vim-airline
   set laststatus=2
   let g:airline_powerline_fonts = 1
-  let g:airline_theme = 'airlineish'
+  let g:airline_theme = 'colorline'
   let g:airline_exclude_preview = 1
   let g:airline#extensions#tabline#enabled = 1
 
 " error reporting
-" w0rp/ale
-  let g:ale_sign_error = '✖'
-  let g:ale_sign_warning = '⚠'
-
-  highlight clear ALEErrorSign
-  highlight clear ALEWarningSign
-
-  nmap <silent> <space>k <Plug>(ale_previous_wrap)
-  nmap <silent> <space>j <Plug>(ale_next_wrap)
-
-  let g:ale_fixers = {
-  \   'javascript': [
-  \       'eslint',
-  \   ],
-  \   'typescript': [
-  \       'tslint',
-  \   ]
-  \}
-
-  let g:ale_linters = {
-    \   'javascript': [
-    \      'eslint'
-    \   ],
-    \   'typescript': [
-    \       'tslint',
-    \       'tsserver',
-    \   ]
-    \}
-
-  nmap <F8> <Plug>(ale_fix)
 
 " multiselect
 " terryma/vim-multiple-cursors
@@ -404,3 +418,6 @@
 " buffer management
 " vim-scripts/bufkill.vim
   nnoremap <space>d :BW<CR>
+
+" airblade/vim-gitgutter
+
