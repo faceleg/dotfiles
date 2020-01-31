@@ -19,6 +19,7 @@ call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
 
 " formatting
 call dein#add('ntpeters/vim-better-whitespace')
+call dein#add('rhysd/vim-clang-format')
 
 " json
 call dein#add('elzr/vim-json', { 'on_ft': ['json'] })
@@ -31,7 +32,6 @@ call dein#add('AndrewRadev/switch.vim')
 call dein#add('ConradIrwin/vim-bracketed-paste')
 call dein#add('troydm/zoomwintab.vim')
 call dein#add('Shougo/neoyank.vim')
-
 
 " git integration
 call dein#add('airblade/vim-gitgutter')
