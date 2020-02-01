@@ -59,9 +59,12 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
+" Reformat file eslint
+xmap <silent> <leader>f :CocCommand eslint.executeAutofix<CR>
+nmap <silent> <leader>F :CocCommand eslint.executeAutofix<CR>
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!

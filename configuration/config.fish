@@ -27,17 +27,13 @@ if command -v tmux>/dev/null; and test -z $TMUX;
     echo "tmux failed to start; using plain fish shell"
 end
 
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/michaelrobinson/Work/Repositories/serverless/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/michaelrobinson/Work/Repositories/serverless/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/michaelrobinson/Work/Repositories/serverless/node_modules/tabtab/.completions/sls.fish ]; and . /Users/michaelrobinson/Work/Repositories/serverless/node_modules/tabtab/.completions/sls.fish
-
 set -x USER_BASE_PATH (python -m site --user-base)
 set -gx PATH $USER_BASE_PATH/bin $PATH
 set -x ANDROID_SDK /Users/michaelrobinson/Library/Android/sdk
 set -gx PATH $ANDROID_SDK/platform-tools $PATH
-set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home  
-set -x ANDROID_HOME  /Users/michaelrobinson/Library/Android/sdk 
+set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+set -x ANDROID_HOME  /Users/michaelrobinson/Library/Android/sdk
+
+set -x FZF_DEFAULT_COMMAND 'ag -p ~/.gitignore -g ""'
+# set -x FZF_DEFAULT_COMMAND = 'ag --ignore node_modules -g ""'
+

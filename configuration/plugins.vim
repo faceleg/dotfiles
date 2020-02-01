@@ -2,12 +2,17 @@ call dein#add('Shougo/dein.vim', { 'rtp': expand('~/.vim/bundle/dein.vim') })
 
 " utilities
 call dein#add('tpope/vim-unimpaired')
+call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 call dein#add('Shougo/unite.vim')
 call dein#add('junegunn/vim-easy-align', { 'on_map': '<Plug>(EasyAlign)' })
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/vimfiler.vim')
 call dein#add('matze/vim-move')
+call dein#add('jiangmiao/auto-pairs')
+
+" syntax
+" call dein#add('sheerun/vim-polyglot')
 
 " highlighting
 call dein#add('faceleg/base16-vim') " forked from chriskempson/base16-vim
@@ -69,3 +74,6 @@ call dein#add('t9md/vim-choosewin')
 " buffer management
 call dein#add('vim-scripts/bufkill.vim')
 call dein#add('jeetsukumaran/vim-buffergator')
+
+" formatting
+ call dein#add('prettier/vim-prettier', { 'build': 'yarn install' })
