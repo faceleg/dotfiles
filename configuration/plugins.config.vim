@@ -309,3 +309,6 @@ source ~/.config/nvim/config/plugins.config.coc.vim
 
 " airblade/vim-gitgutter
 
+" dense-analysis/ale
+let b:ale_fixers = {'javascript': ['eslint']}
+

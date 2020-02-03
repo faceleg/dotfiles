@@ -10,6 +10,7 @@ call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/vimfiler.vim')
 call dein#add('matze/vim-move')
 call dein#add('jiangmiao/auto-pairs')
+" call dein#add('cohama/lexima.vim')
 
 " syntax
 " call dein#add('sheerun/vim-polyglot')
@@ -18,6 +19,9 @@ call dein#add('jiangmiao/auto-pairs')
 call dein#add('faceleg/base16-vim') " forked from chriskempson/base16-vim
 call dein#add('junegunn/rainbow_parentheses.vim')
 call dein#add('jaxbot/semantic-highlight.vim')
+
+" linting
+call dein#add('dense-analysis/ale')
 
 " code completion
 call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
