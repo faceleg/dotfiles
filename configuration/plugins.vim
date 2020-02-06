@@ -15,6 +15,21 @@ call dein#add('jiangmiao/auto-pairs')
 " syntax
 " call dein#add('sheerun/vim-polyglot')
 
+" textobj
+call dein#add('kana/vim-textobj-user')
+call dein#add('whatyouhide/vim-textobj-xmlattr')
+call dein#add('wellle/targets.vim')
+call dein#add('kana/vim-textobj-entire')
+call dein#add('kana/vim-textobj-lastpat')
+call dein#add('Julian/vim-textobj-variable-segment')
+call dein#add('bkad/CamelCaseMotion')
+" call dein#add('tyru/operator-camelize.vim')
+call dein#add('tpope/vim-abolish')
+call dein#add('Julian/vim-textobj-brace')
+call dein#add('kana/vim-textobj-syntax')
+call dein#add('saihoooooooo/vim-textobj-space')
+call dein#add('glts/vim-textobj-comment')
+
 " highlighting
 call dein#add('faceleg/base16-vim') " forked from chriskempson/base16-vim
 call dein#add('junegunn/rainbow_parentheses.vim')

@@ -121,6 +121,9 @@ colorscheme base16-bright
 " coderifous/textobj-word-column.vim
   " ic, ac, iC, aC
 
+" tpope/vim-commentary
+autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+
 " formatting
 " ntpeters/vim-better-whitespace
   augroup vimrc_better_whitespace

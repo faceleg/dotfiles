@@ -247,9 +247,9 @@ set splitbelow
 set splitright
 
 " c-s save
-noremap <silent> <C-S>          :update<CR><ESC>
-vnoremap <silent> <C-S>         <C-C>:update<CR><ESC>
-inoremap <silent> <C-S>         <C-O>:update<CR><ESC>
+" noremap <silent> <C-S>          :update<CR><ESC>
+" vnoremap <silent> <C-S>         <C-C>:update<CR><ESC>
+" inoremap <silent> <C-S>         <C-O>:update<CR><ESC>
 
 " Comfortable window resizing
 nnoremap <silent> <s-k> :call UpHorizontal()<CR>
