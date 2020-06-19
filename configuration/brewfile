@@ -2,6 +2,7 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/core'
 
+brew 'exa'
 brew 'ack'
 brew 'fontconfig'
 brew 'freetype'
