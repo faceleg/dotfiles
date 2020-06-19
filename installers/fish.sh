@@ -15,14 +15,12 @@ else
     git clone https://github.com/chriskempson/base16-shell.git $BASE16
 fi
 
-#printf "\nInstall hub check"
-#if command -v hub >/dev/null 2>&1; then
-#  curl https://raw.githubusercontent.com/github/hub/master/etc/hub.fish_completion > ~/.config/fish/completions/hub.fish
-#else
-#  printf "\nhub command does not exist, install before continuing \n\nbrew install hub"
-#  exit 1
-#fi
-
+printf "\nInstall starship check"
+if command -v starship >/dev/null 2>&1; then
+  printf "\nStarship is installed"
+else
+  curl -fsSL https://starship.rs/install.sh | bash
+fi
 
 printf "\nReplacing fish.config\n"
 rm -fv ~/.config/fish.config
@@ -30,3 +28,4 @@ mkdir -p ~/.config/fish
 $CP "$DIR/../configuration/fishfile" ~/.config/fish/fishfile
 $CP "$DIR/../configuration/config.fish" ~/.config/fish/config.fish
 $CP "$DIR/../configuration/logo.txt" ~/.config/fish/logo.txt
+

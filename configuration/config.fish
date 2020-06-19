@@ -37,3 +37,5 @@ set -x ANDROID_HOME  /Users/michaelrobinson/Library/Android/sdk
 set -x FZF_DEFAULT_COMMAND 'ag -p ~/.gitignore -g ""'
 # set -x FZF_DEFAULT_COMMAND = 'ag --ignore node_modules -g ""'
 
+starship init fish | source
+
