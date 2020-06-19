@@ -11,6 +11,7 @@ set -g fish_key_bindings fish_vi_key_bindings
 
 alias gd='git diff'
 alias gama='git commit --amend -a'
+alias lsa='exa --long --header --git'
 
 set POSTGRES_BIN_PATH_MACOS /Applications/Postgres.app/Contents/Versions/9.5/bin/
 if test -d "$POSTGRES_BIN_PATH_MACOS"
