@@ -3,6 +3,7 @@ tap 'caskroom/fonts'
 tap 'homebrew/core'
 
 brew 'exa'
+brew 'diff-so-fancy'
 brew 'ack'
 brew 'fontconfig'
 brew 'freetype'
