@@ -40,6 +40,7 @@ call dein#add('dense-analysis/ale')
 
 " code completion
 call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+call dein#add('honza/vim-snippets')
 
 " formatting
 call dein#add('ntpeters/vim-better-whitespace')
