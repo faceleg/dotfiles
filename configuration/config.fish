@@ -17,7 +17,8 @@ alias pu='/usr/local/bin/pulumi'
 
 # git aliases
 alias gst='git status'
-
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gl='git lg'
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 alias gd='git diff'
 
