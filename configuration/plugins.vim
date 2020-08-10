@@ -13,7 +13,7 @@ call dein#add('jiangmiao/auto-pairs')
 " call dein#add('cohama/lexima.vim')
 
 " syntax
-" call dein#add('sheerun/vim-polyglot')
+call dein#add('sheerun/vim-polyglot')
 
 " textobj
 call dein#add('kana/vim-textobj-user')
