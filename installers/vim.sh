@@ -10,15 +10,9 @@ VIM_DIR_NAME="nvim"
 echo "mkdir $XDG_CONFIG_HOME/$VIM_DIR_NAME/config"
 mkdir -p "$XDG_CONFIG_HOME/$VIM_DIR_NAME/config"
 
-printf "\nInstalling Dein"
-DEIN="`eval echo ~/.cache/dein/`"
-if [ -d "$DEIN" ]; then
-  echo "Already installed"
-else
-  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-  sh ./installer.sh ~/.cache/dein
-  rm installer.sh
-fi
+# Install Vim Plug
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 $CP "$DIR/../configuration/init.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
 

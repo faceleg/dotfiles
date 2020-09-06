@@ -49,3 +49,8 @@ set -x FZF_DEFAULT_COMMAND 'ag -p ~/.gitignore -g ""'
 
 starship init fish | source
 
+status --is-interactive; and source (pyenv init -|psub)
+
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
+

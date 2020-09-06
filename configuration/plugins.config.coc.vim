@@ -1,3 +1,5 @@
+let g:coc_node_path = '/usr/local/bin/node'
+
 " Better display for messages
 set cmdheight=2
 
