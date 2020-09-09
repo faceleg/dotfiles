@@ -12,7 +12,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'cohama/lexima.vim'
 
 " syntax
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " textobj
 Plug 'kana/vim-textobj-user'

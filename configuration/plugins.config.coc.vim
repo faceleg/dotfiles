@@ -1,5 +1,8 @@
 let g:coc_node_path = '/usr/local/bin/node'
 
+" Correct json comment highlighting
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 " Better display for messages
 set cmdheight=2
 
@@ -133,6 +136,7 @@ let g:coc_global_extensions = [
       \ 'coc-eslint',
       \ 'coc-yaml',
       \ 'coc-tsserver',
+      \ 'coc-cfn-lint',
       \ 'coc-json',
       \ 'coc-java',
       \ 'coc-html'
