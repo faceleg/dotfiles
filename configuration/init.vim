@@ -30,10 +30,11 @@ source ~/.config/nvim/config/plugins.config.vim
 " Colourscheme
 syntax on
 set background=dark
-colorscheme base16-bright
 let base16colorspace=256
 let html_number_lines = 0
 let html_no_pre = 1
+" colorscheme base16-bright
+colorscheme base16-default-dark
 
 " rendering
 set ttyfast

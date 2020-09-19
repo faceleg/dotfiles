@@ -136,7 +136,7 @@ autocmd FileType javascript.jsx,typescript.jsx setlocal commentstring={/*\ %s\ *
 au BufNewFile,BufRead *.vm set ft=velocity
 au BufNewFile,BufRead *.coffee set ft=coffee
 au BufNewFile,BufRead *.html set ft=html
-let g:polyglot_disabled = ['jinja', 'json', 'javascript', 'typescript']
+" let g:polyglot_disabled = ['jinja', 'json', 'javascript', 'typescript']
 
 " json
 
