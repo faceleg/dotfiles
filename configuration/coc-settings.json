@@ -10,5 +10,8 @@
     "!Select sequence",
     "!Split sequence",
     "!Sub"
+  ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "prisma"
   ]
 }

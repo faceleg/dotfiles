@@ -37,6 +37,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'jparise/vim-graphql'
+Plug 'pantharshit00/vim-prisma'
 
 " code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

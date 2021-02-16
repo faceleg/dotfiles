@@ -33,6 +33,9 @@ let g:semanticEnableFileTypes = {
 let g:semanticUseCache = 1
 let g:semanticPersistCache = 1
 
+" jparise/vim-graphql
+au BufNewFile,BufRead *.prisma setfiletype graphql
+
 " visual
 " kshenoy/vim-signature
   let g:SignatureMarkTextHLDynamic = 1

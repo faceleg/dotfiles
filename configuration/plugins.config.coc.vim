@@ -139,5 +139,6 @@ let g:coc_global_extensions = [
       \ 'coc-cfn-lint',
       \ 'coc-json',
       \ 'coc-java',
-      \ 'coc-html'
+      \ 'coc-html',
+      \ 'coc-prisma'
       \ ]
