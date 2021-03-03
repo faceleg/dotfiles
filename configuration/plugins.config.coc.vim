@@ -127,6 +127,9 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" Organise imports then reformat
+nnoremap <silent> <space>or :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+      \ <bar> :CocCommand eslint.executeAutofix<CR>
 
 let g:coc_global_extensions = [
       \ 'coc-yank',
