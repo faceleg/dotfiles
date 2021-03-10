@@ -1,11 +1,10 @@
 set PATH /opt/homebrew/bin $PATH
 
 # Ensure fisherman and plugins are installed
-if not test -f $HOME/.config/fish/functions/fisher.fish
-  echo "==> Fisherman not found.  Installing."
-  curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-  fisher
-end
+#if not type -q fisher
+#  echo "==> Fisherman not found.  Installing."
+#  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+#end
 
 function fish_mode_prompt; end
 
@@ -33,11 +32,11 @@ function fish_greeting
     cat ~/.config/fish/logo.txt
 end
 
-if command -v tmux>/dev/null; and test -z $TMUX;
-    # tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg; and kill %self
-    tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg;
-    echo "tmux failed to start; using plain fish shell"
-end
+# if command -v tmux>/dev/null; and test -z $TMUX;
+#     # tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg; and kill %self
+#     tmux has-session -t faceleg; and tmux attach-session -t faceleg; or tmux new-session -s faceleg;
+#     echo "tmux failed to start; using plain fish shell"
+# end
 
 # set -x USER_BASE_PATH (python -m site --user-base)
 # set -gx PATH $USER_BASE_PATH/bin $PATH
@@ -51,8 +50,8 @@ set -x FZF_DEFAULT_COMMAND 'ag -p ~/.gitignore -g ""'
 
 starship init fish | source
 
-status --is-interactive; and source (pyenv init -|psub)
+# status --is-interactive; and source (pyenv init -|psub)
 
-status --is-interactive; and pyenv init - | source
-status --is-interactive; and pyenv virtualenv-init - | source
+# status --is-interactive; and pyenv init - | source
+# status --is-interactive; and pyenv virtualenv-init - | source
 

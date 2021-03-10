@@ -25,7 +25,6 @@ fi
 printf "\nReplacing fish.config\n"
 rm -fv ~/.config/fish.config
 mkdir -p ~/.config/fish
-$CP "$DIR/../configuration/fishfile" ~/.config/fish/fishfile
+$CP "$DIR/../configuration/fish_plugins" ~/.config/fish/fish_plugins
 $CP "$DIR/../configuration/config.fish" ~/.config/fish/config.fish
 $CP "$DIR/../configuration/logo.txt" ~/.config/fish/logo.txt
-

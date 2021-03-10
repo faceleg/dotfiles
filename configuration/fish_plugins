@@ -1,8 +1,6 @@
 fisherman/await
 edc/bass
 oh-my-fish/plugin-brew
-fisherman/docker-completion
-brgmnn/fish-docker-compose
 fisherman/fnm
 fisherman/fzf
 fisherman/get
@@ -11,8 +9,6 @@ fisherman/getopts
 fisherman/grc
 fisherman/last_job_id
 fisherman/menu
-# oh-my-fish/plugin-tab
-# fisherman/z
 jethrokuan/z
 
 
@@ -21,9 +17,3 @@ jethrokuan/z
 
 # Support
 fishpkg/fish-humanize-duration
-
-# Themes
-# daveyarwood/tomita
-# rafaelrinaldi/pure
-# faceleg/simple:master
-# simple
