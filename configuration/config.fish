@@ -1,3 +1,5 @@
+set PATH /opt/homebrew/bin $PATH
+
 # Ensure fisherman and plugins are installed
 if not test -f $HOME/.config/fish/functions/fisher.fish
   echo "==> Fisherman not found.  Installing."
@@ -37,12 +39,12 @@ if command -v tmux>/dev/null; and test -z $TMUX;
     echo "tmux failed to start; using plain fish shell"
 end
 
-set -x USER_BASE_PATH (python -m site --user-base)
-set -gx PATH $USER_BASE_PATH/bin $PATH
-set -x ANDROID_SDK /Users/michaelrobinson/Library/Android/sdk
-set -gx PATH $ANDROID_SDK/platform-tools $PATH
-set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
-set -x ANDROID_HOME  /Users/michaelrobinson/Library/Android/sdk
+# set -x USER_BASE_PATH (python -m site --user-base)
+# set -gx PATH $USER_BASE_PATH/bin $PATH
+# set -x ANDROID_SDK /Users/michaelrobinson/Library/Android/sdk
+# set -gx PATH $ANDROID_SDK/platform-tools $PATH
+# set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+# set -x ANDROID_HOME  /Users/michaelrobinson/Library/Android/sdk
 
 set -x FZF_DEFAULT_COMMAND 'ag -p ~/.gitignore -g ""'
 # set -x FZF_DEFAULT_COMMAND = 'ag --ignore node_modules -g ""'
