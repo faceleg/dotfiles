@@ -7,34 +7,31 @@ vmap <Leader><Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " highlighting
-augroup vimrc_highlighting
-  autocmd!
+"augroup vimrc_highlighting
+"  autocmd!
+"
+"  " junegunn/rainbow_parentheses.vim
+"  autocmd FileType coffee,java,javascript,typescript,json,php,sass,scss,vim :RainbowParentheses
+"
+"  " jaxbot/semantic-highlight.vim
+"  autocmd CursorHold *.jsx,*.js,*.tsx,*.ts :SemanticHighlight
+"augroup end
 
-  " junegunn/rainbow_parentheses.vim
-  autocmd FileType coffee,java,javascript,typescript,json,php,sass,scss,vim :RainbowParentheses
-
-  " jaxbot/semantic-highlight.vim
-  autocmd CursorHold *.jsx,*.js,*.tsx,*.ts :SemanticHighlight
-augroup end
-
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+" let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 " jaxbot/semantic-highlight.vim
-autocmd FileType javascript setlocal iskeyword+=$
-let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
-let g:semanticEnableFileTypes = {
-      \ 'javascript': 'js',
-      \ 'typescript': 'ts',
-      \ 'coffee': 'coffee',
-      \ 'vim': 'vim',
-      \ 'java': 'java',
-      \ 'php': 'php',
-      \ }
-let g:semanticUseCache = 1
-let g:semanticPersistCache = 1
-
-" jparise/vim-graphql
-au BufNewFile,BufRead *.prisma setfiletype graphql
+" autocmd FileType javascript setlocal iskeyword+=$
+" let g:semanticTermColors = [1,2,3,4,5,6,7,25,9,10,12,13,14,15,16,17,19,20]
+" let g:semanticEnableFileTypes = {
+"       \ 'javascript': 'js',
+"       \ 'typescript': 'ts',
+"       \ 'coffee': 'coffee',
+"       \ 'vim': 'vim',
+"       \ 'java': 'java',
+"       \ 'php': 'php',
+"       \ }
+" let g:semanticUseCache = 1
+" let g:semanticPersistCache = 1
 
 " visual
 " kshenoy/vim-signature
@@ -136,10 +133,12 @@ autocmd FileType javascript.jsx,typescript.jsx setlocal commentstring={/*\ %s\ *
 
 " languages
 " sheerun/vim-polyglot
-au BufNewFile,BufRead *.vm set ft=velocity
-au BufNewFile,BufRead *.coffee set ft=coffee
-au BufNewFile,BufRead *.html set ft=html
+" au BufNewFile,BufRead *.vm set ft=velocity
+" au BufNewFile,BufRead *.coffee set ft=coffee
+" au BufNewFile,BufRead *.html set ft=html
 " let g:polyglot_disabled = ['jinja', 'json', 'javascript', 'typescript']
+" TreeSitter
+lua require('config/treesitter')
 
 " json
 
@@ -274,6 +273,9 @@ nmap <space>e :Grep<space>
 nmap <space>o :Obsession
 " vim-ctrlspace/vim-ctrlspace
 nmap <c-space> :CtrlSpace<CR>
+
+" theme
+let base16colorspace=256
 
 " status bar
 " bling/vim-airline

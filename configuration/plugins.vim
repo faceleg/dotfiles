@@ -9,12 +9,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'Shougo/vimfiler.vim'
 Plug 'matze/vim-move'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'cohama/lexima.vim'
 
 " syntax
-" Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
 " textobj
 Plug 'kana/vim-textobj-user'
@@ -34,23 +32,24 @@ Plug 'glts/vim-textobj-comment'
 " highlighting
 " Plug 'faceleg/base16-vim' " forked from chriskempson/base16-vim
 Plug 'chriskempson/base16-vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'jaxbot/semantic-highlight.vim'
-Plug 'jparise/vim-graphql'
-Plug 'pantharshit00/vim-prisma'
+Plug 'NLKNguyen/papercolor-theme'
+" Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'jaxbot/semantic-highlight.vim'
+" Plug 'jparise/vim-graphql'
+" Plug 'pantharshit00/vim-prisma'
+Plug 'rebelot/kanagawa.nvim'
 
 " code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'honza/vim-snippets'
-Plug 'kkoomen/vim-doge'
+"``Plug 'honza/vim-snippets'
+"``Plug 'kkoomen/vim-doge'
 
 " formatting
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rhysd/vim-clang-format'
 
 " json
-" Plug 'elzr/vim-json', { 'on_ft': ['json'] }
 
 " vim feature enhancement
 Plug 'tpope/vim-commentary'

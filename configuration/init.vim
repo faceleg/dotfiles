@@ -1,6 +1,5 @@
 scriptencoding utf-8
 set shell=/bin/bash
-let g:base16_shell_path=expand('~/.config/base16-shell/base16-shell-master/scripts')
 
 " Disable gui
 set guioptions=M
@@ -30,11 +29,9 @@ source ~/.config/nvim/config/plugins.config.vim
 " Colourscheme
 syntax on
 set background=dark
-let base16colorspace=256
 let html_number_lines = 0
 let html_no_pre = 1
-" colorscheme base16-bright
-colorscheme base16-default-dark
+colorscheme base16-bright
 
 " rendering
 set ttyfast
